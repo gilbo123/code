@@ -1,0 +1,4 @@
+AttackName,Score
+fgsm,1087
+random_noise,443
+noop,118

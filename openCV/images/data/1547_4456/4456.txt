@@ -1,0 +1,12 @@
+Metadata:
+Timestamp: 2017/09/07 -> 03:47:40.077
+Punnet count: 4456
+Status: Pass
+Reason: Pass
+No. rejects: 0
+Max size: 10000
+Min size: 0
+Berry Count: 0
+Dev RGB Top Image File: 
+Dev IR Top Image File: 
+

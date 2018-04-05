@@ -1,0 +1,12 @@
+Metadata:
+Timestamp: 2017/09/04 -> 11:08:40.936
+Punnet count: 6226
+Status: Fail
+Reason: Underripe
+No. rejects: 1
+Max size: 10000
+Min size: 0
+Berry Count: 0
+Dev RGB Top Image File: 
+Dev IR Top Image File: 
+

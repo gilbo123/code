@@ -1,0 +1,13 @@
+Metadata:
+Timestamp: 3/29/2018 2:35:56 PM
+Punnet count: 46
+Status: Fail
+Reason: Foreign
+No. rejects: 1
+Max size: 10000
+Min size: 0
+Berry Count: 0
+Dev RGB Top Image File: 
+Dev IR Top Image File: 
+Dev RGB Bottom Image File: 
+Dev IR Bottom Image File: 

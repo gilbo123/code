@@ -1,0 +1,13 @@
+Metadata:
+Timestamp: 3/29/2018 2:29:00 PM
+Punnet count: 31
+Status: Fail
+Reason: Bruise
+No. rejects: 1
+Max size: 10000
+Min size: 0
+Berry Count: 0
+Dev RGB Top Image File: 
+Dev IR Top Image File: 
+Dev RGB Bottom Image File: 
+Dev IR Bottom Image File: 
