@@ -34,96 +34,59 @@ import cv2
 # us to easily reuse and swap out code depending if we are using the
 # command line or Jupyter Notebook
 args = {
-    "class_1": "under/",
-    "class_2": "ok/",
+    # "class_1": "../berries/under/",
+    "class_2": "../berries/ok/",
 }
+
+# # get H5 files ready for writing
+# h5_under = tables.openFile('under.h5', mode='a', title="Under_H5")
+# u_root = h5_under.root
+h5_ok = tables.openFile('ok.h5', mode='a', title="OK_H5")
+ok_root = h5_ok.root
+
+#batch size
+bs = 16
 
 #functions class
 fun = Functions()
 
-imagetypeRGB = 'RGBTop'
+#image to look for
+imageType = 'RGBTop'
+
+#get numer of images
+imagePaths = fun.getImagePaths(args, imageType)
 
 # load the ResNet50 network (i.e., the network we'll be using for
 # feature extraction)
 model = ResNet50(weights="imagenet", include_top=False)
 
-batchImages = []
-classLabels = []
+#progress bar
+widgets = ["Extracting Features: ", progressbar.Percentage(), " ",
+    progressbar.Bar(), " ", progressbar.ETA()]
+pbar = progressbar.ProgressBar(maxval=len(imagePaths), widgets=widgets).start()
 
-# get H5 files ready for writing
-h5_under = tables.openFile('under.h5', mode='a', title="Under_H5")
-u_root = h5_under.root
-h5_ok = tables.openFile('ok.h5', mode='a', title="OK_H5")
-ok_root = h5_ok.root
-
-
+# initialize our data matrix (where we will store our extracted
+# features)
+data = None
 count = 0
 
-subdirs = [x[0] for x in os.walk(args["class_1"])]
-for subdir in subdirs:
-    files = os.walk(subdir).next()[2]
-    if (len(files) > 0):
-        for file in files:
-            if (imagetypeRGB in file):
-                ###
-                imagePath = os.path.join(subdir, file)
-                print imagePath
 
-                #get image
-                #image = load_img(imagePath, target_size=(224, 224))
-                cropped = plt.imread(imagePath)
-                cropped = cropped[0:1200, 600:1800]
-                # resized = K.resize_images(cropped, 224, 224, 'channels_first')
-                res = cv2.resize(cropped, dsize=(224, 224), interpolation=cv2.INTER_CUBIC)
-                #flatten
-                image = img_to_array(res)
+for path in imagePaths:
+    #get image and preprocess
+    image = fun.preProcessImage(path)
+    features = model.predict(image)
+    h5_ok.createArray(ok_root, "under_{}".format(count), features)
+    count+=1
+    #save vectors, labals
+    # with open("Vectors.pkl", "wb") as tf:
+    #     pickle.dump("Vector: {}, Label: {}\r\n".format(features[0], 'Underripe'), tf)
+    # update the progress bar
+    pbar.update(count)
 
-                # preprocess the image by (1) expanding the dimensions and
-                # (2) subtracting the mean RGB pixel intensity from the
-                # ImageNet dataset
-                image = np.expand_dims(image, axis=0)
-                image = imagenet_utils.preprocess_input(image)
-                #get features
-                features = model.predict(image)
-                h5_under.createArray(u_root, "under_{}".format(count), features)
-                count+=1
-                #save vectors, labals
-                # with open("Vectors.pkl", "wb") as tf:
-                #     pickle.dump("Vector: {}, Label: {}\r\n".format(features[0], 'Underripe'), tf)
 
-count = 0
-#second class images
-subdirs = [x[0] for x in os.walk(args["class_2"])]
-for subdir in subdirs:
-    files = os.walk(subdir).next()[2]
-    if (len(files) > 0):
-        for file in files:
-            if (imagetypeRGB in file):
-                imagePath = os.path.join(subdir, file)
-                print imagePath
+# finish up the progress bar
+pbar.finish()
 
-                # load the input image using the Keras helper utility
-                # while ensuring the image is resized to 224x224 pixels
-                #image = load_img(imagePath, target_size=(224, 224))
-                cropped = plt.imread(imagePath)
-                cropped = cropped[0:1200, 600:1800]
-                # resized = K.resize_images(cropped, 224, 224, 'channels_first')
-                res = cv2.resize(cropped, dsize=(224, 224), interpolation=cv2.INTER_CUBIC)
-                #flatten
-                image = img_to_array(res)
 
-                # preprocess the image by (1) expanding the dimensions and
-                # (2) subtracting the mean RGB pixel intensity from the
-                # ImageNet dataset
-                image = np.expand_dims(image, axis=0)
-                image = imagenet_utils.preprocess_input(image)
-                #get features
-                features = model.predict(image)
-                h5_ok.createArray(ok_root, "under_{}".format(count), features)
-                count+=1
-                #save vectors, labals
-                # with open("Vectors.pkl", "wb") as tf:
-                #     pickle.dump("Vector: {}, Label: {}\n".format(features, 'OK'), tf)
-
-h5_under.close()
+# h5_under.close()
 h5_ok.close()

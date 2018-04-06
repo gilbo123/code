@@ -33,103 +33,86 @@ import cv2
 # command line or Jupyter Notebook
 args = {
     "dataset": "../berries/test/",
-    "batch_size": 32,
 }
 
-#Get the data saved to files
-u_h5 = tables.open_file("under.h5", "r")
-ok_h5 = tables.open_file("ok.h5", "r")
-
-under_data = u_h5.root
-ok_data = ok_h5.root
-# ok_data = ok_h5.root
+#batch size
+bs = 16
 
 #functions class
 fun = Functions()
 
-imagetypeRGB = 'RGBTop'
+#image to look for
+imageType = 'RGBTop'
+
+#get numer of images
+imagePaths = fun.getImagePaths(args, imageType)
+
+#Get the data saved to files
+# u_h5 = tables.open_file("under.h5", "r")
+ok_h5 = tables.open_file("ok.h5", "r")
+# under_data = u_h5.root
+ok_data = ok_h5.root
+# print(ok_h5)
 
 # load the ResNet50 network (i.e., the network we'll be using for
 # feature extraction)
 model = ResNet50(weights="imagenet", include_top=False)
 
-batchImages = []
-classLabels = []
+for path in imagePaths:
+    #timer to time method
+    start = timer()
 
-subdirs = [x[0] for x in os.walk(args["dataset"])]
-#print(subdirs)
-for subdir in subdirs:
-    files = os.walk(subdir).next()[2]
-    if (len(files) > 0):
-        for file in files:
-            if (imagetypeRGB in file):
-                ###
-                imagePath = os.path.join(subdir, file)
-                print imagePath
+    # load the input image using the Keras helper utility
+    image = fun.preProcessImage(path)
 
-                #timer to time method
-                start = timer()
+    #get features from network
+    features = model.predict(image)
 
-                # load the input image using the Keras helper utility
-                # while ensuring the image is resized to 224x224 pixels
-                #image = load_img(imagePath, target_size=(224, 224))
-                cropped = plt.imread(imagePath)
-                cropped = cropped[0:1200, 600:1800]
-                # resized = K.resize_images(cropped, 224, 224, 'channels_first')
-                res = cv2.resize(cropped, dsize=(224, 224), interpolation=cv2.INTER_CUBIC)
-                #flatten
-                image = img_to_array(res)
+    # reshape the features so that each image is represented by
+    # a flattened feature vector of the `MaxPooling2D` outputs
+    features = features.reshape((features.shape[0], 2048))#8192
 
+    #numpy format 32-bit
+    features = np.array(features, np.float32)
 
-                # preprocess the image by (1) expanding the dimensions and
-                # (2) subtracting the mean RGB pixel intensity from the
-                # ImageNet dataset
-                image = np.expand_dims(image, axis=0)
-                image = imagenet_utils.preprocess_input(image)
-
-                #get features from network
-                features = model.predict(image)
-
-                # reshape the features so that each image is represented by
-                # a flattened feature vector of the `MaxPooling2D` outputs
-                features = features.reshape((features.shape[0], 2048))#8192
-
-                #numpy format 32-bit
-                features = np.array(features, np.float32)
-
-                #set the name first
-                name = 'OK'
-                #Predict result
-                #comparrison to stored arrays
-                distances = []
-                for leaf in ok_data._f_walknodes('Leaf'):
-                    #print(leaf)
-                    # Get euclidian distances between arrays
-                    dists = distance.cdist((np.asarray(features)).reshape(1, -1), (np.asarray(leaf).reshape(1, -1)))
-                    print dists
-                    distances.append(dists)
+    #set the name first
+    name = 'OK'
+    #Predict result
+    #comparrison to stored arrays
+    distances = []
+    for leaf in ok_data._f_walknodes('Leaf'):
+        # Get euclidian distances between arrays
+        dists = distance.cdist((np.asarray(features)).reshape(1, -1), (np.asarray(leaf).reshape(1, -1)))
+        print dists
+        distances.append(dists)
 
 
-                #avg distance
-                avg_dist = np.mean(distances)
-                print('Average dist: {}'.format(avg_dist))
+    #metrics
+    print('Min dist: {}'.format(np.min(distances)))
+    print('Max dist: {}'.format(np.max(distances)))
+    print('Range: {}'.format(np.max(distances) - np.min(distances)))
+    print('Mean dist: {}'.format(np.mean(distances)))
+    print('Std Dev (pop): {}'.format(np.std(distances)))
+    print('Std Dev (sam): {}'.format(np.std(distances, ddof=1)))
 
-                if avg_dist > 20:
-                    name = 'Underripe'
+    if np.max(distances) > 20:
+        name = 'Underripe'
 
-                #end timer
-                end = timer()
-                time = end-start
+    #end timer
+    end = timer()
+    time = end-start
 
-                #stats
-                print "Image is : ", name
-                #print "Probablility: ", score[0]
-                print "In: ", time, "seconds\r\n"
+    #stats
+    print "Image is : ", name
+    #print "Probablility: ", score[0]
+    print "In: ", time, "seconds\r\n"
 
-                plt.imshow(res)
-                plt.show()
-                cv2.waitKey(0)
+    #get image
+    img = plt.imread(path, 0)
+    plt.imshow(img)
+    plt.show()
+    cv2.waitKey(0)
 
 
-u_h5.close()
+# u_h5.close()
 ok_h5.close()

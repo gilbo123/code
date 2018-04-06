@@ -32,92 +32,72 @@ import cv2
 # command line or Jupyter Notebook
 args = {
     "dataset": "../berries/test/",
-    "batch_size": 32,
 }
 
-
-#SVM model
-svm = cv2.ml.SVM_load('svm_data.dat')
+#batch size
+bs = 16
 
 #functions class
 fun = Functions()
 
-imagetypeRGB = 'RGBTop'
+#image to look for
+imageType = 'RGBTop'
+
+#get numer of images
+imagePaths = fun.getImagePaths(args, imageType)
+
+#SVM model
+svm = cv2.ml.SVM_load('svm_data.dat')
 
 # load the ResNet50 network (i.e., the network we'll be using for
 # feature extraction)
 model = ResNet50(weights="imagenet", include_top=False)
 
-batchImages = []
-classLabels = []
+for path in imagePaths:
+    #timer to time method
+    start = timer()
 
-subdirs = [x[0] for x in os.walk(args["dataset"])]
-print(subdirs)
-for subdir in subdirs:
-    files = os.walk(subdir).next()[2]
-    if (len(files) > 0):
-        for file in files:
-            if (imagetypeRGB in file):
-                ###
-                imagePath = os.path.join(subdir, file)
-                print imagePath
+    # load the input image using the Keras helper utility
+    image = fun.preProcessImage(path)
 
-                #timer to time method
-                start = timer()
+    #get features from network
+    features = model.predict(image)
 
-                # load the input image using the Keras helper utility
-                # while ensuring the image is resized to 224x224 pixels
-                #image = load_img(imagePath, target_size=(224, 224))
-                cropped = plt.imread(imagePath)
-                cropped = cropped[0:1200, 600:1800]
-                # resized = K.resize_images(cropped, 224, 224, 'channels_first')
-                res = cv2.resize(cropped, dsize=(224, 224), interpolation=cv2.INTER_CUBIC)
-                #flatten
-                image = img_to_array(res)
+    # reshape the features so that each image is represented by
+    # a flattened feature vector of the `MaxPooling2D` outputs
+    features = features.reshape((features.shape[0], 2048))#8192
 
+    #numpy format 32-bit
+    features = np.array(features, np.float32)
 
-                # preprocess the image by (1) expanding the dimensions and
-                # (2) subtracting the mean RGB pixel intensity from the
-                # ImageNet dataset
-                image = np.expand_dims(image, axis=0)
-                image = imagenet_utils.preprocess_input(image)
+    #Predict result
+    score = svm.predict(features, flags=cv2.ml.STAT_MODEL_RAW_OUTPUT)
+    label = svm.predict(features)
 
-                #get features from network
-                features = model.predict(image)
+    #end timer
+    end = timer()
+    time = end-start
 
-                # reshape the features so that each image is represented by
-                # a flattened feature vector of the `MaxPooling2D` outputs
-                features = features.reshape((features.shape[0], 2048))#8192
+    print label
+    if label[1][0] == 1:
+        name = 'Underripe'
+    else:
+        name = 'OK'
 
-                #numpy format 32-bit
-                features = np.array(features, np.float32)
+    #stats
+    print "Image is : ", name
+    print "Probablility: ", score[0]
+    print "In: ", time, "seconds\r\n"
 
-                #Predict result
-                score = svm.predict(features, flags=cv2.ml.STAT_MODEL_RAW_OUTPUT)
-                label = svm.predict(features)
-
-                #end timer
-                end = timer()
-                time = end-start
-
-                print label
-                if label[1][0] == 0:
-                    name = 'Underripe'
-                else:
-                    name = 'OK'
-
-                #stats
-                print "Image is : ", name
-                print "Probablility: ", score[0]
-                print "In: ", time, "seconds\r\n"
-
-                plt.imshow(res)
-                plt.show()
-                cv2.waitKey(0)
+    #get original image
+    img = plt.imread(path, 0)
+    plt.imshow(img)
+    plt.show()
+    cv2.waitKey(0)
 
 
-                #wait til keypress
-                # k = cv2.waitKey(0)
-                # if k==27:
-                #     cv2.destroyAllWindows()
-                #     break
+    #wait til keypress
+    # k = cv2.waitKey(0)
+    # if k==27:
+    #     cv2.destroyAllWindows()
+    #     break
