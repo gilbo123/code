@@ -75,7 +75,7 @@ for path in imagePaths:
     #get image and preprocess
     image = fun.preProcessImage(path)
     features = model.predict(image)
-    h5_ok.createArray(ok_root, "under_{}".format(count), features)
+    h5_ok.createArray(ok_root, "vector{}".format(count), features)
     count+=1
     #save vectors, labals
     # with open("Vectors.pkl", "wb") as tf:

@@ -29,7 +29,7 @@ import cv2
 # us to easily reuse and swap out code depending if we are using the
 # command line or Jupyter Notebook
 args = {
-    "class_1": "../berries/under/",
+    "class_1": "../berries/foreign/",
     "class_2": "../berries/ok/",
 }
 
@@ -83,11 +83,10 @@ for i in np.arange(0, len(imagePaths), bs):
     features = model.predict(batchImages, batch_size=bs)
     # reshape the features so that each image is represented by
     # a flattened feature vector of the `MaxPooling2D` outputs
-    print features.shape
     features = features.reshape((features.shape[0], 2048))
     # show the data matrix shape and amount of memory it consumes
-    print(features.shape)
-    print(features.nbytes)
+    # print(features.shape)
+    # print(features.nbytes)
 
     # if our data matrix is None, initialize it
     if data is None:
@@ -116,9 +115,9 @@ labels = le.fit_transform(classLabels)
 # grid search where we evaluate our model for each value of C
 print("[INFO] adding to SVM...")
 svm = cv2.ml.SVM_create()
-svm.setKernel(cv2.ml.SVM_LINEAR)
+svm.setKernel(cv2.ml.SVM_RBF)
 svm.setType(cv2.ml.SVM_C_SVC)
-svm.setC(5.67)
+# svm.setC(5.67)
 #svm.setGamma(5.383)
 
 svm.train(trainingDataMat, cv2.ml.ROW_SAMPLE, labels)

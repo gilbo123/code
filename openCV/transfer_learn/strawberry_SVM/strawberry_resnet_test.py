@@ -79,14 +79,14 @@ for path in imagePaths:
     time = end-start
 
     print label
-    if label[1][0] == 1:
-        name = 'Underripe'
+    if label[1][0] == 0:
+        name = 'Foreign'
     else:
         name = 'OK'
 
     #stats
     print "Image is : ", name
-    print "Probablility: ", score[0]
+    print "Probablility: ", score
     print "In: ", time, "seconds\r\n"
 
     #get original image
