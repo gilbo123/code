@@ -86,7 +86,7 @@ for path in imagePaths:
 
     #stats
     print "Image is : ", name
-    print "Probablility: ", score
+    print "Error: ", score[1]
     print "In: ", time, "seconds\r\n"
 
     #get original image
