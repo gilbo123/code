@@ -2,11 +2,11 @@
 from keras.applications import ResNet50
 from keras.preprocessing.image import load_img
 from sklearn.preprocessing import LabelEncoder
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-from sklearn.externals import joblib
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.model_selection import GridSearchCV
+# from sklearn.metrics import classification_report
+# from sklearn.metrics import accuracy_score
+# from sklearn.externals import joblib
 
 from timeit import default_timer as timer
 from imutils import paths

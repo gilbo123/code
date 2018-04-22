@@ -58,9 +58,10 @@ class Functions:
         # # thresh = cv2.adaptiveThreshold(s, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 15, 4)
         # #apply mask
         # masked = cv2.bitwise_and(destRGB, destRGB, mask = threshInv)
-        # small = cv2.resize(blurred, (0,0), fx=0.5, fy=0.5)
-        # cv2.imshow('Image-thresh', small)
+        # small = cv2.resize(destRGB, (0,0), fx=0.5, fy=0.5)
+        # cv2.imshow(path, small)
         # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
         # resize to ResNet image input size
         res = cv2.resize(destRGB, dsize=(224, 224), interpolation=cv2.INTER_CUBIC)
         #flatten

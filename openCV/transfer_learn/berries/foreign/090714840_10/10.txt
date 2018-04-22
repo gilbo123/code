@@ -1,0 +1,13 @@
+Metadata:
+Timestamp: 12/11/2017 9:07:09 AM
+Punnet count: 10
+Status: Fail
+Reason: Too Small
+No. rejects: 3
+Max size: 10000
+Min size: 0
+Berry Count: 0
+Dev RGB Top Image File: 
+Dev IR Top Image File: 
+Dev RGB Bottom Image File: 
+Dev IR Bottom Image File: 

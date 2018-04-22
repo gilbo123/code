@@ -91,6 +91,7 @@ for path in imagePaths:
 
     #get original image
     img = plt.imread(path, 0)
+    plt.title(path)
     plt.imshow(img)
     plt.show()
     cv2.waitKey(0)
