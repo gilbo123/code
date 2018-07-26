@@ -3,6 +3,7 @@ from keras.applications import ResNet50
 from keras.applications import imagenet_utils
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing.image import load_img
+from keras.preprocessing.image import apply_transform
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
@@ -27,7 +28,7 @@ import os
 # us to easily reuse and swap out code depending if we are using the
 # command line or Jupyter Notebook
 args = {
-    "dataset": "train",
+    "dataset": "../train2",
     "batch_size": 32,
 }
 
@@ -49,7 +50,7 @@ labels = le.fit_transform(labels)
 
 # load the ResNet50 network (i.e., the network we'll be using for
 # feature extraction)
-model = ResNet50(weights="imagenet", include_top=False)
+model = ResNet50(weights="imagenet", include_top=False)#classes=1000
 
 # initialize the progress bar
 widgets = ["Extracting Features: ", progressbar.Percentage(), " ",
@@ -84,6 +85,7 @@ for i in np.arange(0, len(imagePaths), bs):
 
         # add the image to the batch
         batchImages.append(image)
+        
 
     # pass the images through the network and use the outputs as
     # our actual features

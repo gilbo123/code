@@ -29,7 +29,7 @@ import cv2
 # us to easily reuse and swap out code depending if we are using the
 # command line or Jupyter Notebook
 args = {
-    "dataset": "berries",
+    "dataset": "../berries",
     "batch_size": 32,
 }
 

@@ -51,23 +51,22 @@ model = ResNet50(weights="imagenet", include_top=False)
 
 for path in imagePaths:
     # load the input image using the Keras helper utility
-    # image = fun.preProcessImage(path)
+    image = fun.preProcessImage(path)
 
-    c_img, m_img = fun.getGreyFromColour(path)
+    #c_img, m_img = fun.getGreyFromColour(path)
 
     #get features from network
-    features_c = model.predict(c_img)
-    features_m = model.predict(m_img)
+    features_c = model.predict(image)
+    #features_m = model.predict(m_img)
 
     # reshape the features so that each image is represented by
     # a flattened feature vector of the `MaxPooling2D` outputs
     features_c = features_c.reshape((features_c.shape[0], 2048))#8192
-    features_m = features_m.reshape((features_m.shape[0], 2048))
-
-    difference = features_c - features_m
+    #features_m = features_m.reshape((features_m.shape[0], 2048))
+    #difference = features_c - features_m
 
     #numpy format 32-bit
-    # features = np.array(features, np.float32)
+    features = np.array(features_c, np.float32)
 
     # get image and plot
     fig = plt.figure()
@@ -79,7 +78,7 @@ for path in imagePaths:
 
     # fig.add_subplot(211)
     plt.title('activations ')
-    plt.plot(difference[0])
+    plt.plot(features_c[0])
 
     # fig.add_subplot(212)
     # plt.title('activations ')
