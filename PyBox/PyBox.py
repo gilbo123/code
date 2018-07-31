@@ -27,6 +27,7 @@ windows = {'RGBTop': [winCorner, winCorner], 'IRTop': [winCorner, winCorner + wi
 
 
 
+
 '''
 INIT
 '''
@@ -91,14 +92,18 @@ if __name__=='__main__':
     # IRBtmThread.start()
 
     i=0
-    while(i < 10):
+    while(i < 1000):
         # res = cv2.resize(punnet.RGBTopImage,(500, 600), interpolation = cv2.INTER_CUBIC)
+        threadLock.acquire()
         if(punnet.punnetNeedsDisplaying):
+
             print(punnet.RGBTopImage.shape)
             cv2.imshow('RGBTop', punnet.RGBTopImage)
             punnet.punnetNeedsDisplaying = False
+
             cv2.waitKey(10)
             i+=1
+        threadLock.release()
 
     # try:
     #     for i in range(10):

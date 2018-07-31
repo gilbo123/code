@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5acc512a-a0dd-49f7-a577-296de1b9b220" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/configure" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/configure" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/c/generate-pc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/c/generate-pc.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two/00000123/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two/00000123/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two/00000123/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two/00000123/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two/00000123/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two/00000123/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two_pbtxt/00000123/saved_model.pbtxt" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two_pbtxt/00000123/saved_model.pbtxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two_pbtxt/00000123/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two_pbtxt/00000123/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two_pbtxt/00000123/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/cc/saved_model/testdata/half_plus_two_pbtxt/00000123/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/cmake/tf_python.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/cmake/tf_python.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/hvx/hexagon_controller/src_soc_interface/soc_interface.c" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/hvx/hexagon_controller/src_soc_interface/soc_interface.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/BUILD" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/BUILD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/kernels/single_image_random_dot_stereograms_ops.cc" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/kernels/single_image_random_dot_stereograms_ops.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/ops/single_image_random_dot_stereograms_ops.cc" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/ops/single_image_random_dot_stereograms_ops.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/python/ops/single_image_random_dot_stereograms.py" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/image/python/ops/single_image_random_dot_stereograms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_all_android.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_all_android.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_all_ios.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_all_ios.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_all_linux.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_all_linux.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_with_docker.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/build_with_docker.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_android_protobuf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_android_protobuf.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_ios_protobuf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_ios_protobuf.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_ios_tensorflow.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_ios_tensorflow.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_linux_protobuf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_linux_protobuf.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_nsync.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_nsync.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_pi_protobuf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/compile_pi_protobuf.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/download_dependencies.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/download_dependencies.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/gen_file_lists.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/gen_file_lists.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/rename_protobuf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/rename_protobuf.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/rename_protoc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/rename_protoc.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/rename_prototext.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/rename_prototext.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/samples/build_and_run_inception_hexagon.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/makefile/samples/build_and_run_inception_hexagon.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two/00000123/export-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two/00000123/export-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two/00000123/export.meta" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two/00000123/export.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two_ckpt_v2/00000123/export.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two_ckpt_v2/00000123/export.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two_ckpt_v2/00000123/export.index" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two_ckpt_v2/00000123/export.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two_ckpt_v2/00000123/export.meta" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/session_bundle/testdata/half_plus_two_ckpt_v2/00000123/export.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/tpu/profiler/pip_package/build_pip_package.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/contrib/tpu/profiler/pip_package/build_pip_package.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/core/kernels/lmdb_reader_op.cc" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/core/kernels/lmdb_reader_op.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/docs_src/tutorials/mandelbrot.md" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/docs_src/tutorials/mandelbrot.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/docs_src/tutorials/pdes.md" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/docs_src/tutorials/pdes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/gl_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/gl_utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/integral_image.h" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/integral_image.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/sprite.h" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/sprite.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/utils_neon.cc" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/object_tracking/utils_neon.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/rgb2yuv.cc" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/rgb2yuv.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/rgb2yuv.h" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/android/jni/rgb2yuv.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/learn/examples_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/learn/examples_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/learn/resnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/learn/resnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/multibox_detector/data/surfers.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/examples/multibox_detector/data/surfers.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/go/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/go/test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/java/maven/release.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/java/maven/release.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/python/debug/examples/examples_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/python/debug/examples/examples_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/python/debug/lib/debug_service_pb2_grpc.py" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/python/debug/lib/debug_service_pb2_grpc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/android.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/android.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/android_full.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/android_full.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/benchmark.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/benchmark.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/cmake.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/cmake.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/configured" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/configured" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/docker_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/docker_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/hadoop.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/hadoop.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/integration_tests.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/integration_tests.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/libtensorflow.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/libtensorflow.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/pip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/pip.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/print_build_info.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/print_build_info.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/py_test_delegate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/py_test_delegate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/run_pip_tests.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/run_pip_tests.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/test_tutorials.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/test_tutorials.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/test_user_ops.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/test_user_ops.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/with_the_same_user" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/builds/with_the_same_user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/ci_build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/ci_build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/ci_parameterized_build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/ci_parameterized_build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/ci_sanity.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/ci_sanity.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/code_link_check.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/code_link_check.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/gpu_build/parallel_gpu_execute.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/gpu_build/parallel_gpu_execute.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/build_and_install_clang.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/build_and_install_clang.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_auditwheel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_auditwheel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_bazel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_bazel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_bootstrap_deb_packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_bootstrap_deb_packages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_buildifier.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_buildifier.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_cmake_for_clang.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_cmake_for_clang.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_deb_packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_deb_packages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_golang.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_golang.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_hadoop.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_hadoop.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_pi_toolchain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_pi_toolchain.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_pip_packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_pip_packages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_proto3.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_proto3.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_python3.5_pip_packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/install/install_python3.5_pip_packages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cmake/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cmake/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_cc_core.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_cc_core.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_py2_core.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_py2_core.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_py3_contrib.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_py3_contrib.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_py3_core.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/cpu/run_py3_core.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/gpu/run_cc_core.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/gpu/run_cc_core.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/gpu/run_py3_core.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/gpu/run_py3_core.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow_cpu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow_cpu.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow_docker.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow_docker.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow_gpu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/linux/libtensorflow_gpu.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/cpu/run_contrib.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/cpu/run_contrib.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/cpu/run_py2_cc_core.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/cpu/run_py2_cc_core.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/libtensorflow_cpu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/libtensorflow_cpu.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/libtensorflow_gpu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/osx/libtensorflow_gpu.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/pi/build_raspberry_pi.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/pi/build_raspberry_pi.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/protobuf/protobuf_optimized_pip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/protobuf/protobuf_optimized_pip.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/remote/remote_docker_build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/remote/remote_docker_build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/update_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/update_version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/windows/libtensorflow_cpu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/windows/libtensorflow_cpu.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/xla/linux/gpu/run_py3.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/ci_build/xla/linux/gpu/run_py3.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/build_server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/build_server.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/local_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/local_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/remote_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/remote_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/create_tf_cluster.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/create_tf_cluster.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/delete_tf_cluster.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/delete_tf_cluster.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/dist_census_widendeep_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/dist_census_widendeep_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/dist_mnist_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/dist_mnist_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/dist_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/dist_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/k8s_tensorflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/scripts/k8s_tensorflow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/server/grpc_tensorflow_server_wrapper.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/dist_test/server/grpc_tensorflow_server_wrapper.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/docker/parameterized_docker_build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/docker/parameterized_docker_build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/docker/run_jupyter.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/docker/run_jupyter.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/gcs_test/gcs_smoke.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/gcs_test/gcs_smoke.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/gcs_test/gcs_smoke_wrapper.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/gcs_test/gcs_smoke_wrapper.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/git/gen_git_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/git/gen_git_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/git/gen_git_source.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/git/gen_git_source.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/lib_package/concat_licenses.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/lib_package/concat_licenses.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/lib_package/libtensorflow_java_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/lib_package/libtensorflow_java_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/lib_package/libtensorflow_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/lib_package/libtensorflow_test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/pip_package/build_pip_package.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tensorflow/tools/pip_package/build_pip_package.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/gpus/crosstool/clang/bin/crosstool_wrapper_driver_is_not_gcc.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/gpus/crosstool/clang/bin/crosstool_wrapper_driver_is_not_gcc.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/crosstool/BUILD.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/crosstool/BUILD.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/crosstool/CROSSTOOL.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/crosstool/CROSSTOOL.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/crosstool/computecpp.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/crosstool/computecpp.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/sycl/BUILD.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/sycl/BUILD.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/sycl/build_defs.bzl.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/sycl/build_defs.bzl.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/sycl/platform.bzl.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/third_party/sycl/sycl/platform.bzl.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TensorFlow/tensorflow/tools/tf_env_collect.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TensorFlow/tensorflow/tools/tf_env_collect.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCV/image_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/openCV/image_collector.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="294" />
+    <option name="y" value="24" />
+    <option name="width" value="1281" />
+    <option name="height" value="732" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="openCV" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Desktop/video" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5acc512a-a0dd-49f7-a577-296de1b9b220" name="Default" comment="" />
+      <created>1525132166870</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525132166870</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17250673" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="R Packages" />
+      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>
