@@ -33,24 +33,6 @@ INIT
 '''
 # print('Initializing cameras...')
 
-#create new capture classes for
-#each camera (4)
-# try:
-#     RGBTopCap = Capture('RGBTopCamera')
-#     # IRTopCap = Capture('IRTopCamera', bus)
-#     # RGBBtmCap = Capture('RGBBtmCamera', bus)
-#     # IRBtmCap = Capture('IRBtmCamera', bus)
-#     #initialize them
-#     RGBTopCap.initializeCamera()
-#     # IRTopCap.initializeCamera()
-#     # RGBBtmCap.initializeCamera()
-#     # IRBtmCap.initializeCamera()
-# except PyCapture2.Fc2error as err:
-#     print('Failed initialization....')
-#     print('Exiting.')
-#     RGBTopCap.Camera.disconnect()
-#     bus = None
-
 
 def openWindows():
     for window, pos in windows.items():
@@ -71,7 +53,7 @@ MAIN LOOP
 # '''
 if __name__=='__main__':
     #Starting
-    # print("Starting.....")
+    #print("Starting.....")
     #open 4 windows for images
     openWindows()
     #thread Lock
@@ -81,10 +63,15 @@ if __name__=='__main__':
     punnet = Punnet()
 
     #set up workers
-    RGBTopThread = CamWorker(threadLock, punnet)
+    RGBTopThread = CamWorker(threadLock, punnet, 'RGBTop')
+    RGBTopThread.initCam()
     # IRTopThread = CamWorker(threadLock, punnet)
+    # IRTopThread.initCam()
     # RGBBtmThread = CamWorker(threadLock, punnet)
+    # RGBBtmThread.initCam()
     # IRBtmThread = CamWorker(threadLock, punnet)
+    # IRBtmThread.initCam()
+    
     # Start workers
     RGBTopThread.start()
     # IRTopThread.start()
@@ -92,7 +79,7 @@ if __name__=='__main__':
     # IRBtmThread.start()
 
     i=0
-    while(i < 1000):
+    while(i < 100):
         # res = cv2.resize(punnet.RGBTopImage,(500, 600), interpolation = cv2.INTER_CUBIC)
         threadLock.acquire()
         if(punnet.punnetNeedsDisplaying):
@@ -117,5 +104,4 @@ if __name__=='__main__':
     #     RGBTopCap.Camera.disconnect()
     #     print('Cant capture...')
     #     bus = None
-    bus = None
     cv2.destroyAllWindows()

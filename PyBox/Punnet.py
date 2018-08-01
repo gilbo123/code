@@ -12,7 +12,7 @@ class Punnet:
         self.RGBTopImage = None
         self.IRTopImage = None
         self.RGBBtmImage = None
-        self.IRTopImage = None
+        self.IRBtmImage = None
 
         self.status = 'Pass'
         self.dateTime = None

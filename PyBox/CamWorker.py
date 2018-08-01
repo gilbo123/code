@@ -3,7 +3,7 @@ from sys import exit
 import numpy as np
 import cv2
 import time
-import PyCapture2
+import PySpin
 from timeit import default_timer as timer
 
 threadLock = threading.Lock()
@@ -13,7 +13,7 @@ class CamWorker(threading.Thread):
     # Our workers constructor, note the super() 
     # method which is vital if we want this
     # to function properly
-    def __init__(self, lock, punnet):
+    def __init__(self, lock, punnet, camName):
         super(CamWorker, self).__init__()
         self.blank_img = np.zeros((600, 500, 3),dtype=np.uint8)
         self.cv_image = cv2.imread('/home/gilbert/Documents/code/'+
@@ -21,88 +21,109 @@ class CamWorker(threading.Thread):
 				'20180427_220416_0.jpg')
         self.lock = lock
         self.punnet = punnet
-        self.RGBTopCamera = None
-        #camera set up - RGBTop
-        self.bus = PyCapture2.BusManager()
-        #if busmanager invalid
-        try:
-            self.numCams = self.bus.getNumOfCameras()
-            print('Found cameras!')
-        except:
-            self.numCams = 0
-        #set up camera if available
-        if self.numCams == 0:
-            print("No suitable USB cameras found...")
-        else:
-            self.RGBTopCamera = PyCapture2.Camera()
-            # print(self.bus)
-            RGBTopUid = self.bus.getCameraFromIndex(0)
-            #RGBTopUid = self.bus.getCameraFromSerialNumber(15435621)
-            self.RGBTopCamera.connect(RGBTopUid)
-            self.RGBTopCamera.startCapture()
-	    self.camConf = self.RGBTopCamera.getConfiguration()
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.AUTO_EXPOSURE, autoManualMode = True)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.SHARPNESS, autoManualMode = True)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.SHUTTER, autoManualMode = False)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.GAIN, autoManualMode = False)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.FRAME_RATE, autoManualMode = True)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.AUTO_EXPOSURE, onOff = True)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.FRAME_RATE, onOff = True)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.GAMMA, onOff = True)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.SHARPNESS, onOff = False)
+	self.camName = camName
+	#check cam name 
+	if self.camName == 'RGBTop':
+	    self.camIndex = 0
+	elif self.camName == 'IRTop':
+	    self.camIndex = 1
+	elif self.camName == 'RGBBtm':
+	    self.camIndex = 2
+	elif self.camName == 'IRBtm':
+	    self.camIndex = 3
+	else:
+	    print('Camera Name not correct')
+	    exit()
+        self.cam = None
+	self.sys = None
+	self.cam_list = None
+	self.is_connected = False
 
-	    SHUTTER, GAIN = 500, 100
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.SHUTTER, absValue = SHUTTER/10)
-	    self.RGBTopCamera.setProperty(type = PyCapture2.PROPERTY_TYPE.GAIN, absValue = GAIN/20)
-	    # Configure trigger mode
-#	    triggerMode = c.getTriggerMode()
-#	    triggerMode.onOff = True
-#	    triggerMode.mode = 0
-#	    triggerMode.parameter = 0
-#	    triggerMode.source = 0    #Not sure???
-#	    self.RGBTopCamera.setTriggerMode(triggerMode)
-#	    self.RGBTopCamera.setConfiguration(grabTimeout = 5000)  
+
+
+    def initCam(self):
+	try:
+            # Retrieve singleton reference to system object
+            self.sys = PySpin.System.GetInstance()
+            # Retrieve list of cameras from the system
+            self.cam_list = self.sys.GetCameras()
+            # assign cam object to self.cam (one camera run)
+            self.cam = self.cam_list.GetByIndex(self.camIndex)
+            print(dir(self.cam))
+	    # initialize cam object
+            self.cam.Init()
+            self.is_connected = True
+
+	    #  Begin acquiring images
+            self.cam.BeginAcquisition()
+            print('Connected.....')
+	    return self.is_connected
+	    
+
+        except PySpin.SpinnakerException as ex:
+	    print('Error initializing - {}'.format(ex))
+            return False
+
+
+
 
     '''
     RUN
     '''
     def run(self):
         #do 10 for now
-        for i in range(1000):
+        for i in range(100):
             #time between images
             #time.sleep(.5)
             print("Capturing....")
             start = timer()
-            # check if camera is connected
-            if self.RGBTopCamera is not None:
-                #if so, get buffer
-                image = self.RGBTopCamera.retrieveBuffer()
-                #add buffer to numpy array
-                cv_image = np.array(image.getData(), dtype="uint8").reshape((image.getRows(), image.getCols()));
-                #convert to colour
-                cv_image = cv2.cvtColor(cv_image, cv2.COLOR_BAYER_BG2BGR)
-                # print(cv_image.shape)
-            #else, use the static image
-            ## TODO: Replace with folder images
-            else:
-                cv_image = self.cv_image
+            
+	    # check if camera is connected
+	    if self.cam_list > 0 and self.is_connected:
+		#  Retrieve next received image
+                raw_image = self.cam.GetNextImage()
+		image = raw_image.GetNDArray()
+		image = cv2.cvtColor(image, cv2.COLOR_BAYER_BG2BGR)	
+		filename = self.camName + '-%d.jpg' % i
+                #image.Release()
 
-            #get an object lock
+	    else:
+		#get image from file
+		image = self.cv_image
+
+            #Save image
+	    #cv2.imwrite(filename, image)
+
+	    #get an object lock
             self.lock.acquire()
-            #add the image to the parent punnet
-            self.punnet.RGBTopImage = cv_image
-            #set display flag
+
+            #add the image to the parent punnet 
+	    if self.camName == 'RGBTop':
+	    	self.punnet.RGBTopImage = image
+	    elif self.camName == 'IRTop':
+		self.punnet.IRTopImage = image
+	    elif self.camName == 'RGBBtm':
+		self.punnet.RGBBtmImage = image
+	    elif self.camName == 'IRBtm':
+		self.punnet.IRBtmImage = image
+            
+	    #set display flag
             self.punnet.punnetNeedsDisplaying = True
             end = timer()
             duration = end - start
             print(duration)
-            self.lock.release()
+            
+	    #release lock
+	    self.lock.release()
 
         #if the camera is connected,
-        # MUST disconnect to stop
-        # 'Invalid Bus Manager' error
-        if self.RGBTopCamera is not None:
-            print('Disconnecting camera....')
-            self.RGBTopCamera.stopCapture()
-            self.RGBTopCamera.disconnect()
-        self.bus = None
+	# End acquisition
+	if self.is_connected:
+	    #release image 
+	    raw_image.Release()
+	    time.sleep(2)
+	    # Deinitialize camera 
+            self.cam.EndAcquisition()
+	    self.cam.DeInit()
+	    del self.cam
+
