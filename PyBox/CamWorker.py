@@ -17,7 +17,7 @@ class CamWorker(threading.Thread):
     # Our workers constructor, note the super() 
     # method which is vital if we want this
     # to function properly
-    def __init__(self, lock, sys, punnet, camName):
+    def __init__(self, lock, sys, cam_list, punnet, camName):
         super(CamWorker, self).__init__()
         self.blank_img = np.zeros((600, 500, 3),dtype=np.uint8)
         self.cv_image = cv2.imread('/home/gilbert/Documents/code/'+
@@ -27,6 +27,7 @@ class CamWorker(threading.Thread):
         self.punnet = punnet
 	self.camName = camName
 	self.sys = sys
+	self.cam_list = cam_list
 	#check cam name 
 	if self.camName == 'RGBTop':
 	    self.camIndex = 0
@@ -40,8 +41,6 @@ class CamWorker(threading.Thread):
 	    print('Camera Name not correct')
 	    exit()
         self.cam = None
-	self.sys = None
-	self.cam_list = None
 	self.is_connected = False
 
 
@@ -61,25 +60,16 @@ class CamWorker(threading.Thread):
 
     def initCam(self):
 	try:
-            # Retrieve singleton reference to system object
-            self.sys = PySpin.System.GetInstance()
-            # Retrieve list of cameras from the system
-            self.cam_list = self.sys.GetCameras()
-            # assign cam object to self.cam (one camera run)
+	    #set the camera for this instance
             self.cam = self.cam_list.GetByIndex(self.camIndex)
-            #print(dir(self.cam))
 	    
 	    #set cam parameters
 	    #setParams(self.cam, TRIG.TRIGGER_ON)
 	      
-
-
 	    # initialize cam object
             self.cam.Init()
             self.is_connected = True
 
-
-	    
             # get nodemap
             nodemap = self.cam.GetNodeMap()
             node_trigger_mode = PySpin.CEnumerationPtr(nodemap.GetNode('TriggerMode'))
@@ -139,7 +129,7 @@ class CamWorker(threading.Thread):
 	    else:
 		#get image from file
 		image = self.cv_image
-		time.sleep(.02)
+		time.sleep(.005)
 
             #Save image
 	    #cv2.imwrite(filename, image)

@@ -70,18 +70,18 @@ if __name__=='__main__':
 
 
     #set up workers
-    RGBTopThread = CamWorker(threadLock, sys, punnet, 'RGBTop')
+    RGBTopThread = CamWorker(threadLock, sys, cam_list, punnet, 'RGBTop')
     RGBTopThread.initCam()
-    IRTopThread = CamWorker(threadLock, sys, punnet, 'IRTop')
+    IRTopThread = CamWorker(threadLock, sys, cam_list, punnet, 'IRTop')
     IRTopThread.initCam()
-    #RGBBtmThread = CamWorker(threadLock, sys, punnet, 'RGBBtm')
+    #RGBBtmThread = CamWorker(threadLock, sys, cam_list, punnet, 'RGBBtm')
     #RGBBtmThread.initCam()
-    #IRBtmThread = CamWorker(threadLock, sys, punnet, 'IRBtm')
+    #IRBtmThread = CamWorker(threadLock, sys, cam_list, punnet, 'IRBtm')
     #IRBtmThread.initCam()
     
     # Start workers
     RGBTopThread.start()
-    time.sleep(.02)
+    time.sleep(.05)
     IRTopThread.start()
     #RGBBtmThread.start()
     #IRBtmThread.start()
@@ -92,7 +92,7 @@ if __name__=='__main__':
         threadLock.acquire()
         if(punnet.punnetNeedsDisplaying):
 
-            #print(punnet.RGBTopImage.shape)
+            print(punnet.RGBTopImage.shape)
             cv2.imshow('RGBTop', punnet.RGBTopImage)
 	    cv2.imshow('IRTop', punnet.IRTopImage)
             punnet.punnetNeedsDisplaying = False
@@ -113,4 +113,5 @@ if __name__=='__main__':
     #     RGBTopCap.Camera.disconnect()
     #     print('Cant capture...')
     #     bus = None
+    print('Finished')
     cv2.destroyAllWindows()
