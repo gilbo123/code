@@ -4,7 +4,7 @@ import threading
 import time
 import cv2
 import numpy as np
-import PyCapture2
+import PySpin
 
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -62,33 +62,42 @@ if __name__=='__main__':
     #hold images and attributes
     punnet = Punnet()
 
+    # Retrieve singleton reference to system object
+    sys = PySpin.System.GetInstance()
+    # Retrieve list of cameras from the system
+    cam_list = sys.GetCameras()
+    print(cam_list.GetSize())
+
+
     #set up workers
-    RGBTopThread = CamWorker(threadLock, punnet, 'RGBTop')
+    RGBTopThread = CamWorker(threadLock, sys, punnet, 'RGBTop')
     RGBTopThread.initCam()
-    # IRTopThread = CamWorker(threadLock, punnet)
-    # IRTopThread.initCam()
-    # RGBBtmThread = CamWorker(threadLock, punnet)
-    # RGBBtmThread.initCam()
-    # IRBtmThread = CamWorker(threadLock, punnet)
-    # IRBtmThread.initCam()
+    IRTopThread = CamWorker(threadLock, sys, punnet, 'IRTop')
+    IRTopThread.initCam()
+    #RGBBtmThread = CamWorker(threadLock, sys, punnet, 'RGBBtm')
+    #RGBBtmThread.initCam()
+    #IRBtmThread = CamWorker(threadLock, sys, punnet, 'IRBtm')
+    #IRBtmThread.initCam()
     
     # Start workers
     RGBTopThread.start()
-    # IRTopThread.start()
-    # RGBBtmThread.start()
-    # IRBtmThread.start()
+    time.sleep(.02)
+    IRTopThread.start()
+    #RGBBtmThread.start()
+    #IRBtmThread.start()
 
     i=0
-    while(i < 100):
+    while(i < 99):
         # res = cv2.resize(punnet.RGBTopImage,(500, 600), interpolation = cv2.INTER_CUBIC)
         threadLock.acquire()
         if(punnet.punnetNeedsDisplaying):
 
-            print(punnet.RGBTopImage.shape)
+            #print(punnet.RGBTopImage.shape)
             cv2.imshow('RGBTop', punnet.RGBTopImage)
+	    cv2.imshow('IRTop', punnet.IRTopImage)
             punnet.punnetNeedsDisplaying = False
 
-            cv2.waitKey(10)
+            cv2.waitKey(1)
             i+=1
         threadLock.release()
 
