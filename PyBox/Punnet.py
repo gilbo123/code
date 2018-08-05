@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import numpy as np
-import PyCapture2
 from timeit import default_timer as timer
 
 

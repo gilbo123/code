@@ -6,13 +6,20 @@ import time
 import PySpin
 from timeit import default_timer as timer
 
-threadLock = threading.Lock()
-
-class TRIG:
-    TRIGGER_ON = True
-    TRIGGER_OFF = False
 
 
+'''
+Worker class - feeds the main thread with images from 
+	various cameras. 
+
+Inherits: Thread
+Args: 1. lock - threadlock from main
+      2. sys - PySpin system instance
+      3. cam_list - list of all cameras
+      4. punnet - global punnet object
+      5. camName - camera name to determine image type
+
+'''
 class CamWorker(threading.Thread):
     # Our workers constructor, note the super() 
     # method which is vital if we want this
@@ -23,6 +30,7 @@ class CamWorker(threading.Thread):
         self.cv_image = cv2.imread('/home/gilbert/Documents/code/'+
 				'openCV/transfer_learn/berries/pass/'+
 				'20180427_220416_0.jpg')
+        self.stopSignal = False
         self.lock = lock
         self.punnet = punnet
 	self.camName = camName
@@ -30,9 +38,9 @@ class CamWorker(threading.Thread):
 	self.cam_list = cam_list
 	#check cam name 
 	if self.camName == 'RGBTop':
-	    self.camIndex = 0
-	elif self.camName == 'IRTop':
 	    self.camIndex = 1
+	elif self.camName == 'IRTop':
+	    self.camIndex = 0
 	elif self.camName == 'RGBBtm':
 	    self.camIndex = 2
 	elif self.camName == 'IRBtm':
@@ -44,48 +52,97 @@ class CamWorker(threading.Thread):
 	self.is_connected = False
 
 
-
-     
     
-    #def setParams(self, cam, triggerMode):
-#	try:
-	    
-
-#	except PySpin.SpinnakerException as ex:
- #           print 'Error: %s' % ex
-  #          return False	
-
-
-
-
+    #Finds the camera by name, sets relevant params
+    # and finally, initialises the camera
     def initCam(self):
 	try:
 	    #set the camera for this instance
-            self.cam = self.cam_list.GetByIndex(self.camIndex)
+            self.cam = self.cam_list.GetBySerial('16097126')
 	    
-	    #set cam parameters
-	    #setParams(self.cam, TRIG.TRIGGER_ON)
-	      
 	    # initialize cam object
             self.cam.Init()
             self.is_connected = True
 
-            # get nodemap
-            nodemap = self.cam.GetNodeMap()
-            node_trigger_mode = PySpin.CEnumerationPtr(nodemap.GetNode('TriggerMode'))
-            if not PySpin.IsAvailable(node_trigger_mode) or not PySpin.IsReadable(node_trigger_mode):
-                print 'Unable to disable trigger mode (node retrieval). Aborting...'
-                return False
 
-	    #should be a check before setting every param??
-	    
-	    #set hardware trigger
-	    node_trigger_source = PySpin.CEnumerationPtr(nodemap.GetNode('TriggerSource'))
-	    node_trigger_source_hardware = node_trigger_source.GetEntryByName('Line0')
-	    node_trigger_source.SetIntValue(node_trigger_source_hardware.GetValue())
-	    #turn on trigger
-	    node_trigger_mode_on = node_trigger_mode.GetEntryByName('Off')
-	    node_trigger_mode.SetIntValue(node_trigger_mode_on.GetValue())
+            #only set params of colour cam
+	    if self.camName == 'RGBTop' or self.camName == 'RGBBtm':
+		    '''
+		    Get NodeMap for parameter setting
+		    '''
+		    # get nodemap
+		    nodemap = self.cam.GetNodeMap()
+		    node_trigger_mode = PySpin.CEnumerationPtr(nodemap.GetNode('TriggerMode'))
+		    #Check the IsAvailable() and IsReadable() once. The examples
+		    #check these for each step of the parameter setting, not sure
+		    #if needed?  
+		    if not PySpin.IsAvailable(node_trigger_mode) or not PySpin.IsReadable(node_trigger_mode):
+		    	print 'Unable to disable trigger mode (node retrieval). Aborting...'
+		    	exit()
+		    
+		    '''
+		    Set TRIGGER
+		    '''
+		    #set hardware trigger
+		    node_trigger_source = PySpin.CEnumerationPtr(nodemap.GetNode('TriggerSource'))
+		    node_trigger_source_hardware = node_trigger_source.GetEntryByName('Line0')
+		    node_trigger_source.SetIntValue(node_trigger_source_hardware.GetValue())
+		    #turn on trigger
+		    node_trigger_mode_on = node_trigger_mode.GetEntryByName('Off')
+		    node_trigger_mode.SetIntValue(node_trigger_mode_on.GetValue())
+
+
+		    '''
+		    Set EXPOSURE
+		    '''
+		    #set exposure mode
+		    node_exp = PySpin.CEnumerationPtr(nodemap.GetNode('ExposureAuto'))
+		    node_exp_mode = node_exp.GetEntryByName('Off')
+		    node_exp.SetIntValue(node_exp_mode.GetValue())
+		    node_exp_timed = PySpin.CEnumerationPtr(nodemap.GetNode('ExposureMode'))
+		    node_exp_timed_val = node_exp_timed.GetEntryByName('Timed')
+		    node_exp_timed.SetIntValue(node_exp_timed_val.GetValue())
+		    #set exposure time
+		    node_var = PySpin.CFloatPtr(nodemap.GetNode('ExposureTime'))
+		    node_var.SetValue(2000)#23872 - max
+
+
+		    '''
+		    Set pgr_EXPOSURE_COMPENSATION
+		    '''
+		    #set point grey automatic exposure compensation - off
+		    node_pgr_comp = PySpin.CEnumerationPtr(nodemap.GetNode('pgrExposureCompensationAuto'))
+		    node_pgr_comp_mode = node_pgr_comp.GetEntryByName('Off')
+		    node_pgr_comp.SetIntValue(node_pgr_comp_mode.GetValue())
+
+
+		    '''
+		    Set GAIN
+		    '''
+		    #set point grey automatic gain - off
+		    node_gain = PySpin.CEnumerationPtr(nodemap.GetNode('GainAuto'))
+		    node_gain_mode = node_gain.GetEntryByName('Off')
+		    node_gain.SetIntValue(node_gain_mode.GetValue())
+		    #set exposure time
+		    node_gain_val = PySpin.CFloatPtr(nodemap.GetNode('Gain'))
+		    node_gain_val.SetValue(10)#30 - max
+
+
+
+		    '''
+		    Set WHITE_BALANCE
+		    '''
+		    #set exposure mode
+	#           node_exp = PySpin.CEnumerationPtr(nodemap.GetNode('BalanceWhiteAuto'))
+	#           node_exp_mode = node_exp.GetEntryByName('Off')
+	#           node_exp.SetIntValue(node_exp_mode.GetValue())
+	#           node_exp_timed = PySpin.CEnumerationPtr(nodemap.GetNode('BalanceRatioSelector'))
+	#           node_exp_timed_val = node_exp_timed.GetEntryByName('Red')
+	#           node_exp_timed.SetIntValue(node_exp_timed_val.GetValue())
+		    #set exposure time
+	#           node_var = PySpin.CFloatPtr(nodemap.GetNode('BalanceRatio'))
+	#           node_var.SetValue(1.22)#4 - max
+
 
 
 	    #  Begin acquiring images
@@ -95,7 +152,7 @@ class CamWorker(threading.Thread):
 	    
 
         except PySpin.SpinnakerException as ex:
-	    print('Error initializing - {}'.format(ex))
+	    print('Error initializing {0} - {1}'.format(self.camName, ex))
 	    #camera not connected,
 	    #index = -1
 	    self.camIndex = -1 
@@ -103,6 +160,15 @@ class CamWorker(threading.Thread):
 
 
 
+    def stop(self):
+        self.stopSignal = True      
+        #release image 
+        #raw_image.Release()
+        # Deinitialize camera 
+        self.cam.EndAcquisition()
+        self.cam.DeInit()
+        del self.cam
+        print('DONE DONE DONE!')
 
 
 
@@ -111,62 +177,67 @@ class CamWorker(threading.Thread):
     RUN
     '''
     def run(self):
-        #do 10 for now
-        for i in range(100):
-            #time between images
-            #time.sleep(.5)
-            print("Capturing....")
-            start = timer()
-            
+        while(not self.stopSignal):
+	    #time between images
+	    print("Capturing....")
+	    start = timer()
+	    
+	    #image placeholder
+	    image = None
 	    # check if camera is connected
 	    if self.camIndex > -1 and self.is_connected:
 		#  Retrieve next received image
-                raw_image = self.cam.GetNextImage()
-		image = raw_image.GetNDArray()
-		image = cv2.cvtColor(image, cv2.COLOR_BAYER_BG2BGR)	
-		filename = self.camName + '-%d.jpg' % i
-
+		try:
+		    raw_image = self.cam.GetNextImage() #Timeout in ms
+		    image = raw_image.GetNDArray()
+		    image = cv2.cvtColor(image, cv2.COLOR_BAYER_BG2BGR)
+                    print('Image acquired!')
+		    #filename = self.camName + '-%d.jpg' % i
+		except:
+		    print('Camera Timeout!')
 	    else:
 		#get image from file
 		image = self.cv_image
-		time.sleep(.005)
+		time.sleep(.05)
 
-            #Save image
+	    #Save image
 	    #cv2.imwrite(filename, image)
 
 	    #get an object lock
-            self.lock.acquire()
+	    self.lock.acquire()
 
-            #add the image to the parent punnet 
+	    #add the image to the parent punnet 
 	    if self.camName == 'RGBTop':
 		print('RGBTop image')
-	    	self.punnet.RGBTopImage = image	
+		self.punnet.punnetNeedsDisplaying = True
+		self.punnet.RGBTopImage = image	
 	    elif self.camName == 'IRTop':
 		print('IRTop image')
 		self.punnet.IRTopImage = image
-                self.punnet.punnetNeedsDisplaying = True
 	    elif self.camName == 'RGBBtm':
 		print('RGBBtm image')
 		self.punnet.RGBBtmImage = image
 	    elif self.camName == 'IRBtm':
 		print('IRBtm image')
 		self.punnet.IRBtmImage = image
-            
+	    
 	    #set display flag
-            end = timer()
-            duration = end - start
-            print(duration)
-            
+	    end = timer()
+	    duration = end - start
+	    print(duration)
+	    
 	    #release lock
 	    self.lock.release()
 
-        #if the camera is connected,
+	#if the camera is connected,
 	# End acquisition
-	if self.is_connected:
+	#if self.is_connected:
 	    #release image 
-	    raw_image.Release()
+	#    raw_image.Release()
 	    # Deinitialize camera 
-            self.cam.EndAcquisition()
-	    self.cam.DeInit()
-	    del self.cam
+	#    self.cam.EndAcquisition()
+	#    self.cam.DeInit()
+	#    del self.cam
+        #    print('DONE DONE DONE!')
+
 

@@ -3,6 +3,7 @@
 import threading
 import time
 import cv2
+from sys import exit
 import numpy as np
 import PySpin
 
@@ -18,28 +19,30 @@ from CamWorker import CamWorker
 '''
 VARS
 '''
-winSize = 300
+winHeight = 300 #1200/4
+winWidth = 480 #1920/4
 winCorner = 5
-borderSpace = 80
+borderSpace = 40
+row_space = 20
+col_space = 5
 
-windows = {'RGBTop': [winCorner, winCorner], 'IRTop': [winCorner, winCorner + winSize + borderSpace ],
-            'RGBBtm': [winCorner + winSize + borderSpace, winCorner], 'IRBtm':[winCorner + winSize + borderSpace, winCorner + winSize + borderSpace]}
 
+#'WinName':[cols, rows]
+windows = {'RGBTop': [winCorner, winCorner], 'IRTop': [winCorner + winWidth + borderSpace + row_space, winCorner ],
+            'RGBBtm': [winCorner, winCorner + winHeight + borderSpace + col_space], 'IRBtm':[winCorner + winWidth + 
+	    borderSpace + row_space, winCorner + winHeight + borderSpace + col_space]}
 
 
 
 '''
-INIT
+INIT WINDOWS
 '''
-# print('Initializing cameras...')
-
-
 def openWindows():
     for window, pos in windows.items():
         # print(window)
-        blank_img = np.zeros((600, 500, 3),dtype=np.uint8)
+        blank_img = np.zeros((winHeight, winWidth, 3),dtype=np.uint8)
         cv2.namedWindow(window, cv2.WINDOW_NORMAL)
-        cv2.resizeWindow(window, winSize, winSize)
+        cv2.resizeWindow(window, winWidth, winHeight)
         cv2.imshow(window, blank_img)
         h = pos[0]
         w = pos[1]
@@ -52,8 +55,6 @@ def openWindows():
 MAIN LOOP
 # '''
 if __name__=='__main__':
-    #Starting
-    #print("Starting.....")
     #open 4 windows for images
     openWindows()
     #thread Lock
@@ -64,16 +65,17 @@ if __name__=='__main__':
 
     # Retrieve singleton reference to system object
     sys = PySpin.System.GetInstance()
+    #print(dir(sys))
     # Retrieve list of cameras from the system
     cam_list = sys.GetCameras()
-    print(cam_list.GetSize())
+    #print(cam_list.GetSize())
 
 
     #set up workers
     RGBTopThread = CamWorker(threadLock, sys, cam_list, punnet, 'RGBTop')
     RGBTopThread.initCam()
-    IRTopThread = CamWorker(threadLock, sys, cam_list, punnet, 'IRTop')
-    IRTopThread.initCam()
+    #IRTopThread = CamWorker(threadLock, sys, cam_list, punnet, 'IRTop')
+    #IRTopThread.initCam()
     #RGBBtmThread = CamWorker(threadLock, sys, cam_list, punnet, 'RGBBtm')
     #RGBBtmThread.initCam()
     #IRBtmThread = CamWorker(threadLock, sys, cam_list, punnet, 'IRBtm')
@@ -82,36 +84,34 @@ if __name__=='__main__':
     # Start workers
     RGBTopThread.start()
     time.sleep(.05)
-    IRTopThread.start()
+    #IRTopThread.start()
+    #time.sleep(.05)
     #RGBBtmThread.start()
+    #time.sleep(.05)
     #IRBtmThread.start()
 
     i=0
-    while(i < 99):
-        # res = cv2.resize(punnet.RGBTopImage,(500, 600), interpolation = cv2.INTER_CUBIC)
+    while(True):	
+        #get a lock on the punnet
         threadLock.acquire()
         if(punnet.punnetNeedsDisplaying):
 
             print(punnet.RGBTopImage.shape)
             cv2.imshow('RGBTop', punnet.RGBTopImage)
-	    cv2.imshow('IRTop', punnet.IRTopImage)
+            #cv2.imshow('IRTop', punnet.IRTopImage)
+            #cv2.imshow('RGBBtm', punnet.RGBBtmImage)
+            #cv2.imshow('IRBtm', punnet.IRBtmImage)
             punnet.punnetNeedsDisplaying = False
 
-            cv2.waitKey(1)
+            k = cv2.waitKey(33)
+            if k==27:    # Esc key to stop
+                RGBTopThread.stop()
+                RGBTopThread = None
+                cv2.destroyAllWindows()
+                break
+
             i+=1
         threadLock.release()
-
-    # try:
-    #     for i in range(10):
-    #         if(RGBTopCap.Camera != None):
-    #             print('Capturing.....')
-    #             img = RGBTopCap.grabImage()
-    #             cv2.imshow('RGB-Top', img)
-    #             cv2.waitKey(0)
-    #
-    # except:
-    #     RGBTopCap.Camera.disconnect()
-    #     print('Cant capture...')
-    #     bus = None
+    
     print('Finished')
-    cv2.destroyAllWindows()
+    exit()
