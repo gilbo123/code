@@ -1,12 +1,11 @@
 # import the necessary packages
 from keras.applications import ResNet50
 from keras.preprocessing.image import load_img
-from keras.preprocessing.image import apply_transform
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.svm import SVC
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, precision_recall_fscore_support
 from sklearn.metrics import accuracy_score
 from sklearn.externals import joblib
 from matplotlib import pyplot as plt
@@ -38,6 +37,9 @@ args = {
     "class_1": "../berries/under/",
     "class_2": "../berries/pass/",
 }
+
+#number of fold tests
+k = 10
 
 #batch size
 bs = 16
@@ -112,7 +114,7 @@ for i in np.arange(0, len(imagePaths), bs):
     features = model.predict(batchImages, batch_size=bs)
     # reshape the features so that each image is represented by
     # a flattened feature vector of the `MaxPooling2D` outputs
-    features = features.reshape((features.shape[0], 2048))
+    features = features.reshape((features.shape[0], 18432))
     # show the data matrix shape and amount of memory it consumes
     # print(features.shape)
     # print(features.nbytes)
@@ -143,7 +145,7 @@ labels = le.fit_transform(classLabels)
 
 # determine the index of the training and testing split (75% for
 # training and 25% for testing)
-i = int(data.shape[0] * 0.75)
+#i = int(data.shape[0] * 0.75)
 
 # print(data[:i])
 # print(labels[:i])
@@ -151,58 +153,61 @@ i = int(data.shape[0] * 0.75)
 # print(data[i:])
 # print(labels[i:])
 
-# define the set of parameters that we want to tune then start a
-# grid search where we evaluate our model for each value of C
-# print("[INFO] tuning hyperparameters...")
-# params = {"C": [0.0001, 0.001, 0.01, 0.1, 1.0]}
-# clf = GridSearchCV(LogisticRegression(), params, cv=3, n_jobs=-1)
-# clf.fit(data[:i], labels[:i])
-# print("[INFO] best hyperparameters: {}".format(clf.best_params_))
-#
-# # generate a classification report for the model
-# print("[INFO] evaluating...")
-# preds = clf.predict(data[i:])
-# print(classification_report(labels[i:], preds, target_names=le.classes_))
-#
-# # compute the raw accuracy with extra precision
-# acc = accuracy_score(labels[i:], preds)
-# print("[INFO] score: {}".format(acc))
+#set up k-fold split
+skf = StratifiedKFold(n_splits=k)
 
-# Set the parameters by cross-validation
-tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
-                     'C': [1, 10, 100, 1000]},
-                    {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
+#array to store resuls
+k_res = np.zeros(k)
 
-scores = ['precision', 'recall']
+i=0
 
-for score in scores:
-    print("# Tuning hyper-parameters for %s" % score)
-    print()
+#perform k tests
+for train_index, test_index in skf.split(data, labels):
+    print("TRAIN:", train_index, "TEST:", test_index)
+    X_train, X_test = data[train_index], data[test_index]
+    y_train, y_test = labels[train_index], labels[test_index]
 
-    clf = GridSearchCV(SVC(C=1), tuned_parameters, cv=5, scoring=score)
-    clf.fit(data[:i], labels[:i])
 
-    print("Best parameters set found on development set:")
-    print()
-    print(clf.best_estimator_)
-    print()
-    print("Grid scores on development set:")
-    print()
-    for params, mean_score, scores in clf.grid_scores_:
-        print("%0.3f (+/-%0.03f) for %r"
-              % (mean_score, scores.std() / 2, params))
-    print()
+    # define the set of parameters that we want to tune then start a
+    # grid search where we evaluate our model for each value of C
+    print("[INFO] tuning hyperparameters...")
+    params = {"C": [0.0001, 0.001, 0.01, 0.1, 1.0]}
+    clf = GridSearchCV(LogisticRegression(), params, cv=3, n_jobs=-1)
+    clf.fit(X_train, y_train)
+    print("[INFO] best hyperparameters: {}".format(clf.best_params_))
 
-    print("Detailed classification report:")
-    print()
-    print("The model is trained on the full development set.")
-    print("The scores are computed on the full evaluation set.")
-    print()
-    y_true, y_pred = labels[i:], clf.predict(data[i:])
-    print(classification_report(y_true, y_pred))
-    print()
+    # generate a classification report for the model
+    print("[INFO] evaluating...")
+    preds = clf.predict(X_test)
+    #print(classification_report(y_test, preds, target_names=le.classes_))
+    p, r, f1, s = precision_recall_fscore_support(y_test, preds)
+    
+    print(p)
+    print(r)
+    print(f1)
+    print(s)
 
-pickle.dump(clf, open("resnet_model_new.pkl", 'w'))
+    # compute the raw accuracy with extra precision
+    acc = accuracy_score(y_test, preds)
+    print("[INFO] score: {}".format(acc))
+
+    if f1[0] > np.max(k_res) or f1[1] > np.max(k_res):
+        print('[INFO] saving model..')
+        pickle.dump(clf, open("resnet_model_new.pkl", 'w'))
+
+    #add to array
+    k_res[i] = np.average(f1)
+    i+=1
+
+
+print('Array: {}'.format(k_res))
+print('Mean: {}'.format(np.mean(k_res)))
+print('Range: {}'.format(np.ptp(k_res)))
+print('Std Dev: {}'.format(np.std(k_res)))
+
+
+
+
 
 #define the set of parameters that we want to tune then start a
 #grid search where we evaluate our model for each value of C

@@ -96,7 +96,7 @@ class Functions:
 
         #small = cv2.resize(masked, (0,0), fx=0.5, fy=0.5)
         # resize to ResNet image input size
-        res = cv2.resize(destRGB, dsize=(224, 224), interpolation=cv2.INTER_CUBIC)
+        res = cv2.resize(destRGB, dsize=(100, 100), interpolation=cv2.INTER_CUBIC)
 
         # cv2.imshow("image", masked)
         # cv2.imshow("image2", res)
