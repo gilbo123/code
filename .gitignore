@@ -9,6 +9,7 @@
 *.gif
 *.pgm
 *.eps
+*.svg
 
 #Generated punnet text files
 */RGB/*.txt
