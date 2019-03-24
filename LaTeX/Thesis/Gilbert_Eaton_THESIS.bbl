@@ -98,6 +98,27 @@ L.~F.~S. Pereira, S.~B. Jr., N.~A. Valous, and D.~F. Barbin, ``Predicting the
   ripening of papaya fruit with digital imaging and random forests,'' {\em
   Computers and Electronics in Agriculture}, vol.~145, pp.~76--82, 2018.
 
+\bibitem{mebatsion}
+H.~Mebatsion, J.~Paliwal, and D.~Jayas, ``Automatic classification of
+  non-touching cereal grains in digital images using limited morphological and
+  color features,'' {\em Computers and Electronics in Agriculture}, vol.~90,
+  pp.~99--105, 2013.
+
+\bibitem{szczypinski}
+P.~M. Szczypiński, A.~Klepaczko, and P.~Zapotoczny, ``Identifying barley
+  varieties by computer vision,'' {\em Computers and Electronics in
+  Agriculture}, vol.~110, pp.~1--8, 2015.
+
+\bibitem{mohammadi}
+V.~Mohammadi, K.~Kheiralipour, and M.~Ghasemi-Varnamkhasti, ``Detecting
+  maturity of persimmon fruit based on image processing technique,'' {\em
+  Scientia Horticulturae}, vol.~184, pp.~123--128, 2015.
+
+\bibitem{muhammad}
+G.~Muhammad, ``Date fruits classification using texture descriptors and
+  shape-size features,'' {\em Engineering Applications of Artificial
+  Intelligence}, vol.~37, pp.~361--367, 2015.
+
 \bibitem{brosnan}
 T.~Brosnan and D.-W. Sun, ``Inspection and grading of agricultural and food
   products by computer vision systems - a review,'' {\em Computers and
@@ -112,6 +133,32 @@ X.~Liming and Z.~Yanchao, ``Automated strawberry grading system based on image
 S.~R. Dubey and A.~S. Jalal, ``Application of image processing in fruit and
   vegetable analysis: A review,'' {\em Journal of Intelligent Systems},
   vol.~24(4), pp.~405--424, 2015.
+
+\bibitem{sofu}
+M.~Sofu, O.~Er, M.~Kayacan, and B.~Cetisli, ``Design of an automatic apple
+  sorting system using machine vision,'' {\em Computers and Electronics in
+  Agriculture}, vol.~127, pp.~395--405, 2016.
+
+\bibitem{baigvand}
+M.~Baigvand, A.~Banakar, S.~Minaei, J.~Khodaei, and N.~Behroozi-Khazaei,
+  ``Machine vision system for grading of dried figs,'' {\em Computers and
+  Electronics in Agriculture}, vol.~119, pp.~158--165, 2015.
+
+\bibitem{lee}
+D.-J. Lee, R.~Schoenberger, J.~Archibald, and S.~McCollum, ``Development of a
+  machine vision system for automatic date grading using digital reflective
+  near-infrared imaging,'' {\em Journal of Food Engineering}, vol.~86,
+  pp.~388--398, 2008.
+
+\bibitem{zhang}
+Y.~Zhang, S.~Wang, G.~Ji, and P.~Phillips, ``Fruit classification using
+  computer vision and feedforward neural network,'' {\em Journal of Food
+  Engineering}, vol.~143, pp.~167--177, 2014.
+
+\bibitem{zuniga}
+A.~Zuñiga, M.~Mora, M.~Oyarce, and C.~Fredes, ``Grape maturity estimation
+  based on seed images and neural networks,'' {\em Engineering Applications of
+  Artificial Intelligence}, vol.~35, pp.~95--104, 2014.
 
 \bibitem{wang}
 C.~Wang, X.~Li, W.~Wang, Y.~Feng, Z.~Zhou, and H.~Zhan, ``Recognition of
@@ -149,5 +196,10 @@ Y.~A. Ohali, ``Computer vision based date fruit grading system: Design and
 F.~Sa’ad, M.~Ibrahim, A.~Shakaff, A.~Zakaria, and M.~Abdullah, ``Shape and
   weight grading of mangoes using visible imaging,'' {\em Computers and
   Electronics in Agriculture}, vol.~115, pp.~51--56, 2015.
+
+\bibitem{makky}
+M.~Makky and P.~Soni, ``Development of an automatic grading machine for oil
+  palm fresh fruits bunches (ffbs) based on machine vision,'' {\em Computers
+  and Electronics in Agriculture}, vol.~93, pp.~129--139, 2013.
 
 \end{thebibliography}
