@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{Doc-Start}{ABSTRACT}{}% 1
+\BOOKMARK [1][-]{Doc-Start}{Statement of Originality}{}% 2
+\BOOKMARK [1][-]{Doc-Start}{Acknowledgements}{}% 3
+\BOOKMARK [1][-]{Doc-Start}{Publications}{}% 4
+\BOOKMARK [2][-]{subsection.0.1}{First-Author Publications}{Doc-Start}% 5
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 6
+\BOOKMARK [2][-]{subsection.1.1}{Industry Partner}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.2}{Project Description and Requirements}{section.1}% 8
+\BOOKMARK [1][-]{section.2}{Current Industry Methods and Review of Literature}{}% 9
+\BOOKMARK [2][-]{subsection.2.1}{Image Processing in Produce Grading}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.2}{Strawberry Image Processing}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.3}{Machine Learning / Deep Learning Methods}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.4}{Control Systems}{section.2}% 13
+\BOOKMARK [1][-]{section.3}{I - Prototype and Research}{}% 14
+\BOOKMARK [2][-]{subsection.3.1}{Design and Construction}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Specular Reflections}{subsection.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Electronics}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Power Requirements}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Hardware}{subsection.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.3}{Software}{section.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.3.1}{User Interface}{subsection.3.3}% 21
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Asynchronous Grabbing}{subsection.3.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Hardware Control}{subsection.3.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Image Processing}{subsection.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.4}{Implementation and Results}{section.3}% 25
+\BOOKMARK [1][-]{section.4}{II - Production Integration}{}% 26
+\BOOKMARK [1][-]{section.5}{III - System Reconfiguration and Redesign}{}% 27
+\BOOKMARK [1][-]{section.6}{IV - Linux and Deep Learning}{}% 28
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 29
