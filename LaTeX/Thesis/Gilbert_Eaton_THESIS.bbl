@@ -1,0 +1,153 @@
+\begin{thebibliography}{10}
+
+\bibitem{menze}
+M.~Menze and A.~Geiger, ``Object scene flow for autonomous vehicles,'' {\em The
+  IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pp.~3061--3070, 2015.
+
+\bibitem{urmson}
+C.~U. et~al, ``Autonomous driving in urban environments: Boss and the urban
+  challenge,'' {\em Journal of Field Robotics}, vol.~25(8), pp.~425--466, 2008.
+
+\bibitem{greene}
+D.~Greene, ``Drone vision,'' {\em Surveillance and Society}, vol.~13(2),
+  pp.~233--249, 2015.
+
+\bibitem{boucher}
+P.~Boucher, ``Domesticating the drone: The demilitarisation of unmanned
+  aircraft for civil markets,'' {\em Sci Eng Ethics}, vol.~21, pp.~1393--1412,
+  2015.
+
+\bibitem{cheung}
+S.~Cheung and C.~Kamath, ``Robust techniques for background subtraction in
+  urban traffic video,'' {\em Proc. SPIE 5308, Visual Communications and Image
+  Processing 2004}, 2004.
+
+\bibitem{kamijo}
+S.~Kamijo, Y.~Matsushita, K.~Ikeuchi, and M.~Sakauchi, ``Traffic monitoring and
+  accident detection atintersections,'' {\em IEEE TRANSACTIONS ON INTELLIGENT
+  TRANSPORTATION SYSTEMS,}, vol.~1(2), 2000.
+
+\bibitem{watanabe}
+Y.~WATANABE, T.~KOMURO, and M.~ISHIKAWA, ``955-fps real-time shape measurement
+  of a moving/deforming objectusing high-speed vision for numerous-point
+  analysis,'' {\em IEEE International Conference on Robotics and Automation},
+  2007.
+
+\bibitem{nakabo}
+Y.~Nakabo, M.~Ishikawa, H.~Toyoda, and S.~Mizuno, ``1ms column parallel vision
+  system and it's application high speed target tracking,'' {\em IEEE
+  International Conference on Robotics and Automation}, vol.~1, pp.~650--655,
+  2000.
+
+\bibitem{cubero}
+S.~Cubero, N.~Aleixos, E.~Moltó, J.~Gómez-Sanchis, and J.~Blasco, ``Advances
+  in machine vision applications for automatic inspection and quality
+  evaluation of fruits and vegetables,'' {\em Food Bioprocess Technol}, vol.~4,
+  pp.~487--504, 2011.
+
+\bibitem{du}
+C.-J. Du and D.-W. Sun, ``Recent developments in the applications of image
+  processing techniques for food quality evaluation,'' {\em Trends in Food
+  Science and Technology}, vol.~15, pp.~230--249, 2004.
+
+\bibitem{duan}
+F.~Duan, Y.-N. Wang, H.-J. Liu, and Y.-G. Li, ``A machine vision inspector for
+  beer bottle,'' {\em Engineering Applications of Artificial Intelligence},
+  vol.~20, pp.~1013--1021, 2007.
+
+\bibitem{elmasry1}
+G.~ElMasry, S.~Cubero, E.~Moltó, and J.~Blasco, ``In-line sorting of irregular
+  potatoes by using automated computer-based machine vision system,'' {\em
+  Journal of Food Engineering}, vol.~112, pp.~60--68, 2012.
+
+\bibitem{kondo}
+N.~Kondo, ``Automation on fruit and vegetable grading system and food
+  traceability,'' {\em Trends in Food Science and Technology}, vol.~21,
+  pp.~145--152, 2010.
+
+\bibitem{busch}
+A.~Busch and P.~Palk, ``An image processing approach to distance estimation for
+  automated strawberry harvesting,'' {\em International Conference on Image
+  Analysis and Recognition (ICIAR)}, pp.~389--396, 2011.
+
+\bibitem{pathare}
+P.~B. Pathare, U.~L. Opara, and F.~A.-J. Al-Said, ``Colour measurement and
+  analysis in fresh and processed foods: A review,'' {\em Food Bioprocess
+  Technol}, vol.~6, pp.~36--60, 2013.
+
+\bibitem{sandrina}
+H.~Sandrina, A.~Rajabipour, A.~Jafary, A.~Javadi, and Y.~Mostofi,
+  ``Classification and analysis of fruit shapes in long type watermelon using
+  image processing,'' {\em International Journal of Agriculture an Biology},
+  vol.~09-1, p.~68–70, 2007.
+
+\bibitem{chiu}
+Y.~C. Chiu, X.~L. Chou, T.~E. Grift, and M.~T. Chen, ``Automated detection of
+  maechanically induced bruise areas in golden delicious apples using
+  flourescence imagery,'' {\em American Society of Agricultural and Biological
+  Engineers}, vol.~58(2), pp.~215--225, 2015.
+
+\bibitem{wan}
+P.~Wan, A.~Toudeshki, H.~Tan, and R.~Ehsani, ``A methodology for fresh tomato
+  maturity detection using computer vision,'' {\em Computers and Electronics in
+  Agriculture}, vol.~146, pp.~43--50, 2018.
+
+\bibitem{pereira}
+L.~F.~S. Pereira, S.~B. Jr., N.~A. Valous, and D.~F. Barbin, ``Predicting the
+  ripening of papaya fruit with digital imaging and random forests,'' {\em
+  Computers and Electronics in Agriculture}, vol.~145, pp.~76--82, 2018.
+
+\bibitem{brosnan}
+T.~Brosnan and D.-W. Sun, ``Inspection and grading of agricultural and food
+  products by computer vision systems - a review,'' {\em Computers and
+  Electronics in Agriculture}, vol.~36, pp.~193--213, 2002.
+
+\bibitem{liming}
+X.~Liming and Z.~Yanchao, ``Automated strawberry grading system based on image
+  processing,'' {\em Computers and Electronics in Agriculture}, vol.~71S,
+  pp.~S32--S39, 2010.
+
+\bibitem{dubey}
+S.~R. Dubey and A.~S. Jalal, ``Application of image processing in fruit and
+  vegetable analysis: A review,'' {\em Journal of Intelligent Systems},
+  vol.~24(4), pp.~405--424, 2015.
+
+\bibitem{wang}
+C.~Wang, X.~Li, W.~Wang, Y.~Feng, Z.~Zhou, and H.~Zhan, ``Recognition of
+  worm-eaten chestnuts based on machine vision,'' {\em Mathematical and
+  Computer Modelling}, vol.~54, pp.~888--894, 2011.
+
+\bibitem{kruger}
+R.~P. Kruger and W.~B. Thompson, ``A technical and economic assessment of
+  computer vision for industial inspection and robotic assembly,'' {\em
+  Proceedings of the IEEE}, vol.~69(12), pp.~1524--1538, 1981.
+
+\bibitem{michalosa}
+G.~Michalosa, N.~Kousia, S.~Makrisa, and G.~Chryssolouris, ``Performance
+  assessment of production systems with mobile robots,'' {\em CIRP Conference
+  on MANUFACTURING SYSTEMS}, vol.~41, pp.~195--200, 2016.
+
+\bibitem{blasco}
+J.~Blasco, S.~Cubero, J.~Gómez-Sanchís, P.~Mira, and E.~Moltó, ``Development
+  of a machine for the automatic sorting of pomegranate(punica granatum) arils
+  based on computer vision,'' {\em Journal of Food Engineering}, vol.~90,
+  pp.~27--34, 2009.
+
+\bibitem{nouri-ahmadabadi}
+H.~Nouri-Ahmadabadi, M.~Omid, S.~S. Mohtasebi, and M.~S. Firouz, ``Design,
+  development and evaluation of an online grading system for peeled pistachios
+  equipped with machine vision technology and support vector machine,'' {\em
+  INFORMATION PROCESSING IN AGRICULTURE}, vol.~4, pp.~333--341, 2017.
+
+\bibitem{ohali}
+Y.~A. Ohali, ``Computer vision based date fruit grading system: Design and
+  implementation,'' {\em Journal of King Saud University – Computer and
+  Information Sciences}, vol.~23, pp.~29--36, 2011.
+
+\bibitem{saad}
+F.~Sa’ad, M.~Ibrahim, A.~Shakaff, A.~Zakaria, and M.~Abdullah, ``Shape and
+  weight grading of mangoes using visible imaging,'' {\em Computers and
+  Electronics in Agriculture}, vol.~115, pp.~51--56, 2015.
+
+\end{thebibliography}
