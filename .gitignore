@@ -5,6 +5,7 @@
 *.png
 *.gif
 *.tif
+*.eps #LateX
 
 # Large data files for ML #
 ###########################
