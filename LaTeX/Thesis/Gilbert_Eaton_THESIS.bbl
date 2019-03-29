@@ -82,11 +82,53 @@ H.~Sandrina, A.~Rajabipour, A.~Jafary, A.~Javadi, and Y.~Mostofi,
   image processing,'' {\em International Journal of Agriculture an Biology},
   vol.~09-1, p.~68–70, 2007.
 
+\bibitem{may}
+Z.~May and M.~H. Amaran, ``Automated oil palm fruit grading system using
+  artificial intelligence,'' {\em International Journal of Video \& Image
+  Processing and Network Security}, vol.~11 No.3, pp.~30--35, 2011.
+
+\bibitem{nandi}
+C.~S. Nandi, B.~Tudu, and C.~Koley, ``An automated machine vision based system
+  for fruit sorting and grading,'' {\em International Conference on Sensing
+  Technology}, vol.~6, pp.~195--200, 2012.
+
+\bibitem{hasan}
+R.~Hasan and S.~M.~G. Monir, ``Fruit maturity estimation based on fuzzy
+  classification,'' {\em International Conference on Signal and Image
+  Processing Applications}, pp.~27--32, 2017.
+
+\bibitem{khojastehnazhand}
+M.~Khojastehnazhand, M.~Omid, and A.~Tabatabaeefar, ``Development of a lemon
+  sorting system based on color and size,'' {\em African Journal of Plant
+  Science}, vol.~4 (4), pp.~122--127, 2010.
+
+\bibitem{blasco2}
+J.~Blasco, N.~Aleixos, and E.~Moltó, ``Computer vision detection of peel
+  defects in citrus by means of a region oriented segmentation algorithm,''
+  {\em Journal of Food Engineering}, vol.~81, pp.~535--543, 2007.
+
 \bibitem{chiu}
 Y.~C. Chiu, X.~L. Chou, T.~E. Grift, and M.~T. Chen, ``Automated detection of
   maechanically induced bruise areas in golden delicious apples using
   flourescence imagery,'' {\em American Society of Agricultural and Biological
   Engineers}, vol.~58(2), pp.~215--225, 2015.
+
+\bibitem{matteoli}
+S.~Matteoli, M.~Diani, R.~Massai, G.~Corsini, and D.~Remorini, ``A
+  spectroscopy-based approach for automated nondestructive maturity grading of
+  peach fruits,'' {\em IEEE SENSORS JOURNAL}, vol.~15 No. 10, pp.~5455--5464,
+  2015.
+
+\bibitem{choi}
+H.~S. Choi, J.~B. Cho, S.~G. Kim, and H.~S. Choi, ``A real-time smart fruit
+  quality grading system classifying by external appearance and internal flavor
+  factors,'' {\em International Conference on Industrial Technology},
+  pp.~2081--2086, 2018.
+
+\bibitem{jadhav}
+T.~Jadhav, K.~Singh, and A.~Abhyankar, ``Volumetric estimation using 3d
+  reconstruction method for grading of fruits,'' {\em Multimed Tools Appl},
+  vol.~78, pp.~1613--1634, 2019.
 
 \bibitem{wan}
 P.~Wan, A.~Toudeshki, H.~Tan, and R.~Ehsani, ``A methodology for fresh tomato
@@ -119,6 +161,16 @@ G.~Muhammad, ``Date fruits classification using texture descriptors and
   shape-size features,'' {\em Engineering Applications of Artificial
   Intelligence}, vol.~37, pp.~361--367, 2015.
 
+\bibitem{thendral}
+R.~Thendral and A.~Suhasini, ``Automated skin defect identification system for
+  orange fruit grading based on genetic algorithm,'' {\em CURRENT SCIENCE},
+  vol.~112 No.8, pp.~1704--1711, 2017.
+
+\bibitem{gill}
+J.~Gill, A.~Girdhar, and T.~Singh, ``A hybrid intelligent system for fruit
+  grading and sorting,'' {\em International Journal on Computer Science and
+  Engineering (IJCSE)}, vol.~9 No.5, pp.~257--265, 2017.
+
 \bibitem{brosnan}
 T.~Brosnan and D.-W. Sun, ``Inspection and grading of agricultural and food
   products by computer vision systems - a review,'' {\em Computers and
@@ -133,6 +185,18 @@ X.~Liming and Z.~Yanchao, ``Automated strawberry grading system based on image
 S.~R. Dubey and A.~S. Jalal, ``Application of image processing in fruit and
   vegetable analysis: A review,'' {\em Journal of Intelligent Systems},
   vol.~24(4), pp.~405--424, 2015.
+
+\bibitem{yamamoto}
+K.~Yamamoto, S.~Ninomiya, Y.~Kimura, A.~Hashimoto, Y.~Yoshioka, and T.~Kameoka,
+  ``Strawberry cultivar identification and quality evaluation on the basis of
+  multiple fruit appearance features,'' {\em Computers and Electronics in
+  Agriculture}, vol.~110, pp.~233--240, 2015.
+
+\bibitem{yamamoto2}
+S.~YAMAMOTO, S.~HAYASHI, H.~YOSHIDA, and K.~KOBAYASHI, ``Development of a
+  stationary robotic strawberry harvester with a picking mechanism that
+  approaches the target fruit from below,'' {\em Japan Agricultural Research
+  Quarterly (JARQ)}, vol.~48 (3), pp.~261--269, 2014.
 
 \bibitem{sofu}
 M.~Sofu, O.~Er, M.~Kayacan, and B.~Cetisli, ``Design of an automatic apple
@@ -159,6 +223,28 @@ Y.~Zhang, S.~Wang, G.~Ji, and P.~Phillips, ``Fruit classification using
 A.~Zuñiga, M.~Mora, M.~Oyarce, and C.~Fredes, ``Grape maturity estimation
   based on seed images and neural networks,'' {\em Engineering Applications of
   Artificial Intelligence}, vol.~35, pp.~95--104, 2014.
+
+\bibitem{sabri}
+N.~Sabri, Z.~Ibrahim, S.~Syahlan, N.~Jamil, and N.~N.~A. Mangshor, ``Palm oil
+  fresh fruit bunch ripeness grading identification using color features,''
+  {\em Journal of Fundamental and Applied Sciences}, vol.~9(4S), pp.~563--579,
+  2017.
+
+\bibitem{alfatni}
+M.~S.~M. Alfatni, A.~R.~M. Shariff, S.~K. Bejo, O.~M.~B. Saaed, and
+  A.~Mustapha, ``Real-time oil palm ffb ripeness grading system based on ann,
+  knn and svm classifiers,'' {\em IOP Conference Series: Earth and
+  Environmental Science}, vol.~169, pp.~1--5, 2018.
+
+\bibitem{bhatt}
+A.~K. Bhatt and D.~Pant, ``Automatic apple grading model development based on
+  back propagation neural network and machine vision, and its performance
+  evaluation,'' {\em AI \& Soc}, vol.~30, pp.~45--56, 2015.
+
+\bibitem{vakilian}
+K.~A. Vakilian and J.~Massah, ``An apple grading system according to european
+  fruit quality standards using gabor filter and artificial neural networks,''
+  {\em St. Cerc. St. CICBIA}, vol.~17 (1), pp.~075--085, 2016.
 
 \bibitem{wang}
 C.~Wang, X.~Li, W.~Wang, Y.~Feng, Z.~Zhou, and H.~Zhan, ``Recognition of

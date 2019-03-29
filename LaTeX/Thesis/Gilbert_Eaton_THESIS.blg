@@ -5,45 +5,45 @@ The style file: ieeetr.bst
 Database file #1: Master.bib
 Warning--I didn't find a database entry for "rox"
 Warning--I didn't find a database entry for "sommer"
-You've used 39 entries,
+You've used 55 entries,
             1876 wiz_defined-function locations,
-            700 strings with 10213 characters,
-and the built_in function-call counts, 12163 in all, are:
-= -- 1221
-> -- 438
+            789 strings with 13424 characters,
+and the built_in function-call counts, 17473 in all, are:
+= -- 1758
+> -- 632
 < -- 0
-+ -- 161
-- -- 122
-* -- 840
-:= -- 1671
-add.period$ -- 39
-call.type$ -- 39
-change.case$ -- 39
++ -- 231
+- -- 176
+* -- 1209
+:= -- 2388
+add.period$ -- 55
+call.type$ -- 55
+change.case$ -- 55
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 631
-empty$ -- 1108
-format.name$ -- 122
-if$ -- 3068
+cite$ -- 55
+duplicate$ -- 901
+empty$ -- 1585
+format.name$ -- 176
+if$ -- 4412
 int.to.chr$ -- 0
-int.to.str$ -- 39
-missing$ -- 39
-newline$ -- 120
-num.names$ -- 39
-pop$ -- 86
+int.to.str$ -- 55
+missing$ -- 55
+newline$ -- 168
+num.names$ -- 55
+pop$ -- 120
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 502
+skip$ -- 728
 stack$ -- 0
-substring$ -- 944
-swap$ -- 319
+substring$ -- 1384
+swap$ -- 461
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 110
-width$ -- 41
-write$ -- 385
+while$ -- 158
+width$ -- 57
+write$ -- 543
 (There were 2 warnings)
