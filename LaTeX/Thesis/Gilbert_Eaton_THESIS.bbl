@@ -107,6 +107,12 @@ J.~Blasco, N.~Aleixos, and E.~Moltó, ``Computer vision detection of peel
   defects in citrus by means of a region oriented segmentation algorithm,''
   {\em Journal of Food Engineering}, vol.~81, pp.~535--543, 2007.
 
+\bibitem{danti}
+A.~Danti, M.~Madgi, and B.~S. Anami, ``Mean and range color features based
+  identification of common indian leafy vegetables,'' {\em International
+  Journal of Signal Processing, Image Processing and Pattern Recognition},
+  vol.~5, No.3, pp.~151--160, 2012.
+
 \bibitem{chiu}
 Y.~C. Chiu, X.~L. Chou, T.~E. Grift, and M.~T. Chen, ``Automated detection of
   maechanically induced bruise areas in golden delicious apples using
@@ -197,6 +203,11 @@ S.~YAMAMOTO, S.~HAYASHI, H.~YOSHIDA, and K.~KOBAYASHI, ``Development of a
   stationary robotic strawberry harvester with a picking mechanism that
   approaches the target fruit from below,'' {\em Japan Agricultural Research
   Quarterly (JARQ)}, vol.~48 (3), pp.~261--269, 2014.
+
+\bibitem{tallada}
+J.~G. TALLADA, M.~NAGATA, and T.~KOBAYASHI, ``Non-destructive estimation of
+  firmness of strawberries (fagaria x ananassa duch.) using nir hyperspectral
+  imaging,'' {\em Environ. Control Biol}, vol.~44 (4), pp.~245--255, 2006.
 
 \bibitem{sofu}
 M.~Sofu, O.~Er, M.~Kayacan, and B.~Cetisli, ``Design of an automatic apple
