@@ -3,47 +3,55 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Gilbert_Eaton_THESIS.aux
 The style file: ieeetr.bst
 Database file #1: Master.bib
+Repeated entry---line 1045 of file Master.bib
+ : @article{zhang
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1099 of file Master.bib
+ : @article{lee
+ :             ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "rox"
 Warning--I didn't find a database entry for "sommer"
-You've used 57 entries,
+You've used 70 entries,
             1876 wiz_defined-function locations,
-            802 strings with 13878 characters,
-and the built_in function-call counts, 18133 in all, are:
-= -- 1826
-> -- 654
+            865 strings with 16651 characters,
+and the built_in function-call counts, 22434 in all, are:
+= -- 2212
+> -- 899
 < -- 0
-+ -- 239
-- -- 182
-* -- 1255
-:= -- 2476
-add.period$ -- 57
-call.type$ -- 57
-change.case$ -- 57
++ -- 325
+- -- 255
+* -- 1598
+:= -- 3112
+add.period$ -- 70
+call.type$ -- 70
+change.case$ -- 70
 chr.to.int$ -- 0
-cite$ -- 57
-duplicate$ -- 935
-empty$ -- 1645
-format.name$ -- 182
-if$ -- 4580
+cite$ -- 70
+duplicate$ -- 1134
+empty$ -- 2001
+format.name$ -- 255
+if$ -- 5620
 int.to.chr$ -- 0
-int.to.str$ -- 57
-missing$ -- 57
-newline$ -- 174
-num.names$ -- 57
-pop$ -- 124
+int.to.str$ -- 70
+missing$ -- 70
+newline$ -- 213
+num.names$ -- 70
+pop$ -- 152
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 756
+skip$ -- 904
 stack$ -- 0
-substring$ -- 1440
-swap$ -- 479
+substring$ -- 1727
+swap$ -- 574
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 164
-width$ -- 59
-write$ -- 563
-(There were 2 warnings)
+while$ -- 199
+width$ -- 72
+write$ -- 691
+(There were 2 error messages)

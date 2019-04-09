@@ -8,25 +8,27 @@
 \contentsline {subsection}{\numberline {1.2}Project Description and Requirements}{5}{subsection.1.2}
 \contentsline {section}{\numberline {2}Current Industry Methods and Review of Literature}{8}{section.2}
 \contentsline {subsection}{\numberline {2.1}Image Processing in Produce Grading}{8}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Hardware and Physical Properties}{9}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Hand-selected Features}{10}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Strawberry Image Processing}{11}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Real-time Systems}{12}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Machine Learning / Deep Learning Methods}{12}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Control Systems}{13}{subsection.2.7}
-\contentsline {section}{\numberline {3}I - Prototype and Research}{15}{section.3}
-\contentsline {subsection}{\numberline {3.1}Design and Construction}{15}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Specular Reflections}{15}{subsubsection.3.1.1}
-\contentsline {subsection}{\numberline {3.2}Electronics}{16}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Power Requirements}{17}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Hardware}{17}{subsubsection.3.2.2}
-\contentsline {subsection}{\numberline {3.3}Software}{17}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}User Interface}{17}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Asynchronous Grabbing}{17}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Hardware Control}{17}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Image Processing}{18}{subsubsection.3.3.4}
-\contentsline {subsection}{\numberline {3.4}Implementation and Results}{19}{subsection.3.4}
-\contentsline {section}{\numberline {4}II - Production Integration}{21}{section.4}
-\contentsline {section}{\numberline {5}III - System Reconfiguration and Redesign}{21}{section.5}
-\contentsline {section}{\numberline {6}IV - Linux and Deep Learning}{21}{section.6}
-\contentsline {section}{\numberline {7}Conclusion}{21}{section.7}
+\contentsline {subsection}{\numberline {2.2}Physical Property Analysis}{11}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Hyperspecral/Multispectral Imaging}{12}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Hand-selected Features}{12}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Strawberry Image Processing}{14}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Real-time Systems}{17}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Machine Learning / Deep Learning Methods}{18}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Control Systems}{20}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Summary}{20}{subsection.2.9}
+\contentsline {section}{\numberline {3}I - Prototype and Research}{21}{section.3}
+\contentsline {subsection}{\numberline {3.1}Design and Construction}{21}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Specular Reflections}{21}{subsubsection.3.1.1}
+\contentsline {subsection}{\numberline {3.2}Electronics}{22}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Power Requirements}{23}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Hardware}{23}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Software}{23}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}User Interface}{23}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Asynchronous Grabbing}{23}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Hardware Control}{23}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Image Processing}{24}{subsubsection.3.3.4}
+\contentsline {subsection}{\numberline {3.4}Implementation and Results}{25}{subsection.3.4}
+\contentsline {section}{\numberline {4}II - Production Integration}{27}{section.4}
+\contentsline {section}{\numberline {5}III - System Reconfiguration and Redesign}{27}{section.5}
+\contentsline {section}{\numberline {6}IV - Linux and Deep Learning}{27}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{27}{section.7}
