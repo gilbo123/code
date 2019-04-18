@@ -8,27 +8,38 @@
 \BOOKMARK [2][-]{subsection.1.2}{Project Description and Requirements}{section.1}% 8
 \BOOKMARK [1][-]{section.2}{Current Industry Methods and Review of Literature}{}% 9
 \BOOKMARK [2][-]{subsection.2.1}{Image Processing in Produce Grading}{section.2}% 10
-\BOOKMARK [2][-]{subsection.2.2}{Physical Property Analysis}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.3}{Hyperspecral/Multispectral Imaging}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.4}{Hand-selected Features}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.2}{Hand-selected Features}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.3}{Physical Property Analysis}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.4}{Hyperspecral/Multispectral Imaging}{section.2}% 13
 \BOOKMARK [2][-]{subsection.2.5}{Strawberry Image Processing}{section.2}% 14
 \BOOKMARK [2][-]{subsection.2.6}{Real-time Systems}{section.2}% 15
 \BOOKMARK [2][-]{subsection.2.7}{Machine Learning / Deep Learning Methods}{section.2}% 16
-\BOOKMARK [2][-]{subsection.2.8}{Control Systems}{section.2}% 17
-\BOOKMARK [2][-]{subsection.2.9}{Summary}{section.2}% 18
-\BOOKMARK [1][-]{section.3}{I - Prototype and Research}{}% 19
-\BOOKMARK [2][-]{subsection.3.1}{Design and Construction}{section.3}% 20
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Specular Reflections}{subsection.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.2}{Electronics}{section.3}% 22
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Power Requirements}{subsection.3.2}% 23
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Hardware}{subsection.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.3}{Software}{section.3}% 25
-\BOOKMARK [3][-]{subsubsection.3.3.1}{User Interface}{subsection.3.3}% 26
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Asynchronous Grabbing}{subsection.3.3}% 27
-\BOOKMARK [3][-]{subsubsection.3.3.3}{Hardware Control}{subsection.3.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.3.4}{Image Processing}{subsection.3.3}% 29
-\BOOKMARK [2][-]{subsection.3.4}{Implementation and Results}{section.3}% 30
-\BOOKMARK [1][-]{section.4}{II - Production Integration}{}% 31
-\BOOKMARK [1][-]{section.5}{III - System Reconfiguration and Redesign}{}% 32
-\BOOKMARK [1][-]{section.6}{IV - Linux and Deep Learning}{}% 33
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 34
+\BOOKMARK [3][-]{subsubsection.2.7.1}{Support Vector Machines}{subsection.2.7}% 17
+\BOOKMARK [3][-]{subsubsection.2.7.2}{Deep Learning}{subsection.2.7}% 18
+\BOOKMARK [2][-]{subsection.2.8}{Control Systems}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.9}{Summary}{section.2}% 20
+\BOOKMARK [1][-]{section.3}{I - Design and Prototype}{}% 21
+\BOOKMARK [2][-]{subsection.3.1}{Design}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.2}{Project Challenges}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Punnet Imaging}{subsection.3.2}% 24
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Flickering}{subsection.3.2}% 25
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Overheating}{subsection.3.2}% 26
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Asyncronous Aquisition of Images}{subsection.3.2}% 27
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Processing Time}{subsection.3.2}% 28
+\BOOKMARK [3][-]{subsubsection.3.2.6}{Orientation of Punnets}{subsection.3.2}% 29
+\BOOKMARK [3][-]{subsubsection.3.2.7}{Ejector Synchronization}{subsection.3.2}% 30
+\BOOKMARK [3][-]{subsubsection.3.2.8}{Conveyor Motion}{subsection.3.2}% 31
+\BOOKMARK [3][-]{subsubsection.3.2.9}{Specular Reflections}{subsection.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.3}{Electronics}{section.3}% 33
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Power Requirements}{subsection.3.3}% 34
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Hardware}{subsection.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.4}{Software}{section.3}% 36
+\BOOKMARK [3][-]{subsubsection.3.4.1}{User Interface}{subsection.3.4}% 37
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Asynchronous Grabbing}{subsection.3.4}% 38
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Hardware Control}{subsection.3.4}% 39
+\BOOKMARK [3][-]{subsubsection.3.4.4}{Image Processing}{subsection.3.4}% 40
+\BOOKMARK [2][-]{subsection.3.5}{Implementation and Results}{section.3}% 41
+\BOOKMARK [1][-]{section.4}{II - Production Integration}{}% 42
+\BOOKMARK [1][-]{section.5}{III - System Reconfiguration and Redesign}{}% 43
+\BOOKMARK [1][-]{section.6}{IV - Linux and Deep Learning}{}% 44
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 45
