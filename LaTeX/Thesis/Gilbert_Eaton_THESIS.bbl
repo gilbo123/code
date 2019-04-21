@@ -6,6 +6,11 @@ H.~S. Choi, J.~B. Cho, S.~G. Kim, and H.~S. Choi, ``A real-time smart fruit
   factors,'' {\em International Conference on Industrial Technology},
   pp.~2081--2086, 2018.
 
+\bibitem{baranowski}
+P.~Baranowski, ``Detection of early apple bruises using pulsed-phase
+  thermography article,'' 2009.
+\newblock Accessed Apr 2019.
+
 \bibitem{hayashi}
 S.~Hayashi, K.~Shigematsu, S.~Yamamoto, K.~Kobayashi, Y.~Kohno, J.~Kamata, and
   M.~Kurita, ``Evaluation of a strawberry-harvesting robot in a field test,''
@@ -165,6 +170,18 @@ W.~Zheng, X.~Fu, and Y.~Ying, ``Spectroscopy-based food classification with
   extreme learning machine,'' {\em Chemometrics and Intelligent Laboratory
   Systems}, vol.~139, pp.~42--47, 2014.
 
+\bibitem{jiang}
+Z.~Jiang, H.~Zheng, N.~Mantri, Z.~Qi, X.~Zhang, Z.~Hou, J.~Chang, H.~Lu, and
+  Z.~Liang, ``Prediction of relationship between surface area, temperature,
+  storage time and ascorbic acid retention of fresh-cut pineapple using
+  adaptive neuro-fuzzy inference system (anfis),'' {\em Postharvest Biology and
+  Technology}, vol.~113, pp.~1--7, 2016.
+
+\bibitem{goel}
+N.~Goel and P.~Sehgal, ``Fuzzy classification of pre-harvest tomatoes for
+  ripeness estimation - an approach based on automatic rule learning using
+  decision tree,'' {\em Applied Soft Computing}, vol.~36, pp.~45--56, 2015.
+
 \bibitem{wan}
 P.~Wan, A.~Toudeshki, H.~Tan, and R.~Ehsani, ``A methodology for fresh tomato
   maturity detection using computer vision,'' {\em Computers and Electronics in
@@ -233,21 +250,23 @@ S.~Mathanker, P.~Weckler, T.~Bowser, N.~Wang, and N.~Maness, ``Adaboost
   classifiers for pecan defect classification,'' {\em Computers and Electronics
   in Agriculture}, vol.~77, pp.~60--68, 2011.
 
-\bibitem{che}
-W.~Che, L.~Sun, Q.~Zhang, W.~Tan, D.~Ye, D.~Zhang, and Y.~Liu, ``Pixel based
-  bruise region extraction of apple using vis-nir hyperspectral imaging,'' {\em
-  Computers and Electronics in Agriculture}, vol.~146, pp.~12--21, 2018.
-
-\bibitem{qiang}
-L.~Qiang and T.~Mingjie, ``Detection of hidden bruise on kiwi fruit using
-  hyperspectral imaging and parallelepiped classification,'' {\em Procedia
-  Environmental Sciences}, vol.~12, pp.~1172--1179, 2012.
+\bibitem{lorente}
+D.~Lorente, M.~Zude, C.~Regen, L.~Palou, J.~Gómez-Sanchis, and J.~Blasco,
+  ``Early decay detection in citrus fruit using laser-light backscattering
+  imaging,'' {\em Postharvest Biology and Technology}, vol.~86, pp.~424--430,
+  2013.
 
 \bibitem{munera}
 S.~Munera, C.~Besada, N.~Aleixos, P.~Talens, A.~Salvador, Blasco, D.-W. Sun,
   S.~Cubero, and J.~Blasco, ``Non-destructive assessment of the internal
   quality of intact persimmon using colour and vis/nir hyperspectral imaging,''
   {\em LWT - Food Science and Technology}, vol.~77, pp.~241--248, 2017.
+
+\bibitem{munera2}
+S.~Munera, J.~M. Amigo, N.~Aleixos, P.~Talens, S.~Cubero, and J.~Blasco,
+  ``Potential of vis-nir hyperspectral imaging and chemometric methods to
+  identify similar cultivars of nectarine,'' {\em Food Control}, vol.~86,
+  pp.~1--10, 2018.
 
 \bibitem{li}
 X.~Li, Y.~Wei, J.~Xu, X.~Feng, F.~Wu, R.~Zhou, J.~Jin, K.~Xu, X.~Yu, and Y.~He,
@@ -260,6 +279,46 @@ D.-J. Lee, R.~Schoenberger, J.~Archibald, and S.~McCollum, ``Development of a
   machine vision system for automatic date grading using digital reflective
   near-infrared imaging,'' {\em Journal of Food Engineering}, vol.~86,
   pp.~388--398, 2008.
+
+\bibitem{che}
+W.~Che, L.~Sun, Q.~Zhang, W.~Tan, D.~Ye, D.~Zhang, and Y.~Liu, ``Pixel based
+  bruise region extraction of apple using vis-nir hyperspectral imaging,'' {\em
+  Computers and Electronics in Agriculture}, vol.~146, pp.~12--21, 2018.
+
+\bibitem{qiang}
+L.~Qiang and T.~Mingjie, ``Detection of hidden bruise on kiwi fruit using
+  hyperspectral imaging and parallelepiped classification,'' {\em Procedia
+  Environmental Sciences}, vol.~12, pp.~1172--1179, 2012.
+
+\bibitem{li3}
+J.~Li, L.~Chen, and W.~Huang, ``Detection of early bruises on peaches
+  (amygdalus persica l.) using hyperspectral imaging coupled with improved
+  watershed segmentation algorithm,'' {\em Postharvest Biology and Technology},
+  vol.~135, pp.~104--113, 2018.
+
+\bibitem{ainara}
+A.~Lopez-Maestresalas, J.~C. Keresztes, M.~Goodarzi, S.~Arazuri, C.~Jaren, and
+  W.~Saeys, ``Non-destructive detection of blackspot in potatoes by vis-nir and
+  swir hyperspectral imaging,'' {\em Food Control}, vol.~70, pp.~229--241,
+  2016.
+
+\bibitem{liu2}
+Q.~Liu, K.~Wei, H.~Xiao, S.~Tu, K.~Sun, Y.~Sun, L.~Pan, and K.~Tu,
+  ``Near-infrared hyperspectral imaging rapidly detects the decay of
+  postharvest strawberry based on water-soluble sugar analysis,'' {\em Food
+  Analytical Methods}, vol.~12, pp.~936--946, 2019.
+
+\bibitem{li2}
+J.~Li, L.~Chen, W.~Huang, Q.~Wang, B.~Zhang, X.~Tian, S.~Fan, and B.~Li,
+  ``Multispectral detection of skin defects of bi-colored peaches based on
+  vis–nir hyperspectral imaging,'' {\em Postharvest Biology and Technology},
+  vol.~112, pp.~121--133, 2016.
+
+\bibitem{siedliska}
+A.~Siedliska, P.~Baranowski, M.~Zubik, W.~Mazurek, and B.~Sosnowska,
+  ``Detection of fungal infections in strawberry fruit by vnir/swir
+  hyperspectral imaging,'' {\em Postharvest Biology and Technology}, vol.~139,
+  pp.~115--126, 2018.
 
 \bibitem{brosnan}
 T.~Brosnan and D.-W. Sun, ``Inspection and grading of agricultural and food
@@ -296,6 +355,12 @@ J.~G. TALLADA, M.~NAGATA, and T.~KOBAYASHI, ``Non-destructive estimation of
 Y.~Zhang, S.~Wang, G.~Ji, and P.~Phillips, ``Fruit classification using
   computer vision and feedforward neural network,'' {\em Journal of Food
   Engineering}, vol.~143, pp.~167--177, 2014.
+
+\bibitem{liu}
+C.~Liu, W.~Liu, X.~Lu, F.~Ma, W.~Chen, J.~Yang, and L.~Zheng, ``Application of
+  multispectral imaging to determine quality attributes and ripeness stage in
+  strawberry fruit,'' {\em PLoS ONE}, vol.~10.1371/journal.pone.0087818,
+  pp.~1--8, 2014.
 
 \bibitem{baigvand}
 M.~Baigvand, A.~Banakar, S.~Minaei, J.~Khodaei, and N.~Behroozi-Khazaei,
@@ -520,6 +585,11 @@ J.~Ma, K.~Du, F.~Zheng, L.~Zhang, Z.~Gong, and Z.~Sun, ``A recognition method
   for cucumber diseases using leaf symptom images based on deep convolutional
   neural network,'' {\em Computers and Electronics in Agriculture}, vol.~154,
   pp.~18--24, 2018.
+
+\bibitem{sa}
+I.~Sa, Z.~Ge, F.~Dayoub, B.~Upcroft, T.~Perez, and C.~McCool, ``Deepfruits: A
+  fruit detection system using deep neural networks,'' {\em Sensors}, vol.~16,
+  1222; doi:10.3390/s16081222, pp.~1--23, 2016.
 
 \bibitem{kruger}
 R.~P. Kruger and W.~B. Thompson, ``A technical and economic assessment of

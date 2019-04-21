@@ -10,36 +10,36 @@
 \contentsline {subsection}{\numberline {2.1}Image Processing in Produce Grading}{9}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Hand-selected Features}{12}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Physical Property Analysis}{13}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Hyperspecral/Multispectral Imaging}{15}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Strawberry Image Processing}{17}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Real-time Systems}{19}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Machine Learning / Deep Learning Methods}{21}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}Support Vector Machines}{23}{subsubsection.2.7.1}
-\contentsline {subsubsection}{\numberline {2.7.2}Deep Learning}{25}{subsubsection.2.7.2}
-\contentsline {subsection}{\numberline {2.8}Control Systems}{27}{subsection.2.8}
-\contentsline {subsection}{\numberline {2.9}Summary}{28}{subsection.2.9}
-\contentsline {section}{\numberline {3}I - Design and Prototype}{29}{section.3}
-\contentsline {subsection}{\numberline {3.1}Design}{29}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Project Challenges}{29}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Punnet Imaging}{29}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Flickering}{30}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Overheating}{31}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Asyncronous Aquisition of Images}{31}{subsubsection.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.5}Processing Time}{32}{subsubsection.3.2.5}
-\contentsline {subsubsection}{\numberline {3.2.6}Orientation of Punnets}{32}{subsubsection.3.2.6}
-\contentsline {subsubsection}{\numberline {3.2.7}Ejector Synchronization}{32}{subsubsection.3.2.7}
-\contentsline {subsubsection}{\numberline {3.2.8}Conveyor Motion}{33}{subsubsection.3.2.8}
-\contentsline {subsubsection}{\numberline {3.2.9}Specular Reflections}{33}{subsubsection.3.2.9}
-\contentsline {subsection}{\numberline {3.3}Electronics}{34}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Power Requirements}{35}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Hardware}{35}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Software}{35}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}User Interface}{35}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Asynchronous Grabbing}{35}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Hardware Control}{35}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Image Processing}{36}{subsubsection.3.4.4}
-\contentsline {subsection}{\numberline {3.5}Implementation and Results}{37}{subsection.3.5}
-\contentsline {section}{\numberline {4}II - Production Integration}{38}{section.4}
-\contentsline {section}{\numberline {5}III - System Reconfiguration and Redesign}{38}{section.5}
-\contentsline {section}{\numberline {6}IV - Linux and Deep Learning}{38}{section.6}
-\contentsline {section}{\numberline {7}Conclusion}{38}{section.7}
+\contentsline {subsection}{\numberline {2.4}Hyperspecral/Multispectral Imaging}{16}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Strawberry Image Processing}{18}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Real-time Systems}{21}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Machine Learning / Deep Learning Methods}{23}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Support Vector Machines}{24}{subsubsection.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.2}Deep Learning}{26}{subsubsection.2.7.2}
+\contentsline {subsection}{\numberline {2.8}Control Systems}{29}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Summary}{30}{subsection.2.9}
+\contentsline {section}{\numberline {3}I - Design and Prototype}{33}{section.3}
+\contentsline {subsection}{\numberline {3.1}Design}{33}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Project Challenges}{33}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Punnet Imaging}{33}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Flickering}{34}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Overheating}{35}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Asyncronous Aquisition of Images}{35}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Processing Time}{36}{subsubsection.3.2.5}
+\contentsline {subsubsection}{\numberline {3.2.6}Orientation of Punnets}{36}{subsubsection.3.2.6}
+\contentsline {subsubsection}{\numberline {3.2.7}Ejector Synchronization}{36}{subsubsection.3.2.7}
+\contentsline {subsubsection}{\numberline {3.2.8}Conveyor Motion}{37}{subsubsection.3.2.8}
+\contentsline {subsubsection}{\numberline {3.2.9}Specular Reflections}{37}{subsubsection.3.2.9}
+\contentsline {subsection}{\numberline {3.3}Electronics}{38}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Power Requirements}{39}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Hardware}{39}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Software}{39}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}User Interface}{39}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Asynchronous Grabbing}{39}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Hardware Control}{39}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Image Processing}{40}{subsubsection.3.4.4}
+\contentsline {subsection}{\numberline {3.5}Implementation and Results}{41}{subsection.3.5}
+\contentsline {section}{\numberline {4}II - Production Integration}{42}{section.4}
+\contentsline {section}{\numberline {5}III - System Reconfiguration and Redesign}{42}{section.5}
+\contentsline {section}{\numberline {6}IV - Linux and Deep Learning}{42}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{42}{section.7}

@@ -286,11 +286,14 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$calyx$}{The green leaves of a strawberry}%
 \nomenclature{$peduncle$}{Stem of the strawberry}%
 \nomenclature{$downtime$}{The amount of time (cumulative) during production where nothing is produced}%
-\nomenclature{$a$}{}%
-\nomenclature{$b$}{}%
+
+%biological
+\nomenclature{$SSC$}{Soluable solid content}%
+
 
 
 %cvip jargon
+\nomenclature{$RMSE$}{Root Mean Squared Error}%
 \nomenclature{$SVM$}{Support Vector Machine}%
 \nomenclature{$RBF$}{Radial Basis Function}%
 \nomenclature{$AI$}{Artificial Intelligence}%
@@ -301,11 +304,17 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$ANN$}{Artificial Neural Network}%
 \nomenclature{$FNN$}{Feedforward Neural Network}%
 \nomenclature{$CNN$}{Convolutional Neural Network}%
+\nomenclature{$R-CNN$}{Region-based Convolutional Neural Network}%
 \nomenclature{$BPNN$}{Back-propogation Neural Network}%
 \nomenclature{$k-NN$}{k-Nearest Neighbour}%
 \nomenclature{$DNN$}{Deep Neural Network}%
 \nomenclature{$ELM$}{Extreme Learning Machine}%
 \nomenclature{$SFLN$}{Single Hiden Layer Feed Neural Network}%
+\nomenclature{$LDA$}{Linear Discriminant Analysis}
+\nomenclature{$QDA$}{Quadratic Discriminant Analysis}
+\nomenclature{$PLS-DA$}{Partial Least-squares Discrininant Analysis}
+\nomenclature{$PCA$}{Principal Component Analysis}
+%\nomenclature{$$}{}
 \nomenclature{$MLP$}{Multi-layer Perceptron}%
 \nomenclature{$GMM$}{Gaussian Mixture Model}%
 \nomenclature{$PCA$}{Principal Component Analysis}%
@@ -314,6 +323,16 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$HSI$}{Hue, Saturation, Intensity}%
 \nomenclature{$HSV$}{Hue, Saturation, Value}%
 \nomenclature{$CIE-Lab$}{CIE standard colourspace}%
+
+%Spectral
+\nomenclature{$NIR$}{Near Infrared}%
+\nomenclature{$SWIR$}{Short-wavelenght Infraredrange of electromagnectic spectrum}%
+\nomenclature{$MWIR$}{Medium-wavelenght Infraredrange of electromagnectic spectrum}%
+\nomenclature{$LWIR$}{Long-wavelength Infrared range of electromagnectic spectrum}%
+\nomenclature{$FIR$}{Far Infrared range of electromagnectic spectrum}%
+\nomenclature{$UV$}{Ultraviolet range of electromagnectic spectrum}%
+
+
 
 %computer jargon
 \nomenclature{$UI$}{User Interface}%
@@ -338,9 +357,12 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 %2 - Command - use terminal for the following:
 %		C:\\>makeindex -s nomencl.ist -o Gilbert_Eaton_PHD.nls Gilbert_Eaton_PHD.nlo
 %3 - Compile
-\renewcommand{\baselinestretch}{0.5} 
+\renewcommand{\baselinestretch}{0.5}
+
+\setlength{\nomitemsep}{-\parsep}
+ 
 \newpage
-\printnomenclature
+\printnomenclature[5cm]
 
 %clearpage for page numbering 
 \clearpage
@@ -572,21 +594,16 @@ RGB or a combination of RGB with other colour spaces also give significant resul
 
 Geometric calculations are a common approach to assessing shape, size, or volume as the scale and intestity are invariant which facillitates the background removal process, leaving a precise outline. This outline can then be precisely measured due to the fixed position of a calibrated camera. Properties such as minor and major axis can be used to calculate area (size) and lenth-to-width (elongation) of objects. Contour curvature, shape matrices, moments, and shape transforms such as Fourier and Wavelets can also be calculated from a well segmented image. 
 
-Sandrina et al \cite{sandrina} implemented a method using geometric calculations to determine weight and shape of watermelons. Using logistic regression analysis they determined that good specimen shape could be well-described by an ellipsoid model with an $R^2$ of $0.97$. The weight of the watermelons was estimated by image analysis with an error of $2.42\%$. 
-
-A review of assessment techniques for legume quality was conducted by Mahajan, Das, and Sardana \cite{mahajan} that found several species including lentils, soybeans, peas, chickpeas, beans, and honeylocust were assesed for their geometrical properties such as size and shape. Using a flatbed scanner for each of these projects, the methods consisted of simple thresholding and morphology to find the binary image before measuring. 
-
+Sandrina et al \cite{sandrina} implemented a method using geometric calculations to determine weight and shape of watermelons. Using logistic regression analysis they determined that good specimen shape could be well-described by an ellipsoid model with an $R^2$ of $0.97$. The weight of the watermelons was estimated by image analysis with an error of $2.42\%$. A review of assessment techniques for legume quality was conducted by Mahajan, Das, and Sardana \cite{mahajan} that found several species including lentils, soybeans, peas, chickpeas, beans, and honeylocust were assesed for their geometrical properties such as size and shape. Using a flatbed scanner for each of these projects, the methods consisted of simple thresholding and morphology to find the binary image before measuring. 
 
 
 Fuzzy systems can offer generalisation and adaptability properties for grading based on feature simplification. A Fuzzy Inference System (FIS) takes raw data (crisp), transforms it into a simplified version (Fuzzification), and makes a prediction based on some knowledge, before transforming again (De-Fuzzification) back into a crisp value. Fuzzification methods may include bucketing, averaging, PCA, or windowing in order to reduce the dimensionality of data, usually giving the ability to assign simple rules to perfom the classification or detection.
 
 Hasan and Monir \cite{hasan} developed a system to evaluate guava by use of a FIS. The fuzzy rules were based on functions of hue, saturation, and intensity of the images acquired of the fruit. Their method achieved an accuracy of $93.4\%$ which is an improvement over other classifiers such as naive bayes and multi-SVM. A method that used volumetric estimation in order to perform quality grading in fruit (apples, mango, orange, pomegranate, and strawberry) was designed by Jadhav, Singh, and Abhyankar \cite{jadhav}. Four cameras positioned at various angles and elevations were used to acquire the callibrated images of fruits before the volumetric calculations were peformed. This information is coupled with the colour values from the hue channel of HSV colour space to obtain a classification grade which is then passed to an FIS for final distribution into five grades from very poor to very good. All grades and all fruits achieved accuracies of $>98\%$. 
 
-An adaptive neural-fuzzy inference system (ANFIS) developed by Zheng, Jiang, and Lu \cite{zheng} in order to detect bruising in Chinese bayberries as a function of Fractal Dimension (FD) and RGB values. The multiple input, single output Takagi–Sugeno fuzzy network consists of an input layer, fuzzification layer, rule layer, defuzzification layer, and output layer. The trained network could dicriminate between bruised and unbruised bayberries with an overall $90\%$ accuracy.
+An adaptive neural-fuzzy inference system (ANFIS) has been developed by Zheng, Jiang, and Lu \cite{zheng} in order to detect bruising in Chinese bayberries as a function of Fractal Dimension (FD) and RGB values. The multiple input, single output Takagi–Sugeno fuzzy network consists of an input layer, fuzzification layer, rule layer, defuzzification layer, and output layer. The trained network could dicriminate between bruised and unbruised bayberries with an overall $90\%$ accuracy. Similarly, Jiang et al \cite{jiang} used an ANFIS to predict ascorbic acid retention in fresh-cut pinapples. They used inputs of surface area, storage temperature, and storage time in order to train the predictor with a RMSE of $7.88\%$ and and $R^2$ correlation coefficient of $0.95$.
 
-
-
-....
+Goel and Sehgar \cite{goel} developed a Fuzzy Rule Based Classification System (FRBCS) in order to grade tomatos into six ripeness stages. Images acquired from the open farm environment were preprocessed by taking averages of R, G and B, R-G and R/G before training and testing, with comparrisons against Naive Bayes, SVM, MLP, and Random Tree classifiers. Their method of FRBCS achieved an accuracy of $94.29\%$ which outperformed the others ($88.89\%$, $87.42\%$, $84.97\%$, and $84.05\%$, respectively).  
 
 
 
@@ -628,8 +645,8 @@ Beyond the Near (NIR), Short (SWIR), lies the Mid (MWIR) Wavelength Infrared, an
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{thermal.png}
-	\caption{A thermal image of two people showing the Long Wavelength Infrared (LWIR) range.}
+	\includegraphics[width=0.8\linewidth]{thermal.jpg}
+	\caption{A thermal image apple with bruises \cite{baranowski} showing the Long Wavelength Infrared (LWIR) part of the electromagnetic spectrum. In this range, sensors can detect thermal properties at room temperature}
 	\label{fig:thermal}
 \end{figure}%
 
@@ -640,7 +657,7 @@ On the opposite side of the visible spectrum resides ultraviolet, followed by X-
 
 Mathanker et al \cite{mathanker} analysed good and defective pecans using X-ray images. They compared AdaBooost and SVM classifiers finding that the AdaBoost average classification result of $92.2\%$ was the best performing.
 
-....
+A laser backscattering technique used by Lorente et al \cite{lorente} provided images that could determine the presence of pathogen Penicillium digitatum in oranges. They directed a laser beam onto the fruit and took images of the surface reflectance using five laser wavelengths ($532nm$, $660nm$, $785nm$, $830nm$, and $1060nm$) in order to perform experiments with the best results of $96.1\%$ attained by using all 5 wavelengths in combination trained with an LDA classifier.
 
 
 
@@ -670,18 +687,24 @@ As the spectral range of the eye is limited, camera sensors can be emeployed whi
 
 Other sensors exist whose range is further into the infrared (SWIR, MWIR, LWIR, and FIR in Figure \ref{fig:ifra-red}), allowing many properties (usually internal) to be analysed.
 
-
-Bruising in soft-skinned fruit and vegetables occurs if mishandled or exposed to excessive handling, reducing the quality for customers. Usually resulting from an impact, the moisture comes to the surface and therefore can be differentiated from the sourround soun tissue by means of analysing several water absorbtion bands in the visible and NIR regions. Hyperspectral imaging and PCA reduction used by Che et al \cite{che} provided an accurate method to extract bruise regions from apple images. Using two characteristic wavebands at $675nm$ and $960 nm$, they analysed the fruit $0h$, $12h$, and $18h$ after bruising impact and found that the Random Forrest classifer performed best at $99.9\%$ average accuracy. Qiang and Mingjie \cite{qiang} used hyperspectral imaging  in the range of $408nm-1117nm$ in order to detect bruising in kiwi fruit. They were able to detect the bruising through the thick peel where human vision could not with an overall error rate of $14.5\%$. 
-
-Munera et al \cite{munera} developed a system using visible and NIR hyperspectral imaging in order to grade persimmon fruit by firmness, maturity level, and astringency. Using CIE-Lab colour space, they found that the $L$ and $b$ coordinates decreased whilst the $a$ coordinate increased with maturity, allowing good corellation with colour parameters such as $H(R^2 = 0.83)$, $G(R^2 = 0.82)$ and $h(R^2 = 0.81)$. Ratios of the colour channels were also analysed with results achieving $a/b(R^2 = 0.83)$, $G/R(R^2 = 0.83)$, and $a/L(R^2 = 0.83)$. Three wavelengths were chosen as optimal ($580nm$, $680nm$, and $1050nm$) in order to perform the ripeness tests with all accuracy $>94\%$ using LDA, QDA, and SVM classifiers. The astringency test used the same classifiers and resulted in $>90\%$ for all, and $>95\%$ for the QDA method. This indicates the ability of non-destructive assessment of the maturity, firmness, and astringency of these fruits is valid.
+Classification can be performed using hyperspectral imaging as well as defect detection. Invisible properties of fruits and vegetables in particular, can be used to classify between species, or grades of a particular species. Munera et al \cite{munera} developed a system using visible and NIR hyperspectral imaging in order to grade persimmon fruit by firmness, maturity level, and astringency. Using CIE-Lab colour space, they found that the $L$ and $b$ coordinates decreased whilst the $a$ coordinate increased with maturity, allowing good corellation with colour parameters such as $H(R^2 = 0.83)$, $G(R^2 = 0.82)$ and $h(R^2 = 0.81)$. Ratios of the colour channels were also analysed with results achieving $a/b(R^2 = 0.83)$, $G/R(R^2 = 0.83)$, and $a/L(R^2 = 0.83)$. Three wavelengths were chosen as optimal ($580nm$, $680nm$, and $1050nm$) in order to perform the ripeness tests with all accuracy $>94\%$ using LDA, QDA, and SVM classifiers. The astringency test used the same classifiers and resulted in $>90\%$ for all, and $>95\%$ for the QDA method. This indicates the ability of non-destructive assessment of the maturity, firmness, and astringency of these fruits is valid. Another example by Munera et al \cite{munera2} acquired images with wavelengths of $450nm-1040nm$ for the purpose of distinguishing between two kinds of nectarine that have very similar appearance but different taste. A human panel could only classify correctly $57\%$ of the time, whereas their method had a $94\%$ accuracy using a PLS-DA model trained with 14 optimal wavelegths. 
 
 In order to grade cherries into three maturity stages, Li et al \cite{li} analysed characteristics in terms of Soluable Solids Content (SSC) and acidity (pH) with hyperspectral imaging in the range of $874nm-1734nm$. Two full-band methods were tested, namely, principal components regression model and partial least squares regression model both with similar accuracy. A genetic algorithm (GA) was used to reduce complexity in bandwidth by reducing the full spectrum to 54 optimal bands for the SSC model and 28 for pH, and reported a $96.4\%$ total accuracy.  
 
+
+Bruising in soft-skinned fruit and vegetables occurs if mishandled or exposed to excessive handling, reducing the quality for customers. Usually resulting from an impact, the moisture comes to the surface and therefore can be differentiated from the sourround soun tissue by means of analysing several water absorbtion bands in the visible and NIR regions. Therefore, NIR and SWIR wavelengths can penetrate the surface of some materials giving insight into hidden or skin defects ranging from sub-surface bruising to external visible tissue damage. Visualising these inpurities can be challenging for RGB imaging given inherrant colour saturation and reliance on good illumination. 
+
 Using hyperspectral imaging ranging from $950nm$ to $1650nm$, Lee et al \cite{lee} exploited the ability of NIR wavelengths to detect bruising in pears. By investigation it was found that the waveband ratio of $1074nm/1016nm$ higlighted invisible bruises which could then be extracted using thresholding with a $92\%$ accuracy. 
 
-....
+Hyperspectral imaging and PCA reduction used by Che et al \cite{che} provided an accurate method to extract bruise regions from apple images. Using two characteristic wavebands at $675nm$ and $960 nm$, they analysed the fruit $0h$, $12h$, and $18h$ after bruising impact and found that the Random Forrest classifer performed best at $99.9\%$ average accuracy. Qiang and Mingjie \cite{qiang} used hyperspectral imaging  in the range of $408nm-1117nm$ in order to detect bruising in kiwi fruit. They were able to detect the bruising through the thick peel where human vision could not with an overall error rate of $14.5\%$. Li \cite{li3} also investigated detection of buising on peaches in the invisible NIR and SWIR range only ($781nm-2500nm$) in combination with and improved watershed segmentation technique resulting in a bruise detection accuracy of $96.5\%$ and sound sample detection accuracy of $97.5\%$.
 
+Other species have similar bruise detection properties with infrared imaging such as apples \cite{che}, kiwi \cite{qiang}, and Pear \cite{lee}. Lopez-Maestresalas et al \cite{ainara} investigated two wavelength bands at Vis-NIR ($400nm-1000nm$), and SWIR ($1000nm-2500nm$)in order to detect blackspot in potatos which occurs on heavy impact during harvesting. The dark skin of the potatos inhibits visual detection for blackspot going largely undetected. Their analysis showed that, using HSI colour space and PLS-DA, they could achieve an overall classification accuracy of $>94\%$. This result was superior over the other methods examined, namely, PCA and Soft Independent Modeling of Class Analogy (SIMCA). They also found that the SWIR band possesed features which allowed early detection of the defect with $98.56\%$ accuracy $5h$ after impact.
 
+A strawberry decay detection method designed by Liu et al \cite{liu2} used SWIR ($1000nm-2500nm$) imaging to determine attributes such as Total Water-soluble Sugar (TWSS), the sum of fructose, glucose, and sucrose finding several distinct bands to evaluate. Predicting the TWSS content resulted in $R^2=0.807$ correlation coefficient and the accuracy of the decay classifier generated between $89.4\%-95.4\%$ for calibration and $87.0\%-94.4\%$ for prediction accuracies, respectively.
+
+Skin defects in bi-coloured peaches were successfuly detected by Li et al \cite{li2} by investigating wavelengths from $400nm$ to $1000nm$ determining characteristic values at $463nm$, $555nm$, $687nm$, $712nm$, $813nm$, and $970nm$ as well as $781nm$, $815nm$, and $848nm$. The best results of $96.6\%$ were realised when taking the ratio of $781nm/848nm$.
+
+Strawberry fungal infection identification performed by Siedliska et al \cite{siedliska} analysed wavelengths in the range of $400nm-2400nm$ finally selecting 19 bands to discriminate infected vs sound berries training a BNN model. They achieved $>97\%$ accuracy for fungal infection detection from the $24h$ point, and using the same bands, performed a multiple linear regression technique to predict anthocyanin content (AC) and soluble solid content (SSC) with results of $R^2=0.65$, and $R^2=0.85$ coefficients, respectively.
 
 
 
@@ -695,7 +718,6 @@ Brosnan and Sun \cite{brosnan} performed a review of agricultural vision systems
 
 Using a conveyor system, L. Xu et al \cite{xu} achieved very good results in classifying shape, ripeness, and size. The measurements are attained by using a K-means clustering method to find 7 vertical and 7 horizontal axis lines. Size feature was calculated by performing experiments to find the ratio of pixels/mm and simply dividing the pixel measurements of the berry by this ratio. Using the CIELAB colour space, a dominant colour was found in the berry by means of a histogram windowing method. Similarly, Liming and Yanchao \cite{liming} developed a strawberry grading method and mechanical system that requires manual loading of single strawberries on a converyor belt before using colour features and k-means clustering to grade the fruit into shape and colour classes at a rate of approximately $2.5s/berry$. 
 
-S. Yamamoto et al \cite{yamamoto2} used simple RGB techniques to define the ripeness of strawberries when developing an automated harvesting machine. They used a combination of green, red, and white LED's in order to illuminate the strawberries in specific wavelengths, giving better judgement on whether to pick or not based on ripeness. The harvesting machine was designed to be stationary with the fruit being presented to the machine via moving beds, which implies a large amount of fabrication and process chgange would be required to persue this method. The authors reported high harvesting rates ($67.1\%$) compared to that of other more conventional harvesters, however, their system was succeptible to fruit damage and requires improvement in harvesting speed. Hayashi et al \cite{hayashi} reported a rate of $11.5s/berry$ using their automated harvesting machine. The end-effector designed by the team used a peduncle cutter in conjunction with a suction cup to pick the fruit from the plant and place it in a padded tray as shown in Figure \ref{fig:strawberry_picker}. The HSI colour space was used to generate a maturity level when grading the fruit to be picked. By creating acceptable and unacceptable sections of the average hue, saturation, and intensity channels, they could discern $>80\%$ ripeness with an accuracy of $41.3\%$.
 
 \begin{figure}[h]
 	\centering
@@ -705,10 +727,11 @@ S. Yamamoto et al \cite{yamamoto2} used simple RGB techniques to define the ripe
 \end{figure}%
 
 
+S. Yamamoto et al \cite{yamamoto2} used simple RGB techniques to define the ripeness of strawberries when developing an automated harvesting machine. They used a combination of green, red, and white LED's in order to illuminate the strawberries in specific wavelengths, giving better judgement on whether to pick or not based on ripeness. The harvesting machine was designed to be stationary with the fruit being presented to the machine via moving beds, which implies a large amount of fabrication and process chgange would be required to persue this method. The authors reported high harvesting rates ($67.1\%$) compared to that of other more conventional harvesters, however, their system was succeptible to fruit damage and requires improvement in harvesting speed. Hayashi et al \cite{hayashi} reported a rate of $11.5s/berry$ using their automated harvesting machine. The end-effector designed by the team used a peduncle cutter in conjunction with a suction cup to pick the fruit from the plant and place it in a padded tray as shown in Figure \ref{fig:strawberry_picker}. The HSI colour space was used to generate a maturity level when grading the fruit to be picked. By creating acceptable and unacceptable sections of the average hue, saturation, and intensity channels, they could discern $>80\%$ ripeness with an accuracy of $41.3\%$.
+
+
 Strawberry cultivar are numerous around the world and their distinguishing features seem only obvious to expert humans as shown in K. Yamamoto et al \cite{yamamoto} when they implemented a method to distinguish between 21 different strawberry cultivars. They found that when using a single feature such as colour, shape, or size, the average accuracy was very poor at $<42\%$. However, when these three features were used in conjunction, the discriminant analysis classifier performed better at $68\%$. This shows that strawberry cultivars are not simply classified due to the inter-species colour and form having similar features. 
 
-
-EMasry et al \cite{elmasry2} used multi-spectral imaging in order to determine the moisture, soluable solids, and pH levels in order to grade the ripeness of single strawberries. They found broadband absorbtion bands, in the case of underripe fruit, at 500, 680, 840, and $960nm$. The bands at 840 and $960nm$ were found to represent sugar and water absorbtion which was used to determine factors that would usually require destructive testing. The same results were found by Tallada, Nagata, and Kobayashi \cite{tallada} using an NIR hyperspectral system, they analysed and asessed the firmness of strawberries by non-destructive imaging. By taking acquiring images from $640nm-1000nm$ in steps of $5nm$ they were able to dertermine the optimal wavelengths to estimate firmness accross three grades of ripeness. The results had a correlation of $0.786$ and standard error of $0.350MPa$ using $685nm$, $865nm$, and $985nm$. They calculated formulas to generate heat maps of the firmness distribution (pseudo-colour), as shown on the ripe and underripe examples in Figure \ref{fig:multispec_strawberry}. This result is expected given the deep red colour of the top specimen versus the half white, and red example.
 
 \begin{figure}[h]
 	\centering
@@ -717,7 +740,9 @@ EMasry et al \cite{elmasry2} used multi-spectral imaging in order to determine t
 	\label{fig:multispec_strawberry}
 \end{figure}%
 
-Zhang et al \cite{zhang} used a hyprspectral imaging system in two ranges - $441nm-1013nm$ and $941nm-1578nm$ to assess the ripeness of strawberries into three categories. Using PCA for reflectance processing and texture components at optimal wavelengths to form the feature set, they trained an SVM classifier achieving overall classification accuracy of $85\%$. 
+EMasry et al \cite{elmasry2} used multi-spectral imaging in order to determine the moisture, soluable solids, and pH levels in order to grade the ripeness of single strawberries. They found broadband absorbtion bands, in the case of underripe fruit, at 500, 680, 840, and $960nm$. The bands at 840 and $960nm$ were found to represent sugar and water absorbtion which was used to determine factors that would usually require destructive testing. The same results were found by Tallada, Nagata, and Kobayashi \cite{tallada} using an NIR hyperspectral system, they analysed and asessed the firmness of strawberries by non-destructive imaging. By taking acquiring images from $640nm-1000nm$ in steps of $5nm$ they were able to dertermine the optimal wavelengths to estimate firmness accross three grades of ripeness. The results had a correlation of $0.786$ and standard error of $0.350MPa$ using $685nm$, $865nm$, and $985nm$. They calculated formulas to generate heat maps of the firmness distribution (pseudo-colour), as shown on the ripe and underripe examples in Figure \ref{fig:multispec_strawberry}. This result is expected given the deep red colour of the top specimen versus the half white, and red example.
+
+Zhang et al \cite{zhang} used a hyprspectral imaging system in two ranges - $441nm-1013nm$ and $941nm-1578nm$ to assess the ripeness of strawberries into three categories. Using PCA for reflectance processing and texture components at optimal wavelengths to form the feature set, they trained an SVM classifier achieving overall classification accuracy of $85\%$. Similar research by Liu et al \cite{liu} used 19 bands in the range of $405nm-970nm$ in order to deternine firmness, SSC, and ripeness. Experimenting with classifiers such as SVM and PLS, they found the BPNN model performed well with $R^2=0.94$ and $R^2=0.83$ coefficient of prediction for firmness and SSC, respectively. Three category ripeness evaluations were performed using both PCA-BPNN and SVM clasifiers with the SVM model achieving $100\%$.
 
  
 
@@ -746,9 +771,6 @@ Hyperspectral and mutispectral implementations can help systems to assess produc
 When implementing systems in production environments, the rate of production (and limited space constraints) sometimes require inventive solutions to be implemented in order to acheive the desired outcomes. Aleixos et al \cite{aleixos} developed a commercial citrus grading system which used a combination of transmissive and reflective lenses in order to image the same scene with two cameras. One RGB and one NIR camera were used to acquire images of citrus fruits at a rate of $5 fruits/s$ before assessing each for size and colour and surface defects. The size estimation had $<2mm$ error with colour grading for oranges, lemons, and manderins reaching $94\%$, $93\%$, and $94\%$, respectively.
 
 Machine vision can outperform humans depending on the task involved. Particularly for borderline cases a machine has finite thresholds inplace to ensure consistent outcomes. Estimating ripeness colour, areas of scattered blemishes, and measurements can be difficult and/or subjective between human experts but easily calculated with vision systems. A meat marbling grading system developed by Barbon et al \cite{barbon} trained a k-NN classifier to grade meat samples in $<1s$, which is an improvement on human gradation time of $11s$. Their method was suitable for a range of lighting conditions and animal type due to the illumination normalisation and contrast enhancement processes before classification attaining results of $81.59\%$ and $76.14\%$ for bovine and swine, respectively. 
-
-
-No strawberry grading real-time systems...
 
 
 
@@ -874,22 +896,18 @@ A comparison of six deep learning architectures performed by Koirala et al \cite
 Ma et al \cite{ma} developed a CNN to perform disease recognition among cucumber leaves including anthracnose, downy mildew, powdery mildew, and target leaf spots. The disease is more easily and less laboriously found on the leaves of the cucumber plant as opposed to the fruit itself. The team used a DCNN to perform the detection with results of $93.4\%$ which outperformed alternative algorithms such as SVM, Random Forrest, and AlexNet.
 
    
-
-
-....
-
-
+A Faster R-CNN network was used by Sa et al \cite{sa} to demonstrate it's adaptability of perform fruit detection in an orchard. Initially targeting sweet pepper, they fine-tuned a pre-trained network to generate boundng boxes around the fruit instances in each image achieving $F1=0.828$. Extending the work to other fruit orchard datasets with rock melon, strawberry, apple, avocado, mango and orange also delivering good results with scores of $F1=0.848$, $F1=0.948$, $F1=0.938$, $F1=0.932$, $F1=0.942$, and $F1=0.915$, respectively. 
 
 
 
 
 \subsection{Control Systems}
 
-Vision systems have been utilised on many production lines since the early 1980's \cite{kruger}. Computers represent a medium to perform a consistent, verifiable approach to monitoring, recording, and quality control of produced items. These items may be susceptable to damage, contamination, manufacturing errors, poor quality, out-of-specification features, or defects and require separation from good quality produce. Depending on the goods being monitored, there may be an option to rework, correct, repack, or remake the defected instances, therefore, the control systems will differ greatly between production lines.   
+Vision systems have been utilised on many production lines since the early 1980's \cite{kruger}. Computers represent a medium to perform a consistent, verifiable approach to monitoring, recording, and quality control of produced items that may be susceptable to damage, contamination, manufacturing errors, poor quality, out-of-specification features, or defects and require separation from good quality produce. Depending on the goods being monitored, there may be an option to rework, correct, repack, or remake the defected instances, therefore, the control systems will differ greatly between production lines.   
 
 The fruit grading system by Kondo \cite{kondo} used two robot arms with 3 DOF performing a series of tasks to determine colour, size, shape, and defect. The robots alternate using suction cups to pick up 12 fruit at once in order to acquire images from the above, below, and 4 sides before pushing them into the corresponding lines. 12 camera systems in total are used, with others guiding the manipulators. This, and the project by Michalosa et al \cite{michalosa} combining mobile robots with tooled manipulators serves as examples of precision, complex, robotic control systems. However, as agricultural production line items generally are not required to be assebled or involve precise movements, control systems are relatively easy to implement, without the need for complexities such as several degrees of freedom or specialised tooling to perform the task of quality control.  
 
-Blasco et al \cite{blasco} performed grading of pomegranite arils into five categories - White, Pink, Red, Brown , and Unwanted using several pnuematic air nozzles to eject the arils into their appropriate outlets. The system can grade a maximum of $75kg/h$ using six narrow conveyors and is highly dependant of the feeding unit to uniformly distribute the arils on the conveyor belts. As the air nozzles have a conical burst of air, incorrect rejections can occur if they are too closely distributed, or if external factors cuase the arils to roll between the vision system and control. Pneumatic air ejectors helped Nouri-Ahmadabadi et al \cite{nouri-ahmadabadi} in order to grade pistachio kernels from unwanted shells. The system also required a good separation of individual items on the conveyor in order to correctly eject the affected instances. The sorter requyired an $8mm$ separation and could process $22.74kg/h$ with an accuracy of $94.33\%$. 
+Blasco et al \cite{blasco} performed grading of pomegranite arils into five categories - White, Pink, Red, Brown, and Unwanted using several pnuematic air nozzles to eject the arils into their appropriate outlets. The system can grade a maximum of $75kg/h$ using six narrow conveyors and is highly dependant of the feeding unit to uniformly distribute the arils on the conveyor belts. As the air nozzles have a conical burst of air, incorrect rejections can occur if they are too closely distributed, or if external factors cuase the arils to roll between the vision system and control. Pneumatic air ejectors helped Nouri-Ahmadabadi et al \cite{nouri-ahmadabadi} in order to grade pistachio kernels from unwanted shells. The system also required a good separation of individual items on the conveyor in order to correctly eject the affected instances. The sorter requyired an $8mm$ separation and could process $22.74kg/h$ with an accuracy of $94.33\%$. 
 
 A date grading system by Al Ohali \cite{ohali} used electro-mechanical sorting strips placed at the end of the conveyors which guide the fruit into different grades. This type of control must have even larger spacing due to the mechanical movement followed by a return. Systems developed such as Sa'ad et al \cite{saad} mango shape and weight grading project used push/pull actuators to remove defect items and is akin to conveyor process control (i.e. conveyor separation, interleaving conveyors, conveyor gates, etc). Makky and Soni \cite{makky} developed a grading machine for oil palm fresh fruit bunches using stepwise discrimination in order to classify into accept and reject classes with an average success rate of $93.53\%$. Their design (and in-field implementation) employed a gate driven by a limit switch to separate the good fruit from the rejected.
 
@@ -899,7 +917,38 @@ A date grading system by Al Ohali \cite{ohali} used electro-mechanical sorting s
 \subsection{Summary}
 
 
+A review into applications of machine vision in produce grading showed methods vary substantially depending on application and problem. Geometrical size estimation, colour, and texture analysis are common approaches due to the inherant nature of fruits and vegetables physical appearance in correlation to ripeness or maturity. However, more complicated methods have been used albeit in a more controlled environment such as laboratory settings. Vision systems provide consistent and reproducable results with the advanteges in applications where rapid production speeds, invisible spectrums, lighting concerns, and seasonal variations are factors.
 
+Size, shape, and volume can be estimated for produce items with the provision that the images are well-segmented individual, or group of items, and that the camera is fixed relative to the subject, and calibrated respectively to obtain a $pixel/mm$ measurement. This callibration can then be used to calculate length, width and shape from a single perspective, and with the addition of a camera orthoganal to the first, volumetric and 3D reconstruction can be achieved. RGB, CIE-Lab, or HSV colour spaces can provide all the relevant information required to differentiate or grade fruit and vegetables into catgories of ripeness or maturity levels in with high accuracy, especially compared to the subjectivity of human quality checkers. Many fruits, for example, begin green and progress to yellow, orange, or red colours which can be exploited using CIE-Lab's $a*$ and $b*$ channels. FIS have been used successfully in grading of fruit and vegetables by implementing fuzzification methods such as PCA or binning features such as colour space, measurement, and texture reducing the classification to a simple decision tree problem.  
+
+Selection of features is an important step in producing an accurate classification or detection model. Some results show that only a few hand-selected features can be highly accurate given the features are of significance to the deterministic characteristics of the subject. However, research also indicates that extracting and applying dozens of features may not produce a model that performs as well as others, indicating a disconnection between algorithmic and human discrimination.
+
+Physical properties can be analysed in a non-destuctive manner by way of spectroscopy - a process of measuring the internal reflectance of light through an object - using varying wavelengths in order to evaluate the internal structure, or flourescence - measuring the exitation of an object in one wavelength, generated by a light source in another. NIR and SWIR wavelength analysis can reveal information regarding sugars, acidity, moisture, and firmness with a high level of accuracy, and thermographic and X-ray imaging has also played a part in the review. This type of analysis in the ranges of $1\mu m-15\mu m$ (SWIR/MWIR/LWIR) and $0.01nm-10nm$ (X-ray) generally take longer to process at the time of testing due to the sensor requirements with a resolution-time-cost balance used in most cases depending on application, making it diffuclt to employ these systems on high-speed production lines.  
+
+The NIR region ($750nm-1000nm$), however, can be used to effectively identify defects and characteristics in objects which would be otherwise unseen by human eyes using cheap, fast, and readily available CCD and CMOS sensors. These properties can help distinguish varieties, classify grades, and detect defects with the ability to penetrate into sub-surface of skinned fruit and vegetables. Bruise detection is a common use for NIR imaging given the cameras ability to detect reflectance in the water absorbtion bands of the spectrum,highlighting the affected areas. This is advantageous in applications where the skin is darker than the flesh such as kiwi, potatoes, pear and apples.
+
+Strawberries are very suceptible to damage, therefore, handling and transport becomes of concern particularly if the desire is to mechanically sort them in to categories or remove defective instances. Picking in the field and packing the berries into containers generates many opportunities to bruise or injure the delicate flesh before the quality inspection process begins. However, some progress has been made in the way of robot picking that can precisely pick and place berries into the containers using machine vision to operate the picking mechanism and perform the quality or ripeness gradation, simulteneously. Using a robot to pick a strawberry could see rates of $>10s/berry$ with current technology and is therefore mostly experimental in nature given that the volume of strawberries on a typical farm or packing room. Each method to process the strawberries in this review have been singulated either by way of laboratory conditions, robotised harvesting, or human placement on a conveyor before the vision system assesses the quality. However, each of these options either costs more in terms of time, or labour, due to the delicate placement requiremed in order to yield unspoiled fruit. The calyx removal system from \cite{lin} used a system of roller rods for separation of the strawberries into singular specimens before removing the calyx with a waterjet. As the metal rollers apply friction to the berries in order to transport them, they are likely to have bruising and other skin damage after processing, which means the produce is no longer acceptable by retail markets, as was the purpose of their project. 
+
+Conversely, the apples, figs, and citrus fruits reviewed, that are able to operate in real-time environments, have robust skin to protect them from being constantly moved, rolled, placed, and pushed during the grading and control processes. Speeds of $54,000/h$ for apples, $90kg/h$ for figs, $72,000/h$ for dates, and $5/s$ for citrus fruit have been noted proving that machine vision is currently powerful enough to process this type of volume if the automated handling is efficient and appropriate.
+
+Machine Learning and Deep Learning play a vital role in produce grading, along with more naive implementations, due to their ability to discriminate between classes well. Algorithms such as LDA, QDA, SVM, ANN, BPNN may take hours to train, but can perform accurately and quickly during inference. SVM and shallow networks (such as single layer ANN or BPNN) were predominant methods to predict based on colour, size, and texture features extracted by hand, whereas, CNN and deeper networks are used where the image itself is used as input in order to predict masks or bounding boxes for identification and classification purposes.
+
+\quad
+\quad
+
+
+The main body of the thesis following is set out with four chapters: 
+
+
+\begin{itemize}
+	\item Design and Construction - Chapter \ref{sec:I} 
+	\item Production Integration  - Chapter \ref{sec:II}
+	\item System Reconfiguration - Chapter \ref{sec:III}
+	\item Linux and Deep Learning - Chapter \ref{sec:IV}
+\end{itemize}
+
+
+ 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -907,6 +956,7 @@ A date grading system by Al Ohali \cite{ohali} used electro-mechanical sorting s
 \newpage
 
 \section{I - Design and Prototype}
+\label{sec:I}
 
 \subsection{Design}
 
@@ -1316,7 +1366,7 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 
 
 \section{II - Production Integration}
-
+\label{sec:II}
 
 
 
@@ -1332,7 +1382,7 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 
 
 \section{III - System Reconfiguration and Redesign}
-
+\label{sec:III}
 
 
 
@@ -1352,7 +1402,7 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 
 
 \section{IV - Linux and Deep Learning}
-
+\label{sec:IV}
 
 
 

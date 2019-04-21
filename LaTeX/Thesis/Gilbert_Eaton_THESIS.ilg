@@ -1,4 +1,4 @@
-This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+This is makeindex, version 2.15 [TeX Live 2017] (kpathsea + Thai support).
 Scanning style file /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist.......
 ** Input style error (file = /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist, line = 70):
    -- Unknown specifier lethead_prefix.
@@ -7,8 +7,8 @@ Scanning style file /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist.
 ** Input style error (file = /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist, line = 72):
    -- Unknown specifier lethead_flag.
 ...done (10 attributes redefined, 3 ignored).
-Scanning input file Gilbert_Eaton_THESIS.nlo....done (34 entries accepted, 0 rejected).
-Sorting entries....done (173 comparisons).
-Generating output file Gilbert_Eaton_THESIS.nls....done (69 lines written, 0 warnings).
+Scanning input file Gilbert_Eaton_THESIS.nlo....done (52 entries accepted, 0 rejected).
+Sorting entries....done (318 comparisons).
+Generating output file Gilbert_Eaton_THESIS.nls....done (103 lines written, 0 warnings).
 Output written in Gilbert_Eaton_THESIS.nls.
 Transcript written in Gilbert_Eaton_THESIS.ilg.

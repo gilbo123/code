@@ -3,8 +3,8 @@
 \nomenclatureentry{a$calyx$@[{$calyx$}]\begingroup The green leaves of a strawberry\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$peduncle$@[{$peduncle$}]\begingroup Stem of the strawberry\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$downtime$@[{$downtime$}]\begingroup The amount of time (cumulative) during production where nothing is produced\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$a$@[{$a$}]\begingroup \nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$b$@[{$b$}]\begingroup \nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$SSC$@[{$SSC$}]\begingroup Soluable solid content\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$RMSE$@[{$RMSE$}]\begingroup Root Mean Squared Error\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$SVM$@[{$SVM$}]\begingroup Support Vector Machine\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$RBF$@[{$RBF$}]\begingroup Radial Basis Function\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$AI$@[{$AI$}]\begingroup Artificial Intelligence\nomeqref {0}|nompageref}{ix}
@@ -15,11 +15,16 @@
 \nomenclatureentry{a$ANN$@[{$ANN$}]\begingroup Artificial Neural Network\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$FNN$@[{$FNN$}]\begingroup Feedforward Neural Network\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$CNN$@[{$CNN$}]\begingroup Convolutional Neural Network\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$R-CNN$@[{$R-CNN$}]\begingroup Region-based Convolutional Neural Network\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$BPNN$@[{$BPNN$}]\begingroup Back-propogation Neural Network\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$k-NN$@[{$k-NN$}]\begingroup k-Nearest Neighbour\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$DNN$@[{$DNN$}]\begingroup Deep Neural Network\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$ELM$@[{$ELM$}]\begingroup Extreme Learning Machine\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$SFLN$@[{$SFLN$}]\begingroup Single Hiden Layer Feed Neural Network\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$LDA$@[{$LDA$}]\begingroup Linear Discriminant Analysis\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$QDA$@[{$QDA$}]\begingroup Quadratic Discriminant Analysis\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$PLS-DA$@[{$PLS-DA$}]\begingroup Partial Least-squares Discrininant Analysis\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$PCA$@[{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$MLP$@[{$MLP$}]\begingroup Multi-layer Perceptron\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$GMM$@[{$GMM$}]\begingroup Gaussian Mixture Model\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$PCA$@[{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}|nompageref}{ix}
@@ -28,6 +33,12 @@
 \nomenclatureentry{a$HSI$@[{$HSI$}]\begingroup Hue, Saturation, Intensity\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$HSV$@[{$HSV$}]\begingroup Hue, Saturation, Value\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$CIE-Lab$@[{$CIE-Lab$}]\begingroup CIE standard colourspace\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$NIR$@[{$NIR$}]\begingroup Near Infrared\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$SWIR$@[{$SWIR$}]\begingroup Short-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$MWIR$@[{$MWIR$}]\begingroup Medium-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$LWIR$@[{$LWIR$}]\begingroup Long-wavelength Infrared range of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$FIR$@[{$FIR$}]\begingroup Far Infrared range of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$UV$@[{$UV$}]\begingroup Ultraviolet range of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$UI$@[{$UI$}]\begingroup User Interface\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$PSU$@[{$PSU$}]\begingroup Power Supply Unit\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$UPS$@[{$UPS$}]\begingroup Uninterruptable Power Supply\nomeqref {0}|nompageref}{ix}

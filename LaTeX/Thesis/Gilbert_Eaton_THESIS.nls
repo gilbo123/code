@@ -3,67 +3,101 @@
  \nomgroup{A}
 
   \item [{$AI$}]\begingroup Artificial Intelligence\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$ANN$}]\begingroup Artificial Neural Network\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$AVX$}]\begingroup Advanced Vector Extensions\nomeqref {0}
-		\nompageref{1}
-  \item [{$BP$}]\begingroup Back Propogation\nomeqref {0}\nompageref{1}
-  \item [{$calyx$}]\begingroup The green leaves and stem attached to strawberry\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$BP$}]\begingroup Back Propogation\nomeqref {0}
+		\nompageref{ix}
+  \item [{$BPNN$}]\begingroup Back-propogation Neural Network\nomeqref {0}
+		\nompageref{ix}
+  \item [{$calyx$}]\begingroup The green leaves of a strawberry\nomeqref {0}
+		\nompageref{ix}
   \item [{$CCD$}]\begingroup Charge coupled device (sensor)\nomeqref {0}
-		\nompageref{1}
-  \item [{$CIELAB$}]\begingroup CIE standard colourspace\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$CIE-Lab$}]\begingroup CIE standard colourspace\nomeqref {0}
+		\nompageref{ix}
   \item [{$CMOS$}]\begingroup Complimentary metal-oxide semiconductor (sensor)\nomeqref {0}
-		\nompageref{1}
-  \item [{$cNN$}]\begingroup Convolutional Neural Network\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$CNN$}]\begingroup Convolutional Neural Network\nomeqref {0}
+		\nompageref{ix}
   \item [{$CPU$}]\begingroup Central Processing Unit\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$cultivar$}]\begingroup The species or type of fruit\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$DNN$}]\begingroup Deep Neural Network\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$DOF$}]\begingroup Degrees of Freedom\nomeqref {0}
+		\nompageref{ix}
+  \item [{$downtime$}]\begingroup The amount of time (cumulative) during production where nothing is produced\nomeqref {0}
+		\nompageref{ix}
   \item [{$ELM$}]\begingroup Extreme Learning Machine\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$FC$}]\begingroup Fully Connected (NN layer)\nomeqref {0}
-		\nompageref{1}
-  \item [{$FOV$}]\begingroup Field of view\nomeqref {0}\nompageref{1}
+		\nompageref{ix}
+  \item [{$FIR$}]\begingroup Far Infrared range of electromagnectic spectrum\nomeqref {0}
+		\nompageref{ix}
+  \item [{$FNN$}]\begingroup Feedforward Neural Network\nomeqref {0}
+		\nompageref{ix}
+  \item [{$FOV$}]\begingroup Field of view\nomeqref {0}\nompageref{ix}
   \item [{$GMM$}]\begingroup Gaussian Mixture Model\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$GPU$}]\begingroup Graphical Processing Unit\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$HSI$}]\begingroup Hue, Saturation, Intensity\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$HSV$}]\begingroup Hue, Saturation, Value\nomeqref {0}
-		\nompageref{1}
-  \item [{$IR$}]\begingroup Infra-Red\nomeqref {0}\nompageref{1}
+		\nompageref{ix}
+  \item [{$IR$}]\begingroup Infrared\nomeqref {0}\nompageref{ix}
+  \item [{$k-NN$}]\begingroup k-Nearest Neighbour\nomeqref {0}
+		\nompageref{ix}
+  \item [{$LDA$}]\begingroup Linear Discriminant Analysis\nomeqref {0}
+		\nompageref{ix}
   \item [{$LED$}]\begingroup Light emitting diode (Light source)\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$LWIR$}]\begingroup Long-wavelength Infrared range of electromagnectic spectrum\nomeqref {0}
+		\nompageref{ix}
   \item [{$MLP$}]\begingroup Multi-layer Perceptron\nomeqref {0}
-		\nompageref{1}
-  \item [{$NN$}]\begingroup Neural Network\nomeqref {0}\nompageref{1}
-  \item [{$PC$}]\begingroup Personal Computer\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$MWIR$}]\begingroup Medium-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}
+		\nompageref{ix}
+  \item [{$NIR$}]\begingroup Near Infrared\nomeqref {0}\nompageref{ix}
+  \item [{$NN$}]\begingroup Neural Network\nomeqref {0}\nompageref{ix}
   \item [{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$peduncle$}]\begingroup Stem of the strawberry\nomeqref {0}
+		\nompageref{ix}
+  \item [{$PLS-DA$}]\begingroup Partial Least-squares Discrininant Analysis\nomeqref {0}
+		\nompageref{ix}
   \item [{$PSU$}]\begingroup Power Supply Unit\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$punnet$}]\begingroup A plastic strawberry container\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$QDA$}]\begingroup Quadratic Discriminant Analysis\nomeqref {0}
+		\nompageref{ix}
+  \item [{$R-CNN$}]\begingroup Region-based Convolutional Neural Network\nomeqref {0}
+		\nompageref{ix}
   \item [{$RBF$}]\begingroup Radial Basis Function\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$ReLU$}]\begingroup Rectified Linear Unit\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
   \item [{$RGB$}]\begingroup Red, Green, Blue\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$RMSE$}]\begingroup Root Mean Squared Error\nomeqref {0}
+		\nompageref{ix}
   \item [{$SFLN$}]\begingroup Single Hiden Layer Feed Neural Network\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$SSC$}]\begingroup Soluable solid content\nomeqref {0}
+		\nompageref{ix}
   \item [{$SVM$}]\begingroup Support Vector Machine\nomeqref {0}
-		\nompageref{1}
-  \item [{$UI$}]\begingroup User Interface\nomeqref {0}\nompageref{1}
+		\nompageref{ix}
+  \item [{$SWIR$}]\begingroup Short-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}
+		\nompageref{ix}
+  \item [{$UI$}]\begingroup User Interface\nomeqref {0}\nompageref{ix}
   \item [{$UPS$}]\begingroup Uninterruptable Power Supply\nomeqref {0}
-		\nompageref{1}
+		\nompageref{ix}
+  \item [{$UV$}]\begingroup Ultraviolet range of electromagnectic spectrum\nomeqref {0}
+		\nompageref{ix}
 
 \end{thenomenclature}
