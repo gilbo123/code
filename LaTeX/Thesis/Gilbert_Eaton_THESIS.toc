@@ -18,28 +18,28 @@
 \contentsline {subsubsection}{\numberline {2.7.2}Deep Learning}{26}{subsubsection.2.7.2}
 \contentsline {subsection}{\numberline {2.8}Control Systems}{29}{subsection.2.8}
 \contentsline {subsection}{\numberline {2.9}Summary}{30}{subsection.2.9}
-\contentsline {section}{\numberline {3}I - Design and Prototype}{33}{section.3}
-\contentsline {subsection}{\numberline {3.1}Design}{33}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Project Challenges}{33}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Punnet Imaging}{33}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Flickering}{34}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Overheating}{35}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Asyncronous Aquisition of Images}{35}{subsubsection.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.5}Processing Time}{36}{subsubsection.3.2.5}
-\contentsline {subsubsection}{\numberline {3.2.6}Orientation of Punnets}{36}{subsubsection.3.2.6}
-\contentsline {subsubsection}{\numberline {3.2.7}Ejector Synchronization}{36}{subsubsection.3.2.7}
-\contentsline {subsubsection}{\numberline {3.2.8}Conveyor Motion}{37}{subsubsection.3.2.8}
-\contentsline {subsubsection}{\numberline {3.2.9}Specular Reflections}{37}{subsubsection.3.2.9}
-\contentsline {subsection}{\numberline {3.3}Electronics}{38}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Power Requirements}{39}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Hardware}{39}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Software}{39}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}User Interface}{39}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Asynchronous Grabbing}{39}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Hardware Control}{39}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Image Processing}{40}{subsubsection.3.4.4}
-\contentsline {subsection}{\numberline {3.5}Implementation and Results}{41}{subsection.3.5}
-\contentsline {section}{\numberline {4}II - Production Integration}{42}{section.4}
-\contentsline {section}{\numberline {5}III - System Reconfiguration and Redesign}{42}{section.5}
-\contentsline {section}{\numberline {6}IV - Linux and Deep Learning}{42}{section.6}
-\contentsline {section}{\numberline {7}Conclusion}{42}{section.7}
+\contentsline {section}{\numberline {3}Phase I - Initial Design and Prototype}{33}{section.3}
+\contentsline {subsection}{\numberline {3.1}Project Challenges}{35}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Punnet Imaging}{35}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Overheating}{36}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Asyncronous Aquisition of Images}{36}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Processing Time}{36}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.5}Orientation of Punnets}{37}{subsubsection.3.1.5}
+\contentsline {subsubsection}{\numberline {3.1.6}Ejector Synchronization}{37}{subsubsection.3.1.6}
+\contentsline {subsubsection}{\numberline {3.1.7}Conveyor Motion}{37}{subsubsection.3.1.7}
+\contentsline {subsubsection}{\numberline {3.1.8}Flickering}{38}{subsubsection.3.1.8}
+\contentsline {subsubsection}{\numberline {3.1.9}Specular Reflections}{39}{subsubsection.3.1.9}
+\contentsline {subsection}{\numberline {3.2}Design}{40}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Electronics}{40}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Power Requirements}{41}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Hardware}{41}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Software}{41}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}User Interface}{41}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Asynchronous Grabbing}{41}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Hardware Control}{41}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Image Processing}{42}{subsubsection.3.4.4}
+\contentsline {subsection}{\numberline {3.5}Prototype Construction}{44}{subsection.3.5}
+\contentsline {section}{\numberline {4}II - Production Integration}{48}{section.4}
+\contentsline {section}{\numberline {5}III - System Reconfiguration and Redesign}{48}{section.5}
+\contentsline {section}{\numberline {6}IV - Linux and Deep Learning}{48}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{48}{section.7}

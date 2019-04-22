@@ -45,50 +45,52 @@ Repeated entry---line 2109 of file Master.bib
 I'm skipping whatever remains of this entry
 Warning--entry type for "baranowski" isn't style-file defined
 --line 2289 of file Master.bib
+Warning--entry type for "gurney" isn't style-file defined
+--line 2359 of file Master.bib
+Warning--entry type for "physicsopenlab" isn't style-file defined
+--line 2373 of file Master.bib
 Warning--I didn't find a database entry for "peng"
 Warning--I didn't find a database entry for "luo"
 Warning--I didn't find a database entry for "yavs"
-Warning--I didn't find a database entry for "rox"
-Warning--I didn't find a database entry for "sommer"
-You've used 123 entries,
+You've used 127 entries,
             1876 wiz_defined-function locations,
-            1137 strings with 25058 characters,
-and the built_in function-call counts, 38367 in all, are:
-= -- 3870
-> -- 1376
+            1154 strings with 25361 characters,
+and the built_in function-call counts, 39455 in all, are:
+= -- 3992
+> -- 1396
 < -- 0
-+ -- 513
-- -- 390
-* -- 2583
-:= -- 5201
-add.period$ -- 133
-call.type$ -- 123
-change.case$ -- 120
++ -- 522
+- -- 395
+* -- 2636
+:= -- 5331
+add.period$ -- 138
+call.type$ -- 127
+change.case$ -- 124
 chr.to.int$ -- 0
-cite$ -- 123
-duplicate$ -- 1988
-empty$ -- 3498
-format.name$ -- 390
-if$ -- 9687
+cite$ -- 127
+duplicate$ -- 2044
+empty$ -- 3609
+format.name$ -- 395
+if$ -- 9973
 int.to.chr$ -- 0
-int.to.str$ -- 123
-missing$ -- 119
-newline$ -- 382
-num.names$ -- 123
-pop$ -- 312
+int.to.str$ -- 127
+missing$ -- 121
+newline$ -- 396
+num.names$ -- 127
+pop$ -- 331
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1628
+skip$ -- 1684
 stack$ -- 0
-substring$ -- 2992
-swap$ -- 1032
+substring$ -- 3086
+swap$ -- 1064
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 329
-width$ -- 126
-write$ -- 1205
+while$ -- 337
+width$ -- 130
+write$ -- 1242
 (There were 7 error messages)

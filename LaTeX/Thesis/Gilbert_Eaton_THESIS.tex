@@ -440,6 +440,7 @@ In order to reduce costs and improve efficiencies, Magnificent has invested in v
 
 
 \subsection{Project Description and Requirements}
+\label{sec:requirements}
 
 \textbf{Research Question:} Can packaged strawberries be effectively and accurately quality graded by machine vision on a fast-paced, real time production line?
 
@@ -550,7 +551,7 @@ The vision system general requirements are listed in Table \ref{tab:requirements
 \newpage
 
 \section{Current Industry Methods and Review of Literature}
-\label{lab:lit}
+\label{sec:lit}
 
 Numerous production lines have adopted computer vision systems in order to reduce the cost of labor and standardise the quality control. Depending on volume and product, quaity controllers may be a substantial cost in production and can be subjective, particularly for seasonal work. This leads to loss in productivity, labour costs, and financial loss in the form of stock returns, in the case that it is not accepted by the customer. Employing accurate vision systems on a production line give the producers quality control that is consistent, continuous, and reletively cheap. 
 
@@ -626,12 +627,12 @@ Hardware and physical properties may be exploited in some applications in order 
 Chui et al \cite{chiu} used a process of acquiring flourescence images - exiting the internal structure of the object in one wavelength, to emit light at a different wavelength - in order to detect mechanically-induced bruises on apples. They found that this method highlighted the bruised flesh, and extracted them by performing an image difference with a local adaptive binarisation method. 
 
 
-Spectroscopy is a method of measuring the transmitted spectral signature of objects. By placing the light source on the opposite side, and not in direct view of the sensor, the transmittance can be measured to show unique properties regarding the internal structure of the subject. Figure \ref{fig:spectroscope} illustrates an example of a fruit spectrocopy system. 
+Spectroscopy is a method of measuring the transmitted spectral signature of objects. By placing the light source on the opposite side, and not in direct view of the sensor, the transmittance can be measured to show unique properties regarding the internal structure of the subject. Figure \ref{fig:spectroscope} illustrates the fruit spectrocopy system from \cite{choi}. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{spectroscope.png}
-	\caption{Example of a spectroscope taking measurements from a fruit sample\cite{choi}.}
+	\caption{Example of a spectroscope taking measurements from a fruit sample.}
 	\label{fig:spectroscope}
 \end{figure}%
 
@@ -641,12 +642,12 @@ Matteoli et al \cite{matteoli} used a fibre-optic spectrometer to take measureme
 A hyperspectral range of $400nm-1000nm$ was used by ElMasry et al \cite{elmasry2} to inspect various fruit by it's moisture content(MC), soluble solids(TSS), and acidity(pH). The resulting corellation coefficients of both the Partial Least Squares ($0.90, 0.80, 0.87$, respectively) and Multiple Linear Regression ($0.87, 0.80, 0.92$, respectively) proved the feasability of predicting these physical characteristics. They also measured three ripeness classes based on grey-level co-occurrence matrix (GLCM) analysis achieving $89.61\%$ classification accuracy.
 
 
-Beyond the Near (NIR), Short (SWIR), lies the Mid (MWIR) Wavelength Infrared, and  Long Wavelength infrared (LWIR) which is the part of the spectrum ($3\mu m-15\mu m$)that objects near room temperature emit thermal radiation. This thermal information can be detected by specialised sensors and converted to correlated visible colours for humans to view as seen in Figure \ref{fig:thermal}.
+Beyond the Near (NIR), Short (SWIR), lies the Mid (MWIR) Wavelength Infrared, and  Long Wavelength infrared (LWIR) which is the part of the spectrum ($3\mu m-15\mu m$)that objects near room temperature emit thermal radiation. This thermal information can be detected by specialised sensors and converted to correlated visible colours for humans to view as seen in Figure \ref{fig:thermal} taken from \cite{baranowski}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{thermal.jpg}
-	\caption{A thermal image apple with bruises \cite{baranowski} showing the Long Wavelength Infrared (LWIR) part of the electromagnetic spectrum. In this range, sensors can detect thermal properties at room temperature}
+	\caption{A thermal image apple with bruises showing the Long Wavelength Infrared (LWIR) part of the electromagnetic spectrum. In this range, sensors can detect thermal properties at room temperature}
 	\label{fig:thermal}
 \end{figure}%
 
@@ -662,7 +663,7 @@ A laser backscattering technique used by Lorente et al \cite{lorente} provided i
 
 
 \subsection{Hyperspecral/Multispectral Imaging}
-\label{lab:lit_hyperspec}
+\label{sec:lit_hyperspec}
 
 As the spectral range of the eye is limited, camera sensors can be emeployed which can viualise wavelengths beyond these restrictions into the ultra-violet and infrared ranges. Figure\ref{fig:eye_sensor} shows the spectral response of the human eye versus CMOS and CCD sensors illustrating the extent to which the electronic sensor's range is greater.
 
@@ -722,7 +723,7 @@ Using a conveyor system, L. Xu et al \cite{xu} achieved very good results in cla
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{strawberry_picker.png}
-	\caption{Strawberry picking machine from \cite{hayashi} (a) demonstrating end-effector mechanism (b) placing strawberry into the foam tray.}
+	\caption{Strawberry picking machine (a) demonstrating end-effector mechanism (b) placing strawberry into the foam tray.}
 	\label{fig:strawberry_picker}
 \end{figure}%
 
@@ -758,7 +759,7 @@ Fruit and vegetables are generally graded by the ripeness or rediness to eat, ba
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{apple_system.png}
-	\caption{Apple sorting system \cite{sofu} showing the lighting box with cameras in the background with opening bowls in the foreground.}
+	\caption{Apple sorting system showing the lighting box with cameras in the background with opening bowls in the foreground.}
 	\label{fig:apple_system}
 \end{figure}%
 
@@ -766,7 +767,7 @@ A fig sorting system developed by Baigvand et al \cite{baigvand} could successfu
 
 In order to remove the green calyx from strawberries, Lin et al \cite{lin} used a waterjet cutting system guided by machine vision. The strawberries were fed into the system using roller rods to align and separate before using CIE-Lab colour space to segment the berries from the calyx. A series of geometric calculations guide the cutting system with the optimal cut line. Their machine was designed to process berries bound for ice cream, yoghurt, jucing, and jam markets instead of being packaged for sale as fruit, meaning that condition, bruising and ripeness was not of concern as much as removing the green leaves.
 
-Hyperspectral and mutispectral implementations can help systems to assess products in real time due to their abitlity to see what the human eye, or regular cameras can detect. This advantage can provide information which simplifies the processing of images, for example, the use of NIR wavelengths can uncover invisible defects (as discussed in Section \ref{lab:lit_hyperspec}). Lee et al \cite{lee} implemented an industrial date grading machine capable of processing $72,000 dates/h$ with an $87\%$ accuracy measured. They acquired images in NIR wavelengths ranging $750-1200nm$ by use of an NIR-extended CCD camera and a high pass filter to block wavelengths lower than $750nm$. Processing at a rate of $20 fruit/s$ ,these wavelegths provided good background segmentation, added to the amplification of delaminated skin features which determine quality. The amount of delaminated skin was calculated, after morphological operations, and compared to the size of the entire fruit to give a percentage and a grade from 'A' to 'E'. 
+Hyperspectral and mutispectral implementations can help systems to assess products in real time due to their abitlity to see what the human eye, or regular cameras can detect. This advantage can provide information which simplifies the processing of images, for example, the use of NIR wavelengths can uncover invisible defects (as discussed in Section \ref{sec:lit_hyperspec}). Lee et al \cite{lee} implemented an industrial date grading machine capable of processing $72,000 dates/h$ with an $87\%$ accuracy measured. They acquired images in NIR wavelengths ranging $750-1200nm$ by use of an NIR-extended CCD camera and a high pass filter to block wavelengths lower than $750nm$. Processing at a rate of $20 fruit/s$ ,these wavelegths provided good background segmentation, added to the amplification of delaminated skin features which determine quality. The amount of delaminated skin was calculated, after morphological operations, and compared to the size of the entire fruit to give a percentage and a grade from 'A' to 'E'. 
 
 When implementing systems in production environments, the rate of production (and limited space constraints) sometimes require inventive solutions to be implemented in order to acheive the desired outcomes. Aleixos et al \cite{aleixos} developed a commercial citrus grading system which used a combination of transmissive and reflective lenses in order to image the same scene with two cameras. One RGB and one NIR camera were used to acquire images of citrus fruits at a rate of $5 fruits/s$ before assessing each for size and colour and surface defects. The size estimation had $<2mm$ error with colour grading for oranges, lemons, and manderins reaching $94\%$, $93\%$, and $94\%$, respectively.
 
@@ -858,11 +859,11 @@ Neural Networks, in AI, are a commonly implemented method for perfoming many ope
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{neural_net.jpeg}
-	\caption{Neural network topology with 2 hidden layers \cite{smith}.}
+	\caption{Neural network topology with 2 hidden layers.}
 	\label{fig:neural_net}
 \end{figure}
 
-Figure \ref{fig:neural_net} shows the flow of information through the layers in a neural network. Each of the inputs $Xn$ is fed to the first hidden layer with a relevant weights $W_{i,j,k}$ and biases $B_{i,j,k}$ associated for each of the neurons. Each neuron sums the weighted inputs and the value interpreted by the activation function is sent to the next layer, with yet another set of weights and biases, for each neuron. Activation functions are usually in the form of linear $y=x$, sigmoid $y=\frac{1}{1+e^{-x}}$, or hyperbolic tangent $y=\frac{1-e^{-2x}}{1+e^{-2x}}$.
+Figure \ref{fig:neural_net} shows the flow of information through the layers in a neural network as described in \cite{smith}. Each of the inputs $Xn$ is fed to the first hidden layer with a relevant weights $W_{i,j,k}$ and biases $B_{i,j,k}$ associated for each of the neurons. Each neuron sums the weighted inputs and the value interpreted by the activation function is sent to the next layer, with yet another set of weights and biases, for each neuron. Activation functions are usually in the form of linear $y=x$, sigmoid $y=\frac{1}{1+e^{-x}}$, or hyperbolic tangent $y=\frac{1-e^{-2x}}{1+e^{-2x}}$.
 
 
 For an activation function $f$, the $i$th neuron $a$ is given by:
@@ -941,10 +942,10 @@ The main body of the thesis following is set out with four chapters:
 
 
 \begin{itemize}
-	\item Design and Construction - Chapter \ref{sec:I} 
-	\item Production Integration  - Chapter \ref{sec:II}
-	\item System Reconfiguration - Chapter \ref{sec:III}
-	\item Linux and Deep Learning - Chapter \ref{sec:IV}
+	\item Chapter \ref{sec:I} - Design and Construction 
+	\item Chapter \ref{sec:II} - Production Integration 
+	\item Chapter \ref{sec:III} - System Reconfiguration
+	\item Chapter \ref{sec:IV} - Linux and Deep Learning 
 \end{itemize}
 
 
@@ -955,17 +956,49 @@ The main body of the thesis following is set out with four chapters:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\section{I - Design and Prototype}
+\section{Phase I - Initial Design and Prototype}
 \label{sec:I}
 
-\subsection{Design}
+The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements}. Added to this are some unlerlying assumptions and design requests from Magnificent, given thier previous project experience which has provided the company with knowledge and tools to assist the development of the project. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and sychronisation. Both of these projects made use of software frameworks such as Microsoft's Visual Studio$^{\textregistered\texttrademark}$ for application design, GUI, debugging, and deployment. A liscence for MVTec Software GmbH's HALCON$^{\textregistered\texttrademark}$ had previously been purchased for the aformentioned projects. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
+
+Visual Studio$^{\textregistered\texttrademark}$ is an Integrated Development Environment (IDE) designed for applications based in $C\#$ or $C++$ programming languages predominantly. It provides project configuration tools, automatic library attatchment, a GUI designer and linker tool which can increase the speed of development and facillitate changes and updates in an agile manner. Although it is free to use for development under the Community edition, commercial distribution would be subject to enterprise licence. 
+
+HALCON$^{\textregistered\texttrademark}$ uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast libary of common image processing functions. The IDE contains serveral visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as wel as a list of conrol varibles (integers, arrays, floats, etc) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON$^{\textregistered\texttrademark}$ application code can be converted directly to $C\#$ or $C++$ code in order for integration into comercial applications such as Visual Studio$^{\textregistered\texttrademark}$. As Magnificent had a pre-existing liscence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework porfolio.
+
+Polarizer material had been advantageous in pervious projects given the various lighting conditions, both outdoors and within a greenhouse by way of reducing glare. However, specular reflections are an inherant property of strawberries due to their pitted exterior, effectively making small crater-shaped edges that can catch the light from any angle. Figure \ref{fig:strawberry_glare} shows a number of white areas around the seeds caused by direct reflection of the light source \cite{gurney}. As the craters are round, and the berry's surface is curved in 2D, the specular reflections are unavoidable.
+
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.8\linewidth]{QAS_cross_sec.jpg}
-	\caption{}
-	\label{fig:cross_sec}
-\end{figure}%
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.6\linewidth]{strawberry_glare.jpg}
+		\caption{}
+		\label{fig:strawberry_glare}
+	\end{subfigure}%
+
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{polarization.png}
+		\caption{}
+		\label{fig:polarization}
+	\end{subfigure}%
+	\caption{(a) Strawberries with dominant specular reflections reducing the ability to analyse pixels, and (b) Electromagnetic polarisation. A circular or randomly polarised source becomes a single polarity after passing through the material.}
+	\label{}
+\end{figure}
+
+Polarization is the process of converting electromagnetic waves of multiple polarities into a single direction polarity. Usually used for visible light or lasers, polarizers can reduce glare (for example, polarized sunglasses) or help in the amplification and directionality of lasers. Figure \ref{fig:polarization} illustrates the polarization of an EM wave, indicating that no matter the intensity of any direction, only a single polarity emerges  \cite{physicsopenlab}. Using a polarizer is an effective tecnique to reduce glare from a flat surface (polarized sunglasses are assumed to be worn horizontally, using vertical polarization in the lenses, blocks glare from horizonal surfaces such as water and concrete), but will be mostly ineffective for the curved surface of the strawberries. However, using cross-polarization (two polarisers orthogonal in direction) in order to reduce these reflections is considered, even though this will limit the amount of illumination reaching the subject significantly.
+
+As this project would take advantage of the NIR spectrum with the intention of capturing bruising or other invisible defects, the light sources must be capable of generating the required illumination. Previous projects used LED sources as they are more efficient and can be operated using $12V$ power, but are generally limited to small bands of radiation. Some LED manufacturers claim to generate a high Colour Rendering Index (CRI), which is a measure of the comparrison to natural light. However these LED's generally do not output wavelengths greater than $750nm$ as there is no need in most cases which is much of the reason they are more efficient in terms of power. This means that LED's may not be useful and a more appropriate light source such as halogen or tungsten must be used.
+
+
+TODO - add v-belts, top and bottom imaging, 
+
+
+TODO - add pneumatic ejection system
+
+
+
 
 
 
@@ -986,23 +1019,6 @@ However, the system described in this report requires images to be taken of full
 
 These added problems will detriment the image processing algorithms. Morphology is challenging due to the occlusions and shadows, and colour will be difficult to assess, as the shadowy lower fruit will be darker than fruit in full light. Measurement of berries will not be very accurate as the occlusios, shadows, and orientation will dictate the accuracy of this process.
 
-\subsubsection{Flickering}
-
-As the strawberry punnets pass along the production line at a rapid pace, the shutter speed of any cameras used will need to be able to capture without blurring, but with enough light to illuminate the berries to the desired levels. This fast shutter speed requires high-powered lighting in order to generate enough photons in such a short amount of time.
-
-High-powered lighting is generally in the form of 110V/220V AC powered lamps which can generate over $1000W$, however, the alternating current poses the problem of flickering. This occurs when the shutter speed of the camera is $<<1s$ and the sensor can be exposed to maximum light, when the light source current reaches maximum, and theoretically, no light at all when crossing the 0V point in the alternating cycle. Some examples of threshold differences are shown in Figure \ref{fig:flicker} where only time was varied.
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{flicker.png}
-	\caption{Six images taken using identical properties, and threshold, at varying times within one second using AC-powered light source.}
-	\label{fig:flicker}
-\end{figure}
-
-
-Therefore, DC-powered lighting must be used to elliminate this problem and give clear, compareable, consistant images. DC powered lighting, however, is generally lower voltage such as $12V, 24V, 36V$, and $48V$. This infers that high-powered devices will use a lot of current, for example, a $500W$ light source at $12V$ will require around $42A$ of current. Generally, for this type of application, a specialized (or industrial) power supply unit must be used in order to protect against failures and provide enough power.
-
 
 
 \subsubsection{Overheating}
@@ -1011,7 +1027,7 @@ Lighting for the cameras must have enough power to illuminate the subjects with 
 
 \subsubsection{Asyncronous Aquisition of Images}
 
-As described earlier, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times, together. The application will then save all the images acquired in a defined storage device in order to preserve production quality traceability.   
+As mentioned earlier, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times, together. The application will then save all the images acquired in a defined storage device in order to preserve production quality traceability.   
 
 \subsubsection{Processing Time}
 
@@ -1039,22 +1055,28 @@ The punnet heat-seal machine is designed to seal five punnets at a time and is t
 However, this means that the coveyors could stop at any time during the sensing, acquisition, and ejection phases of the vision system. Therefore it will be almost impossible to rely on time-determinant processes such as using a finite time delay between camera sensors, or camera and ejector sensors. 
 
 
+\subsubsection{Flickering}
+
+As the strawberry punnets pass along the production line at a rapid pace, the shutter speed of any cameras used will need to be able to capture without blurring, but with enough light to illuminate the berries to the desired levels. This fast shutter speed requires high-powered lighting in order to generate enough photons in such a short amount of time.
+
+High-powered lighting is generally in the form of 110V/220V AC powered lamps which can generate over $1000W$, however, the alternating current poses the problem of flickering. This occurs when the shutter speed of the camera is $<<1s$ and the sensor can be exposed to maximum light, when the light source current reaches maximum, and theoretically, no light at all when crossing the 0V point in the alternating cycle. Some examples of threshold differences are shown in Figure \ref{fig:flicker} where only time was varied.
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{flicker.png}
+	\caption{Six images taken using identical properties, and threshold, at varying times within one second using AC-powered light source.}
+	\label{fig:flicker}
+\end{figure}
 
 
+Therefore, DC-powered lighting must be used to elliminate this problem and give clear, compareable, consistant images. DC powered lighting, however, is generally lower voltage such as $12V, 24V, 36V$, and $48V$. This infers that high-powered devices will use a lot of current, for example, a $500W$ light source at $12V$ will require around $42A$ of current. Generally, for this type of application, a specialized (or industrial) power supply unit must be used in order to protect against failures and provide enough power.
 
 
 
 \subsubsection{Specular Reflections}
 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=200pt]{images/specular_art.jpg}
-	\caption{An image of an painting with a large specularity occluding the image.}
-	\label{fig:specular_art}
-\end{figure}
+Specular reflections occur when the viewer is in the path of directly reflected light from a source. In other words, the light source can be seen on the surface of an object, and is usually a white looking glare which can add unecessary noise to images resulting in loss of information as shown in Figure \ref{fig:strawberry_glare}.
 
 This is due to Snell's law which states,
 \begin{equation}
@@ -1081,12 +1103,18 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 
 
 
+
+
+\subsection{Design}
+
+
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=300pt]{images/enclosure_3.jpg}
-	\caption{Looking through the enclosure in the path of the punnet, the cameras are mounted inside the polarized and difuse chamber as the v-belts transfer the punnets unobscured through the enclosure. Note: front panel removed to show arrangement.}
-	\label{fig:enclosure_3}
-\end{figure}
+	\includegraphics[width=.8\linewidth]{QAS_cross_sec.jpg}
+	\caption{Cross section of the SQA system illustrating the polarizing filter (blue sheet), the v-belts, and four cameras in position above and below.}
+	\label{fig:cross_sec}
+\end{figure}%
 
 
 
@@ -1283,25 +1311,11 @@ where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to thr
 
 
 
-\subsection{Implementation and Results}
+\subsection{Prototype Construction}
 
 The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarizers, and cameras. This prototype was then used as the framework when moved from bench to production. 
 
 Several lighting and polarizing configurations were tested for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}). Before the AC flickering problem was realised, halogen work lamps were tested as the main lighting source, with a thin film type polaroid. This test was successful in prooving that the polarizer reduced specularities, and that powerful lighting was required, however, it highlighted the inherant problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polarizer film would be less effective when bent or warped.  
-
-Converting the system to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. Auotomotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum as shown in figures \ref{fig:bench_led_rigid} and \ref{fig:production_LED_Hal}. 
-
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\begin{center}
-		\includegraphics[width=0.3\textwidth]{images/bench_construct.jpg}
-	\end{center}
-	\caption{The enclosed prototype during construction and testing.}
-	\label{fig:bench_construct}
-\end{wrapfigure}   
-
-The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure. Therefore, the external cladding was modified to allow the conveyors entry and exit points without allowing external, potentially noisy, light leaking inside. This was ensured by constructing a protruding tunnel on both sides of the enclosure as shown in the final setup in figure \ref{fig:production_final}.
-
-A touchscreen was also installed to allow operators and developers easy access to the UI buttons and display. The commercially available Dell \textcopyright P2418HT 24-inch capacitive touch screen can help development as well as production with the ability to debug whilst on the production line.
 
 
 \begin{figure}[h]
@@ -1335,6 +1349,31 @@ A touchscreen was also installed to allow operators and developers easy access t
 	\caption{Left to right: (a)Halogen work lamps tested facing upwards with a thin film polaroid , (b)Halogen work lamps in a diagolally upward direction with a dark-field blocker, (c)Installation of LED light bars and rigid polarizing material, (d)Installation of $12V$ halogen down lights.}
 	\label{fig:test3}
 \end{figure}
+
+
+
+Converting the system to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. Auotomotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum as shown in figures \ref{fig:bench_led_rigid} and \ref{fig:production_LED_Hal}. 
+
+
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.6\linewidth]{images/enclosure_3.jpg}
+	\caption{Looking through the enclosure in the path of the punnet, the cameras are mounted inside the polarized and difuse chamber as the v-belts transfer the punnets unobscured through the enclosure. Note: front panel removed to show arrangement.}
+	\label{fig:enclosure_3}
+\end{figure}
+
+
+
+ 
+
+The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure. Therefore, the external cladding was modified to allow the conveyors entry and exit points without allowing external, potentially noisy, light leaking inside. This was ensured by constructing a protruding tunnel on both sides of the enclosure as shown in the final setup in figure \ref{fig:production_final}.
+
+A touchscreen was also installed to allow operators and developers easy access to the UI buttons and display. The commercially available Dell \textcopyright P2418HT 24-inch capacitive touch screen can help development as well as production with the ability to debug whilst on the production line.
+
+
 
 
 The ejector system was installed at a later date as further testing was required to ensure the proper ejection of the punnets. The ejector had to be calibrated to give the correct amount of force to remove the punnet gently but definately. The punnet identified as poor quality must also be ejected at a later stage (after the punnet leaves the enclosure), therefore the ejector must synchronise with the punnet detector/cameras.

@@ -1,31 +1,5 @@
 \begin{thebibliography}{100}
 
-\bibitem{choi}
-H.~S. Choi, J.~B. Cho, S.~G. Kim, and H.~S. Choi, ``A real-time smart fruit
-  quality grading system classifying by external appearance and internal flavor
-  factors,'' {\em International Conference on Industrial Technology},
-  pp.~2081--2086, 2018.
-
-\bibitem{baranowski}
-P.~Baranowski, ``Detection of early apple bruises using pulsed-phase
-  thermography article,'' 2009.
-\newblock Accessed Apr 2019.
-
-\bibitem{hayashi}
-S.~Hayashi, K.~Shigematsu, S.~Yamamoto, K.~Kobayashi, Y.~Kohno, J.~Kamata, and
-  M.~Kurita, ``Evaluation of a strawberry-harvesting robot in a field test,''
-  {\em Biosystems Engineering}, vol.~105, pp.~160--171, 2010.
-
-\bibitem{sofu}
-M.~Sofu, O.~Er, M.~Kayacan, and B.~Cetisli, ``Design of an automatic apple
-  sorting system using machine vision,'' {\em Computers and Electronics in
-  Agriculture}, vol.~127, pp.~395--405, 2016.
-
-\bibitem{smith}
-P.~D. Smith, ``Artificial neural networks and deep learning - the true key to
-  artificial intelligence,'' 2016.
-\newblock Accessed May 2017.
-
 \bibitem{menze}
 M.~Menze and A.~Geiger, ``Object scene flow for autonomous vehicles,'' {\em The
   IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -229,6 +203,12 @@ Y.~C. Chiu, X.~L. Chou, T.~E. Grift, and M.~T. Chen, ``Automated detection of
   flourescence imagery,'' {\em American Society of Agricultural and Biological
   Engineers}, vol.~58(2), pp.~215--225, 2015.
 
+\bibitem{choi}
+H.~S. Choi, J.~B. Cho, S.~G. Kim, and H.~S. Choi, ``A real-time smart fruit
+  quality grading system classifying by external appearance and internal flavor
+  factors,'' {\em International Conference on Industrial Technology},
+  pp.~2081--2086, 2018.
+
 \bibitem{matteoli}
 S.~Matteoli, M.~Diani, R.~Massai, G.~Corsini, and D.~Remorini, ``A
   spectroscopy-based approach for automated nondestructive maturity grading of
@@ -239,6 +219,11 @@ S.~Matteoli, M.~Diani, R.~Massai, G.~Corsini, and D.~Remorini, ``A
 G.~ElMasry, N.~Wang, A.~ElSayed, and M.~Ngadi, ``Hyperspectral imaging for
   nondestructive determination of some quality attributes for strawberry,''
   {\em Journal of Food Engineering}, vol.~81, pp.~98--107, 2007.
+
+\bibitem{baranowski}
+P.~Baranowski, ``Detection of early apple bruises using pulsed-phase
+  thermography article,'' 2009.
+\newblock Accessed Apr 2019.
 
 \bibitem{ginesu}
 G.~Ginesu, D.~D. Giusto, V.~Märgner, and P.~Meinlschmidt, ``Detection of
@@ -340,6 +325,11 @@ S.~YAMAMOTO, S.~HAYASHI, H.~YOSHIDA, and K.~KOBAYASHI, ``Development of a
   approaches the target fruit from below,'' {\em Japan Agricultural Research
   Quarterly (JARQ)}, vol.~48 (3), pp.~261--269, 2014.
 
+\bibitem{hayashi}
+S.~Hayashi, K.~Shigematsu, S.~Yamamoto, K.~Kobayashi, Y.~Kohno, J.~Kamata, and
+  M.~Kurita, ``Evaluation of a strawberry-harvesting robot in a field test,''
+  {\em Biosystems Engineering}, vol.~105, pp.~160--171, 2010.
+
 \bibitem{yamamoto}
 K.~Yamamoto, S.~Ninomiya, Y.~Kimura, A.~Hashimoto, Y.~Yoshioka, and T.~Kameoka,
   ``Strawberry cultivar identification and quality evaluation on the basis of
@@ -361,6 +351,11 @@ C.~Liu, W.~Liu, X.~Lu, F.~Ma, W.~Chen, J.~Yang, and L.~Zheng, ``Application of
   multispectral imaging to determine quality attributes and ripeness stage in
   strawberry fruit,'' {\em PLoS ONE}, vol.~10.1371/journal.pone.0087818,
   pp.~1--8, 2014.
+
+\bibitem{sofu}
+M.~Sofu, O.~Er, M.~Kayacan, and B.~Cetisli, ``Design of an automatic apple
+  sorting system using machine vision,'' {\em Computers and Electronics in
+  Agriculture}, vol.~127, pp.~395--405, 2016.
 
 \bibitem{baigvand}
 M.~Baigvand, A.~Banakar, S.~Minaei, J.~Khodaei, and N.~Behroozi-Khazaei,
@@ -471,6 +466,11 @@ L.~B. et~al, ``Comparison of classifier methods: A case study in handwritten
   digit recognition,'' {\em AT\&T Bell Laboratories, Holmdel, NJ 07733,
   Electronics Laboratory, Swiss Federal Institute of Technology}, pp.~pp
   77--82, 1994.
+
+\bibitem{smith}
+P.~D. Smith, ``Artificial neural networks and deep learning - the true key to
+  artificial intelligence,'' 2016.
+\newblock Accessed May 2017.
 
 \bibitem{sebastiani}
 F.~SEBASTIANI, ``Machine learning in automated text categorization,'' {\em ACM
@@ -628,6 +628,14 @@ M.~Makky and P.~Soni, ``Development of an automatic grading machine for oil
   palm fresh fruits bunches (ffbs) based on machine vision,'' {\em Computers
   and Electronics in Agriculture}, vol.~93, pp.~129--139, 2013.
 
+\bibitem{gurney}
+G.~Seed and N.~Co., ``Ozark beauty strawberry.''
+\newblock Accessed Apr 2019.
+
+\bibitem{physicsopenlab}
+PhysicsOpenLab, ``Ozark beauty strawberry,'' 2016.
+\newblock Accessed Apr 2019.
+
 \bibitem{shiv}
 A.~S.~J. Shiv Ram~Dubey, ``Application of image processing in fruit and
   vegetable analysis: A review,'' {\em Journal of Intelligent Systems},
@@ -637,5 +645,13 @@ A.~S.~J. Shiv Ram~Dubey, ``Application of image processing in fruit and
 T.~M. LÜ~Qiang, ``Detection of hidden bruise on kiwi fruit using hyperspectral
   imaging and parallelepiped classification,'' {\em Procedia Environmental
   Sciences}, vol.~Vol: 12, pp.~pp 1172--1179, 2012.
+
+\bibitem{rox}
+R.~R. Anderson, ``Polarized light examination and photography of the skin,''
+  {\em Arch Dermatol}, vol.~Vol: 127, pp.~pp 1000--1005, 1991.
+
+\bibitem{sommer}
+A.~S. et~al, ``Cross polarization photography of the nerve fiber layer,'' {\em
+  Arch Opthalmol}, vol.~Vol: 102, pp.~pp 864--869, 1984.
 
 \end{thebibliography}
