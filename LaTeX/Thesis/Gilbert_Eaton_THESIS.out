@@ -11,14 +11,14 @@
 \BOOKMARK [2][-]{subsection.2.2}{Hand-selected Features}{section.2}% 11
 \BOOKMARK [2][-]{subsection.2.3}{Physical Property Analysis}{section.2}% 12
 \BOOKMARK [2][-]{subsection.2.4}{Hyperspecral/Multispectral Imaging}{section.2}% 13
-\BOOKMARK [2][-]{subsection.2.5}{Strawberry Image Processing}{section.2}% 14
+\BOOKMARK [2][-]{subsection.2.5}{Strawberry Vision Systems}{section.2}% 14
 \BOOKMARK [2][-]{subsection.2.6}{Real-time Systems}{section.2}% 15
 \BOOKMARK [2][-]{subsection.2.7}{Machine Learning / Deep Learning Methods}{section.2}% 16
 \BOOKMARK [3][-]{subsubsection.2.7.1}{Support Vector Machines}{subsection.2.7}% 17
 \BOOKMARK [3][-]{subsubsection.2.7.2}{Deep Learning}{subsection.2.7}% 18
 \BOOKMARK [2][-]{subsection.2.8}{Control Systems}{section.2}% 19
 \BOOKMARK [2][-]{subsection.2.9}{Summary}{section.2}% 20
-\BOOKMARK [1][-]{section.3}{Phase I - Initial Design and Prototype}{}% 21
+\BOOKMARK [1][-]{section.3}{I - Prototype and Design}{}% 21
 \BOOKMARK [2][-]{subsection.3.1}{Project Challenges}{section.3}% 22
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Punnet Imaging}{subsection.3.1}% 23
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Overheating}{subsection.3.1}% 24
@@ -29,16 +29,16 @@
 \BOOKMARK [3][-]{subsubsection.3.1.7}{Conveyor Motion}{subsection.3.1}% 29
 \BOOKMARK [3][-]{subsubsection.3.1.8}{Flickering}{subsection.3.1}% 30
 \BOOKMARK [3][-]{subsubsection.3.1.9}{Specular Reflections}{subsection.3.1}% 31
-\BOOKMARK [2][-]{subsection.3.2}{Design}{section.3}% 32
-\BOOKMARK [2][-]{subsection.3.3}{Electronics}{section.3}% 33
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Power Requirements}{subsection.3.3}% 34
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Hardware}{subsection.3.3}% 35
-\BOOKMARK [2][-]{subsection.3.4}{Software}{section.3}% 36
-\BOOKMARK [3][-]{subsubsection.3.4.1}{User Interface}{subsection.3.4}% 37
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Asynchronous Grabbing}{subsection.3.4}% 38
-\BOOKMARK [3][-]{subsubsection.3.4.3}{Hardware Control}{subsection.3.4}% 39
-\BOOKMARK [3][-]{subsubsection.3.4.4}{Image Processing}{subsection.3.4}% 40
-\BOOKMARK [2][-]{subsection.3.5}{Prototype Construction}{section.3}% 41
+\BOOKMARK [2][-]{subsection.3.2}{Prototype Construction}{section.3}% 32
+\BOOKMARK [2][-]{subsection.3.3}{Strawberry Quality Assurance \(SQA\) System Design}{section.3}% 33
+\BOOKMARK [2][-]{subsection.3.4}{Electronics}{section.3}% 34
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Power Requirements}{subsection.3.4}% 35
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Hardware}{subsection.3.4}% 36
+\BOOKMARK [2][-]{subsection.3.5}{Software}{section.3}% 37
+\BOOKMARK [3][-]{subsubsection.3.5.1}{User Interface}{subsection.3.5}% 38
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Asynchronous Grabbing}{subsection.3.5}% 39
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Hardware Control}{subsection.3.5}% 40
+\BOOKMARK [3][-]{subsubsection.3.5.4}{Image Processing}{subsection.3.5}% 41
 \BOOKMARK [1][-]{section.4}{II - Production Integration}{}% 42
 \BOOKMARK [1][-]{section.5}{III - System Reconfiguration and Redesign}{}% 43
 \BOOKMARK [1][-]{section.6}{IV - Linux and Deep Learning}{}% 44

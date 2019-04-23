@@ -49,39 +49,41 @@ Warning--entry type for "gurney" isn't style-file defined
 --line 2359 of file Master.bib
 Warning--entry type for "physicsopenlab" isn't style-file defined
 --line 2373 of file Master.bib
+Warning--entry type for "lumicrest" isn't style-file defined
+--line 2429 of file Master.bib
 Warning--I didn't find a database entry for "peng"
 Warning--I didn't find a database entry for "luo"
 Warning--I didn't find a database entry for "yavs"
-You've used 127 entries,
+You've used 128 entries,
             1876 wiz_defined-function locations,
-            1154 strings with 25361 characters,
-and the built_in function-call counts, 39455 in all, are:
-= -- 3992
-> -- 1396
+            1157 strings with 25434 characters,
+and the built_in function-call counts, 39583 in all, are:
+= -- 4005
+> -- 1400
 < -- 0
-+ -- 522
-- -- 395
-* -- 2636
-:= -- 5331
-add.period$ -- 138
-call.type$ -- 127
-change.case$ -- 124
++ -- 524
+- -- 396
+* -- 2639
+:= -- 5348
+add.period$ -- 139
+call.type$ -- 128
+change.case$ -- 125
 chr.to.int$ -- 0
-cite$ -- 127
-duplicate$ -- 2044
-empty$ -- 3609
-format.name$ -- 395
-if$ -- 9973
+cite$ -- 128
+duplicate$ -- 2048
+empty$ -- 3627
+format.name$ -- 396
+if$ -- 10007
 int.to.chr$ -- 0
-int.to.str$ -- 127
+int.to.str$ -- 128
 missing$ -- 121
-newline$ -- 396
-num.names$ -- 127
-pop$ -- 331
+newline$ -- 400
+num.names$ -- 128
+pop$ -- 339
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1684
+skip$ -- 1687
 stack$ -- 0
 substring$ -- 3086
 swap$ -- 1064
@@ -90,7 +92,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 337
-width$ -- 130
-write$ -- 1242
+while$ -- 338
+width$ -- 131
+write$ -- 1250
 (There were 7 error messages)

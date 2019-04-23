@@ -21,11 +21,14 @@
 \usepackage{float}% If comment this, figure moves to Page 2
 
 %table manipulation
-\usepackage{supertabular,booktabs,tabularx}
-\usepackage{ltablex}
+%\usepackage{supertabular}
+\usepackage{tabularx}
+%\usepackage{tabulary}
+\usepackage{longtable}
+%\usepackage{ltablex}
 \usepackage{booktabs}
-\usepackage{rotating}
-\usepackage{array}
+%\usepackage{rotating}
+%\usepackage{array}
 
 \newcolumntype{C}{>{\centering\arraybackslash}X} % centered version of "X" type
 
@@ -137,7 +140,7 @@
 %	Name section
 %----------------------------------------------------------------------------------------
 
-\textsc{\Large \bfseries Mr. Gilbert Eaton --- BIT/BEng (Hons. I)}\\[0.5cm] % course title
+\textsc{\Large \bfseries Mr. Gilbert Eaton --- B.Eng (Hons. I), B.IT}\\[0.5cm] %name
  
  
  
@@ -390,7 +393,7 @@ Machine vision systems have been successfully deployed to perform many tasks in 
 
 Production line quality inspection is one of the most common applications for machine vision as it is usually fixed in position with a known area to assess, giving the cameras opportunity to inspect each and every item produced. The cameras are also capable of working in environments that human operators may not tend to be comfortable in. Where the production lines may be exposed to heat, cold, dust, chemical, pressure, or noise hazards, cameras can solve the problem of human risk. 
 
-Cameras can be used for high-speed moving objects in order to perform the inspections where a human would have an impossible task. For example Duan et al \cite{duan} used a system of two cameras and two computers to inspect glass beer bottles after production at a rate of $500/min$ or $8.3/s$. They inspected the bottom of the bottle, the overall finish, and the top opening, performign all three checks for each bottle within the timeframe specified. After inspection, the defected bottles are ejected from the production line in order to be recycled. Elmasry et al \cite{elmasry1} developed a potato grading system which can acquire multiple images of each potato, from multiple sides due to the roller-conveyor, before performing Fourier transform, and Fourier shape descriptors. The conveyor speed is $1m/s$ and the spacing between each roller is $80mm$ giving approximately $12 potatos/s$ if there are no empty rollers. Four different grading/processing techniques were investigated by Kondo \cite{kondo} where, firstly, oranges were inspected by a system of cameras including six colour cameras at different positions (so that all sides are inspected), an NIR camera and the option of adding x-ray imaging to the purpose-built line. The oranges are fed through the system using a singulating conveyor which performs a $180^{circ}$ rotation for the last camera to ensure all sides are evaluated. Secondly, an eggplant quality assemsment system was developed which made use of six colour and four monochrome cameras in order to determine colour, size, shape, and defects as well as a novel gloss detection method using angles cameras and three white strip lights to inspect the specular reflections sharp edges, meaning good quality, or dull edges, meaning poor. The 6 production lines, running at $38.1m/min$, at the facility meant that $504,000$ fruits could be processed per day. Even though there has been a substantial reduction in number of employees in processing, it is still laborious due to the packing requirements. The third project was capable of grading $10,000$ leeks per hour at a line speed of $30m/min$ with automatic root cutting and peeling steps. Lastly, a robot capable of grading $3 fruit/sec$ for 11 varieties of deciduous fruits including apple, pear, and peach. Using 3 DOF manupulators, the robot placed into trays, whilst images are acquired from top, bottom and two sides before making a grade decision. This shows that for fast moving production lines, humans are unable to peform the necessary tasks to quality inspect each item. The high speed vision systems are tailored to suit each application and are dependant on good lighting due to the rapid shutter speeds of the camera.
+Vision systems can be used for high-speed moving objects in order to perform the inspections where a human would have an impossible task. For example Duan et al \cite{duan} used a system of two cameras and two computers to inspect glass beer bottles after production at a rate of $500/min$ or $8.3/s$. They inspected the bottom of the bottle, the overall finish, and the top opening, performign all three checks for each bottle within the timeframe specified. After inspection, the defected bottles are ejected from the production line in order to be recycled. Elmasry et al \cite{elmasry1} developed a potato grading system which can acquire multiple images of each potato, from multiple sides due to the roller-conveyor, before performing Fourier transform, and Fourier shape descriptors. The conveyor speed is $1m/s$ and the spacing between each roller is $80mm$ giving approximately $12 potatos/s$ if there are no empty rollers. Four different grading/processing techniques were investigated by Kondo \cite{kondo} where, firstly, oranges were inspected by a system of cameras including six colour cameras at different positions (so that all sides are inspected), an NIR camera and the option of adding x-ray imaging to the purpose-built line. The oranges are fed through the system using a singulating conveyor which performs a $180^{circ}$ rotation for the last camera to ensure all sides are evaluated. Secondly, an eggplant quality assemsment system was developed which made use of six colour and four monochrome cameras in order to determine colour, size, shape, and defects as well as a novel gloss detection method using angles cameras and three white strip lights to inspect the specular reflections sharp edges, meaning good quality, or dull edges, meaning poor. The 6 production lines, running at $38.1m/min$, at the facility meant that $504,000$ fruits could be processed per day. Even though there has been a substantial reduction in number of employees in processing, it is still laborious due to the packing requirements. The third project was capable of grading $10,000$ leeks per hour at a line speed of $30m/min$ with automatic root cutting and peeling steps. Lastly, a robot capable of grading $3 fruit/sec$ for 11 varieties of deciduous fruits including apple, pear, and peach. Using 3 DOF manupulators, the robot placed into trays, whilst images are acquired from top, bottom and two sides before making a grade decision. This shows that for fast moving production lines, humans are unable to peform the necessary tasks to quality inspect each item. The high speed vision systems are tailored to suit each application and are dependant on good lighting due to the rapid shutter speeds of the camera.
 
 
 
@@ -408,7 +411,7 @@ Most production line vision systems have a control mechanism that removes any de
 
 \subsection{Industry Partner}
 
-Magnificent Pty. Ltd. is a strawberry farming and processing company located in Wamuran, Queensland. In this facility (as well as the company's secondary strawberry farm in South Australia), the company plants, grows, maintains, picks, and packs the berries ready for consumer purchase. Ray Daniels has operated the 100$ha$ farm for over 20 years in Wamuran, and has recently acquired a new, smaller 26$ha$ farm in Myponga, SA. Magnificent employs around 250 people in the peak of the season and consists of planting, picking, packing, driving (tractors/trucks) and operator teams. Producing around 1.7 million $kg$ of strawberries each year, Magnificent has a good market share with many high-profile customers including major supermarket chains such as Coles, IGA, and CostCo. The company has it's own transportation and storage facilities allowing for a distribution centre in Brisbane, Queensland's capital city. 
+Magnificent Pty. Ltd. is a subsidiary of Berry Yummy Marketing Pty. Ltd. - a strawberry farming and processing company located in Wamuran, Queensland. In this facility (as well as the company's secondary strawberry farm in South Australia), the company plants, grows, maintains, picks, and packs the berries ready for consumer purchase. Berry Yummy Marketing has operated the 100$ha$ farm for over 20 years in Wamuran, and has recently acquired a new, smaller 26$ha$ farm in Myponga, SA. Magnificent employs around 250 people in the peak of the season and consists of planting, picking, packing, driving (tractors/trucks) and operator teams. Producing around 1.7 million $kg$ of strawberries each year, Berry Yummy has a good market share with many high-profile customers including major supermarket chains such as Coles, IGA, and CostCo. The company has it's own transportation and storage facilities allowing for a distribution centre in Brisbane, Queensland's capital city. 
 
 The Strawberries are picked and packed by hand using labour intensive methods in order to produce the finished goods, which can be sold in many different sized packages from 250g through to 3kg jumbo pack. The strawberries are packaged according to the quality grade or cultivar, however, if the fruit is in high demand or weather conditions cause shortages in supply, the lower grades can be used as high grade berries making the classification depend on market conditions.
 
@@ -432,10 +435,9 @@ The Strawberries are picked and packed by hand using labour intensive methods in
 
 
 
-Due to environmental and market demands, the standard of strawberries packed can vary between seasons, and as Magnificent employs a mostly casual workforce, the standard can differ between days also. Each operator must pack the correct weight, into the correct container, as fast as possible, whilst ensuring that there are no defected berries from a range of attributes such as over/under ripe, bruising, foreign objects, pest damage, dirt and soil, size, shape and overall appearance. This evaluation can be difficult in this fast-paced environment and could be easily overlooked in situations under pressure, especially when concerned with bruising. Bruising can be hard to detect, even for the trained eye, as the colour and texture takes some time to decay to an unacceptable level. The time taken to decay could be several hours to a few days and, as there may be up to 5 days transport time for berries picked by Magnificent, this leads to the case where finished product has left the distribution centre quality assured, but is rejected when it arrives at the destination. Magnificent are regularly given feedback from their customers regarding the quality of each punnet after it reaches it's destination point anywhere throughout Australia. Whilst training and education regarding these quality specifications is given, this will be lost as soon as the workforce is replaced by a new season of employees.  
+Due to environmental and market demands, the standard of strawberries packed can vary between seasons, and as Magnificent employs a mostly casual workforce, the standard can differ between days also. Each operator must pack the correct weight, into the correct container, as fast as possible, whilst ensuring that there are no defected berries from a range of attributes such as over/under ripe, bruising, foreign objects, pest damage, dirt and soil, size, shape and overall appearance. This evaluation can be difficult in this fast-paced environment and could be easily overlooked in situations under pressure, especially when concerned with bruising. Bruising can be hard to detect, even for the trained eye, as the colour and texture takes some time to decay to an unacceptable level. The time taken to decay could be several hours to a few days and, as there may be up to 5 days transport time for berries picked by Berry Yummy, this leads to the case where finished product has left the distribution centre quality assured, but is rejected when it arrives at the destination. Berry Yummy are regularly given feedback from their customers regarding the quality of each punnet after it reaches it's destination point anywhere throughout Australia. Whilst training and education regarding these quality specifications is given, this will be lost as soon as the workforce is replaced by a new season of employees.  
 
-In order to reduce costs and improve efficiencies, Magnificent has invested in various projects to bring a technological approach to farming. Some of these include a strawberry harvesting robot which must navigate through the fields many rows of planting mounds, picking strawberries \cite{busch}. A greenhouse picking system was also developed, where specialised planting troughs were constructed to bring the strawberries to the harvester using a vertical farming method. The company has also connected it's information systems together using a variety of applications interfaced to hardware such as weigh scales and employee clock-in stations. This gives better visibility to the managers and operators to make decisions in a real-time environment. 
-
+In order to reduce costs and improve efficiencies, Magnificent has invested in various projects to bring a technological approach to farming. Some of these include a strawberry harvesting robot which must navigate through the fields many rows of planting mounds, picking strawberries \cite{busch}. A greenhouse picking system was also developed, where specialised planting troughs were constructed to bring the strawberries to the harvester using a vertical farming method. The company has also connected it's information systems together using a variety of applications interfaced to hardware such as weigh scales and employee clock-in stations. This gives better visibility to the managers and operators to make decisions in a real-time environment. They now have a requirement for an in-line strawberry quality vision inspection system which is capable of inspecting each strawberry in a fast-paced environment.
 
 
 
@@ -492,53 +494,53 @@ Since 2015, the strawberry packing line has been fitted with a machine that seal
 
 Thin film rolls are used to supply the heating dye with materal to press and seal around the edge of the punnet, discarding the excess onto another roll. The pre-sealed and post-sealed punnets are shown in Figures \ref{fig:unsealed_punnets} and \ref{fig:sealed_punnets} and present a unique method to tamper-proof each punnet. The film, once removed, cannot be re-sealed giving consumers the confidence that each punnet has not been opened since it was packed. After being sealed, each item is passed through a metal detector, and a weight-checking scale. At both of these checkpoints, the punnets can be ejected from the production line using pneumatic air actuators.
 
-Adding a vision system to the heat-seal infeed is the desired outcome for Magnificent to address quality issues that can be missed in such a fast-paced environment. Defects such as underripe, overripe, bruised, rotten, foreign object and size and shape have all been attributed to stock rejects and/or returns. Sometimes it costs more to salvage rejected stock than reuse it, so there is a possibility that poor quality could mean a shipment is subject to dumping. As millions of full punnnets are packed, palletised and shipped each year the Quality Assurance Manager has an enormous, if not imposible, task in inspecting each one thouroughly. Strawberries are required to be picked and packed to a strict set of attributes. However, subjectivity, tiredness, rushing, overheating, can all influence the quality of berries picked in the field or packed on a production line. 
-
-
-
-
-\begin{table}[h!]
-	\caption{Table of Requirements for SQA Vision System.}
-	\label{tab:requirements}
-	\begin{tabular*}{\textwidth}{p{3cm}p{13cm}}
-		\toprule
-		\textbf{Requirement} & \textbf{Details} \\[8pt]
-		\midrule
-		\textbf{\textit{Production Line Continuity}} 	& - Shall not inhibit the production line speed. \\
-							& - The production line shall not be caused to stop unnecessarily due to the vision system.\\
-		\midrule
-		\textbf{\textit{Safety}}    & - The vision system shall not create any safety risks or hazards such as tipping, electrocution, exposed pinch points, sharp edges, hazardous lighting, unsustainable lifting, etc.  \\[6pt]
-		\midrule
-		\textbf{\textit{Fruit Inspection}} 	& - Shall operate autonomously.\\
-							& - Fast moving punnets shall be captured and assesed without exceptions \\
-							& - The punnets shall be assesed based on the agreed defect categories (classes) to the specifications provided. \\
-							& - Each punnet shall be evaluated from top and bottom (through the plastic container) \\
-							& - The infeed and outfeed systems shall integrate with the proceeding and preceeding machinery. \\
-		\midrule
-		\textbf{\textit{Peripherals / Footprint}}	& - Shall be externally connected to one $240V$ power source, and one pnuematic line for all operations including removal from production line.  \\
-		& - Shall be able to operate in any packing line given these two sources. \\
-		& - Size of the system shall be kept as compact as possible due to packing line constraints. \\
-		\midrule
-		\textbf{\textit{Signals and Operator Information}}	& - Light and sounds shall accompany the system to be intuitive to operators \\
-							& - Error, success, and general information shall be presented on a screen, or given to operators via another medium.  \\
-		\midrule
-		\textbf{\textit{Traceability}}		& - Records shall be kept with each punnet's images as to when (date/time) they were packed  \\
-							& - Images, timestamp, assessment, system state, and other records must be kept in a database for future access. \\
-		\midrule
-		\textbf{\textit{Documentation}}	& - Each software module shall be documented to describe the module and it's function and relevance to the application.  \\
-							& - A description of how the software is compiled and which dependencies are required to run the application shall be provided. \\
-		\bottomrule
-	\end{tabular*}
-\end{table}
-
+The addition of a vision system to the heat-seal infeed is the desired outcome for Magnificent to address quality issues that can be missed in such a fast-paced environment. Defects such as underripe, overripe, bruised, rotten, foreign object and size and shape have all been attributed to stock rejects and/or returns. Sometimes it costs more to salvage rejected stock than reuse it, so there is a possibility that poor quality could mean a shipment is subject to dumping. As millions of full punnnets are packed, palletised and shipped each year the Quality Assurance Manager has an enormous, if not imposible, task in inspecting each one thouroughly. Strawberries are required to be picked and packed to a strict set of attributes. However, subjectivity, tiredness, rushing, overheating, can all influence the quality of berries picked in the field or packed on a production line. 
 
 Subjectivity is of great concern due to the high turnover of staff, given the majority of employees are seasonal workers, only a few of which will return each year. Therefore, the vision system will inspect each punnet from the top and bottom, at high speed, and adding objective consistency to the process as one of the final quality steps before packing.
+
 
 The requirements include that the vision system feed directly into the heat-seal machine, and not inhibit the production speed or volume. This is a critical measure, particularly during development and production line integration, which ensures that efficiencies are not lost in packing. The speed of packing punnets is directly related to the profit of both the company and its workers, both of whose payments are proportional to volume over time. The company loses money paying for workers to wait for machinery to be ready, hence, downtime due to a non-critical plant will be counter-productive and should be avoided. The inspection system must be able to detect the incoming, high-speed punnets and acquire images from above and below, before analysing the quality. If the system detects defects in the strawberry images, the punnet must be removed from the production line. 
 
 
 
 The vision system general requirements are listed in Table \ref{tab:requirements} showing other critical success factors.
+
+
+
+
+\begin{longtable}{p{5cm}p{10cm}}
+	\caption{Table of Requirements for the Strawberry Vision System}
+	\label{tab:requirements} \\
+	
+	\hline\hline
+	\textbf{Requirement} & \textbf{Details} \\[2pt]
+	\hline \hline
+	\textbf{\textit{Production Line Continuity}} 	& - Shall not inhibit the production line speed. \\[2pt]
+						& - The production line shall not be caused to stop unnecessarily due to the vision system.\\[2pt]
+	\hline
+	\textbf{\textit{Safety}}    & - The vision system shall not create any safety risks or hazards such as tipping, electrocution, exposed pinch points, sharp edges, hazardous lighting, unsustainable lifting, etc.  \\[2pt]
+	\hline
+	\textbf{\textit{Fruit Inspection}} 	& - Shall operate autonomously.\\[2pt]
+						& - Fast moving punnets shall be captured and assesed without exceptions \\[2pt]
+						& - The punnets shall be assesed based on the agreed defect categories (classes) to the specifications provided. \\[2pt]
+						& - Each punnet shall be evaluated from top and bottom (through the plastic container) \\[2pt]
+						& - The infeed and outfeed systems shall integrate with the proceeding and preceeding machinery. \\[2pt]
+	\hline
+	\textbf{\textit{Peripherals / Footprint}}	& - Shall be externally connected to one $240V$ power source, and one pnuematic line for all operations including removal from production line.  \\[2pt]
+	& - Shall be able to operate in any packing line given these two sources. \\[2pt]
+	& - Size of the system shall be kept as compact as possible due to packing line constraints. \\[2pt]
+	\hline
+	\textbf{\textit{Signals and Operator Information}}	& - Light and sounds shall accompany the system to be intuitive to operators \\[2pt]
+						& - Error, success, and general information shall be presented on a screen, or given to operators via another medium.  \\[2pt]
+	\hline
+	\textbf{\textit{Traceability}}		& - Records shall be kept with each punnet's images as to when (date/time) they were packed  \\[4pt]
+						& - Images, timestamp, assessment, system state, and other records must be kept in a database for future access. \\[2pt]
+	\hline
+	\textbf{\textit{Documentation}}	& - Each software module shall be documented to describe the module and it's function and relevance to the application.  \\[4pt]
+						& - A description of how the software is compiled and which dependencies are required to run the application shall be provided. \\[2pt]
+	\hline
+\end{longtable}
+
 
 
 
@@ -711,7 +713,7 @@ Strawberry fungal infection identification performed by Siedliska et al \cite{si
 
 
 
-\subsection{Strawberry Image Processing}
+\subsection{Strawberry Vision Systems}
 
 Strawberries are a delicate fruit with an unprotected, soft, edible flesh, and very susceptible to damage if mistreated, handled too much, or even transported carelessly. The outer flesh of the berry is pinned with seeds creating higher surface friction, coupled with the incredibly soft exterior, creates challenges in terms of handling during picking, packing, and distribution. This is conversely true for fruits such as mango, watermelon, oranges, kiwi, and banana, for example, which have a protective, smooth layer of peel to protect the flesh inside, seen only by the consumer. Some success has been made in machine vision for strawberries, with examples in robotic picking, picking and grading, and grading on a production line. 
 
@@ -903,6 +905,7 @@ A Faster R-CNN network was used by Sa et al \cite{sa} to demonstrate it's adapta
 
 
 \subsection{Control Systems}
+\label{sec:control_sys}
 
 Vision systems have been utilised on many production lines since the early 1980's \cite{kruger}. Computers represent a medium to perform a consistent, verifiable approach to monitoring, recording, and quality control of produced items that may be susceptable to damage, contamination, manufacturing errors, poor quality, out-of-specification features, or defects and require separation from good quality produce. Depending on the goods being monitored, there may be an option to rework, correct, repack, or remake the defected instances, therefore, the control systems will differ greatly between production lines.   
 
@@ -930,7 +933,7 @@ The NIR region ($750nm-1000nm$), however, can be used to effectively identify de
 
 Strawberries are very suceptible to damage, therefore, handling and transport becomes of concern particularly if the desire is to mechanically sort them in to categories or remove defective instances. Picking in the field and packing the berries into containers generates many opportunities to bruise or injure the delicate flesh before the quality inspection process begins. However, some progress has been made in the way of robot picking that can precisely pick and place berries into the containers using machine vision to operate the picking mechanism and perform the quality or ripeness gradation, simulteneously. Using a robot to pick a strawberry could see rates of $>10s/berry$ with current technology and is therefore mostly experimental in nature given that the volume of strawberries on a typical farm or packing room. Each method to process the strawberries in this review have been singulated either by way of laboratory conditions, robotised harvesting, or human placement on a conveyor before the vision system assesses the quality. However, each of these options either costs more in terms of time, or labour, due to the delicate placement requiremed in order to yield unspoiled fruit. The calyx removal system from \cite{lin} used a system of roller rods for separation of the strawberries into singular specimens before removing the calyx with a waterjet. As the metal rollers apply friction to the berries in order to transport them, they are likely to have bruising and other skin damage after processing, which means the produce is no longer acceptable by retail markets, as was the purpose of their project. 
 
-Conversely, the apples, figs, and citrus fruits reviewed, that are able to operate in real-time environments, have robust skin to protect them from being constantly moved, rolled, placed, and pushed during the grading and control processes. Speeds of $54,000/h$ for apples, $90kg/h$ for figs, $72,000/h$ for dates, and $5/s$ for citrus fruit have been noted proving that machine vision is currently powerful enough to process this type of volume if the automated handling is efficient and appropriate.
+Conversely, the apples, figs, and citrus fruits reviewed have robust skin to protect them from being constantly moved, rolled, placed, and pushed during the grading and control processes. Speeds of $54,000/h$ for apples, $90kg/h$ for figs, $72,000/h$ for dates, and $5/s$ for citrus fruit have been noted proving that machine vision is currently powerful enough to process this type of volume if the automated handling is efficient and appropriate.
 
 Machine Learning and Deep Learning play a vital role in produce grading, along with more naive implementations, due to their ability to discriminate between classes well. Algorithms such as LDA, QDA, SVM, ANN, BPNN may take hours to train, but can perform accurately and quickly during inference. SVM and shallow networks (such as single layer ANN or BPNN) were predominant methods to predict based on colour, size, and texture features extracted by hand, whereas, CNN and deeper networks are used where the image itself is used as input in order to predict masks or bounding boxes for identification and classification purposes.
 
@@ -938,7 +941,7 @@ Machine Learning and Deep Learning play a vital role in produce grading, along w
 \quad
 
 
-The main body of the thesis following is set out with four chapters: 
+The main body of this thesis is set out with the following four chapters: 
 
 
 \begin{itemize}
@@ -956,7 +959,7 @@ The main body of the thesis following is set out with four chapters:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\section{Phase I - Initial Design and Prototype}
+\section{I - Prototype and Design}
 \label{sec:I}
 
 The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements}. Added to this are some unlerlying assumptions and design requests from Magnificent, given thier previous project experience which has provided the company with knowledge and tools to assist the development of the project. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and sychronisation. Both of these projects made use of software frameworks such as Microsoft's Visual Studio$^{\textregistered\texttrademark}$ for application design, GUI, debugging, and deployment. A liscence for MVTec Software GmbH's HALCON$^{\textregistered\texttrademark}$ had previously been purchased for the aformentioned projects. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
@@ -991,14 +994,9 @@ Polarization is the process of converting electromagnetic waves of multiple pola
 
 As this project would take advantage of the NIR spectrum with the intention of capturing bruising or other invisible defects, the light sources must be capable of generating the required illumination. Previous projects used LED sources as they are more efficient and can be operated using $12V$ power, but are generally limited to small bands of radiation. Some LED manufacturers claim to generate a high Colour Rendering Index (CRI), which is a measure of the comparrison to natural light. However these LED's generally do not output wavelengths greater than $750nm$ as there is no need in most cases which is much of the reason they are more efficient in terms of power. This means that LED's may not be useful and a more appropriate light source such as halogen or tungsten must be used.
 
+It is a requirement that the punnets be imaged from top and bottom, therefore requiring an obstruction-free conveyor system to transport punnets through the acquisition section. This can accomplished by using the lip (around the top of the container) as a handle point where thin v-belts can suspend the punnets giving little visible impac to the scene and allowing full view of both the top and bottom, simulteneously.
 
-TODO - add v-belts, top and bottom imaging, 
-
-
-TODO - add pneumatic ejection system
-
-
-
+A pneumatic ejection system will remove the defective containers from the production line. Research in Chapter \ref{sec:control_sys} indicates this is a common practice in agricultural vision systems and is facillitated by the air system provided in the requrements list. As the strawberries are already packet when entering the vision system, the entire punnet will be ejected, so that it may be repacked and re-analysed by the system.
 
 
 
@@ -1057,11 +1055,6 @@ However, this means that the coveyors could stop at any time during the sensing,
 
 \subsubsection{Flickering}
 
-As the strawberry punnets pass along the production line at a rapid pace, the shutter speed of any cameras used will need to be able to capture without blurring, but with enough light to illuminate the berries to the desired levels. This fast shutter speed requires high-powered lighting in order to generate enough photons in such a short amount of time.
-
-High-powered lighting is generally in the form of 110V/220V AC powered lamps which can generate over $1000W$, however, the alternating current poses the problem of flickering. This occurs when the shutter speed of the camera is $<<1s$ and the sensor can be exposed to maximum light, when the light source current reaches maximum, and theoretically, no light at all when crossing the 0V point in the alternating cycle. Some examples of threshold differences are shown in Figure \ref{fig:flicker} where only time was varied.
-
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{flicker.png}
@@ -1069,6 +1062,9 @@ High-powered lighting is generally in the form of 110V/220V AC powered lamps whi
 	\label{fig:flicker}
 \end{figure}
 
+As the strawberry punnets pass along the production line at a rapid pace, the shutter speed of any cameras used will need to be able to capture without blurring, but with enough light to illuminate the berries to the desired levels. This fast shutter speed requires high-powered lighting in order to generate enough photons in such a short amount of time.
+
+High-powered lighting is generally in the form of 110V/220V AC powered lamps which can generate over $1000W$, however, the alternating current poses the problem of flickering. This occurs when the shutter speed of the camera is $<<1s$ and the sensor can be exposed to maximum light, when the light source current reaches maximum, and theoretically, no light at all when crossing the 0V point in the alternating cycle. Some examples of threshold differences are shown in Figure \ref{fig:flicker} where only time was varied.
 
 Therefore, DC-powered lighting must be used to elliminate this problem and give clear, compareable, consistant images. DC powered lighting, however, is generally lower voltage such as $12V, 24V, 36V$, and $48V$. This infers that high-powered devices will use a lot of current, for example, a $500W$ light source at $12V$ will require around $42A$ of current. Generally, for this type of application, a specialized (or industrial) power supply unit must be used in order to protect against failures and provide enough power.
 
@@ -1083,29 +1079,87 @@ This is due to Snell's law which states,
 \eta_{1} sin\theta_{1} = \eta_{2} sin\theta_{2}
 \end{equation}
 
-and when the mediums $\eta_{1}$ and  $\eta_{2}$ are the same or equal it can be seen that,
+When the mediums $\eta_{1}$ and  $\eta_{2}$ are the same or equal it can be seen that,
 \begin{equation}
 \theta_{i} = \theta_{r}
 \end{equation}
 
-where $r$ the reflected wave, has at the same angle as $i$ the incident wave from the normal of the surface. 
-
-
+where $r$ the reflected wave, is at the same angle as $i$ the incident wave from the normal of the surface. 
 
 There are a few methods to combat the specular reflections, such as polarizing the light, changing the angle of the source, or diffuse lighting. In the case of this project, all three are implemented in order to reduce the specularities to a minimum.
 
-Polarization of a light source, using a polaroid sheet, will reduce the overall light intensity by a factor of $\frac{1}{2}$ due to Malus' law given by
+Polarization of a light source (using a polaroid sheet) will reduce the overall light intensity by a factor of $\frac{1}{2}$ due to Malus' law given by
 \begin{equation}
 	I = I_{0} cos^{2}\theta_{i}
 \end{equation}
 
-with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the polarizer axis from the angle of initial polarization. If a light source is unpolarized, it is thought to have a combination of all polarization directions and so $cos^{2}\theta$ is averaged to $\frac{1}{2}$. Although, in practice, this figure is less than this due to imperfections in polarizing material and, hence, more light will be required in order to achieve the same luminosity on the subject \cite{rox, sommer}.
+with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the polarizer axis from the angle of initial polarization. If a light source is unpolarized, it is thought to have a combination of all polarization directions and so $cos^{2}\theta$ is averaged to $\frac{1}{2}$. Although, in practice, this figure is less than this due to imperfections in polarizing material, more light will be required in order to achieve the same luminosity on the subject \cite{rox, sommer} whilst reducing/removing the intense reflections. Specularities appear the same colour as the light source, which in most cases is white, effectively 'blinding' the cameras from true information behind the glare.  
 
 
 
 
 
-\subsection{Design}
+
+\subsection{Prototype Construction}
+
+The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarizers, and cameras. This prototype was then used as the framework when moved from bench to production. The frame, constructed from aluminium modular T-slot ($20mmx20mm$) components, supports stainless steel sheets that are molded to be curved on top and bottom in order to diffuse and direct light and reduce flat surface reflections whilst creating a more evenly distributed background and intensity. 
+
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{images/bench_construct.jpg}
+	\end{center}
+	\caption{The enclosed prototype during construction and testing.}
+	\label{fig:bench_construct}
+\end{wrapfigure}   
+
+Front and back panels were added with hinges to allow access for staging and adjustemnts but block the outside light interference. Halogen work lamps were used to supply lighting as they were capable of emitting the full spectrum required for both the RGB and IR imaging systems. They are readily available, with power up to $500W$ per lamp and a footprint small enough to fit eight inside the enclosure. Several lighting and polarizing configurations were tested (using a thin film type polaroid) for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}), before the AC flickering problem was realised. This test was successful in proving that the polarizer reduced specularities, and that powerful lighting was required, however, it highlighted the inherant problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polarizer film would be less effective when bent or warped.  
+
+Converting the system to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical flourescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they ar emore efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Auotomotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum as shown in figures \ref{fig:bench_led_rigid} and \ref{fig:production_LED_Hal}. 
+
+
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.35\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_hal_film.jpg}
+		\caption{}
+		\label{fig:bench_hal_film}
+	\end{subfigure}%
+	\begin{subfigure}{.35\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_hal_film2.jpg}
+		\caption{}
+		\label{fig:bench_hal_film2}
+	\end{subfigure}%
+	
+	\begin{subfigure}{.35\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_led_rigid.jpg}
+		\caption{}
+		\label{fig:bench_led_rigid}
+	\end{subfigure}%
+	\begin{subfigure}{.35\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,angle=270,origin=c]{images/production_LED_Hal.jpg}
+		\caption{}
+		\label{fig:production_LED_Hal}
+	\end{subfigure}%
+	
+	\caption{Left to right: (a)Halogen work lamps tested facing upwards with a thin film polaroid , (b)Halogen work lamps in a diagolally upward direction with a dark-field blocker, (c)Installation of LED light bars and rigid polarizing material, (d)Installation of $12V$ halogen down lights.}
+	\label{fig:test3}
+\end{figure}
+
+
+An independant power supply was needed to power the prototype, which at this stage, only included the top illumination cluster. The $12V/5A$ power supply was only able to power either the LEDs or halogens for testing purposes, and not both at once due to the power limitation.  
+
+
+\subsection{Strawberry Quality Assurance (SQA) System Design}
+
+
+A Computer Aided Design (CAD) generated cross-section of the proposed SQA system is shown in Figure \ref{fig:cross_sec} 
 
 
 
@@ -1115,6 +1169,7 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 	\caption{Cross section of the SQA system illustrating the polarizing filter (blue sheet), the v-belts, and four cameras in position above and below.}
 	\label{fig:cross_sec}
 \end{figure}%
+
 
 
 
@@ -1311,50 +1366,13 @@ where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to thr
 
 
 
-\subsection{Prototype Construction}
 
-The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarizers, and cameras. This prototype was then used as the framework when moved from bench to production. 
-
-Several lighting and polarizing configurations were tested for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}). Before the AC flickering problem was realised, halogen work lamps were tested as the main lighting source, with a thin film type polaroid. This test was successful in prooving that the polarizer reduced specularities, and that powerful lighting was required, however, it highlighted the inherant problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polarizer film would be less effective when bent or warped.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}{.35\textwidth}
-		\centering
-		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_hal_film.jpg}
-		\caption{}
-		\label{fig:bench_hal_film}
-	\end{subfigure}%
-	\begin{subfigure}{.35\textwidth}
-		\centering
-		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_hal_film2.jpg}
-		\caption{}
-		\label{fig:bench_hal_film2}
-	\end{subfigure}%
-	
-	\begin{subfigure}{.35\textwidth}
-		\centering
-		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_led_rigid.jpg}
-		\caption{}
-		\label{fig:bench_led_rigid}
-	\end{subfigure}%
-	\begin{subfigure}{.35\textwidth}
-		\centering
-		\includegraphics[width=.9\linewidth,angle=270,origin=c]{images/production_LED_Hal.jpg}
-		\caption{}
-		\label{fig:production_LED_Hal}
-	\end{subfigure}%
-	
-	\caption{Left to right: (a)Halogen work lamps tested facing upwards with a thin film polaroid , (b)Halogen work lamps in a diagolally upward direction with a dark-field blocker, (c)Installation of LED light bars and rigid polarizing material, (d)Installation of $12V$ halogen down lights.}
-	\label{fig:test3}
-\end{figure}
-
-
-
-Converting the system to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. Auotomotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum as shown in figures \ref{fig:bench_led_rigid} and \ref{fig:production_LED_Hal}. 
-
-
+\section{II - Production Integration}
+\label{sec:II}
 
 
 
@@ -1367,7 +1385,7 @@ Converting the system to $12V$ power was required in order to provide a more con
 
 
 
- 
+
 
 The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure. Therefore, the external cladding was modified to allow the conveyors entry and exit points without allowing external, potentially noisy, light leaking inside. This was ensured by constructing a protruding tunnel on both sides of the enclosure as shown in the final setup in figure \ref{fig:production_final}.
 
@@ -1398,17 +1416,6 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 	\caption{Examples of under ripe berry detection in full punnets.}
 	\label{fig:UR_berries}
 \end{figure}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{II - Production Integration}
-\label{sec:II}
-
-
-
 
 
 
