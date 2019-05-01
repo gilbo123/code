@@ -66,6 +66,8 @@
   \item [{$NN$}]\begingroup Neural Network\nomeqref {0}\nompageref{ix}
   \item [{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}
 		\nompageref{ix}
+  \item [{$PCIe$}]\begingroup Peripheral Component Interconnect express\nomeqref {0}
+		\nompageref{ix}
   \item [{$peduncle$}]\begingroup Stem of the strawberry\nomeqref {0}
 		\nompageref{ix}
   \item [{$PLS-DA$}]\begingroup Partial Least-squares Discrininant Analysis\nomeqref {0}
@@ -77,6 +79,8 @@
   \item [{$QDA$}]\begingroup Quadratic Discriminant Analysis\nomeqref {0}
 		\nompageref{ix}
   \item [{$R-CNN$}]\begingroup Region-based Convolutional Neural Network\nomeqref {0}
+		\nompageref{ix}
+  \item [{$RAM$}]\begingroup Random Access Memory\nomeqref {0}
 		\nompageref{ix}
   \item [{$RBF$}]\begingroup Radial Basis Function\nomeqref {0}
 		\nompageref{ix}

@@ -18,7 +18,7 @@
 \BOOKMARK [3][-]{subsubsection.2.7.2}{Deep Learning}{subsection.2.7}% 18
 \BOOKMARK [2][-]{subsection.2.8}{Control Systems}{section.2}% 19
 \BOOKMARK [2][-]{subsection.2.9}{Summary}{section.2}% 20
-\BOOKMARK [1][-]{section.3}{I - Prototype and Design}{}% 21
+\BOOKMARK [1][-]{section.3}{System Prototype and Experimentation}{}% 21
 \BOOKMARK [2][-]{subsection.3.1}{Project Challenges}{section.3}% 22
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Punnet Imaging}{subsection.3.1}% 23
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Overheating}{subsection.3.1}% 24
@@ -31,15 +31,15 @@
 \BOOKMARK [3][-]{subsubsection.3.1.9}{Specular Reflections}{subsection.3.1}% 31
 \BOOKMARK [2][-]{subsection.3.2}{Prototype Construction}{section.3}% 32
 \BOOKMARK [2][-]{subsection.3.3}{Strawberry Quality Assurance \(SQA\) System Design}{section.3}% 33
-\BOOKMARK [2][-]{subsection.3.4}{Electronics}{section.3}% 34
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Power Requirements}{subsection.3.4}% 35
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Hardware}{subsection.3.4}% 36
-\BOOKMARK [2][-]{subsection.3.5}{Software}{section.3}% 37
-\BOOKMARK [3][-]{subsubsection.3.5.1}{User Interface}{subsection.3.5}% 38
-\BOOKMARK [3][-]{subsubsection.3.5.2}{Asynchronous Grabbing}{subsection.3.5}% 39
-\BOOKMARK [3][-]{subsubsection.3.5.3}{Hardware Control}{subsection.3.5}% 40
-\BOOKMARK [3][-]{subsubsection.3.5.4}{Image Processing}{subsection.3.5}% 41
-\BOOKMARK [1][-]{section.4}{II - Production Integration}{}% 42
-\BOOKMARK [1][-]{section.5}{III - System Reconfiguration and Redesign}{}% 43
-\BOOKMARK [1][-]{section.6}{IV - Linux and Deep Learning}{}% 44
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Hardware}{subsection.3.3}% 34
+\BOOKMARK [4][-]{paragraph.3.3.1.1}{Hardware Control}{subsubsection.3.3.1}% 35
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Electronics and Power}{subsection.3.3}% 36
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Software}{subsection.3.3}% 37
+\BOOKMARK [4][-]{paragraph.3.3.3.1}{User Interface}{subsubsection.3.3.3}% 38
+\BOOKMARK [4][-]{paragraph.3.3.3.2}{Asynchronous Threading}{subsubsection.3.3.3}% 39
+\BOOKMARK [4][-]{paragraph.3.3.3.3}{Image Processing}{subsubsection.3.3.3}% 40
+\BOOKMARK [1][-]{section.4}{Production Integration}{}% 41
+\BOOKMARK [2][-]{subsection.4.1}{Production Floor Migration }{section.4}% 42
+\BOOKMARK [1][-]{section.5}{System Reconfiguration and Redesign}{}% 43
+\BOOKMARK [1][-]{section.6}{Linux and Deep Learning}{}% 44
 \BOOKMARK [1][-]{section.7}{Conclusion}{}% 45

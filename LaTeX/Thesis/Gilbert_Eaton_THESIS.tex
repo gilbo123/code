@@ -9,6 +9,9 @@
 %1.5 line spacing
 \renewcommand{\baselinestretch}{1.5} 
 
+%dummy text
+\usepackage{lipsum}
+
 %for changing text sizes
 \usepackage{mathptmx}
 \usepackage{anyfontsize}
@@ -41,6 +44,13 @@
 \usepackage[cmex10]{amsmath,mathtools}
 \usepackage{fixltx2e}
 \setlength{\mathindent}{0pt} %left align
+
+%discrete math fonts
+\usepackage{amsfonts}
+
+
+%add programming code package
+\usepackage{listings}
 
 %\titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
 \titlespacing*{\section}    %main heading
@@ -293,7 +303,8 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 %biological
 \nomenclature{$SSC$}{Soluable solid content}%
 
-
+%programming
+\nomenclature{$API$}{Application Programming Interface}%
 
 %cvip jargon
 \nomenclature{$RMSE$}{Root Mean Squared Error}%
@@ -317,7 +328,6 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$QDA$}{Quadratic Discriminant Analysis}
 \nomenclature{$PLS-DA$}{Partial Least-squares Discrininant Analysis}
 \nomenclature{$PCA$}{Principal Component Analysis}
-%\nomenclature{$$}{}
 \nomenclature{$MLP$}{Multi-layer Perceptron}%
 \nomenclature{$GMM$}{Gaussian Mixture Model}%
 \nomenclature{$PCA$}{Principal Component Analysis}%
@@ -336,13 +346,14 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$UV$}{Ultraviolet range of electromagnectic spectrum}%
 
 
-
 %computer jargon
 \nomenclature{$UI$}{User Interface}%
 \nomenclature{$PSU$}{Power Supply Unit}%
 \nomenclature{$UPS$}{Uninterruptable Power Supply}%
 \nomenclature{$CPU$}{Central Processing Unit}%
 \nomenclature{$GPU$}{Graphical Processing Unit}%
+\nomenclature{$RAM$}{Random Access Memory}%
+\nomenclature{$PCIe$}{Peripheral Component Interconnect express}%
 \nomenclature{$AVX$}{Advanced Vector Extensions}%
 
 %photography jargon
@@ -507,9 +518,9 @@ The vision system general requirements are listed in Table \ref{tab:requirements
 
 
 
-
+\renewcommand{\arraystretch}{0.8}% Tighter table height
 \begin{longtable}{p{5cm}p{10cm}}
-	\caption{Table of Requirements for the Strawberry Vision System}
+	\caption{Table of Major Requirements for the Strawberry Vision System}
 	\label{tab:requirements} \\
 	
 	\hline\hline
@@ -959,38 +970,34 @@ The main body of this thesis is set out with the following four chapters:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\section{I - Prototype and Design}
+\section{System Prototype and Experimentation}
 \label{sec:I}
 
-The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements}. Added to this are some unlerlying assumptions and design requests from Magnificent, given thier previous project experience which has provided the company with knowledge and tools to assist the development of the project. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and sychronisation. Both of these projects made use of software frameworks such as Microsoft's Visual Studio$^{\textregistered\texttrademark}$ for application design, GUI, debugging, and deployment. A liscence for MVTec Software GmbH's HALCON$^{\textregistered\texttrademark}$ had previously been purchased for the aformentioned projects. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
+The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements}. Added to this are some unlerlying assumptions and design requests from Magnificent, given thier previous project experience which has provided the company with knowledge and tools to assist the development of the project. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and sychronisation. Both of these projects made use of software frameworks such as Microsoft's Visual Studio$^{\textregistered}$ for application design, GUI, debugging, and deployment. A liscence for MVTec Software GmbH's HALCON\texttrademark had previously been purchased for the aformentioned projects. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
 
-Visual Studio$^{\textregistered\texttrademark}$ is an Integrated Development Environment (IDE) designed for applications based in $C\#$ or $C++$ programming languages predominantly. It provides project configuration tools, automatic library attatchment, a GUI designer and linker tool which can increase the speed of development and facillitate changes and updates in an agile manner. Although it is free to use for development under the Community edition, commercial distribution would be subject to enterprise licence. 
+Visual Studio$^{\textregistered}$ is an Integrated Development Environment (IDE) designed for applications based in $C\#$ or $C++$ programming languages predominantly. It provides project configuration tools, automatic library attatchment, a GUI designer and linker tool which can increase the speed of development and facillitate changes and updates in an agile manner. Although it is free to use for development under the Community edition, commercial distribution would be subject to enterprise licence. 
 
-HALCON$^{\textregistered\texttrademark}$ uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast libary of common image processing functions. The IDE contains serveral visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as wel as a list of conrol varibles (integers, arrays, floats, etc) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON$^{\textregistered\texttrademark}$ application code can be converted directly to $C\#$ or $C++$ code in order for integration into comercial applications such as Visual Studio$^{\textregistered\texttrademark}$. As Magnificent had a pre-existing liscence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework porfolio.
-
-Polarizer material had been advantageous in pervious projects given the various lighting conditions, both outdoors and within a greenhouse by way of reducing glare. However, specular reflections are an inherant property of strawberries due to their pitted exterior, effectively making small crater-shaped edges that can catch the light from any angle. Figure \ref{fig:strawberry_glare} shows a number of white areas around the seeds caused by direct reflection of the light source \cite{gurney}. As the craters are round, and the berry's surface is curved in 2D, the specular reflections are unavoidable.
+HALCON\texttrademark uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast libary of common image processing functions. The IDE contains serveral visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as wel as a list of conrol varibles (integers, arrays, floats, etc) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON\texttrademark application code can be converted directly to $C\#$ or $C++$ code in order for integration into comercial applications such as Visual Studio$^{\textregistered}$. As Magnificent had a pre-existing liscence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework porfolio.
 
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}{\textwidth}
-		\centering
-		\includegraphics[width=.6\linewidth]{strawberry_glare.jpg}
-		\caption{}
-		\label{fig:strawberry_glare}
-	\end{subfigure}%
+	\includegraphics[width=.6\linewidth]{strawberry_glare.jpg}
+	\caption{Strawberries with dominant specular reflections reducing the ability to analyse pixels}
+	\label{fig:strawberry_glare}
+\end{figure}%
 
-	\begin{subfigure}{\textwidth}
-		\centering
-		\includegraphics[width=.8\linewidth]{polarization.png}
-		\caption{}
-		\label{fig:polarization}
-	\end{subfigure}%
-	\caption{(a) Strawberries with dominant specular reflections reducing the ability to analyse pixels, and (b) Electromagnetic polarisation. A circular or randomly polarised source becomes a single polarity after passing through the material.}
-	\label{}
-\end{figure}
+
+Polarizer material had been advantageous in pervious projects given the various lighting conditions, both outdoors and within a greenhouse by way of reducing glare. However, specular reflections are an inherant property of strawberries due to their pitted exterior, effectively making small crater-shaped edges that can cause specularities from any angle. Figure \ref{fig:strawberry_glare} shows a number of white areas around the seeds caused by direct reflection of the light source \cite{gurney}. As the craters are round, and the berry's surface is curved in 2D, the specular reflections are unavoidable.
 
 Polarization is the process of converting electromagnetic waves of multiple polarities into a single direction polarity. Usually used for visible light or lasers, polarizers can reduce glare (for example, polarized sunglasses) or help in the amplification and directionality of lasers. Figure \ref{fig:polarization} illustrates the polarization of an EM wave, indicating that no matter the intensity of any direction, only a single polarity emerges  \cite{physicsopenlab}. Using a polarizer is an effective tecnique to reduce glare from a flat surface (polarized sunglasses are assumed to be worn horizontally, using vertical polarization in the lenses, blocks glare from horizonal surfaces such as water and concrete), but will be mostly ineffective for the curved surface of the strawberries. However, using cross-polarization (two polarisers orthogonal in direction) in order to reduce these reflections is considered, even though this will limit the amount of illumination reaching the subject significantly.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\linewidth]{polarization.png}
+	\caption{Electromagnetic polarisation. A circular or randomly polarised source becomes a single polarity after passing through the material.}
+	\label{fig:polarization}
+\end{figure}%
 
 As this project would take advantage of the NIR spectrum with the intention of capturing bruising or other invisible defects, the light sources must be capable of generating the required illumination. Previous projects used LED sources as they are more efficient and can be operated using $12V$ power, but are generally limited to small bands of radiation. Some LED manufacturers claim to generate a high Colour Rendering Index (CRI), which is a measure of the comparrison to natural light. However these LED's generally do not output wavelengths greater than $750nm$ as there is no need in most cases which is much of the reason they are more efficient in terms of power. This means that LED's may not be useful and a more appropriate light source such as halogen or tungsten must be used.
 
@@ -1117,31 +1124,31 @@ Front and back panels were added with hinges to allow access for staging and adj
 
 Converting the system to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical flourescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they ar emore efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Auotomotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum as shown in figures \ref{fig:bench_led_rigid} and \ref{fig:production_LED_Hal}. 
 
-
+\quad
 
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}{.35\textwidth}
+	\begin{subfigure}{.40\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_hal_film.jpg}
 		\caption{}
 		\label{fig:bench_hal_film}
 	\end{subfigure}%
-	\begin{subfigure}{.35\textwidth}
+	\begin{subfigure}{.40\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_hal_film2.jpg}
 		\caption{}
 		\label{fig:bench_hal_film2}
 	\end{subfigure}%
-	
-	\begin{subfigure}{.35\textwidth}
+
+	\begin{subfigure}{.40\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth,angle=270,origin=c]{bench_led_rigid.jpg}
 		\caption{}
 		\label{fig:bench_led_rigid}
 	\end{subfigure}%
-	\begin{subfigure}{.35\textwidth}
+	\begin{subfigure}{.40\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth,angle=270,origin=c]{images/production_LED_Hal.jpg}
 		\caption{}
@@ -1153,13 +1160,16 @@ Converting the system to $12V$ power was required in order to provide a more con
 \end{figure}
 
 
-An independant power supply was needed to power the prototype, which at this stage, only included the top illumination cluster. The $12V/5A$ power supply was only able to power either the LEDs or halogens for testing purposes, and not both at once due to the power limitation.  
+An independant power supply was needed to power the prototype, which at this stage, only included the top illumination cluster. The $12V/5A$ power supply was only able to power either the LEDs or halogens for testing purposes, and not both at once due to the current limitation, indicating that a more powerful source was required.   
+
+
+
 
 
 \subsection{Strawberry Quality Assurance (SQA) System Design}
 
 
-A Computer Aided Design (CAD) generated cross-section of the proposed SQA system is shown in Figure \ref{fig:cross_sec} 
+The Computer Aided Design (CAD) generated cross-section of the proposed SQA system in Figure \ref{fig:cross_sec} illustrates the concept of the conveyors (in-feed, out-feed, and v-belt), placement of cameras and PC, as well as the polarizer sheet. This illustration integrates the already existing frame constructed for the prototype, therefore the prototype could be retrofitted to include in-feed and out-feed conveyors, and the v-belt system.  
 
 
 
@@ -1172,125 +1182,265 @@ A Computer Aided Design (CAD) generated cross-section of the proposed SQA system
 
 
 
+The PC is placed under the out-feed conveyor (as there is less probability of impact hazard), and runs the master program which controls every peripheral including cameras, peltier devices and fans, pneumatics, operator controls, image processing, and GUI. The microprocessor is a stand-alone industrial board (named Phidget\texttrademark) and controls the I/O as described in Section \ref{sec:phidget}.
 
-
-
-\subsection{Electronics}
-
-
-
-\begin{itemize}
-	\item PC for image processing and control of devices and hardware
-	\item Lighting for illumination
-	\item Cameras to capture images
-	\item Punnet sensors
-	\item Microcontroller for hardware operation
-	\item Relay bank to switch high-power sources
-	\item Peltier devices
-	\item Uninterruptable Power Supply (UPS)
-	\item Intake/exhaust/cooling fans
-	\item Various circuits/wiring/connectors/fuses
-\end{itemize} 
-
-
-
-
-\subsubsection{Power Requirements}
-
-
-\begin{table}[h]%
-	\caption{Power requirements for the electronics used in the system.}
-	\centering
-	\includegraphics[width=0.9\textwidth]{images/power_req.png}
-	\label{tab:power_req}
-\end{table}
-
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/PSU2.jpg}
-	\caption{Power Supply box with PSU mounted, fuses, ground terminals, and wiring to the electronics throught upper right wall.}
-	\label{fig:PSU2}
-\end{figure}
-
+As indicated in the requirements (Section \ref{sec:requirements}), the farm pack shed will provide power of either $240VAC$ - single phase, or $400VAC$ - three phase as well as a single compressed air line. However, the system is designed to use only $240VAC$ as higher power is not required in order to perform all the necessary functions including conveyor motion.
 
 
 
 \subsubsection{Hardware}
 
+The PC consists of an Azus$^{\textregistered}$ P8Z68 Deluxe Gen3 Motherboard, with a $3.4GHz$ Intel$^{\textregistered}$ Core\texttrademark $i7$ CPU, $8GB$ DDR4 RAM, and a $500GB$ Western Digital$^{\textregistered}$ hard drive. Extra filters added to the PC case prevent excess dust and dirt from prematurely aging the sensitive electronics or creating failures due to build up. USB3 Gen1 offers $5Gbps$ bandwidth per host controller, however, many USB3 ports, both on motherboard and PCIe additions, share a host controller accross up to 8 USB3 ports, reducing the individual throughput of each port. Common uses for USB3 would use only one or two ports at a time where processes are not time critical, additionally if bandwidth limit is reached, the transfer rate will be reduced. However, for the SQA application to run smoothly, a board must be used where each port has it's own dedicated host controller, such as the 4-port Advantech\texttrademark PCI Express x4, 4-Port USB 3.0 Expansion Card. 
+
+The pneumatic system is driven by a main air compressor that supplies the strawberry packing shed with air in order to operate various machinery, including the heat seal machine. A regulator is added with the soleniod controlled by the Phidget\texttrademark microprocessor. A compressed air nozzle is added to the out-feed conveyor opposite the exit ramp in order to supply a short (approx. $0.1s$), pressurised (up to $10bar$), air burst when a defect punnet is detected. The nozzle is designed for this purpose with a horizontal array of small apertures that can exert a jet pattern of $100mm$ x $55mm$ at $300mm$ from the nozzle. Only one bar of pressure is reccomended at that distance, however, as the punnet is fairly heavy ($250g-300g$), the required force may be more.
+
+Flir$^{\textregistered}$ is a leading industrial, machine vision, surveillance, defense, and thermal camera company with a broad range of cameras to choose from depending on application. The Flir$^{\textregistered}$ cameras used for the SQA inspection are Blackfly$^{\textregistered}$ USB3 $2.3 MP$, 1920 x 1200, $41FPS$, with a Sony$^{\textregistered}$ IMX249 sensor capable of shutter speeds in the range $19\mu s-3.9s$ making it suitable for fast-paced applications. Quantum Efficiency (QE) of the mono model is approximately $10\%$ at $1000nm$ which is not ideal, but offers more spectral range and less noise at NIR wavelenghts than other sensors. The cameras are powered via USB, which helps to reduce complexity, and include opto-isolated I/O for triggering. The comprehensive list of adjustable parameters make these cameras highly controllable or highly automatic, depending on user requirements, and can be programmed to function via software using the API packages. 
+
+As the cameras have specific operating temperatures in the range ($0^{\circ}C-45^{\circ}C$), meaning they will be suceptible to overheating and must be monitored (via the on-board temperature sensor, accessed using the API), particularly given that farm temperatures can reach $45^{\circ}C$ during the day. Therefore fans and peltier devices are added to the cameras in order to allow cooling if required. Intake fans apply positive pressure to the entire unit in an attempt to keep dust and dirt out of the acquisition area as lens/diffuser/polariser cleaning may become a common occurance.
+
+
+\paragraph{Hardware Control}
+\label{sec:phidget}
+
+Various hardware devices will need to be controlable via the main application, to enable efficient main lighting, signal lighting, peltier, pneumatics, and conveyor control, as well as inputs from some peripheral devices and sensors.
+
+The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
+
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{phidget.jpg}
+	\end{center}
+	\caption{Image of the Phidget\texttrademark I/O board and the interface connectors on the top and bottom.}
+	\label{fig:phidget}
+\end{wrapfigure} 
+
+
+
+Given the Lighting must be only turned on when in operational mode, the power is switched through a relay bank with the Phidget operating as the controller. This will save energy and lengthen the lifetime of the lighting, as well as lmiting heat generation to only the production time.
+
+The ejector is a controllable pneumatic system which can release a burst of air on cammand for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
+
+
+Figure \ref{fig:phidget} shows the screw-clamp I/O connectors on the top and bottom of the image, and the USB connection point for the PC. The Phidget has a $24MHz$ processor, 256 bytes of RAM, and up to $8kB$ of flash storage which makes the device a good option for input/output processes.
+ 
+
+
+The system topology in Figure \ref{fig:overview} describes the control relationship of the PC, microcontroller, relays, PSU and peripheral devices. The PC and PSU are supplied with $240VAC$ power and the PC provides power for the cameras. All other devices (excluding conveyors) are powered by the PSU including the microcontroller, which signals the relay bank to switch the high powered curcuits such as LED's, halogen lamps, and pneumatics. 
 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{images/overview.png}
+	\includegraphics[width=\textwidth]{overview.png}
 	\caption{Overview of the electrical connections and control hierarchy of the SQA system.}
 	\label{fig:overview}
-\end{figure}  
+\end{figure} 
+
+The relays are wired in a normally closed option so that the relay must be activated in order to turn on the high powered devices such as lighting. Therefore, malfunctions causing any of the components to fail will result in the system's most volatile devices to be powered off to prevent the likelihood of damage.
+
+
+\subsubsection{Electronics and Power}
+
+The electronics and power supply will accompany the enclosure to the production floor given that DC power is required to avoid flickering. Furthermore, the control system microprocessor, fuses, wires and relays need to be installed in order to operate the various controls. As the vision enclosure does not allow for power supply storage or peripherals inside, an electronic component box is used to contain the abovementioned items. 
+
+Safety is of great concern given that any packing floor operator may com into contact with the system. Therefore, the design must address critical safety hazards such as electrocution, shock, arcs or short circuits (potentially causing fire) and eye damage from intense lighting (\textit{Note, this section refers to electrical saftey and does not cover pinch-point, crushing, trip, or laceration hazards}). Fuses are added to the high current wiring delivering power to the main consumption devices (and to some lower powered devices) which will break the circuit on overload. Normally closed relays are used to switch high power circuits, given they will also beak the circuit on overload or malfunction.  
+
+
+All electronic requirements are as follows:
 
 
 
+\begin{itemize}
+	\item PC for image processing and control of devices and hardware
+	\item Uninterruptable Power Supply (UPS) for PC continuity
+	\item 2 x $240V$ conveyor motors
+	\item Lighting for illumination
+	\item Cameras 
+	\item Punnet sensors
+	\item Microcontroller for hardware operation
+	\item Relay bank to switch high-power sources
+	\item Peltier devices
+	\item Intake/exhaust/cooling fans
+	\item Various circuits/wiring/connectors/fuses
+\end{itemize} 
 
-\subsection{Software}
 
+\renewcommand{\arraystretch}{0.8}% Tighter table height
+\begin{table}[h]
+	\caption{Table of DC power requirements used in the SQA vision system.}
+	\label{tab:DC_power_table}
+	\begin{tabularx}{\linewidth}{p{6cm}ccccc}
+		
+		\toprule
+		\textbf{Element} & \textbf{Volts ($V$)} & \textbf{Current ($A$)} & \textbf{Power ($W$)} & \textbf{No.} & \textbf{Total Power ($W$)}\\[8pt]
+		\midrule
+		
+		Exhaust Fan & 5 & 0.1 & 0.5 & 1 & 0.5 \\[4pt]
+		\midrule
+		Phidget Logic Power  & 5 & 0.1 & 0.5 & 1 & 0.5 \\[4pt]
+		\midrule
+		Peltier & 5 & 1.5 & 7.5 & 4 & 30 \\[4pt]
+		\midrule
+		Peltier Fan & 12 & 0.1 & 1.2 & 4 & 4.8 \\[4pt]
+		\midrule
+		Phidget Supply Power & 12 & 1 & 12 & 1 & 12 \\[4pt]
+		\midrule
+		LED Light Bar - $72W$ & 12 & 6 & 72 & 4 & 288 \\[4pt]
+		\midrule
+		Halogen - $35W$ & 12 & 2.9 & 23.3 & 8 & 280 \\[4pt]
+		\midrule
+		LED Light Bar - $30W$ & 12 & 2.5 & 30 & 4 & 120 \\[4pt]
+		\midrule
+		Photoelectric Sensors & 12 & 0.1 & 1.2 & 4 & 4.8 \\[4pt]
+		\midrule
+		Pneumatics & 12 & 0.3 & 3.6 & 1 & 3.6 \\[4pt]
+		\midrule
+		Traffic Lights & 12 & 0.3 & 3.6 & 1 & 3.6 \\[4pt]
+		
+		\midrule\midrule
+		\textbf{Total DC system power requirements} &  &  &  &  & \textbf{747.8}\\[8pt]
+		\bottomrule
+		
+	\end{tabularx}
+\end{table}
 
+The first three items require AC mains power ($240V$) and can therefore be addressed by using readily available extension leads and a power board. The reamaining items use DC power and need to be qualitified in order to design the power suupply system. 
 
-\subsubsection{User Interface}
+Table \ref{tab:DC_power_table} shows the requirements for the DC powered devices in the SQA vision system. As the total power cumulates to $747.8W$, a high powered AC/DC converter is required to be constructed or purchased in order to generate the DC current to supply all devices.
 
-
+Industrial power supplies can be expensive, have long lead-times (for initial construction and replacements), and may not have internal protections (such as short-circuit, over-current, thermal) and multiple outputs. However, a high-end gaming PSU can provide these features including automatic fault detection and shut-off, multiple outputs (can be configured due to the wiring loom containing several high current wires), and greatly beneficial $5V$ and $3.3V$ outputs of lower current, which can be used to power logic circuits. 
 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{images/GUI.png}
-	\caption{GUI for the SQA vision system.}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{PSU_2.jpg}
+		\caption{}
+		\label{fig:PSU_2}
+	\end{subfigure}%
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth, angle=270]{PSU_3.jpg}
+		\caption{}
+		\label{fig:PSU_3}
+	\end{subfigure}%
+
+	\begin{subfigure}{0.8\textwidth}
+		\centering
+		\includegraphics[width=.70\linewidth]{PSU_4.jpg}
+		\caption{}
+		\label{fig:PSU_4}
+	\end{subfigure}%
+
+	\caption{Various construction stages of PSU (a) wiring and testing performed on the bench, (b) two separate circuits (rails) with $12V$ lines in yellow and $GND$ lines in black connected to fuse boxes and copper grounding bars, repectively, (c) PSU installed inside metal box with fuse boxes and lighting wiring exiting in the top right.}
+	\label{}
+\end{figure}
+
+
+A Cougar\texttrademark $1200W$ gaming PSU is used for the DC power requirements with 2 x $12V$ high power rails at $100A$ maximum current. It also supplies 4 x $5V$ and 2x $3.3V$ lines, and a low power $-12V$ line giving the advantage of supplying up to $24V$ with low current. All of these outputs can also be fused using automotive in-line fuses, protecting each DC circuit. 
+
+
+The PSU is designed specifically to connect to a PC motherboard and its peripherals such as hard drives, fans, and graphics / PCI expansion cards using unique connectors which only allow certain devices to plug into each. Not only does the vision system does not require these connectors, the power distribution is concentrated into it's two $12V$ rails, rather than the default - multiple, low power lines distributed to many devices. The picture in Figure \ref{fig:PSU_2} was taken during a bench test of the PSU after connectors were removed, and power and ground lines bundled. A damage prevention safety measure employed by many PSU manufacturers requires units to have a load attached in order to prevent accidental powering whilst partially or not connected. This is addressed by adding a high power, small resistor ($1W/10\Omega$) accross the load detector circuit (white ceramic component in Figure \ref{fig:PSU_2}).  
+
+
+Each $12V$ power line is merged into one of two fused ditribution boards with respective ground lines connected to one of the two brass grounding bar (Figure \ref{fig:PSU_3}). Botht the distribution box and ground bar are rated for $100A$, with current being drawn as required up to the fused limit for each circuit. That is, any of the outputs can be used for high or low powered devices as long as the appropriate fuse is used, and the total is current for all devices does not exceed $100A$. 
+
+
+
+
+
+\subsubsection{Software}
+\label{sec:software}
+
+Research and experimentation into lighting, polarization, and mechanical construction, was performed in parallel with familiarization and experiments using the software packages provided. As HALCON\texttrademark has developed their own language (HDevelop\texttrademark) which has three main points of difference with other languages. Firstly, each variable is either  a \textit{Control Variable} (int, float, tuple, array, etc), or an \textit{Iconic Variable} (image, region, contour, mask, etc) which can be inspected at any point in running, debugging or stepping through a script. Secondly, only control variables can use the '$:=$' assignment operator as all function arguments contain both input and output (return) variables. For example a function to count regions in an image and paint the number requested, might take the form:
+
+\begin{lstlisting}
+num = 3
+img = cv2.imread('image.png')
+ret_image, count = count_and_find_largest_regions(img, num)
+\end{lstlisting} 
+
+would be written in HDevelop\texttrademark as:
+
+\begin{lstlisting}
+num := 3
+read_image(img, 'image.png')
+count_and_find_largest_regions(count, ret_image, num, img)
+\end{lstlisting} 
+
+From which point after 'ret\_image' and 'count' will take the values assigned within the function. Each function takes the form (omitting missing parameters):
+
+\begin{lstlisting}
+function_name(out_control_var : out_iconic_var : in_control_var : in_iconic_var)
+\end{lstlisting} 
+
+
+Lastly, HALCON\texttrademark is an interpreted language with the unique property that stores all variables in a database cache as the program runs (in development using IDE). This means that as each variable is assigned, it is shown in either the \textit{iconic variable} window, or the \textit{control variable} window, giving the user immediate response to code changes and a visualisation of the results. This allows for increased efficiency in development of image processing techniques. 
+
+There are two methods of integrating HALCON\texttrademark with other applications, given that HDevelop\texttrademark is not compatible with other programming languages. An entire script may be exported directly to $C\#$ or $C++$ as a class that can be called from the main application, after importing the appropriate libraries. This method uses a wrapper function from $C\#$ or $C++$ to call a native HDevelop\texttrademark script as an \textit{External Function Call}. The other method uses the same library to program HDevelop\texttrademark objects in $C\#$ or $C++$ native language. In other words, the operations performed are written locally and natively, using external libraries of objects and operations. 
+
+Visual Studio$^{\textregistered}$'s native programming language is $C\#$, embedded in a rich, professional IDE where creating state-of-the-art apps is common, given the UI development tools (for GUI apps), library linking, debugging tools, git, and deployment features. However, the most important parts of the SQA application, namely the GUI and image processing are supported thus making both of these application suitble for the project.
+
+
+\paragraph{User Interface}
+
+The GUI must be simple to use but capable of displaying all the relevent information to inform operators of the status, history, and show images of the punnets being processed. Various controls and indicators are required for both operation and development/debugging such as start/stop buttons, images from all four cameras, camera temperature monitoring, number of punnets assessed, reject information, and sensitivity adjustment. Figure \ref{fig:GUI} presents a screenshot of the GUI after many development iterations and testing. Green bar indicators were added which change colour if either a defect is detected (right hand side indicators), or system status changes such as stop/start, or thread broken (left indicators).  
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{GUI.png}
+	\caption{GUI for the SQA vision system prior to the fourth camera being added.}
 	\label{fig:GUI}
 \end{figure}
   
+  
+HALCON\texttrademark's integration capabilities allow the GUI to display a HWindow\texttrademark directly, giving the application the ability to show regions, lines, contours, images, or text generated by the image processing algorithms. 
+
+As HALCON\texttrademark is designed to process images and video streams, it has been developed to include a many camera protocols such as 1394IIDC (FireWire\texttrademark), GigEVision$^{\textregistered}$, USB3Vision$^{\textregistered}$, $\mu$eye\texttrademark, and more including Microsoft$^{\textregistered}$'s DirectShow$^{\textregistered}$ for generic cameras, and support to grab images from file.
+
+The application waits until the acquisition sequence is complete before processing and displaying the punnet, therefore updating the GUI at rates up to $2fps$, and might occur whilst images are being captured. This problem is solved with asynchronous threads that can perform acquisition, image processing, I/O, and display seperately yet simultaneously.
 
 
-\subsubsection{Asynchronous Grabbing}
+\paragraph{Asynchronous Threading}
+
+There are four main tasks required to be performed by the application:
 
 
+\begin{itemize}
+	\item Image Acquisition - four cameras with external triggers activated at intervals set by the microcontroller.
+	\item Image Processing - Analysis of all four images.
+	\item Input / Output - management of signals to and from microcontroller including ejection, errors, and buttons (physical and GUI simulated).
+	\item Display - The view is handled by the main thread which spawns the peripheral worker threads.
+\end{itemize}
 
 
-\begin{figure}[p]
+Each of these functions are dependant of each other, but may occur simultaneously. For example, punnet number $n$ may be in the process of analysis (assuming this is the most time consuming thread), whilst punnet number $n+1$ is in acquisition stage. The cameras cannot afford to wait for other processes to complete before acquisition, due to conveyor motion, and must respond immediately. Similarly, the image analysis may require the majority of the $500ms$ window in order to process four images thouroughly. Furthermore, the image processing cannot occur without complete acquisition (all four images), likewise the GUI cannot display, or IO eject, without being processed first. This means signalling semaphores must be used to send messages between threads and allow each process to know the application state at all times.
+
+The lighting enclosure is designed with visible RGB on one end and halogen IR on the opposite end (in the direction of punnet flow). In order to maximise lighting at the correct spectral wavelengths, at the optimal time, the RGB and IR cameras are separated to be centred in the respective lighting environments. Taking this into consideration, a fifth thread was added to monitor the RGB and IR camera triggers seperately. Figure \ref{fig:software_flow} ilustrates the flow of each thread along with it's \textit{progress reporting} action. A $C\#$ thread can report it's progress at some time during the threadded procedure by using a protected method (semaphore/mutex) to share information outside it's scope. 
+
+Firstly, the main thread spawns four worker threads; one for each set of cameras, one for image processing, and one to monitor I/O. The RGB thread waits for the image to be buffered by the cameras (triggered by the sensor) before beginning the process of image acquisition and confirmation, as well as error checking. The IR thread waits for the confirmation (semaphore) that the first images have been acquired, before beginning a similar process to populate the remaining images for the current punnet. Once the all images are acquired, another semaphore is used to signal the image processing thread to begin. After processing, a signal is sent to the main thread to display the results and images. Each of these processes returns to wait for semaphores each iteration which also greatly helps in the synchronisation of punnet images. 
+ 
+
+
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.9\textwidth]{images/software_flow.png}
+	\includegraphics[width=0.8\textwidth]{software_flow.png}
 	\caption{Flow chart of the main application with each of the five threads (including main) and thier progress reporting.}
 	\label{fig:software_flow}
 \end{figure} 
 
 
+The RGB and IR threads are not dependant or in scope of each other, however, they nedd to synchronise in order to match the two sets of images. This was achieved by using an array of 10 \textit{punnet} objects which were constantly cycled and reused within the application (as no more than 5-6 punnets can occupy the space between the cameras and the ejector). Using this method, simple logic could be used in order to confirm the punnet count matched before populating the object. 
 
 
-\subsubsection{Hardware Control}
 
-Various hardware devices will need to be controlable via the main application, to enable efficient main lighting, signal lighting, peltier, pneumatics, and conveyor control, as well as inputs from some peripheral devices and sensors.
+\paragraph{Image Processing}
 
-The \texttrademark Phidget is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has strong electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. 
+The image processing component is perfomed in  HALCON\texttrademark V-11.0 which is an industry standard image processing tool developed by MVTec Software GmbH. As described earlier in this section, HALCON\texttrademark is designed for development efficiency and rapid deployment. Consequently, a simple colour algorithm was developed in order to extract underripe pixels in the fruit. Firstly, the RGB image is transformed into HSV colour space (HSV properties shown in Figure \ref{fig:hue_sat}), to allow detection of the berry regions, and their ripeness. The saturation channel provides very good background segmentation given it's property that saturated pixels (black or white pixels) occupy one end of the values, and unsaturated (vibrant colour) occupy the other. This means the red strawberries can be extracted after some thresholding and morphology with a very accurate boundary around each berry even with the occluded nature of the randomised packing (Figures \ref{fig:bg_example} and \ref{fig:sat_thresh}).
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\begin{center}
-		\includegraphics[width=0.5\textwidth]{images/phidget.jpg}
-	\end{center}
-	\caption{Image of the Phidget \texttrademark I/O board and the interface connectors on the top and bottom.}
-	\label{fig:phidget}
-\end{wrapfigure} 
-
-The Lighting must be only turned on when in operational mode, therefore, the power is switched through a relay bank with the Phidget operating as the controller, as described earlier in figure \ref{fig:overview}. This will save energy and lengthen the lifetime of the lighting, as well as lmiting heat generation to only the production time.
-
-The ejector is a controllable pneumatic system which can release a burst of air on cammand for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
-
-
-Figure \ref{fig:phidget} shows the screw-clamp I/O connectors on the top and bottom of the image, and the USB connection point for the PC. The Phidget has a $24MHz$ processor, 256 bytes of RAM, and up to $8kB$ of flash storage which makes the device a good option for simple input/output processes.
-
-
-\subsubsection{Image Processing}
-
-The image processing component is perfomed in \texttrademark HALCON V-11.0 which is an industry standard image processing tool developed by MVTec Software GmbH. The 
-
-To extract HSV colourspace given three channels R, G, B and $Min = min(R, G, B)$, $Max = max(R, G, B)$:
+To calculate HSV colourspace given three channels R, G, B and $Min = min(R, G, B)$, $Max = max(R, G, B)$:
 \begin{equation}
 	V = Max
 \end{equation}
@@ -1317,34 +1467,22 @@ The following operation is performed on each S-channel pixel $S[x,y]$ to find th
 R_{berry} = \sum_{n=1}^{P} 128 \leq S[x,y]_n \leq 255
 \end{equation}
 
-where $P$ denotes the total number of pixels. The red values lie around the $0^{\circ}/ 360^{\circ}$ point, which is the section of interest, that contain the colours required to indicate ripeness of strawberries.
+where $P$ denotes the total number of pixels. 
 
-If we take $D$ as degrees of the hue channel ($0{^\circ}<H<360{^\circ}$), then the equation for $\alpha$, the corresponding greyvalue is calculated as
-\begin{equation}
-\alpha = round\Big\{255\times \frac{D}{360}\Big\}
-\end{equation}
-
-These values can be inserted to the equation and performing the operation on the H channnel, the region $R_{colour}$ can be extracted in as follows:
-\begin{equation}
-R_{colour} = \sum_{n=1}^{P} \alpha_1 \leq H[x,y]_n \leq \alpha_2 \in R_{berry}
-\end{equation}
-
-
-where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to threshold. For red strawberries the inital values are set to $0^{\circ}$ and $20^{\circ}$ which equates to 0 and 14 for $\alpha_1$ and $\alpha_2$ respectively.
 
 \begin{figure}[ht]
 	\centering
 	\begin{subfigure}{.4\textwidth}
 		\centering
-		\includegraphics[width=.9\linewidth]{bg_example.png}
-		\caption{}
-		\label{fig:bg_example}
-	\end{subfigure}%
-	\begin{subfigure}{.4\textwidth}
-		\centering
 		\includegraphics[width=.9\linewidth]{hue_sat.png}
 		\caption{}
 		\label{fig:hue_sat}
+	\end{subfigure}%
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{bg_example.png}
+		\caption{}
+		\label{fig:bg_example}
 	\end{subfigure}%
 
 	\begin{subfigure}{.4\textwidth}
@@ -1360,39 +1498,89 @@ where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to thr
 		\label{fig:hue_processed}
 	\end{subfigure}%
 
-	\caption{Left to right: (a)Example of background noise with white light and bottom camera lens in background, (b)HSV colourspace showing hue circle and saturation vector, (c)Saturation channel with berries segmented after pre-processing, (d)Image reduced to berry region showing four small under ripe areas detected by the algorithm.}
-	\label{fig:test2}
+	\caption{Left to right: (a) HSV colourspace showing hue circle and saturation vector, (b) raw RGB image with some backgound lighting noise, (c) saturation channel with berries segmented after pre-processing, (d) image reduced to berry region showing four small under ripe areas detected by the algorithm.}
+	\label{}
 \end{figure}
 
 
+This is then followed by colour analysis of the hue channel in order to quantify the amount of pixels which lie outside the range $10<H<48$ where H is the hue circle from $0^{\circ}-360^{\circ}$. If we take $D$ as degrees of the hue circle, then the equation for $\alpha$, the corresponding greyvalue is calculated as:
+\begin{equation}
+\alpha = round\Big\{255\times \frac{D}{360}\Big\}
+\end{equation}
+
+
+These values can be inserted to the equation and performing the operation on the H channnel, the region $R_{colour}$ can be extracted in as follows:
+\begin{equation}
+R_{colour} = \sum_{n=1}^{P} \alpha_1 \leq H[x,y]_n \leq \alpha_2 \in R_{berry}
+\end{equation}
+
+
+where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to threshold. For red strawberries the inital values are set to $0^{\circ}$ and $20^{\circ}$ which equates to 0 and 14 for $\alpha_1$ and $\alpha_2$ respectively.
+
+Pre-processing consists of reducing the image to a Region Of Interest (ROI) in the spacial location where the punnet is consistently captured. The post-processing methods use morphology, removal of regions less than certain limits (noise reduction), and area calculations to return the affected areas as indicated by the ellipses in Figure \ref{fig:hue_processed}.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
 
-\section{II - Production Integration}
+\section{Production Integration}
 \label{sec:II}
+
+
+Implementation of the production-ready enclosure required the prototype to be fit with conveyors, lighting and power installed, diffusers and polarizers, as well as the computer systems, sensors and cameras. Once the designs were complete, bench testing the equipment such as camera image transmission to the running application, microcontroller functions including camera triggering and lighting switching, power system and peripherals was performed. 
+
+As the strawberry season had already begun, the packing floor took priority in terms of space requirements and thoroughfares, therefore, the integration time was limited to before operations began. This required as much of the connections, wiring, testing, mounting and debugging to be performed offline so as to avoid creating unnecessay traffick and obstacles in the production space.
+
+
+
+\subsection{Production Floor Migration }
+
+
+Initially, the conveyors were added as all other devices must not inhibit the flow of punnets as shown in Figure \ref{fig:system_construct_3}. The frame of the prototype was adjusted slighlty in order to equal the height of the conveyor in the middle section, as well as centering the conveyor relative to the enclosure. All heights are consistent with other machinery and conveyors in the packing shed to allow many possible configurations in the process flow. 
 
 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.6\linewidth]{images/enclosure_3.jpg}
-	\caption{Looking through the enclosure in the path of the punnet, the cameras are mounted inside the polarized and difuse chamber as the v-belts transfer the punnets unobscured through the enclosure. Note: front panel removed to show arrangement.}
-	\label{fig:enclosure_3}
+	\includegraphics[width=.4\linewidth]{system_construct_3.jpg}
+	\caption{The fram of the enclosure shortly aftert the conveyors had been attached. Some of the LED lighting bars were left in the enclosure.}
+	\label{fig:system_construct_3}
+\end{figure}%
+
+
+A wide range of conveyors, motors, guide rails, and parts available (due to the farm equipment spare parts), assisted the construction of the punnet conveyors, and their attachment to the frame of the enclosure. However, the v-belts are a customised feature using brackets to support adjustable grooved rollers designed for the shape of the belt, and a guide rail on each side to avoid sagging due to punnet weight. The point of transfer, where the v-belts meet the punnet conveyors, must be considered in order to implement a smooth transition at both the entry and exit of the enclosure. The requirement is for the punnet to enter the heat-seal machine long-edge leading (due to cost-saving design), but this is problematic for the v-belts in the case where a  punnet enters incorrectly oriented, and too narrow to be transfered onto the v-belts. Therefore, the design was to employ a $90^{\circ}$ transfer belt between the vision system and heat-seal machine. This meant that the punnets could be short-edge leading as they enter the enclosure, eliminating the risk of containers falling between the v-belts.
+
+The ejector mechanism must be positioned some time after the vision inspection, given that the v-belts prevent any dislodgement, and the added complications associated in the acquisition section. Therefore the ejection must occur on the out-feed conveyor, with pnuematic burst from the side, pushing it in a direction perpendicular to the motion of the punnet flow, onto a roller-ramp which guides the punnet into an accumulation area. 
+
+Both the ejector and acquisition system activate when a punnet passes the photo-electric sensor. In the case of ejection, the microcontroller must be synchronised with the running application to determine which punnets to eject and will only activate the pneumatics when defects are detected. The acquisition system gnerates a sequence of imaging - through the hardwire triggering mechanism built into each camera - to capture the different views and spectrums of each punnet, followed by instigating the image processing and display routines within the application. 
+
+
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{system_construct_1.JPG}
+		\caption{}
+		\label{fig:system_construct_1}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth, angle=270]{system_construct_2.JPG}
+		\caption{}
+		\label{fig:system_construct_2}
+	\end{subfigure}%
+	\caption{System integration stages (a) testing all lighting powered at once by the PSU prior to installation , (b) Installation complete with added cladding surrounding the in-feed and out-feed transfer points (end panel removed). The electronics box and power supply are shown in the figure, but sit underneath the enclosure during operation.}
+	\label{}
 \end{figure}
-
-
-
 
 
 The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure. Therefore, the external cladding was modified to allow the conveyors entry and exit points without allowing external, potentially noisy, light leaking inside. This was ensured by constructing a protruding tunnel on both sides of the enclosure as shown in the final setup in figure \ref{fig:production_final}.
 
 A touchscreen was also installed to allow operators and developers easy access to the UI buttons and display. The commercially available Dell \textcopyright P2418HT 24-inch capacitive touch screen can help development as well as production with the ability to debug whilst on the production line.
-
-
-
 
 The ejector system was installed at a later date as further testing was required to ensure the proper ejection of the punnets. The ejector had to be calibrated to give the correct amount of force to remove the punnet gently but definately. The punnet identified as poor quality must also be ejected at a later stage (after the punnet leaves the enclosure), therefore the ejector must synchronise with the punnet detector/cameras.
 
@@ -1425,9 +1613,9 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
-
-\section{III - System Reconfiguration and Redesign}
+\section{System Reconfiguration and Redesign}
 \label{sec:III}
 
 
@@ -1445,9 +1633,9 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
-
-\section{IV - Linux and Deep Learning}
+\section{Linux and Deep Learning}
 \label{sec:IV}
 
 
@@ -1465,7 +1653,7 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newpage
 
 \section{Conclusion}
 

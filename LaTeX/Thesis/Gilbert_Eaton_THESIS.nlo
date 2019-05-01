@@ -4,6 +4,7 @@
 \nomenclatureentry{a$peduncle$@[{$peduncle$}]\begingroup Stem of the strawberry\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$downtime$@[{$downtime$}]\begingroup The amount of time (cumulative) during production where nothing is produced\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$SSC$@[{$SSC$}]\begingroup Soluable solid content\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$API$@[{$API$}]\begingroup Application Programming Interface\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$RMSE$@[{$RMSE$}]\begingroup Root Mean Squared Error\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$SVM$@[{$SVM$}]\begingroup Support Vector Machine\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$RBF$@[{$RBF$}]\begingroup Radial Basis Function\nomeqref {0}|nompageref}{ix}
@@ -44,6 +45,8 @@
 \nomenclatureentry{a$UPS$@[{$UPS$}]\begingroup Uninterruptable Power Supply\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$CPU$@[{$CPU$}]\begingroup Central Processing Unit\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$GPU$@[{$GPU$}]\begingroup Graphical Processing Unit\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$RAM$@[{$RAM$}]\begingroup Random Access Memory\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$PCIe$@[{$PCIe$}]\begingroup Peripheral Component Interconnect express\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$AVX$@[{$AVX$}]\begingroup Advanced Vector Extensions\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$FOV$@[{$FOV$}]\begingroup Field of view\nomeqref {0}|nompageref}{ix}
 \nomenclatureentry{a$LED$@[{$LED$}]\begingroup Light emitting diode (Light source)\nomeqref {0}|nompageref}{ix}
