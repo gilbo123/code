@@ -51,48 +51,68 @@ Warning--entry type for "physicsopenlab" isn't style-file defined
 --line 2373 of file Master.bib
 Warning--entry type for "lumicrest" isn't style-file defined
 --line 2429 of file Master.bib
+I was expecting a `,' or a `}'---line 2487 of file Master.bib
+ :  
+ :  year          = "2011",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "nelson" isn't style-file defined
+--line 2493 of file Master.bib
+I was expecting a `,' or a `}'---line 2535 of file Master.bib
+ :  
+ :  year          = "1991",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 2553 of file Master.bib
+ :  
+ :  year          = "2002",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "peng"
 Warning--I didn't find a database entry for "luo"
 Warning--I didn't find a database entry for "yavs"
-You've used 128 entries,
+Warning--empty year in artusi
+Warning--empty year in anderson
+Warning--empty year in kuranov
+You've used 135 entries,
             1876 wiz_defined-function locations,
-            1157 strings with 25434 characters,
-and the built_in function-call counts, 39583 in all, are:
-= -- 4005
-> -- 1400
+            1191 strings with 26425 characters,
+and the built_in function-call counts, 41117 in all, are:
+= -- 4148
+> -- 1469
 < -- 0
-+ -- 524
-- -- 396
-* -- 2639
-:= -- 5348
-add.period$ -- 139
-call.type$ -- 128
-change.case$ -- 125
++ -- 550
+- -- 415
+* -- 2738
+:= -- 5564
+add.period$ -- 147
+call.type$ -- 135
+change.case$ -- 131
 chr.to.int$ -- 0
-cite$ -- 128
-duplicate$ -- 2048
-empty$ -- 3627
-format.name$ -- 396
-if$ -- 10007
+cite$ -- 138
+duplicate$ -- 2134
+empty$ -- 3776
+format.name$ -- 415
+if$ -- 10385
 int.to.chr$ -- 0
-int.to.str$ -- 128
-missing$ -- 121
-newline$ -- 400
-num.names$ -- 128
-pop$ -- 339
+int.to.str$ -- 135
+missing$ -- 128
+newline$ -- 423
+num.names$ -- 135
+pop$ -- 370
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1687
+skip$ -- 1742
 stack$ -- 0
-substring$ -- 3086
-swap$ -- 1064
+substring$ -- 3140
+swap$ -- 1098
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 338
-width$ -- 131
-write$ -- 1250
-(There were 7 error messages)
+warning$ -- 3
+while$ -- 348
+width$ -- 138
+write$ -- 1311
+(There were 10 error messages)

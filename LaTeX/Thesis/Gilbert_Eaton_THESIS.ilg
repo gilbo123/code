@@ -7,8 +7,8 @@ Scanning style file /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist.
 ** Input style error (file = /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist, line = 72):
    -- Unknown specifier lethead_flag.
 ...done (10 attributes redefined, 3 ignored).
-Scanning input file Gilbert_Eaton_THESIS.nlo....done (54 entries accepted, 0 rejected).
-Sorting entries....done (325 comparisons).
-Generating output file Gilbert_Eaton_THESIS.nls....done (107 lines written, 0 warnings).
+Scanning input file Gilbert_Eaton_THESIS.nlo....done (55 entries accepted, 0 rejected).
+Sorting entries....done (343 comparisons).
+Generating output file Gilbert_Eaton_THESIS.nls....done (109 lines written, 0 warnings).
 Output written in Gilbert_Eaton_THESIS.nls.
 Transcript written in Gilbert_Eaton_THESIS.ilg.

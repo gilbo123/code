@@ -6,6 +6,8 @@
 		\nompageref{ix}
   \item [{$ANN$}]\begingroup Artificial Neural Network\nomeqref {0}
 		\nompageref{ix}
+  \item [{$API$}]\begingroup Application Programming Interface\nomeqref {0}
+		\nompageref{ix}
   \item [{$AVX$}]\begingroup Advanced Vector Extensions\nomeqref {0}
 		\nompageref{ix}
   \item [{$BP$}]\begingroup Back Propogation\nomeqref {0}

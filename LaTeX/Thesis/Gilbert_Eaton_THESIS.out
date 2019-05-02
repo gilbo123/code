@@ -18,7 +18,7 @@
 \BOOKMARK [3][-]{subsubsection.2.7.2}{Deep Learning}{subsection.2.7}% 18
 \BOOKMARK [2][-]{subsection.2.8}{Control Systems}{section.2}% 19
 \BOOKMARK [2][-]{subsection.2.9}{Summary}{section.2}% 20
-\BOOKMARK [1][-]{section.3}{System Prototype and Experimentation}{}% 21
+\BOOKMARK [1][-]{section.3}{Prototype and Design}{}% 21
 \BOOKMARK [2][-]{subsection.3.1}{Project Challenges}{section.3}% 22
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Punnet Imaging}{subsection.3.1}% 23
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Overheating}{subsection.3.1}% 24
@@ -38,8 +38,18 @@
 \BOOKMARK [4][-]{paragraph.3.3.3.1}{User Interface}{subsubsection.3.3.3}% 38
 \BOOKMARK [4][-]{paragraph.3.3.3.2}{Asynchronous Threading}{subsubsection.3.3.3}% 39
 \BOOKMARK [4][-]{paragraph.3.3.3.3}{Image Processing}{subsubsection.3.3.3}% 40
-\BOOKMARK [1][-]{section.4}{Production Integration}{}% 41
-\BOOKMARK [2][-]{subsection.4.1}{Production Floor Migration }{section.4}% 42
-\BOOKMARK [1][-]{section.5}{System Reconfiguration and Redesign}{}% 43
-\BOOKMARK [1][-]{section.6}{Linux and Deep Learning}{}% 44
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 45
+\BOOKMARK [1][-]{section.4}{A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems}{}% 41
+\BOOKMARK [2][-]{subsection.4.1}{Abstract}{section.4}% 42
+\BOOKMARK [2][-]{subsection.4.2}{Background}{section.4}% 43
+\BOOKMARK [2][-]{subsection.4.3}{Specular Reflections}{section.4}% 44
+\BOOKMARK [2][-]{subsection.4.4}{Lighting Intensity Stability}{section.4}% 45
+\BOOKMARK [2][-]{subsection.4.5}{Methods}{section.4}% 46
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Specular reflections}{subsection.4.5}% 47
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Power Supply}{subsection.4.5}% 48
+\BOOKMARK [2][-]{subsection.4.6}{Results}{section.4}% 49
+\BOOKMARK [2][-]{subsection.4.7}{Conclusion}{section.4}% 50
+\BOOKMARK [1][-]{section.5}{Production Integration}{}% 51
+\BOOKMARK [2][-]{subsection.5.1}{Production Floor Migration }{section.5}% 52
+\BOOKMARK [1][-]{section.6}{Redesign and Upgrade}{}% 53
+\BOOKMARK [1][-]{section.7}{Linux and Deep Learning}{}% 54
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 55

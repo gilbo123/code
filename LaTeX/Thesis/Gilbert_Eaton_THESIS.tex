@@ -400,11 +400,9 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 
 \section{Introduction}
 
-Machine vision systems have been successfully deployed to perform many tasks in industries such as manufacturing, automotive, mining, and is constantly branching into more diverse fields, for example, vehicle guidance \cite{menze,urmson}, drone applications \cite{greene,boucher}, traffic monitoring \cite{cheung,kamijo}, high-speed vision \cite{watanabe,nakabo}, and quality inspection tasks \cite{cubero, du}. This is due, largely, to recent technology advances in computational devices (CPU/GPU), storage and cloud services, and camera technology and affordability. These factors help in the adoption of machine vision for production quality control in order to provide multiple benefits over human inspection which may include labour cost reduction, consistent objective analysis, speed increases, safety risk reduction, and continuous services. Avoiding costly stock returns is an obvious benefit, however many costs can be unquantifiable or unclear such as customer satisfaction, brand reputation.
+Machine vision systems have been successfully deployed to perform many tasks in industries such as manufacturing, automotive, mining, and is constantly branching into more diverse fields, for example, vehicle guidance \cite{menze,urmson}, drone applications \cite{greene,boucher}, traffic monitoring \cite{cheung,kamijo}, high-speed vision \cite{watanabe,nakabo}, and quality inspection tasks \cite{cubero, du}. This is due, largely, to recent technology advances in computational devices (CPU/GPU), storage and cloud services, and camera technology and affordability. These factors help in the adoption of machine vision for production quality control in order to provide multiple benefits over human inspection which may include labour cost reduction, consistent objective analysis, speed increases, safety risk reduction, and continuous services. Avoiding costly stock returns is an obvious benefit, however many costs can be unquantifiable or unclear such as customer satisfaction, and brand reputation. Production line quality inspection is one of the most common applications for machine vision as it is usually fixed in position with a known area to assess, giving the cameras opportunity to inspect each and every item produced. The cameras are also capable of working in environments that human operators may not tend to be comfortable in. Where the production lines may be exposed to heat, cold, dust, chemical, pressure, or noise hazards, cameras can solve the problem of human risk. 
 
-Production line quality inspection is one of the most common applications for machine vision as it is usually fixed in position with a known area to assess, giving the cameras opportunity to inspect each and every item produced. The cameras are also capable of working in environments that human operators may not tend to be comfortable in. Where the production lines may be exposed to heat, cold, dust, chemical, pressure, or noise hazards, cameras can solve the problem of human risk. 
-
-Vision systems can be used for high-speed moving objects in order to perform the inspections where a human would have an impossible task. For example Duan et al \cite{duan} used a system of two cameras and two computers to inspect glass beer bottles after production at a rate of $500/min$ or $8.3/s$. They inspected the bottom of the bottle, the overall finish, and the top opening, performign all three checks for each bottle within the timeframe specified. After inspection, the defected bottles are ejected from the production line in order to be recycled. Elmasry et al \cite{elmasry1} developed a potato grading system which can acquire multiple images of each potato, from multiple sides due to the roller-conveyor, before performing Fourier transform, and Fourier shape descriptors. The conveyor speed is $1m/s$ and the spacing between each roller is $80mm$ giving approximately $12 potatos/s$ if there are no empty rollers. Four different grading/processing techniques were investigated by Kondo \cite{kondo} where, firstly, oranges were inspected by a system of cameras including six colour cameras at different positions (so that all sides are inspected), an NIR camera and the option of adding x-ray imaging to the purpose-built line. The oranges are fed through the system using a singulating conveyor which performs a $180^{circ}$ rotation for the last camera to ensure all sides are evaluated. Secondly, an eggplant quality assemsment system was developed which made use of six colour and four monochrome cameras in order to determine colour, size, shape, and defects as well as a novel gloss detection method using angles cameras and three white strip lights to inspect the specular reflections sharp edges, meaning good quality, or dull edges, meaning poor. The 6 production lines, running at $38.1m/min$, at the facility meant that $504,000$ fruits could be processed per day. Even though there has been a substantial reduction in number of employees in processing, it is still laborious due to the packing requirements. The third project was capable of grading $10,000$ leeks per hour at a line speed of $30m/min$ with automatic root cutting and peeling steps. Lastly, a robot capable of grading $3 fruit/sec$ for 11 varieties of deciduous fruits including apple, pear, and peach. Using 3 DOF manupulators, the robot placed into trays, whilst images are acquired from top, bottom and two sides before making a grade decision. This shows that for fast moving production lines, humans are unable to peform the necessary tasks to quality inspect each item. The high speed vision systems are tailored to suit each application and are dependant on good lighting due to the rapid shutter speeds of the camera.
+Vision systems can be used for high-speed moving objects in order to perform the inspections where a human would have an impossible task. For example Duan et al \cite{duan} used a system of two cameras and two computers to inspect glass beer bottles after production at a rate of $500/min$ or $8.3/s$. They inspected the bottom of the bottle, the overall finish, and the top opening, performign all three checks for each bottle within the timeframe specified. After inspection, the defected bottles are ejected from the production line in order to be recycled. Elmasry et al \cite{elmasry1} developed a potato grading system which can acquire multiple images of each potato, from multiple sides due to the roller-conveyor, before performing Fourier transform, and Fourier shape descriptors. The conveyor speed is $1m/s$ and the spacing between each roller is $80mm$ giving approximately $12 potatos/s$ if there are no empty rollers. Four different grading/processing techniques were investigated by Kondo \cite{kondo} where, firstly, oranges were inspected by a system of cameras including six colour cameras at different positions (so that all sides are inspected), an NIR camera and the option of adding x-ray imaging to the purpose-built line. The oranges are fed through the system using a singulating conveyor which performs a $180^{\circ}$ rotation for the last camera to ensure all sides are evaluated. Secondly, an eggplant quality assemsment system was developed which made use of six colour and four monochrome cameras in order to determine colour, size, shape, and defects as well as a novel gloss detection method using angles cameras and three white strip lights to inspect the specular reflections sharp edges, meaning good quality, or dull edges, meaning poor. The 6 production lines, running at $38.1m/min$, at the facility meant that $504,000$ fruits could be processed per day. Even though there has been a substantial reduction in number of employees in processing, it is still laborious due to the packing requirements. The third project was capable of grading $10,000$ leeks per hour at a line speed of $30m/min$ with automatic root cutting and peeling steps. Lastly, a robot capable of grading $3 fruit/sec$ for 11 varieties of deciduous fruits including apple, pear, and peach. Using 3 DOF manupulators, the robot placed into trays, whilst images are acquired from top, bottom and two sides before making a grade decision. This shows that for fast moving production lines, humans are unable to peform the necessary tasks to quality inspect each item. The high speed vision systems are tailored to suit each application and are dependant on good lighting due to the rapid shutter speeds of the camera.
 
 
 
@@ -519,36 +517,37 @@ The vision system general requirements are listed in Table \ref{tab:requirements
 
 
 \renewcommand{\arraystretch}{0.8}% Tighter table height
-\begin{longtable}{p{5cm}p{10cm}}
+\begin{longtable}{p{2.5cm}p{12cm}}
 	\caption{Table of Major Requirements for the Strawberry Vision System}
 	\label{tab:requirements} \\
 	
 	\hline\hline
 	\textbf{Requirement} & \textbf{Details} \\[2pt]
 	\hline \hline
-	\textbf{\textit{Production Line Continuity}} 	& - Shall not inhibit the production line speed. \\[2pt]
-						& - The production line shall not be caused to stop unnecessarily due to the vision system.\\[2pt]
+	\textbf{\textit{Continuity}} 	& - Must not inhibit the production line speed. \\[2pt]
+	& - The production line should not be caused to stop unnecessarily due to the vision system.\\[2pt]
 	\hline
 	\textbf{\textit{Safety}}    & - The vision system shall not create any safety risks or hazards such as tipping, electrocution, exposed pinch points, sharp edges, hazardous lighting, unsustainable lifting, etc.  \\[2pt]
 	\hline
-	\textbf{\textit{Fruit Inspection}} 	& - Shall operate autonomously.\\[2pt]
-						& - Fast moving punnets shall be captured and assesed without exceptions \\[2pt]
-						& - The punnets shall be assesed based on the agreed defect categories (classes) to the specifications provided. \\[2pt]
-						& - Each punnet shall be evaluated from top and bottom (through the plastic container) \\[2pt]
-						& - The infeed and outfeed systems shall integrate with the proceeding and preceeding machinery. \\[2pt]
+	\textbf{\textit{Inspection}} 	& - Autonomous operation.\\[2pt]
+	& - The punnets are to be assesed based on the agreed defect categories (classes) to the specifications provided. \\[2pt]
+	& - Each punnet will be evaluated from top and bottom (through the plastic container). \\[2pt]
+	& - The infeed and outfeed systems integrate with the proceeding and preceeding machinery. \\[2pt]
 	\hline
-	\textbf{\textit{Peripherals / Footprint}}	& - Shall be externally connected to one $240V$ power source, and one pnuematic line for all operations including removal from production line.  \\[2pt]
-	& - Shall be able to operate in any packing line given these two sources. \\[2pt]
-	& - Size of the system shall be kept as compact as possible due to packing line constraints. \\[2pt]
+	\textbf{\textit{Footprint}}	& - Shall be externally connected to either one $400VAC$ or $240VAC$ power source, and one pnuematic line for all operations including removal from production line.  \\[2pt]
+	& - Adaptability to multiple production lines. \\[2pt]
+	& - Size of the system shall be kept as compact as possible due to packing room constraints. \\[2pt]
 	\hline
-	\textbf{\textit{Signals and Operator Information}}	& - Light and sounds shall accompany the system to be intuitive to operators \\[2pt]
-						& - Error, success, and general information shall be presented on a screen, or given to operators via another medium.  \\[2pt]
+	\textbf{\textit{Outputs}}	& - Defective punnets will be ejected from the production line.  \\[2pt]
+	& - Operational statistics will be presented to help the operator make decisions based on performance.  \\[2pt]
+	& - Light and sounds shall accompany the system to be intuitive to operators \\[2pt]
+	& - Error, success, and general information shall be presented on a screen, or given to operators via another medium.  \\[2pt]
 	\hline
-	\textbf{\textit{Traceability}}		& - Records shall be kept with each punnet's images as to when (date/time) they were packed  \\[4pt]
-						& - Images, timestamp, assessment, system state, and other records must be kept in a database for future access. \\[2pt]
+	\textbf{\textit{Traceability}}		& - Records to be kept with each punnet's images as to when (date/time) they were packed.  \\[4pt]
+	& - Images, timestamp, assessment, system state, and other records must be kept in a database for future access. \\[2pt]
 	\hline
-	\textbf{\textit{Documentation}}	& - Each software module shall be documented to describe the module and it's function and relevance to the application.  \\[4pt]
-						& - A description of how the software is compiled and which dependencies are required to run the application shall be provided. \\[2pt]
+	\textbf{\textit{Documentation}}	& - Each software module is required be documented to describe the module and it's function and relevance to the application.  \\[4pt]
+	& - A description of how the software is compiled and which dependencies are required to run the application will be provided. \\[2pt]
 	\hline
 \end{longtable}
 
@@ -956,9 +955,9 @@ The main body of this thesis is set out with the following four chapters:
 
 
 \begin{itemize}
-	\item Chapter \ref{sec:I} - Design and Construction 
+	\item Chapter \ref{sec:I} - Prototype and Design
 	\item Chapter \ref{sec:II} - Production Integration 
-	\item Chapter \ref{sec:III} - System Reconfiguration
+	\item Chapter \ref{sec:III} - Redesign and Upgrade
 	\item Chapter \ref{sec:IV} - Linux and Deep Learning 
 \end{itemize}
 
@@ -970,14 +969,14 @@ The main body of this thesis is set out with the following four chapters:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\section{System Prototype and Experimentation}
+\section{Prototype and Design}
 \label{sec:I}
 
-The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements}. Added to this are some unlerlying assumptions and design requests from Magnificent, given thier previous project experience which has provided the company with knowledge and tools to assist the development of the project. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and sychronisation. Both of these projects made use of software frameworks such as Microsoft's Visual Studio$^{\textregistered}$ for application design, GUI, debugging, and deployment. A liscence for MVTec Software GmbH's HALCON\texttrademark had previously been purchased for the aformentioned projects. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
+The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements}. Added to this are some unlerlying assumptions and design requests from Magnificent, given thier previous project experience which has provided the company with knowledge and tools to assist the development of the project. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and sychronisation. Both of these projects made use of software frameworks such as Microsoft's Visual Studio\textregistered for application design, GUI, debugging, and deployment. A liscence for MVTec Software GmbH's HALCON\texttrademark had previously been purchased for the aformentioned projects. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
 
-Visual Studio$^{\textregistered}$ is an Integrated Development Environment (IDE) designed for applications based in $C\#$ or $C++$ programming languages predominantly. It provides project configuration tools, automatic library attatchment, a GUI designer and linker tool which can increase the speed of development and facillitate changes and updates in an agile manner. Although it is free to use for development under the Community edition, commercial distribution would be subject to enterprise licence. 
+Visual Studio\textregistered is an Integrated Development Environment (IDE) designed for applications based in $C\#$ or $C++$ programming languages predominantly. It provides project configuration tools, automatic library attatchment, a GUI designer and linker tool which can increase the speed of development and facillitate changes and updates in an agile manner. Although it is free to use for development under the Community edition, commercial distribution would be subject to enterprise licence. 
 
-HALCON\texttrademark uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast libary of common image processing functions. The IDE contains serveral visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as wel as a list of conrol varibles (integers, arrays, floats, etc) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON\texttrademark application code can be converted directly to $C\#$ or $C++$ code in order for integration into comercial applications such as Visual Studio$^{\textregistered}$. As Magnificent had a pre-existing liscence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework porfolio.
+HALCON\texttrademark uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast libary of common image processing functions. The IDE contains serveral visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as wel as a list of conrol varibles (integers, arrays, floats, etc) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON\texttrademark application code can be converted directly to $C\#$ or $C++$ code in order for integration into comercial applications such as Visual Studio\textregistered. As Magnificent had a pre-existing liscence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework porfolio.
 
 
 \begin{figure}[h]
@@ -1008,6 +1007,7 @@ A pneumatic ejection system will remove the defective containers from the produc
 
 
 \subsection{Project Challenges}
+\label{sec:challenges}
 
 \subsubsection{Punnet Imaging}
 
@@ -1032,7 +1032,7 @@ Lighting for the cameras must have enough power to illuminate the subjects with 
 
 \subsubsection{Asyncronous Aquisition of Images}
 
-As mentioned earlier, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times, together. The application will then save all the images acquired in a defined storage device in order to preserve production quality traceability.   
+As mentioned earlier, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times. The application will then save all the images acquired in a defined storage device in order to preserve production quality traceability.   
 
 \subsubsection{Processing Time}
 
@@ -1041,7 +1041,7 @@ Since the introduction of the heat-seal machine, the production line has been sp
 
 \subsubsection{Orientation of Punnets}
 
-The strawberry punnet heat-seal machine has been designed to be as efficient as possible, which means that for maximun efficiency, more punnets tshould be sealed at the same time. As the strawberry punnets are rectangular, this means that they must be long edge leading into the sealer in order to be able to seal five punnets at a time rather than four. This increases the rate of the punnet sealing from $100/min$ to $120/min$, giving accelerated throughput gains, but raises problems elsewhere in the production line. 
+The strawberry punnet heat-seal machine has been designed to be as efficient as possible, which means that for maximun efficiency, more punnets should be sealed at the same time. As the strawberry punnets are rectangular, this means that they must be long edge leading into the sealer in order to be able to seal five punnets at a time rather than four. This increases the rate of the punnet sealing from $100/min$ to $120/min$, giving accelerated throughput gains, but raises problems elsewhere in the production line. 
 
 As the vision system feeds in-line into the heat-sealer, the vision system must also process the punnets with long edge leading. Since the punnets are transported through the enclosure by suspension on thin v-belts using only the lip of the plastic punnet, it will simply fall into the bottom of the enclosure if the punnet was wrongly oriented. The packing staff also need to correctly orient the punnets on the packing line so that they enter the vision enclosure correctly. However, this may be difficult to keep consistent as the staff turnover is quite high, and each packer will pack as fast as possible due to the fact that they are renumerated respectively to the amount of punnets packed.
 
@@ -1050,14 +1050,14 @@ Therefore a fail-safe system must be devised in order to either ensure that the 
 
 \subsubsection{Ejector Synchronization}
 
-The pneumatic ejector system is attached to the production line outside the enclosure, and therefore requires a punnet sensor so that it knows when to eject a punnet as it moves past the pnuematic manifold (blower head). Added to this, the punnet sensor inside the enclosure must be perfectly synchronised to the punnet sensor at the ejector so the correctly identified reject punnet is ejected and not an ajacent punnet. The ejector accuracy is proof in the system for operators and must be able to correctly eject the failed punnets for inspection, otherwise confidence in the system will reduce.
+The pneumatic ejector system is attached to the production line outside the enclosure, and therefore requires it's own punnet sensor in order to eject a punnet as it moves past the pnuematic manifold (blower head). Added to this, the punnet sensor inside the enclosure must be perfectly synchronised to the punnet sensor at the ejector so the correctly identified reject punnet is ejected and not an ajacent punnet. The ejector accuracy is proof in the system for operators and must be able to correctly eject the failed punnets for inspection, otherwise confidence in the system will reduce.
 
 
 \subsubsection{Conveyor Motion}
 
-The punnet heat-seal machine is designed to seal five punnets at a time and is therfore not in constant motion. It has a sensor at the infeed to the sealer which tells the machine when the required amount of punnets have passed into the sealing apparatus. This sensor may also stop the infeed line (momentarily), as to stop more punnets entering. The conveyors into and out of the enclosure are controlled by this mechanism as well. This is to ensure that if there is a problem in the heat-seal machine, and operators use the e-stop or safety switches monitoring the access doors to stop the production line, the enclosure conveyors stop as well.
+The punnet heat-seal machine is designed to seal five punnets at a time and is therfore not in constant motion. It has a sensor at the infeed to the sealer which tells the machine when the required amount of punnets have passed into the sealing apparatus. This sensor may also stop the infeed line (approximately $1s-2s$), to prevent more punnets entering. The conveyors into and out of the enclosure are controlled by this mechanism as well. This is to ensure that if there is a problem in the heat-seal machine, and operators use the e-stop or safety switches monitoring the access doors to stop the production line, the enclosure conveyors stop as well.
 
-However, this means that the coveyors could stop at any time during the sensing, acquisition, and ejection phases of the vision system. Therefore it will be almost impossible to rely on time-determinant processes such as using a finite time delay between camera sensors, or camera and ejector sensors. 
+However, this means that the coveyors could stop at any time during the sensing, acquisition, and ejection phases of the vision system. Therefore, time-determinant processes (such as using a finite time delay between camera sensors, or camera and ejector sensors) may not be appropriate. 
 
 
 \subsubsection{Flickering}
@@ -1069,17 +1069,15 @@ However, this means that the coveyors could stop at any time during the sensing,
 	\label{fig:flicker}
 \end{figure}
 
-As the strawberry punnets pass along the production line at a rapid pace, the shutter speed of any cameras used will need to be able to capture without blurring, but with enough light to illuminate the berries to the desired levels. This fast shutter speed requires high-powered lighting in order to generate enough photons in such a short amount of time.
+As the strawberry punnets pass along the production line at a rapid pace, the shutter speed of any cameras used will need to be able to capture without blurring, but with enough light to illuminate the berries to the desired levels. The fast shutter speed requires high-powered lighting in order to allow the sensor to accumulate enough photons in such a short amount of time.
 
 High-powered lighting is generally in the form of 110V/220V AC powered lamps which can generate over $1000W$, however, the alternating current poses the problem of flickering. This occurs when the shutter speed of the camera is $<<1s$ and the sensor can be exposed to maximum light, when the light source current reaches maximum, and theoretically, no light at all when crossing the 0V point in the alternating cycle. Some examples of threshold differences are shown in Figure \ref{fig:flicker} where only time was varied.
-
-Therefore, DC-powered lighting must be used to elliminate this problem and give clear, compareable, consistant images. DC powered lighting, however, is generally lower voltage such as $12V, 24V, 36V$, and $48V$. This infers that high-powered devices will use a lot of current, for example, a $500W$ light source at $12V$ will require around $42A$ of current. Generally, for this type of application, a specialized (or industrial) power supply unit must be used in order to protect against failures and provide enough power.
 
 
 
 \subsubsection{Specular Reflections}
 
-Specular reflections occur when the viewer is in the path of directly reflected light from a source. In other words, the light source can be seen on the surface of an object, and is usually a white looking glare which can add unecessary noise to images resulting in loss of information as shown in Figure \ref{fig:strawberry_glare}.
+Specular reflections occur when the viewer is in the path of directly reflected light from a source. In other words, the light source can be seen on the surface of an object, and is usually a white looking glare which can add unecessary noise to images resulting in loss of information as described in Figure \ref{fig:strawberry_glare}.
 
 This is due to Snell's law which states,
 \begin{equation}
@@ -1091,11 +1089,9 @@ When the mediums $\eta_{1}$ and  $\eta_{2}$ are the same or equal it can be seen
 \theta_{i} = \theta_{r}
 \end{equation}
 
-where $r$ the reflected wave, is at the same angle as $i$ the incident wave from the normal of the surface. 
+where $r$ the reflected wave, is at the same angle as $i$ the incident wave from the normal of the surface. Given that the strawberry flesh's refractive index is great than air, the incident and reflected angles will not be the same. However, as the strawberry is curved surface elements of different sizes, many specularities occur. 
 
-There are a few methods to combat the specular reflections, such as polarizing the light, changing the angle of the source, or diffuse lighting. In the case of this project, all three are implemented in order to reduce the specularities to a minimum.
-
-Polarization of a light source (using a polaroid sheet) will reduce the overall light intensity by a factor of $\frac{1}{2}$ due to Malus' law given by
+There are a few methods to combat the specular reflections, such as polarizing the light, changing the angle of the source, or diffuse lighting. In the case of this project, all three are implemented in order to reduce the specularities to a minimum. Polarization of a light source (using a polaroid sheet) will reduce the overall light intensity by a factor of $\frac{1}{2}$ due to Malus' law given by
 \begin{equation}
 	I = I_{0} cos^{2}\theta_{i}
 \end{equation}
@@ -1182,7 +1178,7 @@ The Computer Aided Design (CAD) generated cross-section of the proposed SQA syst
 
 
 
-The PC is placed under the out-feed conveyor (as there is less probability of impact hazard), and runs the master program which controls every peripheral including cameras, peltier devices and fans, pneumatics, operator controls, image processing, and GUI. The microprocessor is a stand-alone industrial board (named Phidget\texttrademark) and controls the I/O as described in Section \ref{sec:phidget}.
+The PC is placed under the out-feed conveyor (as there is less probability of impact hazard), and runs the master program which controls every peripheral including cameras, peltier devices and fans, pneumatics, operator controls, image processing, and GUI. The microprocessor is a stand-alone industrial board (Phidget\texttrademark) and controls the I/O as described in Section \ref{sec:phidget}.
 
 As indicated in the requirements (Section \ref{sec:requirements}), the farm pack shed will provide power of either $240VAC$ - single phase, or $400VAC$ - three phase as well as a single compressed air line. However, the system is designed to use only $240VAC$ as higher power is not required in order to perform all the necessary functions including conveyor motion.
 
@@ -1190,11 +1186,11 @@ As indicated in the requirements (Section \ref{sec:requirements}), the farm pack
 
 \subsubsection{Hardware}
 
-The PC consists of an Azus$^{\textregistered}$ P8Z68 Deluxe Gen3 Motherboard, with a $3.4GHz$ Intel$^{\textregistered}$ Core\texttrademark $i7$ CPU, $8GB$ DDR4 RAM, and a $500GB$ Western Digital$^{\textregistered}$ hard drive. Extra filters added to the PC case prevent excess dust and dirt from prematurely aging the sensitive electronics or creating failures due to build up. USB3 Gen1 offers $5Gbps$ bandwidth per host controller, however, many USB3 ports, both on motherboard and PCIe additions, share a host controller accross up to 8 USB3 ports, reducing the individual throughput of each port. Common uses for USB3 would use only one or two ports at a time where processes are not time critical, additionally if bandwidth limit is reached, the transfer rate will be reduced. However, for the SQA application to run smoothly, a board must be used where each port has it's own dedicated host controller, such as the 4-port Advantech\texttrademark PCI Express x4, 4-Port USB 3.0 Expansion Card. 
+The PC consists of an Azus\textregistered P8Z68 Deluxe Gen3 Motherboard, with a $3.4GHz$ Intel\textregistered Core\texttrademark $i7$ CPU, $8GB$ DDR4 RAM, and a $500GB$ Western Digital\textregistered hard drive. Extra filters added to the PC case prevent excess dust and dirt from prematurely aging the sensitive electronics or creating failures due to build up. USB3 Gen1 offers $5Gbps$ bandwidth per host controller, however, many USB3 ports, both on motherboard and PCIe additions, share a host controller accross up to 8 USB3 ports, reducing the individual throughput of each port. Common uses for USB3 would use only one or two ports at a time where processes are not time critical, additionally if bandwidth limit is reached, the transfer rate will be reduced. However, for the SQA application to run smoothly, a board must be used where each port has it's own dedicated host controller, such as the 4-port Advantech\texttrademark PCI Express x4, 4-Port USB 3.0 Expansion Card. 
 
 The pneumatic system is driven by a main air compressor that supplies the strawberry packing shed with air in order to operate various machinery, including the heat seal machine. A regulator is added with the soleniod controlled by the Phidget\texttrademark microprocessor. A compressed air nozzle is added to the out-feed conveyor opposite the exit ramp in order to supply a short (approx. $0.1s$), pressurised (up to $10bar$), air burst when a defect punnet is detected. The nozzle is designed for this purpose with a horizontal array of small apertures that can exert a jet pattern of $100mm$ x $55mm$ at $300mm$ from the nozzle. Only one bar of pressure is reccomended at that distance, however, as the punnet is fairly heavy ($250g-300g$), the required force may be more.
 
-Flir$^{\textregistered}$ is a leading industrial, machine vision, surveillance, defense, and thermal camera company with a broad range of cameras to choose from depending on application. The Flir$^{\textregistered}$ cameras used for the SQA inspection are Blackfly$^{\textregistered}$ USB3 $2.3 MP$, 1920 x 1200, $41FPS$, with a Sony$^{\textregistered}$ IMX249 sensor capable of shutter speeds in the range $19\mu s-3.9s$ making it suitable for fast-paced applications. Quantum Efficiency (QE) of the mono model is approximately $10\%$ at $1000nm$ which is not ideal, but offers more spectral range and less noise at NIR wavelenghts than other sensors. The cameras are powered via USB, which helps to reduce complexity, and include opto-isolated I/O for triggering. The comprehensive list of adjustable parameters make these cameras highly controllable or highly automatic, depending on user requirements, and can be programmed to function via software using the API packages. 
+Flir\textregistered is a leading industrial, machine vision, surveillance, defense, and thermal camera company with a broad range of cameras to choose from depending on application. The Flir\textregistered cameras used for the SQA inspection are Blackfly\textregistered USB3 $2.3 MP$, 1920 x 1200, $41FPS$, with a Sony\textregistered IMX249 sensor capable of shutter speeds in the range $19\mu s-3.9s$ making it suitable for fast-paced applications. Quantum Efficiency (QE) of the mono model is approximately $10\%$ at $1000nm$ which is not ideal, but offers more spectral range and less noise at NIR wavelenghts than other sensors. The cameras are powered via USB, which helps to reduce complexity, and include opto-isolated I/O for triggering. The comprehensive list of adjustable parameters make these cameras highly controllable or highly automatic, depending on user requirements, and can be programmed to function via software using the API packages. 
 
 As the cameras have specific operating temperatures in the range ($0^{\circ}C-45^{\circ}C$), meaning they will be suceptible to overheating and must be monitored (via the on-board temperature sensor, accessed using the API), particularly given that farm temperatures can reach $45^{\circ}C$ during the day. Therefore fans and peltier devices are added to the cameras in order to allow cooling if required. Intake fans apply positive pressure to the entire unit in an attempt to keep dust and dirt out of the acquisition area as lens/diffuser/polariser cleaning may become a common occurance.
 
@@ -1217,7 +1213,7 @@ The Phidget\texttrademark is an industrial-style microcontroller with integrated
 
 
 
-Given the Lighting must be only turned on when in operational mode, the power is switched through a relay bank with the Phidget operating as the controller. This will save energy and lengthen the lifetime of the lighting, as well as lmiting heat generation to only the production time.
+Given the Lighting must be only turned on when in operational mode, and draws $>>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
 
 The ejector is a controllable pneumatic system which can release a burst of air on cammand for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
 
@@ -1236,14 +1232,14 @@ The system topology in Figure \ref{fig:overview} describes the control relations
 	\label{fig:overview}
 \end{figure} 
 
-The relays are wired in a normally closed option so that the relay must be activated in order to turn on the high powered devices such as lighting. Therefore, malfunctions causing any of the components to fail will result in the system's most volatile devices to be powered off to prevent the likelihood of damage.
+The relays are wired in a normally closed configuration so that the relay must be activated in order to turn on the high powered devices such as lighting. Therefore, malfunctions causing any of the components to fail will result in the system's critical devices to be powered off to prevent the likelihood of damage and waste of power.
 
 
 \subsubsection{Electronics and Power}
 
 The electronics and power supply will accompany the enclosure to the production floor given that DC power is required to avoid flickering. Furthermore, the control system microprocessor, fuses, wires and relays need to be installed in order to operate the various controls. As the vision enclosure does not allow for power supply storage or peripherals inside, an electronic component box is used to contain the abovementioned items. 
 
-Safety is of great concern given that any packing floor operator may com into contact with the system. Therefore, the design must address critical safety hazards such as electrocution, shock, arcs or short circuits (potentially causing fire) and eye damage from intense lighting (\textit{Note, this section refers to electrical saftey and does not cover pinch-point, crushing, trip, or laceration hazards}). Fuses are added to the high current wiring delivering power to the main consumption devices (and to some lower powered devices) which will break the circuit on overload. Normally closed relays are used to switch high power circuits, given they will also beak the circuit on overload or malfunction.  
+Safety is of great concern given that any packing floor operator may com into contact with the system. Therefore, the design must address critical safety hazards such as electrocution, shock, arcs or short circuits (potentially causing fire) and eye damage from intense lighting. Fuses are added to the high current wiring delivering power to the main consumption devices (and to some lower powered devices) which will break the circuit on overload. Normally closed relays are used to switch high power circuits, given they will also beak the circuit on overload or malfunction.  
 
 
 All electronic requirements are as follows:
@@ -1264,6 +1260,7 @@ All electronic requirements are as follows:
 	\item Various circuits/wiring/connectors/fuses
 \end{itemize} 
 
+The first three items require AC mains power ($240V$) and can therefore be addressed by using readily available extension leads and a power board. The reamaining items use DC power and need to be qualitified in order to design the power suupply system.
 
 \renewcommand{\arraystretch}{0.8}% Tighter table height
 \begin{table}[h]
@@ -1303,8 +1300,7 @@ All electronic requirements are as follows:
 		
 	\end{tabularx}
 \end{table}
-
-The first three items require AC mains power ($240V$) and can therefore be addressed by using readily available extension leads and a power board. The reamaining items use DC power and need to be qualitified in order to design the power suupply system. 
+ 
 
 Table \ref{tab:DC_power_table} shows the requirements for the DC powered devices in the SQA vision system. As the total power cumulates to $747.8W$, a high powered AC/DC converter is required to be constructed or purchased in order to generate the DC current to supply all devices.
 
@@ -1338,13 +1334,13 @@ Industrial power supplies can be expensive, have long lead-times (for initial co
 \end{figure}
 
 
-A Cougar\texttrademark $1200W$ gaming PSU is used for the DC power requirements with 2 x $12V$ high power rails at $100A$ maximum current. It also supplies 4 x $5V$ and 2x $3.3V$ lines, and a low power $-12V$ line giving the advantage of supplying up to $24V$ with low current. All of these outputs can also be fused using automotive in-line fuses, protecting each DC circuit. 
+A Cougar\texttrademark $1200W$ gaming PSU is used for the DC power requirements with 2 x $12V$ high power rails at $100A$ maximum current in total. It also supplies 4 x $5V$ and 2x $3.3V$ lines, and a low power $-12V$ line giving the advantage of supplying up to $24V$ with low current. All of these outputs can also be fused using automotive in-line fuses, protecting each DC circuit. 
 
 
 The PSU is designed specifically to connect to a PC motherboard and its peripherals such as hard drives, fans, and graphics / PCI expansion cards using unique connectors which only allow certain devices to plug into each. Not only does the vision system does not require these connectors, the power distribution is concentrated into it's two $12V$ rails, rather than the default - multiple, low power lines distributed to many devices. The picture in Figure \ref{fig:PSU_2} was taken during a bench test of the PSU after connectors were removed, and power and ground lines bundled. A damage prevention safety measure employed by many PSU manufacturers requires units to have a load attached in order to prevent accidental powering whilst partially or not connected. This is addressed by adding a high power, small resistor ($1W/10\Omega$) accross the load detector circuit (white ceramic component in Figure \ref{fig:PSU_2}).  
 
 
-Each $12V$ power line is merged into one of two fused ditribution boards with respective ground lines connected to one of the two brass grounding bar (Figure \ref{fig:PSU_3}). Botht the distribution box and ground bar are rated for $100A$, with current being drawn as required up to the fused limit for each circuit. That is, any of the outputs can be used for high or low powered devices as long as the appropriate fuse is used, and the total is current for all devices does not exceed $100A$. 
+Each $12V$ power line is merged into one of two fused ditribution boards with respective ground lines connected to one of the two brass grounding bar (Figure \ref{fig:PSU_3}). Both the distribution box and ground bar are rated for $100A$, with current being drawn as required up to the fused limit for each circuit. That is, any of the outputs can be used for high or low powered devices as long as the appropriate fuse is used, and the total current requirement for all devices does not exceed $100A$. 
 
 
 
@@ -1353,7 +1349,7 @@ Each $12V$ power line is merged into one of two fused ditribution boards with re
 \subsubsection{Software}
 \label{sec:software}
 
-Research and experimentation into lighting, polarization, and mechanical construction, was performed in parallel with familiarization and experiments using the software packages provided. As HALCON\texttrademark has developed their own language (HDevelop\texttrademark) which has three main points of difference with other languages. Firstly, each variable is either  a \textit{Control Variable} (int, float, tuple, array, etc), or an \textit{Iconic Variable} (image, region, contour, mask, etc) which can be inspected at any point in running, debugging or stepping through a script. Secondly, only control variables can use the '$:=$' assignment operator as all function arguments contain both input and output (return) variables. For example a function to count regions in an image and paint the number requested, might take the form:
+Research and experimentation into lighting, polarization, and mechanical construction, was performed in parallel with familiarization and experiments using the software packages provided. HALCON\texttrademark has developed their own language (HDevelop\texttrademark) which has three main points of difference with other languages. Firstly, each variable is categorised as either a \textit{Control Variable} (int, float, tuple, array, etc), or an \textit{Iconic Variable} (image, region, contour, mask, etc) which can be inspected at any point in running, debugging or stepping through a script. Secondly, only discrete operations between control variables can use the '$:=$' assignment operator as all function arguments contain both input and output (return) variables. For example a function to count regions in an image and paint the number requested, might take the form:
 
 \begin{lstlisting}
 num = 3
@@ -1372,15 +1368,26 @@ count_and_find_largest_regions(count, ret_image, num, img)
 From which point after 'ret\_image' and 'count' will take the values assigned within the function. Each function takes the form (omitting missing parameters):
 
 \begin{lstlisting}
-function_name(out_control_var : out_iconic_var : in_control_var : in_iconic_var)
+function([, out_control : [, out_iconic : [, in_control : [, in_iconic]]]])
 \end{lstlisting} 
 
+where lists of iconic, control, input, and output variables can exist or not.
 
-Lastly, HALCON\texttrademark is an interpreted language with the unique property that stores all variables in a database cache as the program runs (in development using IDE). This means that as each variable is assigned, it is shown in either the \textit{iconic variable} window, or the \textit{control variable} window, giving the user immediate response to code changes and a visualisation of the results. This allows for increased efficiency in development of image processing techniques. 
 
-There are two methods of integrating HALCON\texttrademark with other applications, given that HDevelop\texttrademark is not compatible with other programming languages. An entire script may be exported directly to $C\#$ or $C++$ as a class that can be called from the main application, after importing the appropriate libraries. This method uses a wrapper function from $C\#$ or $C++$ to call a native HDevelop\texttrademark script as an \textit{External Function Call}. The other method uses the same library to program HDevelop\texttrademark objects in $C\#$ or $C++$ native language. In other words, the operations performed are written locally and natively, using external libraries of objects and operations. 
+Lastly, HALCON\texttrademark is an interpreted language with the unique property that stores all variables in a database cache as the program runs (in development, using IDE). This means that as each variable is assigned, it is shown in either the \textit{iconic variable} window, or the \textit{control variable} window, giving the user immediate response to code changes and a visualisation of the results. This allows for increased efficiency in development of image processing techniques. 
 
-Visual Studio$^{\textregistered}$'s native programming language is $C\#$, embedded in a rich, professional IDE where creating state-of-the-art apps is common, given the UI development tools (for GUI apps), library linking, debugging tools, git, and deployment features. However, the most important parts of the SQA application, namely the GUI and image processing are supported thus making both of these application suitble for the project.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{halcon_ide.png}
+	\caption{A screenshot of the Halcon IDE, from left to right, showing the image (Graphics), method (Operator), control/iconic variables (Variable), and script (Program) windows.}
+	\label{fig:halcon_ide}
+\end{figure} 
+
+
+There are two methods of integrating HALCON\texttrademark with other applications, given that HDevelop\texttrademark is not compatible with other programming languages. An entire script may be inserted in the filesystem, such that it may be called from the main application, after importing the appropriate libraries. This method uses a wrapper function from $C\#$ or $C++$ to call a native HDevelop\texttrademark script as an \textit{External Function Call}. The other method uses the same library to program HDevelop\texttrademark objects in $C\#$ or $C++$ native language. In other words, the operations performed are written locally and natively, using external libraries of objects and operations. HALCON\texttrademark can also convert and export code directly into $C\#$ or $C++$ in order to be used as a dynamic class which would require regular updating, changes or improvements.
+
+Visual Studio\textregistered is a well know development platform whose native programming language is $C\#$, embedded in a rich, professional IDE where creating state-of-the-art apps is common, given the UI development tools (for GUI apps), library linking, debugging tools, git, and deployment features. However, the most important parts of the SQA application, namely the GUI and image processing are supported thus making both of these application suitble for the project.
 
 
 \paragraph{User Interface}
@@ -1398,7 +1405,7 @@ The GUI must be simple to use but capable of displaying all the relevent informa
   
 HALCON\texttrademark's integration capabilities allow the GUI to display a HWindow\texttrademark directly, giving the application the ability to show regions, lines, contours, images, or text generated by the image processing algorithms. 
 
-As HALCON\texttrademark is designed to process images and video streams, it has been developed to include a many camera protocols such as 1394IIDC (FireWire\texttrademark), GigEVision$^{\textregistered}$, USB3Vision$^{\textregistered}$, $\mu$eye\texttrademark, and more including Microsoft$^{\textregistered}$'s DirectShow$^{\textregistered}$ for generic cameras, and support to grab images from file.
+As HALCON\texttrademark is designed to process images and video streams, it has been developed to include a many camera protocols such as 1394IIDC (FireWire\texttrademark), GigEVision\textregistered, USB3Vision\textregistered, $\mu$eye\texttrademark, and more including Microsoft\textregistered's DirectShow\textregistered for generic cameras, and support to grab images from file. For each of the protocols, multiple camera manufacturers (even some camera models) are specifically implemented within the IDE along with a camera connection wizard and code exporter. The wizard allows experimentation with the various controls in GUI style, before exporting the required code to repeat the actions in a new script. 
 
 The application waits until the acquisition sequence is complete before processing and displaying the punnet, therefore updating the GUI at rates up to $2fps$, and might occur whilst images are being captured. This problem is solved with asynchronous threads that can perform acquisition, image processing, I/O, and display seperately yet simultaneously.
 
@@ -1409,20 +1416,14 @@ There are four main tasks required to be performed by the application:
 
 
 \begin{itemize}
-	\item Image Acquisition - four cameras with external triggers activated at intervals set by the microcontroller.
+	\item Image Acquisition - Four cameras with external triggers activated at intervals set by the microcontroller.
 	\item Image Processing - Analysis of all four images.
-	\item Input / Output - management of signals to and from microcontroller including ejection, errors, and buttons (physical and GUI simulated).
+	\item Input / Output - Management of signals to and from microcontroller including ejection, errors, and buttons (physical and GUI simulated).
 	\item Display - The view is handled by the main thread which spawns the peripheral worker threads.
 \end{itemize}
 
 
 Each of these functions are dependant of each other, but may occur simultaneously. For example, punnet number $n$ may be in the process of analysis (assuming this is the most time consuming thread), whilst punnet number $n+1$ is in acquisition stage. The cameras cannot afford to wait for other processes to complete before acquisition, due to conveyor motion, and must respond immediately. Similarly, the image analysis may require the majority of the $500ms$ window in order to process four images thouroughly. Furthermore, the image processing cannot occur without complete acquisition (all four images), likewise the GUI cannot display, or IO eject, without being processed first. This means signalling semaphores must be used to send messages between threads and allow each process to know the application state at all times.
-
-The lighting enclosure is designed with visible RGB on one end and halogen IR on the opposite end (in the direction of punnet flow). In order to maximise lighting at the correct spectral wavelengths, at the optimal time, the RGB and IR cameras are separated to be centred in the respective lighting environments. Taking this into consideration, a fifth thread was added to monitor the RGB and IR camera triggers seperately. Figure \ref{fig:software_flow} ilustrates the flow of each thread along with it's \textit{progress reporting} action. A $C\#$ thread can report it's progress at some time during the threadded procedure by using a protected method (semaphore/mutex) to share information outside it's scope. 
-
-Firstly, the main thread spawns four worker threads; one for each set of cameras, one for image processing, and one to monitor I/O. The RGB thread waits for the image to be buffered by the cameras (triggered by the sensor) before beginning the process of image acquisition and confirmation, as well as error checking. The IR thread waits for the confirmation (semaphore) that the first images have been acquired, before beginning a similar process to populate the remaining images for the current punnet. Once the all images are acquired, another semaphore is used to signal the image processing thread to begin. After processing, a signal is sent to the main thread to display the results and images. Each of these processes returns to wait for semaphores each iteration which also greatly helps in the synchronisation of punnet images. 
- 
-
 
 \begin{figure}[h!]
 	\centering
@@ -1430,6 +1431,13 @@ Firstly, the main thread spawns four worker threads; one for each set of cameras
 	\caption{Flow chart of the main application with each of the five threads (including main) and thier progress reporting.}
 	\label{fig:software_flow}
 \end{figure} 
+
+
+The lighting enclosure is designed with visible RGB on one end and halogen IR on the opposite end (in the direction of punnet flow). In order to maximise lighting at the correct spectral wavelengths, at the optimal time, the RGB and IR cameras are separated to be centred in the respective lighting environments. Taking this into consideration, a fifth thread was added to monitor the RGB and IR camera triggers seperately. Figure \ref{fig:software_flow} ilustrates the flow of each thread along with it's \textit{progress reporting} action. A $C\#$ thread can report it's progress at some time during the threadded procedure by using a protected method (semaphore/mutex) to share information outside it's scope. 
+
+Firstly, the main thread spawns four worker threads; one for each set of cameras, one for image processing, and one to monitor I/O. The RGB thread waits for the image to begin being buffered by the cameras (triggered by the sensor) before beginning the process of image collection and confirmation. The IR thread waits for the confirmation (semaphore) that the first images have been acquired, before beginning a similar process to receive and populate the remaining images for the current punnet. Once the all images are acquired, another semaphore is used to signal the image processing thread to begin. Each of these processes returns to wait for semaphores each iteration which also greatly helps in the synchronisation of punnet images. The last thread continually interrogates each of the I/O components by way of polling, using the Phidget\texttrademark's API. The hardware and software is designed to create an interrupt event if any of the input ports change state. Therefore, methods to handle each state change (low-->high and high-->low) for each input is required. The inputs are polled once every 200ms in order to give a response from the system in a timely manner, both for safety and operator useability.
+
+The progress reporting for the RGB thread performs camera/image error checking, and signals the IR thread, whose progress confirms image count and assigns a punnet number, before signalling the image processing thread to begin. The image processing thread finalises the results and signals the main thread to display, whilst the I/O thread reports nothing until a state is changed, at which time the main thread is notified of the change.
 
 
 The RGB and IR threads are not dependant or in scope of each other, however, they nedd to synchronise in order to match the two sets of images. This was achieved by using an array of 10 \textit{punnet} objects which were constantly cycled and reused within the application (as no more than 5-6 punnets can occupy the space between the cameras and the ejector). Using this method, simple logic could be used in order to confirm the punnet count matched before populating the object. 
@@ -1511,13 +1519,234 @@ This is then followed by colour analysis of the hue channel in order to quantify
 
 These values can be inserted to the equation and performing the operation on the H channnel, the region $R_{colour}$ can be extracted in as follows:
 \begin{equation}
-R_{colour} = \sum_{n=1}^{P} \alpha_1 \leq H[x,y]_n \leq \alpha_2 \in R_{berry}
+R_{colour} = \bigg\{\sum_{n=1}^{P} \alpha_1 \leq H[x,y]_n \leq \alpha_2\bigg\} \in R_{berry}
 \end{equation}
 
 
 where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to threshold. For red strawberries the inital values are set to $0^{\circ}$ and $20^{\circ}$ which equates to 0 and 14 for $\alpha_1$ and $\alpha_2$ respectively.
 
 Pre-processing consists of reducing the image to a Region Of Interest (ROI) in the spacial location where the punnet is consistently captured. The post-processing methods use morphology, removal of regions less than certain limits (noise reduction), and area calculations to return the affected areas as indicated by the ellipses in Figure \ref{fig:hue_processed}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+
+\section{A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems}
+
+\textit{Conference paper - Digital Image Computing: Techniques and Applications (DICTA) - accepted Aug 2017}
+
+
+\subsection{Abstract}
+
+\textbf{A lighting system and method has been developed which has shown in testing to allow quality images to be obtained that are free from two particular problems, specular reflections on the subject, and light intensity variation. These problems both diminish the ability to compare objects for attributes such as colour variation, edges, contours, and many other features. The system developed eliminates specular reflection by using the cross-polarisation configuration, and reduced flickering due to fluctuations in the power supply to negligible levels by constructing a high-power DC source capable of providing sufficient 12 Volt power. These two improvements create an environment suitable for taking high-quality, noise free images at high shutter speeds for the purpose of assessing the quality of strawberries moving on a real-time production line.}
+
+
+\subsection{Background}
+
+
+When using image processing to analyse images or extract features, one problem faced is the inconsistency of images \cite{atkinson}.  For example, when using AC lighting and fast shutter speeds, the image intensity will vary with the intensity of the alternating current in the power supply. Although undetectable to the human eye, this type of "flickering" can give rise to a vast difference in image intensity. Another example is that of specular reflection as shown in Figure \ref{fig:specular_art}. The bright reflection appears as white "interference" as the information contained in the pixels of this region are lost. The loss of information may include colour, edge contours, region boundaries or hidden defects. This paper is aimed at describing a method of eliminating these problems in order to increase consistency in acquired images.
+
+Image stability is particularly required in industrial applications when performing defect inspections, or quality control processes. The environment surrounding the subject must be consistent, and free from saturation and specular reflections. Achieving this will then provide more valuable information and comparability of images due to the removal of noise and inconsistency.
+
+The proposed system ensures that when objects imaged for computer vision applications, they do not contain specular reflections or saturation, and intensity is stable for comparison purposes. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.9]{specular_art.jpg}
+	\caption{Example of Specular Reflection on an art display. Note the specular reflection interference with the image causing the loss of information and colour.}
+	\label{fig:specular_art}
+\end{figure}
+
+
+Specular reflections occur when the source of light can be seen on the surface of the object. This can be either a direct reflection from the light source onto the object and then into the viewer (eye or camera), or through multiple reflections where the light source is still visible. The direction of the specular reflection is related to Snell's Law, in that, the angle of incidence ($\theta_i$) is equal to the angle of reflection ($\theta_r$). These reflections are best seen on smooth surfaces such as glass, water, and metal whereas reflections from rough surfaces will result in a more diffuse spread.   
+
+According to electromagnetic wave and transmission line theory, at the interface of a good conductor, the reflected field ($\bar{E_0^r}$ - Phasor form of the electric field in the z plane of incidence) at the interface of the medium is equal to the incident field ($\bar{E_0^i}$) subtract the transmitted field ($\bar{E_0^t}$) \cite{ulaby} where:
+
+\begin{equation}
+\bar{E_0^r} = \bigg(\frac{\eta_2 - \eta_1}{\eta_2 + \eta_1}\bigg)\bar{E_0^i}
+\end{equation}
+
+and for the transmitted field:
+
+\begin{equation}
+\bar{E_0^t} = \bigg(\frac{2\eta_2}{\eta_2 + \eta_1}\bigg)\bar{E_0^i}
+\end{equation}
+
+
+This shows that the intensity of the reflection is determined by the intensity of the source of the wave and the intrinsic impedance ($\eta$) of the material and is given by:
+
+\begin{equation}
+\eta = \frac{\omega \mu}{k} = \frac{\omega \mu}{\omega \sqrt{\mu \epsilon}}= \sqrt{\frac{\mu}{\epsilon}}
+\label{eqn:eta}
+\end{equation}
+
+where the wavenumber $k = \omega \sqrt{\mu \epsilon'}$ and $\mu$ is the magnetic permeability of the material. This relates to its susceptibility to magnetic fields, and for diamagnetic and paramagnetic materials (which includes most metals and dielectrics), is considered to be the same as that of free space and $\mu = \mu_0 = 1$ \cite{ulaby}. 
+
+The electric permittivity, however, is very small for most metals as $\epsilon = \epsilon_r \epsilon_0 = 1 \times 8.85\times10^{-12}$. Substituting this into equation \ref{eqn:eta}, maintains a large value for intrinsic impedance $\eta_2$. thus, the majority of the wave is reflected at this angle. This is comparable to a short circuit on a transmission line resulting in a reflection coefficient of -1 indicating a full reflection even though inverted. This shows that the intensity at the specular angle is not diminished very much by the surface of a smooth conducting surface.
+
+However, one change that can occurs at the interface, is the polarization of the wave. All light sources are randomly generated in all orientations, and can therefore be said to be multi-linear, circularly, or elliptically polarised (commonly named un-polarised or non-polarised) waveform \cite{artusi,nelson}.
+
+
+\subsection{Specular Reflections} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.9]{unpolar_polar.png}
+	\caption{The interface showing specular reflection of an electromagnetic wave in either the TE or TM orientation.}
+	\label{fig:unpolar_polar}
+\end{figure}
+
+Figure \ref{fig:unpolar_polar} shows that when an un-polarized incident light ray reflects from a surface, the polarisation is converted to linear form, in the direction of the surface of the object \cite{nelson}.
+
+As the total energy is maintained and the polarisation is converted to linear, the reflection is perceptively intensified in that direction. Multiple reflections can also contribute to this appearance of specular reflection hot spots on objects depending on the surfaces around them and the lighting orientation.
+
+This is a problem for industrial areas where, for instance, on a production line sufficient lighting is required to illuminate the product for image processing purposes. Reflections can occur from the surrounding surfaces or objects, and can be subject to change if the environment surrounding the production line and cameras are rearranged, added or removed.
+
+
+\subsection{Lighting Intensity Stability}
+
+As discussed in Section \ref{sec:challenges}, alternating Current (AC) power sources have a sinusoidal pattern and have a frequency associated with them. This fluctuation is inherent in everyday power usage, such as the current in mains power supply (in most cases 110/220/240V @ 50/60Hz), and is very useful for long distance power transmission. Although this fluctuation can not be seen by the human eye, the fast shutter speeds of the vision cameras can. The difference in the images can theoretically be $100\%$, as the current passes through the zero point in the sinusoid.
+
+The benefit to using AC lighting is that high power/high intensity lighting is easier to achieve. For example, $1000W$, $240V$/$50Hz$ AC lamps are readily available, however, a $1000W$, $12VDC$ lamp is substantially less common. This means that to achieve the same level of lighting as an AC system, a $12V$ DC system must be able to power many small LED, tungsten, or halogen lamps resulting in high current requirements.  
+
+
+\subsection{Methods}
+
+\subsubsection{Specular reflections}
+
+Polarising material has been shown to reduce the effects of these reflections. If surface reflections of the light source are seen by the cameras, and not the direct light source, the polarising material can remove the specular reflections in one direction. This type of method has been used in experiments to try to improve the quality of images \cite{atkinson, wolff}.
+
+Exploiting the use of a cross-polarising lens on the camera reduces the specularities even further. By controlling the polarity of the light hitting the objects' surface, and then again before the light enters the camera lens, the reflections in the image are minimised.
+
+If the polarisation orientation is parallel throughout the the inner walls of the tunnel, then all light within the tunnel will have the same orientation of polarization. By adding a polarising filter to the camera lens at an angle orthogonal to the polarised walls, then the specular reflections are dramatically reduced \cite{anderson, kuranov}.
+
+
+\subsubsection{Power Supply}
+
+
+Preliminary testing gave a good indication of the lighting power requirements by testing many different lighting angles, intensities and polarization configurations. The tests showed that, in order to get adequate intensity through a cross-polariser, the power requirements in Table \ref{tab:DC_power_table} are determined to be appropriate.
+
+After initial bench testing, the calculated lighting power was around $688W$, with power draw from peripheral devices totalling approximately $750W$ in normal operating conditions. A $750W$ power supply would meet the operational requirements but leaves no room for variation in current such as inrush, and the potential to increase the amount of light sources in the future. Another requirement of the power supply is that it support $5V$ for peltier, fans, and micro-controller (Phidget), otherwise an additional power supply, or a high-powered, voltage divider circuit will be required.
+
+It is for these reasons that a PC Power Supply Unit (PSU) was determined to best fulfil the requirement. A PSU generally supplies $12V, 5V$, and $3.3V$ as well as some models providing a $-12V$ low current line in order to generate $24V$ potential. These PSUs are designed for longevity, robustness and high power PC applications and hardware used to render video, or facilitate graphics-intensive, high resolution games. The Cougar $1200W$ PSU is high quality and cost effective means to generate $100A @ 12V$ with the added attractive fault protection features. The relevant specifications are shown in Table \ref{tab:psu_spec}.
+
+
+The PSU also has the following protections as part of the manufacturing specifications:
+
+\begin{itemize}
+	\item Over Voltage Protection - If the voltages increase above a certain tolerance value on the single lines, the PSU automatically switches off.
+	\item Under Voltage Protection - If the voltages fall below a certain tolerance value on the single lines, the PSU automatically switches off.
+	\item Over Power Protection - If the system is oversized and requires more power from the PSU than it can deliver, this protection function is activated.
+	\item Over Current Protection - If the load on a single line is higher than indicated, the PSU automatically switches off.
+	\item Short Circuit Protection - In the case of a short-circuit this feature prevents damage to the core components of the PSU and its system components.
+\end{itemize}
+
+\quad
+\begin{table}[h]
+	\centering
+	\caption{Cougar $1200W$ Power Supply Unit (PSU) specifications}
+	\label{tab:psu_spec}
+	\begin{tabularx}{0.6\linewidth}{X*{4}{c}}	
+		\toprule 
+		Specification & Min & Typ & Max & Units\\ 
+		\midrule
+		DC Output & - & - & 1200 & $W$ \\[6pt]
+		Operating Temp. & 0 & 25 & 45 & $^{\circ}C$ \\[6pt]
+		Efficiency & 80 & 87 & 90 & $\%$ \\[6pt]
+		Transient 12V turn on & 7 & 9 & 10 & $ms$ \\[6pt]	
+		Ripple 12V (100\% load) & 70 & 73 & 75 & $mV$ \\[6pt]
+		Ripple 5V (100\% load) & 39 & 42 & 45 & $mV$ \\[6pt]
+		Ripple 3.3V (100\% load) & 40 & 42 & 44 & $mV$ \\[6pt]
+		
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Results}
+
+The $1200W$ DC power supply is designed and constructed so that the full power of the $12V$ rails are supplied by distributing each of the two channels between the top and bottom lighting circuits. The power supply also supplies power to peripheral devices such as pneumatics, LED indicators, warning lights, logic control board, sensors, peltier, and fans.
+
+The resulting images taken using the designed enclosure have dramatically improved the image stabilisation when compared to the AC lighting system. The DC-powered lighting system resulted in very small intensity fluctuations, and was measured to be $<0.1\%$ as seen in Figure \ref{fig:image_diff_dc} and \ref{fig:image_diff_dc_2}. The average pixel area for each image was obtained by first taking a threshold of subjects in the each of the frames:
+\begin{equation}
+R = \sum_{i=1}^{P}t_1 \leq x \leq t_2
+\end{equation}
+
+with $P$ denoting the number of pixels in each image and $t_1$, $t_2$ the threshold limits. The average region area ($Area_{avg}$) was calculated and is given by the mean definition:
+\begin{equation}
+Area_{avg} = \bar{R} = \frac{1}{N}\sum_{i=1}^{N}R_i
+\end{equation}
+
+where $N$ is the number of images to average, and $R_i$ represents the number of region pixels in each image.
+
+Data was gathered twice, once for a period of two seconds with a fast frame rate, and the other over a three hour period in order to assess the case of high speed cameras, and in the case of constant operation for extended periods of time.
+
+
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{.45\textwidth}
+			\centering
+			\includegraphics[width=.95\linewidth]{image_diff_dc.png}
+			\caption{}
+			\label{fig:image_diff_dc}
+		\end{subfigure}%
+		\begin{subfigure}{.45\textwidth}
+			\centering
+			\includegraphics[width=.95\linewidth]{image_diff_dc_2.png}
+			\caption{}
+			\label{fig:image_diff_dc_2}
+		\end{subfigure}%
+		\caption{Intensity measurements taken using DC lighting system showing the small variations over: a) A two second period and b) A 3 hour period. All results have a difference of less than 0.1\%.}
+		\label{fig:test4}
+	\end{figure}
+\end{center}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.7\linewidth]{polarizer_rot.png}
+	\caption{Experimental results gathering the specular and region pixels, whilst rotating the cross-polariser on the camera lens.}
+	\label{fig:graph_polar}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{berries_spec.png}
+		\caption{}
+		\label{fig:berries_spec}
+	\end{subfigure}%
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{berries_no_spec.png}
+		\caption{}
+		\label{fig:berries_no_spec}
+	\end{subfigure}%
+	\caption{Image of strawberries (a) with specular reflections and (b) without specularities after the cross polariser was added.}
+	\label{}
+\end{figure}
+
+In order to solve the specular reflection problem, the use of a cross-polarization lighting design was implemented. As discussed in Section \ref{sec:I}, polarizing material is installed vertically (polarization direction can be either orientation, although further testing may indicate a preference) to form a tunnel through the enclosure. The second polarizer is an adjustable filter fitted to the lens of the visible camera. The graph shown in Figure \ref{fig:graph_polar} shows that when the specular pixels are removed, the region pixels are increased giving a better assessment of the area of interest.
+
+
+
+Figure \ref{fig:berries_spec} shows an image with only one polarizer in place allowing some specular reflections to be seen (the amount of specularities would be even greater if the acquisition had no polarizing elements), then by rotating the camera lens polarizer, images were taken at 16 positions from $0^{\circ}$ to $180^{\circ}$.  
+
+
+When the polarizers are orthogonal ($90^{\circ}$), the result is a more flattened image that removes the specular reflections almost entirely.  Figure \ref{fig:berries_no_spec} depicts this change and it can be seen that the surface of the strawberries are much clearer and will allow better image processing due to the increase of pixels which can be analysed, and a decrease in noise. 
+
+
+
+\subsection{Conclusion}
+
+Image acquisition plays an important part in any machine vision application to ensure that the images acquired are free of distortion and provide the most information. Lighting is therefore an important factor in image acquisition systems, allowing objects surfaces to be illuminated with as little interference as possible.
+
+A system has been developed to inspect strawberries and assess them for quality attributes. The first step in the development is to design and construct the acquisition system and integrate it with the production line. After the enclosure had been installed, the LED/halogen lighting, polarizers, and cameras were mounted. The DC power supply delivers the required amount of power at a constant current which ensures that the intensity fluctuations between images are insignificant. Experimental results show that the fluctuations are less than $0.1\%$ of total intensity, even when operating for many hours. Experiments were also performed that showed that the cross-polarization technique has the ability to entirely remove of the specular reflections in most cases, whilst providing more pixels that can be analysed in each frame.  
+
+The system developed is extremely successful in achieving the desired consistent image acquisition. The system can image 2 punnets of strawberries per second on the production line and the image quality is illuminated, free from interference, and consistent between images, even with a shutter speed as fast as $1ms$. Future work includes the strategy to strobe the lighting in order to reduce power usage and heat, as well as the introduction of image processing algorithms to perform the assessment.
 
 
 
@@ -1615,7 +1844,7 @@ A dataset of 500+ images has been truthed by operators and used to assess the al
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\section{System Reconfiguration and Redesign}
+\section{Redesign and Upgrade}
 \label{sec:III}
 
 

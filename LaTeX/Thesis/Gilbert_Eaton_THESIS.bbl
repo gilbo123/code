@@ -658,4 +658,37 @@ A.~S. et~al, ``Cross polarization photography of the nerve fiber layer,'' {\em
 L.~L. Solutions, ``What do we mean by colour rendering?.''
 \newblock Accessed Apr 2019.
 
+\bibitem{atkinson}
+G.~A. Atkinson and E.~R. Hancock, ``Recovery of surface orientation from
+  diffuse polarization,'' {\em IEEE TRANSACTIONS ON IMAGE PROCESSING}, vol.~15
+  No.6, pp.~1653--1664, 2006.
+
+\bibitem{ulaby}
+F.~T. Ulaby and U.~Ravaioli, {\em Fundamentals of Applied Electromagnetics}.
+\newblock Global: Pearson, 2015.
+
+\bibitem{artusi}
+A.~Artusi, F.~Banterle, and D.~Chetverikov, ``A survey of specularity removal
+  methods,'' {\em COMPUTER GRAPHICS forum}, vol.~30 No.8.
+
+\bibitem{nelson}
+P.~S.~A. Nelson, ``Properties of light and examination of isotropic
+  substances.''
+\newblock Accessed 1 May 2019.
+
+\bibitem{wolff}
+L.~B.Wolff and T.~E. Boult, ``Constraining object features using a polarization
+  reflectance model,'' {\em IEEE Trans. Pattern Anal. Mach. Intell}, vol.~13,
+  no.7, p.~635–657, 1991.
+
+\bibitem{anderson}
+R.~Anderson, ``Polarized light examination and photography of the skin,,'' {\em
+  Arch Dermatol}, vol.~127.
+
+\bibitem{kuranov}
+R.~Kuranov, V.~Sapozhnikova, I.~Turchin, E.~Zagainova, V.~Gelikonov,
+  V.~Kamensky, L.~Snopova, and N.~Prodanetz, ``Complementary use of
+  cross-polarization and standard oct for differential diagnosis of
+  pathological tissues,'' {\em OPTICS EXPRESS}, vol.~Vol: 10, no.15.
+
 \end{thebibliography}
