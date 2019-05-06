@@ -51,11 +51,17 @@
 \BOOKMARK [1][-]{section.5}{Production Integration}{}% 51
 \BOOKMARK [2][-]{subsection.5.1}{Production Floor Migration }{section.5}% 52
 \BOOKMARK [3][-]{subsubsection.5.1.1}{Electronics and Power}{subsection.5.1}% 53
-\BOOKMARK [3][-]{subsubsection.5.1.2}{Cross-polarization of Cameras}{subsection.5.1}% 54
-\BOOKMARK [3][-]{subsubsection.5.1.3}{Microcontroller and Relays}{subsection.5.1}% 55
-\BOOKMARK [2][-]{subsection.5.2}{Final Configuration}{section.5}% 56
-\BOOKMARK [2][-]{subsection.5.3}{Queensland Production}{section.5}% 57
-\BOOKMARK [2][-]{subsection.5.4}{South Australia}{section.5}% 58
-\BOOKMARK [1][-]{section.6}{Redesign and Upgrade}{}% 59
-\BOOKMARK [1][-]{section.7}{Linux and Deep Learning}{}% 60
-\BOOKMARK [1][-]{section.8}{Conclusion}{}% 61
+\BOOKMARK [4][-]{paragraph.5.1.1.1}{Lighting Finalisation}{subsubsection.5.1.1}% 54
+\BOOKMARK [4][-]{paragraph.5.1.1.2}{Electronic Control System}{subsubsection.5.1.1}% 55
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Cross-polarization of Cameras}{subsection.5.1}% 56
+\BOOKMARK [2][-]{subsection.5.2}{Final Configuration}{section.5}% 57
+\BOOKMARK [2][-]{subsection.5.3}{Queensland Production - Season 1}{section.5}% 58
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Ejector Mechanism}{subsection.5.3}% 59
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Data Collection}{subsection.5.3}% 60
+\BOOKMARK [2][-]{subsection.5.4}{South Australia Production - Season 2}{section.5}% 61
+\BOOKMARK [1][-]{section.6}{Colour Analysis of Strawberries on a Real-time Production Line}{}% 62
+\BOOKMARK [1][-]{section.7}{Redesign and Upgrade}{}% 63
+\BOOKMARK [1][-]{section.8}{Linux and Deep Learning}{}% 64
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 65
+\BOOKMARK [1][-]{appendix.A}{SQA Specification}{}% 66
+\BOOKMARK [1][-]{appendix.B}{Wiring Diagrams}{}% 67

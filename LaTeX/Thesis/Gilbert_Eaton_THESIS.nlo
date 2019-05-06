@@ -1,55 +1,55 @@
-\nomenclatureentry{a$cultivar$@[{$cultivar$}]\begingroup The species or type of fruit\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$punnet$@[{$punnet$}]\begingroup A plastic strawberry container\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$calyx$@[{$calyx$}]\begingroup The green leaves of a strawberry\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$peduncle$@[{$peduncle$}]\begingroup Stem of the strawberry\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$downtime$@[{$downtime$}]\begingroup The amount of time (cumulative) during production where nothing is produced\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$SSC$@[{$SSC$}]\begingroup Soluable solid content\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$API$@[{$API$}]\begingroup Application Programming Interface\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$RMSE$@[{$RMSE$}]\begingroup Root Mean Squared Error\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$SVM$@[{$SVM$}]\begingroup Support Vector Machine\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$RBF$@[{$RBF$}]\begingroup Radial Basis Function\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$AI$@[{$AI$}]\begingroup Artificial Intelligence\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$BP$@[{$BP$}]\begingroup Back Propogation\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$FC$@[{$FC$}]\begingroup Fully Connected (NN layer)\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$ReLU$@[{$ReLU$}]\begingroup Rectified Linear Unit\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$NN$@[{$NN$}]\begingroup Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$ANN$@[{$ANN$}]\begingroup Artificial Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$FNN$@[{$FNN$}]\begingroup Feedforward Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$CNN$@[{$CNN$}]\begingroup Convolutional Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$R-CNN$@[{$R-CNN$}]\begingroup Region-based Convolutional Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$BPNN$@[{$BPNN$}]\begingroup Back-propogation Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$k-NN$@[{$k-NN$}]\begingroup k-Nearest Neighbour\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$DNN$@[{$DNN$}]\begingroup Deep Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$ELM$@[{$ELM$}]\begingroup Extreme Learning Machine\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$SFLN$@[{$SFLN$}]\begingroup Single Hiden Layer Feed Neural Network\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$LDA$@[{$LDA$}]\begingroup Linear Discriminant Analysis\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$QDA$@[{$QDA$}]\begingroup Quadratic Discriminant Analysis\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$PLS-DA$@[{$PLS-DA$}]\begingroup Partial Least-squares Discrininant Analysis\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$PCA$@[{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$MLP$@[{$MLP$}]\begingroup Multi-layer Perceptron\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$GMM$@[{$GMM$}]\begingroup Gaussian Mixture Model\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$PCA$@[{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$IR$@[{$IR$}]\begingroup Infrared\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$RGB$@[{$RGB$}]\begingroup Red, Green, Blue\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$HSI$@[{$HSI$}]\begingroup Hue, Saturation, Intensity\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$HSV$@[{$HSV$}]\begingroup Hue, Saturation, Value\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$CIE-Lab$@[{$CIE-Lab$}]\begingroup CIE standard colourspace\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$NIR$@[{$NIR$}]\begingroup Near Infrared\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$SWIR$@[{$SWIR$}]\begingroup Short-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$MWIR$@[{$MWIR$}]\begingroup Medium-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$LWIR$@[{$LWIR$}]\begingroup Long-wavelength Infrared range of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$FIR$@[{$FIR$}]\begingroup Far Infrared range of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$UV$@[{$UV$}]\begingroup Ultraviolet range of electromagnectic spectrum\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$UI$@[{$UI$}]\begingroup User Interface\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$PSU$@[{$PSU$}]\begingroup Power Supply Unit\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$UPS$@[{$UPS$}]\begingroup Uninterruptable Power Supply\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$CPU$@[{$CPU$}]\begingroup Central Processing Unit\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$GPU$@[{$GPU$}]\begingroup Graphical Processing Unit\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$RAM$@[{$RAM$}]\begingroup Random Access Memory\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$PCIe$@[{$PCIe$}]\begingroup Peripheral Component Interconnect express\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$AVX$@[{$AVX$}]\begingroup Advanced Vector Extensions\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$FOV$@[{$FOV$}]\begingroup Field of view\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$LED$@[{$LED$}]\begingroup Light emitting diode (Light source)\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$CCD$@[{$CCD$}]\begingroup Charge coupled device (sensor)\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$CMOS$@[{$CMOS$}]\begingroup Complimentary metal-oxide semiconductor (sensor)\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{a$DOF$@[{$DOF$}]\begingroup Degrees of Freedom\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{a$cultivar$@[{$cultivar$}]\begingroup The species or type of fruit\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$punnet$@[{$punnet$}]\begingroup A plastic strawberry container\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$calyx$@[{$calyx$}]\begingroup The green leaves of a strawberry\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$peduncle$@[{$peduncle$}]\begingroup Stem of the strawberry\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$downtime$@[{$downtime$}]\begingroup The amount of time (cumulative) during production where nothing is produced\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$SSC$@[{$SSC$}]\begingroup Soluable solid content\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$API$@[{$API$}]\begingroup Application Programming Interface\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$RMSE$@[{$RMSE$}]\begingroup Root Mean Squared Error\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$SVM$@[{$SVM$}]\begingroup Support Vector Machine\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$RBF$@[{$RBF$}]\begingroup Radial Basis Function\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$AI$@[{$AI$}]\begingroup Artificial Intelligence\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$BP$@[{$BP$}]\begingroup Back Propogation\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$FC$@[{$FC$}]\begingroup Fully Connected (NN layer)\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$ReLU$@[{$ReLU$}]\begingroup Rectified Linear Unit\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$NN$@[{$NN$}]\begingroup Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$ANN$@[{$ANN$}]\begingroup Artificial Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$FNN$@[{$FNN$}]\begingroup Feedforward Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$CNN$@[{$CNN$}]\begingroup Convolutional Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$R-CNN$@[{$R-CNN$}]\begingroup Region-based Convolutional Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$BPNN$@[{$BPNN$}]\begingroup Back-propogation Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$k-NN$@[{$k-NN$}]\begingroup k-Nearest Neighbour\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$DNN$@[{$DNN$}]\begingroup Deep Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$ELM$@[{$ELM$}]\begingroup Extreme Learning Machine\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$SFLN$@[{$SFLN$}]\begingroup Single Hiden Layer Feed Neural Network\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$LDA$@[{$LDA$}]\begingroup Linear Discriminant Analysis\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$QDA$@[{$QDA$}]\begingroup Quadratic Discriminant Analysis\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$PLS-DA$@[{$PLS-DA$}]\begingroup Partial Least-squares Discrininant Analysis\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$PCA$@[{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$MLP$@[{$MLP$}]\begingroup Multi-layer Perceptron\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$GMM$@[{$GMM$}]\begingroup Gaussian Mixture Model\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$PCA$@[{$PCA$}]\begingroup Principal Component Analysis\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$IR$@[{$IR$}]\begingroup Infrared\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$RGB$@[{$RGB$}]\begingroup Red, Green, Blue\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$HSI$@[{$HSI$}]\begingroup Hue, Saturation, Intensity\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$HSV$@[{$HSV$}]\begingroup Hue, Saturation, Value\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$CIE-Lab$@[{$CIE-Lab$}]\begingroup CIE standard colourspace\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$NIR$@[{$NIR$}]\begingroup Near Infrared\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$SWIR$@[{$SWIR$}]\begingroup Short-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$MWIR$@[{$MWIR$}]\begingroup Medium-wavelenght Infraredrange of electromagnectic spectrum\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$LWIR$@[{$LWIR$}]\begingroup Long-wavelength Infrared range of electromagnectic spectrum\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$FIR$@[{$FIR$}]\begingroup Far Infrared range of electromagnectic spectrum\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$UV$@[{$UV$}]\begingroup Ultraviolet range of electromagnectic spectrum\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$UI$@[{$UI$}]\begingroup User Interface\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$PSU$@[{$PSU$}]\begingroup Power Supply Unit\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$UPS$@[{$UPS$}]\begingroup Uninterruptable Power Supply\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$CPU$@[{$CPU$}]\begingroup Central Processing Unit\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$GPU$@[{$GPU$}]\begingroup Graphical Processing Unit\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$RAM$@[{$RAM$}]\begingroup Random Access Memory\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$PCIe$@[{$PCIe$}]\begingroup Peripheral Component Interconnect express\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$AVX$@[{$AVX$}]\begingroup Advanced Vector Extensions\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$FOV$@[{$FOV$}]\begingroup Field of view\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$LED$@[{$LED$}]\begingroup Light emitting diode (Light source)\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$CCD$@[{$CCD$}]\begingroup Charge coupled device (sensor)\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$CMOS$@[{$CMOS$}]\begingroup Complimentary metal-oxide semiconductor (sensor)\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{a$DOF$@[{$DOF$}]\begingroup Degrees of Freedom\nomeqref {0}|nompageref}{xi}
