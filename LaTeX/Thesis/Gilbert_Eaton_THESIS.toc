@@ -56,12 +56,30 @@
 \contentsline {subsubsection}{\numberline {5.1.2}Cross-polarization of Cameras}{70}{subsubsection.5.1.2}
 \contentsline {subsection}{\numberline {5.2}Final Configuration}{71}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Queensland Production - Season 1}{72}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Ejector Mechanism}{73}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Data Collection}{73}{subsubsection.5.3.2}
-\contentsline {subsection}{\numberline {5.4}South Australia Production - Season 2}{73}{subsection.5.4}
-\contentsline {section}{\numberline {6}Colour Analysis of Strawberries on a Real-time Production Line}{74}{section.6}
-\contentsline {section}{\numberline {7}Redesign and Upgrade}{75}{section.7}
-\contentsline {section}{\numberline {8}Linux and Deep Learning}{76}{section.8}
-\contentsline {section}{\numberline {9}Conclusion}{77}{section.9}
-\contentsline {section}{\numberline {A}SQA Specification}{89}{appendix.A}
-\contentsline {section}{\numberline {B}Wiring Diagrams}{99}{appendix.B}
+\contentsline {subsubsection}{\numberline {5.3.1}Image Synchronisation}{73}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Ejector Mechanism}{73}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Data Collection}{75}{subsubsection.5.3.3}
+\contentsline {subsection}{\numberline {5.4}South Australia Production - Season 2}{76}{subsection.5.4}
+\contentsline {section}{\numberline {6}Colour Analysis of Strawberries on a Real-time Production Line}{78}{section.6}
+\contentsline {subsection}{\numberline {6.1}Abstract}{78}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Background}{78}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Image Acquisition}{80}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Methods}{80}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Underripe Features}{82}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}Overripe Features}{83}{subsubsection.6.4.2}
+\contentsline {subsection}{\numberline {6.5}Results}{85}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Conclusion}{87}{subsection.6.6}
+\contentsline {section}{\numberline {7}Redesign and Upgrade}{88}{section.7}
+\contentsline {subsection}{\numberline {7.1}Enclosure}{88}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Lighting}{88}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Microcontroller}{88}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Queensland Production - Season 3}{88}{subsection.7.4}
+\contentsline {section}{\numberline {8}Linux and Deep Learning}{89}{section.8}
+\contentsline {subsection}{\numberline {8.1}Machine Learning}{89}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Linux Operating System}{89}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}User Interface}{89}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}OS Transition into Production}{89}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}Transfer Learning with Resnet}{89}{subsection.8.5}
+\contentsline {section}{\numberline {9}Conclusion}{90}{section.9}
+\contentsline {section}{\numberline {A}SQA Specification}{105}{appendix.A}
+\contentsline {section}{\numberline {B}Wiring Diagrams}{115}{appendix.B}

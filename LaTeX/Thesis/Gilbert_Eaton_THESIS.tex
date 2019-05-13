@@ -265,7 +265,6 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \begin{itemize}
 	\item{G. Eaton, A. Busch, R. Bartels, Y. Gao, “A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems”,Digital Image Computing: Techniques and Applications (DICTA), DOI: 10.1109/DICTA.2017.8227392 (2017)}
 	\item{G. Eaton, A. Busch, R. Bartels, Y. Gao, “Colour Analysis of Strawberries on a Real Time Production Line”, Digital Image Computing: Techniques and Applications (DICTA), (2018)}
-	\item{G. Eaton, W. Wang, A. Busch, R. Bartels, Y. Gao, "Automatic Resnet Deep Feature Extraction and Logistic Regression to Rapidly Assess Colour, Shape and Texture on a Real-time Production Line", TBA}
 \end{itemize}  
 
 
@@ -1523,10 +1522,10 @@ Pre-processing consists of reducing the image to a Region Of Interest (ROI) in t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
-
-
 \section{A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems}
 \label{sec:paper_1}
+
+\textbf{Gilbert Eaton, Andrew Busch, Rudi Bartels, and Yongsheng Gao}
 
 \textit{Conference paper - Digital Image Computing: Techniques and Applications (DICTA) - accepted Aug 2017}
 
@@ -1751,7 +1750,7 @@ The system developed is extremely successful in achieving the desired consistent
 \label{sec:II}
 
 
-Implementation of the production-ready enclosure required the prototype to be fit with conveyors, lighting, power systems, diffusers and polarizers, as well as the computer systems, sensors and cameras. Once the designs were complete, bench testing the equipment such as camera image transmission to the running application, microcontroller functions including camera triggering and lighting switching, power system and peripherals was performed. Bench testing the equipment ensure no delays when installation occurs on the production line.
+Implementation of the production-ready enclosure required the prototype to be fit with conveyors, lighting, power systems, diffusers and polarizers, as well as the computer systems, sensors and cameras. Once the designs were complete, bench testing of the equipment such as camera image transmission to the running application, microcontroller functions including camera triggering and lighting switching, power system and peripherals was performed, reducing delays when installation occurs on the busy production line.
 
 
 
@@ -1760,7 +1759,7 @@ Implementation of the production-ready enclosure required the prototype to be fi
 \subsection{Production Floor Migration }
 
 
-Initially, the conveyors were added as all other devices must not inhibit the flow of punnets, as shown in Figure \ref{fig:system_construct_3}. The frame of the prototype was adjusted slighlty in order to equal the height of the conveyor in the middle section, as well as centering the conveyor relative to the enclosure. All heights are consistent with other machinery and conveyors in the packing shed to allow many possible configurations in the process flow. 
+Initially, the conveyors were added to the frame in ordr to create the path of flow for the punnets, as shown in Figure \ref{fig:system_construct_3}. The frame of the prototype was adjusted slighlty in order to equal the height of the conveyor where it meets the v-belts, as well as centering the conveyor relative to the enclosure. All heights are consistent with other machinery and conveyors in the packing shed to allow many possible configurations in the process flow. 
 
 
 
@@ -1772,10 +1771,10 @@ Initially, the conveyors were added as all other devices must not inhibit the fl
 \end{figure}%
 
 
-A wide range of conveyors, motors, guide rails, and parts available (due to the farm equipment spare parts), assisted the construction of the punnet conveyors, and their attachment to the frame of the enclosure. However, the v-belts are a customised feature using brackets to support adjustable grooved rollers designed for the shape of the belt, and a guide rail on each side to avoid sagging due to punnet weight. The point of transfer, where the v-belts meet the punnet conveyors, must be considered in order to implement a smooth transition at both the entry and exit of the enclosure. The requirement is for the punnet to enter the heat-seal machine long-edge leading (due to cost-saving design), but this is problematic for the v-belts in the case where a  punnet enters incorrectly oriented, and too narrow to be transfered onto the v-belts. Therefore, the design was to employ a $90^{\circ}$ transfer belt between the vision system and heat-seal machine, allowing the punnets to be short-edge leading as they enter the enclosure, eliminating the risk of containers falling between the v-belts. 
+A wide range of conveyors, motors, guide rails, and parts were made available (due to the farm equipment spare parts), and assisted the construction of the punnet conveyors, and their attachment to the frame of the enclosure. However, the v-belts are a customised feature using brackets to support adjustable grooved rollers designed for the shape of the belt, and a guide rail on each side to avoid sagging due to punnet weight. The point of transfer, where the v-belts meet the punnet conveyors, must be considered in order to implement a smooth transition at both the entry and exit of the enclosure. The requirement is for the punnet to enter the heat-seal machine long-edge leading (due to cost-saving design), but this is problematic for the v-belts in the case where a  punnet enters incorrectly oriented, and too narrow to be transfered onto the v-belts. Therefore, the design was to employ a $90^{\circ}$ transfer belt between the vision system and heat-seal machine, allowing the punnets to be short-edge leading as they enter the enclosure, eliminating the risk of containers falling between the v-belts. 
 
 
-Two $100W/240VAC$ conveyor motors are used with slightly different gear ratios. The in-feed conveyor are driven by the same motor, whilst the out-feed conveyor is driven slightly faster (using a smaller sprockets) in order to separate the punnets in case of ejection.
+Two $100W/240VAC$ conveyor motors are used with slightly different gear ratios. The in-feed conveyor and v-belts are driven by the same motor, whilst the out-feed conveyor is driven slightly faster (using a smaller sprockets) in order to separate the punnets in case of ejection.
 
 
 The ejector mechanism must be positioned some time after the vision inspection, given that the v-belts prevent any dislodgement, and the added complications associated with adding ejector mechanisms in the acquisition section. Therefore the ejection must occur on the out-feed conveyor, generated by a pnuematic burst of air from the side, pushing it in a direction perpendicular to the motion of flow, onto a roller-ramp which then guides the punnet into an accumulation area. Both the ejector and acquisition system activate when a punnet passes the photo-electric sensor. In the case of ejection, the microcontroller must be synchronised with the running application to determine which punnets to eject and will only activate the pneumatics when defects are detected. The acquisition system generates a sequence of imaging - through the hardwired triggering mechanism attached to the I/O port of each camera - to capture the different views and spectrums of each punnet, followed by instigating the image processing and display routines within the application. 
@@ -1784,13 +1783,10 @@ The ejector mechanism must be positioned some time after the vision inspection, 
 \subsubsection{Electronics and Power}
 
 
-The main electronic devices can be seen in Figure \ref{fig:system_construct_1} where final testing took place before they were installed. Once confirmed, the PSU was mounted and reconnected to the distribution devices and ground bars. The LED's and halogen lamps wiring has a $3.5mm$ diameter core designed for high current to avoid any thermal concerns in the already hot environment. Each LED bar is installed with it's own power line directly to the distributor, however it is more efficient and simplified to wire the hallogen lamps in pairs (equalling the current for one LED bar). This standardises the current flow on any one of the (eight in total) lines to approximately $6A$, meaning that $7.5A$ automotive fuses were suitable protection given they can withstand the inrush on startup. 
-
-Smaller LED bars ($30W$ opposed to $72W$) were required to be installed in the mid section of each side of the enclosure as main (top) LED's were upward-facing the illumination diminished significantly from the sides of the conveyor. These four devices were also paired together, taking up two outputs on the distribution device. 
- 
+The main electronic devices can be seen in Figure \ref{fig:system_construct_1} where final testing took place before they were installed. Once confirmed, the PSU was mounted and reconnected to the distribution devices and ground bars. The LED's and halogen lamps wiring has a $3.5mm$ diameter core designed for high current to avoid any thermal concerns in the already heated environment. Each LED bar is installed with it's own power line directly to the distributor, however it is more efficient and simplified to wire the hallogen lamps in pairs (equalling the current for one LED bar). This standardises the current flow on any one of the (eight in total) lines to approximately $6A$, meaning that $7.5A$ automotive fuses were suitable protection, given they can withstand the inrush on startup. 
 
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -1808,8 +1804,10 @@ Smaller LED bars ($30W$ opposed to $72W$) were required to be installed in the m
 	\label{}
 \end{figure}
 
+Smaller LED bars ($30W$ opposed to $72W$) were required to be installed in the mid section of each side of the enclosure as main (top) LED's were upward-facing the illumination diminished significantly from the sides of the conveyor. These four devices were also paired together, taking up two outputs on the distribution device. 
 
-Figure \ref{fig:system_construct_2} shows the main, and auxillary, LED's installed along with an RGB camera in order to perform some lighting testing. The diffusers and polarising sheets are sandwiched together and form a tunnel around the acquisition chamber, with the intense lighting outside diffusing and polarizing the light as it passes through. The external cladding (powder-coated steel sheets) covers each end of the lighting enclosure (above and below) and protrudes out from the rollers around the conveyors for safety purposes. 
+
+Figure \ref{fig:system_construct_2} shows the main, and auxillary, LED's installed along with an RGB camera in order to perform some lighting testing. The diffusers and polarising sheets are sandwiched together and form a rectangular tunnel around the acquisition chamber, with the intense lighting outside diffusing and polarizing the light as it passes through. The external cladding (powder-coated steel sheets) covers each end of the lighting enclosure (above and below) and protrudes out from the rollers around the conveyors for safety purposes. 
 
 
 \paragraph{Lighting Finalisation}
@@ -1880,7 +1878,7 @@ The inputs that need to be processed are generated by automatic processes (punne
 
 The heat-seal machine has a jogging mechanism to control the punnets entering the sealing press. This means that the infeed conveyors stop periodically when the press is full, creating a convergence point for the punnets which could result in a backlog. Therefore, a signal line is sent to the microcontroller so that the conveyor of the vision system mimics that of the heat-seal. The listed requirements and voltages/currents for the Phidget\texttrademark inputs are detailed in Table \ref{tab:micro_pinout_in}.
 
-The high-powered devices are controlled by the Phidget\texttrademark in conjunction with a relay bank, in which the logic level input that drives the activation of the load requires $5V$ at $70mA$ current. The relays are rated at up to $250VAC/10A$ and $30VDC/10A$ restricting each relay to control either one LED bar ($6A$), or one pair of halogen lamps ($5.8A$). This would mean nine relays would be required to perform this switching of components that was not necessarily needed to be automatically controlled. Therefore the LED bars and halogens were attached directly to the PSU so that they are powered continuously. However, as the PSU has it's own power switch, the illumination can be restricted to operational times only. The peltier and pneumatics remain as the next biggest loads and are therefore connected to the relays in order to prevent possible overload on the microcontroller, bringing the required number of relays to three. The ouputs of the microcontroller and respective power loads are listed in Table \ref{tab:micro_pinout_out}.
+The high-powered devices are controlled by the Phidget\texttrademark in conjunction with a relay bank, in which the logic level input that drives the activation of the load requires $5V$ at $70mA$ current. The relays are rated at up to $250VAC/10A$ and $30VDC/10A$ restricting each relay to control either one LED bar ($6A$), or one pair of halogen lamps ($5.8A$). This would mean 10 relays would be required to perform this switching of components that was not necessarily needed to be automatically controlled. Therefore the LED bars and halogens were attached directly to the PSU so that they are powered continuously, and given that the PSU has it's own power switch, the illumination can be restricted to operational times only. The peltier and pneumatics remain as the next biggest loads and are therefore connected to the relays in order to prevent possible overload on the microcontroller, bringing the required number of relays to three. The ouputs of the microcontroller and respective power loads are listed in Table \ref{tab:micro_pinout_out}.
 
 
 \renewcommand{\arraystretch}{0.8}% Tighter table height
@@ -1893,7 +1891,7 @@ The high-powered devices are controlled by the Phidget\texttrademark in conjunct
 		\midrule
 		Conveyor Power Switch 	& 0 & No & 5 & 0.001 & 0.005 \\[4pt]
 		\midrule
-		Pneumatic Solenoid 		& 1 & Yes & 12 & 0.07 & 0.35 \\[4pt]
+		Pneumatic Solenoid 		& 1 & Yes & 5 & 0.07 & 0.35 \\[4pt]
 		\midrule
 		Traffic Lights 			& 2 & No & 12 & 0.001 & 0.012 \\[4pt]
 		\midrule
@@ -1910,7 +1908,7 @@ The high-powered devices are controlled by the Phidget\texttrademark in conjunct
 \end{table}
 
 
-The relays and microcontroller can be seen in Figure \ref{fig:PSU_5} protected and fixed inside a plastic electronics case in order to simplify the wiring as well as keeping the relay board in close vacinity to the microcontroller pins which activate them. As the pneumatics are powered by $12V$ and the peltier $5V$, a connection from the second distribution device, as well as the $5V$ terminal, to the normally-open terminals of the relays, before running together out of the box, to their respective components. The relays have three input pins ($5V$, $GND$, and Signal), and three output terminals (Normally Open (NO), Common (C), and Normally Closed (NC)) with a small LED to indicate activation. 
+The relays and microcontroller can be seen in Figure \ref{fig:PSU_5} protected and fixed inside a plastic electronics case in order to simplify the wiring as well as keeping the relay board in close vacinity to the microcontroller pins which activate them. As the pneumatics are powered by $12V$ and the peltier $5V$, a connection from the second distribution device, as well as the $5V$ terminal, to the normally-open terminals of the relays are made, before running together out of the box, to their respective components. The relays have three input pins ($5V$, $GND$, and Signal), and three output terminals (Normally Open (NO), Common (C), and Normally Closed (NC)) with a small LED to indicate activation. 
 
 
 \begin{wrapfigure}{r}{0.7\textwidth}
@@ -1922,7 +1920,7 @@ The relays and microcontroller can be seen in Figure \ref{fig:PSU_5} protected a
 \end{wrapfigure}
 
 
-The $5V$ and $3.3V$ fuses and terminals are seen in Figure \ref{fig:PSU_5} (top left, black electrical box), and power the relays, however the signal is generated by the microcontroller. Eight $5V$ power lines were bundled into two connections (as this is a more common voltage), and eight $3.3V$ bundled into one connection. The PSU specifications table states that the maximum current for either channel is $25A$ and they must share $160W$ load. Similarly, either of the $12V$ rails can supply up to $60A$ each but must share a total load of $1176W$, giving the power system the ability to dynamically distribute power as required, as well as the ability to reconfigure or add devices easily.
+The $5V$ and $3.3V$ fuses and terminals are seen in Figure \ref{fig:PSU_5} (top left, black electrical box), and power the relays, however the signal is generated by the microcontroller. Eight $5V$ power lines from the PSU were bundled into two connections (as this is a more common voltage), and eight $3.3V$ bundled into one connection. The PSU specifications table states that the maximum current for either channel is $25A$ and they must share $160W$ load. Similarly, either of the $12V$ rails can supply up to $60A$ each but must share a total load of $1176W$, giving the power system the ability to dynamically distribute power as required, as well as the ability to reconfigure or add devices easily.
 
 Wiring diagrams provided in Appendix \ref{app:wiring} detailing the complete wiring configurations accross their different versions.
 
@@ -1943,7 +1941,7 @@ As described in Chapter \ref{sec:I}, the polarising material transforms the inco
 	\label{fig:nd_filters}
 \end{figure}
 
-The cameras are positioned in the centre of the respective lighting clusters in terms of spectral range in order to provide the best lighting response for each image. Therefore the RGB and IR are seperated by a distance approximately $400mm$ apart, complicating the asynchronous aquisition process.
+The cameras are positioned in the centre of the respective lighting clusters in terms of spectral range in order to provide the best lighting response for each image. Therefore the RGB and IR are seperated by a distance approximately $400mm$, complicating the asynchronous aquisition process.
 
 
 
@@ -1974,46 +1972,78 @@ Therefore the v-belts and rail spacing required adjustment to the length of the 
 		\label{fig:inside_enclosure_2}
 	\end{subfigure}%
 	
-	\caption{(a) , (b) .}
+	\caption{(a) Punnet catcher installed in order to stop falling punnets due to mis-transfer, (b) view in opposite direction of flow showing camera separation, punnet catcher, and v-belts.}
 	\label{}
 \end{figure}
 
-A mechanical switch was added to the underside of the catcher so that a signal can be sent to the microprocessor, which then stops the production line and applies the buzzer sound to alert an operator. This event is far less likely than the alternative, in terms of interrupting the production line, and can be corrected in a much quicker timeframe.
+A mechanical switch was added to the underside of the catcher so that when a punnet falls, a signal can be sent to the microprocessor, which then stops the production line and applies the buzzer sound to alert an operator. This event is far less likely than the alternative in terms of interrupting the production line, and can be corrected in a much quicker timeframe.
 
-The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure, before feeding directly into the heat-seal machine (Figure \ref{fig:production_final}). The external cladding is modified to allow the punnet's entry and exit points (without  external illumination noise, or safety hazards), by constructing a protruding tunnel on both sides of the enclosure. A touchscreen was also installed to allow operators and developers easy access to the UI buttons and display. The commercially available Dell\textregistered P2418HT 24-inch capacitive touch screen can help development as well as production with the ability to debug whilst on the production line.
+The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure, before feeding directly into the heat-seal machine (Figure \ref{fig:production_final}). The external cladding is modified to allow the punnet's entry and exit points without external illumination noise, or safety hazards, by constructing a protruding tunnel on both sides of the enclosure. A touchscreen was also installed to allow operators and developers easy access to the UI buttons and display. The commercially available Dell\textregistered P2418HT 24-inch capacitive touch screen can help development, as well as production, with the ability to debug whilst on the production line.
 
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/production_final.JPG}
-	\caption{SQA enclosure with touchscreen and cladding. The SQA system feeds into the heat seal machine directly.}
+	\caption{SQA enclosure set up in final configuration with touchscreen and cladding, set up in the Queensland facility. The SQA system feeds into the heat seal machine directly.}
 	\label{fig:production_final}
 \end{figure}
 
-The PC is installed under the production line and connected to the internet via a WiFi so that development can occur with a remote client. This gives th flexibility of being able to monitor production, develop the application, or make changes and troubleshoot without production room prescence required.
+Conversely, the PC is installed under the out-feed conveyor and connected to the internet via a WiFi so that development can occur with a remote client. This gives developers the flexibility of being able to monitor production, develop the application, or make changes and troubleshoot without production room prescence required.
 
 
 
 
 \subsection{Queensland Production - Season 1}
 
-Due to the size and shape of the heat-seal machine and the packing bench layout, the packed punets of berries must be transported by pallet to the SQA vision system. From here they are placed on the in-feed conveyor manually, in the abscence of an automatically-fed conveyor system. A start up procedure has been documented so that the operators can start and stop the vision system when required and therefore will not require constant monitoring by the developers. 
+Due to the size and shape of the heat-seal machine and the packing bench layout, the packed punets of berries must be transported by pallet to the SQA vision system. From here they are placed on the in-feed conveyor manually, in the abscence of an automatically-fed conveyor system. A start up procedure has been documented so that the operators can start and stop the vision system when required, given that the ejector mechanism was not yet installed. However, futher work on debugging, and finalising features occured with several problems found including image storage, camera setting continuity, and thread synchronisation miss-matching. 
 
 
+
+\subsubsection{Image Synchronisation}
+
+Each punnet consists of four image files (one for each camera), and must be compiled and saved together for quality traceability requirements (Chapter \ref{sec:requirements}). Therefore, each image is saved into a folder accompanied by a text file detailing metadata regarding statistics of the punnet such as date/time of images and classification information. The application saves the images and text file after population occurs via the two asynchronous threads generating RGB and IR images seperately. 
+
+However, some of the punnet's images failed to match, resulting in IR images which were not related to the RGB. When debugging the problem in the IDE it was found that if one set of images is received from the cameras and the others are not, the process would force the application to wait until the next punnet to populate the previous information. This is due to the triggered camera method, which waits for the image buffer indefinitely before proceeding, then returning to wait again some short time later. If the trigger does not occur, the thread waits until it does, before submitting images to the punnet object, leading to the conclusion that one of the punnet sensors was faulty or incorrectly calibrated. This was tested by monitoring the sensor's output via a wired connection from the sensor to the microcontroller. 
+
+Experiments revealed that the both sensors had intermittent detection problems where they would not respond well in full-speed conditions. Trouble shooting performed included reflectance confirmation, callibration, independent power supply, and replacing sensor units, without success. As it was concluded that it was the environment creating errors (due to the metal surroundings and close proximity to objects) a redesign would be required to be refit inside the enclosure. However, a machine vision solution exists to solve this problem, given that the punnets flow in the same direction seen by a fixed camera. Optical flow is a method of image subtraction in the time domain, that is:
+\begin{equation}
+	I_{n+1} - I_n
+\end{equation}
+
+where $I_n$ is the image number in the stream, resulting in difference pixels (the moving objects) in an otherwise stationary scene. By analysing the difference regions, the punnet could be centred and acquired accurately, even though an extra time resource was taken up by the additional algorithms. 
 
 \subsubsection{Ejector Mechanism}
 
+With the vision system operational, the ejector and pneumatics were designed and added to the out-feed conveyor, as well as the attachment of the exit ramp. The ejector nozzle is positioned in the optimum location and can be moved to either side, ejecting to the left or right, providing layout flexibility. The air is supplied by the packing facility via a single $10mm$ airline which is connected to a regulator attached under the conveyor. The output of the regulator is a reduced pressure using a $6mm$ airline, given that the force of the air burst required to push the punnet would not be significant, and easier to fine tune.
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ejector.jpg}
+	\caption{The pneumatic ejector system showing the yellow nozzle (top left) next to the punnet sensor and reflector, pneumatic actuator (top centre) as well as the exit ramp. \textit{Note: The regulator is not shown as it is attached underneath the conveyor.}}
+	\label{fig:ejector}
+\end{figure}
 
+The punnet sensor and relector are attached as close as possible to the ejector nozzle and provides a trigger for activation of the pneumatic system, which is fired for a pre-determined period, in order to direct the punnet onto the exit ramp as smoothly as possible. Figure \ref{fig:ejector} depicts all the components (excluding the regulator) of the system shortly after testing was completed. The activation of the ejector also depends on the result of the processing of each punnet, ejecting only when defects are found. Therefore the microprocessor must know the status of each punnet so that only the identified affected punnets are ejected, whilst allowing others to pass. The microcontroller class must therefore query the results for each punnet in the array (kept as global variables in the application) when passing the ejector, in order to determine which punnets to eject and which are to remain on the production line. The microcontroller must also determine the timing of the pneumatic burst including delay between sensing and activation and the duration the solenoid is opened. 
 
+Initial testing concluded that in order to provide enough force to push the $250g-300g$ punnet and successfully transfer it from the production conveyor (running at approximately $27cm/s$) to the exit ramp, required the following:
+\begin{itemize}
+	\item $90psi$ ($6bar$) of pressure
+	\item $20ms$ delay time
+	\item $200ms$ pneumatic duration
+\end{itemize}
+
+The image in Figure \ref{fig:ejector} shows the pneumatic nozzle offset to the exit conveyor due to the transition time of the punnet and the speed of the conveyor. This allowed for the smoothest transfer of the punnets, avoiding collision with walls or rails in order to prevent damage to sound berries.
 
 
 \subsubsection{Data Collection}
 
-A normal operating day duration consists of $10h-16h$ of constant packing with two to three meal breaks, which means that many thousands of punnets can be 
+A normal operating day duration consists of $10h-16h$ of constant packing with two to three meal breaks, allowing for up to $20,000$ punnets to be packed per day. However, due to fruit variability, bad weather, market conditions, and logistical reasons, the amount packed varied from $500$ to $14,000$ punnets per day over the duration of each season. Variablitiy at the beginning and end of season as well as moving operations interstate (in order to meet ideal growing condiditons) means that less fruit is packed on average as the season is beginning and concluding. The quality of the fruit also varies at these times with underripe and immature fruit seen at the beginning of each season, and overripe, mouldy, or deteriorated berries towards the end.
 
-A dataset of 500+ images, ground-truthed by operators was used to assess the algorithms implemented. The current under ripe algorithm had very good results at $89.11\%$ accuracy. Examples of typical under ripe rejections is shown in Figure \ref{fig:UR_berries}.
+
+During the first season on the production line, a dataset of $>30,000$ punnets was acquired, with 2-4 images per punnet from each orientaion and wavelength. The system ejected 67 punnets even though the only algorithm implemented at this time was the under ripe detection. The ejector was turned on towards the end of the season, which meant that the fruit had had many months to ripen meaning a reduction in underripe instances.  
+
+A dataset of 500+ images, ground-truthed by operators was used to assess the algorithms implemented. The current under ripe algorithm had very good results at $89.11\%$ accuracy. Examples of some typical under ripe rejections is shown in Figure \ref{fig:UR_berries}.
 
 
 \begin{figure}[h]
@@ -2024,12 +2054,78 @@ A dataset of 500+ images, ground-truthed by operators was used to assess the alg
 \end{figure}
 
 
+The Queensland season begins to harvest fruit in May/June through to October/November, with the southern farms harvesting in the opposing seasons. Therefore, in order to utilise the system constantly, it must be transported between farms (interstate) depending on the fruit volume and time of year. The system is packed and transported along with other machinery used in both farms such as the heat-seal machine, scales and metal detector. 
 
-
-During the first season on the production line, a dataset of $>30,000$ punnets has been acquired, with 2-4 images per punnet from each orientaion and wavelength. The system has ejected 67 punnets since the ejector was turned on - just over one month of production - keeping in mind that the only algorithm implemented at this time was the under ripe detection. The ejector was turned on towards the end of the season, which meant that the fruit had had many months to ripen. Two more algorithms were added to the repertoir ('overripe', and 'too small') with labelling of a test set completed.
 
 
 \subsection{South Australia Production - Season 2}
+
+
+The production line in Queensland (Wamuran) differs from that of South Australia (Myponga), given the former has a manually-fed production line and the latter is automatically-fed via converging conveyor belts seen in Figure \ref{fig:myponga_line}. The packers stand either side of the large blue belt, and pack accordingly into either heat-seal punnets or non-standard stock such as second grade (fruit markets), jumbo packs ($500g$), and specialty items (A-grade, boutique, hand selected). The heat-seal punnets placed on the conveyor in line with the red in-feed conveyor of the vision system, whilst the rest are placed opposite and diverted onto a packing table. 
+
+
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth, angle=90]{myponga_line.jpg}
+		\caption{}
+		\label{fig:myponga_line}
+	\end{subfigure}%
+	\begin{subfigure}{.35\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{myponga_system_line.jpg}
+		\caption{}
+		\label{fig:myponga_system_line}
+	\end{subfigure}%
+	
+	\caption{(a) A view looking backwards from the enclosure down the packing line. The packing benches are seen on the left and right side of the large blue belt, with one lane for heat-seal punnets and one for jumbo/specialty punnets., (b) the heat-seal machine (foreground), SQA vision system, and packing line (background).}
+	\label{}
+\end{figure}
+
+The main conveyor pictured is designed to keep running as much as possible in order to keep the packers working continuously. As the packers are paid by the number of punnets they pack, conveyor stopages result in less packing (when their immediate space on the conveyor is full) hence, loss of income for both company and workers. Therefore, the heat-seal and subsequent vision system jogging mechanism cannot be wired directly to the main conveyor, meaning that there will be an accumulation of punnets at the end, should the vision system or heat-seal machine stop. However, the main conveyor runs considerably slower than the in-feed to the vision system, resulting in taking more time to build up, and a good separation of containers as they enter the enclosure.
+
+Two more algorithms were added to the repertoir ('overripe', and 'too small') with labelling of a test set completed. The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and creating a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresdholding and morphology parameters, keeping the overall method unchanged. 
+
+Several design flaws were noticed after nearly two seasons of packing room production, such as a large build up of dirt, dust, insects, and strawberry material in the bottom of the enclosure arch, added to the dust build up on cameras, polarisers, lighting and lenses, as well as overwhelming the filters on the computer, PSU, and enclosure itself. The images shown in Figure \ref{fig:dirty_enclosure} illustrate the problems.
+
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[height=0.9\linewidth,angle=270]{dirt_1.jpg}
+		\caption{}
+		\label{fig:dirt_1}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[height=0.9\linewidth,angle=270]{dirt_2.jpg}
+		\caption{}
+		\label{fig:dirt_2}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[height=0.9\linewidth,angle=270]{dirt_3.jpg}
+		\caption{}
+		\label{fig:dirt_3}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[height=0.9\linewidth,angle=270]{dirt_4.jpg}
+		\caption{}
+		\label{fig:dirt_4}
+	\end{subfigure}%
+	
+	\caption{Enclosure particle build up showing (a) top intake fan, (b) bottom of enclosure arch with lighting removed in order to clean, (c) a filter from the enclosure full of dust, and (d) dust on the polarising sheets.}
+	\label{fig:dirty_enclosure}
+\end{figure}
+
+
+In order to clean the enclosure properly, the bottom lighting cludters and cameras were removed to allow access to the underside of the chamber. This situation is not ideal (especially if performed each season), and along with difficulty of access to components inside the enclosure, and changed lighting arrangement, prompted a redesign of the entire system. 
+
+
 
 
 
@@ -2037,12 +2133,320 @@ During the first season on the production line, a dataset of $>30,000$ punnets h
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-
 \section{Colour Analysis of Strawberries on a Real-time Production Line}
 \label{sec:paper_2}
 
+\textbf{Gilbert Eaton, Andrew Busch, Rudi Bartels, and Yongsheng Gao}
+
+\textit{Conference paper - Digital Image Computing: Techniques and Applications (DICTA) - accepted Aug 2018}
 
 
+\subsection{Abstract}
+
+\textbf{A novel system has been designed where colour analysis algorithms facilitate grading ripeness of packed strawberries on a fast-paced production line. The Strawberry quality system acquires images at the rate of $2 punnets/s$, and feeds the images to the two algorithms. Using CIELAB and HSV colourspaces, both underripe and overripe colour features are analysed  resulting in F1 scores of $94.7\%$ and $90.6\%$ respectively, when measured on multiple defect samples. The single defect class results scored $80.1\%$ and $77.1\%$. The algorithms total time for the current hardware configuration is $121ms$ maximum and $80ms$ average, which is well below the required time window of $500ms$.}
+	
+\textbf{$105,542$ punnets have been assessed by the algorithm and has rejected $4,952$ in total ($4.9\%$),  helping to ensure the quality of the product being shipped to customers and avoiding costly returns.}
+
+
+\subsection{Background}
+
+Real-time colour grading is an essential part of quality assessment of fruits and vegetables in order to determine ripeness or consistency, and can be used to detect skin blemishes caused by rots, mould, pests, or mishandling \cite{blasco3}. Historically, this has been performed by the people harvesting and packing them, however, the industry has recently been utilizing new technologies instead of relying on manual intervention for sorting/grading produce \cite{londhe}. Automating these processes can be very difficult to achive in agriculture, particularly in fast-paced environments where tons of produce flows from field and through to the supply chain for consumers daily. Modern advances in both computers and vision systems have allowed this type of analisis to be integrated in many production/packing lines around the world. Discussed in this article, the colour analysis method used by our vision system on a commercial strawberry packing line.
+
+Colour analysis is commonly used as an indication of the quality of fruits and vegetables, where these features can be used to grade/sort items into categories \cite{jun, elmasry3}, to detect skin blemishes \cite{blasco3, leemans}, size and volume estimation \cite{bundit, elmasry3}, and texture analysis \cite{jun, rakun}. Multiple cameras have been used (often requiring multiple processors) to minimise uninspected surfaces \cite{zouxiao, qingzhong}, to assess multiple defects \cite{blasco4}, counting \cite{song}, 3D reconstruction \cite{panitnat} or to allow speed increases\cite{reece}.   
+
+Other methods for fruit and vegetable quality analysis have been adopted such as infra-red image analysis or spectroscopy \cite{guthrie, bureau, yande}, and hyperspectral imaging \cite{renfu} \cite{jianwei, mendoza, rajkumar}. These acquisition systems can be used to detect defects such as internal structure estimation, soluable solids content, under-skin defects and pests, and maturity. Utilizing different wavelengths, it is a common approach to find a suitable spectral position to observe the best contrast for defects, making these features easier to extract\cite{ariana, piotr}. The system under development is intended to use a combination of colour (RGB) and infra-red (IR) bands in the future, to assess specific types of reject class such as brusing and potentially pest infestation. 
+
+Using a conveyor system, L. Xu et al \cite{xu} achieved very good results in classifying shape, ripeness, and size of strawberries. The measurements are attained by using a K-means clustering method to find seven vertical and seven horizontal axis lines. Size feature was calculated by performing experiments to find the ratio of pixels/mm and simply dividing the pixel measurements of the berry by this ratio. Using the CIELAB colour space, a dominant colour was found in the berry by means of a histogram windowing method. Liming et al \cite{liming} used a similar approach to grade single strawberries on a conveyor in real-time. They extracted shape features by using normalised line segments on the contour with a K-means clustering method to evaluate the shape, size features by experimentally attaining the camera-object distances in terms of mm/pixel, and colour features using a CIELAB a-channel histogram windowing method to find the dominant red colour. The CIELAB colour space was also used by Lin et al \cite{lin} when they developed a strawberry calyx removal system. The single strawberries entered the vision enclosure on roller rods, before being analysed using image processing to find orientation, and finally a high pressure water jet was used to cut the green parts of the strawberry off and discarding.
+
+
+The strawberry field-harvesting robot commissioned by Hayashi et al \cite{hayashi} within a greenhouse, used a method of calculating the 'Maturity Level' by analysing specific bands of the HSI colour space which represented ripe and underripe colours and intensities. As it was determined that the strawberries would be either underripe or ripe, with the event of over-ripeness ignored due to the constant operation of the harvester. They chose values of H,S, and I that equated to the colours red for ripe, whilst green, light pink, and dark pink were used for underripe in order to evaluate the ripeness before the robot picked the berries. Satoshi et al \cite{yamamoto2} also developed a robot harvester which used a red LED, green LED, and white LED to illuminate the scene in different colours before acquiring images with the same camera in order to best extract the subtle differences in shades of red and pink on the berries. 
+
+All methods researched involved imaging single strawberries, either stationary or moving on a slow conveyor. This assumption is both inefficient and impractical given the high throughput of packing facilities and delicate flesh of the strawberry.
+
+The proposed system in this article will perform quality grading of all fruits after they are packed in a real-time, fast-paced environment. This unique and novel vision system is designed to be capable of efficient and accurate in-line quality control for a large agricultural business.   
+
+
+
+\subsection{Image Acquisition}
+
+The enclosure has been designed to have a robust structure, due its placement on the production floor, and is equipped with safety systems, signals, and controls for operator use. The shell is made from $5mm$ stainless steel sheeting bolted to a $40mm$ aluminium frame. The enclosure houses all electronics, hardware and software required for sensing punnets, acquisition, and controlling the system.
+
+The system encloses part of the production line for lighting control, using DC power and cross polarizers to stabilize the intensity \cite{eaton}. In order to capture the punnets without motion blur, the shutter speeds of the cameras must be less than $3ms$ due to the production line speed of $16.6m/min$ ($0.276m/s$). Given this shutter speed restriction, along with the added diffusers and cross-polarizers, the total illumination power required is $1200W$. The colour (BFLY-U3-23S6C-C) and mono (BFLY-U3-23S6M-C) cameras are both manufactured by Point Grey (Flir Integrated Imaging Solutions, Inc.) using the Sony IMX249 sensor with a resolution of 1920x1200 and USB3 interface. As the Quantum Efficiancy (QE) is much higher on the mono camera, it is used for NIR imaging due to the higher responses at these wavelengths.
+
+The computer is a standard desktop PC with an ASUS P8Z68 motherboard and an 8-core i7 CPU. An Advantec PCE-USB4-00A1E four port dedicated USB3 PCI-e card is installed to ensure bandwidth is sufficient for all of the cameras. As each punnet enters the enclosure, it is detected by a photoelectric sensor which triggers the acquisition sequence. The $100W$ LED chips generate large amounts of heat due to the compact array of 100-$1W$ individual LED's. Therefore, thermal control is required to keep the LED chips from overheating. A combination of strategies has been integrated such as using $5mm$ thick stainless steel plates for heat dissipation (sink), thermal compound between LED and heatsink, and strobing the LED to reduce the duty cycle and allow cooling between images.  
+
+\subsection{Methods}
+\label{sec:colour_analysis}
+
+The colour analysis (and all other accompanying analyses) performed must execute and complete within $500ms$ in order to assess each and every punnet. As each image is processed by up to 10 algorithms, the runtime duration of each must be reduced where possible. Although machine learning strategies such as SVM and nueral networks may improve accuracy, initial experiments showed that these classifiers require large datasets that are well labelled to perform adequate training. The time complexity of neural networks also poses a problem due to the restricted processing time \cite{he, angiulli}. 
+
+The colour analysis described in this paper is used to distinguish under ripe and over ripe punnets. Each punnet is processed as a discrete unit, as single berries cannot be physically removed, therefore the punnet is assessed as either pass or fail in totality, with the reject berries to be replaced after inspection. This corresponds to the customer quality performance reports which indicate number of punnets rejected as opposed to number of berries. 
+
+Market conditions, weather, supply chain, and seasonality can greatly affect the quality of crops in general, but particularly for strawberries as they are not considered a hardy fruit unlike apples and oranges. As these adversarial factors occur, the impact seen on the strawberry market can change dramatically from pricing and quality to short supply. The packing operators must be able to account for these dynamic conditions by increasing and decreasing the acceptable standard. This means that under certain circumstances, underripe, overripe, misshapen or even fruit usually considered to be too small will be packed and shipped due to market availability. Given this variation of requirements by the operators, the system must have the ability to adjust the thresholds of each quality characteristic, and therefore only reject punnets based on current market conditions or recent weather. 
+
+In order to overcome speed concerns, and to reduce overall processing time, the colour algorithm is designed to scale each image down from a high resolution to a fraction of the original, and assess regions comprised of less pixels. This direction is, again aligned with the customer expectations due the inherrant fact that very small regions ($<3mm$) will be largely ignored by visual inspections. It is only the larger, connected regions which determine overall ripeness.
+
+The saturation channel of the $HSV$ colourspace is used initially find the berries in each frame, due to the more colourful berries and punnet when compared to the dark background. 
+
+To extract HSV colourspace given three channels R, G, B and $Min = min(R, G, B)$, $Max = max(R, G, B)$:
+\begin{equation}
+H = 
+\begin{cases} 
+rad(60) \times \frac{(G-B)}{Max-Min}, & R=Max \\
+rad(60) \times \frac{(B-R)}{Max-Min} + 2, & G=Max \\
+rad(60) \times \frac{(R-G)}{Max-Min} + 4, & B=Max \\   
+\end{cases}
+\end{equation}
+\begin{equation}
+S = 
+\begin{cases} 
+0, & Max=Min \\   
+(Max-Min)/Max, & otherwise        
+\end{cases}
+\end{equation}
+\begin{equation}
+V = Max
+\end{equation}
+
+
+However, as the colour white has low saturation and can appear on underripe berries, this must be identified, extracted and concatenated to the region in order to properly calculate the underripe region areas. The red berry and white berry usually converge gradually so that the regions overlap when extracted. This means that simply taking the intersection of all white regions with known red berry regions will yield only those which are overlapping red berry as described in equations \ref{red_berry_thresh}, \ref{white_berry_thresh}, and \ref{intersect_white_berry}.
+
+\begin{equation}
+R_{red} = \sum_{i=0}^{P}t1<S_i<max(S)
+\label{red_berry_thresh}
+\end{equation}
+
+\begin{equation}
+R_{white} = \sum_{i=0}^{P}t2<V_i<max(V)
+\label{white_berry_thresh}
+\end{equation}
+
+\begin{equation}
+R_{overlap} = R_{white} \cap R_{red}
+\label{intersect_white_berry}
+\end{equation}
+
+where the red and white regions ($R$) are found by using threshold values $t1$ and $t2$ over the number of pixels $P$, on the saturation ($S$) and value ($V$) channels of the transformed image, respectively. If $R_{overlap}$ is greater than zero, then $R_{white}$ is concatenated with the known red regions. 
+
+Strawberries are member of the nonclimacteric class of fruit, meaning that ripening halts once harvested. Strawberries are more firm and will transport better when harvested just before full ripeness, although are not as full in flavour as entirely ripened fruit\cite{artur}, therefore it is acceptable for customers and realistic for pickers to expect some amount of underripeness as well as overripeness. 
+
+
+\subsubsection{Underripe Features}
+
+The ripening process, in terms of colour, for most fruit will start green and slowly transition through phases of yellow/orange, then pink before bright red and finally dark red. Figure \ref{fig:yellow_white} shows an image containing underripe berries, the yellow and white regions clearly seen.
+
+Once the berry contour has been found and the image domain reduced to that region, underripe pixels are extracted by simply taking the difference of the $a^*$ channel and the $b^*$ channel. After contrast enhancement, areas with no red pixels are highlighted. The process is visualised in Figure \ref{fig:underripe_process}. Perfoming this analysis on the entire image results in many false positives, but this method has been found to be very effective when applied to the known berry region.   
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{zoom_image.jpg}
+		\caption{}
+		\label{fig:yellow_white}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{hsv_contour.jpg}
+		\caption{}
+		\label{fig:hsv}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{pow_image.jpg}
+		\caption{}
+		\label{fig:pow_image}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{result.jpg}
+		\caption{}
+		\label{fig:result}
+	\end{subfigure}%
+	
+	\caption{Left to right: (a)Original image with visible white and yellow regions, (b)HSV saturation channel and berry contours after addition of white berry regions, (c)Diff(a*, b*) result highlighting absence of red colour, (d)Result of post-processing indicating underripe areas.}
+	\label{fig:underripe_process}
+\end{figure}
+
+
+\subsubsection{Overripe Features}
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.30\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{over_berries.jpg}
+		\caption{}
+		\label{fig:over_berries}
+	\end{subfigure}%
+	\begin{subfigure}{.30\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{over_hue.jpg}
+		\caption{}
+		\label{fig:over_hue}
+	\end{subfigure}%
+	\begin{subfigure}{.30\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{over_diff_hue.jpg}
+		\caption{}
+		\label{fig:over_diff}
+	\end{subfigure}%
+
+	\begin{subfigure}{.30\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{over_light.jpg}
+		\caption{}
+		\label{fig:over_light}
+	\end{subfigure}%	
+	\begin{subfigure}{.30\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{over_light_diff.jpg}
+		\caption{}
+		\label{fig:over_light_diff}
+	\end{subfigure}%
+	\begin{subfigure}{.30\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{over_result.jpg}
+		\caption{}
+		\label{fig:over_result}
+	\end{subfigure}%
+	
+	\caption{Left to right: (a)Berry region extracted using method from underripe algorithm, (b)Result of thresholding expanded HSV hue channel to find light colour berries, (c)Difference region of $a$ and $b$, (d)V channel used to illiminate edges. e)Intersection result of $c$ and $d$, (f)Overripe berries extracted.}
+	\label{fig:overripe_process}
+\end{figure} 
+
+The colour difference between ripe and overripe berry is much narrower than the comparrison with underripe. Underripe colours may be white, green, yellow, or pink whereas overripe colour is a slightly darker red than perfectly ripened berries appear. This small variation combined with the many occlusions make the overripe features difficult to extract.
+
+Shadowy areas of the punnet can be falsely classified as overripe berry, as the colour profiles are very similar. Therefore, the algorithm must exclude the edges of the berries in order to improve the accuracy of identifying overripe features. 
+
+Using a known vector range in the $HSV$ colourspace $\{H_0, S_0, V_0\}, \{H_1, S_1, V_1\},....,\{H_n, S_n, V_n\}$, the good quality berry colour is  extracted and compared to the entire berry region as shown in Figure \ref{fig:over_berries}, \ref{fig:over_hue} and \ref{fig:over_diff}. Note that if there is sufficient underripe regions the algorithm will end before this point. Therfore, the vector range is inclusive of underripe colours ensuring only darker pixels are extracted in the difference of the two regions.
+
+\begin{table*}[h]
+	\caption{Results of algorithm testing.}
+	\label{tab:algo_test}
+	\begin{tabularx}{\textwidth}{@{}l*{8}{C}c@{}}
+		\toprule
+		Algorithm & Defects & FP  & FN  & TP  & TN  & Prec.(\%) & Rec.(\%) & F1 score(\%) & Y-Index(\%)\\ 
+		\midrule
+		Underripe   & Single   & 19 & 90 & 220 & 198 & 92.1 & 71.0 & 80.1 & 62.2 \\[6pt] 
+		& Multiple & 7  & 25 & 285 & 210 & 97.6 & 91.9 & 94.7 & 88.7 \\[6pt]
+		Overripe    & Single   & 44 & 82 & 212 & 177 & 82.8 & 72.1 & 77.1 & 52.2 \\[6pt]
+		& Multiple & 19 & 35 & 259 & 202 & 93.2 & 88.1 & 90.6 & 79.5 \\[6pt]	 
+		\bottomrule
+	\end{tabularx}
+\end{table*}
+
+
+In order solve the problem of berry edges, an intensity threshold is applied which ignores the darker areas of the punnet including voids, berries too dark to grade, and edges where shadows occur (Fig. \ref{fig:over_light}). Performing an intersection of these regions with the dark pixels found ensures that any overripe candidate must lie on the un-occluded surfaces of berries in order to be classified properly. 
+\begin{equation}
+R_{cand} = R_{berry} - R_{good}
+\label{diff_berry_hue}
+\end{equation}
+
+\begin{equation}
+R_{norm} = \sum_{i=0}^{P}t3<V_i<max(V)
+\label{berry_tops}
+\end{equation}
+
+\begin{equation}
+R_{overripe} = R_{cand} \cap R_{norm}
+\label{intersect_dark_berry}
+\end{equation}
+
+$R_{cand}$ is the candidate overripe region which may still contain false-positive pixels. The threshold to find the surface normal ($R_{norm}$) of the berries is then intersected with the candidates to highlight only confident matches as shown in Figures \ref{fig:over_light_diff} and \ref{fig:over_result}.
+
+
+\subsection{Results}
+
+
+The colour analysis algorithms have been implemented on the production line and, at the date of this paper, graded 105,542 punnets of which 4952 punnets were rejected due to failing to meet colour requirements. Continuous grading on-line will ensure that the quality of the product being packed will meet the customer requirements, and prevent reject shipments. Reject shipments can occur even when just a few poor quality punnets are observed forcing costly returns, loss of product, and reduced reputation in the industry.
+
+
+Both algorithms have input sensitivity levels to help deal with seasonality. As discussed in section \ref{sec:colour_analysis}, the seasonality determines the acceptability of the fruit. This allows operators to, for example, change the sensitivity and allow slightly poorer quality fruit to pass, whilst still maintaining a threshold to remove moderate and severe cases.
+
+Due to this variability in reject level, the quantitative analysis was split into two different measurements - single defect and multiple defects. Multiple defects meaning that there exist more than one region of the same reject class in each image. For example, a multiple defect underripe punnet will have greater than one region (that meets certain conditions) with underripe features.
+
+Table \ref{tab:algo_test} lists the results of testing for both algorithms where the test set was ground truthed with 310 out of 527 punnets underripe, and 294 out of 515 punnets overripe in a separate set. In order to best compare the single and multiple defect classes, the same test punnets were used with the addition of more defect fruit for the multi-defect instances. The confusion matrices for the tests are detailed in Tables \ref{tab:confusion_1},  \ref{tab:confusion_2}, \ref{tab:confusion_3} and \ref{tab:confusion_4}.
+
+The number of punnets for each test is broken into false positive, false negative, true positive, and false negative, used to calculate precision, recall, and F1-score as well as Youden's index or J statistic. Youden's index (Y-Index) is the measure of the performance of a dichotomous diagnostic test where informedness is the generalization of this method to a multi-class set.
+
+F1-Score results for multiple defects are calculated as $94.7\%$ and $90.6\%$ for the underripe and overripe algorithms respectively. The single defect class results scored $80.1\%$ and $77.1\%$ given the high probability of occlusion and shadows, and rotational variance of each berry.
+
+
+\begin{table}
+	\centering
+	\caption{Confusion matrix for single defect underripe tests.}
+	\label{tab:confusion_1}
+	\begin{tabular}{ccc}
+		\toprule
+		$n=527$ & Predicted: Good & Predicted: U/R  \\ 
+		\midrule
+		Actual: Good   & 198 & 19    \\[6pt] 
+		Actual: U/R	   & 90  & 220  \\[6pt] 
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Confusion matrix for multiple defect underripe tests.}
+	\label{tab:confusion_2}
+	\begin{tabular}{ccc}
+		\toprule
+		$n=527$ & Predicted: Good & Predicted: U/R  \\ 
+		\midrule
+		Actual: Good   & 210 & 7    \\[6pt] 
+		Actual: U/R	   & 25  & 285  \\[6pt] 
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Confusion matrix for single defect overripe tests.}
+	\label{tab:confusion_3}
+	\begin{tabular}{ccc}
+		\toprule
+		$n=515$ & Predicted: Good & Predicted: O/R  \\ 
+		\midrule
+		Actual: Good   & 177 & 44    \\[6pt] 
+		Actual: O/R	   & 82  & 212  \\[6pt] 
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Confusion matrix for multiple defect overripe tests.}
+	\label{tab:confusion_4}
+	\begin{tabular}{ccc}
+		\toprule
+		$n=515$ & Predicted: Good & Predicted: O/R  \\ 
+		\midrule
+		Actual: Good   & 202 & 19    \\[6pt] 
+		Actual: O/R	   & 35  & 259  \\[6pt] 
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+Recall takes the ratio of the relevant class selected over the entire relevant class. For example, how many underripe detections were made compared to the total amount of underripe punnets. Precision measures the amount of correct detections compared to all detections. 
+
+This indicates for both the underripe and overripe results the flase negatives are greater than the false positives. This was an intentional bias in development in order to gain maximum acceptance from operators and managers at the facility. If the system was to have low precision (even with high recall), it may be seen as more of a burden than a benifit to smooth operation of the packing line.
+
+The total propogation time of both algorithms had a maximum of $121ms$ and average of $80ms$ when tested on a series of 100 images. The processing window is $500ms$ (time between punnets at max speed) and therefore computes and makes a decision within the required timeframe.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Conclusion}
+
+Two colour analysis algorithms were developed to assist in grading packed strawberries in a real-time production environment. Multiple defect detection results indicate the validity of the system and it's accuracy, and operators can tune the system to suit the market conditions. However, further work is required in order to detect single defect cases more accurately. With images being acquired daily from the production line, labelling can begin in order to provide a large enough dataset to enable deep learning strategies. For example, an SVM classifier could be trained with a few hundred labelled images, but tens of thousands would be required for training a neural network which is the ultimate goal. 
+
+
+The inspection system, along with these algorithms have already helped in reducing the amount of poor quality berries being shipped by the company, leading to increased Quality Assurance, Quaity Control, and mitigating potential financial losses.
 
 
 
@@ -2054,10 +2458,22 @@ During the first season on the production line, a dataset of $>30,000$ punnets h
 \label{sec:III}
 
 
+\subsection{Enclosure}
+
+panel, encapsulation, operator friendly, 
 
 
+\subsection{Lighting}
+
+strobing, mosfets, circuits, 100W LED, 
 
 
+\subsection{Microcontroller}
+
+controllino
+
+
+\subsection{Queensland Production - Season 3}
 
 
 
@@ -2075,7 +2491,23 @@ During the first season on the production line, a dataset of $>30,000$ punnets h
 
 
 
+\subsection{Machine Learning}
 
+
+
+\subsection{Linux Operating System}
+
+
+
+\subsection{User Interface}
+
+
+
+\subsection{OS Transition into Production}
+
+
+
+\subsection{Transfer Learning with Resnet}
 
 
 

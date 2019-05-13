@@ -19,51 +19,47 @@ Repeated entry---line 1471 of file Master.bib
 I'm skipping whatever remains of this entry
 Warning--entry type for "smith" isn't style-file defined
 --line 1591 of file Master.bib
-Repeated entry---line 1625 of file Master.bib
- : @article{bottou
- :                ,
-I'm skipping whatever remains of this entry
 Warning--entry type for "tensorflow" isn't style-file defined
---line 1955 of file Master.bib
+--line 1939 of file Master.bib
 Warning--entry type for "udacity" isn't style-file defined
---line 1971 of file Master.bib
+--line 1955 of file Master.bib
 Warning--entry type for "xprize" isn't style-file defined
---line 1987 of file Master.bib
+--line 1971 of file Master.bib
 Warning--entry type for "cortana" isn't style-file defined
---line 2003 of file Master.bib
-Repeated entry---line 2019 of file Master.bib
+--line 1987 of file Master.bib
+Repeated entry---line 2003 of file Master.bib
  : @article{mohammed
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2055 of file Master.bib
+Repeated entry---line 2039 of file Master.bib
  : @article{Lee
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2109 of file Master.bib
+Repeated entry---line 2093 of file Master.bib
  : @article{zheng
  :               ,
 I'm skipping whatever remains of this entry
 Warning--entry type for "baranowski" isn't style-file defined
---line 2289 of file Master.bib
+--line 2273 of file Master.bib
 Warning--entry type for "gurney" isn't style-file defined
---line 2359 of file Master.bib
+--line 2343 of file Master.bib
 Warning--entry type for "physicsopenlab" isn't style-file defined
---line 2373 of file Master.bib
+--line 2357 of file Master.bib
 Warning--entry type for "lumicrest" isn't style-file defined
---line 2429 of file Master.bib
-I was expecting a `,' or a `}'---line 2487 of file Master.bib
+--line 2411 of file Master.bib
+I was expecting a `,' or a `}'---line 2469 of file Master.bib
  :  
  :  year          = "2011",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "nelson" isn't style-file defined
---line 2493 of file Master.bib
-I was expecting a `,' or a `}'---line 2535 of file Master.bib
+--line 2475 of file Master.bib
+I was expecting a `,' or a `}'---line 2517 of file Master.bib
  :  
  :  year          = "1991",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2553 of file Master.bib
+I was expecting a `,' or a `}'---line 2535 of file Master.bib
  :  
  :  year          = "2002",
 (Error may have been on previous line)
@@ -71,48 +67,49 @@ I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "peng"
 Warning--I didn't find a database entry for "luo"
 Warning--I didn't find a database entry for "yavs"
+Warning--I didn't find a database entry for "artur"
 Warning--empty year in artusi
 Warning--empty year in anderson
 Warning--empty year in kuranov
-You've used 135 entries,
+You've used 160 entries,
             1876 wiz_defined-function locations,
-            1191 strings with 26425 characters,
-and the built_in function-call counts, 41117 in all, are:
-= -- 4148
-> -- 1469
+            1311 strings with 32743 characters,
+and the built_in function-call counts, 50617 in all, are:
+= -- 4950
+> -- 2159
 < -- 0
-+ -- 550
-- -- 415
-* -- 2738
-:= -- 5564
-add.period$ -- 147
-call.type$ -- 135
-change.case$ -- 131
++ -- 780
+- -- 620
+* -- 3554
+:= -- 7003
+add.period$ -- 172
+call.type$ -- 160
+change.case$ -- 156
 chr.to.int$ -- 0
-cite$ -- 138
-duplicate$ -- 2134
-empty$ -- 3776
-format.name$ -- 415
-if$ -- 10385
+cite$ -- 163
+duplicate$ -- 2531
+empty$ -- 4481
+format.name$ -- 620
+if$ -- 12637
 int.to.chr$ -- 0
-int.to.str$ -- 135
-missing$ -- 128
-newline$ -- 423
-num.names$ -- 135
-pop$ -- 370
+int.to.str$ -- 160
+missing$ -- 153
+newline$ -- 498
+num.names$ -- 160
+pop$ -- 423
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1742
+skip$ -- 2060
 stack$ -- 0
-substring$ -- 3140
-swap$ -- 1098
+substring$ -- 3740
+swap$ -- 1295
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 348
-width$ -- 138
-write$ -- 1311
-(There were 10 error messages)
+while$ -- 417
+width$ -- 163
+write$ -- 1558
+(There were 9 error messages)
