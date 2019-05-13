@@ -1190,7 +1190,6 @@ As the cameras have specific operating temperatures in the range ($0^{\circ}C-45
 
 Various hardware devices will need to be controlable via the main application, to enable efficient main lighting, signal lighting, peltier, pneumatics, and conveyor control, as well as inputs from some peripheral devices and sensors.
 
-The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
 
 
 \begin{wrapfigure}{r}{0.6\textwidth}
@@ -1201,9 +1200,10 @@ The Phidget\texttrademark is an industrial-style microcontroller with integrated
 	\label{fig:phidget}
 \end{wrapfigure} 
 
+The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
 
 
-Given the Lighting must be only turned on when in operational mode, and draws $>>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
+Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
 
 The ejector is a controllable pneumatic system which can release a burst of air on cammand for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
 
@@ -1250,7 +1250,7 @@ All electronic requirements are as follows:
 	\item Various circuits/wiring/connectors/fuses
 \end{itemize} 
 
-The first three items require AC mains power ($240V$) and can therefore be addressed by using readily available extension leads and a power board. The reamaining items use DC power and need to be qualitified in order to design the power suupply system.
+The first three items require AC mains power ($240V$) and can therefore be addressed by using readily available extension leads and a power board. The reamaining items use DC power and need to be quantified in order to design the power suupply system.
 
 \renewcommand{\arraystretch}{0.8}% Tighter table height
 \begin{table}[h]
@@ -1292,7 +1292,7 @@ The first three items require AC mains power ($240V$) and can therefore be addre
 \end{table}
  
 
-Table \ref{tab:DC_power_table} shows the requirements for the DC powered devices in the SQA vision system. As the total power cumulates to $747.8W$, a high powered AC/DC converter is required to be constructed or purchased in order to generate the DC current to supply all devices.
+Table \ref{tab:DC_power_table} shows the requirements for the DC powered devices in the SQA vision system. As the total power accumulates to $747.8W$, a high powered AC/DC converter is required to be constructed or purchased in order to generate the DC current to supply all devices.
 
 Industrial power supplies can be expensive, have long lead-times (for initial construction and replacements), and may not have internal protections (such as short-circuit, over-current, thermal) and multiple outputs. However, a high-end gaming PSU can provide these features including automatic fault detection and shut-off, multiple outputs (can be configured due to the wiring loom containing several high current wires), and greatly beneficial $5V$ and $3.3V$ outputs of lower current, which can be used to power logic circuits. 
 
@@ -2086,7 +2086,7 @@ The production line in Queensland (Wamuran) differs from that of South Australia
 
 The main conveyor pictured is designed to keep running as much as possible in order to keep the packers working continuously. As the packers are paid by the number of punnets they pack, conveyor stopages result in less packing (when their immediate space on the conveyor is full) hence, loss of income for both company and workers. Therefore, the heat-seal and subsequent vision system jogging mechanism cannot be wired directly to the main conveyor, meaning that there will be an accumulation of punnets at the end, should the vision system or heat-seal machine stop. However, the main conveyor runs considerably slower than the in-feed to the vision system, resulting in taking more time to build up, and a good separation of containers as they enter the enclosure.
 
-Two more algorithms were added to the repertoir ('overripe', and 'too small') with labelling of a test set completed. The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and creating a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresdholding and morphology parameters, keeping the overall method unchanged. 
+Two more algorithms were added to the repertoir ('overripe', and 'too small') with labelling of a test set completed. The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and created a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresdholding and morphology parameters, keeping the overall method unchanged. 
 
 Several design flaws were noticed after nearly two seasons of packing room production, such as a large build up of dirt, dust, insects, and strawberry material in the bottom of the enclosure arch, added to the dust build up on cameras, polarisers, lighting and lenses, as well as overwhelming the filters on the computer, PSU, and enclosure itself. The images shown in Figure \ref{fig:dirty_enclosure} illustrate the problems.
 
@@ -2123,7 +2123,7 @@ Several design flaws were noticed after nearly two seasons of packing room produ
 \end{figure}
 
 
-In order to clean the enclosure properly, the bottom lighting cludters and cameras were removed to allow access to the underside of the chamber. This situation is not ideal (especially if performed each season), and along with difficulty of access to components inside the enclosure, and changed lighting arrangement, prompted a redesign of the entire system. 
+In order to clean the enclosure properly, the bottom lighting clusters and cameras were removed to allow access to the underside of the chamber. This situation is not ideal (especially if performed each season), and along with difficulty of access to components inside the enclosure, and changed lighting arrangement, prompted a redesign of the entire system. 
 
 
 
