@@ -34,6 +34,7 @@
 %\usepackage{array}
 
 \newcolumntype{C}{>{\centering\arraybackslash}X} % centered version of "X" type
+\newcolumntype{N}{>{\arraybackslash}m{1.4cm}}
 
 
 %roman numerals
@@ -240,9 +241,13 @@ Gilbert Eaton
 %adds unnumbered section to TOC
 \addcontentsline{toc}{section}{Acknowledgements}
 
-The author would like to acknowledge Griffith University staff Rudi Bartels, Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise during the project. Thanks also go to William Sheng who has been working on the project and provided invaluable knowledge.
+I would like to acknowledge and thank the Project Manager Rudi Bartels for his guidance whilst allowing me to work independantly and flexibly in order to succeed, and to Ray Daniels and Magnificent for the opportunity to be part of an interesting and challenging project. The knowledge and experience gained through this will be invaluable in my future.
 
-....
+Thanks also go to Griffith University's Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise, as well as the faith they put in me during my PhD. William Wang and Lee Hamilton have also worked periodically on the project and provided invaluable knowledge and experiences.
+
+Lastly, I would like to thank my family, especially my wife Kate, for her support and unwaivering beleif in me, as well as my mother Margaret and mother-in-law Ann, without whom none of this would be possible. My children Kyle, Tazmyn, and Davina have been a substantial part of my motivation and inspiration toward these achivements.
+
+To all my friends and colleagues throughout my undergraduate and post-graduate life - Thankyou for your help and inspiration.
 
 \vspace*{\fill}%
 
@@ -264,7 +269,15 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 
 \begin{itemize}
 	\item{G. Eaton, A. Busch, R. Bartels, Y. Gao, “A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems”,Digital Image Computing: Techniques and Applications (DICTA), DOI: 10.1109/DICTA.2017.8227392 (2017)}
+	\begin{itemize}
+		\item Poster presentation 
+	\end{itemize}
+	\quad
 	\item{G. Eaton, A. Busch, R. Bartels, Y. Gao, “Colour Analysis of Strawberries on a Real Time Production Line”, Digital Image Computing: Techniques and Applications (DICTA), (2018)}
+	\begin{itemize}
+		\item Oral presentation 
+		\item CiSRA Practical Intelligent Vision Award - 2018
+	\end{itemize}
 \end{itemize}  
 
 
@@ -297,13 +310,14 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$punnet$}{A plastic strawberry container}%
 \nomenclature{$calyx$}{The green leaves of a strawberry}%
 \nomenclature{$peduncle$}{Stem of the strawberry}%
-\nomenclature{$downtime$}{The amount of time (cumulative) during production where nothing is produced}%
+\nomenclature{$downtime$}{The amount of time (cumulative) where production was scheduled but does not occur}%
 
 %biological
 \nomenclature{$SSC$}{Soluable solid content}%
 
 %programming
 \nomenclature{$API$}{Application Programming Interface}%
+\nomenclature{$UML$}{Universal Modelling Language}%
 
 %cvip jargon
 \nomenclature{$RMSE$}{Root Mean Squared Error}%
@@ -319,7 +333,7 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$CNN$}{Convolutional Neural Network}%
 \nomenclature{$R-CNN$}{Region-based Convolutional Neural Network}%
 \nomenclature{$BPNN$}{Back-propogation Neural Network}%
-\nomenclature{$k-NN$}{k-Nearest Neighbour}%
+\nomenclature{$k-NN$}{k-Nearest Neighbour}%https://www.google.com/search?client=ubuntu&hs=Fgn&channel=fs&ei=L4fbXLuRGcXFz7sP9q6wsAg&q=mosfet&oq=mosfet&gs_l=psy-ab.3..0i67l6j0l4.557803.558916..559061...0.0..0.276.1129.0j1j4......0....1..gws-wiz.......0i71j0i131j35i39.Rwu-SVf3v1o
 \nomenclature{$DNN$}{Deep Neural Network}%
 \nomenclature{$ELM$}{Extreme Learning Machine}%
 \nomenclature{$SFLN$}{Single Hiden Layer Feed Neural Network}%
@@ -360,9 +374,16 @@ The author would like to acknowledge Griffith University staff Rudi Bartels, Dr.
 \nomenclature{$LED$}{Light emitting diode (Light source)}
 \nomenclature{$CCD$}{Charge coupled device (sensor)}
 \nomenclature{$CMOS$}{Complimentary metal-oxide semiconductor (sensor)}
+\nomenclature{$CRI$}{Colour Rendering Index}
 
 %mechanical
 \nomenclature{$DOF$}{Degrees of Freedom}
+
+%electronic
+\nomenclature{$MOSFET$}{Metal-oxide-semiconductor Field-effect Transistor}
+\nomenclature{$Op-amp$}{Operational Amplifier}
+\nomenclature{$TTL$}{Transistor-transistor Logic}
+\nomenclature{$TTL$}{Programmable Logic Controller}
 
 
 %Sequence to make nomenclature refresh is:
@@ -1103,6 +1124,7 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 
 
 \subsection{Prototype Construction}
+\label{sec:prototype_contruct}
 
 The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarizers, and cameras. This prototype was then used as the framework when moved from bench to production. The frame, constructed from aluminium modular T-slot ($20mmx20mm$) components, supports stainless steel sheets that are molded to be curved on top and bottom in order to diffuse and direct light and reduce flat surface reflections whilst creating a more evenly distributed background and intensity. 
 
@@ -1182,7 +1204,7 @@ The pneumatic system is driven by a main air compressor that supplies the strawb
 
 Flir\textregistered is a leading industrial, machine vision, surveillance, defense, and thermal camera company with a broad range of cameras to choose from depending on application. The Flir\textregistered cameras used for the SQA inspection are Blackfly\textregistered USB3 $2.3 MP$, 1920 x 1200, $41FPS$, with a Sony\textregistered IMX249 sensor capable of shutter speeds in the range $19\mu s-3.9s$ making it suitable for fast-paced applications. Quantum Efficiency (QE) of the mono model is approximately $10\%$ at $1000nm$ which is not ideal, but offers more spectral range and less noise at NIR wavelenghts than other sensors. The cameras are powered via USB, which helps to reduce complexity, and include opto-isolated I/O for triggering. The comprehensive list of adjustable parameters make these cameras highly controllable or highly automatic, depending on user requirements, and can be programmed to function via software using the API packages. 
 
-As the cameras have specific operating temperatures in the range ($0^{\circ}C-45^{\circ}C$), meaning they will be suceptible to overheating and must be monitored (via the on-board temperature sensor, accessed using the API), particularly given that farm temperatures can reach $45^{\circ}C$ during the day. Therefore fans and peltier devices are added to the cameras in order to allow cooling if required. Intake fans apply positive pressure to the entire unit in an attempt to keep dust and dirt out of the acquisition area as lens/diffuser/polariser cleaning may become a common occurance.
+As the cameras have specific operating temperatures in the range ($0^{\circ}C-45^{\circ}C$), meaning they will be suceptible to overheating and must be monitored (via the onboard temperature sensor, accessed using the API), particularly given that farm temperatures can reach $45^{\circ}C$ during the day. Therefore fans and peltier devices are added to the cameras in order to allow cooling if required. Intake fans apply positive pressure to the entire unit in an attempt to keep dust and dirt out of the acquisition area as lens/diffuser/polariser cleaning may become a common occurance.
 
 
 \paragraph{Hardware Control}
@@ -1926,7 +1948,7 @@ Wiring diagrams provided in Appendix \ref{app:wiring} detailing the complete wir
 
 
 
-\subsubsection{Cross-polarization of Cameras}
+\subsubsection{Cross-polarization of RGB Cameras}
 
 
 The polariod sheets have a direction of polarisation, which usually runs parallel to one of the edges of the sheet, that is, either horizontally or vertically polarised. The polarity must be continuous on all sides, above and below the acquisition chamber in order to be effective when the cross-polariser is applied. The cross-polarising element used is a camera lens filter polariser which can be rotated $360^{\circ}$. This means that the cameras can be mounted in any orientation, and still achieve the desired result by adjusting the filter (Figure \ref{fig:nd_filters}).
@@ -1946,8 +1968,72 @@ The cameras are positioned in the centre of the respective lighting clusters in 
 
 
 
+\subsection{Hyperspectral Bruise Analysis}
+
+Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a Brimrose\textregistered VA200 Visible Near-Infrared, and a Brimrose\textregistered VA200 Short-wave Infrared Hyperspectral Camera with appropriate lenses and software to acquire the images in order to quantify the best spectral region to identify and detect fresh bruising (wet bruising). 
 
 
+\begin{table}
+	\caption{Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.}
+	\label{tab:examples}
+	\begin{tabular}{l*8{N}@{}}
+		\toprule
+		
+		Time & $950nm$ & $1050nm$ & $1150nm$ & $1250nm$ & $1350nm$ & $1450nm$ & $1550nm$ & $1650nm$ \\
+		
+		Before &
+		\includegraphics[width=\linewidth]{bruise/nobruise_950.jpg} & \includegraphics[width=\linewidth]{bruise/nobruise_1050.jpg} & \includegraphics[width=\linewidth,angle=90,scale=0.80]{bruise/nobruise_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/nobruise_1250.jpg} & \includegraphics[width=\linewidth]{bruise/nobruise_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/nobruise_1450.jpg} & \includegraphics[width=\linewidth]{bruise/nobruise_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/nobruise_1650.jpg} \\
+		
+		0 min &
+		\includegraphics[width=\linewidth]{bruise/bruise_950.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1050.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise_1250.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise_1450.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise_1650.jpg} \\
+		
+		5 min &
+		\includegraphics[width=\linewidth]{bruise/bruise5m_950.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1050.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise5m_1250.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise5m_1450.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise5m_1650.jpg} \\
+		
+		10 min &
+		\includegraphics[width=\linewidth]{bruise/bruise10m_950.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1050.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise10m_1250.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise10m_1450.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise10m_1650.jpg} \\
+		
+		
+		\bottomrule
+	\end{tabular}
+\end{table} 
+
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth,angle=270]{HSI.jpg}
+	\end{center}
+	\caption{The vis/NIR camera and SWIR camera mounted during experimentation.}
+	\label{fig:HSI}
+\end{wrapfigure} 
+
+Analysis of water absorbtion bands discussed in Chapter \ref{sec:lit} were used as an indication of the wavelengths which might be suitable, however, an in-depth experiment measured the bruising of strawberries incremented accross a wide range of wavelengths. A sample of the SWIR images are shown in Table \ref{tab:examples} where the spectrum ranged from $850nm$ through to $1800nm$ in increments of $10nm$. Images were aquired of no bruise, as well as 5, 10, and 15 minutes after bruising indicating several potential bands where the contrast was high. Most notably, the bands in the region $<1000nm$ given that these wavelengths can be imaged using CMOS sensors which are inexpensive compared to that of a SWIR sensor. The image in Figure shows the arrangement of halogen lighting, and both visible/NIR, and SWIR cameras set up on the mounts. As expected, the visible spectrum showed no significant contrast, given that the bruises are invisible to human eyes, and the water absorbtion band distribution.
+
+The experiments show the $930nm-980nm$ range has contrast equivilent to any other region, and allows cheap and effective detection with the addition of a bandpass lens filter on the monochrome CMOS cameras. The narrow-bandpass filter restricts all light except for a small $10nm$ window in the specified region. Therefore $940nm$ filters are applied to both IR cameras in order to amplify the invisible characteristics. 
+
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{bruise_ir_1.jpg}
+		\caption{}
+		\label{fig:bruise_ir_1}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{bruise_ir_2.jpg}
+		\caption{}
+		\label{fig:bruise_ir_2}
+	\end{subfigure}%
+	
+	\caption{Bruise detection images illustrating the contrast between (a) un-bruised berries, and (b) freshly-bruised berries.}
+	\label{}
+\end{figure}
+
+The images in Figures \ref{fig:bruise_ir_1} and \ref{fig:bruise_ir_2} show the good contrast difference in the bruise regions of the berries. This hardware investigation and implementation will help to solve the problem of bruise detection and development of an algorithm to automatically inspect each punnet.
+
+ 
 
 \subsection{Final Configuration}
 
@@ -2020,15 +2106,15 @@ With the vision system operational, the ejector and pneumatics were designed and
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{ejector.jpg}
-	\caption{The pneumatic ejector system showing the yellow nozzle (top left) next to the punnet sensor and reflector, pneumatic actuator (top centre) as well as the exit ramp. \textit{Note: The regulator is not shown as it is attached underneath the conveyor.}}
+	\caption{The pneumatic ejector system showing the yellow nozzle next to the punnet sensor and reflector, pneumatic actuator as well as the exit ramp. \textit{Regulator adjustment knob can be seen behind conveyor.}}
 	\label{fig:ejector}
 \end{figure}
 
-The punnet sensor and relector are attached as close as possible to the ejector nozzle and provides a trigger for activation of the pneumatic system, which is fired for a pre-determined period, in order to direct the punnet onto the exit ramp as smoothly as possible. Figure \ref{fig:ejector} depicts all the components (excluding the regulator) of the system shortly after testing was completed. The activation of the ejector also depends on the result of the processing of each punnet, ejecting only when defects are found. Therefore the microprocessor must know the status of each punnet so that only the identified affected punnets are ejected, whilst allowing others to pass. The microcontroller class must therefore query the results for each punnet in the array (kept as global variables in the application) when passing the ejector, in order to determine which punnets to eject and which are to remain on the production line. The microcontroller must also determine the timing of the pneumatic burst including delay between sensing and activation and the duration the solenoid is opened. 
+The punnet sensor and relector are attached as close as possible to the ejector nozzle and provides a trigger for activation of the pneumatic system, which is fired for a pre-determined period, in order to direct the punnet onto the exit ramp as smoothly as possible. Figure \ref{fig:ejector} depicts all the components of the system shortly after testing was completed. The activation of the ejector also depends on the result of the processing of each punnet, ejecting only when defects are found. Therefore the microprocessor must know the status of each punnet so that only the identified affected punnets are ejected, whilst allowing others to pass. The microcontroller class must therefore query the results for each punnet in the array (kept as global variables in the application) when passing the ejector, in order to determine which punnets to eject and which are to remain on the production line. The microcontroller must also determine the timing of the pneumatic burst including delay between sensing and activation and the duration the solenoid is opened. 
 
 Initial testing concluded that in order to provide enough force to push the $250g-300g$ punnet and successfully transfer it from the production conveyor (running at approximately $27cm/s$) to the exit ramp, required the following:
 \begin{itemize}
-	\item $90psi$ ($6bar$) of pressure
+	\item $620kPa$ ($90psi$) of pressure
 	\item $20ms$ delay time
 	\item $200ms$ pneumatic duration
 \end{itemize}
@@ -2139,6 +2225,8 @@ In order to clean the enclosure properly, the bottom lighting clusters and camer
 \textbf{Gilbert Eaton, Andrew Busch, Rudi Bartels, and Yongsheng Gao}
 
 \textit{Conference paper - Digital Image Computing: Techniques and Applications (DICTA) - accepted Aug 2018}
+
+\textit{Canon Information Systems Research Australia (CiSRA) Practical Intelligent Vision Award - 2018}
 
 
 \subsection{Abstract}
@@ -2458,26 +2546,552 @@ The inspection system, along with these algorithms have already helped in reduci
 \label{sec:III}
 
 
+Due to the dirt and dust, accessibility, and lighting concerns found during the second season of operation, a new enclosure was planned to be installed in between the second and third seasons at South Australia and Queensland, respectively. Before the end of the second season, the design and planning was carried out in order to begin work whilst the current system was still in operation. As the frame is to be upgraded and re-built, the old frame is not required to be accessible until the mechanical parts are installed, such as the v-belts, lighting, and motors. Therefore, research and experimentation could begin in an attempt to reduce the reconfiguration time and return to production-ready as soon as possible.
+
+The new design made several improvements over the intial structure such as:
+
+\begin{itemize}
+	\item Total encapsulation of all devices - Cameras, lighting, power supply, electronics, pneumatics and wiring are housed inside the enclosure.
+	\item Ease of access - Opening panels and removable parts such as diffuser/polarisers to allow access to cameras, wiring, sensors, and v-belts.
+	\item Cleaning process - Opening panels provide the ability to air-blow or wipe clean all sections including lighting and cameras, electronics, and debris build-up areas.
+	\item Clean industrial appearance - Professional looking plant equipment that is strong, suits environment, and give operator confidence.
+	\item Control panel - Potential to create physical buttons and indicators to start/stop system along with emergency-stop button.
+	\item Upgraded power supply - Move to industrial power supplies.
+	\item Lighting upgrade - Various newly marketed LED options for high powered devices such as chip on board, strips, and ring-lights.
+	\item - Electronic layout - Improve the accessability and complexity of the electronic control devices such as the microcontroller and relays.
+\end{itemize}
+  
+LED lighting advances and general popularity meant that more varied and powerful devices had become available such as $20W$, $50W$, and $100W$ chip-onboard (COB), various panels and ring LED's. Research into lighting arrangements and experimentation with a range of devices could also be performed independent of the vision system in it's current form. The quality of different manufacturers varied highly, where both high-quality and inexpensive versions of many devices exist, making the evaluation difficult given that the high-quality versions usually have more reliable componets and stronger output. 
+
+As LED's are a diode, they have the ability to switch on and off almost instantaneously, especially compared to that of halogen, tungsten, flourescent, and incandescant. The IR wavelengths, however, require $940nm$ source of light which is available in some formats such as COB arrays of $1W$ bulbs, with the option to construct the lighting devices from smaller components, if required. Millisecond pulses are common for LED's with most flash photography created by semi-powerful strobing circuits. This allows the design of the system to incorperate higher-powered lighting devices that can be rapidly strobed in order to acquire images.
+
+The current system structure has the cameras and lighting enclosed, with the main wiring, pneumatics, sensors, power supply and monitor exposed as peripheral elements of the system. This creates hazards, both from a safety perspective as well as robustness, complexity, and aesthetic, which can be reduced or eliminated by enclosing them together inside the same enclosure. This also adds to the simplification of wiring and circuits (given the close proximity of the power and electronics to the devices that use them), without the need to run cables outside the walls of the system. An extra layer of dust protection is realised for the PC and power supply units due to the outer panelling of the enclosure as opposed to alternative arrangement of being exposed to production and cleaning debris. Protection of the electronic and power supply components (all of which are critical to the successful operation of the system) from impacts and knocks are solidified by being placed inside a metal enclosure with a strong frame surrounding.
+
+
 \subsection{Enclosure}
 
-panel, encapsulation, operator friendly, 
+
+The computer, pneumatic actuator and regulator, electronics, and power supply are housed inside the newly designed enclosure along with the cameras and lighting in order to protect all components from both dust and impact damage. The CAD design is shown in Figure \ref{fig:SQA_v2} illustrating PC placement (behind electronic panel on right hand side), lighting section (blue polarising sheets), and electronics and power supply storage. The footprint of the design is approximately the same width compared to the current version, lower in height, and the same length, given that the conveyor system determines this dimension. Even though the enclosed section is longer and bulkier, the unit is designed to be more easliy moved (lifting with a forklift or pallet-jack in one motion, as opposed to disconnecting components) around the production floor and onto transport vehicles. 
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\linewidth]{SQA_v2.png}
+	\caption{CAD design of upgraded SQA vision system ('RayBox') illustrating the encapsulation of the electronic and pneumatic devices inside the enclosure. External metal sheeting is applied to the frame in order to restrict interference and aesthetics.}
+	\label{fig:SQA_v2}
+\end{figure}%
+
+
+After discovering problems leading to the addition of light-blocking panels on the top and bottom, the new enclosure did not need to be curved in shape as with the previuous design, allowing a straight-edged construction. The LED's are mounted on the sides of the conveyors, behind the diffusing and polarising sheets, with only minor diffuse reflections coming from above and below. This lighting configuration is considered to be a dark-field arrangement, even though the curvature of the berry surface will always generate specularities at certain angles. With the ability to strobe the lighting rapidly, it may be possible to isolate one lighting system from the other in order to acquire and illuminate one view, followed by the other in an alternating method, removing the opposing illumination completely. However, the delays and timings required to acquire a well-illuminated image of each view and spectrum may require that more than one lighting source could be activated simultaneously.
+
+Behind the lower cameras an angled panel allows debris and dirt to fall into a catching tray (coloured black in the figure), rather than accumulating behind them in the top camera's FOV, or falling onto the electronics. A user panel (not pictured) is required to accomodate the emergency-stop button as well as additional buttons which will start, and stop system, and indicator lights for operational mode or error sources.
+
+
+The frame is constructed from $40mmx40mm$ T-slotted aluminium frame (four times the size of the original frame described in Chapter \ref{sec:prototype_contruct}), and uses modular connectors, locking screws and fasteners, in order to configure limitless designs. Stainless stell sheet panels can then be screwed directly into the aluminium, or attached with hinges bolted through, in order to create doors and opening panels. Pre-fabricated sheets were ordered from metal suppliers in order to reduce risk, time, and waste in creating the various sized panels (including doors, and inner walls for mounting electronics), in preparation for the upgrade.
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{system_v2_construct_1.jpg}
+		\caption{}
+		\label{fig:system_v2_construct_1}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{system_v2_construct_2.jpg}
+		\caption{}
+		\label{fig:system_v2_construct_2}
+	\end{subfigure}%
+	\caption{SQA system V2 construction stages (a) top view panel open showing frame, camera support, and polarisers in place, (b) acquisition section enclosed for the purpose of testing cameras and LED's.}
+	\label{}
+\end{figure}
+
+The images in Figures \ref{fig:system_v2_construct_1} and \ref{fig:system_v2_construct_2} were taken during the testing of the acquisition devices such as triggering, illumination, and camera synchronisation. The doors on the sides of the acquisition chamber attched in order to block external light while the remaining panels were detached waiting for the current system to return from production after the season had concluded. 
+
+A number of experiments were peformed using the polarising filters, cameras and different lighting systems triggered by a microcontroller in a synchronised manner. Particularly the ability to capture images using the camera's I/O trigger while the LED is illuminated for a very short ($<10ms$) time frame. A range of LED's were purchased for experiments given the many options for power rating, footprint, quality and wavelength.
+
 
 
 \subsection{Lighting}
 
-strobing, mosfets, circuits, 100W LED, 
+The current LED and halogen illumination clusters are both cumbersome (visible) and power-wasting (halogen), as well as generating a large amount of heat when continuously running for $8 hours$. Design of new LED lighting must be powerful enough to supply the required amount of illumination through diffusers and cross-polarisers, where the shutter speed of the cameras is $<3ms$, in order to avoid motion blur. As specular reflections were no longer a problem (given the cross-polarising and diffuser sheets), it is feasible for the LED to point in the direction of the punnet objects without the need to reflect the source in any way.
 
 
-\subsection{Microcontroller}
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{strip_LED.jpg}
+		\caption{}
+		\label{fig:strip_LED}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{panel_LED.jpg}
+		\caption{}
+		\label{fig:panel_LED}
+	\end{subfigure}%
 
-controllino
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{ac_LED.jpg}
+		\caption{}
+		\label{fig:ac_LED}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.6\linewidth]{LED_vis.png}
+		\caption{}
+		\label{fig:LED_vis}
+	\end{subfigure}%
+	\caption{LED Lighting sources purchased and tested (a) low-power strip LED's (many rows), (b) low-power LED panel, (c) LED's with onboard AC/DC conversion, and (d) high-power COB.}
+	\label{}
+\end{figure}
+
+
+Included in the experimentation of LED formats were strip lighting (Figure \ref{fig:strip_LED}), panel (Figure \ref{fig:panel_LED}), LED's with onboard AC/DC converters (Figure \ref{fig:ac_LED}), and tightly-packed version of COB with products ranging $5W-100W$ in a small footprint (Figure \ref{fig:LED_vis}). The strip lighting are arranged on a backing strip, typically spaced so that three LED chips per $25mm$, $50mm$, or $100mm$ can be cutfrom the reel. This gives the flexibility to design unique shapes and lengths. The chips are usually one of the following LED SMD Diodes:
+
+\begin{itemize}
+	\item 3528 - $3.5mm x 2.8mm$, 6-8 $lumen$, $25mA/3V$, $0.06W$
+	\item 5050 - $5.0mm x 5.0mm$, 16-22 $lumen$, $60mA/3V$, $0.18W$
+	\item 5630 - $5.6mm x 3.0mm$, 45-50 $lumen$, $150mA/3V$, $0.75W$
+\end{itemize}
+ 
+Calculating the highest power LED with the smallest spacing results in $0.033m/W$ meaning that $3.3m$ of strip would be required to generate $100W$, resulting a low-power rating per area unit. Similarly, the LED panel is designed to spread out the light source over a large area, using with small LED chips to conserve power, and resulting in approximately $100W/m^2$. The two higher power devices shown in the figure are both $100W$ versions of their respective design and footprint. Figure \ref{fig:ac_LED} is powered directly from AC mains ($240VAC$) and had AC/DC converting circuits onboard rather than using a power converter or DC power supply. However experiments revealed that this type of LED still flickered with the AC current indicating that the circuits were simply a switching circuit and not a continuous supply, as that of circuits with storage capacitors. 
+
+The $100W$ DC device shown in Figuire \ref{fig:LED_vis} is DC powered, using $36V/3A$ per unit with 100 individual $1W$ LED's connected in 10 x 10 arrays. It has a much smaller footprint per power unit at $0.0056m/W$, given that the most powerful unit generates $100W$ using a $56mmx56mm$ aperture. Another advantage of this LED format is the wide range of colour, temperature, and wavelength. Red, orange, yellow, blue, and ultraviolet coloured illumination, as well as white light in several different temperatures (Figure \ref{fig:temp_response}), varieties exist in order to perform specific tasks. IR versions of the $100W$ chip are readily available in a range of narrow bandwidths such as $780nm$, $840nm$, $860nm$, $890nm$, $910nm$, $940nm$, and $950nm$. 
+
+\subsubsection{Colour Renderin Index (CRI)}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{temp_response.jpg}
+		\caption{}
+		\label{fig:temp_response}
+	\end{subfigure}%
+
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{cri.jpg}
+		\caption{}
+		\label{fig:cri}
+	\end{subfigure}%
+	\caption{(a) Spectral response of different colour temperatures from $2721K$ (warm) through to $6478K$ (cool), with the ideal (daylight/100 CRI) value approximately in the center of the range, and (b) the effect of poor CRI on colour images making them appear diluted and less vibrant.}
+	\label{}
+\end{figure}
+
+
+Colour Rendering Index (CRI) is a measure of how a light source's spectral output compares to midday sunlight. If the CRI is high ($95-100$), then the light source is very close to the ultimate light source for human eyes. Sunlight determines what colour an object is via the reflection/absorbsion characteristics in the pigments on the surface. If a light source which is missing parts of the visible spectrum is directed on an object, it will not have the same vibrant colour, or change colour completely, depending on the severity of the spectral abscence. Therefore, both the cool and warm LED's cannot have a high CRI as they favour each side of the spectrum giving more power to the red colours (warm) and blue colours (cool).
+
+Due to the high power of $100W$ LED devices, cooling systems are used in order to reduce overheating and damage. Heat sinks, fans, peltier water-cooling has been used in various projects which require the illumination to be continuous, depending highly on the amount of time activated. The SQA vision system's design allows rapid strobing of LEDs of approximately $5ms-10ms$ with a punnet rate of $2/s$ means that the duty cycle is $2\%$ at the upper estimation. This process allows the device $98\%$ of the time to cool in between relatively small activations. Therefore, high-CRI, small footprint, high-power LED's are used as the main light source for the vision system, and increasing the power supply units nominal voltage from $12V$ to $36V$.
+
+
+
+\subsubsection{High-power Triggering}
+ 
+
+In order to turn on and off the LED's, a triggering system is required that can both switch and supply the $3A$ of current to each LED as typical microcontrollers cannot operate in these conditions. Relays are a mechanical device making the switching slow, and prone to noise in the physical contacts, meaning that MOSFET's would be required as they canswitch at semiconductor speeds similar to the LED's. Figure \ref{fig:pulse_circuit} illustrates the MOSFET circuit using capacitors for storage, and an op-amp tp trigger the circuit. A $2.2mF$ capacitor is used as a 'current reservoir' storing power between pulses and delivering when activated. The TTL-driven op-amp stabilises the triggering (eliminates mis-triggering and circuit-bounce) to the MOSFET gate allowing a larger current to flow from drain to source through the LED. This design was intended to switch at nanosecond ($ns$) rates in order to image flow velocimetry \cite{willert}. 
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{pulse_circuit.png}
+		\caption{}
+		\label{fig:pulse_circuit}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{breadboard.jpg}
+		\caption{}
+		\label{fig:breadboard}
+	\end{subfigure}%
+	\caption{(a) Circuit using reservoir capacitors in order to supply the current required to overload the relatively small LED, and (b) the prototype circuit inside the enclosure whilst triggering LEDs (left and right of image) for testing purposes.}
+	\label{}
+\end{figure}
+
+
+This circuit was constructed placed on a proto-board to perform some initial testing, before being fabricated into multiple circuit boards servicing 2-4 LED's each. The image in Figure \ref{fig:breadboard} demonstrates the arrangement when testing the triggering, and acquisition using the high-power LEDs. Experiments confirmed the suitability of this circuit for the purpose of supplying the appropriate power in very short bursts. 
+
+However, further experimentation revealed the large capacitors were not required to allow the full illumination (no pixel difference between images). As this circuit was originally designed for nanosecond response, the capacitors may have assisted the current flow, opposed to relying on the power supply to instanteneously supply current. Therefore, the circuit complexity could e reduced to a more simple device involving the MOSFET. A COB solution designed for this purpose can source and sink up to $20A$ at $60V$ is pictured in Figure \ref{fig:mosfet}. It features large and small wiring holes (for either high-current or low-current applications), and built-in pull-down resistors which allow error-free trigger signals via microcontroller. The figure also shows a failed MOSFET which was overloaded during testing, as a programming error lead to the LED remaining lit for approximately $10s$. This prompted the restriction of MOSFET current to be $<75\%$ of it rated current, even though the pulse time is very short, in order to allow longevity and robustness of the system.
+
+The chips have been designed with convenient mounting holes and compact form, allowing wiring with heavy guage connections in close vacinity to the load, suiting the requirements of the vision system. Due to the current restrictions, and to simplify design, construction, and troubleshooting, one MOSFET is used for each new LED cluster. 
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{mosfet.png}
+	\end{center}
+	\caption{The $20A$ MOSFET, and a chip failure after current overload whilst experimenting with high-power supply and LED's.}
+	\label{fig:mosfet}
+\end{wrapfigure} 
+
+
+
+Each cluster is made up of either four visible LED's, or two IR, triggered by a Arduino\texttrademark Nano microcontroller which is employed, in addition to the Phidget\textregistered, specifically to acquire images. As the punnets enter the system, a photo-electric sensor beam is broken, generating the signal to begin the lighting and camera triggering in order to acquire each image. The Arduino\texttrademark microcontroller acts as an autonomous system given that the running program is not linked to the main application, which would have to actively monitor and control the lighting and cameras. This added task would unnecessary and detrimental for the main application, given that it must perform several aother actions.   
+
+Previously, the photo-electric sensor triggered the camera directly, however, the LED's pulse must be synchronised with the camera shutter in order to capture the objects with good illumination. Therefore, the Arduino\texttrademark is added to receive the sensor signal, before performing the acquisition sequence. Table \ref{tab:mosfets} displays the LED clusters grouped into eight distinct MOSFET lines with either $200W$ or $400W$ of power drawn out of a maximum of $1200$. 
+
+In order for the two sets of left and right pairs to illuminate simultaneously, the gates of both MOSFETs are connected to the same output pin on the controller. This pin must be held activated whilst the respective camera is triggered, to ensure that the full illumination of the lighting has occured before the shutter opens, deactivating when the shutter closes. The image in Figure \ref{fig:mosfet_arduino} was taken after all connections from the controller to the MOSFETs was completed and the heavy-guage wiring attached to them, ready for installation. 
+
+
+Although all eight MOSFETs can be used in parallel, the operating characteristics of the strobing can allow placement of cameras at any position along the conveyor, given that the respective LEDs illuminate at the correct time for acquisistion. Taking this into account, placement of LEDs and cameras can be strategically placed so that the opposing lighting is never activated creating background noise.  
+
+
+\begin{table}
+	\centering
+	\caption{MOSFET allocation per LED cluster.}
+	\label{tab:mosfets}
+	\begin{tabular}{ccccc}
+		\toprule
+		Cluster & MOSFET No. & No. LED's & Current($A$) & Power($W$)  \\ 
+		\midrule
+		Upper Left Visible   	& 1 & 4 & 12 & 400   \\[6pt] 
+		Upper Left Infrared		& 2 & 2 & 6  & 200   \\[6pt] 
+		Upper Right Visible   	& 3 & 4 & 12 & 400   \\[6pt] 
+		Upper Right Infrared	& 4 & 2 & 6  & 200   \\[6pt] 
+		Lower Left Visible   	& 5 & 4 & 12 & 400   \\[6pt] 
+		Lower Left Infrared		& 6 & 2 & 6  & 200   \\[6pt] 
+		Lower Right Visible   	& 7 & 4 & 12 & 400   \\[6pt] 
+		Lower Right Infrared	& 8 & 2 & 6  & 200   \\[6pt] 
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{mosfet_arduino.jpg}
+		\caption{}
+		\label{fig:mosfet_arduino}
+	\end{subfigure}%
+	\begin{subfigure}{0.25\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{LED_door_1.jpg}
+		\caption{}
+		\label{fig:LED_door_1}
+	\end{subfigure}%
+	\begin{subfigure}{0.25\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{LED_door_2.jpg}
+		\caption{}
+		\label{fig:LED_door_2}
+	\end{subfigure}%
+	\caption{(a) The eight MOSFETS wired to the Arduino\texttrademark output pins, and heavy-guage wire connecting the power cables to the drain and source terminals, (b) right and (c) left panel doors with LEDs installed in offset pattern.}
+	\label{}
+\end{figure}
+
+The lower LEDs are placed offset to the upper LEDs, with the purpose of allowing capture from underneath after the above view is captured, but before the next punnet required to be acquired. This ensures that the upper lighting is not activated when the lower is, and vice versa. Another offset between the RGB and IR LEDs is shown in Figures \ref{fig:LED_door_1} and \ref{fig:LED_door_2} where the RGB (for both upper and lower) image is acquired a few milliseconds before the IR, making the asynchronous imaging redundant.
+
+The Arduino\texttrademark is programmed using it's own IDE and a C-like language which is compiled and uploaded to the board's flash memory for autonomous tasks. All programs (sketches) have a \textit{setup()} method to set variables and pinmodes, followed by an infinite \textit{loop()} method where the work occurs. Given the small number of inputs and outputs required for this task the reletively small Arduino\texttrademark Nano is used due to the compactness and pluggable header pins.
+
+Circuit diagram Version 2 in Appendix \ref{app:wiring} details the connections.
+
+
+\subsubsection{Lighting Power Supply}
+
+Due to the change in voltage of the LEDs to $36V$, a more specific power supply is required to perform the task of providing power tot he RGB and IR LEDs. Most industrial power supplies (AC/DC) output one or more of $5V$, $12V$, $15V$, $24V$, $36V$, or $48V$ and are offered in many different power ratings. The majority of DC power supplies use a switched-mode method where the output is generated by switching the input at high frequequencies, with devices such as capacitors and inductors used to keep continuous current when the switching component is in a non-conductive state. 
+
+\begin{table}[h]
+	\centering
+	\caption{Important specifications of $360W/36VDC$ power supply.}
+	\label{tab:meanwell_specs}
+	\begin{tabularx}{0.7\linewidth}{Xcc}
+		
+		\toprule
+		\textbf{Element}  & \textbf{Rating} & \textbf{Units} \\[8pt]
+		\midrule
+		Voltage 					& 36 & $V$ \\[4pt]
+		Current 					& 9.7 & $A$ \\[4pt]
+		Power 						& 350 & $W$  \\[4pt]
+		Ripple noise 				& 240 & $mVp-p$  \\[4pt]
+		Voltage tolerance 			& $\pm1.0$ & $\%$  \\[4pt]
+		Efficiency 					& 85 & $\%$ \\[4pt]
+		Working temperature 		& -20 - +60 & $^{\circ}C$ \\[4pt]
+		Overload protection 		& Y & - \\[4pt]
+		Over voltage protection 	& Y & - \\[4pt]
+		Over temperature protection & Y & - \\[4pt]
+		\bottomrule
+		
+	\end{tabularx}
+\end{table}
+
+A Meanwell\texttrademark S-360-36 power supply is selected due to availability, price, and performance, generating $360W$ at $36V$. Given the upper and lower (as well as RGB and IR) LED's are now seperated actions, the power supply has the ability to share the load between LEDs and therefore, the RGB share two power supplies ($720W$), likewise, the IR. The output has some ripple voltage associated with this switching, but is almost insignificant with quality power supplies as specified in Table \ref{tab:meanwell_specs}.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\linewidth]{mosfet_power_supply.jpg}
+	\caption{Four power supplies generate the current to illuminate the LEDs with automotive fuses located on the opposite side of the wall.}
+	\label{fig:mosfet_power_supply}
+\end{figure}%
+
+The units have overload, over voltage, and over temperature protection which automatically self-corrects once the fault/cause is corrected. These features are similar to the $1200W$ PSU which will now only be used for peripheral devices. Figure \ref{fig:mosfet_power_supply} shows the four power supplies installed on the floor of the enclosure with connections to the MOSFETs and mains power.
+
+
+\subsection{Strawberry Quality Asurance (SQA) Version 2}
+
+With the southern season concluded, and in a small window before full production volume began in the northern farm, the tranformation of the SQA system took place by removing the main components from the current enclosure, and transplanting them into the newly-built frame. Conveyors and pneumatics, polarising sheets, cameras, sensors, cables and connectors, and I/O devices such as the Phidget\texttrademark microcontroller, relays, power distribution, and fuses were recycled for both cost and efficiency. The previously used $1200W$ PSU is no longer required for powering the LEDs and therefore is used to power the remaining $5V$ and $12V$ devices.
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,angle=270]{motor.jpg}
+		\caption{}
+		\label{fig:motor}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,angle=270]{user_panel.jpg}
+		\caption{}
+		\label{fig:user_panel}
+	\end{subfigure}%
+	\caption{(a) Inner conveyor motor and v-belts installed on the new frame, (b) operator panel incorperating physical start/stop buttons, pneumatic guage, and indicators as well as touchscreen interactions.}
+	\label{}
+\end{figure}
+
+The image in Figure \ref{fig:motor} was taken after the original v-belt and internal motor system were installed on the new frame, eliminating the need for re-fabrication. Similarly, the polarising sheets, camera mounts, sensor mounts, some electronics, wiring (connectors and lengths), and brackets could be re-used in order to help efficient development.
+
+A user control panel (Figure \ref{fig:user_panel}) was designed to accomodate the GUI screen as well as physical start/stop buttons, e-stop, and indicators for operator convenience and usability. The buttons and indicators are $12V$ operated with the green and red start/stop buttons having both inputs (light action), and outputs (press) which required to be wired to the microcontroller, and integrated into the application in order to perform the functions. A $1024\times600$, $10.1inch$ Capacitive Touch Screen LCD installed will help the operator to select options and review information as opposed to using a mouse or keyboard. The touchscreen is also powered by $12VDC$ power which can be sourced from the original power supply.
+
+Reed switches added to the opening panels provide feedback to the system, generating an emergency-stop action in order to prevent safety hazards. The switches are wired into the microcontroller separately so that an error message can also
+
+
+
+\subsubsection{Peripheral Power Supply and IO}
+
+The $1200W$ PSU is no longer required to power the LEDs, however, it is required to power peripheral devices such as sensors, pneumatics, relay operation, and signalling. Many of the cables, connectors fuseholders, distribution devices, and mounts were transferrable to the new enclosure making the transition more efficient and simplified. Figure \ref{fig:PSU_phidget} was taken after the LEDs, LED power, polarising/diffuser sheets, v-belts, electronic control systems, control panel and touchscreen were installed, but prior to the belt conveyors and pneumatics to avoid complication and overwhelming the small space with electronic development.
+
+Once the extra connections are made to the new devices such as buttons and reed switches, the application is required to activate/sense the signals via the microcontroller API. Therefore, the IO thread tasks are ammended to include the interrogation of the reed switches and buttons output states as well as deliver the inputs to the buttons when required by the system. 
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\linewidth]{PSU_phidget.jpg}
+	\caption{The enclosure with Phidget\texttrademark microcontroller, relay bank, and fuses (lower left), PSU, $5V$ termials, conveyor switch, and PC behind the wall on the right. The v-belts are installed (top center), before belt conveyors.}
+	\label{fig:PSU_phidget}
+\end{figure}%
+
+
+The electronic systems and power supply are mounted on a wooden backing board (to eliminate risk of short circuit and make mounting easier), facing the operator in a clearly set out manner, giving developers and maintainers efficient and effortless access to ports and indicators for troubleshooting. On the opposite side of the mounting wall shown in Figure \ref{fig:PSU_phidget}, resides the four $36V$ power supply units, Arduino\texttrademark controller, and MOSFET bank (behind microcontroller on the left), and on the right, the PC which runs the application as well as a Uninterruptable Power Supply (UPS). A UPS will keep the critical PC systems running in the case of a brown-out or power failure, even if only for a few minutes. If power to the packing room in general is lost, the system will not be required to run as all other processes will halt. However, If a small delay occurs, or the power is accidentally removed for the PC, it can keep the application and operating system active in order to avoid restarting and loading the programs required to re-commence analysis.
+
+The cabling and wiring is simplified with all components in close proximity to each other, with no barriers between elements as opposed to the original system in three parts. The enclosed devices and systems provide practical improvements as well as adding to the overall professional aesthetics. 
+
 
 
 \subsection{Queensland Production - Season 3}
 
 
+In order to have the vision system inplace when the season began peak production, the turnaround time (from when the old system was available) was approximately eight weeks. In this time, the operational mechanisms and software were tested as much as possible in order to prevent bugs when integrating to the production line. Given the enclosure extension to encapsulate the system devices, the majority of the  out-feed belt conveyor and pneumatic system can be hidden internally with the exception of a small section of the conveyor in order to accomodate the ejector nozzle. The in-feed conveyor extends out from the enclosure so that the manual loading process can still occur without risk of pinch-point injury to the workers.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[height=0.4\textwidth,angle=270]{pneumatics_conveyor.jpg}
+	\end{center}
+	\caption{Image taken after the installation of the red belt conveyor, ejector, punnet sensor, and pneumatic system. The $240V$ electrical sockets for mains-powered devices can aslo be seen.}
+	\label{fig:pneumatics_conveyor}
+\end{wrapfigure} 
+
+Figure \ref{fig:pneumatics_conveyor} shows the internal components with the red out-feed conveyor attached under the v-belts, pneumatics bolted to the side of the conveyor, and $240VAC$ power systems, allowing isolation of mains-powered devices such as PC, PSU, conveyors, and fans. The out-feed conveyor rests on two cross-beams of the main frame of the enclosure, does not rely on a potentially damagable support leg, and is a permanent fixture allowing the attachment of several components and wiring harnesses. 
+
+As the packing facility's air line pressure is higher than required at approximately $861kPa/125psi$, an air regulator is used to reduce the pressure to a level of $620kPa/90psi$ before pressurising the solenoid actuator which is activated by the microcontroller. This system is also shown in Figure \ref{fig:pneumatics_conveyor} on the right hand side of the the red conveyor with blue pneumatic hoses connecting the devices to the nozzle situated in close vacinity, on the opposite side of the right hand wall of the enclosure. A punnet sensor is also seen reflecting the camera flash towards the right side of the conveyor. This ejector ssensor is positioned inside the enclosure as well as the majority of the pneumatic system so that the only external component exposed to potential damage is the relatively cheap nozzle and bracket. The panel which covers this section is fixed in position when the system is in operation, opposed to the hinged doors in the lighting section, which allows more frequent access. The power supply and $240V$ systems will remain untouched once setup, however, changes to microcontroller inputs, fuse replacement, led inspections, and new wiring connections are likely occurances periodically.
 
 
+\begin{figure}[t]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\linewidth]{SQA2_complete.jpg}
+		\caption{}
+		\label{fig:SQA2_complete}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\linewidth]{action_shot.jpg}
+		\caption{}
+		\label{fig:action_shot}
+	\end{subfigure}%
+	\caption{(a) The final SQA-V2 vision system, and (b) running during production showing ejected punnets.}
+	\label{}
+\end{figure}
+
+Once the system had been transported to the packing room, production scale testing performed showed that all systems were functioning as expected after some initial callibration and adjustments. 
+
+During the remaining season, $>50,000$ punnets were imaged and recorded with ejection interrupted periodically by testing algorithms on live data (during implementation or improvements). Research into machine learning algorithms began as the database of images had increased substantially. This included work on clustering pixels and segmentation, SVM and MLP classification, regression, and some neural network investigation. The classifcation accuracy improved slightly for the underripe algorithm ($94.7\%$), with additional algorithms, overripe, size and foreign object scoring well or developing with $90.6\%$, $82.8\%$ and $78.9\%$, respectively.
+
+
+\subsection{Microcontroller Upgrade}
+
+
+Towards the end of the second Queensland season, an upgrade of the microcontrollers was undertaken for three reasons:
+
+\begin{enumerate}
+	\item Standardise control units - two different types of microcontrollers were being used which made communication between them complicated, as well as creating inconsistencies and requirement for multiple spare parts.
+	\item Continuity - the Phidget\texttrademark is connected to the running application via an erroneous micro USB cable which can become loose over time due to vibration and thermal changes. This is unnacceptable as it could cause malfunction of safety systems or prevent them from activating entirely. 
+	\item Free application from I/O tasks - move all I/O functions away from image processing application in order to free critical resources. Microcontrollers typically have built in flash memory for program/script storage and can operate independantly.
+\end{enumerate}
+
+The Controllino\texttrademark is an open-source PLC with many benefits for industrial applications such as high and low-power outputs, DIN rail mounts, ethernet or usb communication, and screw-terminals for all connections including the $12V$ main power. This format is much more sturdy and robust than the previous versions given the abscence of usb cable connectors, especially for continuity of power and communication.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\linewidth]{controllino_1.png}
+		\caption{}
+		\label{fig:controllino_1}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\linewidth]{controllino_2.jpg}
+		\caption{}
+		\label{fig:controllino_2}
+	\end{subfigure}%
+	\caption{(a) , and (b) .}
+	\label{}
+\end{figure}
+
+
+The Controllino\texttrademark MAXI is pictured in Figure \ref{fig:controllino_1} offering the following advantages when compared to other controllers:
+
+
+\begin{itemize}
+	\item Inputs - $12V$ or $24V$ logic level with ESD protection (pin $A0$ through to $IN2$ towards the bottom of the figure). 
+	\item Outputs - $12V$ or $24V$ logic levels providing up to $2A$ (pin $D0$ through to $D11$ towards the top).
+	\item $5V$ logic support - Header pins (2$\times$black 26-pin connectors). 
+	\item Screw terminals - Heavy-guage $12V/24V$ power terminals (top right) and $5V$ (bottom right), as well as screw terminal $12V/24V$ I/O. 
+	\item Built-in relays - Ten relays which can support up to $230VAC/6A$.
+	\item Built-in ethernet - Networking socket standard.
+	\item Industrial mounts - DIN-rail maountable. 
+	\item Real-time clock - Keep real-time information for up to approximately two weeks without power supply, via RV-2123-C2-TA-QC-020 RTC module.
+\end{itemize}
+
+The Controllino\texttrademark is programmed using Arduino\texttrademark language ($C$) and can be uploaded to the boards through several compatible programs. With the addition of the Controllino\texttrademark API and libraries, sketch uploading manipulation of ports, RS-485 serial communication, and named pins (rather than the numbered board-level descriptions) can be used efficiently and easily.
+
+Three Controllinos\texttrademark have been installed (Figure \ref{fig:controllino_2}) in order to carry out three, mostly isolated tasks namely, LED controller, I/O Controller, and Watchdog Controller. The LED Controller operates the lighting and cameras with a punnet sensor input, the I/O Controller manages all other I/O including buttons and door sensors, finally the Watchdog Controller will monitor temperature of internal LED heatsinks and power systems as a seperate malfunction detection system. 
+
+Table \ref{tab:LED_tasks} lists the LED Controller pin assignments with two inputs, and the main LED and camera triggers as outputs. As well as having suitable outputs to warrant a seperate controller, the LED and camera actions should not be delayed by any other process, unless a safety-critical system de-activates the signal to input $A9$.
+
+
+\begin{table}[h]
+	\centering
+	\caption{LED Controller connections and pin assignments.}
+	\label{tab:LED_tasks}
+	\begin{tabularx}{0.5\linewidth}{cXc}
+		
+		\toprule
+		  				& \textbf{Element} & \textbf{Pin} \\[8pt]
+		\midrule
+		Inputs 		& I/O activation signal & A0 \\[4pt]
+		 			& Acquisition sensor 	& A9 \\[4pt]
+				
+		Outputs		& Top RGB LEDs			& D2  \\[4pt]
+					& Bottom RGB LEDs		& D3  \\[4pt]
+					& Top IR LEDs			& D4  \\[4pt]
+					& Bottom IR LEDs		& D5  \\[4pt]
+				 	& Top RGB camera 		& D8  \\[4pt]
+					& Bottom RGB camera		& D9  \\[4pt]
+					& Top IR camera			& D10  \\[4pt]
+					& Bottom IR camera		& D11  \\[4pt]
+		\bottomrule
+		
+	\end{tabularx}
+\end{table}
+
+The I/O Controller functions and pin assignments listed in Table \ref{tab:IO_tasks} gives an indication of the number of I/O tasks required in order to operate the system. Some priorities have been given to critical safety systems such as the emergency-stop button, panel door sensors, and punnet catcher, so that they take precedent over all other pending actions. The pneumatic ejector is the next most critical due to the speed of the conveyor, a punnet could be missed if the timing is delayed. All other inputs and outputs could potentially have small delays ($<100ms$) before being serviced by the processor, however this risk is not hazardous to product or people.
+
+\begin{table}[h]
+	\centering
+	\caption{I/O Controller connections and pin assignments.}
+	\label{tab:IO_tasks}
+	\begin{tabularx}{0.5\linewidth}{cXc}
+		
+		\toprule
+		& \textbf{Element} & \textbf{Pin} \\[8pt]
+		\midrule
+		Inputs 	& Eject sensor 			& A0 \\[4pt]
+				& Emergency-stop button	& A1 \\[4pt]
+				& Left-hand door 		& A2 \\[4pt]
+				& Right-hand door 		& A3 \\[4pt]
+				& Top door 				& A4 \\[4pt]
+				& Punnet catcher 		& A5 \\[4pt]
+				& Stop button 			& A6 \\[4pt]
+				& Start button	 		& A7 \\[4pt]
+				& Heat-seal conveyor	& A8 \\[4pt]
+				
+		Outputs	& In-feed LED indicator			& D0  \\[4pt]
+				& Activate lighting				& D1  \\[4pt]
+				& Buzzer						& D5  \\[4pt]
+				& Check screen LED indicator	& D6  \\[4pt]
+				& Out-feed LED indicator 		& D7  \\[4pt]
+				& Stop button (LED)				& D8  \\[4pt]
+				& Start button (LED)			& D9  \\[4pt]
+				& Traffic light					& D10  \\[4pt]
+				& Pneumatic Ejector				& D11  \\[4pt]
+		\bottomrule
+		
+	\end{tabularx}
+\end{table}
+
+Table \ref{tab:watchdog_tasks} relating to the Watchdog Controller lists six power system inputs which are used as a logic input to the controller (high-voltage is stepped down) so that the power systems can be monitored independently. The temperature sensors are mounted on the main LED heat-sinks and trigger an alarm through the Dallas Semiconductor 1-wire\textregistered protocol which allows addressable sensors to be implemented on the same bus (wire). If an error occurs (power or temperature), the error is sent to the I/O Controller for action and communication to the application.
+
+\begin{table}[h]
+	\centering
+	\caption{Watchdog Controller connections and pin assignments.}
+	\label{tab:watchdog_tasks}
+	\begin{tabularx}{0.5\linewidth}{cXc}
+		
+		\toprule
+		& \textbf{Element} & \textbf{Pin} \\[8pt]
+		\midrule
+		Inputs 	& Onewire temperature sensors 	& A0 \\[4pt]
+				& $36V$ Power supply 1 			& A1 \\[4pt]
+				& $36V$ Power supply 2 			& A2 \\[4pt]
+				& $36V$ Power supply 3 			& A3 \\[4pt]
+				& $36V$ Power supply 4 			& A4 \\[4pt]
+				& $12V$ Input - PSU 			& A9 \\[4pt]
+				& $5V$ Input - PSU 				& A10 \\[4pt]
+		
+		Outputs	& Error signal			& D2  \\[4pt]
+		\bottomrule
+		
+	\end{tabularx}
+\end{table}
+
+
+Programming the controllers is similar to the Arduino\texttrademark, in that the \texttt{setup()} and \texttt{loop()} functions are used in exactly the same method, using $C$ programming language. Inside the \texttt{loop()} function (where operations occur in an infinite loop), multiple modes (states) help to allocate certain tasks at certain times as indicated in Table \ref{tab:controllino_modes}.
+	
+
+
+\begin{table}[h]
+	\centering
+	\caption{Operating modes for each controller.}
+	\label{tab:controllino_modes}
+	\begin{tabularx}{0.7\linewidth}{Xcccc}
+		
+		\toprule
+		\textbf{Controller} & \textbf{Mode 1} & \textbf{Mode 2} & \textbf{Mode 3} & \textbf{Mode 4} \\[8pt]
+		\midrule
+		LED Controller 		& Off & Running & Constant trigger & Error \\[4pt]
+		I/O Controller 		& Waiting & Ready & Running & Error  \\[4pt]
+		Watchdog Controller & Off & Running & Error & -  \\[4pt]
+		\bottomrule
+		
+	\end{tabularx}
+\end{table}
+
+
+The re-wiring and of devices was replicated from the previous connections and diagrams, one at a time, so as to test the components functionality before moving to the next item. The Phidget\texttrademark uses low-side switching by grounding each electrical component in order to complete the circuit, which is contrary to the Controllino\texttrademark's high-side switching outputs. 
+
+Relevant wiring diagrams can be found in Version 3 in Appendix \ref{app:wiring}.
 
 
 
@@ -2509,6 +3123,185 @@ controllino
 
 \subsection{Transfer Learning with Resnet}
 
+
+\subsubsection{Transfer Learning}
+
+Transfer learning is a notable method for classifying images based on the exploit of pre-trained networks, generally trained with hundreds of thousands and even up to millions of images - for example ImageNet includes 1.2 million images with more than 1000 classes in it's database \cite{shin}. If no domain-specific data (or very limited data) is available, a pre-trained networks can be of benefit by generalising feature sets that it has already learned from other objects. For instance the first layers of a pre-trained network will detect basic features such as shapes, colours, and textures common in almost every object or image that would require classification. 
+
+A method used by many practitioners is to 'fine tune' a pre-trained network by freezing the weights of all network layers except the final layer(s), and training newly acquired images in the inference stages of the network \cite{girshick}. This technique retains the useful feature detection layers whilst training the final layers of the network to label these features to match domain-specific classes of images. However, this process requires many (although only a fraction of the data required to train from scratch) labelled training images in order to update the final dense layer weights. 
+
+Another approach commonly used is to remove the last layer (layer $n$ of an $n$-layer network) of the pre-trained network and attempt to classify the feature vector of the previous ($n$-1) layers. This feature vector can then be classified by many different types of algorithm (regression, nearest-neigbour, random forrest, SVM, etc.) to generate the output label.
+
+In our work, we adopt the latter approach, by removing the last layer of a pre-trained neural network, we can successfully extract a $100352$-length vector descriptor for each training image, a regression analysis algorithm is used to build several binary classifiers corresponding to each defective category and perform predictions on new feature vectors.
+
+\subsubsection{ResNet}
+\label{sec:resnet}
+
+The ResNet (Residual Network) architecture, first presented by He et al \cite{he}, is capable of very deep ($1000+$ layers) learning without the added complexity of training convergence problems that other networks suffer from. It uses a short-cut mechanism where each connection in the network can be bypassed if no new information is being learned. Therefore, if these residual connections are used, a convolutional layer will become the identity function by default and a network with many layers should have a comparable training error with its shallower counter-part. Figure \ref{fig:residual} shows a graphical representation of a connection in a Residual Network architecture whilst Figure \ref{fig:resnet_full} shows the full architecture of a $36$-layer ResNet.
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{residual_neuron.png}
+	\caption{A residual neuron used in ResNet architecture showing the identity function skipping a connection.}
+	\label{fig:residual}
+\end{figure}
+
+
+To explain this residual step formally, He et al \cite{he} use the following equations to describe the residual block over a few stacked layers:
+
+\begin{equation}
+y = \mathcal{F}(x.\{W_i\}) + x
+\end{equation}
+
+where $x$ and $y$ are the input and outputs and the function $\mathcal{F}(x.\{W_i\})$ is the learned mapping. 
+
+This equation holds for all layers where the dimensions of $x$ and $\mathcal{F}$ are the same. If they are different, for instance when reducing channels, the function is modified slightly to add a linearly projected matching parameter $W_s$:
+
+\begin{equation}
+y = \mathcal{F}(x.\{W_i\}) + W_s x
+\end{equation}
+
+
+
+
+\begin{wrapfigure}{rt}{0.4\textwidth}
+	\begin{center}
+		\includegraphics[width=0.35\textwidth]{resnet_full.png}
+	\end{center}
+	\caption{A residual network in comparison to VGG-$19$ network and a $34$-layer non-residual network.}
+	\label{fig:resnet_full}
+\end{wrapfigure} 
+
+It can be seen from these equations that there is no difference between a residual network and a plain network in terms of depth, width, and number of parameters, and only a negligible difference in computation due to the element-wise addition.
+
+The authors of this paper \cite{he} compared the residual networks (of differing depths up to 1000 layers) with 'plain' networks, VGG-$16$, GoogLeNet, PReLU-net, and BN-inception and found that ResNet's ability performed at up to $8\times$ deeper than VGG-$16$, but with less complexity. The results outperformed other networks when classifying ImageNet and CIFAR-$10$, as well as a $28\%$ improvement on COCO object detection. An ensemble of ResNets achieved $3.37\%$ error rate winning first prize in the ILSVRC 2015 classification task.
+
+
+\subsubsection{Logistic Regression Classifier}
+
+
+Mathematically, Resnet uses a 1000-way Softmax activation function to evaluate the output of the sum of all neurons:
+
+\begin{equation}
+\hat{Z} = SoftMax\Bigg \{ \sum_{n=0}^{N-1} \mathcal{F}(x.\{W_i\}) + W_s x \Bigg \}
+\end{equation}
+
+where $\hat{Z}$ is a 1000-length vector of probabilities associated with the input image. As the output layer is removed in our method, the penultimate layer vector ($\hat{X}$) is represented as the term inside the parenthesis:
+
+\begin{equation}
+\hat{X} = \sum_{i=0}^{N-1} \mathcal{F}(x.\{W_i\}) + W_s x
+\end{equation}
+
+with $N$ inputs, resulting in the feature vector $\hat{X}=[X_0, X_1, X_2,..., X_n]$. Training the Logistic Regression model, we maximise the probability:
+
+\begin{equation}
+P(\hat{X}) = \frac{1}{1+e^{-t_X}} 
+= \frac{1}{1+e^{-(\beta_0+\beta_1 X_0 + \beta_2         X_1+...+\beta_m X_n)}}
+\end{equation}
+
+returning a vector of learned regression coefficients $\hat{\beta}=[\beta_0, \beta_1, \beta_2,...,\beta_m]$ which can be used as a model evaluate new data. 
+
+
+
+\subsubsection{Strawberry Classification}
+\label{sec:strawberry_classification}
+
+Captured images in Table \ref{tab:examples} shows the intensity, backgound and scale attributes are constant while the colour, edges and geometric attributes are variable yet finite (confined within the punnet), therefore the problem is a fine-grained classification task. However, the similarities between each strawberry image are much higher than that of other more general datasets (for example Oxford Flowers or Stanford Dogs where each image does not have a static background, scale or illumination). Therefore, such high level of similarity makes the classification task more challenging, calling for more robust feature descriptors that able to capture the distinctiveness in between different punnet categories (pass, overripe, underripe and those containing foreign objects).
+
+It has been observed that, due to colour tone and reflection differences, examples of overripe strawberry punnets usually have lower overall pixel intensity than examples of underripe strawberry punnnets. However, such pixel intensity, which is mainly affected by the illumination condition, can also be indirectly affected by other factors, such as the way of packing. For example, how individual berries are positioned in the punnet (at random or uniformly arranged), average size of individual berries that determines the total surface area which in turn subsequently determines reflection and illumination. Therefore, we intentionally change the illumination conditions during the image acquisition process to ensure that our training examples include sufficient example images under different illumination conditions, hence making the deep learning instance robust against illumination variances.
+
+
+
+\begin{table}
+	\caption{Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4))}
+	\label{tab:training_samples}
+	\begin{tabular}{l*8{N}@{}}
+		\toprule
+		
+		1 &
+		\includegraphics[width=\linewidth]{images/pass_1.jpg} & \includegraphics[width=\linewidth]{images/pass_2.jpg} & \includegraphics[width=\linewidth]{images/pass_3.jpg} &         \includegraphics[width=\linewidth]{images/pass_4.jpg} & \includegraphics[width=\linewidth]{images/pass_5.jpg} &         \includegraphics[width=\linewidth]{images/pass_6.jpg} & \includegraphics[width=\linewidth]{images/pass_7.jpg} &         \includegraphics[width=\linewidth]{images/pass_8.jpg} \\
+		
+		2 &
+		\includegraphics[width=\linewidth]{images/under_1.jpg} & \includegraphics[width=\linewidth]{images/under_2.jpg} & \includegraphics[width=\linewidth]{images/under_3.jpg} &         \includegraphics[width=\linewidth]{images/under_4.jpg} & \includegraphics[width=\linewidth]{images/under_5.jpg} &         \includegraphics[width=\linewidth]{images/under_6.jpg} & \includegraphics[width=\linewidth]{images/under_7.jpg} &         \includegraphics[width=\linewidth]{images/under_8.jpg} \\
+		
+		3 &
+		\includegraphics[width=\linewidth]{images/over_1.jpg} & \includegraphics[width=\linewidth]{images/over_2.jpg} & \includegraphics[width=\linewidth]{images/over_3.jpg} &         \includegraphics[width=\linewidth]{images/over_4.jpg} & \includegraphics[width=\linewidth]{images/over_5.jpg} &         \includegraphics[width=\linewidth]{images/over_6.jpg} & \includegraphics[width=\linewidth]{images/over_7.jpg} &         \includegraphics[width=\linewidth]{images/over_8.jpg} \\
+		
+		4 &
+		\includegraphics[width=\linewidth]{images/foreign_1.jpg} & \includegraphics[width=\linewidth]{images/foreign_2.jpg} & \includegraphics[width=\linewidth]{images/foreign_3.jpg} &         \includegraphics[width=\linewidth]{images/foreign_4.jpg} & \includegraphics[width=\linewidth]{images/foreign_5.jpg} &         \includegraphics[width=\linewidth]{images/foreign_6.jpg} & \includegraphics[width=\linewidth]{images/foreign_7.jpg} &         \includegraphics[width=\linewidth]{images/foreign_8.jpg} \\
+		
+		
+		\bottomrule
+	\end{tabular}
+\end{table} 
+
+
+
+
+The strawberry problem domain relates strongly to the colour and texture aspects of early-layer neural network feature extraction. As ResNet is a deep-learned network, trained on millions of object images making up $1000$ classes, we theorise (with further evidence provided by Pan {\it et al} \cite{pan}, Bianchini and Scarselli \cite{bianchini}) that it will detect more intricate differences in fine-grained object images due to its complexity, discriminating more easily between slight colour and texture variations. Also, this architecture provides a more efficient network propagation for real-time applications due to the residual elements.
+
+
+
+\begin{table}
+	\centering
+	\caption{Comparison of training results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.}
+	\label{tab:classifiers}
+	\begin{tabularx}{0.85\textwidth}{ccccccc}
+		\toprule
+		& Foreign object &          & Under ripe    &          & Over ripe     &           \\  
+		Classifier & Accuracy (\%)  & Log Loss & Accuracy (\%) & Log Loss & Accuracy (\%) & Log Loss  \\ 
+		\midrule
+		K-Neighbors Classifier          & 89.9297  & 1.2688 & 80.4989 & 1.4785 & 79.9550 & 1.4162 \\[6pt] 
+		Logistic Regression	            & \textbf{96.9555}  & \textbf{0.0840} & \textbf{97.9592} & \textbf{0.0664} &  \textbf{99.3243} & \textbf{0.0445} \\[6pt]
+		SVM (RBF)	                    & 51.5222  & 0.2976 & 47.1655 & 0.3754 & 47.5225 & 0.6921 \\[6pt]
+		NuSVM	                        & 93.4426  & 0.1853 & 96.3719 & 0.1092 & 98.4234 & 0.0445 \\[6pt]
+		Decision Tree Classifier	    & 89.4614  & 3.6399 & 80.9524 & 6.5788 & 83.3333 & 5.7565 \\[6pt]
+		Random Forest Classifier	    & 90.6323  & 0.4432 & 83.4467 & 0.4808 & 87.8378 & 0.3963 \\[6pt]
+		AdaBoost Classifier	            & 96.7213  & 0.5742 & 97.7324 & 0.5472 & 97.2973 & 0.5809 \\[6pt]
+		MLP Classifier	                & 95.7845  & 0.2315 & 95.6916 & 0.2222 & 52.4775 & 0.6920 \\[6pt]
+		Gradient Boosting Classifier	& 94.8478  & 0.1451 & 97.9592 & 0.0714 & 98.1982 & 0.0638 \\[6pt]
+		Gaussian NB	                    & 53.8642  & 15.934 & 60.3175 & 13.7059 & 57.2072 & 14.7801 \\[6pt]
+		Linear Discriminant Analysis	& 94.1452  & 0.2143 & 90.0227 & 0.4015 & 93.2432 & 0.3401 \\[6pt]
+		Quadratic Discriminant Analysis	& 59.2506  & 14.0743 & 50.7937 & 16.9953 & 52.4775 & 16.4137 \\[6pt]
+		\bottomrule 
+	\end{tabularx}
+\end{table}
+
+
+
+
+
+The method discussed in this paper is based on feature vector classification previously used in, for example, SVM, Random Forrest, and Regression techniques which are well-known classification methods. However, the feature vector that is classified in this case is generated by the ResNet neural network and its deep learned features. The network weights are not changed, or fine-tuned, as with previously mentioned methods, rather the penultimate layer vectors are used to train a classifier to recognise defects. 
+
+The originally acquired images include a background of conveyor belts and other mechanical parts of the system, they also include top-bottom view of the sensor, its reflector and the entire punnet borders (in the top view) and the bottom of the punnet (in the bottom view). Since the location of the punnet in the camera field of view is fixed at each moment of capture and all punnets are of exactly the same size, the valid punnet region is cropped from the original acquired image with a fixed size of $500 \times 600$. 
+
+
+Using a combination of horizontal and vertical flipping, images were compiled for training and listed in Table \ref{tab:data}.
+
+
+\begin{table}[h]
+	\centering
+	\caption{Images collected and labelled for each class for testing and training.}
+	\label{tab:data}
+	\begin{tabular}{c c c c c} 
+		\hline
+		& Foreign & Under ripe & Over ripe & Pass \\ [0.5ex] 
+		\hline
+		Training & 1595 &  3542 & 4954 &  5412 \\
+		Testing & 500 & 500 & 500 & 500 \\ [1ex] 
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+During the research and training phase, $12$ different classifiers were assessed for accuracy including K-Neighbours, AdaBoost, and SVM algorithms with results shown in Table \ref{tab:classifiers}. They were trained with respect to three defect classes namely, under ripe, over ripe, and foreign object, and indicate that simple Logistic Regression analysis is the best performing. 
+
+
+Interestingly, the SVM with RBF kernel algorithm scored a very low $51.5\%$ while the NuSVM algorithm scored much higher at $93.4\%$ when comparing on the under ripe category. The difference between the these two methods are the $C$ and $Nu$ regularization parameters which apply penalties in the case of mis-classifications. The $C$ parameter used in SVC, ranges $\{\exists C\in\mathbb{Q^+}\}$ where $\mathbb{Q^+}$ is the set of positive rational numbers, meaning it can take any real value from zero to infinity. The $Nu$ parameter is limited to a range from zero to one only $\{\exists C\in\mathbb{Q} \mid 0 <\mathbb{Q} < 1\}$ and therefore, is bounded to search within a defined smaller range. 
+
+The difference in these two scores indicates for this problem, the classifier will underfit using high-level parameters that can escalate infinitely. Therefore the Logistic Regression algorithm is used to classify the extracted strawberry features. 
 
 
 
@@ -2575,8 +3368,26 @@ Version 1
 	\includepdf[pages=1,scale=1,linktodoc=true]{appendix/wiring_1.pdf}
 \end{minipage}
 
-%rest of pages
-%\includepdf[pages=2-,scale=0.9]{appendix/QC_Spec.pdf}
+
+
+\newpage
+Version 2
+%first page
+\begin{minipage}[b]{0.9\linewidth}
+	\includegraphics[scale=0.9,angle=270]{appendix/wiring_2.png}
+\end{minipage}
+
+
+
+
+\newpage
+Version 3
+%first page
+\begin{minipage}[b]{0.9\linewidth}
+	\includepdf[pages=1,scale=0.9,linktodoc=true,angle=270]{appendix/wiring_3.pdf}
+\end{minipage}
+
+
 
 
 

@@ -842,4 +842,21 @@ K.~He and J.~Sun, ``Convolutional neural networks at constrained time cost,''
 F.~Angiulli, ``Fast condensed nearest neighbor rule,'' {\em ICML (international
   conference on Machine learning)}, vol.~22, pp.~25--32, 2005.
 
+\bibitem{willert}
+C.~Willert, B.~Stasicki, J.~Klinner, and S.~Moessner, ``Pulsed operation of
+  high-power light emitting diodes for imaging flow velocimetry,'' {\em
+  Measurement Science and Technology}, vol.~Vol: 21, pp.~pp 1--11, 2010.
+
+\bibitem{shin}
+H.-C. Shin, H.~R. Roth, M.~Gao, L.~Lu, Z.~Xu, I.~Nogues, J.~Yao, D.~Mollura, ,
+  and R.~M. Summers, ``Deep convolutional neural networks for computer-aided
+  detection: Cnn architectures and dataset characteristics and transfer
+  learning,'' {\em IEEE TRANSACTIONS ON MEDICAL IMAGING}, vol.~35 No.5, 2016.
+
+\bibitem{girshick}
+R.~Girshick, J.~Donahue, T.~Darrell, , and J.~Malik, ``Region-based
+  convolutional networks for accurate object detection and segmentation,'' {\em
+  IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE}, vol.~38,
+  No.1, 2016.
+
 \end{thebibliography}

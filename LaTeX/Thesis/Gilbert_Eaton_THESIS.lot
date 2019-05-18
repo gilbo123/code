@@ -3,8 +3,18 @@
 \contentsline {table}{\numberline {3}{\ignorespaces Cougar $1200W$ Power Supply Unit (PSU) specifications\relax }}{60}{table.caption.30}
 \contentsline {table}{\numberline {4}{\ignorespaces Microcontroller input port assignments and peripheral devices power ratings.\relax }}{68}{table.caption.37}
 \contentsline {table}{\numberline {5}{\ignorespaces Microcontroller output port assignments and peripheral devices power ratings.\relax }}{69}{table.caption.38}
-\contentsline {table}{\numberline {6}{\ignorespaces Results of algorithm testing.\relax }}{85}{table.caption.49}
-\contentsline {table}{\numberline {7}{\ignorespaces Confusion matrix for single defect underripe tests.\relax }}{86}{table.caption.50}
-\contentsline {table}{\numberline {8}{\ignorespaces Confusion matrix for multiple defect underripe tests.\relax }}{86}{table.caption.51}
-\contentsline {table}{\numberline {9}{\ignorespaces Confusion matrix for single defect overripe tests.\relax }}{86}{table.caption.52}
-\contentsline {table}{\numberline {10}{\ignorespaces Confusion matrix for multiple defect overripe tests.\relax }}{87}{table.caption.53}
+\contentsline {table}{\numberline {6}{\ignorespaces Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.\relax }}{71}{table.caption.41}
+\contentsline {table}{\numberline {7}{\ignorespaces Results of algorithm testing.\relax }}{87}{table.caption.52}
+\contentsline {table}{\numberline {8}{\ignorespaces Confusion matrix for single defect underripe tests.\relax }}{88}{table.caption.53}
+\contentsline {table}{\numberline {9}{\ignorespaces Confusion matrix for multiple defect underripe tests.\relax }}{88}{table.caption.54}
+\contentsline {table}{\numberline {10}{\ignorespaces Confusion matrix for single defect overripe tests.\relax }}{88}{table.caption.55}
+\contentsline {table}{\numberline {11}{\ignorespaces Confusion matrix for multiple defect overripe tests.\relax }}{89}{table.caption.56}
+\contentsline {table}{\numberline {12}{\ignorespaces MOSFET allocation per LED cluster.\relax }}{99}{table.caption.63}
+\contentsline {table}{\numberline {13}{\ignorespaces Important specifications of $360W/36VDC$ power supply.\relax }}{100}{table.caption.65}
+\contentsline {table}{\numberline {14}{\ignorespaces LED Controller connections and pin assignments.\relax }}{107}{table.caption.72}
+\contentsline {table}{\numberline {15}{\ignorespaces I/O Controller connections and pin assignments.\relax }}{108}{table.caption.73}
+\contentsline {table}{\numberline {16}{\ignorespaces Watchdog Controller connections and pin assignments.\relax }}{109}{table.caption.74}
+\contentsline {table}{\numberline {17}{\ignorespaces Operating modes for each controller.\relax }}{109}{table.caption.75}
+\contentsline {table}{\numberline {18}{\ignorespaces Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4))\relax }}{114}{table.caption.78}
+\contentsline {table}{\numberline {19}{\ignorespaces Comparison of training results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.\relax }}{114}{table.caption.79}
+\contentsline {table}{\numberline {20}{\ignorespaces Images collected and labelled for each class for testing and training.\relax }}{115}{table.caption.80}

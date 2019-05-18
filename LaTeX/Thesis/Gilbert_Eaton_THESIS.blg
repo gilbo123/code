@@ -1,6 +1,16 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Gilbert_Eaton_THESIS.aux
+Case mismatch error between cite keys He and he
+---line 571 of file Gilbert_Eaton_THESIS.aux
+ : \citation{He
+ :             }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys He and he
+---line 580 of file Gilbert_Eaton_THESIS.aux
+ : \citation{He
+ :             }
+I'm skipping whatever remains of this command
 The style file: ieeetr.bst
 Database file #1: Master.bib
 Repeated entry---line 1043 of file Master.bib
@@ -71,45 +81,45 @@ Warning--I didn't find a database entry for "artur"
 Warning--empty year in artusi
 Warning--empty year in anderson
 Warning--empty year in kuranov
-You've used 160 entries,
+You've used 163 entries,
             1876 wiz_defined-function locations,
-            1311 strings with 32743 characters,
-and the built_in function-call counts, 50617 in all, are:
-= -- 4950
-> -- 2159
+            1327 strings with 33497 characters,
+and the built_in function-call counts, 51431 in all, are:
+= -- 5013
+> -- 2222
 < -- 0
-+ -- 780
-- -- 620
-* -- 3554
-:= -- 7003
-add.period$ -- 172
-call.type$ -- 160
-change.case$ -- 156
++ -- 802
+- -- 639
+* -- 3625
+:= -- 7136
+add.period$ -- 175
+call.type$ -- 163
+change.case$ -- 159
 chr.to.int$ -- 0
-cite$ -- 163
-duplicate$ -- 2531
-empty$ -- 4481
-format.name$ -- 620
-if$ -- 12637
+cite$ -- 166
+duplicate$ -- 2568
+empty$ -- 4546
+format.name$ -- 639
+if$ -- 12823
 int.to.chr$ -- 0
-int.to.str$ -- 160
-missing$ -- 153
-newline$ -- 498
-num.names$ -- 160
-pop$ -- 423
+int.to.str$ -- 163
+missing$ -- 156
+newline$ -- 507
+num.names$ -- 163
+pop$ -- 431
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2060
+skip$ -- 2079
 stack$ -- 0
-substring$ -- 3740
-swap$ -- 1295
+substring$ -- 3770
+swap$ -- 1308
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 417
-width$ -- 163
-write$ -- 1558
-(There were 9 error messages)
+while$ -- 422
+width$ -- 166
+write$ -- 1586
+(There were 11 error messages)

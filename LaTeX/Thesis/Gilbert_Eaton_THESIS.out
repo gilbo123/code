@@ -53,33 +53,43 @@
 \BOOKMARK [3][-]{subsubsection.5.1.1}{Electronics and Power}{subsection.5.1}% 53
 \BOOKMARK [4][-]{paragraph.5.1.1.1}{Lighting Finalisation}{subsubsection.5.1.1}% 54
 \BOOKMARK [4][-]{paragraph.5.1.1.2}{Electronic Control System}{subsubsection.5.1.1}% 55
-\BOOKMARK [3][-]{subsubsection.5.1.2}{Cross-polarization of Cameras}{subsection.5.1}% 56
-\BOOKMARK [2][-]{subsection.5.2}{Final Configuration}{section.5}% 57
-\BOOKMARK [2][-]{subsection.5.3}{Queensland Production - Season 1}{section.5}% 58
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Image Synchronisation}{subsection.5.3}% 59
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Ejector Mechanism}{subsection.5.3}% 60
-\BOOKMARK [3][-]{subsubsection.5.3.3}{Data Collection}{subsection.5.3}% 61
-\BOOKMARK [2][-]{subsection.5.4}{South Australia Production - Season 2}{section.5}% 62
-\BOOKMARK [1][-]{section.6}{Colour Analysis of Strawberries on a Real-time Production Line}{}% 63
-\BOOKMARK [2][-]{subsection.6.1}{Abstract}{section.6}% 64
-\BOOKMARK [2][-]{subsection.6.2}{Background}{section.6}% 65
-\BOOKMARK [2][-]{subsection.6.3}{Image Acquisition}{section.6}% 66
-\BOOKMARK [2][-]{subsection.6.4}{Methods}{section.6}% 67
-\BOOKMARK [3][-]{subsubsection.6.4.1}{Underripe Features}{subsection.6.4}% 68
-\BOOKMARK [3][-]{subsubsection.6.4.2}{Overripe Features}{subsection.6.4}% 69
-\BOOKMARK [2][-]{subsection.6.5}{Results}{section.6}% 70
-\BOOKMARK [2][-]{subsection.6.6}{Conclusion}{section.6}% 71
-\BOOKMARK [1][-]{section.7}{Redesign and Upgrade}{}% 72
-\BOOKMARK [2][-]{subsection.7.1}{Enclosure}{section.7}% 73
-\BOOKMARK [2][-]{subsection.7.2}{Lighting}{section.7}% 74
-\BOOKMARK [2][-]{subsection.7.3}{Microcontroller}{section.7}% 75
-\BOOKMARK [2][-]{subsection.7.4}{Queensland Production - Season 3}{section.7}% 76
-\BOOKMARK [1][-]{section.8}{Linux and Deep Learning}{}% 77
-\BOOKMARK [2][-]{subsection.8.1}{Machine Learning}{section.8}% 78
-\BOOKMARK [2][-]{subsection.8.2}{Linux Operating System}{section.8}% 79
-\BOOKMARK [2][-]{subsection.8.3}{User Interface}{section.8}% 80
-\BOOKMARK [2][-]{subsection.8.4}{OS Transition into Production}{section.8}% 81
-\BOOKMARK [2][-]{subsection.8.5}{Transfer Learning with Resnet}{section.8}% 82
-\BOOKMARK [1][-]{section.9}{Conclusion}{}% 83
-\BOOKMARK [1][-]{appendix.A}{SQA Specification}{}% 84
-\BOOKMARK [1][-]{appendix.B}{Wiring Diagrams}{}% 85
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Cross-polarization of RGB Cameras}{subsection.5.1}% 56
+\BOOKMARK [2][-]{subsection.5.2}{Hyperspectral Bruise Analysis}{section.5}% 57
+\BOOKMARK [2][-]{subsection.5.3}{Final Configuration}{section.5}% 58
+\BOOKMARK [2][-]{subsection.5.4}{Queensland Production - Season 1}{section.5}% 59
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Image Synchronisation}{subsection.5.4}% 60
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Ejector Mechanism}{subsection.5.4}% 61
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Data Collection}{subsection.5.4}% 62
+\BOOKMARK [2][-]{subsection.5.5}{South Australia Production - Season 2}{section.5}% 63
+\BOOKMARK [1][-]{section.6}{Colour Analysis of Strawberries on a Real-time Production Line}{}% 64
+\BOOKMARK [2][-]{subsection.6.1}{Abstract}{section.6}% 65
+\BOOKMARK [2][-]{subsection.6.2}{Background}{section.6}% 66
+\BOOKMARK [2][-]{subsection.6.3}{Image Acquisition}{section.6}% 67
+\BOOKMARK [2][-]{subsection.6.4}{Methods}{section.6}% 68
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Underripe Features}{subsection.6.4}% 69
+\BOOKMARK [3][-]{subsubsection.6.4.2}{Overripe Features}{subsection.6.4}% 70
+\BOOKMARK [2][-]{subsection.6.5}{Results}{section.6}% 71
+\BOOKMARK [2][-]{subsection.6.6}{Conclusion}{section.6}% 72
+\BOOKMARK [1][-]{section.7}{Redesign and Upgrade}{}% 73
+\BOOKMARK [2][-]{subsection.7.1}{Enclosure}{section.7}% 74
+\BOOKMARK [2][-]{subsection.7.2}{Lighting}{section.7}% 75
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Colour Renderin Index \(CRI\)}{subsection.7.2}% 76
+\BOOKMARK [3][-]{subsubsection.7.2.2}{High-power Triggering}{subsection.7.2}% 77
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Lighting Power Supply}{subsection.7.2}% 78
+\BOOKMARK [2][-]{subsection.7.3}{Strawberry Quality Asurance \(SQA\) Version 2}{section.7}% 79
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Peripheral Power Supply and IO}{subsection.7.3}% 80
+\BOOKMARK [2][-]{subsection.7.4}{Queensland Production - Season 3}{section.7}% 81
+\BOOKMARK [2][-]{subsection.7.5}{Microcontroller Upgrade}{section.7}% 82
+\BOOKMARK [1][-]{section.8}{Linux and Deep Learning}{}% 83
+\BOOKMARK [2][-]{subsection.8.1}{Machine Learning}{section.8}% 84
+\BOOKMARK [2][-]{subsection.8.2}{Linux Operating System}{section.8}% 85
+\BOOKMARK [2][-]{subsection.8.3}{User Interface}{section.8}% 86
+\BOOKMARK [2][-]{subsection.8.4}{OS Transition into Production}{section.8}% 87
+\BOOKMARK [2][-]{subsection.8.5}{Transfer Learning with Resnet}{section.8}% 88
+\BOOKMARK [3][-]{subsubsection.8.5.1}{Transfer Learning}{subsection.8.5}% 89
+\BOOKMARK [3][-]{subsubsection.8.5.2}{ResNet}{subsection.8.5}% 90
+\BOOKMARK [3][-]{subsubsection.8.5.3}{Logistic Regression Classifier}{subsection.8.5}% 91
+\BOOKMARK [3][-]{subsubsection.8.5.4}{Strawberry Classification}{subsection.8.5}% 92
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 93
+\BOOKMARK [1][-]{appendix.A}{SQA Specification}{}% 94
+\BOOKMARK [1][-]{appendix.B}{Wiring Diagrams}{}% 95
