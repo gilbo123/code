@@ -847,6 +847,63 @@ C.~Willert, B.~Stasicki, J.~Klinner, and S.~Moessner, ``Pulsed operation of
   high-power light emitting diodes for imaging flow velocimetry,'' {\em
   Measurement Science and Technology}, vol.~Vol: 21, pp.~pp 1--11, 2010.
 
+\bibitem{dodge}
+S.~Dodge and L.~Karam, ``A study and comparison of human and deeplearning
+  recognition performanceunder visual distortions,'' {\em Computer Vision and
+  Pattern Recognition}, vol.~arXiv:1705.02498v1, 2017.
+
+\bibitem{he2}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Delving deep into rectifiers:surpassing
+  human-level performance on imagenet classification,'' {\em Computer Vision
+  and Pattern Recognition}, vol.~arXiv:1502.01852, 2015.
+
+\bibitem{geirhos}
+R.~Geirhos, D.~H.~J. Janssen, H.~H. Schutt, J.~Rauber, M.~Bethge, and F.~A.
+  Wichmann, ``Comparing deep neural networks against humans:object recognition
+  when the signal gets weaker,'' {\em Computer Vision and Pattern Recognition},
+  vol.~arXiv:1706.06969v2, 2018.
+
+\bibitem{saon}
+G.~Saon, G.~Kurata, T.~Sercu, K.~Audhkhasi, S.~Thomas, D.~Dimitriadis, X.~Cui,
+  B.~Ramabhadran, M.~Picheny, L.-L. Lim, B.~Roomi, and P.~Hall, ``English
+  conversational telephone speech recognition by humans and machines,'' {\em
+  Computation and Language}, vol.~arXiv:1703.02136, 2017.
+
+\bibitem{xiong}
+W.~Xiong, J.~Droppo, X.~Huang, F.~Seide, M.~Seltzer, A.~Stolcke, D.~Yu, and
+  G.~Zweig, ``Achieving human parity in conversational speech recognition,''
+  {\em Computation and Language}, vol.~arXiv:1610.05256, 2017.
+
+\bibitem{han}
+H.~Han, C.~Otto, X.~Liu, and A.~K. Jain, ``Demographic estimation from face
+  images: Human vs. machine performance,'' {\em IEEE Transactions on Pattern
+  Analysis and Machine Intelligence}, vol.~37(6), pp.~1148--1161, 2015.
+
+\bibitem{wiki_linux}
+W.~the~free encyclopedia, ``Linux.''
+\newblock Accessed May 2019.
+
+\bibitem{amari}
+S.~Amari and S.~Wu, ``Improving support vector machine classifiers by modifying
+  kernel functions,'' {\em Neural Networks}, vol.~Vol: 12, p.~pp 783–789,
+  1999.
+
+\bibitem{suln}
+L.~Suln and Y.~Song, ``Research on classifying performance of svm with modified
+  kernel function in hccr,'' {\em Neural Networks and Brain}, vol.~DOI:
+  10.1109/ICNNB.2005.1614960, p.~pp 1720–1723, 2005.
+
+\bibitem{diosan}
+L.~Diosan, M.~Oltean, A.~Rogozan, and J.-P. Pecuchet, ``Improving svm
+  performance using a linear combination of kernels,'' {\em International
+  Conference on Adaptive and Natural Computing Algorithms}, vol.~DOI:
+  10.1007.978.3.540.71629.7.25, p.~pp 218–227, 2007.
+
+\bibitem{andrej}
+J.~Johnson and A.~Karpathy, ``Cs231n convolutional neural networks for visual
+  recognition.''
+\newblock Accessed June 2017.
+
 \bibitem{shin}
 H.-C. Shin, H.~R. Roth, M.~Gao, L.~Lu, Z.~Xu, I.~Nogues, J.~Yao, D.~Mollura, ,
   and R.~M. Summers, ``Deep convolutional neural networks for computer-aided
@@ -856,7 +913,18 @@ H.-C. Shin, H.~R. Roth, M.~Gao, L.~Lu, Z.~Xu, I.~Nogues, J.~Yao, D.~Mollura, ,
 \bibitem{girshick}
 R.~Girshick, J.~Donahue, T.~Darrell, , and J.~Malik, ``Region-based
   convolutional networks for accurate object detection and segmentation,'' {\em
-  IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE}, vol.~38,
+  IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE}, vol.~38 and
   No.1, 2016.
+
+\bibitem{pan}
+J.~Pan, E.~Sayrol, X.~G. i~Nieto, K.~McGuinness, and N.~E. O'Connor, ``Shallow
+  and deep convolutional networks for saliency prediction,'' {\em Computer
+  Vision and Pattern Recognition (CVPR)}, vol.~arXiv:1603.00845, pp.~598--606,
+  2016.
+
+\bibitem{bianchini}
+M.~Bianchini and F.~Scarselli, ``On the complexity of neural network
+  classifiers: A comparison between shallow and deep architectures,'' {\em IEEE
+  TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS}, vol.~25 No.8, 2014.
 
 \end{thebibliography}

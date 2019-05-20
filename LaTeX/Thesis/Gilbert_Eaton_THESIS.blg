@@ -1,16 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Gilbert_Eaton_THESIS.aux
-Case mismatch error between cite keys He and he
----line 571 of file Gilbert_Eaton_THESIS.aux
- : \citation{He
- :             }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys He and he
----line 580 of file Gilbert_Eaton_THESIS.aux
- : \citation{He
- :             }
-I'm skipping whatever remains of this command
 The style file: ieeetr.bst
 Database file #1: Master.bib
 Repeated entry---line 1043 of file Master.bib
@@ -74,6 +64,10 @@ I was expecting a `,' or a `}'---line 2535 of file Master.bib
  :  year          = "2002",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--entry type for "andrej" isn't style-file defined
+--line 3091 of file Master.bib
+Warning--entry type for "wiki_linux" isn't style-file defined
+--line 3239 of file Master.bib
 Warning--I didn't find a database entry for "peng"
 Warning--I didn't find a database entry for "luo"
 Warning--I didn't find a database entry for "yavs"
@@ -81,45 +75,45 @@ Warning--I didn't find a database entry for "artur"
 Warning--empty year in artusi
 Warning--empty year in anderson
 Warning--empty year in kuranov
-You've used 163 entries,
+You've used 176 entries,
             1876 wiz_defined-function locations,
-            1327 strings with 33497 characters,
-and the built_in function-call counts, 51431 in all, are:
-= -- 5013
-> -- 2222
+            1390 strings with 35954 characters,
+and the built_in function-call counts, 54942 in all, are:
+= -- 5347
+> -- 2409
 < -- 0
-+ -- 802
-- -- 639
-* -- 3625
-:= -- 7136
-add.period$ -- 175
-call.type$ -- 163
-change.case$ -- 159
++ -- 869
+- -- 693
+* -- 3845
+:= -- 7626
+add.period$ -- 188
+call.type$ -- 176
+change.case$ -- 172
 chr.to.int$ -- 0
-cite$ -- 166
-duplicate$ -- 2568
-empty$ -- 4546
-format.name$ -- 639
-if$ -- 12823
+cite$ -- 179
+duplicate$ -- 2769
+empty$ -- 4839
+format.name$ -- 693
+if$ -- 13694
 int.to.chr$ -- 0
-int.to.str$ -- 163
-missing$ -- 156
-newline$ -- 507
-num.names$ -- 163
-pop$ -- 431
+int.to.str$ -- 176
+missing$ -- 167
+newline$ -- 548
+num.names$ -- 176
+pop$ -- 478
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2079
+skip$ -- 2244
 stack$ -- 0
-substring$ -- 3770
-swap$ -- 1308
+substring$ -- 3910
+swap$ -- 1413
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 422
-width$ -- 166
-write$ -- 1586
-(There were 11 error messages)
+while$ -- 442
+width$ -- 179
+write$ -- 1706
+(There were 9 error messages)

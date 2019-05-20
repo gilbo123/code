@@ -2,12 +2,12 @@
 \usepackage[utf8]{inputenc}
 
 %margins and size of page
-\usepackage[twoside, top=3.0cm,bottom=3.0cm,right=2.5cm,left=2.5cm]{geometry}
+\usepackage[twoside, top=2.5cm,bottom=2.5cm,right=3.0cm,left=3.0cm]{geometry}
 \setlength{\oddsidemargin}{0mm} 
 \setlength{\evensidemargin}{0mm} 
 
 %1.5 line spacing
-\renewcommand{\baselinestretch}{1.5} 
+\renewcommand{\baselinestretch}{2} 
 
 %dummy text
 \usepackage{lipsum}
@@ -30,10 +30,14 @@
 \usepackage{longtable}
 %\usepackage{ltablex}
 \usepackage{booktabs}
-%\usepackage{rotating}
+\usepackage{rotating}
 %\usepackage{array}
+\usepackage{ltablex}
 
-\newcolumntype{C}{>{\centering\arraybackslash}X} % centered version of "X" type
+
+
+
+\newcolumntype{C}{>{\arraybackslash}X} % centered version of "X" type
 \newcolumntype{N}{>{\arraybackslash}m{1.4cm}}
 
 
@@ -810,7 +814,7 @@ Machine vision can outperform humans depending on the task involved. Particularl
 \subsection{Machine Learning / Deep Learning Methods}
 
 
-Machine learning is a branch of computer science and AI that uses an iterative 'learning' approach to building a classifier model. The model's weights are updated by an algorithm that, given any training set ($x_1, y_1$), ($x_2, y_2$), ... , ($x_n, y_n$), can learn a function $y = f(x)$ to make prediction of an unseen $x_{test}$ variable. Deep Learning refers to the depth of the network or number of layers the model has. Using a deeper network allows for multiple convolutions in a CNN and therefore better abstraction, albeit more computationally expensive. A range of methods have been investigated from very basic MLP networks, SVM, and ANN to more complex architectures such as CNNs.
+Machine learning is a branch of computer science and AI that uses an iterative 'learning' approach to building a classifier model. The model's weights are updated by an algorithm that, given any training set ($x_1, y_1$), ($x_2, y_2$), ... , ($x_n, y_n$), can learn a function $y = f(x)$ to make prediction of an unseen $x_{test}$ variable. Deep learning refers to the depth of the network or number of layers the model has. Using a deeper network allows for multiple convolutions in a CNN and therefore better abstraction, albeit more computationally expensive. A range of methods have been investigated from very basic MLP networks, SVM, and ANN to more complex architectures such as CNNs.
 
 
 Comparison of MLP neural network and Discriminant Analysis (DA) performed when grading golden delicious starfruit by Abdullah et al \cite{abdullah} found that the colour attributes were more accurately classified by DA, with resulting $95.3\%$ and $90.5\%$ for DA and MLP, respectively. The method used to extract colour features based on hue values $10-74$ were improved with the DA classifier using Wilks-lambda reduction, however the MLP result was unchanged. In order to classify shape characteristics, Fourier discriptors were used generating a $100\%$ accuracy.
@@ -886,7 +890,7 @@ However, SVM was not the predominant classifier when Alfatini et al \cite{alfatn
 
 Machine learning is a broad term that encapsulates Artificial Intelligence (AI) techniques adopted from many approaches, and can be defined as any  computer program that can perform tasks, after having been trained,  without having to be explicitly told to \cite{langley,shavlik,mohri}. In other words, the program can adapt and configure itself to specific conditions in order to make decisions, improve accuracy or efficiency, control systems, and predict outcomes among many other uses. The \textit{learning} is a term that refers to the process of training a program to perform a task. Given a training set $(x_i, y_i)$, $x\in X$, $y\in Y$ of inputs and outputs, the program must derive a function $f$ that satisfies $f(x_i) = y_i$ for all $i$. A very large training set will improve accuracy, however, this may result in extremely long periods of training (weeks in some cases \cite{bottou}), or over-fitting problems. Training can be sped up, however, by increasing computational power such as high-end GPU's or supercomputer systems.
 
-Neural Networks, in AI, are a commonly implemented method for perfoming many operations and are made up of one or more layers of neurons as shown in Figure \ref{fig:neural_net}. The layers in this image are fully connected, meaning that each neuron in the layer $L_n$ takes inputs from the layer at $L_{n-1}$, and can output to the layer at $L_{n+1}$, however, neurons in the same layer may not be connected. This is the most common approach, although, sometimes it is beneficial to avoid fully connected layers. An SVM classifier can be thought to be modelled as a single layer NN, and other terms have evolved such as Artificial Neural Networks (ANN) and Multi-layer Perceptron (MLP). However, more complex topologies can be constructed with the addition of convolutional steps between layers, known as a Convolutional Neural Network (CNN) and the term Deep Learning or Deep Neural Networks (DNN) where the depth is seen in the number of connected layers.  
+Neural Networks, in AI, are a commonly implemented method for perfoming many operations and are made up of one or more layers of neurons as shown in Figure \ref{fig:neural_net}. The layers in this image are fully connected, meaning that each neuron in the layer $L_n$ takes inputs from the layer at $L_{n-1}$, and can output to the layer at $L_{n+1}$, however, neurons in the same layer may not be connected. This is the most common approach, although, sometimes it is beneficial to avoid fully connected layers. An SVM classifier can be thought to be modelled as a single layer NN, and other terms have evolved such as Artificial Neural Networks (ANN) and Multi-layer Perceptron (MLP). However, more complex topologies can be constructed with the addition of convolutional steps between layers, known as a Convolutional Neural Network (CNN) and the term deep learning or Deep Neural Networks (DNN) where the depth is seen in the number of connected layers.  
 
 \begin{figure}[h]
 	\centering
@@ -965,7 +969,7 @@ Strawberries are very suceptible to damage, therefore, handling and transport be
 
 Conversely, the apples, figs, and citrus fruits reviewed have robust skin to protect them from being constantly moved, rolled, placed, and pushed during the grading and control processes. Speeds of $54,000/h$ for apples, $90kg/h$ for figs, $72,000/h$ for dates, and $5/s$ for citrus fruit have been noted proving that machine vision is currently powerful enough to process this type of volume if the automated handling is efficient and appropriate.
 
-Machine Learning and Deep Learning play a vital role in produce grading, along with more naive implementations, due to their ability to discriminate between classes well. Algorithms such as LDA, QDA, SVM, ANN, BPNN may take hours to train, but can perform accurately and quickly during inference. SVM and shallow networks (such as single layer ANN or BPNN) were predominant methods to predict based on colour, size, and texture features extracted by hand, whereas, CNN and deeper networks are used where the image itself is used as input in order to predict masks or bounding boxes for identification and classification purposes.
+Machine learning and Deep learning play a vital role in produce grading, along with more naive implementations, due to their ability to discriminate between classes well. Algorithms such as LDA, QDA, SVM, ANN, BPNN may take hours to train, but can perform accurately and quickly during inference. SVM and shallow networks (such as single layer ANN or BPNN) were predominant methods to predict based on colour, size, and texture features extracted by hand, whereas, CNN and deeper networks are used where the image itself is used as input in order to predict masks or bounding boxes for identification and classification purposes.
 
 \quad
 \quad
@@ -976,7 +980,9 @@ The main body of this thesis is set out with the following four chapters:
 
 \begin{itemize}
 	\item Chapter \ref{sec:I} - Prototype and Design
+	\item Chapter \ref{sec:paper_1} - A Method to Create Stable Lighting and Remove Specular Reflections for Vision Systems
 	\item Chapter \ref{sec:II} - Production Integration 
+	\item Chapter \ref{sec:paper_2} - Colour Analysis of Strawberries on a Real-time Production Line
 	\item Chapter \ref{sec:III} - Redesign and Upgrade
 	\item Chapter \ref{sec:IV} - Linux and Deep Learning 
 \end{itemize}
@@ -1162,7 +1168,6 @@ Converting the system to $12V$ power was required in order to provide a more con
 		\caption{}
 		\label{fig:bench_led_rigid}
 	\end{subfigure}%
-	
 	\caption{Left to right: (a)Halogen work lamps tested facing upwards with a thin film polaroid , (b)Halogen work lamps in a diagolally upward direction with a dark-field blocker, (c)Installation of LED light bars and rigid polarizing material.}
 	\label{fig:test3}
 \end{figure}
@@ -1392,7 +1397,7 @@ Lastly, HALCON\texttrademark is an interpreted language with the unique property
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{halcon_ide.png}
-	\caption{A screenshot of the Halcon IDE, from left to right, showing the image (Graphics), method (Operator), control/iconic variables (Variable), and script (Program) windows.}
+	\caption{A screenshot of the HALCON\texttrademark IDE, from left to right, showing the image (Graphics), method (Operator), control/iconic variables (Variable), and script (Program) windows.}
 	\label{fig:halcon_ide}
 \end{figure} 
 
@@ -1699,7 +1704,6 @@ Data was gathered twice, once for a period of two seconds with a fast frame rate
 
 \begin{center}
 	\begin{figure}[h]
-		\centering
 		\begin{subfigure}{.45\textwidth}
 			\centering
 			\includegraphics[width=.95\linewidth]{image_diff_dc.png}
@@ -1874,7 +1878,8 @@ The inputs that need to be processed are generated by automatic processes (punne
 
 \renewcommand{\arraystretch}{0.8}% Tighter table height
 \begin{table}[h]
-	\caption{Microcontroller input port assignments and peripheral devices power ratings.}
+	\centering
+	\caption{Microcontroller INPUT port assignments and peripheral devices power ratings.}
 	\label{tab:micro_pinout_in}
 	\begin{tabularx}{\linewidth}{Xcccc}
 		
@@ -1905,7 +1910,8 @@ The high-powered devices are controlled by the Phidget\texttrademark in conjunct
 
 \renewcommand{\arraystretch}{0.8}% Tighter table height
 \begin{table}[h]
-	\caption{Microcontroller output port assignments and peripheral devices power ratings.}
+	\centering
+	\caption{Microcontroller OUTPUT port assignments and peripheral devices power ratings.}
 	\label{tab:micro_pinout_out}
 	\begin{tabularx}{\linewidth}{Xccccc}
 		\toprule
@@ -1974,6 +1980,7 @@ Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a B
 
 
 \begin{table}
+	\centering
 	\caption{Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.}
 	\label{tab:examples}
 	\begin{tabular}{l*8{N}@{}}
@@ -2803,7 +2810,6 @@ Due to the change in voltage of the LEDs to $36V$, a more specific power supply 
 	\caption{Important specifications of $360W/36VDC$ power supply.}
 	\label{tab:meanwell_specs}
 	\begin{tabularx}{0.7\linewidth}{Xcc}
-		
 		\toprule
 		\textbf{Element}  & \textbf{Rating} & \textbf{Units} \\[8pt]
 		\midrule
@@ -2818,7 +2824,6 @@ Due to the change in voltage of the LEDs to $36V$, a more specific power supply 
 		Over voltage protection 	& Y & - \\[4pt]
 		Over temperature protection & Y & - \\[4pt]
 		\bottomrule
-		
 	\end{tabularx}
 \end{table}
 
@@ -2976,9 +2981,7 @@ The Controllino\texttrademark MAXI is pictured in Figure \ref{fig:controllino_1}
 
 The Controllino\texttrademark is programmed using Arduino\texttrademark language ($C$) and can be uploaded to the boards through several compatible programs. With the addition of the Controllino\texttrademark API and libraries, sketch uploading manipulation of ports, RS-485 serial communication, and named pins (rather than the numbered board-level descriptions) can be used efficiently and easily.
 
-Three Controllinos\texttrademark have been installed (Figure \ref{fig:controllino_2}) in order to carry out three, mostly isolated tasks namely, LED controller, I/O Controller, and Watchdog Controller. The LED Controller operates the lighting and cameras with a punnet sensor input, the I/O Controller manages all other I/O including buttons and door sensors, finally the Watchdog Controller will monitor temperature of internal LED heatsinks and power systems as a seperate malfunction detection system. 
-
-Table \ref{tab:LED_tasks} lists the LED Controller pin assignments with two inputs, and the main LED and camera triggers as outputs. As well as having suitable outputs to warrant a seperate controller, the LED and camera actions should not be delayed by any other process, unless a safety-critical system de-activates the signal to input $A9$.
+Three Controllinos\texttrademark have been installed (Figure \ref{fig:controllino_2}) in order to carry out three, mostly isolated tasks namely, LED controller, I/O Controller, and Watchdog Controller. The LED Controller operates the lighting and cameras with a punnet sensor input, the I/O Controller manages all other I/O including buttons and door sensors, finally the Watchdog Controller will monitor temperature of internal LED heatsinks and power systems as a seperate malfunction detection system.
 
 
 \begin{table}[h]
@@ -2986,9 +2989,8 @@ Table \ref{tab:LED_tasks} lists the LED Controller pin assignments with two inpu
 	\caption{LED Controller connections and pin assignments.}
 	\label{tab:LED_tasks}
 	\begin{tabularx}{0.5\linewidth}{cXc}
-		
 		\toprule
-		  				& \textbf{Element} & \textbf{Pin} \\[8pt]
+		  			& \textbf{Element} & \textbf{Pin} \\[8pt]
 		\midrule
 		Inputs 		& I/O activation signal & A0 \\[4pt]
 		 			& Acquisition sensor 	& A9 \\[4pt]
@@ -3005,17 +3007,17 @@ Table \ref{tab:LED_tasks} lists the LED Controller pin assignments with two inpu
 		
 	\end{tabularx}
 \end{table}
+ 
 
-The I/O Controller functions and pin assignments listed in Table \ref{tab:IO_tasks} gives an indication of the number of I/O tasks required in order to operate the system. Some priorities have been given to critical safety systems such as the emergency-stop button, panel door sensors, and punnet catcher, so that they take precedent over all other pending actions. The pneumatic ejector is the next most critical due to the speed of the conveyor, a punnet could be missed if the timing is delayed. All other inputs and outputs could potentially have small delays ($<100ms$) before being serviced by the processor, however this risk is not hazardous to product or people.
+Table \ref{tab:LED_tasks} lists the LED Controller pin assignments with two inputs, and the main LED and camera triggers as outputs. As well as having suitable outputs to warrant a seperate controller, the LED and camera actions should not be delayed by any other process, unless a safety-critical system de-activates the signal to input $A9$.
 
 \begin{table}[h]
 	\centering
 	\caption{I/O Controller connections and pin assignments.}
 	\label{tab:IO_tasks}
 	\begin{tabularx}{0.5\linewidth}{cXc}
-		
 		\toprule
-		& \textbf{Element} & \textbf{Pin} \\[8pt]
+				& \textbf{Element} & \textbf{Pin} \\[8pt]
 		\midrule
 		Inputs 	& Eject sensor 			& A0 \\[4pt]
 				& Emergency-stop button	& A1 \\[4pt]
@@ -3041,6 +3043,11 @@ The I/O Controller functions and pin assignments listed in Table \ref{tab:IO_tas
 	\end{tabularx}
 \end{table}
 
+
+hree Controllinos\texttrademark have been installed (Figure \ref{fig:controllino_2}) in order to carry out three, mostly isolated tasks namely, LED controller, I/O Controller, and Watchdog Controller. The LED Controller operates the lighting and cameras with a punnet sensor input, the I/O Controller manages all other I/O including buttons and door sensors, finally the Watchdog Controller will monitor temperature of internal LED heatsinks and power systems as a seperate malfunction detection system.
+The I/O Controller functions and pin assignments listed in Table \ref{tab:IO_tasks} gives an indication of the number of I/O tasks required in order to operate the system. Some priorities have been given to critical safety systems such as the emergency-stop button, panel door sensors, and punnet catcher, so that they take precedent over all other pending actions. The pneumatic ejector is the next most critical due to the speed of the conveyor, a punnet could be missed if the timing is delayed. All other inputs and outputs could potentially have small delays ($<100ms$) before being serviced by the processor, however this risk is not hazardous to product or people.
+
+
 Table \ref{tab:watchdog_tasks} relating to the Watchdog Controller lists six power system inputs which are used as a logic input to the controller (high-voltage is stepped down) so that the power systems can be monitored independently. The temperature sensors are mounted on the main LED heat-sinks and trigger an alarm through the Dallas Semiconductor 1-wire\textregistered protocol which allows addressable sensors to be implemented on the same bus (wire). If an error occurs (power or temperature), the error is sent to the I/O Controller for action and communication to the application.
 
 \begin{table}[h]
@@ -3048,9 +3055,8 @@ Table \ref{tab:watchdog_tasks} relating to the Watchdog Controller lists six pow
 	\caption{Watchdog Controller connections and pin assignments.}
 	\label{tab:watchdog_tasks}
 	\begin{tabularx}{0.5\linewidth}{cXc}
-		
 		\toprule
-		& \textbf{Element} & \textbf{Pin} \\[8pt]
+				& \textbf{Element} & \textbf{Pin} \\[8pt]
 		\midrule
 		Inputs 	& Onewire temperature sensors 	& A0 \\[4pt]
 				& $36V$ Power supply 1 			& A1 \\[4pt]
@@ -3076,7 +3082,6 @@ Programming the controllers is similar to the Arduino\texttrademark, in that the
 	\caption{Operating modes for each controller.}
 	\label{tab:controllino_modes}
 	\begin{tabularx}{0.7\linewidth}{Xcccc}
-		
 		\toprule
 		\textbf{Controller} & \textbf{Mode 1} & \textbf{Mode 2} & \textbf{Mode 3} & \textbf{Mode 4} \\[8pt]
 		\midrule
@@ -3084,7 +3089,6 @@ Programming the controllers is similar to the Arduino\texttrademark, in that the
 		I/O Controller 		& Waiting & Ready & Running & Error  \\[4pt]
 		Watchdog Controller & Off & Running & Error & -  \\[4pt]
 		\bottomrule
-		
 	\end{tabularx}
 \end{table}
 
@@ -3104,21 +3108,339 @@ Relevant wiring diagrams can be found in Version 3 in Appendix \ref{app:wiring}.
 \label{sec:IV}
 
 
+Whilst hand-selected features can provide accurate results (Chapter \ref{sec:lit}), human object classification accuracy can be surpassed by Artificial Neural Networks, with some exceptions including noisy images \cite{dodge}. Where there is a sufficient training data, a machine learning algorithm can potentially find a higher level of abstraction than humans can, given the high-dimentional separation techniques a computer can achieve. Kaiming He et al \cite{he2} achieved the first algorithm to surpass human-level performance of $5.1\%$ with an accuracy of $4.94\%$ on the popular Imagenet dataset in 2015. Since then, many researchers working on a range of applications have reported this milestone \cite{geirhos, saon, xiong, han} indicating that using these practices (supported by appropriate training data) can be higher-performing than any human designed method. 
 
-\subsection{Machine Learning}
+HALCON\texttrademark V11.0 is designed to make image processing efficient in development in order to deploy to market as quickly as possible. Therefore, the focus for developers was to improve and automate common operators such as morphology, channel operations and colourspace conversions, detailed camera connections and parameter adjustments, thresholding and segmentation, automatic OCR, shape-based detection and basic classification algorithms. Classifiers contained in HALCON\texttrademark include GMM, kNN, Hyperboxes, SVM, and MLP as trainable models, with support to save, load, and adjust parameters of each classifaction model. However, due to the commercialised, unique, development environment, any algorithms used must be part of the explicit repertoir of methods implemented by developers, which means that if there exists no specific algorithm built in to the version of Halcom\texttrademark purchased, then it cannot be acquired. Simple methods and functions can be created from basic building blocks, however there is no scope to create models for algorithms such as Random Forrest, Discriminant Analysis, Decision Tree, or Adaboost. 
 
+Furthermore, Neural networks and deep learning is impossible before the release of HALCON\texttrademark V17.0, due to the unique network structure (layers) not implemented in previous versions. Even after an expensive upgrade, the user is limited to one of two unique, untrained networks; a simple shallow network, and another slightly deeper. Therefore, In order to improve the accuracy and create a state-of-the-art inspection system, machine learning will be used for cuurent and future methods and algorithms, meaning that an alternative to HALCON\texttrademark is required.
 
 
 \subsection{Linux Operating System}
 
 
+The Linux\textregistered OS is a family of open-source operating systems based on UNIX\textregistered with the kernel first developed in 1991 by Linus Torvald \cite{wiki_linux}. With many free (under the GNU license) distrubutions such as Debian\textregistered, Fedora\textregistered, and Ubuntu\textregistered, and commercial versions including Red Hat\textregistered Enterprise Linux\textregistered and SUSE\textregistered Linux Enterprise Server\textregistered. Linux\textregistered is highly customisable, verbose, and configurable which suits users with open-source, configurability, or expndability requirements. Operating systems such as Windows\textregistered are designed to be user friendly by automating and pre-configuring many parameters in anticipation that the user will not want to spend time performing these tasks themselves. Linux\textregistered has several more advantages over other operating systems:
+
+\begin{itemize}
+	\item OS and applications are free to use under the GNU license.
+	\item Highly cusomisable, configurable, and static processes (including start-up and shut-down) giving full control of updates and removes the likelihood of unexpected programs running.
+	\item OS includes programming languages out-of-the-box such as $C$, $C++$, $Python$, $Java$, $Fortran$, $Pascal$, $COBOL$ and $Lisp$ as well as the BASH terminal.
+	\item Kernel is accessible to the user to make modifications regarding how the system operates. However, this could lead to security concerns.
+	\item Modified kernel can be commercially sold under GNU license.
+	\item Designed for terminal users.
+	\item Installation speed is faster than other GUI-oriented OS, but more complicated.
+	\item Higher security and less vulnerable to hackers and malware given the constant open-source nature of updates. 
+\end{itemize}
+
+Added to the above advantages, Linux\textregistered is easier to set up, and more compatible with machine learning libraries and tools, and is arguably the most-used scientific operating system in the world given that every one of the top 500 supercomputers, internationally, use Linux\textregistered.
+
+
+\subsection{Machine Learning Software}
+
+
+Many combinations of open-source machine learning frameworks exist providing a range of options when designing and performing tasks. By far the most popular languages used in machine and depp learning are $Python$ and $C++$ with options for either provided in most library packages. In order to perform deep learning, a matrix processing engine (backend) must be installed in order to perform the CPU or GPU processing of matrices.
+
+
+
+\subsubsection{Tensor Computation}
+
+The two most widely used versions of computation engine are Tensorflow\textregistered, and Theano\textregistered, both having their own API of methods and network construction operators. Theano\textregistered uses native $Python$ in conjunction with the $Numpy$ mathematical library in order to create tensors (generalised objects to include multi-dimensional matrices as well as vectors and scalars), and operate on them with processes including convolutions, and pooling.  
+
+Tensorflow\textregistered, created, released and maintained by Google\textregistered, uses a graph-based approach to neural network operations. It provides the network constructors and ability to process matrices as well as it's own vesion of tensors, variables, constants, and methods. The objective of this is to create a framework designed to flow better through the layers once loaded to the graph, providing a more efficient system. 
+
+Whilst both of these packages provide tools, methods, and frameworks for development of networks, they can also be used as a backend tensor processing unit with other open-source machine learning libraries using them. However, it makes sense to use the Tensorflow\textregistered version given that it adds further tools which are not available otherwise, opposed to a natively implementable structure.
+
+\subsubsection{OpenCV and Keras}
+
+OpenCV (Open source computer vision) is a library of image functions including reading and writing, converting colourspaces, image processing, and some machine learning algorithms. It is designed to work in unison with deep learning frameworks such as the abovementioned, in terms of compatibility and tensor representation. Images are treated as matrices in order to facillitate integration with backend programs, as well as reducing complexity of image manipulation, due to the ability to index, slice and reshape the matrices. The library does not rely on computational engine in order to perform it's operations, and can be integrated into other frameworks easily.
+
+Other libraries such as Python Image Library (PIL), Scikit-image, and SimpleCV offer similar functions and methods, however, OpenCV community support and range of functions makes it more suitable for the SQA vision system.
+
+The Keras library was developed by François Chollet as a neural network library as an interface rather than a machine learning framework. It can be used with several backends including Tensorflow\textregistered and Microsoft\textregistered's CNTK as of version 2.0. Written using $Python$ language it is perfectly suited to machine learning using OpenCV and Tensorflow\textregistered. The library contains classes for each component required to build a network as well as tools so that the training, evaluation, and testing can occur with very little coding.
 
 \subsection{User Interface}
 
 
+Visual Studio\textregistered has a built in GUI layout and connection manager which is a visual representation of the user interface, with drag-and-drop elements, giving the developer more efficient design tools. Open-source GUI programs do not offer the same advantages given that there are not usually developemnt teams working on the application. 
 
-\subsection{OS Transition into Production}
+Some examples of open-source, python-compatible GUIs are:
 
+\begin{itemize}
+	\item OpenCV - Possible to create windows and add text and sliders.
+	\item PyGame - developed to allow quick and easy UI for game development.
+	\item wxPython - Python version of $C++$'s wxWidgets.
+	\item tKinter - Widget toolkit providing basic GUI tools.
+\end{itemize}
+
+Other programs exist which are useful for developing GUI, however, many of these programs are aimed at very basic UI for such applications as games, graphics windows, and webpage viewers without the need for complicated actions, real-time control, multiple views, stability and seemless transitions.
+
+OpenCV windows do not allow the addition of buttons, wxPython and tKinter have basic GUI elements and some community support. However, the Qt\textregistered is a commercial application developed by a team of engineers and professionals to deliver a cross-platform GUI tool. It supports deployment on Windows\textregistered, Mac\textregistered, Linux\textregistered, iPhone\textregistered, and Android\textregistered and has an exhaustive library of elements and functions to suit almost any application. One of the advantages is that it has been developed for industrial/commercial application development requiring that the program can integrate with real-time systems at a professional level.
+
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\linewidth]{qt.png}
+	\caption{Example of UI development in PyQt\textregistered. The draggable element library is shown on the left, with the element parameters on the right.}
+	\label{fig:qt}
+\end{figure}%
+
+
+The disadvantage is that this is a commercial software package and must be used uder the strict LGNU license, meaning that there are rules in place regarding how the application is distributed and deployed. This will need to be considered with the possibility of having to purchase a commercial license. Figure \ref{fig:qt} illustrates the design application for Qt\textregistered.
+
+
+
+\subsection{Machine Learning}
+
+Machine learning is a branch of Artificial Intelligence which deals with programatic learning algorithms using data to train a model which can be used to classify new data. The three paradigms of training are:
+
+\begin{enumerate}
+	\item Unsupervised - No labelled data is used to train based on clustering, anomaly detection, and association analysis.
+	\item Semi-supervised - Some labelled data exists, with inferences made from this small sample to a larger training set. A mixture of un-supervised and supervised learning.
+	\item Supervised - All data is labelled in order to explicitly classify training samples.
+\end{enumerate} 
+
+As the first two approaches are often complex and sophisticated in terms of algorithmic processes, the supervised methodology is used to begin the transition to machine mearning. This means that time-consuming labelling of data (images) is required to be performed in order to start training and experimenting with a range of algorithms to determine a suitable classifier for the SQA vision system.
+
+Where naive methods regularly have the advantage of efficiency, machine learning inference can consume PC resources and take some time to complete given the potentially large number of parameters. This will need to be considered due to the $500ms$ processing window in order to analyse every punnet. Other strategies may include the addition of a GPU to the image processing PC, giving greater speed increases, depending on the operation being performed due to the thousands of processing cores used. Where a CPU may have up to eight cores processing commands mostly sequentially, a GPU can use  multiple parallel processes simultaneously in order to process large datasets over millions of parameters. It is a common practice to use a GPU to reduce training times on DNNs and other ML techniques that may otherwise take much longer. The following areas have been researched and investigated in order to improve the current system, and bring higher-level classification and detection potential to the project.
+
+
+\subsubsection{Support Vector Machines (SVM)}
+
+SVM can be considered a type of neural network that has only one hidden layer of neurons. The SVM attempts to create a hyperplane between the feature sets of each class, where support vectors are formed as non-zero coefficients of the data points found after processing the training set. If the margin is large between the hyperplane and each class, the system is said to be a stronger SVM classifier and will theoretically produce better results \cite{osuna}. Standard SVM inherently is incompatible with large datasets which suits applications with a small set of training examples. This is due to the $O(m^3)$ training time and $O(m^2)$ space complexity where $m$ is the size of the dataset \cite{tsang}.
+
+Given a set of training data {$(x_i, y_i), x_i \in X^n, y_i \in (-1,1), i = 1,2,3,...,n$} the SVM kernel attempts to solve the hyperplane decision boundary equation:
+\begin{equation}
+w \cdot x + b = 0
+\end{equation} 
+giving
+\begin{equation}
+w \cdot x + b \geq 0, \quad \textrm{for} \quad y_i = +1
+\end{equation}
+and
+\begin{equation}
+w \cdot x + b < 0, \quad \textrm{for} \quad y_i = -1
+\end{equation}
+
+Here, $w$ constitutes the weight vector, $x$ the variable vector, and $b$ the bias scalar. Beginning with the kernel function $K(x, x^\prime)$ which obtains the non-linear mapping $\Phi(x)$, the solution takes the form:
+\begin{equation}
+f(x) = b + \sum_{i=1}^{m} y_i \alpha_i K(x, x^\prime)
+\end{equation}
+which is the summation of each support vector of length $m$, the respective $y$ values, Lagrangian multiplier ($\alpha_i$), and the kernel $K(x, x^\prime)$.
+
+\paragraph{Methods}
+
+A preliminary investigation into SVM classifier accuracy has been performed with the results showing in Table \ref{tab:svm_results}. The training used 27 images that were not included in the testing set of 579 images, and showed a variety of results when the class region was altered. For example, the first four tests in the table have similar accuracy results, however, the distribution of $true +$ and $false -/+$ for test four is very different to the previous three. This shows that the training data inputs must be optimised by selecting an appropriate range of pixels correlating to the class required. Therefore, the first step toward improving these results must be to ascertain the best areas of the berry to train the classifier for each class. 
+
+
+
+\begin{sidewaystable} 
+	\caption{Initial SVM testing using various classes and features. The results were attained using 27 training images and 579 testing images for all cases.}
+	\label{tab:svm_results}
+	\begin{tabularx}{\textheight}{cXXXXccccc}
+		\hline
+		%begin heading
+		\textbf{Test No.} & 		\textbf{Underripe Class} & \textbf{Good Class} & \textbf{Green Class} & \textbf{Overripe Class} & \textbf{True +} & \textbf{True -} & \textbf{False +} & 		\textbf{False +} & 		\textbf{Accuracy (\%)} \tabularnewline
+		%end head
+		\hline
+		
+		%1
+		 1 & 
+		 $100\%$ white & 
+		 $100\%$ dark red &
+		 4-5 shades of green & N/A & 72 & 415 & 60 & 32 &   \textbf{84.11}
+		\tabularnewline
+		\hline
+
+		%2
+		 2 & 
+		 $100\%$ white & 
+		 $50\%$ dark red/$50\%$ light red &
+		 4-5 shades of green & N/A & 70 & 408 & 70 & 31 & \textbf{82.56}
+		\tabularnewline
+		\hline
+				
+		%3
+		 3 & 
+		 $75\%$ white/$25\%$ pink & 
+		 $50\%$ dark red/$50\%$ light red &
+		 4-5 shades of green &
+		 N/A & 25 & 452 & 80 & 22 & \textbf{82.38}
+		 \tabularnewline
+		 \hline
+		
+		%4
+		 4 & 
+		 $100\%$ white & 
+		 $50\%$ dark red/$50\%$ light red&
+		 4-5 shades of green &
+		 $100\%$ dark red & 4 & 472 & 6 & 97 & \textbf{82.11}
+		\tabularnewline
+		\hline
+
+		%5
+		 5 & 
+		 $100\%$ white & 
+		 $50\%$ light red/$50\%$ pink - no dark red &
+		 4-5 shades of green & N/A & 26 & 433 & 45 & 75 & \textbf{79.27} 
+		\tabularnewline
+		\hline
+
+		%6
+		 6 & 
+		 $75\%$ white/$25\%$ pink & 
+		 $50\%$ light red/$50\%$ pink - no dark red &
+		 4-5 shades of green & $100\%$ dark red & 54 & 395 & 83 & 4 & \textbf{77.55}
+		\tabularnewline
+		\hline
+
+		%7
+		 7 & 
+		 $75\%$ white/$25\%$ pink & 
+		 $50\%$ dark red/$50\%$ light red - multiple berries &
+		 4-5 shades of green & N/A & 93 & 295 & 183 & 8 & \textbf{67.01}
+		\tabularnewline
+		\hline 
+	\end{tabularx}
+\end{sidewaystable} 
+
+
+The number of training samples also plays an important role due to the training time and complexity as discussed earlier. This set must also be optimised to ensure the effectiveness of the algorithm by performing experiments to find the best balance of input data to training time. This is due to the time taken in $O(x^3)$ and complexity in $O(x^2)$ where $x$ is the number of training samples, and experiments have confirmed that a sample number of 100 takes $>4$ days to train, whilst 27 training images takes around an hour.  
+
+SVM kernels are generally set to be one of the following:
+
+\begin{itemize}
+	\item Linear - $K(x, x^\prime) = x_i \cdot x_i^\prime$
+	\item Polynomial - $K(x, x^\prime) = (\gamma x \cdot x^\prime + r) ^d, \quad \gamma > 0 \quad$
+	\item Radial basis function (RBF) - $K(x, x^\prime) = e^{-\gamma\|x-x^\prime\|^2},  \quad \gamma > 0 \quad$
+	\item Sigmoid - $K(x, x^\prime) = tanh((\gamma x \cdot x^\prime + r)$
+\end{itemize}
+
+with $\gamma = \frac{1}{2\sigma^2}$, and $r$, and $d$ are kernel parameters. 
+
+There are situations where some kernels out-perform others. The RBF function, for example, is not always applicable and can become inaccurate when using many features. Therefore, the kernel type must be considered carefully. Some examples of modified kernels have been proposed also such as Amari et al \cite{amari} who modified the RBF kernel by attempting to enlarge the spatial resolution of the Riemannian geometry induced by the function between classes. Suln et al \cite{suln} also modified the RBF function by adding terms to account for the margin between the hyperplane and class set, making their approach both margin-dependant as well as data-dependant. 
+
+Other approaches may be to create entirely new kernels if the background justifications indicate improvement, or to use multiple kernels as Diosan et al \cite{diosan} proved advantageous in some situations.
+
+
+
+\subsubsection{Neural Networks and Deep Learning}
+
+As mentioned in Section \ref{sec:lit}, a neural network sums the weights and biases at each neuron in each layer indicated earlier by: 
+\begin{equation}
+a_i = f\bigg\{b + \sum_{i=0}^{n} w_i x_i \bigg\}	
+\end{equation}
+After computing these neuron activations, the Back-Propagation (BP) process is used in order to update the weights and bias. This is done by firstly assessing the cost of the output of the network versus the training sample value ($y_i$). The cost $C_{w,b}$, where $w$ is all weights within the network, and $b$ the bias, is given by:
+\begin{equation}
+C_{w,b} = \frac{1}{2n} \sum_{i=0}^{n} \|y_i - a\|^2	
+\end{equation}
+This cost function is minimised (training process) by using methods such as gradient decent to arrive at the optimal solution, where the small change in cost $C$ takes the form:
+\begin{equation}
+\Delta C \approx \frac{\partial C}{\partial w} \Delta w + \frac{\partial C}{\partial b} \Delta b	
+\end{equation}
+
+These parameters are calculated and updated at each pass (epoch) and therefore may be set to some value initially, but may only be changed by the computations thereafter. Figure \ref{fig:conv3} shows an example of a convolutional network (ConvNet) with the two prominent intermediate steps of convolution and pooling/subsampling in the feature extraction section. For deep learning algorithms in image processing, in most cases, the matrices are proportional to the resolution of the image and hence can be easily dealt with by computational programming languages. 
+
+Convolution is the process of 'windowing' a set of feature masks over an image (or feature set in the form of a matrix) and taking the resulting calculations as the new feature set. This results in a smaller yet more salient feature set spacially, while the dimention (channels) increase with number of masks. Each feature mask or filter (which may be as small as 5 x 5 pixels) has the same weights for each filter convolution, greatly reducing the number of biases and weights (since they are the same for each convolution at that layer). 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{conv3.png}
+	\caption{An example of a ConvNet pass showing convolutional layers, subsampling (pooling), and finally, fully connected layers in the classification section.}
+	\label{fig:conv3}
+\end{figure}
+
+The convolution occurs relative to the number of pixels/steps per window movement, or stride. The output, will therefore be a 2D feature map where the size is dependent on stride and feature map size, and depth of feature maps are equal to the number of feature masks used. In the example in Figure \ref{fig:conv3} uses six filters to transform the input image from 32 x 32 x 1 image into 28 x 28 x 6, with multiple Conv layers finally arriving at a 10 x 10 x 28 feature map, which allows for the intricate analysis of the optimal pixels from the original image. The three ConvNet hyper-parameters which determine the output volume from a convolution layer are:
+
+\textit{Size and Depth} - A small feature mask size is required in order to extract a good low-level set of feature representations. If the mask is too small though, say 1 x 1 or 3 x 3, then there is not enough information to represent a feature, however if the mask is too large, the transationally-invariant information is lost. Research indicates that a 5 x 5 or 7 x 7 mask is ideal, however, this is yet to be confirmed. The depth of the mask must match the depth of the input image to allow the network to detect features using all information provided to it.
+
+\textit{Stride} - The stride term refers to the number of pixels the window moves between each convolution. The stride of the mask during the convolution will obviously have differing results for differing stride lengths. Commonly used stride length is two with less common implementations using three or more, however, a stride of one will result in heavy overlapping and a larger output volume.
+
+\textit{Padding} - In order to ensure edge pixels are analysed properly, zero padding can be used by means of adding zeros around the border of the input volumes.  
+
+The layer architecture of the ConvNet consists of at least one convolution layer, followed by at least one fully connected layer. More common methods use multiple convolutions as well as other normalising and pooling layers before multiple fully connected layers \cite{krizhevsky,ciresan}. The following are some of the common types of building blocks for networks: 
+
+\textit{Convolution} - Computes the dot product of a small area of the input volume with the associated weights, adding a bias, into one neuron in the output volume. The output volume will be as deep as the amount of convolution filter/masks used. In other words the output volume will be of size $(x,y,n)$, where $(x,y)$ is the input height and width (resolution) and $n$ is the number of convolution masks (depth).
+
+\textit{Pooling} - Down-sampling operation which reduces the spacial dimensions (width and height) resulting in a smaller volume that is equivalent or better. In the case of \textit{Max Pooling}, not only are the outputs reduced, but the maximum value in each pool is taken. Figure \ref{fig:maxpool} from \cite{andrej}shows the process graphically. A pooling operation might reduce four data points into one, quartering the information, and therefore, complexity.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{maxpool.png}
+	\caption{MaxPool operation. Left: The input volume, in this example, of (224x224x64) is sliced in depth and pooled individually using \textit{filter size} and \textit{stride} set at two, resulting in a (112x112x64) volume output, keeping in mind the depth does not change. Right: With a \textit{stride} of two, the max is taken from each (2x2) matrix.}
+	\label{fig:maxpool}
+\end{figure}
+
+\textit{Rectified Linear Units (ReLU)} - The activation function $f(x) = max(0, x)$ where x is the input to the neuron. This is a ramp function or \textit{rectified} function, where negative values are negated, however positive values can be large, increasing the non-linear decision function and overall network robustness. Other functions can be used, which smooth the ramp function, such as hyperbolic tangent $f(x) = tanh(x)$ or sigmoid $f(x) = (1+e^{-x})^{-1}$.
+
+\textit{Fully Connected (FC)} - Fully connected layers means all neurons are connected to each other as in an ANN architecture. After completing the  convolution/pooling iterations a number of times, each small section of the volume is not related to the neighbouring sections, making this type of network spatially invariant. Therefore, the network must be fully connected after this process to allow a judgement based on all the information.
+
+These layers can be manipulated, or stacked, in many different ways. Consider the operation of Convolution, ReLU activation, MaxPool, Fully connected to be be abbreviated as CONV, ReLU, POOL, and FC respectively, then the following are examples of the architectures that may be used to create the network structure:
+
+
+INPUT $\Rightarrow$ CONV $\Rightarrow$ FC $\Rightarrow$ OUTPUT (Implements a linear classifier)
+
+INPUT $\Rightarrow$ CONV $\Rightarrow$ ReLU $\Rightarrow$ POOL $\Rightarrow$ FC $\Rightarrow$ ReLU $\Rightarrow$ OUTPUT
+
+INPUT $\Rightarrow$ [CONV $\Rightarrow$ ReLU]*2  $\Rightarrow$ POOL $\Rightarrow$ FC $\Rightarrow$ ReLU $\Rightarrow$ OUTPUT
+
+INPUT $\Rightarrow$ [CONV $\Rightarrow$ ReLU $\Rightarrow$ POOL]*3  $\Rightarrow$ [FC $\Rightarrow$ ReLU]*2 $\Rightarrow$ OUTPUT
+
+INPUT $\Rightarrow$ [CONV $\Rightarrow$ ReLU $\Rightarrow$ CONV $\Rightarrow$ ReLU $\Rightarrow$ POOL]*3  $\Rightarrow$ [FC $\Rightarrow$ ReLU]*2 $\Rightarrow$ OUTPUT
+
+It can be seen that the structure could be adapted in other ways also, but it is hard to know what the best approach may be. With added layers comes added complexity and time, however the best balance of accuracy and complexity must be found.
+
+
+Contrary to ANN architectures, the convolutional network is not fully connected between layers until the later stages of the process. In the ANN each neuron in each layer is connected to each neuron in the proceeding layer with associated weights and a bias value, so that the equation for each neuron is:
+\begin{equation}
+z = b + \sum_{i=0}^{n} w_i x_i
+\end{equation}
+Whereas, the convolution layer in a ConvNet only sums over the size of the feature masks. In Figure \ref{fig:conv3} the mask size is 5 x 5, an appropriate and commonly used mask size, which is represented by the following equation for the $j$, $k^{th}$ hidden neuron:
+\begin{equation}
+z = b + \sum_{i=n}^{4} \sum_{m=0}^{4} w_{n,m}  x_{j+n,k+m}
+\end{equation}
+This is advantageous when dealing with input such as high-resolution images. An SLFN with an input image of resolution 128 and three RGB channels will have 128 x 128 x 3 = 49152 input neurons, leading to the same number of weights (since each neuron is fully connected) plus a bias for each hidden neuron. If the image is much larger, it can be seen that the number of variables (weights/biases) grows rapidly. However, in the ConvNet, there are only ever no more than the window size $n \times m$ (5 x 5 = 25 weights and one bias in the above case), for each feature mask, no matter the size of the input data.
+
+
+\paragraph{Methods}
+
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{conv_filters.png}
+	\end{center}
+	\caption{Examples of first layer convolutional filters taken from Stanford's CS231N course.}
+	\label{fig:conv_filters}
+\end{wrapfigure} 
+
+The feature masks that are used in the convolution process are chosen depending on the application. The lower level masks are intended to extract low-level features such as edges and colours, while the later stage masks combine to extract the high-level features such as faces, cars, animals, etc. An example of first layer filters are shown in Figure \ref{fig:conv_filters} - taken from Stanford's CS231N course taught by Andrej Karpathy and Justin Johnson \cite{andrej} - shows the 48 edge detecting filters (top) and 48 colour detecting filters (bottom). Of course these filters are simply matrices with certain values at each pixel, which may be manipulated to better represent the objects required to be identified. For example, instead of vertical, horizontal and diagonal straight lines, one might want to use curved lines to detect objects that are round.
+
+\quad
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{convnet1.png}
+	\caption{A ConvNet using 2 GPUs with individual processes assigned to each processor}
+	\label{fig:convnet1}
+\end{figure}%
+
+There are many different ways to arrange the layers of a ConvNet. Figure \ref{fig:convnet1} shows the complex structure used by Krizhevsky et al \cite{krizhevsky} who created 2 streams of information utilizing two GPUs to process the ImageNet dataset, achieving exceptional results, whilst Figure \ref{fig:convnet2} illustrates a much simpler ConvNet used by Ciresan et al \cite{ciresan} to classify the MNIST handwritten numeric dataset. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{convnet2.png}
+	\caption{ ConvNet implementation used for learning the MNIST handwritten digit dataset}
+	\label{fig:convnet2}
+\end{figure}%
+	
+
+Several networks were created as described earlier in this chapter using Keras to build layers in a range of different architectures.  
+....
+...
+
+
+....
+
+....
 
 
 \subsection{Transfer Learning with Resnet}
@@ -3132,7 +3454,7 @@ A method used by many practitioners is to 'fine tune' a pre-trained network by f
 
 Another approach commonly used is to remove the last layer (layer $n$ of an $n$-layer network) of the pre-trained network and attempt to classify the feature vector of the previous ($n$-1) layers. This feature vector can then be classified by many different types of algorithm (regression, nearest-neigbour, random forrest, SVM, etc.) to generate the output label.
 
-In our work, we adopt the latter approach, by removing the last layer of a pre-trained neural network, we can successfully extract a $100352$-length vector descriptor for each training image, a regression analysis algorithm is used to build several binary classifiers corresponding to each defective category and perform predictions on new feature vectors.
+In this work, the latter approach is adopted, by removing the last layer of a pre-trained neural network, we can successfully extract a $100352$-length vector descriptor for each training image, a regression analysis algorithm is used to build several binary classifiers corresponding to each defective category and perform predictions on new feature vectors.
 
 \subsubsection{ResNet}
 \label{sec:resnet}
@@ -3140,7 +3462,7 @@ In our work, we adopt the latter approach, by removing the last layer of a pre-t
 The ResNet (Residual Network) architecture, first presented by He et al \cite{he}, is capable of very deep ($1000+$ layers) learning without the added complexity of training convergence problems that other networks suffer from. It uses a short-cut mechanism where each connection in the network can be bypassed if no new information is being learned. Therefore, if these residual connections are used, a convolutional layer will become the identity function by default and a network with many layers should have a comparable training error with its shallower counter-part. Figure \ref{fig:residual} shows a graphical representation of a connection in a Residual Network architecture whilst Figure \ref{fig:resnet_full} shows the full architecture of a $36$-layer ResNet.
 
 
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{residual_neuron.png}
 	\caption{A residual neuron used in ResNet architecture showing the identity function skipping a connection.}
@@ -3213,11 +3535,11 @@ It has been observed that, due to colour tone and reflection differences, exampl
 
 
 
-\begin{table}
+\begin{table}[t]
+	\centering
 	\caption{Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4))}
 	\label{tab:training_samples}
-	\begin{tabular}{l*8{N}@{}}
-		\toprule
+	\begin{tabularx}{\textheight}{c*8{N}}
 		
 		1 &
 		\includegraphics[width=\linewidth]{images/pass_1.jpg} & \includegraphics[width=\linewidth]{images/pass_2.jpg} & \includegraphics[width=\linewidth]{images/pass_3.jpg} &         \includegraphics[width=\linewidth]{images/pass_4.jpg} & \includegraphics[width=\linewidth]{images/pass_5.jpg} &         \includegraphics[width=\linewidth]{images/pass_6.jpg} & \includegraphics[width=\linewidth]{images/pass_7.jpg} &         \includegraphics[width=\linewidth]{images/pass_8.jpg} \\
@@ -3231,9 +3553,7 @@ It has been observed that, due to colour tone and reflection differences, exampl
 		4 &
 		\includegraphics[width=\linewidth]{images/foreign_1.jpg} & \includegraphics[width=\linewidth]{images/foreign_2.jpg} & \includegraphics[width=\linewidth]{images/foreign_3.jpg} &         \includegraphics[width=\linewidth]{images/foreign_4.jpg} & \includegraphics[width=\linewidth]{images/foreign_5.jpg} &         \includegraphics[width=\linewidth]{images/foreign_6.jpg} & \includegraphics[width=\linewidth]{images/foreign_7.jpg} &         \includegraphics[width=\linewidth]{images/foreign_8.jpg} \\
 		
-		
-		\bottomrule
-	\end{tabular}
+	\end{tabularx}
 \end{table} 
 
 
@@ -3243,11 +3563,11 @@ The strawberry problem domain relates strongly to the colour and texture aspects
 
 
 
-\begin{table}
+\begin{sidewaystable}
 	\centering
 	\caption{Comparison of training results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.}
 	\label{tab:classifiers}
-	\begin{tabularx}{0.85\textwidth}{ccccccc}
+	\begin{tabularx}{\textheight}{Xcccccc}
 		\toprule
 		& Foreign object &          & Under ripe    &          & Over ripe     &           \\  
 		Classifier & Accuracy (\%)  & Log Loss & Accuracy (\%) & Log Loss & Accuracy (\%) & Log Loss  \\ 
@@ -3266,7 +3586,7 @@ The strawberry problem domain relates strongly to the colour and texture aspects
 		Quadratic Discriminant Analysis	& 59.2506  & 14.0743 & 50.7937 & 16.9953 & 52.4775 & 16.4137 \\[6pt]
 		\bottomrule 
 	\end{tabularx}
-\end{table}
+\end{sidewaystable}
 
 
 
@@ -3276,6 +3596,7 @@ The method discussed in this paper is based on feature vector classification pre
 
 The originally acquired images include a background of conveyor belts and other mechanical parts of the system, they also include top-bottom view of the sensor, its reflector and the entire punnet borders (in the top view) and the bottom of the punnet (in the bottom view). Since the location of the punnet in the camera field of view is fixed at each moment of capture and all punnets are of exactly the same size, the valid punnet region is cropped from the original acquired image with a fixed size of $500 \times 600$. 
 
+\newpage
 
 Using a combination of horizontal and vertical flipping, images were compiled for training and listed in Table \ref{tab:data}.
 
@@ -3299,7 +3620,7 @@ Using a combination of horizontal and vertical flipping, images were compiled fo
 During the research and training phase, $12$ different classifiers were assessed for accuracy including K-Neighbours, AdaBoost, and SVM algorithms with results shown in Table \ref{tab:classifiers}. They were trained with respect to three defect classes namely, under ripe, over ripe, and foreign object, and indicate that simple Logistic Regression analysis is the best performing. 
 
 
-Interestingly, the SVM with RBF kernel algorithm scored a very low $51.5\%$ while the NuSVM algorithm scored much higher at $93.4\%$ when comparing on the under ripe category. The difference between the these two methods are the $C$ and $Nu$ regularization parameters which apply penalties in the case of mis-classifications. The $C$ parameter used in SVC, ranges $\{\exists C\in\mathbb{Q^+}\}$ where $\mathbb{Q^+}$ is the set of positive rational numbers, meaning it can take any real value from zero to infinity. The $Nu$ parameter is limited to a range from zero to one only $\{\exists C\in\mathbb{Q} \mid 0 <\mathbb{Q} < 1\}$ and therefore, is bounded to search within a defined smaller range. 
+Interestingly, the SVM with RBF kernel algorithm scored a very low $51.5\%$ while the NuSVM algorithm scored much higher at $93.4\%$ when comparing on the under ripe category. The difference between the these two methods are the $C$ and $Nu$ regularization parameters which apply penalties in the case of mis-classifications. The $C$ parameter used in SVC ranges $\{\exists C\in\mathbb{Q^+}\}$ where $\mathbb{Q^+}$ is the set of positive rational numbers, meaning it can take any real value from zero to infinity. The $Nu$ parameter is limited to a range from zero to one only $\{\exists C\in\mathbb{Q} \mid 0 <\mathbb{Q} < 1\}$ and therefore, is bounded to search within a defined smaller range. 
 
 The difference in these two scores indicates for this problem, the classifier will underfit using high-level parameters that can escalate infinitely. Therefore the Logistic Regression algorithm is used to classify the extracted strawberry features. 
 
@@ -3315,7 +3636,7 @@ The difference in these two scores indicates for this problem, the classifier wi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\section{Conclusion}
+\section{Conclusion and Outcomes}
 
 
 
