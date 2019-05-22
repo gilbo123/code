@@ -71,7 +71,7 @@
 \BOOKMARK [2][-]{subsection.6.5}{Results}{section.6}% 71
 \BOOKMARK [2][-]{subsection.6.6}{Conclusion}{section.6}% 72
 \BOOKMARK [1][-]{section.7}{Redesign and Upgrade}{}% 73
-\BOOKMARK [2][-]{subsection.7.1}{Enclosure}{section.7}% 74
+\BOOKMARK [2][-]{subsection.7.1}{Enclosure Redesign}{section.7}% 74
 \BOOKMARK [2][-]{subsection.7.2}{Lighting}{section.7}% 75
 \BOOKMARK [3][-]{subsubsection.7.2.1}{Colour Renderin Index \(CRI\)}{subsection.7.2}% 76
 \BOOKMARK [3][-]{subsubsection.7.2.2}{High-power Triggering}{subsection.7.2}% 77
@@ -97,5 +97,7 @@
 \BOOKMARK [3][-]{subsubsection.8.5.3}{Logistic Regression Classifier}{subsection.8.5}% 97
 \BOOKMARK [3][-]{subsubsection.8.5.4}{Strawberry Classification}{subsection.8.5}% 98
 \BOOKMARK [1][-]{section.9}{Conclusion and Outcomes}{}% 99
-\BOOKMARK [1][-]{appendix.A}{SQA Specification}{}% 100
-\BOOKMARK [1][-]{appendix.B}{Wiring Diagrams}{}% 101
+\BOOKMARK [2][-]{subsection.9.1}{System Performance}{section.9}% 100
+\BOOKMARK [2][-]{subsection.9.2}{Future Work}{section.9}% 101
+\BOOKMARK [1][-]{appendix.A}{SQA Specification}{}% 102
+\BOOKMARK [1][-]{appendix.B}{Wiring Diagrams}{}% 103

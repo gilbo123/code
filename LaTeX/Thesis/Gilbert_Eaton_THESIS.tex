@@ -206,6 +206,22 @@
 \addcontentsline{toc}{section}{ABSTRACT}
 
 
+Machine vision systems for quality inspection of processing and production lines are associated with increases in productivity, cost savings, and quality control consistency, having become common place in many industries including agriculture. However, automated strawberry quality control has historically been a challenge due to the delicate nature of the fruit's flesh making it more prone to damage, bruising, discolouration, and softening than other friuts and vegetables. For the vast majority of companies, strawberries are picked by a labour force paid in the units of $\$/kg$ making more economic sense to pick and pack as fast a s possible to increase the profitability of both producer and worker. This enables large volumes of fruit to be harvested and packaged each day, suiting the half-year seasons. As strawberry plants fruit multiple times per season, the farmers can cycle through many fields creating a constant daily flow from the field into packing. As the volumes become larger, the quality can diminish if under-supervised and the amount of fruit being processed cannot be guaranteed comprehensive by human eyes with many defects going undetected such as under and over ripe, sand and mud, mishhapen or too small, mouldy, damaged, or foriegn objects. 
+
+Previous efforts have been made to grade strawberries using conveyor systems and cameras, generating good or excellent results. However, these methods do not consider the speed at which berries are packed, or the amount of damage-inducing handling required in order to place the fruit on a process line (automated or not), making them unsuitable for real-time production. 
+
+This thesis outlines the research, design, experimentation, and development of an Strawberry Quality Assurance (SQA) vision system which can grade full punnets of strawberries after they have been packed. The containers of fruit are picked from the field and packaged as always, with the additional step of being loaded into the vision system and, finally, a heat-seal machine which seals the punnets with tamper-proof plastic film. Using this method, the packing workers do not need to slow down, or perform any new tasks, rather the flow of punnets is simply diverted to the additional production line. The cameras acquire four images at a rate of up to two per second in order to capture each punnet from above and below (through the transparent plastic) in visible and infrared wavelengths. The visible (RGB) images are used to assess the berry's colour (ripeness), and visible foreign object liklihood, whilst the infrared images are used for bruise detection. Once the images have been analysed, the system uses an orthogonal pneumatic burst of air to eject the defected punnets from the line so that they can be repackaged and reassessed. 
+
+The initial version of the system used algorithms involving image processing and colour analysis in order to perform under and over ripe detection with good results of $94.7\%$ and $90.6\%$, respectively, for the multiple instance category. After redesign and upgrade to strobing LEDs and open-source software, machine learning experiments showed that the SVM and unique neural networks underperformed with the best training accuracy results of $84.11\%$ and $76.30\%$, respectively. Improved performance was found using Resnet-50 pre-trained nework in order to extract a feature vector for each image, which is then evaluated by each of the binary classification models. Area Under ROC (AUROC) curves are greater than $80\%$ for both under ripe and foreign object models, whilst the over ripe class score is lower at $58\%$.
+
+The strawberry project is continuing with work including improving performance of the current classifiers, and investigating the potential of improved region-based bounding box method in order to improve visibility for both operator and developer. 
+
+
+
+
+
+
+
 
 \vspace*{\fill}%
 
@@ -838,52 +854,22 @@ Mohammed et al \cite{mohammed} used a novel Bi-directional two Dimensional Princ
 \subsubsection{Support Vector Machines}
 
 
-SVM can be considered a type of neural network that has only one hidden layer of neurons. The SVM attempts to create a hyperplane between the feature sets of each class. The support vectors are formed as non-zero coefficients of the data points found after processing the training set. If the margin is large between the hyperplane and each class, the system is said to be a stronger SVM classifier and should produce good results as explained by Osuna, Freund, and Girosi \cite{osuna}. Standard SVM inherently is incompatible with large datasets which suits applications with a small set of training examples. This is due to the $O(m^3)$ training time and $O(m^2)$ space complexity where $m$ is the size of the dataset \cite{tsang}.
+SVM can be considered a type of neural network that has only one hidden layer of neurons. The SVM attempts to create a hyperplane between the feature sets of each class (Figure \ref{fig:SVM}). The support vectors are formed as non-zero coefficients of the data points found after processing the training set. If the margin is large between the hyperplane and each class, the system is said to be a stronger SVM classifier and should produce good results as explained by Osuna, Freund, and Girosi \cite{osuna}. Standard SVM inherently is incompatible with large datasets which suits applications with a small set of training examples. This is due to the $O(m^3)$ training time and $O(m^2)$ space complexity where $m$ is the size of the dataset \cite{tsang}.
 
-Given a set of training data {$(x_i, y_i), x_i \in X^n, y_i \in (-1,1), i = 1,2,3,...,n$} th SVM kernel attempts to solve the hyperplane decision boundary equation:
-\begin{equation}
-w \cdot x + b = 0
-\end{equation} 
-giving
-\begin{equation}
-w \cdot x + b \geq 0, \quad \textrm{for} \quad y_i = +1
-\end{equation}
-and
-\begin{equation}
-w \cdot x + b < 0, \quad \textrm{for} \quad y_i = -1
-\end{equation}
-
-Here, $w$ constitutes the variable vector and $b$ the bias vector. Beginning with the kernel function $K(x, x^\prime)$ which obtains the non-linear mapping $\Phi(x)$, the solution takes the form:
-\begin{equation}
-f(x) = b + \sum_{i=1}^{m} y_i \alpha_i K(x, x^\prime)
-\end{equation}
-which is the summation of each support vector of length $m$, the respective $y$ values, Lagrangian multiplier ($\alpha_i$), and the kernel $K(x, x^\prime)$. Figure \ref{fig:SVM} shows an example of a hyprplane desicion boundary set by finding the solution above.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{SVM.png}
-	\caption{A 2D example of SVM yperplane separating two classes. The examples on the boundary are considered the support vectors.}
+	\caption{A 2D example of SVM hyperplane separating two classes. The examples on the boundary are considered the support vectors.}
 	\label{fig:SVM}
 \end{figure}%
 
-SVM kernels are generally set to be one of the following:
-
-\begin{itemize}
-	\item Linear - $K(x, x^\prime) = x_i \cdot x_i^\prime$
-	\item Polynomial - $K(x, x^\prime) = (\gamma x \cdot x^\prime + r) ^d, \quad \gamma > 0 \quad$
-	\item Radial basis function (RBF) - $K(x, x^\prime) = e^{-\gamma\|x-x^\prime\|^2},  \quad \gamma > 0 \quad$
-	\item Sigmoid - $K(x, x^\prime) = tanh((\gamma x \cdot x^\prime + r)$
-\end{itemize}
-
-with $\gamma = \frac{1}{2\sigma^2}$, and $r$, and $d$ are kernel parameters. 
 
 
 An SVM classifer trained by Sabri et al \cite{sabri} was able to classify ripe and unripe palm oil fruits with an accuracy of $96.59\%$. They compared three methods of feature extraction (Colour histogram, colour moment, and colour correllogram) and two classification methods (SVM and Naive Bayes) in order to find the best results with SVM prevailing. Chen et al \cite{chen} performed an SVM parameter search to find the best combination whilst colour grading beef fat. They segmented the fat by use of boundary tracking, thresholding, and morphology achieving $97.4\%$ classification accuracy. Mizushima and Lu \cite{mizushima} used SVM to generate greyscale images that increased the contrast of Golden Delicious apples for segmentation purposes, before again using SVM to classify them into three grades reporting $1.42\%$ error accross all three classes. They also achieved fast processing speeds of $1.5ms$ using a $3.4 GHz$ CPU showing that SVM is capable of very fast and accurate predictions. 
 
 However, SVM was not the predominant classifier when Alfatini et al \cite{alfatni} designed a palm oil grading application. The method consisted of using a basic grey level aura matrix (BGLAM) technique to extract features followed by an ANN classifier. After assessing ANN, KNN, and SVM classifiers, the best results were realised using the ANN with accuracy of $93\%$ and speed of $0.4s$. An ANN was also used by Bhatt and Pant \cite{bhatt} when grading apples based on size, colour, and external defects. Seven selected features were used (3 colour features, 1 size, 1 damage, 1 symmetry, and 1 weight) to train the ANN achieving $90\%$ testing accuracy. 
 
-
- 
 
 
 \subsubsection{Deep Learning}
@@ -900,28 +886,6 @@ Neural Networks, in AI, are a commonly implemented method for perfoming many ope
 \end{figure}
 
 Figure \ref{fig:neural_net} shows the flow of information through the layers in a neural network as described in \cite{smith}. Each of the inputs $Xn$ is fed to the first hidden layer with a relevant weights $W_{i,j,k}$ and biases $B_{i,j,k}$ associated for each of the neurons. Each neuron sums the weighted inputs and the value interpreted by the activation function is sent to the next layer, with yet another set of weights and biases, for each neuron. Activation functions are usually in the form of linear $y=x$, sigmoid $y=\frac{1}{1+e^{-x}}$, or hyperbolic tangent $y=\frac{1-e^{-2x}}{1+e^{-2x}}$.
-
-
-For an activation function $f$, the $i$th neuron $a$ is given by:
-\begin{equation}
-a_i = f\bigg((w_i^0 x_i^0 + b_i) + (w_i^1 x_i^1 + b_i) + (w_i^2 x_i^2 + b_i) + ... + (w_i^n x_i^n + b_i)\bigg)
-\end{equation}
-
-or by summation: 
-\begin{equation}
-a_i = f\bigg\{b + \sum_{i=0}^{n} w_i x_i \bigg\}	
-\end{equation}
-
-After computing these neuron activations, the Back-Propagation (BP) process is used in order to update the weights and biases. This is done by firstly assessing the cost of the output of the network versus the training sample value ($y_i$). The cost $C_{w,b}$, where $w$ is all weights within the network, and $b$ all biases, is given by:
-\begin{equation}
-C_{w,b} = \frac{1}{2n} \sum_{i=0}^{n} \|y_i - a\|^2	
-\end{equation}
-This cost function is minimised (training process) by using methods such as gradient decent to arrive at the optimal solution, where the small change in cost $C$ takes the form:
-\begin{equation}
-\Delta C \approx \frac{\partial C}{\partial w} \Delta w + \frac{\partial C}{\partial b} \Delta b	
-\end{equation}
-
-These parameters are calculated and updated at each pass (epoch) and therefore may be set to some value initially, but may only be changed by the computations thereafter.
 
 Machine learning programs have been adapted in areas such as text categorization \cite{sebastiani}, handwriting recognition \cite{bottou,bahlmann}, facial recognition \cite{bartlett,bartlett2,mohammed}, medical diagnosis \cite{shipp,ye,dreiseitl}, gesture recognition \cite{lustrek,rautaray}, image classification and computer vision \cite{chapelle,ciresan,krizhevsky}, search engines and chat bots \cite{boyan,graepel,jia}, marketing/data mining \cite{cui,bose}, and an endless amount of other applications. This technology has seen rapid popularity and growth due to the flexibility and adaptiveness of such algorithms, which allows it to be used by many companies and individuals to improve systems performance. 
 
@@ -975,7 +939,7 @@ Machine learning and Deep learning play a vital role in produce grading, along w
 \quad
 
 
-The main body of this thesis is set out with the following four chapters: 
+The main body of this thesis is set out with the following chapters: 
 
 
 \begin{itemize}
@@ -1135,6 +1099,9 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarizers, and cameras. This prototype was then used as the framework when moved from bench to production. The frame, constructed from aluminium modular T-slot ($20mmx20mm$) components, supports stainless steel sheets that are molded to be curved on top and bottom in order to diffuse and direct light and reduce flat surface reflections whilst creating a more evenly distributed background and intensity. 
 
 
+Front and back panels were added with hinges to allow access for staging and adjustemnts but block the outside light interference. Halogen work lamps were used to supply lighting as they were capable of emitting the full spectrum required for both the RGB and IR imaging systems. They are readily available, with power up to $500W$ per lamp and a footprint small enough to fit eight inside the enclosure. Several lighting and polarizing configurations were tested (using a thin film type polaroid) for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}), before the AC flickering problem was realised. This test was successful in proving that the polarizer reduced specularities, and that powerful lighting was required, however, it highlighted the inherant problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polarizer film would be less effective when bent or warped.  
+
+
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
 		\includegraphics[width=0.3\textwidth]{images/bench_construct.jpg}
@@ -1143,7 +1110,7 @@ The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fi
 	\label{fig:bench_construct}
 \end{wrapfigure}   
 
-Front and back panels were added with hinges to allow access for staging and adjustemnts but block the outside light interference. Halogen work lamps were used to supply lighting as they were capable of emitting the full spectrum required for both the RGB and IR imaging systems. They are readily available, with power up to $500W$ per lamp and a footprint small enough to fit eight inside the enclosure. Several lighting and polarizing configurations were tested (using a thin film type polaroid) for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}), before the AC flickering problem was realised. This test was successful in proving that the polarizer reduced specularities, and that powerful lighting was required, however, it highlighted the inherant problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polarizer film would be less effective when bent or warped.  
+
 
 Converting the system to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical flourescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they ar emore efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Auotomotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum. Figure \ref{fig:bench_led_rigid} depicts the final configuration of LEDs and polariser.
 
@@ -1217,6 +1184,10 @@ As the cameras have specific operating temperatures in the range ($0^{\circ}C-45
 
 Various hardware devices will need to be controlable via the main application, to enable efficient main lighting, signal lighting, peltier, pneumatics, and conveyor control, as well as inputs from some peripheral devices and sensors.
 
+The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
+
+
+Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
 
 
 \begin{wrapfigure}{r}{0.6\textwidth}
@@ -1227,10 +1198,6 @@ Various hardware devices will need to be controlable via the main application, t
 	\label{fig:phidget}
 \end{wrapfigure} 
 
-The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
-
-
-Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
 
 The ejector is a controllable pneumatic system which can release a burst of air on cammand for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
 
@@ -1881,7 +1848,7 @@ The inputs that need to be processed are generated by automatic processes (punne
 	\centering
 	\caption{Microcontroller INPUT port assignments and peripheral devices power ratings.}
 	\label{tab:micro_pinout_in}
-	\begin{tabularx}{\linewidth}{Xcccc}
+	\begin{tabular}{lcccc}
 		
 		\toprule
 		\textbf{Element}  & \textbf{Port No.} & \textbf{Voltage ($V$)} & \textbf{Current ($A$)} & \textbf{Power ($W$)}\\[8pt]
@@ -1899,7 +1866,7 @@ The inputs that need to be processed are generated by automatic processes (punne
 		\textbf{Total} 			&   &    & \textbf{0.801} & \textbf{15.612} \\[4pt]
 		\bottomrule
 		
-	\end{tabularx}
+	\end{tabular}
 \end{table}
 
 
@@ -1913,7 +1880,7 @@ The high-powered devices are controlled by the Phidget\texttrademark in conjunct
 	\centering
 	\caption{Microcontroller OUTPUT port assignments and peripheral devices power ratings.}
 	\label{tab:micro_pinout_out}
-	\begin{tabularx}{\linewidth}{Xccccc}
+	\begin{tabular}{lccccc}
 		\toprule
 		\textbf{Element}  & \textbf{Port No.}  & \textbf{Relay Trigger} & \textbf{Voltage ($V$)} & \textbf{Current ($A$)} & \textbf{Power ($W$)}\\[8pt]
 		\midrule
@@ -1932,7 +1899,7 @@ The high-powered devices are controlled by the Phidget\texttrademark in conjunct
 		\textbf{Total} 			&    &     &   & \textbf{0.213} & \textbf{1.079} \\[4pt]
 		\bottomrule
 		
-	\end{tabularx}
+	\end{tabular}
 \end{table}
 
 
@@ -1976,10 +1943,22 @@ The cameras are positioned in the centre of the respective lighting clusters in 
 
 \subsection{Hyperspectral Bruise Analysis}
 
-Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a Brimrose\textregistered VA200 Visible Near-Infrared, and a Brimrose\textregistered VA200 Short-wave Infrared Hyperspectral Camera with appropriate lenses and software to acquire the images in order to quantify the best spectral region to identify and detect fresh bruising (wet bruising). 
+
+Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a Brimrose\textregistered VA200 Visible Near-Infrared, and a Brimrose\textregistered VA200 Short-wave Infrared Hyperspectral Camera with appropriate lenses and software to acquire the images in order to quantify the best spectral region to identify and detect fresh bruising (wet bruising). The experimental setup is shown in Figure \ref{HSI}.
 
 
-\begin{table}
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth,angle=270]{HSI.jpg}
+	\end{center}
+	\caption{The vis/NIR camera and SWIR camera mounted during experimentation.}
+	\label{fig:HSI}
+\end{wrapfigure} 
+
+Analysis of water absorbtion bands discussed in Chapter \ref{sec:lit} were used as an indication of the wavelengths which might be suitable, however, an in-depth experiment measured the bruising of strawberries incremented accross a wide range of wavelengths. A sample of the SWIR images are shown in Table \ref{tab:examples} where the spectrum ranged from $850nm$ through to $1800nm$ in increments of $10nm$. Images were aquired of no bruise, as well as 5, 10, and 15 minutes after bruising indicating several potential bands where the contrast was high. Most notably, the bands in the region $<1000nm$ given that these wavelengths can be imaged using CMOS sensors which are inexpensive compared to that of a SWIR sensor. The image in Figure shows the arrangement of halogen lighting, and both visible/NIR, and SWIR cameras set up on the mounts. As expected, the visible spectrum showed no significant contrast, given that the bruises are invisible to human eyes, and the water absorbtion band distribution.
+
+
+\begin{table}[h]
 	\centering
 	\caption{Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.}
 	\label{tab:examples}
@@ -2006,15 +1985,6 @@ Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a B
 \end{table} 
 
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\begin{center}
-		\includegraphics[width=0.4\textwidth,angle=270]{HSI.jpg}
-	\end{center}
-	\caption{The vis/NIR camera and SWIR camera mounted during experimentation.}
-	\label{fig:HSI}
-\end{wrapfigure} 
-
-Analysis of water absorbtion bands discussed in Chapter \ref{sec:lit} were used as an indication of the wavelengths which might be suitable, however, an in-depth experiment measured the bruising of strawberries incremented accross a wide range of wavelengths. A sample of the SWIR images are shown in Table \ref{tab:examples} where the spectrum ranged from $850nm$ through to $1800nm$ in increments of $10nm$. Images were aquired of no bruise, as well as 5, 10, and 15 minutes after bruising indicating several potential bands where the contrast was high. Most notably, the bands in the region $<1000nm$ given that these wavelengths can be imaged using CMOS sensors which are inexpensive compared to that of a SWIR sensor. The image in Figure shows the arrangement of halogen lighting, and both visible/NIR, and SWIR cameras set up on the mounts. As expected, the visible spectrum showed no significant contrast, given that the bruises are invisible to human eyes, and the water absorbtion band distribution.
 
 The experiments show the $930nm-980nm$ range has contrast equivilent to any other region, and allows cheap and effective detection with the addition of a bandpass lens filter on the monochrome CMOS cameras. The narrow-bandpass filter restricts all light except for a small $10nm$ window in the specified region. Therefore $940nm$ filters are applied to both IR cameras in order to amplify the invisible characteristics. 
 
@@ -2416,22 +2386,6 @@ Shadowy areas of the punnet can be falsely classified as overripe berry, as the 
 
 Using a known vector range in the $HSV$ colourspace $\{H_0, S_0, V_0\}, \{H_1, S_1, V_1\},....,\{H_n, S_n, V_n\}$, the good quality berry colour is  extracted and compared to the entire berry region as shown in Figure \ref{fig:over_berries}, \ref{fig:over_hue} and \ref{fig:over_diff}. Note that if there is sufficient underripe regions the algorithm will end before this point. Therfore, the vector range is inclusive of underripe colours ensuring only darker pixels are extracted in the difference of the two regions.
 
-\begin{table*}[h]
-	\caption{Results of algorithm testing.}
-	\label{tab:algo_test}
-	\begin{tabularx}{\textwidth}{@{}l*{8}{C}c@{}}
-		\toprule
-		Algorithm & Defects & FP  & FN  & TP  & TN  & Prec.(\%) & Rec.(\%) & F1 score(\%) & Y-Index(\%)\\ 
-		\midrule
-		Underripe   & Single   & 19 & 90 & 220 & 198 & 92.1 & 71.0 & 80.1 & 62.2 \\[6pt] 
-		& Multiple & 7  & 25 & 285 & 210 & 97.6 & 91.9 & 94.7 & 88.7 \\[6pt]
-		Overripe    & Single   & 44 & 82 & 212 & 177 & 82.8 & 72.1 & 77.1 & 52.2 \\[6pt]
-		& Multiple & 19 & 35 & 259 & 202 & 93.2 & 88.1 & 90.6 & 79.5 \\[6pt]	 
-		\bottomrule
-	\end{tabularx}
-\end{table*}
-
-
 In order solve the problem of berry edges, an intensity threshold is applied which ignores the darker areas of the punnet including voids, berries too dark to grade, and edges where shadows occur (Fig. \ref{fig:over_light}). Performing an intersection of these regions with the dark pixels found ensures that any overripe candidate must lie on the un-occluded surfaces of berries in order to be classified properly. 
 \begin{equation}
 R_{cand} = R_{berry} - R_{good}
@@ -2460,6 +2414,23 @@ The colour analysis algorithms have been implemented on the production line and,
 Both algorithms have input sensitivity levels to help deal with seasonality. As discussed in section \ref{sec:colour_analysis}, the seasonality determines the acceptability of the fruit. This allows operators to, for example, change the sensitivity and allow slightly poorer quality fruit to pass, whilst still maintaining a threshold to remove moderate and severe cases.
 
 Due to this variability in reject level, the quantitative analysis was split into two different measurements - single defect and multiple defects. Multiple defects meaning that there exist more than one region of the same reject class in each image. For example, a multiple defect underripe punnet will have greater than one region (that meets certain conditions) with underripe features.
+
+\begin{table}[h]
+	\centering
+	\caption{Results of algorithm testing.}
+	\label{tab:algo_test}
+	\begin{tabular}{@{}c*{8}{c}c@{}}
+		\toprule
+		Algorithm & Defects & FP  & FN  & TP  & TN  & Prec.(\%) & Rec.(\%) & F1 score(\%) & Y-Index(\%)\\ 
+		\midrule
+		Underripe   & Single   & 19 & 90 & 220 & 198 & 92.1 & 71.0 & 80.1 & 62.2 \\[6pt] 
+		& Multiple & 7  & 25 & 285 & 210 & 97.6 & 91.9 & 94.7 & 88.7 \\[6pt]
+		Overripe    & Single   & 44 & 82 & 212 & 177 & 82.8 & 72.1 & 77.1 & 52.2 \\[6pt]
+		& Multiple & 19 & 35 & 259 & 202 & 93.2 & 88.1 & 90.6 & 79.5 \\[6pt]	 
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 
 Table \ref{tab:algo_test} lists the results of testing for both algorithms where the test set was ground truthed with 310 out of 527 punnets underripe, and 294 out of 515 punnets overripe in a separate set. In order to best compare the single and multiple defect classes, the same test punnets were used with the addition of more defect fruit for the multi-defect instances. The confusion matrices for the tests are detailed in Tables \ref{tab:confusion_1},  \ref{tab:confusion_2}, \ref{tab:confusion_3} and \ref{tab:confusion_4}.
 
@@ -2575,7 +2546,7 @@ As LED's are a diode, they have the ability to switch on and off almost instanta
 The current system structure has the cameras and lighting enclosed, with the main wiring, pneumatics, sensors, power supply and monitor exposed as peripheral elements of the system. This creates hazards, both from a safety perspective as well as robustness, complexity, and aesthetic, which can be reduced or eliminated by enclosing them together inside the same enclosure. This also adds to the simplification of wiring and circuits (given the close proximity of the power and electronics to the devices that use them), without the need to run cables outside the walls of the system. An extra layer of dust protection is realised for the PC and power supply units due to the outer panelling of the enclosure as opposed to alternative arrangement of being exposed to production and cleaning debris. Protection of the electronic and power supply components (all of which are critical to the successful operation of the system) from impacts and knocks are solidified by being placed inside a metal enclosure with a strong frame surrounding.
 
 
-\subsection{Enclosure}
+\subsection{Enclosure Redesign}
 
 
 The computer, pneumatic actuator and regulator, electronics, and power supply are housed inside the newly designed enclosure along with the cameras and lighting in order to protect all components from both dust and impact damage. The CAD design is shown in Figure \ref{fig:SQA_v2} illustrating PC placement (behind electronic panel on right hand side), lighting section (blue polarising sheets), and electronics and power supply storage. The footprint of the design is approximately the same width compared to the current version, lower in height, and the same length, given that the conveyor system determines this dimension. Even though the enclosed section is longer and bulkier, the unit is designed to be more easliy moved (lifting with a forklift or pallet-jack in one motion, as opposed to disconnecting components) around the production floor and onto transport vehicles. 
@@ -2988,7 +2959,7 @@ Three Controllinos\texttrademark have been installed (Figure \ref{fig:controllin
 	\centering
 	\caption{LED Controller connections and pin assignments.}
 	\label{tab:LED_tasks}
-	\begin{tabularx}{0.5\linewidth}{cXc}
+	\begin{tabular}{clc}
 		\toprule
 		  			& \textbf{Element} & \textbf{Pin} \\[8pt]
 		\midrule
@@ -3005,7 +2976,7 @@ Three Controllinos\texttrademark have been installed (Figure \ref{fig:controllin
 					& Bottom IR camera		& D11  \\[4pt]
 		\bottomrule
 		
-	\end{tabularx}
+	\end{tabular}
 \end{table}
  
 
@@ -3015,7 +2986,7 @@ Table \ref{tab:LED_tasks} lists the LED Controller pin assignments with two inpu
 	\centering
 	\caption{I/O Controller connections and pin assignments.}
 	\label{tab:IO_tasks}
-	\begin{tabularx}{0.5\linewidth}{cXc}
+	\begin{tabular}{clc}
 		\toprule
 				& \textbf{Element} & \textbf{Pin} \\[8pt]
 		\midrule
@@ -3040,21 +3011,17 @@ Table \ref{tab:LED_tasks} lists the LED Controller pin assignments with two inpu
 				& Pneumatic Ejector				& D11  \\[4pt]
 		\bottomrule
 		
-	\end{tabularx}
+	\end{tabular}
 \end{table}
 
 
-hree Controllinos\texttrademark have been installed (Figure \ref{fig:controllino_2}) in order to carry out three, mostly isolated tasks namely, LED controller, I/O Controller, and Watchdog Controller. The LED Controller operates the lighting and cameras with a punnet sensor input, the I/O Controller manages all other I/O including buttons and door sensors, finally the Watchdog Controller will monitor temperature of internal LED heatsinks and power systems as a seperate malfunction detection system.
-The I/O Controller functions and pin assignments listed in Table \ref{tab:IO_tasks} gives an indication of the number of I/O tasks required in order to operate the system. Some priorities have been given to critical safety systems such as the emergency-stop button, panel door sensors, and punnet catcher, so that they take precedent over all other pending actions. The pneumatic ejector is the next most critical due to the speed of the conveyor, a punnet could be missed if the timing is delayed. All other inputs and outputs could potentially have small delays ($<100ms$) before being serviced by the processor, however this risk is not hazardous to product or people.
 
-
-Table \ref{tab:watchdog_tasks} relating to the Watchdog Controller lists six power system inputs which are used as a logic input to the controller (high-voltage is stepped down) so that the power systems can be monitored independently. The temperature sensors are mounted on the main LED heat-sinks and trigger an alarm through the Dallas Semiconductor 1-wire\textregistered protocol which allows addressable sensors to be implemented on the same bus (wire). If an error occurs (power or temperature), the error is sent to the I/O Controller for action and communication to the application.
 
 \begin{table}[h]
 	\centering
 	\caption{Watchdog Controller connections and pin assignments.}
 	\label{tab:watchdog_tasks}
-	\begin{tabularx}{0.5\linewidth}{cXc}
+	\begin{tabular}{clc}
 		\toprule
 				& \textbf{Element} & \textbf{Pin} \\[8pt]
 		\midrule
@@ -3069,9 +3036,14 @@ Table \ref{tab:watchdog_tasks} relating to the Watchdog Controller lists six pow
 		Outputs	& Error signal			& D2  \\[4pt]
 		\bottomrule
 		
-	\end{tabularx}
+	\end{tabular}
 \end{table}
 
+Three Controllinos\texttrademark have been installed (Figure \ref{fig:controllino_2}) in order to carry out three, mostly isolated tasks namely, LED controller, I/O Controller, and Watchdog Controller. The LED Controller operates the lighting and cameras with a punnet sensor input, the I/O Controller manages all other I/O including buttons and door sensors, finally the Watchdog Controller will monitor temperature of internal LED heatsinks and power systems as a seperate malfunction detection system.
+The I/O Controller functions and pin assignments listed in Table \ref{tab:IO_tasks} gives an indication of the number of I/O tasks required in order to operate the system. Some priorities have been given to critical safety systems such as the emergency-stop button, panel door sensors, and punnet catcher, so that they take precedent over all other pending actions. The pneumatic ejector is the next most critical due to the speed of the conveyor, a punnet could be missed if the timing is delayed. All other inputs and outputs could potentially have small delays ($<100ms$) before being serviced by the processor, however this risk is not hazardous to product or people.
+
+
+Table \ref{tab:watchdog_tasks} relating to the Watchdog Controller lists six power system inputs which are used as a logic input to the controller (high-voltage is stepped down) so that the power systems can be monitored independently. The temperature sensors are mounted on the main LED heat-sinks and trigger an alarm through the Dallas Semiconductor 1-wire\textregistered protocol which allows addressable sensors to be implemented on the same bus (wire). If an error occurs (power or temperature), the error is sent to the I/O Controller for action and communication to the application.
 
 Programming the controllers is similar to the Arduino\texttrademark, in that the \texttt{setup()} and \texttt{loop()} functions are used in exactly the same method, using $C$ programming language. Inside the \texttt{loop()} function (where operations occur in an infinite loop), multiple modes (states) help to allocate certain tasks at certain times as indicated in Table \ref{tab:controllino_modes}.
 	
@@ -3081,7 +3053,7 @@ Programming the controllers is similar to the Arduino\texttrademark, in that the
 	\centering
 	\caption{Operating modes for each controller.}
 	\label{tab:controllino_modes}
-	\begin{tabularx}{0.7\linewidth}{Xcccc}
+	\begin{tabular}{lcccc}
 		\toprule
 		\textbf{Controller} & \textbf{Mode 1} & \textbf{Mode 2} & \textbf{Mode 3} & \textbf{Mode 4} \\[8pt]
 		\midrule
@@ -3089,7 +3061,7 @@ Programming the controllers is similar to the Arduino\texttrademark, in that the
 		I/O Controller 		& Waiting & Ready & Running & Error  \\[4pt]
 		Watchdog Controller & Off & Running & Error & -  \\[4pt]
 		\bottomrule
-	\end{tabularx}
+	\end{tabular}
 \end{table}
 
 
@@ -3173,9 +3145,6 @@ Some examples of open-source, python-compatible GUIs are:
 
 Other programs exist which are useful for developing GUI, however, many of these programs are aimed at very basic UI for such applications as games, graphics windows, and webpage viewers without the need for complicated actions, real-time control, multiple views, stability and seemless transitions.
 
-OpenCV windows do not allow the addition of buttons, wxPython and tKinter have basic GUI elements and some community support. However, the Qt\textregistered is a commercial application developed by a team of engineers and professionals to deliver a cross-platform GUI tool. It supports deployment on Windows\textregistered, Mac\textregistered, Linux\textregistered, iPhone\textregistered, and Android\textregistered and has an exhaustive library of elements and functions to suit almost any application. One of the advantages is that it has been developed for industrial/commercial application development requiring that the program can integrate with real-time systems at a professional level.
-
-
 
 
 \begin{figure}[h]
@@ -3184,6 +3153,11 @@ OpenCV windows do not allow the addition of buttons, wxPython and tKinter have b
 	\caption{Example of UI development in PyQt\textregistered. The draggable element library is shown on the left, with the element parameters on the right.}
 	\label{fig:qt}
 \end{figure}%
+
+
+OpenCV windows do not allow the addition of buttons, wxPython and tKinter have basic GUI elements and some community support. However, the Qt\textregistered is a commercial application developed by a team of engineers and professionals to deliver a cross-platform GUI tool. It supports deployment on Windows\textregistered, Mac\textregistered, Linux\textregistered, iPhone\textregistered, and Android\textregistered and has an exhaustive library of elements and functions to suit almost any application. One of the advantages is that it has been developed for industrial/commercial application development requiring that the program can integrate with real-time systems at a professional level.
+
+
 
 
 The disadvantage is that this is a commercial software package and must be used uder the strict LGNU license, meaning that there are rules in place regarding how the application is distributed and deployed. This will need to be considered with the possibility of having to purchase a commercial license. Figure \ref{fig:qt} illustrates the design application for Qt\textregistered.
@@ -3256,7 +3230,7 @@ A preliminary investigation into SVM classifier accuracy has been performed with
 		 2 & 
 		 $100\%$ white & 
 		 $50\%$ dark red/$50\%$ light red &
-		 4-5 shades of green & N/A & 70 & 408 & 70 & 31 & \textbf{82.56}
+		 4-5 shades of green & N/A & 70 & 408 & 70 & 31 & 82.56
 		\tabularnewline
 		\hline
 				
@@ -3274,7 +3248,7 @@ A preliminary investigation into SVM classifier accuracy has been performed with
 		 $100\%$ white & 
 		 $50\%$ dark red/$50\%$ light red&
 		 4-5 shades of green &
-		 $100\%$ dark red & 4 & 472 & 6 & 97 & \textbf{82.11}
+		 $100\%$ dark red & 4 & 472 & 6 & 97 & 82.11
 		\tabularnewline
 		\hline
 
@@ -3282,7 +3256,7 @@ A preliminary investigation into SVM classifier accuracy has been performed with
 		 5 & 
 		 $100\%$ white & 
 		 $50\%$ light red/$50\%$ pink - no dark red &
-		 4-5 shades of green & N/A & 26 & 433 & 45 & 75 & \textbf{79.27} 
+		 4-5 shades of green & N/A & 26 & 433 & 45 & 75 & 79.27
 		\tabularnewline
 		\hline
 
@@ -3290,7 +3264,7 @@ A preliminary investigation into SVM classifier accuracy has been performed with
 		 6 & 
 		 $75\%$ white/$25\%$ pink & 
 		 $50\%$ light red/$50\%$ pink - no dark red &
-		 4-5 shades of green & $100\%$ dark red & 54 & 395 & 83 & 4 & \textbf{77.55}
+		 4-5 shades of green & $100\%$ dark red & 54 & 395 & 83 & 4 & 77.55
 		\tabularnewline
 		\hline
 
@@ -3298,7 +3272,7 @@ A preliminary investigation into SVM classifier accuracy has been performed with
 		 7 & 
 		 $75\%$ white/$25\%$ pink & 
 		 $50\%$ dark red/$50\%$ light red - multiple berries &
-		 4-5 shades of green & N/A & 93 & 295 & 183 & 8 & \textbf{67.01}
+		 4-5 shades of green & N/A & 93 & 295 & 183 & 8 & 67.01
 		\tabularnewline
 		\hline 
 	\end{tabularx}
@@ -3433,14 +3407,37 @@ There are many different ways to arrange the layers of a ConvNet. Figure \ref{fi
 \end{figure}%
 	
 
-Several networks were created as described earlier in this chapter using Keras to build layers in a range of different architectures.  
-....
-...
+Six different networks were created (as described earlier in this chapter) for experimentation purposes, using Keras, in order to build layers in a range of different architectures. Simple networks with one convolution step, one pool and one fully-connected layer, as well as more complicated structures with many iterations of these blocks were evaluated. The number of training images for each network was constant as only the under ripe class was tested and a good comparison would be impossible with differing training data.
 
 
-....
+Therefore, 465 training images were used to train the networks created in exaclty the same way (cropping, preprocessing), although the image order was randomly generated. Due to the low number of training images, three augmentations were performed, namely, horizontal, vertical, and diagonal flipping in order to increase the number of samples to 1860. 
 
-....
+Using \texttt{RMSProp} and \texttt{Adam} optimisation algorithms, the networks were trained using varying parameters with the best training results for each architecture shown in Table \ref{tab:networks}. The number of convolutions, max. pooling, and fully-connected layers are indicated as well as the range of epochs.
+
+
+
+\begin{table}[h]
+	\centering
+	\caption{Best results for varying configurations of convolutional neural networks when trained from scratch.}
+	\label{tab:networks}
+	\begin{tabular}{cccccc} 
+		\toprule
+		Exp. No.  & Convolutions & MaxPool & Fully-connected & Epochs & Best Accuracy (\%) \\ [0.5ex] 
+		\midrule
+		1 & 1 & 1 & 1 & 10-25 & 72.14 \\
+		2 & 2 & 1 & 1 & 10-25 & 69.52 \\
+		3 & 3 & 1 & 1 & 20-40 & 65.22 \\
+		4 & 3 & 2 & 2 & 20-40 & 75.28 \\
+		5 & 4 & 4 & 1 & 35-30 & \textbf{76.30} \\
+		6 & 3 & 3 & 2 & 35-30 & 69.85 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+
+Accuracy for all networks began to plataeu after the maximum listed epoch for each architecture, likely due to the small amout of data which also contributed to the average results. 
 
 
 \subsection{Transfer Learning with Resnet}
@@ -3529,17 +3526,14 @@ returning a vector of learned regression coefficients $\hat{\beta}=[\beta_0, \be
 \subsubsection{Strawberry Classification}
 \label{sec:strawberry_classification}
 
-Captured images in Table \ref{tab:examples} shows the intensity, backgound and scale attributes are constant while the colour, edges and geometric attributes are variable yet finite (confined within the punnet), therefore the problem is a fine-grained classification task. However, the similarities between each strawberry image are much higher than that of other more general datasets (for example Oxford Flowers or Stanford Dogs where each image does not have a static background, scale or illumination). Therefore, such high level of similarity makes the classification task more challenging, calling for more robust feature descriptors that able to capture the distinctiveness in between different punnet categories (pass, overripe, underripe and those containing foreign objects).
-
-It has been observed that, due to colour tone and reflection differences, examples of overripe strawberry punnets usually have lower overall pixel intensity than examples of underripe strawberry punnnets. However, such pixel intensity, which is mainly affected by the illumination condition, can also be indirectly affected by other factors, such as the way of packing. For example, how individual berries are positioned in the punnet (at random or uniformly arranged), average size of individual berries that determines the total surface area which in turn subsequently determines reflection and illumination. Therefore, we intentionally change the illumination conditions during the image acquisition process to ensure that our training examples include sufficient example images under different illumination conditions, hence making the deep learning instance robust against illumination variances.
-
+Captured images in Table \ref{tab:examples} shows the intensity, backgound and scale attributes are constant while the colour, edges and geometric attributes are variable yet finite (confined within the punnet), therefore the problem is a fine-grained classification task. However, the similarities between each strawberry image are much higher than that of other more general datasets (for example Oxford Flowers or Stanford Dogs where each image does not have a static background, scale or illumination). Therefore, such high level of similarity makes the classification task more challenging, calling for more robust feature descriptors that able to capture the distinctiveness in between different punnet categories such as pass, overripe, underripe, and foreign object.
 
 
 \begin{table}[t]
 	\centering
 	\caption{Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4))}
 	\label{tab:training_samples}
-	\begin{tabularx}{\textheight}{c*8{N}}
+	\begin{tabular}{c*8{N}}
 		
 		1 &
 		\includegraphics[width=\linewidth]{images/pass_1.jpg} & \includegraphics[width=\linewidth]{images/pass_2.jpg} & \includegraphics[width=\linewidth]{images/pass_3.jpg} &         \includegraphics[width=\linewidth]{images/pass_4.jpg} & \includegraphics[width=\linewidth]{images/pass_5.jpg} &         \includegraphics[width=\linewidth]{images/pass_6.jpg} & \includegraphics[width=\linewidth]{images/pass_7.jpg} &         \includegraphics[width=\linewidth]{images/pass_8.jpg} \\
@@ -3553,50 +3547,19 @@ It has been observed that, due to colour tone and reflection differences, exampl
 		4 &
 		\includegraphics[width=\linewidth]{images/foreign_1.jpg} & \includegraphics[width=\linewidth]{images/foreign_2.jpg} & \includegraphics[width=\linewidth]{images/foreign_3.jpg} &         \includegraphics[width=\linewidth]{images/foreign_4.jpg} & \includegraphics[width=\linewidth]{images/foreign_5.jpg} &         \includegraphics[width=\linewidth]{images/foreign_6.jpg} & \includegraphics[width=\linewidth]{images/foreign_7.jpg} &         \includegraphics[width=\linewidth]{images/foreign_8.jpg} \\
 		
-	\end{tabularx}
+	\end{tabular}
 \end{table} 
 
 
 
 
-The strawberry problem domain relates strongly to the colour and texture aspects of early-layer neural network feature extraction. As ResNet is a deep-learned network, trained on millions of object images making up $1000$ classes, we theorise (with further evidence provided by Pan {\it et al} \cite{pan}, Bianchini and Scarselli \cite{bianchini}) that it will detect more intricate differences in fine-grained object images due to its complexity, discriminating more easily between slight colour and texture variations. Also, this architecture provides a more efficient network propagation for real-time applications due to the residual elements.
+The strawberry problem domain relates strongly to the colour and texture aspects of early-layer neural network feature extraction. As ResNet is a deep-learned network, trained on millions of object images making up $1000$ classes, it is theorised (with further evidence provided by Pan {\it et al} \cite{pan}, Bianchini and Scarselli \cite{bianchini}) that it will detect more intricate differences in fine-grained object images due to its complexity, discriminating more easily between slight colour and texture variations. Also, this architecture provides a more efficient network propagation for real-time applications due to the residual elements.
 
 
 
-\begin{sidewaystable}
-	\centering
-	\caption{Comparison of training results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.}
-	\label{tab:classifiers}
-	\begin{tabularx}{\textheight}{Xcccccc}
-		\toprule
-		& Foreign object &          & Under ripe    &          & Over ripe     &           \\  
-		Classifier & Accuracy (\%)  & Log Loss & Accuracy (\%) & Log Loss & Accuracy (\%) & Log Loss  \\ 
-		\midrule
-		K-Neighbors Classifier          & 89.9297  & 1.2688 & 80.4989 & 1.4785 & 79.9550 & 1.4162 \\[6pt] 
-		Logistic Regression	            & \textbf{96.9555}  & \textbf{0.0840} & \textbf{97.9592} & \textbf{0.0664} &  \textbf{99.3243} & \textbf{0.0445} \\[6pt]
-		SVM (RBF)	                    & 51.5222  & 0.2976 & 47.1655 & 0.3754 & 47.5225 & 0.6921 \\[6pt]
-		NuSVM	                        & 93.4426  & 0.1853 & 96.3719 & 0.1092 & 98.4234 & 0.0445 \\[6pt]
-		Decision Tree Classifier	    & 89.4614  & 3.6399 & 80.9524 & 6.5788 & 83.3333 & 5.7565 \\[6pt]
-		Random Forest Classifier	    & 90.6323  & 0.4432 & 83.4467 & 0.4808 & 87.8378 & 0.3963 \\[6pt]
-		AdaBoost Classifier	            & 96.7213  & 0.5742 & 97.7324 & 0.5472 & 97.2973 & 0.5809 \\[6pt]
-		MLP Classifier	                & 95.7845  & 0.2315 & 95.6916 & 0.2222 & 52.4775 & 0.6920 \\[6pt]
-		Gradient Boosting Classifier	& 94.8478  & 0.1451 & 97.9592 & 0.0714 & 98.1982 & 0.0638 \\[6pt]
-		Gaussian NB	                    & 53.8642  & 15.934 & 60.3175 & 13.7059 & 57.2072 & 14.7801 \\[6pt]
-		Linear Discriminant Analysis	& 94.1452  & 0.2143 & 90.0227 & 0.4015 & 93.2432 & 0.3401 \\[6pt]
-		Quadratic Discriminant Analysis	& 59.2506  & 14.0743 & 50.7937 & 16.9953 & 52.4775 & 16.4137 \\[6pt]
-		\bottomrule 
-	\end{tabularx}
-\end{sidewaystable}
-
-
-
-
-
-The method discussed in this paper is based on feature vector classification previously used in, for example, SVM, Random Forrest, and Regression techniques which are well-known classification methods. However, the feature vector that is classified in this case is generated by the ResNet neural network and its deep learned features. The network weights are not changed, or fine-tuned, as with previously mentioned methods, rather the penultimate layer vectors are used to train a classifier to recognise defects. 
+The method ultimately used in the SQA vision system is based on feature vector classification previously used in, for example, SVM, Random Forrest, and Regression techniques which are well-known classification methods. However, the feature vector that is classified in this case is generated by the ResNet neural network and its deep learned features. The network weights are not changed, or fine-tuned, as with previously mentioned methods, rather the penultimate layer vectors are used to train a classifier to recognise defects. 
 
 The originally acquired images include a background of conveyor belts and other mechanical parts of the system, they also include top-bottom view of the sensor, its reflector and the entire punnet borders (in the top view) and the bottom of the punnet (in the bottom view). Since the location of the punnet in the camera field of view is fixed at each moment of capture and all punnets are of exactly the same size, the valid punnet region is cropped from the original acquired image with a fixed size of $500 \times 600$. 
-
-\newpage
 
 Using a combination of horizontal and vertical flipping, images were compiled for training and listed in Table \ref{tab:data}.
 
@@ -3620,9 +3583,36 @@ Using a combination of horizontal and vertical flipping, images were compiled fo
 During the research and training phase, $12$ different classifiers were assessed for accuracy including K-Neighbours, AdaBoost, and SVM algorithms with results shown in Table \ref{tab:classifiers}. They were trained with respect to three defect classes namely, under ripe, over ripe, and foreign object, and indicate that simple Logistic Regression analysis is the best performing. 
 
 
-Interestingly, the SVM with RBF kernel algorithm scored a very low $51.5\%$ while the NuSVM algorithm scored much higher at $93.4\%$ when comparing on the under ripe category. The difference between the these two methods are the $C$ and $Nu$ regularization parameters which apply penalties in the case of mis-classifications. The $C$ parameter used in SVC ranges $\{\exists C\in\mathbb{Q^+}\}$ where $\mathbb{Q^+}$ is the set of positive rational numbers, meaning it can take any real value from zero to infinity. The $Nu$ parameter is limited to a range from zero to one only $\{\exists C\in\mathbb{Q} \mid 0 <\mathbb{Q} < 1\}$ and therefore, is bounded to search within a defined smaller range. 
 
-The difference in these two scores indicates for this problem, the classifier will underfit using high-level parameters that can escalate infinitely. Therefore the Logistic Regression algorithm is used to classify the extracted strawberry features. 
+
+\begin{sidewaystable}
+	\centering
+	\caption{Comparison of training results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.}
+	\label{tab:classifiers}
+	\begin{tabular}{ccccccc}
+		\toprule
+		& Foreign object &          & Under ripe    &          & Over ripe     &           \\  
+		Classifier & Accuracy (\%)  & Log Loss & Accuracy (\%) & Log Loss & Accuracy (\%) & Log Loss  \\ 
+		\midrule
+		K-Neighbors Classifier          & 89.9297  & 1.2688 & 80.4989 & 1.4785 & 79.9550 & 1.4162 \\[6pt] 
+		Logistic Regression	            & \textbf{96.9555}  & \textbf{0.0840} & \textbf{97.9592} & \textbf{0.0664} &  \textbf{99.3243} & \textbf{0.0445} \\[6pt]
+		SVM (RBF)	                    & 51.5222  & 0.2976 & 47.1655 & 0.3754 & 47.5225 & 0.6921 \\[6pt]
+		NuSVM	                        & 93.4426  & 0.1853 & 96.3719 & 0.1092 & 98.4234 & 0.0445 \\[6pt]
+		Decision Tree Classifier	    & 89.4614  & 3.6399 & 80.9524 & 6.5788 & 83.3333 & 5.7565 \\[6pt]
+		Random Forest Classifier	    & 90.6323  & 0.4432 & 83.4467 & 0.4808 & 87.8378 & 0.3963 \\[6pt]
+		AdaBoost Classifier	            & 96.7213  & 0.5742 & 97.7324 & 0.5472 & 97.2973 & 0.5809 \\[6pt]
+		MLP Classifier	                & 95.7845  & 0.2315 & 95.6916 & 0.2222 & 52.4775 & 0.6920 \\[6pt]
+		Gradient Boosting Classifier	& 94.8478  & 0.1451 & 97.9592 & 0.0714 & 98.1982 & 0.0638 \\[6pt]
+		Gaussian NB	                    & 53.8642  & 15.934 & 60.3175 & 13.7059 & 57.2072 & 14.7801 \\[6pt]
+		Linear Discriminant Analysis	& 94.1452  & 0.2143 & 90.0227 & 0.4015 & 93.2432 & 0.3401 \\[6pt]
+		Quadratic Discriminant Analysis	& 59.2506  & 14.0743 & 50.7937 & 16.9953 & 52.4775 & 16.4137 \\[6pt]
+		\bottomrule 
+	\end{tabular}
+\end{sidewaystable}
+
+
+
+Interestingly, the SVM with RBF kernel algorithm scored a very low $51.5\%$ while the NuSVM algorithm scored much higher at $93.4\%$ when comparing on the under ripe category. The difference between the these two methods are the $C$ and $Nu$ regularization parameters which apply penalties in the case of mis-classifications. The $C$ parameter used in SVC ranges $\{\exists C\in\mathbb{Q^+}\}$ where $\mathbb{Q^+}$ is the set of positive rational numbers, meaning it can take any real value from zero to infinity. The $Nu$ parameter is limited to a range from zero to one only $\{\exists C\in\mathbb{Q} \mid 0 <\mathbb{Q} < 1\}$ and therefore, is bounded to search within a defined smaller range. The difference in these two scores indicates for this problem, the classifier will underfit using high-level parameters that can escalate infinitely. Therefore the Logistic Regression algorithm is used to classify the extracted strawberry features. 
 
 
 
@@ -3639,16 +3629,71 @@ The difference in these two scores indicates for this problem, the classifier wi
 \section{Conclusion and Outcomes}
 
 
+In this thesis, a Strawberry Quality Assurance (SQA) vision system has been developed in which packaged strawberries can be effectively and accurately quality graded on a fast-paced, real-time production line. The system has entered it's fifth season as production-ready and uses machine learning to perform the grading of punnets at a rate of $2/s$. The enclosure can be placed in-line and configured to fit a production facility where strawberries are packaged into containers before being placed on a conveyor. Defect punnets are ejected from the line via a pneumatic air blast synchronised with the inference computer before proceeding to the automatic heat-seal machine.
+
+The research performed during the project is integral to the successful implementation and professional operation of the system with investigations into lighting, polarisation, spectral reflections and diffuse light, power systems, cameras, electronic components, controllers, and triggering systems, as well as strawberry feature representation, colour analysis and deep learning. Described in Chapter \ref{sec:I}, construction of the first prototype concluded that the inherant AC flickering was not suitable due to the fast shutter speeds of the cameras when acquiring moving objects, as well as polaroid imperfections (i.e. bending, curving, or damaged) negate cross-polarisation effects and reduce the ability to surpress specular reflections. The descision to move to DC as a result provided image stability improvements even though this meant time would need to be taken for an appropriate power supply to be designed and built. Preparations for production were made whilst simultaneously becoming familiar with software (HALCON\texttrademark), interfaces, camera characterisation, parameters and operation. Chapter \ref{sec:paper_1} discusses the problems of flickering and specular reflections and the solutions in order to design a vision system with the best possible image quality. The results indicated that using a good quality DC power supply (with enclosed surroundings) can reduce reflectance fluctuations to negligible levels, and the cross-polarisation process allows all specular reflections to be removed. 
+
+Integrating the system into the production line required pre-planning and testing prior to work commencing in order to make the process as efficient as possible. Chapter \ref{sec:II} describes the implementation to production including the enclosure positioning, power systems and lighting installation, control systems, and camera setup, as well as hyperspectral/IR imaging and related bruising. The ejector was installed and activated shortly after the first Queensland production season began, removing punnets which were defected for repacking. The entire system was relocated to South Australia for the second season, with the production line automatically fed using conveyors opposed to being manually placed on the in-feed conveyor. Colour analysis methods detailed in Chapter \ref{sec:paper_2} explain the algorithms used to create the first two quantified methods of defect detection. The under ripe and over ripe strawberry features were extracted and analysed in order to grade them in a binary manner (2 classifiers) with resulting performance of $94.7\%$ and $90.6\%$ for the multiple detection category, respectively.
+
+After two production seasons, the dirt, dust, and debris build up inside the enclosure as well as lighting, access, and robustness concerns forced a redesign in between seasons. Described in chapter \ref{sec:III}, the enlosure is stripped of it's main components such as power supply, cameras, polarisers, sensors, punnet conveyors (including v-belts) and PC, before being transferred to the newly designed and constructed frame. Electronics and camera accessibility was increased by adding doors and panels, and mounting the electronic components, microcontroller, relays and fuses. Small, powerful LEDs replaced the bulky visible and energy wasting halogen lighting with a triggering system synchronised to the cameras developed in order to pulse the lighting rather than continuous illumination. An upgrade performed on the microcontroller freed the application of some of it's critical memory requirements, as well as providing standardisation and industrialisation. An operator panel installed with start/stop buttons and a touchscreen in order to give the system aesthetic appeal. 
+
+Finally, Chapter \ref{sec:IV} outlined the dramatic change of system completely in an effort to perform more accurately using state-of-the-art techniques. Linux\textregistered OS enabled open-source image manipulation and processing, model creation and saving and machine learning including deep learning. Both SVM and neural networks were used to train classifiers with some success, however, the final classifier uses a combination of a pre-trained Resnet-50 feature extraction and logistic regression to create 3 separate binary models which perform much more accurately during training.
 
 
 
 
+\subsection{System Performance}
 
 
 
+Given the independent classifier models and outcomes, the operator can increase the sensitivity of one of the defect classes while leaving the others unchanged, therefore allowing for the ability to adapt to changing weather and market conditions. For each image, Resnet needs only to produce a single feature vector that can then be predicted by each binary classifier to give a probability score. Although the structure of classifiers could be simplified by training one multi-class classifier, the independent fine-tuning during production would be lost (as well as being theorically less accurate). The operator is, therefore, able to make sensitivity adjustments in real-time by simply using a slider on the GUI. For example, the operator might adjust the confidence levels to $60\%, 90\%$, and $75\%$ for the foreign object, over ripe, and under ripe classes, respectively.  
 
 
 
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{images/ROC_foriegn.png}
+		\caption{}
+		\label{fig:ROC_f}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{images/ROC_under.png}
+		\caption{}
+		\label{fig:ROC_u}
+	\end{subfigure}%
+	
+	\begin{subfigure}{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{images/ROC_over.png}
+		\caption{}
+		\label{fig:ROC_o}
+	\end{subfigure}%
+	
+	\caption{(a) ROC curve of the foreign object classifier. (b) ROC curve of the under ripe classifier. (c)ROC curve of the over ripe classifier.}
+	\label{fig:ROCs}
+\end{figure}
+
+
+This creates a subjective success measure, and due to this parameters variability, a Receiver Operating Characteristic (ROC) analysis  is performed with the results shown in Figure \ref{fig:ROCs}. The test images were acquired in real-time and then labelled retrospectively in order to obtain quantitative results.
+
+Both the Under Ripe and Foreign Object classifiers have performed well with the  Area Under ROC (AUROC) greater than $80\%$. However the Over Ripe classifier did not perform so well with an AUROC of $58\%$. This is most likely due to overfitting based on shadowed berries at the bottom of the punnet and could be overcome by pre-processing the data to contain only the top layer of fruit. This means that only fruit that is under full illumination will be classified as over ripe. A critical success factor was execution time, given that the production line requires two punnets per second to be acquired and assessed. Resnet has the ability to use its identity functions (discussed in Section \ref{sec:resnet}) which speeds up the propagation time of the network, and thus the inference is very fast. Without the use of a GPU, the entire process including the time taken for three classifiers averages $<300ms$, which is well within the given $500ms$ window.  
+
+All of the requirements from Chapter \ref{sec:requirements} have been met including traceability and documentation with all images and their metadata saved to a database, and automatic documentation generator which can can re-generate all documents relating to the software using specific commenting styles within the source code.
+
+A total of 281,778 punnets have been acquired by the vision system in total with 20,303 rejected equating to $7.76\%$. However, not all of these reject descisions will have related to ejections due to the on-line production testing of algorithms where the ejector was disabled temporarily. The farm operators have been able to adjust the levels and start/stop the machine as part of their everyday checklist or work routine, and a process has been implemented to allow the regular collection of rejected punnets for repacking by quality staff.
+
+
+
+\subsection{Future Work}
+
+Continuation of the SQA project will continue for at least another two years due to the succesful development and positive impact on the packing facility and company quality control systems. Further work based on current deep learning methods are to be performed by collecting and labelling more data to be added to the labelled training database. 
+
+Investigations into bounding box methods will be undertaken to assess the validity of annotating data in order to know the location of defect regions. This would require relabelling by annotation for each collected image basically starting from scratch, however, it would provide the means for a more detailed displayed result as well as troubleshooting.
+
+The work in this thesis has been instrumental in the development of the Griffith University's ARC Research Hub for Driving Farming Productivity and Disease Prevention by forging the beginnings of solid relationships within industry, attracting agriculture and aquaculture companies through experience and demonstration. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
