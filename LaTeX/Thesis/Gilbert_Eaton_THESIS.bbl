@@ -56,21 +56,6 @@ C.-J. Du and D.-W. Sun, ``Recent developments in the applications of image
   processing techniques for food quality evaluation,'' {\em Trends in Food
   Science and Technology}, vol.~15, pp.~230--249, 2004.
 
-\bibitem{duan}
-F.~Duan, Y.-N. Wang, H.-J. Liu, and Y.-G. Li, ``A machine vision inspector for
-  beer bottle,'' {\em Engineering Applications of Artificial Intelligence},
-  vol.~20, pp.~1013--1021, 2007.
-
-\bibitem{elmasry1}
-G.~ElMasry, S.~Cubero, E.~Moltó, and J.~Blasco, ``In-line sorting of irregular
-  potatoes by using automated computer-based machine vision system,'' {\em
-  Journal of Food Engineering}, vol.~112, pp.~60--68, 2012.
-
-\bibitem{kondo}
-N.~Kondo, ``Automation on fruit and vegetable grading system and food
-  traceability,'' {\em Trends in Food Science and Technology}, vol.~21,
-  pp.~145--152, 2010.
-
 \bibitem{busch}
 A.~Busch and P.~Palk, ``An image processing approach to distance estimation for
   automated strawberry harvesting,'' {\em International Conference on Image
@@ -367,6 +352,21 @@ M.~Baigvand, A.~Banakar, S.~Minaei, J.~Khodaei, and N.~Behroozi-Khazaei,
   ``Machine vision system for grading of dried figs,'' {\em Computers and
   Electronics in Agriculture}, vol.~119, pp.~158--165, 2015.
 
+\bibitem{duan}
+F.~Duan, Y.-N. Wang, H.-J. Liu, and Y.-G. Li, ``A machine vision inspector for
+  beer bottle,'' {\em Engineering Applications of Artificial Intelligence},
+  vol.~20, pp.~1013--1021, 2007.
+
+\bibitem{elmasry1}
+G.~ElMasry, S.~Cubero, E.~Moltó, and J.~Blasco, ``In-line sorting of irregular
+  potatoes by using automated computer-based machine vision system,'' {\em
+  Journal of Food Engineering}, vol.~112, pp.~60--68, 2012.
+
+\bibitem{kondo}
+N.~Kondo, ``Automation on fruit and vegetable grading system and food
+  traceability,'' {\em Trends in Food Science and Technology}, vol.~21,
+  pp.~145--152, 2010.
+
 \bibitem{lin}
 J.~Lin, M.~Holmes, R.~Vison, C.~Ge, F.~C. Pogoda, L.~Mahon, R.~Gentry,
   G.~Seibel, X.~Chen, and Y.~Tao, ``Design and testing of an automated
@@ -411,6 +411,21 @@ T.~Sugiyama, J.~Sugiyama, M.~Tsuta, K.~Fujita, M.~Shibata, M.~Kokawa,
   T.~Arakia, H.~Nabetani, and Y.~Sagarac, ``Nir spectral imaging with
   discriminant analysis for detecting foreign materials among blueberries,''
   {\em Journal of Food Engineering}, vol.~Vol: 101(3), pp.~pp 224--252, 2010.
+
+\bibitem{peng}
+Y.~Peng and B.-L. Lu, ``Discriminative extreme learning machine with supervised
+  sparsity preserving for image classification,'' {\em Neurocomputing},
+  vol.~Vol: 000, pp.~pp 1--11, 2017.
+
+\bibitem{luo}
+F.~Luo, W.~Guo, Y.~Yu, and G.~Chen, ``A multi-label classification algorithm
+  based on kernel extreme learning machine,'' {\em Neurocomputing}, vol.~DOI:
+  S0925-2312(17)30806-8, pp.~pp 1--18, 2017.
+
+\bibitem{yavs}
+E.~Yavs and A.~Uçar, ``Gesture imitation and recognition using kinect sensor
+  and extreme learning machines,'' {\em Measurement}, vol.~Vol: 94, pp.~pp
+  852--861, 2016.
 
 \bibitem{mohammed}
 A.~Mohammed, R.Minhas, Q.~Wu, and M.A.Sid-Ahmed, ``Human face recognition based
@@ -841,6 +856,12 @@ K.~He and J.~Sun, ``Convolutional neural networks at constrained time cost,''
 \bibitem{angiulli}
 F.~Angiulli, ``Fast condensed nearest neighbor rule,'' {\em ICML (international
   conference on Machine learning)}, vol.~22, pp.~25--32, 2005.
+
+\bibitem{artur}
+A.~Miszczak, C.~F. Forney, and R.~K. Prange, ``Development of aroma volatiles
+  and color during postharvest ripening of ‘kent’ strawberries,'' {\em
+  Journal of the American Society of Horticultural Sciences}, vol.~120 No.4,
+  pp.~650--655, 1994.
 
 \bibitem{willert}
 C.~Willert, B.~Stasicki, J.~Klinner, and S.~Moessner, ``Pulsed operation of

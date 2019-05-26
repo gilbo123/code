@@ -68,52 +68,48 @@ Warning--entry type for "andrej" isn't style-file defined
 --line 3091 of file Master.bib
 Warning--entry type for "wiki_linux" isn't style-file defined
 --line 3239 of file Master.bib
-Warning--I didn't find a database entry for "peng"
-Warning--I didn't find a database entry for "luo"
-Warning--I didn't find a database entry for "yavs"
-Warning--I didn't find a database entry for "artur"
 Warning--empty year in artusi
 Warning--empty year in anderson
 Warning--empty year in kuranov
-You've used 176 entries,
+You've used 180 entries,
             1876 wiz_defined-function locations,
-            1390 strings with 35954 characters,
-and the built_in function-call counts, 54942 in all, are:
-= -- 5347
-> -- 2409
+            1406 strings with 36622 characters,
+and the built_in function-call counts, 56376 in all, are:
+= -- 5501
+> -- 2450
 < -- 0
-+ -- 869
-- -- 693
-* -- 3845
-:= -- 7626
-add.period$ -- 188
-call.type$ -- 176
-change.case$ -- 172
++ -- 884
+- -- 704
+* -- 3936
+:= -- 7807
+add.period$ -- 192
+call.type$ -- 180
+change.case$ -- 176
 chr.to.int$ -- 0
-cite$ -- 179
-duplicate$ -- 2769
-empty$ -- 4839
-format.name$ -- 693
-if$ -- 13694
+cite$ -- 183
+duplicate$ -- 2847
+empty$ -- 4967
+format.name$ -- 704
+if$ -- 14064
 int.to.chr$ -- 0
-int.to.str$ -- 176
-missing$ -- 167
-newline$ -- 548
-num.names$ -- 176
-pop$ -- 478
+int.to.str$ -- 180
+missing$ -- 171
+newline$ -- 560
+num.names$ -- 180
+pop$ -- 486
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2244
+skip$ -- 2317
 stack$ -- 0
-substring$ -- 3910
-swap$ -- 1413
+substring$ -- 4041
+swap$ -- 1459
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 442
-width$ -- 179
-write$ -- 1706
+while$ -- 454
+width$ -- 183
+write$ -- 1746
 (There were 9 error messages)
