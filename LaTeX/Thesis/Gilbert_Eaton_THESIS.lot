@@ -1,22 +1,22 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Table of Major Requirements for the Strawberry Vision System\relax }}{7}{table.1}
-\contentsline {table}{\numberline {2}{\ignorespaces Table of DC power requirements used in the SQA vision system.\relax }}{54}{table.caption.22}
-\contentsline {table}{\numberline {3}{\ignorespaces Cougar $1200W$ Power Supply Unit (PSU) specifications\relax }}{70}{table.caption.30}
-\contentsline {table}{\numberline {4}{\ignorespaces Microcontroller INPUT port assignments and peripheral devices power ratings.\relax }}{79}{table.caption.37}
-\contentsline {table}{\numberline {5}{\ignorespaces Microcontroller OUTPUT port assignments and peripheral devices power ratings.\relax }}{80}{table.caption.38}
-\contentsline {table}{\numberline {6}{\ignorespaces Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.\relax }}{83}{table.caption.42}
-\contentsline {table}{\numberline {7}{\ignorespaces Results of algorithm testing.\relax }}{102}{table.caption.52}
-\contentsline {table}{\numberline {8}{\ignorespaces Confusion matrix for single defect underripe tests.\relax }}{102}{table.caption.53}
-\contentsline {table}{\numberline {9}{\ignorespaces Confusion matrix for multiple defect underripe tests.\relax }}{103}{table.caption.54}
-\contentsline {table}{\numberline {10}{\ignorespaces Confusion matrix for single defect overripe tests.\relax }}{103}{table.caption.55}
-\contentsline {table}{\numberline {11}{\ignorespaces Confusion matrix for multiple defect overripe tests.\relax }}{103}{table.caption.56}
-\contentsline {table}{\numberline {12}{\ignorespaces MOSFET allocation per LED cluster.\relax }}{115}{table.caption.63}
-\contentsline {table}{\numberline {13}{\ignorespaces Important specifications of $360W/36VDC$ power supply.\relax }}{117}{table.caption.65}
-\contentsline {table}{\numberline {14}{\ignorespaces LED Controller connections and pin assignments.\relax }}{125}{table.caption.72}
-\contentsline {table}{\numberline {15}{\ignorespaces I/O Controller connections and pin assignments.\relax }}{126}{table.caption.73}
-\contentsline {table}{\numberline {16}{\ignorespaces Watchdog Controller connections and pin assignments.\relax }}{127}{table.caption.74}
-\contentsline {table}{\numberline {17}{\ignorespaces Operating modes for each controller.\relax }}{127}{table.caption.75}
-\contentsline {table}{\numberline {18}{\ignorespaces Initial SVM testing using various classes and features. The results were attained using 27 training images and 579 testing images for all cases.\relax }}{136}{table.caption.77}
-\contentsline {table}{\numberline {19}{\ignorespaces Best results for varying configurations of convolutional neural networks when trained from scratch.\relax }}{143}{table.caption.83}
-\contentsline {table}{\numberline {20}{\ignorespaces Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4))\relax }}{148}{table.caption.86}
-\contentsline {table}{\numberline {21}{\ignorespaces Images collected and labelled for each class for testing and training.\relax }}{148}{table.caption.87}
-\contentsline {table}{\numberline {22}{\ignorespaces Comparison of training results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.\relax }}{149}{table.caption.88}
+\contentsline {table}{\numberline {1}{\ignorespaces Table of Major Requirements for the Strawberry Vision System\relax }}{9}{table.0.1}
+\contentsline {table}{\numberline {2}{\ignorespaces Table of DC power requirements used in the SQA vision system.\relax }}{73}{table.caption.26}
+\contentsline {table}{\numberline {3}{\ignorespaces Cougar $1200W$ Power Supply Unit (PSU) specifications\relax }}{94}{table.caption.34}
+\contentsline {table}{\numberline {4}{\ignorespaces Microcontroller INPUT port assignments and peripheral devices power ratings.\relax }}{105}{table.caption.41}
+\contentsline {table}{\numberline {5}{\ignorespaces Microcontroller OUTPUT port assignments and peripheral devices power ratings.\relax }}{106}{table.caption.42}
+\contentsline {table}{\numberline {6}{\ignorespaces Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.\relax }}{110}{table.caption.46}
+\contentsline {table}{\numberline {7}{\ignorespaces Results of algorithm testing.\relax }}{135}{table.caption.56}
+\contentsline {table}{\numberline {8}{\ignorespaces Confusion matrix for single defect underripe tests.\relax }}{136}{table.caption.57}
+\contentsline {table}{\numberline {9}{\ignorespaces Confusion matrix for multiple defect underripe tests.\relax }}{136}{table.caption.58}
+\contentsline {table}{\numberline {10}{\ignorespaces Confusion matrix for single defect overripe tests.\relax }}{136}{table.caption.59}
+\contentsline {table}{\numberline {11}{\ignorespaces Confusion matrix for multiple defect overripe tests.\relax }}{137}{table.caption.60}
+\contentsline {table}{\numberline {12}{\ignorespaces MOSFET allocation per LED cluster.\relax }}{152}{table.caption.67}
+\contentsline {table}{\numberline {13}{\ignorespaces Important specifications of $360W/36VDC$ power supply.\relax }}{154}{table.caption.69}
+\contentsline {table}{\numberline {14}{\ignorespaces LED Controller connections and pin assignments.\relax }}{165}{table.caption.76}
+\contentsline {table}{\numberline {15}{\ignorespaces I/O Controller connections and pin assignments.\relax }}{166}{table.caption.77}
+\contentsline {table}{\numberline {16}{\ignorespaces Watchdog Controller connections and pin assignments.\relax }}{167}{table.caption.78}
+\contentsline {table}{\numberline {17}{\ignorespaces Operating modes for each controller.\relax }}{167}{table.caption.79}
+\contentsline {table}{\numberline {18}{\ignorespaces Initial SVM testing using various classes and features. The results were attained using 27 training images and 579 testing images for all cases.\relax }}{178}{table.caption.81}
+\contentsline {table}{\numberline {19}{\ignorespaces Best results for varying configurations of convolutional neural networks when trained from scratch.\relax }}{189}{table.caption.87}
+\contentsline {table}{\numberline {20}{\ignorespaces Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4))\relax }}{194}{table.caption.90}
+\contentsline {table}{\numberline {21}{\ignorespaces Images collected and labelled for each class for testing and training.\relax }}{195}{table.caption.91}
+\contentsline {table}{\numberline {22}{\ignorespaces Comparison of training results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.\relax }}{196}{table.caption.92}

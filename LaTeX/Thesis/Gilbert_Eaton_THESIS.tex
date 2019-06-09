@@ -1,4 +1,4 @@
-\documentclass[fleqn,twoside]{article}
+\documentclass[fleqn,twoside, 12pt]{report}
 \usepackage[utf8]{inputenc}
 
 %margins and size of page
@@ -260,7 +260,7 @@ Gilbert Eaton
 
 I would like to acknowledge and thank the Project Manager Rudi Bartels for his guidance whilst allowing me to work independantly and flexibly in order to succeed, and to Ray Daniels and Magnificent for the opportunity to be part of an interesting and challenging project. The knowledge and experience gained through this will be invaluable in my future.
 
-Thanks also go to Griffith University's Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise, as well as the faith they put in me during my PhD. Dr. William Wang and Lee Hamilton have also worked periodically on the project and provided invaluable knowledge and experiences.
+Thanks also go to Griffith University's Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise, as well as the faith they put in me during my PhD. Dr. William Wang and Mr. Lee Hamilton have also worked periodically on the project and provided invaluable knowledge and experiences.
 
 Lastly, I would like to thank my family, especially my wife Kate, for her support and unwaivering beleif in me, as well as my mother Margaret and mother-in-law Ann, without whom none of this would be possible. My children Kyle, Tazmyn, and Davina have been a substantial part of my motivation and inspiration toward these achivements.
 
@@ -308,9 +308,9 @@ the relevant chapter. The bibliographic details (if published or accepted for pu
 \end{itemize}  
 
 
-The paper \textit{A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems} published in Digital Image Computing: Techniques and Applications (DICTA), DOI: 10.1109/DICTA.2017.8227392. A license to include this paper in my thesis was obtained on DATE with the license number xxxxx.
+The paper \textit{A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems} published in Digital Image Computing: Techniques and Applications (DICTA), DOI: 10.1109/DICTA.2017.8227392. A license to include this paper in my thesis was not obtained due to the embargo and non-disclosure agreement with industry partner.
 
-The paper \textit{Colour Analysis of Strawberries on a Real Time Production Line} published in Digital Image Computing: Techniques and Applications (DICTA), Accepted.A liscence to include this paper in my thesis was obtained on DATE with the license xxxx.
+The paper \textit{Colour Analysis of Strawberries on a Real Time Production Line} published in Digital Image Computing: Techniques and Applications (DICTA), Accepted. A license to include this paper in my thesis was not obtained due to the embargo and non-disclosure agreement with industry partner.
 
 \vspace*{\fill}%
 
@@ -1262,7 +1262,7 @@ The first three items require AC mains power ($240V$) and can therefore be addre
 \begin{table}[h]
 	\caption{Table of DC power requirements used in the SQA vision system.}
 	\label{tab:DC_power_table}
-	\begin{tabular}{p{6cm}ccccc}
+	\begin{tabular}{p{4cm}ccccc}
 		
 		\toprule
 		\textbf{Element} & \textbf{Volts ($V$)} & \textbf{Current ($A$)} & \textbf{Power ($W$)} & \textbf{No.} & \textbf{Total Power ($W$)}\\[8pt]
@@ -1956,8 +1956,6 @@ The cameras are positioned in the centre of the respective lighting clusters in 
 \subsection{Hyperspectral Bruise Analysis}
 
 
-Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a Brimrose\textregistered VA200 Visible Near-Infrared, and a Brimrose\textregistered VA200 Short-wave Infrared Hyperspectral Camera with appropriate lenses and software to acquire the images in order to quantify the best spectral region to identify and detect fresh bruising (wet bruising). The experimental setup is shown in Figure \ref{fig:HSI}.
-
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
@@ -1966,6 +1964,8 @@ Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a B
 	\caption{The vis/NIR camera and SWIR camera mounted during experimentation.}
 	\label{fig:HSI}
 \end{wrapfigure} 
+
+Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a Brimrose\textregistered VA200 Visible Near-Infrared, and a Brimrose\textregistered VA200 Short-wave Infrared Hyperspectral Camera with appropriate lenses and software to acquire the images in order to quantify the best spectral region to identify and detect fresh bruising (wet bruising). The experimental setup is shown in Figure \ref{fig:HSI}.
 
 Analysis of water absorbtion bands discussed in Chapter \ref{sec:lit} were used as an indication of the wavelengths which might be suitable, however, an in-depth experiment measured the bruising of strawberries incremented accross a wide range of wavelengths. A sample of the SWIR images are shown in Table \ref{tab:examples} where the spectrum ranged from $850nm$ through to $1800nm$ in increments of $10nm$. Images were aquired of no bruise, as well as 5, 10, and 15 minutes after bruising indicating several potential bands where the contrast was high. Most notably, the bands in the region $<1000nm$ given that these wavelengths can be imaged using CMOS sensors which are inexpensive compared to that of a SWIR sensor. The image in Figure shows the arrangement of halogen lighting, and both visible/NIR, and SWIR cameras set up on the mounts. As expected, the visible spectrum showed no significant contrast, given that the bruises are invisible to human eyes, and the water absorbtion band distribution.
 
@@ -2882,6 +2882,9 @@ The cabling and wiring is simplified with all components in close proximity to e
 
 In order to have the vision system inplace when the season begins peak production, the turnaround time (from when the old system was available) allowed for approximately eight weeks. In this time, the operational mechanisms and software were tested as much as possible in order to prevent bugs when integrating to the production line. Given the enclosure extension to encapsulate the system devices, the majority of the  out-feed belt conveyor and pneumatic system can be hidden internally with the exception of a small section of the conveyor in order to accomodate the ejector nozzle. The in-feed conveyor extends out from the enclosure so that the manual loading process can still occur without risk of pinch-point injury to the workers.
 
+Figure \ref{fig:pneumatics_conveyor} shows the internal components with the red out-feed conveyor attached under the v-belts, pneumatics bolted to the side of the conveyor, and $240VAC$ power systems, allowing isolation of mains-powered devices such as PC, PSU, conveyors, and fans. The out-feed conveyor rests on two cross-beams of the main frame of the enclosure, does not rely on a potentially damagable support leg, and is a permanent fixture allowing the attachment of several components and wiring harnesses. 
+
+
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
 		\includegraphics[height=0.4\textwidth,angle=270]{pneumatics_conveyor.jpg}
@@ -2890,7 +2893,6 @@ In order to have the vision system inplace when the season begins peak productio
 	\label{fig:pneumatics_conveyor}
 \end{wrapfigure} 
 
-Figure \ref{fig:pneumatics_conveyor} shows the internal components with the red out-feed conveyor attached under the v-belts, pneumatics bolted to the side of the conveyor, and $240VAC$ power systems, allowing isolation of mains-powered devices such as PC, PSU, conveyors, and fans. The out-feed conveyor rests on two cross-beams of the main frame of the enclosure, does not rely on a potentially damagable support leg, and is a permanent fixture allowing the attachment of several components and wiring harnesses. 
 
 As the packing facility's air line pressure is higher than required at approximately $861kPa/125psi$, an air regulator is used to reduce the pressure to a level of $620kPa/90psi$ before pressurising the solenoid actuator activated by the microcontroller. This system is also shown in Figure \ref{fig:pneumatics_conveyor} on the right hand side of the the red conveyor with blue pneumatic hoses connecting the devices to the nozzle situated in close vacinity, on the opposite side of the right hand wall of the enclosure. A punnet sensor is also seen reflecting the camera flash towards the right side of the conveyor. This ejector ssensor is positioned inside the enclosure as well as the majority of the pneumatic system so that the only external component exposed to potential damage is the relatively cheap nozzle and bracket. The panel which covers this section is fixed in position when the system is in operation, opposed to the hinged doors in the lighting section, which allows more frequent access. The power supply and $240V$ systems will remain untouched once setup, however, changes to microcontroller inputs, fuse replacement, led inspections, and new wiring connections are likely occurances periodically.
 
@@ -3226,7 +3228,7 @@ A preliminary investigation into SVM classifier accuracy has been performed with
 	\centering
 	\caption{Initial SVM testing using various classes and features. The results were attained using 27 training images and 579 testing images for all cases.}
 	\label{tab:svm_results}
-	\begin{tabular}{cp{3cm}p{3cm}p{3cm}p{3cm}ccccc}
+	\begin{tabular}{cp{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}ccccc}
 		\toprule
 		%begin heading
 		\textbf{Test No.} & 		\textbf{Underripe Class} & \textbf{Good Class} & \textbf{Green Class} & \textbf{Overripe Class} & \textbf{True +} & \textbf{True -} & \textbf{False +} & 		\textbf{False +} & 		\textbf{Accuracy (\%)} \tabularnewline
@@ -3271,13 +3273,6 @@ A preliminary investigation into SVM classifier accuracy has been performed with
 		\midrule
 
 		%6
-		 6 & 
-		 $75\%$ white/$25\%$ pink & 
-		 $50\%$ light red/$50\%$ pink - no dark red &
-		 4-5 shades of green & $100\%$ dark red & 54 & 395 & 83 & 4 & 77.55\\
-		\midrule
-
-		%7
 		 7 & 
 		 $75\%$ white/$25\%$ pink & 
 		 $50\%$ dark red/$50\%$ light red - multiple berries &
@@ -3386,6 +3381,8 @@ This is advantageous when dealing with input such as high-resolution images. An 
 
 \paragraph{Methods}
 
+The feature masks that are used in the convolution process are chosen depending on the application. The lower level masks are intended to extract low-level features such as edges and colours, while the later stage masks combine to extract the high-level features such as faces, cars, animals, etc. An example of first layer filters are shown in Figure \ref{fig:conv_filters} - taken from Stanford's CS231N course taught by Andrej Karpathy and Justin Johnson \cite{andrej} - shows the 48 edge detecting filters (top) and 48 colour detecting filters (bottom). Of course these filters are simply matrices with certain values at each pixel, which may be manipulated to better represent the objects required to be identified. For example, instead of vertical, horizontal and diagonal straight lines, one might want to use curved lines to detect objects that are round.
+
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
@@ -3395,9 +3392,10 @@ This is advantageous when dealing with input such as high-resolution images. An 
 	\label{fig:conv_filters}
 \end{wrapfigure} 
 
-The feature masks that are used in the convolution process are chosen depending on the application. The lower level masks are intended to extract low-level features such as edges and colours, while the later stage masks combine to extract the high-level features such as faces, cars, animals, etc. An example of first layer filters are shown in Figure \ref{fig:conv_filters} - taken from Stanford's CS231N course taught by Andrej Karpathy and Justin Johnson \cite{andrej} - shows the 48 edge detecting filters (top) and 48 colour detecting filters (bottom). Of course these filters are simply matrices with certain values at each pixel, which may be manipulated to better represent the objects required to be identified. For example, instead of vertical, horizontal and diagonal straight lines, one might want to use curved lines to detect objects that are round.
 
-\quad
+There are many different ways to arrange the layers of a ConvNet. Figure \ref{fig:convnet1} shows the complex structure used by Krizhevsky et al \cite{krizhevsky} who created 2 streams of information utilizing two GPUs to process the ImageNet dataset, achieving exceptional results, whilst Figure \ref{fig:convnet2} illustrates a much simpler ConvNet used by Ciresan et al \cite{ciresan} to classify the MNIST handwritten numeric dataset. 
+
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{convnet1.png}
@@ -3405,7 +3403,6 @@ The feature masks that are used in the convolution process are chosen depending 
 	\label{fig:convnet1}
 \end{figure}%
 
-There are many different ways to arrange the layers of a ConvNet. Figure \ref{fig:convnet1} shows the complex structure used by Krizhevsky et al \cite{krizhevsky} who created 2 streams of information utilizing two GPUs to process the ImageNet dataset, achieving exceptional results, whilst Figure \ref{fig:convnet2} illustrates a much simpler ConvNet used by Ciresan et al \cite{ciresan} to classify the MNIST handwritten numeric dataset. 
 
 \begin{figure}[h]
 	\centering
@@ -3464,8 +3461,6 @@ In this work, the latter approach is adopted, by removing the last layer of a pr
 \subsubsection{ResNet}
 \label{sec:resnet}
 
-The ResNet (Residual Network) architecture, first presented by He et al \cite{he}, is capable of very deep ($1000+$ layers) learning without the added complexity of training convergence problems that other networks suffer from. It uses a short-cut mechanism where each connection in the network can be bypassed if no new information is being learned. Therefore, if these residual connections are used, a convolutional layer will become the identity function by default and a network with many layers should have a comparable training error with its shallower counter-part. Figure \ref{fig:residual} shows a graphical representation of a connection in a Residual Network architecture whilst Figure \ref{fig:resnet_full} shows the full architecture of a $36$-layer ResNet.
-
 
 \begin{figure}[h]
 	\centering
@@ -3474,6 +3469,16 @@ The ResNet (Residual Network) architecture, first presented by He et al \cite{he
 	\label{fig:residual}
 \end{figure}
 
+The ResNet (Residual Network) architecture, first presented by He et al \cite{he}, is capable of very deep ($1000+$ layers) learning without the added complexity of training convergence problems that other networks suffer from. It uses a short-cut mechanism where each connection in the network can be bypassed if no new information is being learned. Therefore, if these residual connections are used, a convolutional layer will become the identity function by default and a network with many layers should have a comparable training error with its shallower counter-part. Figure \ref{fig:residual} shows a graphical representation of a connection in a Residual Network architecture whilst Figure \ref{fig:resnet_full} shows the full architecture of a $36$-layer ResNet.
+
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=0.35\textwidth]{resnet_full.png}
+	\end{center}
+	\caption{A residual network in comparison to VGG-$19$ network and a $34$-layer non-residual network.}
+	\label{fig:resnet_full}
+\end{wrapfigure} 
 
 To explain this residual step formally, He et al \cite{he} use the following equations to describe the residual block over a few stacked layers:
 \begin{equation}
@@ -3487,15 +3492,6 @@ y = \mathcal{F}(x.\{W_i\}) + W_s x
 \end{equation}
 
 
-
-
-\begin{wrapfigure}{rt}{0.4\textwidth}
-	\begin{center}
-		\includegraphics[width=0.35\textwidth]{resnet_full.png}
-	\end{center}
-	\caption{A residual network in comparison to VGG-$19$ network and a $34$-layer non-residual network.}
-	\label{fig:resnet_full}
-\end{wrapfigure} 
 
 It can be seen from these equations that there is no difference between a residual network and a plain network in terms of depth, width, and number of parameters, and only a negligible difference in computation due to the element-wise addition.
 
