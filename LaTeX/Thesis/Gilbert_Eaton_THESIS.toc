@@ -1,8 +1,9 @@
-\contentsline {section}{ABSTRACT}{i}{chapter*.1}
-\contentsline {section}{Statement of Originality}{iv}{chapter*.2}
-\contentsline {section}{Acknowledgements}{v}{chapter*.3}
-\contentsline {section}{Publications}{vi}{chapter*.4}
-\contentsline {section}{\numberline {0.1}First-Author Publications}{vi}{section.0.1}
+\contentsline {section}{ABSTRACT}{ii}{chapter*.2}
+\contentsline {section}{Statement of Originality}{v}{chapter*.3}
+\contentsline {section}{Thesis Scope}{vi}{chapter*.4}
+\contentsline {section}{Acknowledgements}{vii}{chapter*.5}
+\contentsline {section}{Publications}{viii}{chapter*.6}
+\contentsline {section}{\numberline {0.1}First-Author Publications}{viii}{section.0.1}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Industry Partner}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Project Description and Requirements}{5}{section.1.2}
@@ -67,43 +68,44 @@
 \contentsline {subsection}{\numberline {5.4.3}Data Collection}{125}{subsection.5.4.3}
 \contentsline {section}{\numberline {5.5}South Australia Production - Season 2}{127}{section.5.5}
 \contentsline {section}{\numberline {5.6}Milestone: First Year of Production}{129}{section.5.6}
-\contentsline {chapter}{\numberline {6}Colour Analysis of Strawberries on a Real-time Production Line}{130}{chapter.6}
-\contentsline {section}{\numberline {6.1}Abstract}{130}{section.6.1}
-\contentsline {section}{\numberline {6.2}Background}{131}{section.6.2}
-\contentsline {section}{\numberline {6.3}Image Acquisition}{134}{section.6.3}
-\contentsline {section}{\numberline {6.4}Methods}{135}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Underripe Features}{138}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Overripe Features}{139}{subsection.6.4.2}
-\contentsline {section}{\numberline {6.5}Results}{141}{section.6.5}
-\contentsline {section}{\numberline {6.6}Conclusion}{144}{section.6.6}
-\contentsline {chapter}{\numberline {7}Redesign and Upgrade}{146}{chapter.7}
-\contentsline {section}{\numberline {7.1}Enclosure Redesign}{149}{section.7.1}
-\contentsline {section}{\numberline {7.2}Lighting}{152}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Colour Renderin Index (CRI)}{154}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}High-power Triggering}{156}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Lighting Power Supply}{161}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3}Strawberry Quality Asurance (SQA) Version 2}{162}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Peripheral Power Supply and IO}{165}{subsection.7.3.1}
-\contentsline {section}{\numberline {7.4}Queensland Production - Season 3}{166}{section.7.4}
-\contentsline {section}{\numberline {7.5}Microcontroller Upgrade}{169}{section.7.5}
-\contentsline {chapter}{\numberline {8}Linux and Deep Learning}{176}{chapter.8}
-\contentsline {section}{\numberline {8.1}Linux Operating System}{177}{section.8.1}
-\contentsline {section}{\numberline {8.2}Machine Learning Software}{179}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Tensor Computation}{179}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}OpenCV and Keras}{180}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}User Interface}{181}{section.8.3}
-\contentsline {section}{\numberline {8.4}Machine Learning}{183}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1}Support Vector Machines (SVM)}{184}{subsection.8.4.1}
-\contentsline {subsubsection}{\numberline {8.4.1.1}Methods}{185}{subsubsection.8.4.1.1}
-\contentsline {subsection}{\numberline {8.4.2}Neural Networks and Deep Learning}{188}{subsection.8.4.2}
-\contentsline {subsubsection}{\numberline {8.4.2.1}Methods}{194}{subsubsection.8.4.2.1}
-\contentsline {section}{\numberline {8.5}Transfer Learning with Resnet}{197}{section.8.5}
-\contentsline {subsection}{\numberline {8.5.1}Transfer Learning}{197}{subsection.8.5.1}
-\contentsline {subsection}{\numberline {8.5.2}ResNet}{198}{subsection.8.5.2}
-\contentsline {subsection}{\numberline {8.5.3}Logistic Regression Classifier}{200}{subsection.8.5.3}
-\contentsline {subsection}{\numberline {8.5.4}Strawberry Classification}{201}{subsection.8.5.4}
-\contentsline {chapter}{\numberline {9}Conclusion and Outcomes}{206}{chapter.9}
-\contentsline {section}{\numberline {9.1}System Performance}{209}{section.9.1}
-\contentsline {section}{\numberline {9.2}Future Work}{211}{section.9.2}
-\contentsline {chapter}{\numberline {A}SQA Specification}{241}{appendix.A}
-\contentsline {chapter}{\numberline {B}Wiring Diagrams}{251}{appendix.B}
+\contentsline {chapter}{\numberline {6}Colour Analysis of Strawberries on a Real-time Production Line}{131}{chapter.6}
+\contentsline {section}{\numberline {6.1}Abstract}{131}{section.6.1}
+\contentsline {section}{\numberline {6.2}Background}{132}{section.6.2}
+\contentsline {section}{\numberline {6.3}Image Acquisition}{135}{section.6.3}
+\contentsline {section}{\numberline {6.4}Methods}{136}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Underripe Features}{139}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Overripe Features}{140}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}Results}{142}{section.6.5}
+\contentsline {section}{\numberline {6.6}Conclusion}{145}{section.6.6}
+\contentsline {section}{\numberline {6.7}Paper Recognition}{147}{section.6.7}
+\contentsline {chapter}{\numberline {7}Implementation of Improvements and System Reconfiguration}{148}{chapter.7}
+\contentsline {section}{\numberline {7.1}Enclosure Redesign}{151}{section.7.1}
+\contentsline {section}{\numberline {7.2}Lighting}{154}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Colour Renderin Index (CRI)}{156}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}High-power Triggering}{158}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Lighting Power Supply}{163}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Strawberry Quality Asurance (SQA) Version 2}{164}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Peripheral Power Supply and IO}{167}{subsection.7.3.1}
+\contentsline {section}{\numberline {7.4}Queensland Production - Season 3}{168}{section.7.4}
+\contentsline {section}{\numberline {7.5}Microcontroller Upgrade}{171}{section.7.5}
+\contentsline {chapter}{\numberline {8}Machine Learning Approach to Grading Strawberries}{178}{chapter.8}
+\contentsline {section}{\numberline {8.1}Linux Operating System}{180}{section.8.1}
+\contentsline {section}{\numberline {8.2}Machine Learning Software}{181}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Tensor Computation}{181}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}OpenCV and Keras}{182}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}User Interface}{183}{section.8.3}
+\contentsline {section}{\numberline {8.4}Machine Learning}{185}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Support Vector Machines (SVM)}{186}{subsection.8.4.1}
+\contentsline {subsubsection}{\numberline {8.4.1.1}Methods}{188}{subsubsection.8.4.1.1}
+\contentsline {subsection}{\numberline {8.4.2}Neural Networks and Deep Learning}{190}{subsection.8.4.2}
+\contentsline {subsubsection}{\numberline {8.4.2.1}Methods}{196}{subsubsection.8.4.2.1}
+\contentsline {section}{\numberline {8.5}Transfer Learning with Resnet}{199}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Transfer Learning}{199}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}ResNet}{200}{subsection.8.5.2}
+\contentsline {subsection}{\numberline {8.5.3}Logistic Regression Classifier}{203}{subsection.8.5.3}
+\contentsline {subsection}{\numberline {8.5.4}Strawberry Classification}{203}{subsection.8.5.4}
+\contentsline {chapter}{\numberline {9}Conclusion and Outcomes}{208}{chapter.9}
+\contentsline {section}{\numberline {9.1}System Performance}{211}{section.9.1}
+\contentsline {section}{\numberline {9.2}Future Work}{213}{section.9.2}
+\contentsline {chapter}{\numberline {A}SQA Specification}{243}{appendix.A}
+\contentsline {chapter}{\numberline {B}Wiring Diagrams}{253}{appendix.B}

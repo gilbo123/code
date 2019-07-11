@@ -1,109 +1,111 @@
-\BOOKMARK [1][-]{chapter*.1}{ABSTRACT}{}% 1
-\BOOKMARK [1][-]{chapter*.2}{Statement of Originality}{}% 2
-\BOOKMARK [1][-]{chapter*.3}{Acknowledgements}{}% 3
-\BOOKMARK [1][-]{chapter*.4}{Publications}{}% 4
-\BOOKMARK [1][-]{section.0.1}{First-Author Publications}{}% 5
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 6
-\BOOKMARK [1][-]{section.1.1}{Industry Partner}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.2}{Project Description and Requirements}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{Current Industry Methods and Review of Literature}{}% 9
-\BOOKMARK [1][-]{section.2.1}{Image Processing in Produce Grading}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{Hand-selected Features}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Physical Property Analysis}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.4}{Hyperspecral/Multispectral Imaging}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.5}{Strawberry Vision Systems}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.6}{Real-time Systems}{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.7}{Machine Learning / Deep Learning Methods}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.7.1}{Support Vector Machines}{section.2.7}% 17
-\BOOKMARK [2][-]{subsection.2.7.2}{Deep Learning}{section.2.7}% 18
-\BOOKMARK [1][-]{section.2.8}{Control Systems}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.9}{Summary}{chapter.2}% 20
-\BOOKMARK [0][-]{chapter.3}{Prototype and Design}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Project Challenges}{chapter.3}% 22
-\BOOKMARK [2][-]{subsection.3.1.1}{Punnet Imaging}{section.3.1}% 23
-\BOOKMARK [2][-]{subsection.3.1.2}{Overheating}{section.3.1}% 24
-\BOOKMARK [2][-]{subsection.3.1.3}{Asyncronous Aquisition of Images}{section.3.1}% 25
-\BOOKMARK [2][-]{subsection.3.1.4}{Processing Time}{section.3.1}% 26
-\BOOKMARK [2][-]{subsection.3.1.5}{Orientation of Punnets}{section.3.1}% 27
-\BOOKMARK [2][-]{subsection.3.1.6}{Ejector Synchronization}{section.3.1}% 28
-\BOOKMARK [2][-]{subsection.3.1.7}{Conveyor Motion}{section.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.1.8}{Flickering}{section.3.1}% 30
-\BOOKMARK [2][-]{subsection.3.1.9}{Specular Reflections}{section.3.1}% 31
-\BOOKMARK [1][-]{section.3.2}{Prototype Construction}{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.3}{Strawberry Quality Assurance \(SQA\) System Design}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.1}{Hardware}{section.3.3}% 34
-\BOOKMARK [3][-]{subsubsection.3.3.1.1}{Hardware Control}{subsection.3.3.1}% 35
-\BOOKMARK [2][-]{subsection.3.3.2}{Electronics and Power}{section.3.3}% 36
-\BOOKMARK [2][-]{subsection.3.3.3}{Software}{section.3.3}% 37
-\BOOKMARK [3][-]{subsubsection.3.3.3.1}{User Interface}{subsection.3.3.3}% 38
-\BOOKMARK [3][-]{subsubsection.3.3.3.2}{Asynchronous Threading}{subsection.3.3.3}% 39
-\BOOKMARK [3][-]{subsubsection.3.3.3.3}{Image Processing}{subsection.3.3.3}% 40
-\BOOKMARK [1][-]{section.3.4}{Experimental Results}{chapter.3}% 41
-\BOOKMARK [2][-]{subsection.3.4.1}{Frame and enclosure}{section.3.4}% 42
-\BOOKMARK [2][-]{subsection.3.4.2}{Power Systems}{section.3.4}% 43
-\BOOKMARK [2][-]{subsection.3.4.3}{Lighting and Polarisation}{section.3.4}% 44
-\BOOKMARK [2][-]{subsection.3.4.4}{Image processing}{section.3.4}% 45
-\BOOKMARK [0][-]{chapter.4}{A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems}{}% 46
-\BOOKMARK [1][-]{section.4.1}{Abstract}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.2}{Background}{chapter.4}% 48
-\BOOKMARK [1][-]{section.4.3}{Specular Reflections}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.4}{Lighting Intensity Stability}{chapter.4}% 50
-\BOOKMARK [1][-]{section.4.5}{Methods}{chapter.4}% 51
-\BOOKMARK [2][-]{subsection.4.5.1}{Specular reflections}{section.4.5}% 52
-\BOOKMARK [2][-]{subsection.4.5.2}{Power Supply}{section.4.5}% 53
-\BOOKMARK [1][-]{section.4.6}{Results}{chapter.4}% 54
-\BOOKMARK [1][-]{section.4.7}{Conclusion}{chapter.4}% 55
-\BOOKMARK [0][-]{chapter.5}{Production Integration}{}% 56
-\BOOKMARK [1][-]{section.5.1}{Production Floor Migration }{chapter.5}% 57
-\BOOKMARK [2][-]{subsection.5.1.1}{Electronics and Power}{section.5.1}% 58
-\BOOKMARK [3][-]{subsubsection.5.1.1.1}{Lighting Finalisation}{subsection.5.1.1}% 59
-\BOOKMARK [3][-]{subsubsection.5.1.1.2}{Electronic Control System}{subsection.5.1.1}% 60
-\BOOKMARK [2][-]{subsection.5.1.2}{Cross-polarization of RGB Cameras}{section.5.1}% 61
-\BOOKMARK [1][-]{section.5.2}{Hyperspectral Bruise Analysis}{chapter.5}% 62
-\BOOKMARK [1][-]{section.5.3}{Final Configuration}{chapter.5}% 63
-\BOOKMARK [1][-]{section.5.4}{Queensland Production - Season 1}{chapter.5}% 64
-\BOOKMARK [2][-]{subsection.5.4.1}{Image Synchronisation}{section.5.4}% 65
-\BOOKMARK [2][-]{subsection.5.4.2}{Ejector Mechanism}{section.5.4}% 66
-\BOOKMARK [2][-]{subsection.5.4.3}{Data Collection}{section.5.4}% 67
-\BOOKMARK [1][-]{section.5.5}{South Australia Production - Season 2}{chapter.5}% 68
-\BOOKMARK [1][-]{section.5.6}{Milestone: First Year of Production}{chapter.5}% 69
-\BOOKMARK [0][-]{chapter.6}{Colour Analysis of Strawberries on a Real-time Production Line}{}% 70
-\BOOKMARK [1][-]{section.6.1}{Abstract}{chapter.6}% 71
-\BOOKMARK [1][-]{section.6.2}{Background}{chapter.6}% 72
-\BOOKMARK [1][-]{section.6.3}{Image Acquisition}{chapter.6}% 73
-\BOOKMARK [1][-]{section.6.4}{Methods}{chapter.6}% 74
-\BOOKMARK [2][-]{subsection.6.4.1}{Underripe Features}{section.6.4}% 75
-\BOOKMARK [2][-]{subsection.6.4.2}{Overripe Features}{section.6.4}% 76
-\BOOKMARK [1][-]{section.6.5}{Results}{chapter.6}% 77
-\BOOKMARK [1][-]{section.6.6}{Conclusion}{chapter.6}% 78
-\BOOKMARK [0][-]{chapter.7}{Redesign and Upgrade}{}% 79
-\BOOKMARK [1][-]{section.7.1}{Enclosure Redesign}{chapter.7}% 80
-\BOOKMARK [1][-]{section.7.2}{Lighting}{chapter.7}% 81
-\BOOKMARK [2][-]{subsection.7.2.1}{Colour Renderin Index \(CRI\)}{section.7.2}% 82
-\BOOKMARK [2][-]{subsection.7.2.2}{High-power Triggering}{section.7.2}% 83
-\BOOKMARK [2][-]{subsection.7.2.3}{Lighting Power Supply}{section.7.2}% 84
-\BOOKMARK [1][-]{section.7.3}{Strawberry Quality Asurance \(SQA\) Version 2}{chapter.7}% 85
-\BOOKMARK [2][-]{subsection.7.3.1}{Peripheral Power Supply and IO}{section.7.3}% 86
-\BOOKMARK [1][-]{section.7.4}{Queensland Production - Season 3}{chapter.7}% 87
-\BOOKMARK [1][-]{section.7.5}{Microcontroller Upgrade}{chapter.7}% 88
-\BOOKMARK [0][-]{chapter.8}{Linux and Deep Learning}{}% 89
-\BOOKMARK [1][-]{section.8.1}{Linux Operating System}{chapter.8}% 90
-\BOOKMARK [1][-]{section.8.2}{Machine Learning Software}{chapter.8}% 91
-\BOOKMARK [2][-]{subsection.8.2.1}{Tensor Computation}{section.8.2}% 92
-\BOOKMARK [2][-]{subsection.8.2.2}{OpenCV and Keras}{section.8.2}% 93
-\BOOKMARK [1][-]{section.8.3}{User Interface}{chapter.8}% 94
-\BOOKMARK [1][-]{section.8.4}{Machine Learning}{chapter.8}% 95
-\BOOKMARK [2][-]{subsection.8.4.1}{Support Vector Machines \(SVM\)}{section.8.4}% 96
-\BOOKMARK [3][-]{subsubsection.8.4.1.1}{Methods}{subsection.8.4.1}% 97
-\BOOKMARK [2][-]{subsection.8.4.2}{Neural Networks and Deep Learning}{section.8.4}% 98
-\BOOKMARK [3][-]{subsubsection.8.4.2.1}{Methods}{subsection.8.4.2}% 99
-\BOOKMARK [1][-]{section.8.5}{Transfer Learning with Resnet}{chapter.8}% 100
-\BOOKMARK [2][-]{subsection.8.5.1}{Transfer Learning}{section.8.5}% 101
-\BOOKMARK [2][-]{subsection.8.5.2}{ResNet}{section.8.5}% 102
-\BOOKMARK [2][-]{subsection.8.5.3}{Logistic Regression Classifier}{section.8.5}% 103
-\BOOKMARK [2][-]{subsection.8.5.4}{Strawberry Classification}{section.8.5}% 104
-\BOOKMARK [0][-]{chapter.9}{Conclusion and Outcomes}{}% 105
-\BOOKMARK [1][-]{section.9.1}{System Performance}{chapter.9}% 106
-\BOOKMARK [1][-]{section.9.2}{Future Work}{chapter.9}% 107
-\BOOKMARK [0][-]{appendix.A}{SQA Specification}{}% 108
-\BOOKMARK [0][-]{appendix.B}{Wiring Diagrams}{}% 109
+\BOOKMARK [1][-]{chapter*.2}{ABSTRACT}{}% 1
+\BOOKMARK [1][-]{chapter*.3}{Statement of Originality}{}% 2
+\BOOKMARK [1][-]{chapter*.4}{Thesis Scope}{}% 3
+\BOOKMARK [1][-]{chapter*.5}{Acknowledgements}{}% 4
+\BOOKMARK [1][-]{chapter*.6}{Publications}{}% 5
+\BOOKMARK [1][-]{section.0.1}{First-Author Publications}{}% 6
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 7
+\BOOKMARK [1][-]{section.1.1}{Industry Partner}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.2}{Project Description and Requirements}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{Current Industry Methods and Review of Literature}{}% 10
+\BOOKMARK [1][-]{section.2.1}{Image Processing in Produce Grading}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{Hand-selected Features}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.3}{Physical Property Analysis}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.4}{Hyperspecral/Multispectral Imaging}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.5}{Strawberry Vision Systems}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.6}{Real-time Systems}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.7}{Machine Learning / Deep Learning Methods}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.7.1}{Support Vector Machines}{section.2.7}% 18
+\BOOKMARK [2][-]{subsection.2.7.2}{Deep Learning}{section.2.7}% 19
+\BOOKMARK [1][-]{section.2.8}{Control Systems}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.9}{Summary}{chapter.2}% 21
+\BOOKMARK [0][-]{chapter.3}{Prototype and Design}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Project Challenges}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{Punnet Imaging}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.2}{Overheating}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.3}{Asyncronous Aquisition of Images}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.4}{Processing Time}{section.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.1.5}{Orientation of Punnets}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.6}{Ejector Synchronization}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.7}{Conveyor Motion}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.8}{Flickering}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.9}{Specular Reflections}{section.3.1}% 32
+\BOOKMARK [1][-]{section.3.2}{Prototype Construction}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.3}{Strawberry Quality Assurance \(SQA\) System Design}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.1}{Hardware}{section.3.3}% 35
+\BOOKMARK [3][-]{subsubsection.3.3.1.1}{Hardware Control}{subsection.3.3.1}% 36
+\BOOKMARK [2][-]{subsection.3.3.2}{Electronics and Power}{section.3.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.3}{Software}{section.3.3}% 38
+\BOOKMARK [3][-]{subsubsection.3.3.3.1}{User Interface}{subsection.3.3.3}% 39
+\BOOKMARK [3][-]{subsubsection.3.3.3.2}{Asynchronous Threading}{subsection.3.3.3}% 40
+\BOOKMARK [3][-]{subsubsection.3.3.3.3}{Image Processing}{subsection.3.3.3}% 41
+\BOOKMARK [1][-]{section.3.4}{Experimental Results}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.4.1}{Frame and enclosure}{section.3.4}% 43
+\BOOKMARK [2][-]{subsection.3.4.2}{Power Systems}{section.3.4}% 44
+\BOOKMARK [2][-]{subsection.3.4.3}{Lighting and Polarisation}{section.3.4}% 45
+\BOOKMARK [2][-]{subsection.3.4.4}{Image processing}{section.3.4}% 46
+\BOOKMARK [0][-]{chapter.4}{A Method To Create Stable Lighting And Remove Specular Reflections for Vision Systems}{}% 47
+\BOOKMARK [1][-]{section.4.1}{Abstract}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.2}{Background}{chapter.4}% 49
+\BOOKMARK [1][-]{section.4.3}{Specular Reflections}{chapter.4}% 50
+\BOOKMARK [1][-]{section.4.4}{Lighting Intensity Stability}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.5}{Methods}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.5.1}{Specular reflections}{section.4.5}% 53
+\BOOKMARK [2][-]{subsection.4.5.2}{Power Supply}{section.4.5}% 54
+\BOOKMARK [1][-]{section.4.6}{Results}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.7}{Conclusion}{chapter.4}% 56
+\BOOKMARK [0][-]{chapter.5}{Production Integration}{}% 57
+\BOOKMARK [1][-]{section.5.1}{Production Floor Migration }{chapter.5}% 58
+\BOOKMARK [2][-]{subsection.5.1.1}{Electronics and Power}{section.5.1}% 59
+\BOOKMARK [3][-]{subsubsection.5.1.1.1}{Lighting Finalisation}{subsection.5.1.1}% 60
+\BOOKMARK [3][-]{subsubsection.5.1.1.2}{Electronic Control System}{subsection.5.1.1}% 61
+\BOOKMARK [2][-]{subsection.5.1.2}{Cross-polarization of RGB Cameras}{section.5.1}% 62
+\BOOKMARK [1][-]{section.5.2}{Hyperspectral Bruise Analysis}{chapter.5}% 63
+\BOOKMARK [1][-]{section.5.3}{Final Configuration}{chapter.5}% 64
+\BOOKMARK [1][-]{section.5.4}{Queensland Production - Season 1}{chapter.5}% 65
+\BOOKMARK [2][-]{subsection.5.4.1}{Image Synchronisation}{section.5.4}% 66
+\BOOKMARK [2][-]{subsection.5.4.2}{Ejector Mechanism}{section.5.4}% 67
+\BOOKMARK [2][-]{subsection.5.4.3}{Data Collection}{section.5.4}% 68
+\BOOKMARK [1][-]{section.5.5}{South Australia Production - Season 2}{chapter.5}% 69
+\BOOKMARK [1][-]{section.5.6}{Milestone: First Year of Production}{chapter.5}% 70
+\BOOKMARK [0][-]{chapter.6}{Colour Analysis of Strawberries on a Real-time Production Line}{}% 71
+\BOOKMARK [1][-]{section.6.1}{Abstract}{chapter.6}% 72
+\BOOKMARK [1][-]{section.6.2}{Background}{chapter.6}% 73
+\BOOKMARK [1][-]{section.6.3}{Image Acquisition}{chapter.6}% 74
+\BOOKMARK [1][-]{section.6.4}{Methods}{chapter.6}% 75
+\BOOKMARK [2][-]{subsection.6.4.1}{Underripe Features}{section.6.4}% 76
+\BOOKMARK [2][-]{subsection.6.4.2}{Overripe Features}{section.6.4}% 77
+\BOOKMARK [1][-]{section.6.5}{Results}{chapter.6}% 78
+\BOOKMARK [1][-]{section.6.6}{Conclusion}{chapter.6}% 79
+\BOOKMARK [1][-]{section.6.7}{Paper Recognition}{chapter.6}% 80
+\BOOKMARK [0][-]{chapter.7}{Implementation of Improvements and System Reconfiguration}{}% 81
+\BOOKMARK [1][-]{section.7.1}{Enclosure Redesign}{chapter.7}% 82
+\BOOKMARK [1][-]{section.7.2}{Lighting}{chapter.7}% 83
+\BOOKMARK [2][-]{subsection.7.2.1}{Colour Renderin Index \(CRI\)}{section.7.2}% 84
+\BOOKMARK [2][-]{subsection.7.2.2}{High-power Triggering}{section.7.2}% 85
+\BOOKMARK [2][-]{subsection.7.2.3}{Lighting Power Supply}{section.7.2}% 86
+\BOOKMARK [1][-]{section.7.3}{Strawberry Quality Asurance \(SQA\) Version 2}{chapter.7}% 87
+\BOOKMARK [2][-]{subsection.7.3.1}{Peripheral Power Supply and IO}{section.7.3}% 88
+\BOOKMARK [1][-]{section.7.4}{Queensland Production - Season 3}{chapter.7}% 89
+\BOOKMARK [1][-]{section.7.5}{Microcontroller Upgrade}{chapter.7}% 90
+\BOOKMARK [0][-]{chapter.8}{Machine Learning Approach to Grading Strawberries}{}% 91
+\BOOKMARK [1][-]{section.8.1}{Linux Operating System}{chapter.8}% 92
+\BOOKMARK [1][-]{section.8.2}{Machine Learning Software}{chapter.8}% 93
+\BOOKMARK [2][-]{subsection.8.2.1}{Tensor Computation}{section.8.2}% 94
+\BOOKMARK [2][-]{subsection.8.2.2}{OpenCV and Keras}{section.8.2}% 95
+\BOOKMARK [1][-]{section.8.3}{User Interface}{chapter.8}% 96
+\BOOKMARK [1][-]{section.8.4}{Machine Learning}{chapter.8}% 97
+\BOOKMARK [2][-]{subsection.8.4.1}{Support Vector Machines \(SVM\)}{section.8.4}% 98
+\BOOKMARK [3][-]{subsubsection.8.4.1.1}{Methods}{subsection.8.4.1}% 99
+\BOOKMARK [2][-]{subsection.8.4.2}{Neural Networks and Deep Learning}{section.8.4}% 100
+\BOOKMARK [3][-]{subsubsection.8.4.2.1}{Methods}{subsection.8.4.2}% 101
+\BOOKMARK [1][-]{section.8.5}{Transfer Learning with Resnet}{chapter.8}% 102
+\BOOKMARK [2][-]{subsection.8.5.1}{Transfer Learning}{section.8.5}% 103
+\BOOKMARK [2][-]{subsection.8.5.2}{ResNet}{section.8.5}% 104
+\BOOKMARK [2][-]{subsection.8.5.3}{Logistic Regression Classifier}{section.8.5}% 105
+\BOOKMARK [2][-]{subsection.8.5.4}{Strawberry Classification}{section.8.5}% 106
+\BOOKMARK [0][-]{chapter.9}{Conclusion and Outcomes}{}% 107
+\BOOKMARK [1][-]{section.9.1}{System Performance}{chapter.9}% 108
+\BOOKMARK [1][-]{section.9.2}{Future Work}{chapter.9}% 109
+\BOOKMARK [0][-]{appendix.A}{SQA Specification}{}% 110
+\BOOKMARK [0][-]{appendix.B}{Wiring Diagrams}{}% 111

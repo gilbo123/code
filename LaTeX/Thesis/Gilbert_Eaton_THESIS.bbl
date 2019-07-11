@@ -66,6 +66,15 @@ R.~M. Research, ``Supermarkets dominate fruit and vegetable trade—even for
   fresh market shoppers,'' 2015.
 \newblock Accessed Feb 2017.
 
+\bibitem{heleno}
+P.~Heleno, R.~Davies, B.~A. Correia, and J.~Dinis, ``A machine vision quality
+  control system for industrial acrylic fibre production, journal =,''
+
+\bibitem{chen}
+Y.-R. Chen, K.~Chao, and M.~S. Kim, ``Machine vision technology for
+  agricultural applications,'' {\em Computers and Electronics in Agriculture},
+  vol.~36, pp.~173--191, 2002.
+
 \bibitem{dubey}
 S.~R. Dubey and A.~S. Jalal, ``Application of image processing in fruit and
   vegetable analysis: A review,'' {\em Journal of Intelligent Systems},
@@ -224,6 +233,11 @@ G.~Ginesu, D.~D. Giusto, V.~Märgner, and P.~Meinlschmidt, ``Detection of
 S.~Mathanker, P.~Weckler, T.~Bowser, N.~Wang, and N.~Maness, ``Adaboost
   classifiers for pecan defect classification,'' {\em Computers and Electronics
   in Agriculture}, vol.~77, pp.~60--68, 2011.
+
+\bibitem{haff}
+R.~P. Haff and N.~Toyofuku, ``X-ray detection of defects and contaminants in
+  the food industry,'' {\em Sensors \& Instrumentation Food Quality.}, vol.~2,
+  pp.~262--273, 2008.
 
 \bibitem{lorente}
 D.~Lorente, M.~Zude, C.~Regen, L.~Palou, J.~Gómez-Sanchis, and J.~Blasco,
@@ -447,11 +461,6 @@ N.~Sabri, Z.~Ibrahim, S.~Syahlan, N.~Jamil, and N.~N.~A. Mangshor, ``Palm oil
   fresh fruit bunch ripeness grading identification using color features,''
   {\em Journal of Fundamental and Applied Sciences}, vol.~9(4S), pp.~563--579,
   2017.
-
-\bibitem{chen}
-K.~Chen, X.~Sun, C.~Qin, and X.~Tang, ``Color grading of beef fat by using
-  computer vision and support vector machine,'' {\em Computers and Electronics
-  in Agriculture}, vol.~70, pp.~27--32, 2010.
 
 \bibitem{mizushima}
 A.~Mizushima and R.~Lu, ``An image segmentation method for applesorting and

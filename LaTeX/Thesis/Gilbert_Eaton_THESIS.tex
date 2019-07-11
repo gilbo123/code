@@ -172,11 +172,12 @@
 \textsc{\Large \bfseries Griffith University}\\[0.5cm] % Name of uni
 \textsc{\Large \bfseries School of Engineering - Griffith Sciences}\\[1.5cm] % course title
 
+
 %----------------------------------------------------------------------------------------
 %	Disclaimer SECTION
 %----------------------------------------------------------------------------------------
 
-\emph{A report submitted in partial fulfilment of the degree of Doctor of Philosiphy, and in confidence due to the agreement with ARC Linkage partners}\\[1.5cm]
+\emph{A report submitted in partial fulfilment of the degree of Doctor of Philosiphy, and in confidence due to the agreement with ARC Linkage partners.}\\[1.5cm]
 
 
 %----------------------------------------------------------------------------------------
@@ -188,12 +189,28 @@
 
 \end{titlepage}
 
+
 % Ends the declared geometry for the titlepage
 \restoregeometry
 %--------------------------
 
 %adds roman numerals to the TOC
 \pagenumbering{roman}
+
+
+%----------------------------------------------------------------------------------------
+%	Confidential SECTION
+%----------------------------------------------------------------------------------------
+
+\chapter*{Confidentiality}
+
+\textbf{This thesis contains intellectual property assigned to Griffith University and Magnificent Pty. Ltd. (ARC Linkage partner). Viewing and replication of this document requires signing a formal Non-disclosure Agreement (NDA) with the university.} \\[0.5cm] % 
+
+
+\vfill
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -208,9 +225,7 @@
 \addcontentsline{toc}{section}{ABSTRACT}
 
 
-Machine vision systems for quality inspection of processing and production lines are associated with increases in productivity, cost savings, and quality control consistency, having become common place in many industries including agriculture. However, automated strawberry quality control has historically been a challenge due to the delicate nature of the fruit's flesh, making it more prone to damage, bruising, discolouration, and softening than other friuts and vegetables. For the vast majority of companies, strawberries are picked by a labour force renumerated in terms of quantity, making more economic sense to pick and pack as fast as possible to increase the profitability of both producer and worker. This enables large volumes of fruit to be harvested and packaged each day, suiting the half-year seasons. As strawberry plants fruit multiple times per season, the farmers can cycle through many fields creating a constant daily flow from the field into packing. As the volumes become larger, the quality can diminish if under-supervised, and the amount of fruit being processed cannot be guaranteed to have comprehensive coverage by human eyes, with many defects going undetected such as under and over ripe, sand and mud, mishhapen or too small, mouldy, damaged, or foriegn objects. 
-
-Previous efforts have been made to grade strawberries using conveyor systems and cameras, generating good or excellent results. However, these methods do not consider the speed at which berries are packed, or the amount of damage-inducing handling required in order to place the fruit on a process line (automated or not), making these systems unsuitable for real-time production. 
+Machine vision systems for quality inspection of processing and production lines are associated with increases in productivity, cost savings, and quality control consistency, having become common place in many industries including agriculture. However, automated strawberry quality control has historically been a challenge due to the delicate nature of the fruit's flesh, making it more prone to damage, bruising, discolouration, and softening than other friuts and vegetables. Previous efforts have been made to grade strawberries using conveyor systems and cameras, generating good or excellent results. However, these methods do not consider the speed at which berries are packed, or the amount of damage-inducing handling required in order to place the fruit on a process line (automated or not), making these systems unsuitable for real-time production. 
 
 This thesis outlines the research, design, experimentation, and development of an Strawberry Quality Assurance (SQA) vision system which is capable of grading full punnets of strawberries after they have been packed. The containers of fruit are picked from the field and packaged, with the additional step of being loaded into the vision system and, finally, a heat-seal machine which seals the punnets with tamper-proof plastic film. Using this method, the packing workers do not need to slow down, or perform any new tasks, rather the flow of filled punnets is simply diverted to the additional production line. The cameras acquire four images at a rate of up to two per second in order to capture each punnet from above and below (through the transparent plastic) in visible and infrared wavelengths. The visible (RGB) images are used to assess the berry's colour (ripeness), and visible foreign object liklihood, whilst the infrared images are used for bruise detection. Once the images have been analysed, the system uses an orthogonally directed pneumatic burst of air to eject the defected punnets from the line so that they can be repackaged and reassessed. 
 
@@ -236,13 +251,25 @@ The system has entered it's fifth season as production-ready having already imag
 \chapter*{Statement of Originality}
 \addcontentsline{toc}{section}{Statement of Originality}
 
-This work has not previously been submitted for a degree or diploma in any university. To the
-best of my knowledge and belief, the thesis contains no material previously published or writtenby another person except where due reference is made in the thesis itself.
+This work has not previously been submitted for a degree or diploma in any university. To the best of my knowledge and belief, the thesis contains no material previously published or written by another person except where due reference is made in the thesis itself.
 
-\vspace{50pt}
+\vspace{30pt}
 
 signed
 Gilbert Eaton
+
+
+
+%----------------------------------------------------------------------------------------
+%	Scope
+%----------------------------------------------------------------------------------------
+\chapter*{Thesis Scope}
+\addcontentsline{toc}{section}{Thesis Scope}
+
+Due to the unique requirements of the candidature in conjunction with an industry partner under the Australian Research Council (ARC) Linkage program, the fulfilment of this thesis is largely based on the successful application of novel systems. In contrast to theses which are based on generalised approaches to common problems, this work is bound to a specific set of requirements and continuous real-world implementation of the research and development performed. The project detailed in the following chapters has been the sole focus for the entire candidature period, building a platform for the university to foster growth, relationships, and reputation within the agricultural industry and community.
+
+
+
 
 \vspace*{\fill}%
 
@@ -260,11 +287,11 @@ Gilbert Eaton
 %adds unnumbered section to TOC
 \addcontentsline{toc}{section}{Acknowledgements}
 
-I would like to acknowledge and thank the Project Manager Rudi Bartels for his guidance whilst allowing me to work independantly and flexibly in order to succeed, and to Ray Daniels and Magnificent for the opportunity to be part of an interesting and challenging project. The knowledge and experience gained through this will be invaluable in my future.
+I would like to acknowledge and thank the Project Manager Rudi Bartels for his guidance whilst allowing me to work independently and flexibly in order to succeed, and to Ray Daniels and Magnificent for the opportunity to be part of an interesting and challenging project. The knowledge and experience gained through this will be invaluable in my future.
 
 Thanks also go to Griffith University's Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise, as well as the faith they put in me during my PhD. Dr. William Wang and Mr. Lee Hamilton have also worked periodically on the project and provided invaluable knowledge and experiences.
 
-Lastly, I would like to thank my family, especially my wife Kate, for her support and unwaivering beleif in me, as well as my mother Margaret and mother-in-law Ann, without whom none of this would be possible. My children Kyle, Tazmyn, and Davina have been a substantial part of my motivation and inspiration toward these achivements.
+Lastly, I would like to thank my family, especially my wife Kate, for her support and unwaivering beleif in me, as well as my mother Margaret and mother-in-law Ann, without whom none of this would be possible. My children Kyle, Tazmyn, and Davina have been a substantial part of my motivation and inspiration toward these achievements.
 
 To all my friends and colleagues throughout my undergraduate and post-graduate life - Thankyou for your help and inspiration.
 
@@ -295,7 +322,7 @@ To all my friends and colleagues throughout my undergraduate and post-graduate l
 	\item{G. Eaton, A. Busch, R. Bartels, Y. Gao, “Colour Analysis of Strawberries on a Real Time Production Line”, Digital Image Computing: Techniques and Applications (DICTA), (2018)}
 	\begin{itemize}
 		\item Oral presentation 
-		\item CiSRA Practical Intelligent Vision Award - 2018
+		\item Canon Information Systems Research Australia (CiSRA) Practical Intelligent Vision Award - 2018
 	\end{itemize}
 \end{itemize}  
 
@@ -617,7 +644,7 @@ The vision system general requirements are listed in Table \ref{tab:requirements
 \chapter{Current Industry Methods and Review of Literature}
 \label{sec:lit}
 
-Numerous production lines have adopted computer vision systems in order to reduce the cost of labor and standardise the quality control. Depending on volume and product, quaity controllers may be a substantial cost in production and can be subjective, particularly for seasonal work. This leads to loss in productivity, labour costs, and financial loss in the form of stock returns, in the case that it is not accepted by the customer. Employing accurate vision systems on a production line give the producers quality control that is consistent, continuous, and reletively cheap. 
+Production lines adopt computer vision systems in order to reduce the cost of labour and/or standardise the quality control. Depending on volume and product, quality controllers may be a substantial cost in production and can be subjective, particularly for seasonal work. This leads to loss in productivity, labour costs, and financial loss in the form of stock returns, in the case that it is not accepted by the customer. Employing accurate vision systems on a production line give the producers quality control that is consistent, continuous, and relatively cheap \cite{heleno,chen}. 
 
 Performing a review on fruit Cubero et al \cite{cubero} investigated Apple, banana, citrus, cucumber, mango, mushroom, olives. potatoes, starfruit and watermelon as part of their investigation into agricultural machine vision. Methods such as colour analysis, histogram, k-NN, PCA, Fourier analysis, clustering, AdaBoost, and ANN's to perform the tasks of inspecting a wide range of defects and classifications. Another review by Dubey and Jalal \cite{dubey} investigated two types of tasks for vision systems - classification and defect detection - and concluded that most of the work in this field contained three steps in performing either task, namely, background subtraction, feature extraction, and training and classification. SVM, BPNN, Decision Tree, ANN, and even fusion classifiers were commonly used in their research.
 
@@ -688,7 +715,7 @@ Depending on the architechture used to classify the features, variance may be hi
 Hardware and physical properties may be exploited in some applications in order to avoid complex processing or improve results. Mutiple cameras, multiple spectrums and 3D imagery are examples of hardware employed in order to allow vision systems to capture details of the subject which may go unseen with conventional systems. 
 
 
-Chui et al \cite{chiu} used a process of acquiring flourescence images - exiting the internal structure of the object in one wavelength, to emit light at a different wavelength - in order to detect mechanically-induced bruises on apples. They found that this method highlighted the bruised flesh, and extracted them by performing an image difference with a local adaptive binarisation method. 
+Chui et al \cite{chiu} used a process of acquiring fluorescence images - exciting the internal structure of the object in one wavelength, to emit light at a different wavelength - in order to detect mechanically-induced bruises on apples. They found that this method highlighted the bruised flesh, and segmented them by performing an image difference with a local adaptive binarisation method. 
 
 
 Spectroscopy is a method of measuring the transmitted spectral signature of objects. By placing the light source on the opposite side, and not in direct view of the sensor, the transmittance can be measured to show unique properties regarding the internal structure of the subject. Figure \ref{fig:spectroscope} illustrates the fruit spectrocopy system from \cite{choi}. 
@@ -703,7 +730,7 @@ Spectroscopy is a method of measuring the transmitted spectral signature of obje
 
 Matteoli et al \cite{matteoli} used a fibre-optic spectrometer to take measurements of peach fruits whilst performing destructive density testing in order to make predictions on new fruit non-destructively. They compared the output of a crisp versus fuzzy logic approach and found overall average accuracies of $60\%$ and $~80\%$, respectively, making the fuzzy system appropriate for the task. Choi et al \cite{choi} also used an NIR spectrometer to assess the internal qualities of pear fruit as well as CCD cameras to inspect the visible characteristics such as skin blemishes and colour. The spectroscope analysed the fruit for sweetness, acidity, hardness, and moisture before combining the two (visible and internal) features as classification variables for an ANN. 
 
-A hyperspectral range of $400nm-1000nm$ was used by ElMasry et al \cite{elmasry2} to inspect various fruit by it's moisture content(MC), soluble solids(TSS), and acidity(pH). The resulting corellation coefficients of both the Partial Least Squares ($0.90, 0.80, 0.87$, respectively) and Multiple Linear Regression ($0.87, 0.80, 0.92$, respectively) proved the feasability of predicting these physical characteristics. They also measured three ripeness classes based on grey-level co-occurrence matrix (GLCM) analysis achieving $89.61\%$ classification accuracy.
+A hyperspectral range of $400nm-1000nm$ was used by ElMasry et al \cite{elmasry2} to inspect various fruit by it's moisture content (MC), soluble solids (TSS), and acidity(pH). The resulting correlation coefficients of both the Partial Least Squares ($0.90, 0.80, 0.87$, respectively) and Multiple Linear Regression ($0.87, 0.80, 0.92$, respectively) proved the feasibility of predicting these physical characteristics. They also measured three ripeness classes based on grey-level co-occurrence matrix (GLCM) analysis achieving $89.61\%$ classification accuracy.
 
 
 Beyond the Near (NIR), Short (SWIR), lies the Mid (MWIR) Wavelength Infrared, and  Long Wavelength infrared (LWIR) which is the part of the spectrum ($3\mu m-15\mu m$) in which objects near room temperature emit thermal radiation. This thermal information can be detected by specialised sensors and converted to correlated visible colours for humans to view as seen in Figure \ref{fig:thermal} taken from \cite{baranowski}.
@@ -716,11 +743,11 @@ Beyond the Near (NIR), Short (SWIR), lies the Mid (MWIR) Wavelength Infrared, an
 \end{figure}%
 
 
-Thermographic images in the wavelength range $3.4-5.2\mu m$ assisted Ginesu et al \cite{ginesu} to develop a thermal inspection system used to detect foreign bodies in produce items on a production line. Thermal imaging requires heaing or cooling in order to stimulate the subjects before being imaged sometime afterwards. Different materials heat transfer rates are varying, making the process of distinguishing, for example, sticks or stones from the edible items. They used a contrast enhancement and region-growing method to extract the highlighted regions from the greyscale thermal images.
+Thermographic images in the wavelength range $3.4-5.2\mu m$ assisted Ginesu et al \cite{ginesu} to develop a thermal inspection system used to detect foreign bodies in produce items on a production line. Thermal imaging requires heating or cooling in order to stimulate the subjects before being imaged sometime afterwards. Different material's heat transfer rates are varying, making the process of distinguishing, for example, sticks or stones from the edible items. They used a contrast enhancement and region-growing method to extract the highlighted regions from the greyscale thermal images.
 
-On the opposite side of the visible spectrum resides ultraviolet, followed by X-ray wavelengths at which common medical and security inspections occur. X-rays are capable of penetrating objects in, for example, airport security allowing the users to visually inspect the contents of luggage. Medical applications include bone tissue and oegan imaging in order to help physicians make informed decisions about pateients. By choosing the optimal wavelength, many materials can be visualised internally including fruits and vegetables.    
+On the opposite side of the visible spectrum resides ultraviolet, followed by X-ray wavelengths at which common medical and security inspections occur. X-rays are capable of penetrating objects in, for example, airport security allowing the users to visually inspect the contents of luggage. Medical applications include bone tissue and organ imaging in order to help physicians make informed decisions about patients. By choosing the optimal wavelength, many materials can be visualised internally including fruits and vegetables.    
 
-Mathanker et al \cite{mathanker} analysed good and defective pecans using X-ray images. They compared AdaBooost and SVM classifiers finding that the AdaBoost average classification result of $92.2\%$ was the best performing.
+Mathanker et al \cite{mathanker} analysed good and defective pecans using X-ray images. They compared AdaBooost and SVM classifiers finding that the AdaBoost average classification result of $92.2\%$ was the best performing. Cost, precision and speed of X-ray sensors and equipment has made food inspection problems unfeasible in the past. However as technology improves, adoption of these systems is becoming more common \cite{haff}.
 
 A laser backscattering technique used by Lorente et al \cite{lorente} provided images that could determine the presence of pathogen Penicillium digitatum in oranges. They directed a laser beam onto the fruit and took images of the surface reflectance using five laser wavelengths ($532nm$, $660nm$, $785nm$, $830nm$, and $1060nm$) in order to perform experiments with the best results of $96.1\%$ attained by using all 5 wavelengths in combination trained with an LDA classifier.
 
@@ -960,8 +987,8 @@ The main body of this thesis is set out with the following chapters:
 	\item Chapter \ref{sec:paper_1} - A Method to Create Stable Lighting and Remove Specular Reflections for Vision Systems
 	\item Chapter \ref{sec:II} - Production Integration 
 	\item Chapter \ref{sec:paper_2} - Colour Analysis of Strawberries on a Real-time Production Line
-	\item Chapter \ref{sec:III} - Redesign and Upgrade
-	\item Chapter \ref{sec:IV} - Linux and Deep Learning 
+	\item Chapter \ref{sec:III} - Implementation of Improvements and System Reconfiguration
+	\item Chapter \ref{sec:IV} - Machine Learning Approach to Grading Strawberries
 \end{itemize}
 
 
@@ -1831,7 +1858,7 @@ When the polarizers are orthogonal ($90^{\circ}$), the result is a more flattene
 
 Image acquisition plays an important part in any machine vision application to ensure that the images acquired are free of distortion and provide the most information. Lighting is therefore an important factor in image acquisition systems, allowing objects surfaces to be illuminated with as little interference as possible.
 
-A system has been developed to inspect strawberries and assess them for quality attributes. The first step in the development is to design and construct the acquisition system and integrate it with the production line. After the enclosure had been installed, the LED/halogen lighting, polarizers, and cameras were mounted. The DC power supply delivers the required amount of power at a constant current which ensures that the intensity fluctuations between images are insignificant. Experimental results show that the fluctuations are less than $0.1\%$ of total intensity, even when operating for many hours. Experiments were also performed that showed that the cross-polarization technique has the ability to entirely remove of the specular reflections in most cases, whilst providing more pixels that can be analysed in each frame.  
+A system has been developed to inspect strawberries and assess them for quality attributes. The first step in the development is to design and construct the acquisition system and integrate it with the production line. After the enclosure had been installed, the LED/halogen lighting, polarisers, and cameras were mounted. The DC power supply delivers the required amount of power at a constant current which ensures that the intensity fluctuations between images are insignificant. Experimental results show that the fluctuations are less than $0.1\%$ of total intensity, even when operating for many hours. Experiments were also performed that showed that the cross-polarization technique has the ability to entirely remove of the specular reflections in most cases, whilst providing more pixels that can be analysed in each frame.  
 
 The system developed is extremely successful in achieving the desired consistent image acquisition. The system can image 2 punnets of strawberries per second on the production line and the image quality is illuminated, free from interference, and consistent between images, even with a shutter speed as fast as $1ms$. Future work includes the strategy to strobe the lighting in order to reduce power usage and heat, as well as the introduction of image processing algorithms to perform the assessment.
 
@@ -2301,8 +2328,17 @@ In order to clean the enclosure properly, the bottom lighting clusters and camer
 \section{Milestone: First Year of Production}
 
 
-The first 12 months of production - consisting of one northern season (May-October), and one southern season (November-April) - concluded that the objective analysis of fast moving punnets of strawberries was feasible both from engineering and customer perspectives.
+The first 12 months of production - consisting of one northern season (May-October), and one southern season (November-April) - concluded that the objective analysis of fast moving punnets of strawberries was feasible both from engineering and customer perspectives. 
 
+The total amount of punnets assessed by the system in the first 12 months was 89,530 with 62,080 passed and 27,450 failed items. The failure rate of $44\%$ is not indicative of real production as it contains the results of algorithmic testing and live testing where production is used to test the algorithm's accuracy over large volumes of highly varied strawberries. The graph in Figure \ref{fig:first_year} is a visual representation of these numbers.  
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{first_year.jpg}
+	\caption{Pass (62,080)and Fail (27450) totals for first year of production .}
+	\label{fig:first_year}
+\end{figure}
 
 
 
@@ -2631,12 +2667,32 @@ Two colour analysis algorithms were developed to assist in grading packed strawb
 The inspection system, along with these algorithms have already helped in reducing the amount of poor quality berries being shipped by the company, leading to increased Quality Assurance, Quaity Control, and mitigating potential financial losses.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END of paper
+
+
+
+\newpage
+
+\section{Paper Recognition}
+
+This paper received the Canon Information Systems Research Australia (CiSRA) Practical Intelligent Vision Award announced at Digital Image Computing: Techniques and Applications (DICTA) 2018. The award is displayed in Figure \ref{fig:CiSRA} and was presented to the author at a ceremony after an oral presentation of the work whilst in attendance at the conference.   
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth,angle=270]{CiSRA.pdf}
+	\caption{Canon Information Systems Research Australia (CiSRA) Practical Intelligent Vision Award received for the preceding paper - Colour Analysis of Strawberries on a Real Time Production Line.}
+	\label{fig:CiSRA}
+\end{figure}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\chapter{Redesign and Upgrade}
+\chapter{Implementation of Improvements and System Reconfiguration}
 \label{sec:III}
 
 
@@ -3195,7 +3251,7 @@ Relevant wiring diagrams can be found in Version 3 in Appendix \ref{app:wiring}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\chapter{Linux and Deep Learning}
+\chapter{Machine Learning Approach to Grading Strawberries}
 \label{sec:IV}
 
 
