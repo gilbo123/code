@@ -58,7 +58,7 @@
 \BOOKMARK [1][-]{section.4.6}{Results}{chapter.4}% 58
 \BOOKMARK [1][-]{section.4.7}{Conclusion}{chapter.4}% 59
 \BOOKMARK [0][-]{chapter.5}{Production Integration}{}% 60
-\BOOKMARK [1][-]{section.5.1}{Production Floor Migration }{chapter.5}% 61
+\BOOKMARK [1][-]{section.5.1}{Production Floor Migration}{chapter.5}% 61
 \BOOKMARK [2][-]{subsection.5.1.1}{Electronics and Power}{section.5.1}% 62
 \BOOKMARK [3][-]{subsubsection.5.1.1.1}{Lighting Finalisation}{subsection.5.1.1}% 63
 \BOOKMARK [3][-]{subsubsection.5.1.1.2}{Electronic Control System}{subsection.5.1.1}% 64
@@ -76,7 +76,7 @@
 \BOOKMARK [1][-]{section.6.2}{Background}{chapter.6}% 76
 \BOOKMARK [1][-]{section.6.3}{Image Acquisition}{chapter.6}% 77
 \BOOKMARK [1][-]{section.6.4}{Methods}{chapter.6}% 78
-\BOOKMARK [2][-]{subsection.6.4.1}{Underripe Features}{section.6.4}% 79
+\BOOKMARK [2][-]{subsection.6.4.1}{Under ripe Features}{section.6.4}% 79
 \BOOKMARK [2][-]{subsection.6.4.2}{Overripe Features}{section.6.4}% 80
 \BOOKMARK [1][-]{section.6.5}{Results}{chapter.6}% 81
 \BOOKMARK [1][-]{section.6.6}{Conclusion}{chapter.6}% 82
@@ -87,7 +87,7 @@
 \BOOKMARK [2][-]{subsection.7.2.1}{Colour Renderin Index \(CRI\)}{section.7.2}% 87
 \BOOKMARK [2][-]{subsection.7.2.2}{High-power Triggering}{section.7.2}% 88
 \BOOKMARK [2][-]{subsection.7.2.3}{Lighting Power Supply}{section.7.2}% 89
-\BOOKMARK [1][-]{section.7.3}{Strawberry Quality Asurance \(SQA\) Version 2}{chapter.7}% 90
+\BOOKMARK [1][-]{section.7.3}{Strawberry Quality Assurance \(SQA\) Version 2}{chapter.7}% 90
 \BOOKMARK [2][-]{subsection.7.3.1}{Peripheral Power Supply and IO}{section.7.3}% 91
 \BOOKMARK [1][-]{section.7.4}{Queensland Production - Season 3}{chapter.7}% 92
 \BOOKMARK [1][-]{section.7.5}{Microcontroller Upgrade}{chapter.7}% 93
