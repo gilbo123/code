@@ -83,45 +83,45 @@ Warning--empty year in heleno
 Warning--empty year in artusi
 Warning--empty year in anderson
 Warning--empty year in kuranov
-You've used 183 entries,
+You've used 185 entries,
             1876 wiz_defined-function locations,
-            1419 strings with 37036 characters,
-and the built_in function-call counts, 57022 in all, are:
-= -- 5562
-> -- 2473
+            1430 strings with 37444 characters,
+and the built_in function-call counts, 57733 in all, are:
+= -- 5635
+> -- 2498
 < -- 0
-+ -- 893
-- -- 710
-* -- 3976
-:= -- 7895
-add.period$ -- 195
-call.type$ -- 183
-change.case$ -- 179
++ -- 902
+- -- 717
+* -- 4025
+:= -- 7989
+add.period$ -- 197
+call.type$ -- 185
+change.case$ -- 181
 chr.to.int$ -- 0
-cite$ -- 188
-duplicate$ -- 2879
-empty$ -- 5035
-format.name$ -- 710
-if$ -- 14224
+cite$ -- 190
+duplicate$ -- 2915
+empty$ -- 5098
+format.name$ -- 717
+if$ -- 14404
 int.to.chr$ -- 0
-int.to.str$ -- 183
-missing$ -- 173
-newline$ -- 570
-num.names$ -- 183
-pop$ -- 502
+int.to.str$ -- 185
+missing$ -- 175
+newline$ -- 576
+num.names$ -- 185
+pop$ -- 506
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2340
+skip$ -- 2372
 stack$ -- 0
-substring$ -- 4077
-swap$ -- 1470
+substring$ -- 4141
+swap$ -- 1490
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 459
-width$ -- 186
-write$ -- 1771
+while$ -- 465
+width$ -- 188
+write$ -- 1791
 (There were 11 error messages)

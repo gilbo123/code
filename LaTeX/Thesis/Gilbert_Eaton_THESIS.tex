@@ -91,7 +91,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 
-\captionsetup[subfigure]{labelfont=rm}
+\captionsetup[subfigure]{labelformat=simple}
+\renewcommand\thesubfigure{(\alph{subfigure})}
 
 %wrapped figures
 \usepackage{wrapfig}
@@ -229,11 +230,11 @@
 \addcontentsline{toc}{section}{ABSTRACT}
 
 
-Machine vision systems for quality inspection of processing and production lines are associated with increases in productivity, cost savings, and quality control consistency, having become common place in many industries including agriculture. However, automated strawberry quality control has historically been a challenge due to the delicate nature of the fruit's flesh, making it more prone to damage, bruising, discolouration, and softening than other friuts and vegetables. Previous efforts have been made to grade strawberries using conveyor systems and cameras, generating good or excellent results. However, these methods do not consider the speed at which berries are packed, or the amount of damage-inducing handling required in order to place the fruit on a process line (automated or not), making these systems unsuitable for real-time production. 
+Machine vision systems for quality inspection of processing and production lines are associated with increases in productivity, cost savings, and quality control consistency, having become common place in many industries including agriculture. However, automated strawberry quality control has historically been a challenge due to the delicate nature of the fruit's flesh, making it more prone to damage, bruising, discolouration, and softening than other fruits and vegetables. Previous efforts have been made to grade strawberries using conveyor systems and cameras, generating good or excellent results. However, these methods do not consider the speed at which berries are packed, or the amount of damage-inducing handling required in order to place the fruit on a process line (automated or not), making these systems unsuitable for real-time production. 
 
-This thesis outlines the research, design, experimentation, and development of an Strawberry Quality Assurance (SQA) vision system which is capable of grading full punnets of strawberries after they have been packed. The containers of fruit are picked from the field and packaged, with the additional step of being loaded into the vision system and, finally, a heat-seal machine which seals the punnets with tamper-proof plastic film. Using this method, the packing workers do not need to slow down, or perform any new tasks, rather the flow of filled punnets is simply diverted to the additional production line. The cameras acquire four images at a rate of up to two per second in order to capture each punnet from above and below (through the transparent plastic) in visible and infrared wavelengths. The visible (RGB) images are used to assess the berry's colour (ripeness), and visible foreign object liklihood, whilst the infrared images are used for bruise detection. Once the images have been analysed, the system uses an orthogonally directed pneumatic burst of air to eject the defected punnets from the line so that they can be repackaged and reassessed. 
+This thesis outlines the research, design, experimentation, and development of an Strawberry Quality Assurance (SQA) vision system which is capable of grading full punnets of strawberries after they have been packed. The containers of fruit are picked from the field and packaged, with the additional step of being loaded into the vision system and, finally, a heat-seal machine which seals the punnets with tamper-proof plastic film. Using this method, the packing workers do not need to slow down, or perform any new tasks, rather the flow of filled punnets is simply diverted to the additional production line. The cameras acquire four images at a rate of up to two per second in order to capture each punnet from above and below (through the transparent plastic) in visible and infrared wavelengths. The visible (RGB) images are used to assess the berry's colour (ripeness), and visible foreign object likelihood, whilst the infrared images are used for bruise detection. Once the images have been analysed, the system uses an orthogonally directed pneumatic burst of air to eject the defected punnets from the line so that they can be repackaged and reassessed. 
 
-The initial version of the system used algorithms involving image processing and colour analysis in order to perform under and over ripe detection with good results of $94.7\%$ and $90.6\%$, respectively, for the multiple instance category. After redesign and upgrade to strobing LEDs and open-source software, machine learning experiments showed that the SVM and unique neural networks underperformed with the best training accuracy results of $84.11\%$ and $76.30\%$, respectively. Improved performance was found using Resnet-50 pre-trained nework in order to extract a feature vector for each image, which is then evaluated by each of the binary classification models. Area Under ROC (AUROC) curves are greater than $80\%$ for both under ripe and foreign object models, whilst the over ripe class score is lower at $58\%$. 
+The initial version of the system used algorithms involving image processing and colour analysis in order to perform under and over ripe detection with good results of $94.7\%$ and $90.6\%$, respectively, for the multiple instance category. After redesign and upgrade to strobing LEDs and open-source software, machine learning experiments showed that the SVM and unique neural networks underperformed with the best training accuracy results of $84.11\%$ and $76.30\%$, respectively. Improved performance was found using Resnet-50 pre-trained network in order to extract a feature vector for each image, which is then evaluated by each of the binary classification models. Area Under ROC (AUROC) curves are greater than $80\%$ for both under ripe and foreign object models, whilst the over ripe class score is lower at $58\%$. 
 
 The system has entered it's fifth season as production-ready having already imaged and assessed 281,778 punnets of which 20,303 were rejected, resulting in $7.76\%$ failure rate in total, helping to ensure the consistent quality assurance of production. The successful implementation of the SQA project provides a platform for continuing work including improving performance of the current classifiers, and investigating the potential of improved region-based bounding box method in order to improve visibility for both operator and developer. Data collection and labelling/annotation are performed regularly in order to re-train networks generating improved results, and to reduce inter-seasonal or inter-cultivar concept shift in the models. 
 
@@ -295,9 +296,9 @@ I would like to acknowledge and thank the Project Manager Rudi Bartels for his g
 
 Thanks also go to Griffith University's Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise, as well as the faith they put in me during my PhD. Dr. William Wang and Mr. Lee Hamilton have also worked periodically on the project and provided invaluable knowledge and experiences.
 
-Lastly, I would like to thank my family, especially my wife Kate, for her support and unwaivering beleif in me, as well as my mother Margaret and mother-in-law Ann, without whom none of this would be possible. My children Kyle, Tazmyn, and Davina have been a substantial part of my motivation and inspiration toward these achievements.
+Lastly, I would like to thank my family, especially my wife Kate, for her support and unwavering belief in me, as well as my mother Margaret and mother-in-law Ann, without whom none of this would be possible. My children Kyle, Tazmyn, and Davina have been a substantial part of my motivation and inspiration toward these achievements.
 
-To all my friends and colleagues throughout my undergraduate and post-graduate life - Thankyou for your help and inspiration.
+To all my friends and colleagues throughout my undergraduate and post-graduate life - Thank you for your help and inspiration.
 
 \vspace*{\fill}%
 
@@ -376,7 +377,7 @@ The paper \textit{Colour Analysis of Strawberries on a Real Time Production Line
 \nomenclature{$downtime$}{The amount of time (cumulative) where production was scheduled but does not occur}%
 
 %biological
-\nomenclature{$SSC$}{Soluable solid content}%
+\nomenclature{$SSC$}{Soluble solid content}%
 
 %programming
 \nomenclature{$API$}{Application Programming Interface}%
@@ -387,22 +388,22 @@ The paper \textit{Colour Analysis of Strawberries on a Real Time Production Line
 \nomenclature{$SVM$}{Support Vector Machine}%
 \nomenclature{$RBF$}{Radial Basis Function}%
 \nomenclature{$AI$}{Artificial Intelligence}%
-\nomenclature{$BP$}{Back Propogation}%
+\nomenclature{$BP$}{Back Propagation}%
 \nomenclature{$FC$}{Fully Connected (NN layer)}%
 \nomenclature{$ReLU$}{Rectified Linear Unit}%
 \nomenclature{$NN$}{Neural Network}%
 \nomenclature{$ANN$}{Artificial Neural Network}%
-\nomenclature{$FNN$}{Feedforward Neural Network}%
+\nomenclature{$FNN$}{Feed-forward Neural Network}%
 \nomenclature{$CNN$}{Convolutional Neural Network}%
 \nomenclature{$R-CNN$}{Region-based Convolutional Neural Network}%
-\nomenclature{$BPNN$}{Back-propogation Neural Network}%
+\nomenclature{$BPNN$}{Back-propagation Neural Network}%
 \nomenclature{$k-NN$}{k-Nearest Neighbour}%https://www.google.com/search?client=ubuntu&hs=Fgn&channel=fs&ei=L4fbXLuRGcXFz7sP9q6wsAg&q=mosfet&oq=mosfet&gs_l=psy-ab.3..0i67l6j0l4.557803.558916..559061...0.0..0.276.1129.0j1j4......0....1..gws-wiz.......0i71j0i131j35i39.Rwu-SVf3v1o
 \nomenclature{$DNN$}{Deep Neural Network}%
 \nomenclature{$ELM$}{Extreme Learning Machine}%
-\nomenclature{$SFLN$}{Single Hiden Layer Feed Neural Network}%
+\nomenclature{$SFLN$}{Single Hide Layer Feed Neural Network}%
 \nomenclature{$LDA$}{Linear Discriminant Analysis}
 \nomenclature{$QDA$}{Quadratic Discriminant Analysis}
-\nomenclature{$PLS-DA$}{Partial Least-squares Discrininant Analysis}
+\nomenclature{$PLS-DA$}{Partial Least-squares Discriminant Analysis}
 \nomenclature{$PCA$}{Principal Component Analysis}
 \nomenclature{$MLP$}{Multi-layer Perceptron}%
 \nomenclature{$GMM$}{Gaussian Mixture Model}%
@@ -415,17 +416,17 @@ The paper \textit{Colour Analysis of Strawberries on a Real Time Production Line
 
 %Spectral
 \nomenclature{$NIR$}{Near Infrared}%
-\nomenclature{$SWIR$}{Short-wavelenght Infraredrange of electromagnectic spectrum}%
-\nomenclature{$MWIR$}{Medium-wavelenght Infraredrange of electromagnectic spectrum}%
-\nomenclature{$LWIR$}{Long-wavelength Infrared range of electromagnectic spectrum}%
-\nomenclature{$FIR$}{Far Infrared range of electromagnectic spectrum}%
-\nomenclature{$UV$}{Ultraviolet range of electromagnectic spectrum}%
+\nomenclature{$SWIR$}{Short-wavelength Infrared range of electromagnetic spectrum}%
+\nomenclature{$MWIR$}{Medium-wavelength Infrared range of electromagnetic spectrum}%
+\nomenclature{$LWIR$}{Long-wavelength Infrared range of electromagnetic spectrum}%
+\nomenclature{$FIR$}{Far Infrared range of electromagnetic spectrum}%
+\nomenclature{$UV$}{Ultraviolet range of electromagnetic spectrum}%
 
 
 %computer jargon
 \nomenclature{$UI$}{User Interface}%
 \nomenclature{$PSU$}{Power Supply Unit}%
-\nomenclature{$UPS$}{Uninterruptable Power Supply}%
+\nomenclature{$UPS$}{Uninterruptible Power Supply}%
 \nomenclature{$CPU$}{Central Processing Unit}%
 \nomenclature{$GPU$}{Graphical Processing Unit}%
 \nomenclature{$RAM$}{Random Access Memory}%
@@ -485,7 +486,7 @@ The paper \textit{Colour Analysis of Strawberries on a Real Time Production Line
 
 Machine vision systems have been successfully deployed to perform many tasks in industries such as manufacturing, automotive, mining, and is constantly branching into more diverse fields, for example, vehicle guidance \cite{menze,urmson}, drone applications \cite{greene,boucher}, traffic monitoring \cite{cheung,kamijo}, high-speed vision \cite{watanabe,nakabo}, and quality inspection tasks \cite{cubero, du}. This is due, largely, to recent technology advances in computational devices (CPU/GPU), storage and cloud services, and camera technology and affordability. These factors help in the adoption of machine vision for production quality control in order to provide multiple benefits over human inspection which may include labour cost reduction, consistent objective analysis, speed increases, safety risk reduction, and continuous services. Avoiding costly stock returns is an obvious benefit, however many costs can be unquantifiable or unclear such as customer satisfaction, and brand reputation. Production line quality inspection is one of the most common applications for machine vision as it is usually fixed in position with a known area to assess, giving the cameras opportunity to inspect each and every item produced. The cameras are also capable of working in environments that human operators may not tend to be comfortable in. Where the production lines may be exposed to heat, cold, dust, chemical, pressure, or noise hazards, cameras can solve the problem of human risk. 
 
-Vision systems can be used for high-speed moving objects in order to perform the inspections where a human would have an impossible task indicating that for fast moving production lines, humans are unable to peform the necessary tasks to quality inspect each item. The high speed vision systems are tailored to suit each application and are dependant on good lighting due to the rapid shutter speeds of the camera.
+Vision systems can be used for high-speed moving objects in order to perform the inspections where a human would have an impossible task indicating that for fast moving production lines, humans are unable to perform the necessary tasks to quality inspect each item. The high speed vision systems are tailored to suit each application and are dependant on good lighting due to the rapid shutter speeds of the camera.
 
 
 
@@ -497,7 +498,7 @@ Vision systems can be used for high-speed moving objects in order to perform the
 	\label{fig:machine_vision}
 \end{figure}
 
-Most production line vision systems have a control mechanism that removes any defected items and allows only acceptable quality to pass. A basic diagram of this process is shown in Figure \ref{fig:machine_vision} whereby a camera provides information to the PC to decide which objects to accept and reject, while a mechanical device removes unacceptable items. This type of system configuration is illustrative of the basic concept of the process, whereas in real applications, the components and peripherals will be much more complex. Vision systems are designed so that the best possible images may be acquired without hindrance from external sources, and is usually very specific to the environment around the cameras, or scene. This may involve specialized lighting (illumination/spectrum), high-power lighting, camera type (high-speed, hyper-spectral, etc), object sensors, software, visualizations, and many different types of ejection/removal systems.
+Most production line vision systems have a control mechanism that removes any defected items and allows only acceptable quality to pass. A basic diagram of this process is shown in Figure \ref{fig:machine_vision} whereby a camera provides information to the PC to decide which objects to accept and reject, while a mechanical device removes unacceptable items. This type of system configuration is illustrative of the basic concept of the process, whereas in real applications, the components and peripherals will be much more complex. Vision systems are designed so that the best possible images may be acquired without hindrance from external sources, and is usually very specific to the environment around the cameras, or scene. This may involve specialized lighting (illumination/spectrum), high-power lighting, camera type (high-speed, hyper-spectral, etc.), object sensors, software, visualizations, and many different types of ejection/removal systems.
 
 
 
@@ -553,7 +554,7 @@ In order to minimize this risk, the quality control of the strawberries must be 
 	\label{fig:punnet_flow}
 \end{figure}
 
-Since 2015, the strawberry packing line has been fitted with a machine that seals the lids on the punnets with plastic film instead of using a resealable lid. This measure has been adopted for a few reasons, namely, cost of packaging, ease of packing, and anti-tampering properties. Shown in Figure \ref{fig:heat_seal}, the heat-seal machine has a maximum speed of $120 punnets/min$ or $2 punnets/s$ and seals six punnets per cycle which improves the overall efficiency. Given that the machine must press down onto the stationary punnets with the heating elements, increasing the amount that can be sealed at once, increases throughput rate. However, the length of the heat-seal footprint is correlated to the number of punnets sealed per cycle. As there is limited space, the amount which can be processed simultaneously is also limited. The infeed conveyors must account for this batching of punnets by stopping when the sealing compartment is loaded, and starting when unloaded. The stop-start action is surpressed by an accumulator conveyor running at a slower speed and gradually feeding into the baching section, but still requires the infeed to stop, albeit a lesser frequency. This means when integrating production conveyors to feed this machine, the discontinuous nature of the flow of punnets must be considered.
+Since 2015, the strawberry packing line has been fitted with a machine that seals the lids on the punnets with plastic film instead of using a resealable lid. This measure has been adopted for a few reasons, namely, cost of packaging, ease of packing, and anti-tampering properties. Shown in Figure \ref{fig:heat_seal}, the heat-seal machine has a maximum speed of $120 punnets/min$ or $2 punnets/s$ and seals six punnets per cycle which improves the overall efficiency. Given that the machine must press down onto the stationary punnets with the heating elements, increasing the amount that can be sealed at once, increases throughput rate. However, the length of the heat-seal footprint is correlated to the number of punnets sealed per cycle. As there is limited space, the amount which can be processed simultaneously is also limited. The infeed conveyors must account for this batching of punnets by stopping when the sealing compartment is loaded, and starting when unloaded. The stop-start action is suppressed by an accumulator conveyor running at a slower speed and gradually feeding into the batching section, but still requires the infeed to stop, albeit a lesser frequency. This means when integrating production conveyors to feed this machine, the discontinuous nature of the flow of punnets must be considered.
 
 
 
@@ -586,12 +587,12 @@ Since 2015, the strawberry packing line has been fitted with a machine that seal
 
 Thin film rolls are used to supply the heating dye with material to press and seal around the edge of the punnet, discarding the excess onto another roll. The pre-sealed and post-sealed punnets are shown in Figures \ref{fig:unsealed_punnets} and \ref{fig:sealed_punnets} and present a unique method to tamper-proof each punnet. The film, once removed, cannot be re-sealed giving consumers the confidence that each punnet has not been opened since it was packed. After being sealed, each item is passed through a metal detector, and a weight-checking scale. At both of these checkpoints, the punnets can be ejected from the production line using pneumatic air actuators.
 
-The addition of a vision system to the heat-seal infeed is the desired outcome for Magnificent to address quality issues that can be missed in such a fast-paced environment. Defects such as under ripe, over ripe, bruised, rotten, foreign object and size and shape have all been attributed to stock rejects and/or returns. As it can cost more to salvage rejected stock than reuse it, there is a possibility that poor quality could mean a shipment is subject to dumping. As millions of full punnnets are packed, palletised and shipped each year the Quality Assurance Manager has an enormous, if not imposible, task in inspecting each one thouroughly. Strawberries are required to be picked and packed to a strict set of attributes, however, subjectivity, general tiredness, rushing to perform tasks, and overheating of workers can all influence the quality of berries picked in the field or packed on a production line. 
+The addition of a vision system to the heat-seal infeed is the desired outcome for Magnificent to address quality issues that can be missed in such a fast-paced environment. Defects such as under ripe, over ripe, bruised, rotten, foreign object and size and shape have all been attributed to stock rejects and/or returns. As it can cost more to salvage rejected stock than reuse it, there is a possibility that poor quality could mean a shipment is subject to dumping. As millions of full punnets are packed, palletised and shipped each year the Quality Assurance Manager has an enormous, if not impossible, task in inspecting each one thoroughly Strawberries are required to be picked and packed to a strict set of attributes, however, subjectivity, general tiredness, rushing to perform tasks, and overheating of workers can all influence the quality of berries picked in the field or packed on a production line. 
 
 Subjectivity is of great concern due to the high turnover of staff, given the majority of employees are seasonal workers, only a few of which will return each year. Therefore, the vision system will inspect each punnet from the top and bottom, at high speed, and adding objective consistency to the process as one of the final quality steps before packing.
 
 
-The requirements include that the vision system feed directly into the heat-seal machine, and not inhibit the production speed or volume. This is a critical measure, particularly during development and production line integration, which ensures that efficiencies are not lost in packing. The speed of packing punnets is directly related to the profit of both the company and its workers, both of whom's income is proportional to volume over time. The company loses money paying for workers to wait for machinery to be ready, hence, downtime due to a non-critical plant will be counter-productive and should be avoided. The inspection system must be able to detect the incoming, high-speed punnets and acquire images from above and below, before analysing the quality. If the system detects defects in the strawberry images, the punnet must be removed from the production line. 
+The requirements include that the vision system feed directly into the heat-seal machine, and not inhibit the production speed or volume. This is a critical measure, particularly during development and production line integration, which ensures that efficiencies are not lost in packing. The speed of packing punnets is directly related to the profit of both the company and its workers, both of who's income is proportional to volume over time. The company loses money paying for workers to wait for machinery to be ready, hence, downtime due to a non-critical plant will be counter-productive and should be avoided. The inspection system must be able to detect the incoming, high-speed punnets and acquire images from above and below, before analysing the quality. If the system detects defects in the strawberry images, the punnet must be removed from the production line. 
 
 
 
@@ -613,11 +614,11 @@ The vision system general requirements are listed in Table \ref{tab:requirements
 	\textbf{\textit{Safety}}    & - The vision system shall not create any safety risks or hazards such as tipping, electrocution, exposed pinch points, sharp edges, hazardous lighting, unsustainable lifting, etc.  \\[2pt]
 	\hline
 	\textbf{\textit{Inspection}} 	& - Autonomous operation.\\[2pt]
-	& - The punnets are to be assesed based on the agreed defect categories (classes) to the specifications provided. \\[2pt]
+	& - The punnets are to be assessed based on the agreed defect categories (classes) to the specifications provided. \\[2pt]
 	& - Each punnet will be evaluated from top and bottom (through the plastic container). \\[2pt]
-	& - The infeed and outfeed systems integrate with the proceeding and preceeding machinery. \\[2pt]
+	& - The infeed and outfeed systems integrate with the proceeding and preceding machinery. \\[2pt]
 	\hline
-	\textbf{\textit{Footprint}}	& - Shall be externally connected to either one $400VAC$ or $240VAC$ power source, and one pnuematic line for all operations including removal from production line.  \\[2pt]
+	\textbf{\textit{Footprint}}	& - Shall be externally connected to either one $400VAC$ or $240VAC$ power source, and one pneumatic line for all operations including removal from production line.  \\[2pt]
 	& - Adaptability to multiple production lines. \\[2pt]
 	& - Size of the system shall be kept as compact as possible due to packing room constraints. \\[2pt]
 	\hline
@@ -665,7 +666,7 @@ The body of this thesis is set out with the following chapters:
 
 Production lines adopt computer vision systems in order to reduce the cost of labour and/or standardise the quality control. Depending on volume and product, quality controllers may be a substantial cost in production and can be subjective, particularly for seasonal work. This leads to loss in productivity, labour costs, and financial loss in the form of stock returns, in the case that it is not accepted by the customer. Employing accurate vision systems on a production line give the producers quality control that is consistent, continuous, and relatively cheap \cite{heleno,chen}. 
 
-Performing a review on fruit Cubero et al \cite{cubero} investigated Apple, banana, citrus, cucumber, mango, mushroom, olives. potatoes, starfruit and watermelon as part of their investigation into agricultural machine vision. Methods such as colour analysis, histogram, k-NN, PCA, Fourier analysis, clustering, AdaBoost, and ANN's to perform the tasks of inspecting a wide range of defects and classifications. Another review by Dubey and Jalal \cite{dubey} investigated two types of tasks for vision systems - classification and defect detection - and concluded that most of the work in this field contained three steps in performing either task, namely, background subtraction, feature extraction, and training and classification. SVM, BPNN, Decision Tree, ANN, and even fusion classifiers were commonly used in their research.
+Performing a review on fruit Cubero et al \cite{cubero} investigated Apple, banana, citrus, cucumber, mango, mushroom, olives. potatoes, star fruit and watermelon as part of their investigation into agricultural machine vision. Methods such as colour analysis, histogram, k-NN, PCA, Fourier analysis, clustering, AdaBoost, and ANN's to perform the tasks of inspecting a wide range of defects and classifications. Another review by Dubey and Jalal \cite{dubey} investigated two types of tasks for vision systems - classification and defect detection - and concluded that most of the work in this field contained three steps in performing either task, namely, background subtraction, feature extraction, and training and classification. SVM, BPNN, Decision Tree, ANN, and even fusion classifiers were commonly used in their research.
 
 As the field of production line machine vision in general has a wide spectrum of applications, the following literature review will only concern agricultural machine vision. 
 
@@ -673,9 +674,9 @@ As the field of production line machine vision in general has a wide spectrum of
 \section{Image Processing in Produce Grading}
 
  
-The use of simple techniques have been implemented in produce grading due to the inherant properties such as colour (ripening, defects), and texture (disease, freshness) extraction and analysis. Significant findings in experiments have led to vision systems adopting simple methods such as morphology, thresholding, fuzzy logic, colour space transformations, and edge detection (or a combination) to successfully detect or classify produce to an acceptable level or, in some cases, improve on more sophisticated processes.
+The use of simple techniques have been implemented in produce grading due to the inherent properties such as colour (ripening, defects), and texture (disease, freshness) extraction and analysis. Significant findings in experiments have led to vision systems adopting simple methods such as morphology, thresholding, fuzzy logic, colour space transformations, and edge detection (or a combination) to successfully detect or classify produce to an acceptable level or, in some cases, improve on more sophisticated processes.
 
-Common colourspace transformations for colour grading and defect detection include HSV and CIE-Lab (Figure \ref{fig:colour-space})due to their specialised colour channels and properties. Work has been sampled by Pathare, Opara, and Al-Said \cite{pathare} in their review of colour measurment and analysis performed in order to evaluate fresh foods. They reviewed items including red table grape, tomato, orange, apple, banana, chicken breast and varied meat, flour, pasta, cerals, and breads all of which used a colour index (CI) to perform quality checks. They all had the commonality in that they used mathematical operations with co-efficients relating to one or more colour spaces such as HSV, CIE-Lab, and CIE-XYZ. These colour indexes were used to make a comparison against test samples for characteristic representation of maturation, preservation, or storage. 
+Common colourspace transformations for colour grading and defect detection include HSV and CIE-Lab (Figure \ref{fig:colour-space})due to their specialised colour channels and properties. Work has been sampled by Pathare, Opara, and Al-Said \cite{pathare} in their review of colour measurement and analysis performed in order to evaluate fresh foods. They reviewed items including red table grape, tomato, orange, apple, banana, chicken breast and varied meat, flour, pasta, cereals, and breads all of which used a colour index (CI) to perform quality checks. They all had the commonality in that they used mathematical operations with coefficients relating to one or more colour spaces such as HSV, CIE-Lab, and CIE-XYZ. These colour indexes were used to make a comparison against test samples for characteristic representation of maturation, preservation, or storage. 
 
 \begin{figure}[h]
 	\centering
@@ -697,24 +698,24 @@ Common colourspace transformations for colour grading and defect detection inclu
 
 Two species of table grape were graded into five categories by Cavallo et al \cite{cavallo} after training a Random Forrest Classifier with features from the CIE-Lab colour space. The team calculated the mean and standard deviation of each channel and added the product of channels and ratio of channels to achieve a $92\%$ and $100\%$ cross-validation accuracies for Victoria and Italia strains, respectively.
 
-A method to grade lemons based on colour and volume was implemented by Khojastehnazhand, Omid, and Tabatabaeefar \cite{khojastehnazhand} where the system could be calibrated to the specific requirements before assessment begins by passing fruit as examples to the system (and stored in a database), before using the example data as comparrison to the unseen fruit. The colour and volume information was calculated via HSI colourspace and simple geometry measurements where the volume estimation $R^2 = 0.9852$ and colour (ripeness) estimated accuracies of $95.45\%$, $100\%$, and $86.67\%$ for classes 1, 2, and 3, respectively.
+A method to grade lemons based on colour and volume was implemented by Khojastehnazhand, Omid, and Tabatabaeefar \cite{khojastehnazhand} where the system could be calibrated to the specific requirements before assessment begins by passing fruit as examples to the system (and stored in a database), before using the example data as comparison to the unseen fruit. The colour and volume information was calculated via HSI colourspace and simple geometry measurements where the volume estimation $R^2 = 0.9852$ and colour (ripeness) estimated accuracies of $95.45\%$, $100\%$, and $86.67\%$ for classes 1, 2, and 3, respectively.
 
-For many leafy vegetables green is the predominant colour, therefore, extraction of the healthy components is made easy using the abovementioned colour spaces. In order to identify leafy vegetables Danti, Magdi, and Anami \cite{danti} utilised the RGB and HSI colour space channels by simply finding the mean and range (variance was eliminated as a non-determining factor) of each channel as features. The features were used to train a BPNN model which scored in the range of $92-100\%$ for all 10 leafy vegetables including dill, fenugreek, corriander, spinach and mint. 
+For many leafy vegetables green is the predominant colour, therefore, extraction of the healthy components is made easy using the above-mentioned colour spaces. In order to identify leafy vegetables Danti, Magdi, and Anami \cite{danti} utilised the RGB and HSI colour space channels by simply finding the mean and range (variance was eliminated as a non-determining factor) of each channel as features. The features were used to train a BPNN model which scored in the range of $92-100\%$ for all 10 leafy vegetables including dill, fenugreek, coriander, spinach and mint. 
 
-RGB or a combination of RGB with other colour spaces also give significant results for certain applications. In order to grade palm oil fruit, May and Amaran \cite{may} simply analysed the RGB range of under ripe, ripe and over ripe fruit colour and determined accociated values correlating to the ripeness. Their fuzzy logic system achieved an overall accuracy of $86.67\%$ showing that this method is plausible for fruit ripeness determined by colour. A method to grade four different varieties of mango into four ripeness grades was implemented by Nandi, Tudu, and Koley \cite{nandi} by extracting colour features, and deriving other colour features at key points across length of the fruit. The features were then used with a simple Gausian Mixture Model (GMM) to achieve accuracies that rivaled expert humans. Blasco, Aleixos, and Molto \cite{blasco2} developed an algorithm that can detect 12 different types of common disease in citrus fruits. The method reduces the image to 32 colours before performing a region-growing method and could assess fruit from different batches, and even species, of citrus without adjustments. This was based on the assumption that unaffected fruit peel is relatively consistent, smooth, and blemish-free. An overall accuracy of $94\%$ was attained with some of the most devastating diseases scoring $100\%$ detection. 
+RGB or a combination of RGB with other colour spaces also give significant results for certain applications. In order to grade palm oil fruit, May and Amaran \cite{may} simply analysed the RGB range of under ripe, ripe and over ripe fruit colour and determined associated values correlating to the ripeness. Their fuzzy logic system achieved an overall accuracy of $86.67\%$ showing that this method is plausible for fruit ripeness determined by colour. A method to grade four different varieties of mango into four ripeness grades was implemented by Nandi, Tudu, and Koley \cite{nandi} by extracting colour features, and deriving other colour features at key points across length of the fruit. The features were then used with a simple Gaussian Mixture Model (GMM) to achieve accuracies that rivalled expert humans. Blasco, Aleixos, and Molto \cite{blasco2} developed an algorithm that can detect 12 different types of common disease in citrus fruits. The method reduces the image to 32 colours before performing a region-growing method and could assess fruit from different batches, and even species, of citrus without adjustments. This was based on the assumption that unaffected fruit peel is relatively consistent, smooth, and blemish-free. An overall accuracy of $94\%$ was attained with some of the most devastating diseases scoring $100\%$ detection. 
 
-Geometric calculations are a common approach to assessing shape, size, or volume as the scale and intestity are invariant which facillitates the background removal process, leaving a precise outline. This outline can then be accurately measured due to the fixed position of a calibrated camera. Properties such as minor and major axis can be used to calculate area (size) and lenth-to-width (elongation) of objects. Contour curvature, shape matrices, moments, and shape transforms such as Fourier and Wavelets can also be calculated from a well segmented image. 
+Geometric calculations are a common approach to assessing shape, size, or volume as the scale and intestine are invariant which facilitates the background removal process, leaving a precise outline. This outline can then be accurately measured due to the fixed position of a calibrated camera. Properties such as minor and major axis can be used to calculate area (size) and lenth-to-width (elongation) of objects. Contour curvature, shape matrices, moments, and shape transforms such as Fourier and Wavelets can also be calculated from a well segmented image. 
 
-Sandrina et al \cite{sandrina} implemented a method using geometric calculations to determine weight and shape of watermelons. Using logistic regression analysis they determined that good specimen shape could be well-described by an ellipsoid model with an $R^2$ of $0.97$. The weight of the watermelons was estimated by image analysis with an error of $2.42\%$. A review of assessment techniques for legume quality was conducted by Mahajan, Das, and Sardana \cite{mahajan} that found several species including lentils, soybeans, peas, chickpeas, beans, and honeylocust were assesed for their geometrical properties such as size and shape. Using a flatbed scanner for each of these projects, the methods consisted of simple thresholding and morphology to find the binary image before measuring. 
+Sandrina et al \cite{sandrina} implemented a method using geometric calculations to determine weight and shape of watermelons. Using logistic regression analysis they determined that good specimen shape could be well-described by an ellipsoid model with an $R^2$ of $0.97$. The weight of the watermelons was estimated by image analysis with an error of $2.42\%$. A review of assessment techniques for legume quality was conducted by Mahajan, Das, and Sardana \cite{mahajan} that found several species including lentils, soybeans, peas, chickpeas, beans, and honeylocust were assessed for their geometrical properties such as size and shape. Using a flatbed scanner for each of these projects, the methods consisted of simple thresholding and morphology to find the binary image before measuring. 
 
 
-Fuzzy systems can offer generalisation and adaptability properties for grading based on feature simplification. A Fuzzy Inference System (FIS) takes raw data (crisp), transforms it into a simplified version (Fuzzification), and makes a prediction based on some knowledge, before transforming again (De-Fuzzification) back into a crisp value. Fuzzification methods may include bucketing, averaging, PCA, or windowing in order to reduce the dimensionality of data, usually giving the ability to assign simple rules to perfom the classification or detection.
+Fuzzy systems can offer generalisation and adaptability properties for grading based on feature simplification. A Fuzzy Inference System (FIS) takes raw data (crisp), transforms it into a simplified version (Fuzzification), and makes a prediction based on some knowledge, before transforming again (De-Fuzzification) back into a crisp value. Fuzzification methods may include bucketing, averaging, PCA, or windowing in order to reduce the dimensionality of data, usually giving the ability to assign simple rules to perform the classification or detection.
 
-Hasan and Monir \cite{hasan} developed a system to evaluate guava by use of a FIS. The fuzzy rules were based on functions of hue, saturation, and intensity of the images acquired of the fruit. Their method achieved an accuracy of $93.4\%$ which is an improvement over other classifiers such as naive bayes and multi-SVM. A method that used volumetric estimation in order to perform quality grading in fruit (apples, mango, orange, pomegranate, and strawberry) was designed by Jadhav, Singh, and Abhyankar \cite{jadhav}. Four cameras positioned at various angles and elevations were used to acquire the callibrated images of fruits before the volumetric calculations were peformed. This information is coupled with the colour values from the hue channel of HSV colour space to obtain a classification grade which is then passed to an FIS for final distribution into five grades from very poor to very good. All grades and all fruits achieved accuracies of $>98\%$. 
+Hasan and Monir \cite{hasan} developed a system to evaluate guava by use of a FIS. The fuzzy rules were based on functions of hue, saturation, and intensity of the images acquired of the fruit. Their method achieved an accuracy of $93.4\%$ which is an improvement over other classifiers such as naive Bayes and multi-SVM. A method that used volumetric estimation in order to perform quality grading in fruit (apples, mango, orange, pomegranate, and strawberry) was designed by Jadhav, Singh, and Abhyankar \cite{jadhav}. Four cameras positioned at various angles and elevations were used to acquire the calibrated images of fruits before the volumetric calculations were performed. This information is coupled with the colour values from the hue channel of HSV colour space to obtain a classification grade which is then passed to an FIS for final distribution into five grades from very poor to very good. All grades and all fruits achieved accuracies of $>98\%$. 
 
-An adaptive neural-fuzzy inference system (ANFIS) has been developed by Zheng, Jiang, and Lu \cite{zheng} in order to detect bruising in Chinese bayberries as a function of Fractal Dimension (FD) and RGB values. The multiple input, single output Takagi–Sugeno fuzzy network consists of an input layer, fuzzification layer, rule layer, defuzzification layer, and output layer. The trained network could discriminate between bruised and unbruised bayberries with an overall $90\%$ accuracy. Similarly, Jiang et al \cite{jiang} used an ANFIS to predict ascorbic acid retention in fresh-cut pinapples. They used inputs of surface area, storage temperature, and storage time in order to train the predictor with a RMSE of $7.88\%$ and and $R^2$ correlation coefficient of $0.95$.
+An adaptive neural-fuzzy inference system (ANFIS) has been developed by Zheng, Jiang, and Lu \cite{zheng} in order to detect bruising in Chinese bayberries as a function of Fractal Dimension (FD) and RGB values. The multiple input, single output Takagi–Sugeno fuzzy network consists of an input layer, fuzzification layer, rule layer, defuzzification layer, and output layer. The trained network could discriminate between bruised and unbruised bayberries with an overall $90\%$ accuracy. Similarly, Jiang et al \cite{jiang} used an ANFIS to predict ascorbic acid retention in fresh-cut pineapples They used inputs of surface area, storage temperature, and storage time in order to train the predictor with a RMSE of $7.88\%$ and and $R^2$ correlation coefficient of $0.95$.
 
-Goel and Sehgar \cite{goel} developed a Fuzzy Rule Based Classification System (FRBCS) in order to grade tomatos into six ripeness stages. Images acquired from the open farm environment were preprocessed by taking averages of R, G and B, R-G and R/G before training and testing, with comparrisons against Naive Bayes, SVM, MLP, and Random Tree classifiers. Their method of FRBCS achieved an accuracy of $94.29\%$ which outperformed the others ($88.89\%$, $87.42\%$, $84.97\%$, and $84.05\%$, respectively).  
+Goel and Sehgar \cite{goel} developed a Fuzzy Rule Based Classification System (FRBCS) in order to grade tomatos into six ripeness stages. Images acquired from the open farm environment were preprocessed by taking averages of R, G and B, R-G and R/G before training and testing, with comparisons against Naive Bayes, SVM, MLP, and Random Tree classifiers. Their method of FRBCS achieved an accuracy of $94.29\%$ which outperformed the others ($88.89\%$, $87.42\%$, $84.97\%$, and $84.05\%$, respectively).  
 
 
 
@@ -725,19 +726,19 @@ The process of hand-selecting features is a common approach to help classifiers 
 
 A tomato maturity level grading system developed by Wan et al \cite{wan} by projecting five concentric circles with different radii onto the fruit in order to extract the colour feature value. The correlated hue values were used to represent the maturity level before being trained on a 3-layer BPNN, achieving an average accuracy of $99.31\%$. Mebatsion, Paliwal, and Jayas \cite{mebatsion} found the best results when pairing morphological features with colour features in order to classify cereal grains into five common categories. They used a simple least-squared classifier obtaining a result of $98.5\%$ for barley, $99.97\%$ for CWRS (Canada Western Red Spring), $99.93\%$ for oat, and $100\%$ for rye and CWAD (Canada Western Amber Durum). Muhammad \cite{muhammad} also used hand-selected features when developing a method to classify date varieties. After an ellipse has been fit to the date image, features such as major and minor axis length, eccentricity, area, and texture descriptors were extracted and trained with an SVM classifier to achieve accuracies of $100\%$, $96.2\%$, $96.6\%$, and $99.6\%$ for the four varieties analysed. These results show that a small number of features, if properly selected, has the potential to perform extremely well under the right conditions.
 
-Depending on the architechture used to classify the features, variance may be high especially when using neural networks. Features that best represent images for humans are not necessarily best represented for machine learning. Pereira et al \cite{pereira} hand crafted 21 colour features utilising three colour spaces (RGB, CIE-Lab, and HSV) in order to grade papayas into three maturity stages (MS). The mean values, pixel areas, and differential indexes between these colour spaces were obtained and classified by Random Forrest method resulting in an accuracy of $95.4\%$, $92.1\%$, and $84.4\%$ for MS1, MS2, and MS3, respectively. The team noted that it may be suitable for an industrial application in future. Szczypinski, Klepaczko, and Zapotoczny \cite{szczypinski} used an ANN classifer to attempt to discriminate between 11 different barley strains. 13 statistical metrics were obtained such as mean, skewness, second moment, and entropy in order to differentiate the varieties with an accuracy ranging $67\%$ to $86\%$. In an effort to grade persimmon fruit into three commercial maturity stages, Mohammadi, Kheiralipour, and Ghasemi-Varnamkhasti \cite{mohammadi} extracted features relating to RGB, CIE-Lab, HSV, and greyscale conversions before training both an LDA and QDA classifier to perform the categorization. The QDA model achieved an overall accuracy of $90.24\%$. Selected features chosen by Thendral and Suhasini \cite{thendral} improved the results, compared to no feature selection, for all tests performed whilst detecting defects in orange peel. They compared the performance of SVM, BPNN, and AANN finding that the AANN delivered the best testing results of $94.5\%$. Gill, Girdhar, and Singh \cite{gill} used a hybrid intelligent solution when developing a fruit grading method by means of a Genetic Algorithm merged with BP-ANN. The Back-Propagating (BP) method used to update weights in the network has a tendancy to become trapped in a local minima, leading to the idea of genetic algorithm (imitating natural evolution) coul overcome this problem. The results indicate that the hybrid system has increased accuracy ($93.33\%$) compared to a conventional BP-ANN ($73.33\%$).  
+Depending on the architecture used to classify the features, variance may be high especially when using neural networks. Features that best represent images for humans are not necessarily best represented for machine learning. Pereira et al \cite{pereira} hand crafted 21 colour features utilising three colour spaces (RGB, CIE-Lab, and HSV) in order to grade papayas into three maturity stages (MS). The mean values, pixel areas, and differential indexes between these colour spaces were obtained and classified by Random Forrest method resulting in an accuracy of $95.4\%$, $92.1\%$, and $84.4\%$ for MS1, MS2, and MS3, respectively. The team noted that it may be suitable for an industrial application in future. Szczypinski, Klepaczko, and Zapotoczny \cite{szczypinski} used an ANN classier to attempt to discriminate between 11 different barley strains. 13 statistical metrics were obtained such as mean, skewness, second moment, and entropy in order to differentiate the varieties with an accuracy ranging $67\%$ to $86\%$. In an effort to grade persimmon fruit into three commercial maturity stages, Mohammadi, Kheiralipour, and Ghasemi-Varnamkhasti \cite{mohammadi} extracted features relating to RGB, CIE-Lab, HSV, and greyscale conversions before training both an LDA and QDA classifier to perform the categorization. The QDA model achieved an overall accuracy of $90.24\%$. Selected features chosen by Thendral and Suhasini \cite{thendral} improved the results, compared to no feature selection, for all tests performed whilst detecting defects in orange peel. They compared the performance of SVM, BPNN, and AANN finding that the AANN delivered the best testing results of $94.5\%$. Gill, Girdhar, and Singh \cite{gill} used a hybrid intelligent solution when developing a fruit grading method by means of a Genetic Algorithm merged with BP-ANN. The Back-Propagating (BP) method used to update weights in the network has a tendency to become trapped in a local minima, leading to the idea of genetic algorithm (imitating natural evolution) could overcome this problem. The results indicate that the hybrid system has increased accuracy ($93.33\%$) compared to a conventional BP-ANN ($73.33\%$).  
 
 
 
 \section{Physical Property Analysis}
 
-Hardware and physical properties may be exploited in some applications in order to avoid complex processing or improve results. Mutiple cameras, multiple spectrums and 3D imagery are examples of hardware employed in order to allow vision systems to capture details of the subject which may go unseen with conventional systems. 
+Hardware and physical properties may be exploited in some applications in order to avoid complex processing or improve results. Multiple cameras, multiple spectra and 3D imagery are examples of hardware employed in order to allow vision systems to capture details of the subject which may go unseen with conventional systems. 
 
 
 Chui et al \cite{chiu} used a process of acquiring fluorescence images - exciting the internal structure of the object in one wavelength, to emit light at a different wavelength - in order to detect mechanically-induced bruises on apples. They found that this method highlighted the bruised flesh, and segmented them by performing an image difference with a local adaptive binarisation method. 
 
 
-Spectroscopy is a method of measuring the transmitted spectral signature of objects. By placing the light source on the opposite side, and not in direct view of the sensor, the transmittance can be measured to show unique properties regarding the internal structure of the subject. Figure \ref{fig:spectroscope} illustrates the fruit spectrocopy system from \cite{choi}. 
+Spectroscopy is a method of measuring the transmitted spectral signature of objects. By placing the light source on the opposite side, and not in direct view of the sensor, the transmittance can be measured to show unique properties regarding the internal structure of the subject. Figure \ref{fig:spectroscope} illustrates the fruit spectroscopy system from \cite{choi}. 
 
 \begin{figure}[h]
 	\centering
@@ -772,7 +773,7 @@ A laser backscattering technique used by Lorente et al \cite{lorente} provided i
 
 
 
-\section{Hyperspecral/Multispectral Imaging}
+\section{Hyperspectral/Multispectral Imaging}
 \label{sec:lit_hyperspec}
 
 As the spectral range of the eye is limited, camera sensors can be employed which can visualise wavelengths beyond these restrictions into the ultra-violet and infrared ranges. Figure\ref{fig:eye_sensor} shows the spectral response of the human eye versus CMOS and CCD sensors illustrating the extent to which the electronic sensor's range is greater.
@@ -827,7 +828,7 @@ Strawberries are a delicate fruit with an unprotected, soft, edible flesh, and v
 
 Brosnan and Sun \cite{brosnan} performed a review of agricultural vision systems including apple grading, orange stem detection and sweetness correlation, defective pistachio nuts, tomato size, colour, and shape properties as well as seedling health, peach and pear maturity levels, and automatic fruit harvesting. The team also reviewed vegetable inspection methods such as mushrooms and potatos, as well as wheat, rice and corn. They described 2 methods for analysing strawberry shape and size, taking one of the teams $1.18$ seconds per berry to analyse only shape and size, noting that fruit quality is dependant on a number of pre-harvest and post-harvest processes. The hardware used was a Pentium\textregistered $200MHz$ processor and a Sony\textregistered CCD-IRIS/RGB camera, indicating a potential to reduce this processing time by greater than a factor of 10 ($2GHz$) in modern computers.
 
-Using a conveyor system, L. Xu et al \cite{xu} achieved very good results in classifying shape, ripeness, and size. The measurements are attained by using a K-means clustering method to find 7 vertical and 7 horizontal axis lines. Size feature was calculated by performing experiments to find the ratio of pixels/mm and simply dividing the pixel measurements of the berry by this ratio. Using the CIELAB colour space, a dominant colour was found in the berry by means of a histogram windowing method. Similarly, Liming and Yanchao \cite{liming} developed a strawberry grading method and mechanical system that requires manual loading of single strawberries on a conveyor belt before using colour features and k-means clustering to grade the fruit into shape and colour classes at a rate of approximately $2.5s/berry$. An Advantec\texttrademark PCM9575 all-in-one $800Mhz$ computer was used to process images from a Panasonic\texttrademark WV-CP470 with resolution of $525x480$. 
+Using a conveyor system, L. Xu et al \cite{xu} achieved very good results in classifying shape, ripeness, and size. The measurements are attained by using a K-means clustering method to find 7 vertical and 7 horizontal axis lines. Size feature was calculated by performing experiments to find the ratio of pixels/mm and simply dividing the pixel measurements of the berry by this ratio. Using the CIE-Lab colour space, a dominant colour was found in the berry by means of a histogram windowing method. Similarly, Liming and Yanchao \cite{liming} developed a strawberry grading method and mechanical system that requires manual loading of single strawberries on a conveyor belt before using colour features and k-means clustering to grade the fruit into shape and colour classes at a rate of approximately $2.5s/berry$. An Advantech\texttrademark PCM9575 all-in-one $800Mhz$ computer was used to process images from a Panasonic\texttrademark WV-CP470 with resolution of $525x480$. 
 
 
 \begin{figure}[h]
@@ -847,13 +848,13 @@ Strawberries are farmed with a range of different cultivar and seasonal characte
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{multispec_strawberry.png}
-	\caption{Pseudo-coloured strawberry heatmap showing the white area of the berry being firmest and the red area softest.}
+	\caption{Pseudo-coloured strawberry heat-map showing the white area of the berry being firmest and the red area softest.}
 	\label{fig:multispec_strawberry}
 \end{figure}%
 
 EMasry et al \cite{elmasry2} used multi-spectral imaging in order to determine the moisture, soluble solids, and pH levels in order to grade the ripeness of single strawberries. They found broadband absorption bands, in the case of under ripe fruit, at 500, 680, 840, and $960nm$. The bands at 840 and $960nm$ were found to represent sugar and water absorption which was used to determine factors that would usually require destructive testing. The same results were found by Tallada, Nagata, and Kobayashi \cite{tallada} using an NIR hyperspectral system, they analysed and assessed the firmness of strawberries by non-destructive imaging. By taking acquiring images from $640nm-1000nm$ in steps of $5nm$ they were able to determine the optimal wavelengths to estimate firmness across three grades of ripeness. The results had a correlation coefficient of $R^2=0.786$ and standard error of $0.350MPa$ using $685nm$, $865nm$, and $985nm$. They calculated formula to generate heat maps of the firmness distribution (pseudo-colour), as shown on the ripe and under ripe examples in Figure \ref{fig:multispec_strawberry}. This result is expected given the deep red colour of the top specimen versus the half white, and red example.
 
-Zhang et al \cite{zhang} used a hyprspectral imaging system in two ranges - $441nm-1013nm$ and $941nm-1578nm$ to assess the ripeness of strawberries into three categories. Using PCA for reflectance processing and texture components at optimal wavelengths to form the feature set, they trained an SVM classifier achieving overall classification accuracy of $85\%$. Similar research by Liu et al \cite{liu} used 19 bands in the range of $405nm-970nm$ in order to determine firmness, SSC, and ripeness. Experimenting with classifiers such as SVM and PLS, they found the BPNN model performed well with $R^2=0.94$ and $R^2=0.83$ coefficient of prediction for firmness and SSC, respectively. Three category ripeness evaluations were performed using both PCA-BPNN and SVM classifiers with the SVM model achieving $100\%$.
+Zhang et al \cite{zhang} used a hyperspectral imaging system in two ranges - $441nm-1013nm$ and $941nm-1578nm$ to assess the ripeness of strawberries into three categories. Using PCA for reflectance processing and texture components at optimal wavelengths to form the feature set, they trained an SVM classifier achieving overall classification accuracy of $85\%$. Similar research by Liu et al \cite{liu} used 19 bands in the range of $405nm-970nm$ in order to determine firmness, SSC, and ripeness. Experimenting with classifiers such as SVM and PLS, they found the BPNN model performed well with $R^2=0.94$ and $R^2=0.83$ coefficient of prediction for firmness and SSC, respectively. Three category ripeness evaluations were performed using both PCA-BPNN and SVM classifiers with the SVM model achieving $100\%$.
 
  
 
@@ -876,13 +877,13 @@ Fruit and vegetables are generally graded by the ripeness or readiness to eat, b
 A fig sorting system developed by Baigvand et al \cite{baigvand} could successfully categorise the figs into five grades with accuracies up to $95.2\%$, processing at a rate of $90kg/h$ and sorting each into separate bins using air nozzles. The team created indices related to colour, size, and the area of the split, seen on each fruit, applying a rule-based method to determine the graded category. Many real-time sorting systems exist, for example, Duan et al \cite{duan} used a system of two cameras and two computers to inspect glass beer bottles after production at a rate of $500/min$ or $8.3/s$. They inspected the bottom of the bottle, the overall finish, and the top opening, performing all three checks for each bottle within the time frame specified. After inspection, the defected bottles are ejected from the production line in order to be recycled. Elmasry et al \cite{elmasry1} developed a potato grading system which can acquire multiple images of each potato, from multiple sides due to the roller-conveyor, before performing Fourier transform, and Fourier shape descriptors. The conveyor speed is $1m/s$ and the spacing between each roller is $80mm$ giving approximately $12 potatos/s$ if there are no empty rollers. Four different grading/processing techniques were investigated by Kondo \cite{kondo} where, firstly, oranges were inspected by a system of cameras including six colour cameras at different positions (so that all sides are inspected), an NIR camera and the option of adding x-ray imaging to the purpose-built line. The oranges are fed through the system using a singulating conveyor which performs a $180^{\circ}$ rotation for the last camera to ensure all sides are evaluated. Secondly, an eggplant quality assessment system was developed which made use of six colour and four monochrome cameras in order to determine colour, size, shape, and defects as well as a novel gloss detection method using angles cameras and three white strip lights to inspect the specular reflections sharp edges, meaning good quality, or dull edges, meaning poor. The 6 production lines, running at $38.1m/min$, at the facility meant that $504,000$ fruits could be processed per day. Even though there has been a substantial reduction in number of employees in processing, it is still laborious due to the packing requirements. The third project was capable of grading $10,000$ leeks per hour at a line speed of $30m/min$ with automatic root cutting and peeling steps. Lastly, a robot capable of grading $3 fruit/sec$ for 11 varieties of deciduous fruits including apple, pear, and peach. Using 3 DOF manipulators, the robot placed into trays, whilst images are acquired from top, bottom and two sides before making a grade decision. 
 
 
-In order to remove the green calyx from strawberries, Lin et al \cite{lin} used a waterjet cutting system guided by machine vision. The strawberries were fed into the system using roller rods to align and separate before using CIE-Lab colour space to segment the berries from the calyx. A series of geometric calculations guide the cutting system with the optimal cut line. Their machine was designed to process berries bound for ice cream, yoghurt, jucing, and jam markets instead of being packaged for sale as fruit, meaning that condition, bruising and ripeness was not of concern as much as removing the green leaves.
+In order to remove the green calyx from strawberries, Lin et al \cite{lin} used a water jet cutting system guided by machine vision. The strawberries were fed into the system using roller rods to align and separate before using CIE-Lab colour space to segment the berries from the calyx. A series of geometric calculations guide the cutting system with the optimal cut line. Their machine was designed to process berries bound for ice cream, yoghurt, juicing, and jam markets instead of being packaged for sale as fruit, meaning that condition, bruising and ripeness was not of concern as much as removing the green leaves.
 
-Hyperspectral and mutispectral implementations can help systems to assess products in real time due to their ability to detect what the human eye, or regular cameras cannot. This advantage can provide information which simplifies the processing of images, for example, the use of NIR wavelengths can uncover invisible defects (as discussed in Section \ref{sec:lit_hyperspec}). Lee et al \cite{lee} implemented an industrial date grading machine capable of processing $72,000 dates/h$ with an $87\%$ accuracy measured. They acquired images in NIR wavelengths ranging $750-1200nm$ by use of an NIR-extended CCD camera and a high pass filter to block wavelengths lower than $750nm$. Processing at a rate of $20 fruit/s$ ,these wavelegths provided good background segmentation, added to the amplification of delaminated skin features which determine quality. The amount of delaminated skin was calculated, after morphological operations, and compared to the size of the entire fruit to give a percentage and a grade from 'A' to 'E'. 
+Hyperspectral and multispectral implementations can help systems to assess products in real time due to their ability to detect what the human eye, or regular cameras cannot. This advantage can provide information which simplifies the processing of images, for example, the use of NIR wavelengths can uncover invisible defects (as discussed in Section \ref{sec:lit_hyperspec}). Lee et al \cite{lee} implemented an industrial date grading machine capable of processing $72,000 dates/h$ with an $87\%$ accuracy measured. They acquired images in NIR wavelengths ranging $750-1200nm$ by use of an NIR-extended CCD camera and a high pass filter to block wavelengths lower than $750nm$. Processing at a rate of $20 fruit/s$ ,these wavelengths provided good background segmentation, added to the amplification of delaminated skin features which determine quality. The amount of delaminated skin was calculated, after morphological operations, and compared to the size of the entire fruit to give a percentage and a grade from 'A' to 'E'. 
 
-When implementing systems in production environments, the rate of production (and limited space constraints) sometimes require inventive solutions to be implemented in order to acheive the desired outcomes. Aleixos et al \cite{aleixos} developed a commercial citrus grading system which used a combination of transmissive and reflective lenses in order to image the same scene with two cameras. One RGB and one NIR camera were used to acquire images of citrus fruits at a rate of $5 fruits/s$ before assessing each for size and colour and surface defects. The size estimation had $<2mm$ error with colour grading for oranges, lemons, and manderins reaching $94\%$, $93\%$, and $94\%$, respectively.
+When implementing systems in production environments, the rate of production (and limited space constraints) sometimes require inventive solutions to be implemented in order to achieve the desired outcomes. Aleixos et al \cite{aleixos} developed a commercial citrus grading system which used a combination of transmissive and reflective lenses in order to image the same scene with two cameras. One RGB and one NIR camera were used to acquire images of citrus fruits at a rate of $5 fruits/s$ before assessing each for size and colour and surface defects. The size estimation had $<2mm$ error with colour grading for oranges, lemons, and mandarins reaching $94\%$, $93\%$, and $94\%$, respectively.
 
-Machine vision can outperform humans depending on the task involved. Particularly for borderline cases a machine has finite thresholds inplace to ensure consistent outcomes. Estimating ripeness colour, areas of scattered blemishes, and measurements can be difficult and/or subjective between human experts but easily calculated with vision systems. A meat marbling grading system developed by Barbon et al \cite{barbon} trained a k-NN classifier to grade meat samples in $<1s$, which is an improvement on human gradation time of $11s$. Their method was suitable for a range of lighting conditions and animal type due to the illumination normalisation and contrast enhancement processes before classification attaining results of $81.59\%$ and $76.14\%$ for bovine and swine, respectively. 
+Machine vision can outperform humans depending on the task involved. Particularly for borderline cases a machine has finite thresholds in place to ensure consistent outcomes. Estimating ripeness colour, areas of scattered blemishes, and measurements can be difficult and/or subjective between human experts but easily calculated with vision systems. A meat marbling grading system developed by Barbon et al \cite{barbon} trained a k-NN classifier to grade meat samples in $<1s$, which is an improvement on human gradation time of $11s$. Their method was suitable for a range of lighting conditions and animal type due to the illumination normalisation and contrast enhancement processes before classification attaining results of $81.59\%$ and $76.14\%$ for bovine and swine, respectively. 
 
 
 
@@ -892,18 +893,18 @@ Machine vision can outperform humans depending on the task involved. Particularl
 Machine learning is a branch of computer science and AI that uses an iterative 'learning' approach to building a classifier model. The model's weights are updated by an algorithm that, given any training set ($x_1, y_1$), ($x_2, y_2$), ... , ($x_n, y_n$), can learn a function $y = f(x)$ to make prediction of an unseen $x_{test}$ variable. Deep learning refers to the depth of the network or number of layers the model has. Using a deeper network allows for multiple convolutions in a CNN and therefore better abstraction, albeit more computationally expensive. A range of methods have been investigated from very basic MLP networks, SVM, and ANN to more complex architectures such as CNNs.
 
 
-Comparison of MLP neural network and Discriminant Analysis (DA) performed when grading golden delicious starfruit by Abdullah et al \cite{abdullah} found that the colour attributes were more accurately classified by DA, with resulting $95.3\%$ and $90.5\%$ for DA and MLP, respectively. The method used to extract colour features based on hue values $10-74$ were improved with the DA classifier using Wilks-lambda reduction, however the MLP result was unchanged. In order to classify shape characteristics, Fourier discriptors were used generating a $100\%$ accuracy.
+Comparison of MLP neural network and Discriminant Analysis (DA) performed when grading golden delicious star fruit by Abdullah et al \cite{abdullah} found that the colour attributes were more accurately classified by DA, with resulting $95.3\%$ and $90.5\%$ for DA and MLP, respectively. The method used to extract colour features based on hue values $10-74$ were improved with the DA classifier using Wilks-lambda reduction, however the MLP result was unchanged. In order to classify shape characteristics, Fourier descriptors were used generating a $100\%$ accuracy.
 
 
 Zhang et al \cite{zhang} used an FNN to classify a fruit dataset created via on-site collection and on line. After background removal, the 79 features that had been constructed based on colour, texture, and shape were obtained before being reduced via PCA to 14, and used to train the network using 5-fold cross validation. The classification accuracy of $89.1\%$ outperformed other methods tested such as BP, momentum BP, and GA. 
 
-Even for simple networks, the relationship of problem domain to network architechture is not well defined in terms of accuracy. Zuniga et al \cite{zuniga} used a supervised learing approach with small ANNs in order to grade grape seeds from images acquired scattered over a flat-bed scanner. Using a process of analysis and trial and error, the optimal number of neurons is found and a classifier trained giving total accuracy of $86\%$ for the test set. An apple grading system developed by Vakilian and Massah \cite{vakilian} used a 3-layer ANN whilst grading Golden Delicious and Red Delicious varieties with respective overall accuracies of $89\%$ and $92\%$. Extracting the images textural (mean and variance of energy values) features before training separate networks for each apple variant. Finally, they invstigated the width of the ANN's middle layer ranging the architechture of the network from $2-2-4$ to $2-20-4$ finding the optimum width of $2-12-4$. 
+Even for simple networks, the relationship of problem domain to network architecture is not well defined in terms of accuracy. Zuniga et al \cite{zuniga} used a supervised learning approach with small ANNs in order to grade grape seeds from images acquired scattered over a flat-bed scanner. Using a process of analysis and trial and error, the optimal number of neurons is found and a classifier trained giving total accuracy of $86\%$ for the test set. An apple grading system developed by Vakilian and Massah \cite{vakilian} used a 3-layer ANN whilst grading Golden Delicious and Red Delicious varieties with respective overall accuracies of $89\%$ and $92\%$. Extracting the images textural (mean and variance of energy values) features before training separate networks for each apple variant. Finally, they instigated the width of the ANN's middle layer ranging the architecture of the network from $2-2-4$ to $2-20-4$ finding the optimum width of $2-12-4$. 
 
-Conversely, Wang et al \cite{wang} had perfect results using a similar architecture whilst developing a method to find worm-eaten holes in chestnuts. Using Sobel edge detection and using the resulting, filtered region to train a BP network. Conversion occured after only three iterations and achieved $100\%$ for both good and wormhole classes.
+Conversely, Wang et al \cite{wang} had perfect results using a similar architecture whilst developing a method to find worm-eaten holes in chestnuts. Using Sobel edge detection and using the resulting, filtered region to train a BP network. Conversion occurred after only three iterations and achieved $100\%$ for both good and wormhole classes.
 
-When using hyperspectral/multi-spectral data, it is possible to extract internal attributes such as structure, soluable solids (sugar content) and pH levels depending on the subject and wavelength range. Sugiyama et al \cite{sugiyama} were able to detect stems and leaves (foriegn objects) from hyperspectral blueberry images. They found that the foliage was easily extracted at particular wavelengths (1268 and $1317nm$) and were then able to perform a discriminant analysis between the two wavelengths in order to segment and highlight the defects.
+When using hyperspectral/multi-spectral data, it is possible to extract internal attributes such as structure, soluble solids (sugar content) and pH levels depending on the subject and wavelength range. Sugiyama et al \cite{sugiyama} were able to detect stems and leaves (foreign objects) from hyperspectral blueberry images. They found that the foliage was easily extracted at particular wavelengths (1268 and $1317nm$) and were then able to perform a discriminant analysis between the two wavelengths in order to segment and highlight the defects.
 
-An ELM is used to train a single hiden layer feed neural network (SLFN) in a more efficient way by performing a random feature mapping and a least squared formula based linear regression \cite{peng}. Luo et al \cite{luo} used a kernel extreme learning machine to create a mulit-label classifier used in applications where designators are applied to an unseen object. Xu et al \cite{xu} used an ELM to continuously modify it's classifier in a dynamic process due to concept drift in applications. Extra nodes are added when an alert flag is set in the algorithm, and if the error rate drifts too far, the classifier is erased and a new classifier is trained. A novel twin ELM algorithm was used by Wan et al \cite{wan} to train two classifiers simultaneously by creating two non-parallel hyperplanes. 
+An ELM is used to train a single hide layer feed neural network (SLFN) in a more efficient way by performing a random feature mapping and a least squared formula based linear regression \cite{peng}. Luo et al \cite{luo} used a kernel extreme learning machine to create a multi-label classifier used in applications where designators are applied to an unseen object. Xu et al \cite{xu} used an ELM to continuously modify it's classifier in a dynamic process due to concept drift in applications. Extra nodes are added when an alert flag is set in the algorithm, and if the error rate drifts too far, the classifier is erased and a new classifier is trained. A novel twin ELM algorithm was used by Wan et al \cite{wan} to train two classifiers simultaneously by creating two non-parallel hyperplanes. 
 
 ELM have proven to be an efficient and accurate method to train classifiers due to the least square formulation approach to find the solution, opposed to the first and second order gradient descent method \cite{yavs}. the ELM out-performs other classifiers such as SVM and k-NN which have been tested independently \cite{yavs, wan, peng}, due it's combination of fast training times, testing times, high accuracy, and low error rate. Several applications were able to implement ELM in real time systems due to these factors \cite{xu, yavs}.  
 
@@ -925,7 +926,7 @@ SVM can be considered a type of neural network that has only one hidden layer of
 
 
 
-An SVM classifer trained by Sabri et al \cite{sabri} was able to classify ripe and unripe palm oil fruits with an accuracy of $96.59\%$. They compared three methods of feature extraction (Colour histogram, colour moment, and colour correllogram) and two classification methods (SVM and Naive Bayes) in order to find the best results with SVM prevailing. Chen et al \cite{chen} performed an SVM parameter search to find the best combination whilst colour grading beef fat. They segmented the fat by use of boundary tracking, thresholding, and morphology achieving $97.4\%$ classification accuracy. Mizushima and Lu \cite{mizushima} used SVM to generate greyscale images that increased the contrast of Golden Delicious apples for segmentation purposes, before again using SVM to classify them into three grades reporting $1.42\%$ error accross all three classes. They also achieved fast processing speeds of $1.5ms$ using a $3.4 GHz$ CPU showing that SVM is capable of very fast and accurate predictions. 
+An SVM classier trained by Sabri et al \cite{sabri} was able to classify ripe and unripe palm oil fruits with an accuracy of $96.59\%$. They compared three methods of feature extraction (Colour histogram, colour moment, and colour correllogram) and two classification methods (SVM and Naive Bayes) in order to find the best results with SVM prevailing. Chen et al \cite{chen} performed an SVM parameter search to find the best combination whilst colour grading beef fat. They segmented the fat by use of boundary tracking, thresholding, and morphology achieving $97.4\%$ classification accuracy. Mizushima and Lu \cite{mizushima} used SVM to generate greyscale images that increased the contrast of Golden Delicious apples for segmentation purposes, before again using SVM to classify them into three grades reporting $1.42\%$ error across all three classes. They also achieved fast processing speeds of $1.5ms$ using a $3.4 GHz$ CPU showing that SVM is capable of very fast and accurate predictions. 
 
 However, SVM was not the predominant classifier when Alfatini et al \cite{alfatni} designed a palm oil grading application. The method consisted of using a basic grey level aura matrix (BGLAM) technique to extract features followed by an ANN classifier. After assessing ANN, KNN, and SVM classifiers, the best results were realised using the ANN with accuracy of $93\%$ and speed of $0.4s$. An ANN was also used by Bhatt and Pant \cite{bhatt} opposed to SVM, when grading apples based on size, colour, and external defects. Seven selected features were used (3 colour features, 1 size, 1 damage, 1 symmetry, and 1 weight) to train the ANN achieving $90\%$ testing accuracy. 
 
@@ -935,7 +936,7 @@ However, SVM was not the predominant classifier when Alfatini et al \cite{alfatn
 
 Machine learning is a broad term that encapsulates Artificial Intelligence (AI) techniques adopted from many approaches, and can be defined as any  computer program that can perform tasks, after having been trained,  without having to be explicitly told to \cite{langley,shavlik,mohri}. In other words, the program can adapt and configure itself to specific conditions in order to make decisions, improve accuracy or efficiency, control systems, and predict outcomes among many other uses. The \textit{learning} is a term that refers to the process of training a program to perform a task. Given a training set $(x_i, y_i)$, $x\in X$, $y\in Y$ of inputs and outputs, the program must derive a function $f$ that satisfies $f(x_i) = y_i$ for all $i$. A very large training set will improve accuracy, however, this may result in extremely long periods of training (weeks in some cases \cite{bottou}), or over-fitting problems. Training can be sped up, however, by increasing computational power such as high-end GPU's or supercomputer systems.
 
-Neural Networks, in AI, are a commonly implemented method for perfoming many operations and are made up of one or more layers of neurons as shown in Figure \ref{fig:neural_net}. The layers in this image are fully connected, meaning that each neuron in the layer $L_n$ takes inputs from the layer at $L_{n-1}$, and can output to the layer at $L_{n+1}$, however, neurons in the same layer may not be connected. This is the most common approach, although, sometimes it is beneficial to avoid fully connected layers. An SVM classifier can be thought to be modelled as a single layer NN, and other terms have evolved such as Artificial Neural Networks (ANN) and Multi-layer Perceptron (MLP). However, more complex topologies can be constructed with the addition of convolutional steps between layers, known as a Convolutional Neural Network (CNN) and the term deep learning or Deep Neural Networks (DNN) where the depth is seen in the number of connected layers.  
+Neural Networks, in AI, are a commonly implemented method for performing many operations and are made up of one or more layers of neurons as shown in Figure \ref{fig:neural_net}. The layers in this image are fully connected, meaning that each neuron in the layer $L_n$ takes inputs from the layer at $L_{n-1}$, and can output to the layer at $L_{n+1}$, however, neurons in the same layer may not be connected. This is the most common approach, although, sometimes it is beneficial to avoid fully connected layers. An SVM classifier can be thought to be modelled as a single layer NN, and other terms have evolved such as Artificial Neural Networks (ANN) and Multi-layer Perceptron (MLP). However, more complex topologies can be constructed with the addition of convolutional steps between layers, known as a Convolutional Neural Network (CNN) and the term deep learning or Deep Neural Networks (DNN) where the depth is seen in the number of connected layers.  
 
 \begin{figure}[h]
 	\centering
@@ -956,7 +957,7 @@ A comparison of six deep learning architectures performed by Koirala et al \cite
 Ma et al \cite{ma} developed a CNN to perform disease recognition among cucumber leaves including anthracnose, downy mildew, powdery mildew, and target leaf spots. The disease is more easily and less laboriously found on the leaves of the cucumber plant as opposed to the fruit itself. The team used a DCNN to perform the detection with results of $93.4\%$ which outperformed alternative algorithms such as SVM, Random Forrest, and AlexNet.
 
    
-A Faster R-CNN network was used by Sa et al \cite{sa} to demonstrate it's adaptability of perform fruit detection in an orchard. Initially targeting sweet pepper, they fine-tuned a pre-trained network to generate boundng boxes around the fruit instances in each image achieving $F1=0.828$. Extending the work to other fruit orchard datasets with rock melon, strawberry, apple, avocado, mango and orange also delivering good results with scores of $F1=0.848$, $F1=0.948$, $F1=0.938$, $F1=0.932$, $F1=0.942$, and $F1=0.915$, respectively. 
+A Faster R-CNN network was used by Sa et al \cite{sa} to demonstrate it's adaptability of perform fruit detection in an orchard. Initially targeting sweet pepper, they fine-tuned a pre-trained network to generate bounding boxes around the fruit instances in each image achieving $F1=0.828$. Extending the work to other fruit orchard datasets with rock melon, strawberry, apple, avocado, mango and orange also delivering good results with scores of $F1=0.848$, $F1=0.948$, $F1=0.938$, $F1=0.932$, $F1=0.942$, and $F1=0.915$, respectively. 
 
 
 
@@ -964,11 +965,11 @@ A Faster R-CNN network was used by Sa et al \cite{sa} to demonstrate it's adapta
 \section{Control Systems}
 \label{sec:control_sys}
 
-Vision systems have been utilised on many production lines since the early 1980's \cite{kruger}. Computers represent a medium to perform a consistent, verifiable approach to monitoring, recording, and quality control of produced items that may be susceptable to damage, contamination, manufacturing errors, poor quality, out-of-specification features, or defects and require separation from good quality produce. Depending on the goods being monitored, there may be an option to rework, correct, repack, or remake the defected instances, therefore, the control systems will differ greatly between production lines.   
+Vision systems have been utilised on many production lines since the early 1980's \cite{kruger}. Computers represent a medium to perform a consistent, verifiable approach to monitoring, recording, and quality control of produced items that may be susceptible to damage, contamination, manufacturing errors, poor quality, out-of-specification features, or defects and require separation from good quality produce. Depending on the goods being monitored, there may be an option to rework, correct, repack, or remake the defected instances, therefore, the control systems will differ greatly between production lines.   
 
-The fruit grading system by Kondo \cite{kondo} used two robot arms with 3 DOF performing a series of tasks to determine colour, size, shape, and defect. The robots alternate using suction cups to pick up 12 fruit at once in order to acquire images from the above, below, and 4 sides before pushing them into the corresponding lines. 12 camera systems in total are used, with others guiding the manipulators. This, and the project by Michalosa et al \cite{michalosa} combining mobile robots with tooled manipulators serves as examples of precision, complex, robotic control systems. However, as agricultural production line items generally are not required to be assebled or involve precise movements, control systems are relatively easy to implement, without the need for complexities such as several degrees of freedom or specialised tooling to perform the task of quality control.  
+The fruit grading system by Kondo \cite{kondo} used two robot arms with 3 DOF performing a series of tasks to determine colour, size, shape, and defect. The robots alternate using suction cups to pick up 12 fruit at once in order to acquire images from the above, below, and 4 sides before pushing them into the corresponding lines. 12 camera systems in total are used, with others guiding the manipulators. This, and the project by Michalosa et al \cite{michalosa} combining mobile robots with tooled manipulators serves as examples of precision, complex, robotic control systems. However, as agricultural production line items generally are not required to be assembled or involve precise movements, control systems are relatively easy to implement, without the need for complexities such as several degrees of freedom or specialised tooling to perform the task of quality control.  
 
-Blasco et al \cite{blasco} performed grading of pomegranite arils into five categories - White, Pink, Red, Brown, and Unwanted using several pnuematic air nozzles to eject the arils into their appropriate outlets. The system can grade a maximum of $75kg/h$ using six narrow conveyors and is highly dependant of the feeding unit to uniformly distribute the arils on the conveyor belts. As the air nozzles have a conical burst of air, incorrect rejections can occur if they are too closely distributed, or if external factors cuase the arils to roll between the vision system and control. Pneumatic air ejectors helped Nouri-Ahmadabadi et al \cite{nouri-ahmadabadi} in order to grade pistachio kernels from unwanted shells. The system also required a good separation of individual items on the conveyor in order to correctly eject the affected instances. The sorter requyired an $8mm$ separation and could process $22.74kg/h$ with an accuracy of $94.33\%$. 
+Blasco et al \cite{blasco} performed grading of pomegranate arils into five categories - White, Pink, Red, Brown, and Unwanted using several pneumatic air nozzles to eject the arils into their appropriate outlets. The system can grade a maximum of $75kg/h$ using six narrow conveyors and is highly dependant of the feeding unit to uniformly distribute the arils on the conveyor belts. As the air nozzles have a conical burst of air, incorrect rejections can occur if they are too closely distributed, or if external factors cause the arils to roll between the vision system and control. Pneumatic air ejectors helped Nouri-Ahmadabadi et al \cite{nouri-ahmadabadi} in order to grade pistachio kernels from unwanted shells. The system also required a good separation of individual items on the conveyor in order to correctly eject the affected instances. The sorter required an $8mm$ separation and could process $22.74kg/h$ with an accuracy of $94.33\%$. 
 
 A date grading system by Al Ohali \cite{ohali} used electro-mechanical sorting strips placed at the end of the conveyors which guide the fruit into different grades. This type of control must have even larger spacing due to the mechanical movement followed by a return. Systems developed such as Sa'ad et al \cite{saad} mango shape and weight grading project used push/pull actuators to remove defect items and is akin to conveyor process control (i.e. conveyor separation, interleaving conveyors, conveyor gates, etc). Makky and Soni \cite{makky} developed a grading machine for oil palm fresh fruit bunches using stepwise discrimination in order to classify into accept and reject classes with an average success rate of $93.53\%$. Their design (and in-field implementation) employed a gate driven by a limit switch to separate the good fruit from the rejected.
 
@@ -978,17 +979,17 @@ A date grading system by Al Ohali \cite{ohali} used electro-mechanical sorting s
 \section{Summary}
 
 
-A review into applications of machine vision in produce grading showed methods vary substantially depending on application and problem. Geometrical size estimation, colour, and texture analysis are common approaches due to the inherant nature of fruits and vegetables physical appearance in correlation to ripeness or maturity. However, more complicated methods have been used albeit in a more controlled environment such as laboratory settings. Vision systems provide consistent and reproducable results with advantages seen in applications where rapid production speeds, invisible spectrums, lighting concerns, and seasonal variations are factors.
+A review into applications of machine vision in produce grading showed methods vary substantially depending on application and problem. Geometrical size estimation, colour, and texture analysis are common approaches due to the inherent nature of fruits and vegetables physical appearance in correlation to ripeness or maturity. However, more complicated methods have been used albeit in a more controlled environment such as laboratory settings. Vision systems provide consistent and reproducible results with advantages seen in applications where rapid production speeds, invisible spectra, lighting concerns, and seasonal variations are factors.
 
-Size, shape, and volume can be estimated for produce items with the provision that the images are well-segmented individual, or group of items, and that the camera is fixed relative to the subject, and calibrated respectively to obtain a $pixel/mm$ measurement. This callibration can then be used to calculate length, width and shape from a single perspective, and with the addition of a camera orthoganal to the first, volumetric and 3D reconstruction can be achieved. RGB, CIE-Lab, or HSV colour spaces can provide all the relevant information required to differentiate or grade fruit and vegetables into catgories of ripeness or maturity levels in with high accuracy, especially compared to the subjectivity of human quality checkers. Many fruits, for example, begin green and progress to yellow, orange, or red colours which can be exploited using CIE-Lab's $a*$ and $b*$ channels. FIS have been used successfully in grading of fruit and vegetables by implementing fuzzification methods such as PCA or binning features such as colour space, measurement, and texture reducing the classification to a simple decision tree problem.  
+Size, shape, and volume can be estimated for produce items with the provision that the images are well-segmented individual, or group of items, and that the camera is fixed relative to the subject, and calibrated respectively to obtain a $pixel/mm$ measurement. This calibration can then be used to calculate length, width and shape from a single perspective, and with the addition of a camera orthogonal to the first, volumetric and 3D reconstruction can be achieved. RGB, CIE-Lab, or HSV colour spaces can provide all the relevant information required to differentiate or grade fruit and vegetables into categories of ripeness or maturity levels in with high accuracy, especially compared to the subjectivity of human quality checkers. Many fruits, for example, begin green and progress to yellow, orange, or red colours which can be exploited using CIE-Lab's $a*$ and $b*$ channels. FIS have been used successfully in grading of fruit and vegetables by implementing fuzzification methods such as PCA or binning features such as colour space, measurement, and texture reducing the classification to a simple decision tree problem.  
 
 Selection of features is an important step in producing an accurate classification or detection model. Some results show that only a few hand-selected features can be highly accurate given the features are of significance to the deterministic characteristics of the subject. However, research also indicates that extracting and applying dozens of features may not produce a model that performs as well as others, indicating a disconnection between algorithmic and human discrimination.
 
-Physical properties can be analysed in a non-destuctive manner by way of spectroscopy - a process of measuring the internal reflectance of light through an object - using varying wavelengths in order to evaluate the internal structure, or flourescence - measuring the exitation of an object in one wavelength, generated by a light source in another. NIR and SWIR wavelength analysis can reveal information regarding sugars, acidity, moisture, and firmness with a high level of accuracy, and thermographic and X-ray imaging has also played a part in the review. This type of analysis in the ranges of $1\mu m-15\mu m$ (SWIR/MWIR/LWIR) and $0.01nm-10nm$ (X-ray) generally take longer to process at the time of testing due to the sensor requirements with a resolution-time-cost balance used in most cases depending on application, making it diffuclt to employ these systems on high-speed production lines.  
+Physical properties can be analysed in a non-destructive manner by way of spectroscopy - a process of measuring the internal reflectance of light through an object - using varying wavelengths in order to evaluate the internal structure, or fluorescence - measuring the excitation of an object in one wavelength, generated by a light source in another. NIR and SWIR wavelength analysis can reveal information regarding sugars, acidity, moisture, and firmness with a high level of accuracy, and thermographic and X-ray imaging has also played a part in the review. This type of analysis in the ranges of $1\mu m-15\mu m$ (SWIR/MWIR/LWIR) and $0.01nm-10nm$ (X-ray) generally take longer to process at the time of testing due to the sensor requirements with a resolution-time-cost balance used in most cases depending on application, making it difficult to employ these systems on high-speed production lines.  
 
-The NIR region ($750nm-1000nm$), however, can be used to effectively identify defects and characteristics in objects which would be otherwise unseen by human eyes using cheap, fast, and readily available CCD and CMOS sensors. These properties can help distinguish varieties, classify grades, and detect defects with the ability to penetrate into sub-surface of skinned fruit and vegetables. Bruise detection is a common use for NIR imaging given the cameras ability to detect reflectance in the water absorbtion bands of the spectrum, highlighting the affected areas. This is advantageous in applications where the skin is darker than the flesh such as kiwi, potatoes, pear and apples.
+The NIR region ($750nm-1000nm$), however, can be used to effectively identify defects and characteristics in objects which would be otherwise unseen by human eyes using cheap, fast, and readily available CCD and CMOS sensors. These properties can help distinguish varieties, classify grades, and detect defects with the ability to penetrate into sub-surface of skinned fruit and vegetables. Bruise detection is a common use for NIR imaging given the cameras ability to detect reflectance in the water absorption bands of the spectrum, highlighting the affected areas. This is advantageous in applications where the skin is darker than the flesh such as kiwi, potatoes, pear and apples.
 
-Strawberries are very suceptible to damage, therefore, handling and transport becomes of concern particularly if the desire is to mechanically sort them in to categories or remove defective instances. Picking in the field and packing the berries into containers generates many opportunities to bruise or injure the delicate flesh before the quality inspection process begins. However, some progress has been made in the way of robot picking that can precisely pick and place berries into the containers using machine vision to operate the picking mechanism and perform the quality or ripeness gradation, simulteneously. Using a robot to pick a strawberry could see rates of $>10s/berry$ with current technology and is therefore mostly experimental in nature given that the volume of strawberries on a typical farm or packing room. Each method to process the strawberries in this review have been singulated either by way of laboratory conditions, robotised harvesting, or human placement on a conveyor before the vision system assesses the quality. However, each of these options either costs more in terms of time, or labour, due to the delicate placement requiremed in order to yield unspoiled fruit. The calyx removal system from \cite{lin} used a system of roller rods for separation of the strawberries into singular specimens before removing the calyx with a waterjet. As the metal rollers apply friction to the berries in order to transport them, they are likely to have bruising and other skin damage after processing, which means the produce is no longer acceptable by retail markets, as was the purpose of their project. 
+Strawberries are very susceptible to damage, therefore, handling and transport becomes of concern particularly if the desire is to mechanically sort them in to categories or remove defective instances. Picking in the field and packing the berries into containers generates many opportunities to bruise or injure the delicate flesh before the quality inspection process begins. However, some progress has been made in the way of robot picking that can precisely pick and place berries into the containers using machine vision to operate the picking mechanism and perform the quality or ripeness gradation, simultaneously. Using a robot to pick a strawberry could see rates of $>10s/berry$ with current technology and is therefore mostly experimental in nature given that the volume of strawberries on a typical farm or packing room. Each method to process the strawberries in this review have been strangulated either by way of laboratory conditions, robotised harvesting, or human placement on a conveyor before the vision system assesses the quality. However, each of these options either costs more in terms of time, or labour, due to the delicate placement required in order to yield unspoiled fruit. The calyx removal system from \cite{lin} used a system of roller rods for separation of the strawberries into singular specimens before removing the calyx with a water jet. As the metal rollers apply friction to the berries in order to transport them, they are likely to have bruising and other skin damage after processing, which means the produce is no longer acceptable by retail markets, as was the purpose of their project. 
 
 Conversely, the apples, figs, and citrus fruits reviewed have robust skin to protect them from being constantly moved, rolled, placed, and pushed during the grading and control processes. Speeds of $54,000/h$ for apples, $90kg/h$ for figs, $72,000/h$ for dates, and $5/s$ for citrus fruit have been noted proving that machine vision is currently powerful enough to process this type of volume if the automated handling is efficient and appropriate.
 
@@ -1015,7 +1016,7 @@ Both of these projects made use of software frameworks such as Microsoft's Visua
 
 Visual Studio\textregistered is an Integrated Development Environment (IDE) designed for applications based in $C\#$ or $C++$ programming languages predominantly. It provides project configuration tools, automatic library attachment, a GUI designer and linker tool which can increase the speed of development and facilitate changes and updates in an agile manner. Although it is free to use for development under the Community edition, commercial distribution would be subject to enterprise licence. 
 
-HALCON\texttrademark uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast library of common image processing functions. The IDE contains several visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as wel as a list of control variables (integers, arrays, floats, etc.) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON\texttrademark application code can be converted directly to $C\#$ or $C++$ code in order for integration into commercial applications such as Visual Studio\textregistered. As Magnificent had a pre-existing licence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework portfolio.
+HALCON\texttrademark uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast library of common image processing functions. The IDE contains several visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as well as a list of control variables (integers, arrays, floats, etc.) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON\texttrademark application code can be converted directly to $C\#$ or $C++$ code in order for integration into commercial applications such as Visual Studio\textregistered. As Magnificent had a pre-existing licence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework portfolio.
 
 
 \section{Polarisation}
@@ -1041,7 +1042,7 @@ Polarization is the process of converting electromagnetic waves of varying polar
 	\label{fig:polarization}
 \end{figure}%
 
-As this project would take advantage of the NIR spectrum with the intention of capturing bruising or other invisible defects, the light sources must be capable of generating the required illumination. Previous projects used LED sources as they are more efficient and can be operated using $12V$ power, but are generally limited to small bands of radiation. Some LED manufacturers claim to generate a high Colour Rendering Index (CRI), which is a measure of the comparison to natural light. However these LED's generally do not output wavelengths greater than $750nm$ as there is no need in most cases, which is much of the reason they are more efficient in terms of power. Figure \ref{fig:LED_response} plots the power distribution of the Cree\textregistered CXB3590 COB LED's spectrum over four different colour temperatures confirming the absence of NIR wavelengths. This means that LED's may not be useful and a more appropriate light source such as halogen or tungsten must be used.
+As this project would take advantage of the NIR spectrum with the intention of capturing bruising or other invisible defects, the light sources must be capable of generating the required illumination. Previous projects used LED sources as they are more efficient and can be operated using $12V$ power, but are generally limited to small bands of radiation. Some LED manufacturers claim to generate a high Colour Rendering Index (CRI), which is a measure of the comparison to natural light. However these LED's generally do not output wavelengths greater than $750nm$ as there is no need in most cases, which is much of the reason they are more efficient in terms of power. Figure \ref{fig:LED_response} plots the power distribution of the Cree\textregistered CXB3590 LED's spectrum over four different colour temperatures confirming the absence of NIR wavelengths. This means that LED's may not be useful and a more appropriate light source such as halogen or tungsten must be used.
 
 
 \begin{figure}[h]
@@ -1088,7 +1089,7 @@ As mentioned earlier, there will be four images acquired for each punnet that pa
 
 \subsection{Processing Time}
 
-Since the introduction of the heat-seal machine, the production line has been sped up to almost the maximum capable ($120 punnets/min$), in order to increase throughput. This equates to $2 punnets/sec$ or $500ms/ punnet$ which must allow detection, capture, processing, and decision making. Therefore, the processing time may be as little as $300-400ms$, which limits the ability to solve complex or inefficient algorithms. State-of-the-art classifiers can take more time to perform evaluations with simple classifiers taking a few seconds in some examples. This will require careful consideration if each punnet is to be assessed, and these methods will be addressed in later chapters.
+Since the introduction of the heat-seal machine, the production line has been sped up to almost the maximum capable ($120$ punnets per minute), in order to increase throughput. This equates to two punnets per second or $500ms$ per punnet which must allow detection, capture, processing, and decision making. Therefore, the processing time may be as little as $300-400ms$, which limits the ability to solve complex or inefficient algorithms. State-of-the-art classifiers can take more time to perform evaluations with simple classifiers taking a few seconds in some examples. This will require careful consideration if each punnet is to be assessed, and these methods will be addressed in later chapters.
 
 
 \subsection{Motion Blur}
@@ -1097,46 +1098,32 @@ The conveyor line speed of $16.8m/min$, or $28cm/sec$ allows for two punnets per
 
 The strawberry punnets used are $12cmx13.5cm$ which correlates to a pixel resolution of $1000x1200$ within the fixed field of view of the cameras. In order to calculate the motion of an object in an image, we take the product of the velocity and shutter speed:
 \begin{equation}
-	M = V_p\times t_s
+M = V_p\times t_s
+\label{eq:motion}
 \end{equation}  
 
 where the motion ($M$) units are relative to velocity ($V_p$) units (for example: pixels, $mm$, or $\%$), and the shutter speed ($t_s$) is relative to the movement in time. 
 
-For the punnet length in centimetres $P_{cm}$, and the punnet length in pixels $P_p$, calculating the punnet pixels per centimetre in the direction of travel:
+For the punnet length in centimetres $P_{cm}$, and the punnet length in pixels $P_p$, calculating the pixels per centimetre in the direction of travel:
 \begin{equation}
-	P = \frac{P_p}{P_{cm}} = \frac{1000}{12} = 83.33 pixels/cm
+P = \frac{P_p}{P_{cm}} = \frac{1000}{12} = 83.33 pixels/cm
 \end{equation}
- 
-The pixel velocity per second in relation to line speed $L$:
+
+The pixel velocity per second in relation to line speed:
 \begin{equation}
-	V_p = L \times P = 28 \times 83.33 = 2333.33 pixels/sec
+V_p = L \times P = 28 \times 83.33 = 2333.33 pixels/sec
 \end{equation} 
 
 where $L$ is the production line speed of $28cm/sec$.
 
 To find the shutter speed for one pixel of movement :
 \begin{equation}
-	t_s = \frac{M}{V_p} = \frac{1}{2333.33} = 0.000428572 \approx 0.5ms
+t_s = \frac{M}{V_p} = \frac{1}{2333.33} = 0.000428572 \approx 0.5ms
+\label{eq:shutter}
 \end{equation}
 
-However, one pixel of movement over the length of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$. The image displayed in Figure \ref{fig:blur_1} has minor blurring resulting from a $5ms$ shutter speed, and is calculated to have $11.6$ pixels of movement or $1.16\%$ blur. 
+where one pixel of movement over the length of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$.
 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\textwidth]{blur_1.jpg}
-	\caption{Example of image captured with the shutter speed at $5ms$. This results in slightly blurred edges including seeds, berry lines and calyx, and reduces image quality.}
-	\label{fig:blur_1}
-\end{figure}
-
-This motion blur is in contrast to the image in Figure \ref{fig:sharp_1} where the shutter speed is reduced to $2ms$ and shows the seeds and edges clearly, albeit still blurred according to the calculation. Therefore any shutter speed less than $2ms$ will be sufficient to perform the analysis given that that means the motion difference is $<4.66$ pixels which calculates to $\frac{4.66}{1000} = 0.00466 = 0.4\%$.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\textwidth]{sharp_1.jpg}
-	\caption{Example of image captured with the shutter speed at $2ms$. This reduces blur and the details are seen clearly.}
-	\label{fig:sharp_1}
-\end{figure}
 
 
 \subsection{Orientation of Punnets}
@@ -1146,9 +1133,12 @@ The strawberry punnet heat-seal machine has been designed to be as efficient as 
 As the vision system feeds in-line into the heat-sealer, the vision system must also process the punnets with long edge leading. Since the punnets are transported through the enclosure by suspension on thin v-belts using only the lip of the plastic punnet, it will simply fall into the bottom of the enclosure if the punnet was wrongly oriented. The packing staff also need to correctly orient the punnets on the packing line so that they enter the vision enclosure correctly. However, this may be difficult to keep consistent as the staff turnover is quite high, and each packer will pack as fast as possible due to the fact that they are remunerated relative to the amount of punnets packed. Therefore a fail-safe system must be devised in order to either ensure that the punnets are correctly oriented before they reach the enclosure, or there is a sensor/detection unit which will alert operators if the situation arises.
 
 
+
+
+
 \subsection{Ejector Synchronization}
 
-The pneumatic ejector system is attached to the production line outside the enclosure, and therefore requires it's own punnet sensor in order to eject a punnet as it moves past the pnuematic manifold (blower head). Added to this, the punnet sensor inside the enclosure must be perfectly synchronised to the punnet sensor at the ejector so the correctly identified reject punnet is ejected and not an ajacent punnet. The ejector accuracy is proof in the system for operators and must be able to correctly eject the failed punnets for inspection, otherwise confidence in the system will reduce.
+The pneumatic ejector system is attached to the production line outside the enclosure, and therefore requires it's own punnet sensor in order to eject a punnet as it moves past the pneumatic manifold (blower head). Added to this, the punnet sensor inside the enclosure must be perfectly synchronised to the punnet sensor at the ejector so the correctly identified reject punnet is ejected and not an adjacent punnet. The ejector accuracy is proof in the system for operators and must be able to correctly eject the failed punnets for inspection, otherwise confidence in the system will reduce.
 
 
 \subsection{Conveyor Motion}
@@ -1206,8 +1196,6 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 \section{Prototype Construction}
 \label{sec:prototype_contruct}
 
-The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarisers, and cameras. This prototype was then used as the framework when moved from bench to production. The frame, constructed from aluminium modular T-slot ($20mmx20mm$) components, supports stainless steel sheets that are moulded to be curved on top and bottom in order to diffuse and direct light and reduce flat surface reflections whilst creating a more evenly distributed background and intensity. 
-
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
@@ -1219,38 +1207,119 @@ The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fi
 
 
 
-Front and back panels were added with hinges to allow access for staging and adjustments but block the outside light interference. Halogen work lamps were used to supply lighting as they were capable of emitting the full spectrum required for both the RGB and IR imaging systems. They are readily available, with power up to $500W$ per lamp and a footprint small enough to fit eight inside the enclosure. Several lighting and polarizing configurations were tested (using a thin film type polaroid) for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}), before the AC flickering problem was realised. This test was successful in proving that the polarizer reduced specularities, and that powerful lighting was required, however, it highlighted the inherant problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polarizer film would be less effective when bent or warped. 
+The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarisers, and cameras. This prototype was then used as the framework when moved from bench to production. The frame is constructed from aluminium modular T-slot ($20mmx20mm$) components, supports stainless steel sheets that are moulded to be curved on top and bottom in order to diffuse and direct light and reduce flat surface reflections whilst creating a more evenly distributed background and intensity. Front and back panel doors allow access for staging and adjustments but block the outside light interference. 
+
+The design of the frame and doors included the ability to manoeuvre lighting mounts, cameras, diffusers, and image targets easily by opening each side of the enclosure to position the relevant components. T-slots along the length of the framework uprights and cross supports allowed cameras and lighting to have two degrees of movement (in the horizontal plane) for positioning.  
 
 
 
-Converting the system to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical fluorescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they are more efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Automotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum. Figure \ref{fig:bench_led_rigid} depicts the final configuration of LEDs and polariser.
+
+\subsection{Lighting}
+
+Halogen work lamps supplied lighting as they were capable of emitting the full spectrum required for both the RGB and IR imaging systems. They are readily available, with power up to $500W$ per lamp and a footprint small enough to fit eight inside the enclosure. Several lighting and polarizing configurations were tested (using a thin film type polaroid) for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}), before the AC flickering problem was realised. This test was successful in proving that the polariser reduced specularities, and that powerful lighting was required, however, it highlighted the inherent problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polariser film would be less effective when bent or warped. 
+
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}{.32\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
 		\includegraphics[width=\linewidth,angle=270,origin=c]{bench_hal_film.jpg}
 		\caption{}
 		\label{fig:bench_hal_film}
 	\end{subfigure}%
-	\begin{subfigure}{.32\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
 		\includegraphics[width=\linewidth,angle=270,origin=c]{bench_hal_film2.jpg}
 		\caption{}
 		\label{fig:bench_hal_film2}
 	\end{subfigure}%
-	\begin{subfigure}{.32\textwidth}
-		\centering
-		\includegraphics[width=\linewidth,angle=270,origin=c]{bench_led_rigid.jpg}
-		\caption{}
-		\label{fig:bench_led_rigid}
-	\end{subfigure}%
-	\caption{Left to right: (a) Halogen work lamps tested facing upwards with a thin film polaroid , (b) halogen work lamps in a diagolally upward direction with a dark-field blocker, and (c) installation of LED light bars and rigid polarizing material.}
+	\caption{Left to right: (a) Halogen work lamps tested facing upwards with a thin film polaroid , and (b) halogen work lamps in a diagonally upward direction with a dark-field blocker.}
 	\label{fig:test3}
 \end{figure}
 
 
-An independent power supply was needed to power the prototype, which at this stage, only included the top illumination cluster. The $12V/5A$ power supply was only able to power either the LEDs or halogens for testing purposes, and not both at once due to the current limitation, indicating that a more powerful source was required.   
+Converting the lighting to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical fluorescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they are more efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Automotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum. 
+
+Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) using four $150W/240VAC$ halogen lamps with camera shutter speeds of $1\mu s$, $1ms$, and $2ms$, show that the lighting intensity is sufficient for high speed applications.
+	
+
+\begin{figure}[t]
+	\centering
+	\begin{subfigure}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{500us.png}
+		\caption{}
+		\label{fig:500us}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{1ms.png}
+		\caption{}
+		\label{fig:1ms}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{2ms.png}
+		\caption{}
+		\label{fig:2ms}
+	\end{subfigure}%
+	\caption{Images taken using shutter speeds: (a) $500\mu s$, (b) $1ms$, and (c) $2ms$.}
+	\label{}
+\end{figure} 
+
+The combined total illumination power consumption (for the top view) is $4\times 150W = 600W$. However, it is well established that halogen lamps are inefficient in regards to lumens per watt ($lm/W$) given they emit much more of the electromagnetic spectrum. White LEDs are manufactured to have much higher efficiency, generating only visible wavelengths. 
+
+Cheng and Cheng \cite{cheng} found LEDs to be up to $75\%$ more efficient where as Alonzo et al \cite{alonzo} found a $60\%$ reduction .Therefore, it is estimated that the LED power consumption for the same lumen should be approximately on third that of halogen. As the number of LEDs can be increased, this is not seen as a limitation of the system, however keeping power, heating, and brightness to a minimum will reduce risk of failure or injury. 
+
+The $72W$ Cree\textregistered LED Light Bars are flood type (an example of the LED bar is shown in Figure \ref{fig:LED_bar}) in order to diffuse, rather than focus the light, to avoid specular reflections. They have a built-in heat-sink as well as high Ingress Protection (IP) rating as they are designed to be fitted externally on off-road vehicles. This gives confidence of consistency and durability in the volatile production environment. Figure \ref{fig:LED_30w} displays the system's midsection LED type which are Cree\textregistered $30W$ LED Light Bar.
+
+
+\begin{figure}[t]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{LED_bar.png}
+		\caption{}
+		\label{fig:LED_bar.png}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{LED_30w.png}
+		\caption{}
+		\label{fig:LED_30w}
+	\end{subfigure}%
+	\caption{(a) Cree\textregistered 72W LED Light Bar, and (b) Cree\textregistered 30W LED Light Bar.}
+	\label{}
+\end{figure} 
+
+
+Figure \ref{fig:bench_led_rigid} depicts the final configuration of the top half of the system's LEDs and rigid polariser.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth,angle=270,origin=c]{bench_led_rigid.jpg}
+	\caption{installation of LED light bars and rigid polarizing material.}
+	\label{fig:bench_led_rigid}
+\end{figure}%
+
+\subsubsection{Minimum Illumination}
+
+Minimum Illumination ...
+
+
+
+\subsection{Cameras}
+
+Flir\textregistered is a leading industrial, machine vision, surveillance, defence, and thermal camera company with a broad range of cameras to choose from depending on application. The Flir\textregistered cameras used for the SQA inspection are Blackfly\textregistered USB3 $2.3 MP$, 1920 x 1200, $41FPS$, with a Sony\textregistered IMX249 sensor capable of shutter speeds in the range $19\mu s-3.9s$ making it suitable for fast-paced applications. Quantum Efficiency (QE) of the monochrome model is approximately $10\%$ at $1000nm$ which is not ideal, but offers more spectral range and less noise at NIR wavelengths than other sensors. The cameras are powered via USB, which helps to reduce complexity, and include opto-isolated I/O for triggering. The comprehensive list of adjustable parameters make these cameras highly controllable or highly automatic, depending on user requirements, and can be programmed to function via software using the API packages. 
+
+As the cameras have specific operating temperatures in the range ($0^{\circ}C-45^{\circ}C$), they will be susceptible to overheating and must be monitored (via the onboard temperature sensor, accessed using the API), particularly given that farm temperatures can reach $45^{\circ}C$ during the day. Therefore fans and peltier devices are added to the cameras in order to allow cooling if required. Intake fans apply positive pressure to the entire unit in an attempt to keep dust and dirt out of the acquisition area as lens/diffuser/polariser cleaning may become a common occurrence.
+
+
+
+\subsection{Power Supply}
+
+An independent power supply was needed to power the prototype, which at this stage, only included the top illumination cluster. The $12V/5A$ power supply was only able to power either the LEDs or halogens for testing purposes, and not both at once due to the current limitation, indicating that a more powerful source was required. As the enclosure will ultimately be positioned on the production floor, the electronics must accompany the vision system, and provide a substantial amount of DC power. Therefore, a $12V$ power supply is required for the lighting and peripheral devices which can satisfy the total power requirements.
 
 
 
@@ -1284,15 +1353,13 @@ The PC consists of an Azus\textregistered P8Z68 Deluxe Gen3 Motherboard, with a 
 
 The pneumatic system is driven by a main air compressor that supplies the strawberry packing shed with air in order to operate various machinery, including the heat seal machine. A regulator is added with the solenoid controlled by the Phidget\texttrademark microprocessor. A compressed air nozzle is added to the out-feed conveyor opposite the exit ramp in order to supply a short (approx. $0.1s$), pressurised (up to $10bar$), air burst when a defect punnet is detected. The nozzle is designed for this purpose with a horizontal array of small apertures that can exert a jet pattern of $100mm$ x $55mm$ at $300mm$ from the nozzle. Only one bar of pressure is recommended at that distance, however, as the punnet is fairly heavy ($250g-300g$), the required force may be more.
 
-Flir\textregistered is a leading industrial, machine vision, surveillance, defence, and thermal camera company with a broad range of cameras to choose from depending on application. The Flir\textregistered cameras used for the SQA inspection are Blackfly\textregistered USB3 $2.3 MP$, 1920 x 1200, $41FPS$, with a Sony\textregistered IMX249 sensor capable of shutter speeds in the range $19\mu s-3.9s$ making it suitable for fast-paced applications. Quantum Efficiency (QE) of the monochrome model is approximately $10\%$ at $1000nm$ which is not ideal, but offers more spectral range and less noise at NIR wavelengths than other sensors. The cameras are powered via USB, which helps to reduce complexity, and include opto-isolated I/O for triggering. The comprehensive list of adjustable parameters make these cameras highly controllable or highly automatic, depending on user requirements, and can be programmed to function via software using the API packages. 
-
-As the cameras have specific operating temperatures in the range ($0^{\circ}C-45^{\circ}C$), they will be susceptible to overheating and must be monitored (via the onboard temperature sensor, accessed using the API), particularly given that farm temperatures can reach $45^{\circ}C$ during the day. Therefore fans and peltier devices are added to the cameras in order to allow cooling if required. Intake fans apply positive pressure to the entire unit in an attempt to keep dust and dirt out of the acquisition area as lens/diffuser/polariser cleaning may become a common occurrence.
-
 
 \subsubsection{Hardware Control}
 \label{sec:phidget}
 
 Various hardware devices will need to be controllable via the main application, to enable efficient main lighting, signal lighting, peltier, pneumatics, and conveyor control, as well as inputs from some peripheral devices and sensors.
+
+The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
 
 \begin{wrapfigure}{r}{0.6\textwidth}
 	\begin{center}
@@ -1301,8 +1368,6 @@ Various hardware devices will need to be controllable via the main application, 
 	\caption{Image of the Phidget\texttrademark I/O board and the interface connectors on the top and bottom.}
 	\label{fig:phidget}
 \end{wrapfigure} 
-
-The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
 
 
 Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
@@ -1409,12 +1474,12 @@ Lastly, HALCON\texttrademark is an interpreted language with the unique property
 
 There are two methods of integrating HALCON\texttrademark with other applications, given that HDevelop\texttrademark is not compatible with other programming languages. An entire script may be inserted in the filesystem, such that it may be called from the main application, after importing the appropriate libraries. This method uses a wrapper function from $C\#$ or $C++$ to call a native HDevelop\texttrademark script as an \textit{External Function Call}. The other method uses the same library to program HDevelop\texttrademark objects in $C\#$ or $C++$ native language. In other words, the operations performed are written locally and natively, using external libraries of objects and operations. HALCON\texttrademark can also convert and export code directly into $C\#$ or $C++$ in order to be used as a dynamic class which would require regular updating, changes or improvements.
 
-Visual Studio\textregistered is a well know development platform whose native programming language is $C\#$, embedded in a rich, professional IDE where creating state-of-the-art apps is common, given the UI development tools (for GUI apps), library linking, debugging tools, git, and deployment features. However, the most important parts of the SQA application, namely the GUI and image processing are supported thus making both of these application suitble for the project.
+Visual Studio\textregistered is a well know development platform whose native programming language is $C\#$, embedded in a rich, professional IDE where creating state-of-the-art apps is common, given the UI development tools (for GUI apps), library linking, debugging tools, git, and deployment features. However, the most important parts of the SQA application, namely the GUI and image processing are supported thus making both of these application suitable for the project.
 
 
 \subsubsection{User Interface}
 
-The GUI must be simple to use but capable of displaying all the relevent information to inform operators of the status, history, and show images of the punnets being processed. Various controls and indicators are required for both operation and development/debugging such as start/stop buttons, images from all four cameras, camera temperature monitoring, number of punnets assessed, reject information, and sensitivity adjustment. Figure \ref{fig:GUI} presents a screenshot of the GUI after many development iterations and testing. Green bar indicators were added which change colour if either a defect is detected (right hand side indicators), or system status changes such as stop/start, or thread broken (left indicators).  
+The GUI must be simple to use but capable of displaying all the relevant information to inform operators of the status, history, and show images of the punnets being processed. Various controls and indicators are required for both operation and development/debugging such as start/stop buttons, images from all four cameras, camera temperature monitoring, number of punnets assessed, reject information, and sensitivity adjustment. Figure \ref{fig:GUI} presents a screenshot of the GUI after many development iterations and testing. Green bar indicators were added which change colour if either a defect is detected (right hand side indicators), or system status changes such as stop/start, or thread broken (left indicators).  
 
 
 \begin{figure}[h]
@@ -1429,7 +1494,7 @@ HALCON\texttrademark's integration capabilities allow the GUI to display a HWind
 
 As HALCON\texttrademark is designed to process images and video streams, it has been developed to include a many camera protocols such as 1394IIDC (FireWire\texttrademark), GigEVision\textregistered, USB3Vision\textregistered, $\mu$eye\texttrademark, including Microsoft\textregistered's DirectShow\textregistered for generic cameras, and support to grab images from file. For each of the protocols, multiple camera manufacturers (even some camera models) are specifically implemented within the IDE along with a camera connection wizard and code exporter. The wizard allows experimentation with the various controls in GUI style, before exporting the required code to repeat the actions in a new script. 
 
-The application waits until the acquisition sequence is complete before processing and displaying the punnet, therefore updating the GUI at rates up to $2fps$, and might occur whilst images are being captured. This problem is solved with asynchronous threads that can perform acquisition, image processing, I/O, and display seperately yet simultaneously.
+The application waits until the acquisition sequence is complete before processing and displaying the punnet, therefore updating the GUI at rates up to $2fps$, and might occur whilst images are being captured. This problem is solved with asynchronous threads that can perform acquisition, image processing, I/O, and display separately yet simultaneously.
 
 
 \subsubsection{Asynchronous Threading}
@@ -1450,7 +1515,7 @@ Each of these functions are dependant of each other, but may occur simultaneousl
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.95\textwidth]{software_flow_1.png}
-	\caption{Flow chart of the main application with each of the five threads (including main) and their progress reporting.}
+	\caption{Flow chart of the main application with each of the five threads (including main).}
 	\label{fig:software_flow_1}
 \end{figure} 
 
@@ -1460,7 +1525,7 @@ The lighting enclosure is designed with visible RGB on one end and halogen IR on
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.95\textwidth]{software_flow_2.png}
-	\caption{Flow chart of the main application with each of the five threads (including main) and their progress reporting.}
+	\caption{Flow chart of the progress reporting which occurs after each thread cycle.}
 	\label{fig:software_flow_2}
 \end{figure} 
 
@@ -1655,7 +1720,7 @@ Cross-polarisation has been successful in removing the many specular reflections
 Experimental lighting trials conducted provided visual representation of using different incident angles for the lighting sources with and without the cross-polarisation. Table \ref{tab:lighting_orientation} illustrates the lighting configurations used for $0^{\circ}$, $45^{\circ}$, and $90^{\circ}$ incident angles with single polarisation and cross-polarisation images for comparison. This clearly shows that the more direct the source is to the object, the greater the chance of shadows and specularity, leading to the optimal lighting angle of $135^{\circ}$ (directed upwards away from the target).
 
 
-The experiments also confirmed that the polaroid sheets are more consistent when rigid, opposed to thin, flexible versions. For example, when using the thin sheets in the examples from Table \ref{tab:lighting_orientation}, some leakage occurred originating from bent or warped sections of the polaroid. When straightened, the problem could be eliminated, however this is still not appropriate for the application given the material may expand over time with temperature.  
+The experiments also confirmed that the polaroid sheets are more consistent when rigid, opposed to thin, flexible versions. For example, when using the thin sheets in the examples from Table \ref{tab:lighting_orientation}, some leakage occurred originating from bent or warped sections of the polaroid. When straightened, the problem could be eliminated, however this is still not appropriate for the application given the material may expand over time with temperature, therefore rigid sheets are fabricated and fitted.  
 
 
 \begin{figure}[h!]
@@ -1667,12 +1732,37 @@ The experiments also confirmed that the polaroid sheets are more consistent when
 
 
 
+\subsection{Motion Blur} 
+
+Using Equation \ref{eq:shutter}, the motion blur of one pixel is $~0.5ms$ which accounts for a $0.1\%$ difference. The image displayed in Figure \ref{fig:blur_1} has minor blurring resulting from a $5ms$ shutter speed, and is calculated to have $11.6$ pixels of movement or $1.16\%$ blur. 
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{blur_1.jpg}
+	\caption{Example of image captured with the shutter speed at $5ms$. This results in slightly blurred edges including seeds, berry lines and calyx, and reduces image quality.}
+	\label{fig:blur_1}
+\end{figure}
+
+This motion blur is in contrast to the image in Figure \ref{fig:sharp_1} where the shutter speed is reduced to $2ms$ and shows the seeds and edges clearly, albeit still blurred according to the calculation. Therefore any shutter speed less than $2ms$ will be sufficient to perform the analysis given that that means the motion blur is $4.66$ pixels which calculates to $\frac{4.66}{1000} = 0.00466 = 0.4\%$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{sharp_1.jpg}
+	\caption{Example of image captured with the shutter speed at $2ms$. This reduces blur and the details are seen clearly.}
+	\label{fig:sharp_1}
+\end{figure}
+
+
+
+
+
 \subsection{Image processing}
 
 
 The colour algorithm implemented uses the above visible image to determine ripeness based on colour features extracted via manual methods such as thresholding, segmentation, and morphology. This approach relies upon lighting intensity, and requires fine-tuning in the event of illumination changes. 
 
-Using the Halcon\texttrademark IDE, the algorithms can be visualised before deploying them into production by utilising the debugging environment. When the method is finalised, it is converted to $C\#$ and inserted into the application as an \textit{external procedure}. Using HSV and CIE-Lab colour spaces, the analyses determine the amount of good and bad pixels with the help of pre-processing and post-processing techniques. The detection of defect region is largely based on the area of connected adjacent pixels which are found to be outside the acceptable bands of each optimal colour channel.   
+Using the HALCON\texttrademark IDE, the algorithms can be visualised before deploying them into production by utilising the debugging environment. When the method is finalised, it is converted to $C\#$ and inserted into the application as an \textit{external procedure}. Using HSV and CIE-Lab colour spaces, the analyses determine the amount of good and bad pixels with the help of pre-processing and post-processing techniques. The detection of defect region is largely based on the area of connected adjacent pixels which are found to be outside the acceptable bands of each optimal colour channel.   
 
 The results indicate that the accuracy for under ripe algorithm will score $>80\%$, and over ripe at $>70\%$. As a quantitative test set of images has not yet been developed, the accuracy is based on a sample size of around 25-30 images per class. Further work is undertaken in order to increase the formal test set to approximately 500.   
 
@@ -1685,7 +1775,7 @@ The results indicate that the accuracy for under ripe algorithm will score $>80\
 \end{figure}  
 
 
-Figure \ref{fig:seg_4} displays the results of blob detection/segmantation, morphology, colour analysis, and size measurements of the blobs. The callibration to real-world size uses camera pose information and was under development when the screenshot was taken. 
+Figure \ref{fig:seg_4} displays the results of blob detection/segmentation, morphology, colour analysis, and size measurements of the blobs. The calibration to real-world size uses camera pose information and was under development when the screenshot was taken. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1744,7 +1834,7 @@ This shows that the intensity of the reflection is determined by the intensity o
 \label{eqn:eta}
 \end{equation}
 
-where the wavenumber $k = \omega \sqrt{\mu \epsilon'}$ and $\mu$ is the magnetic permeability of the material. This relates to its susceptibility to magnetic fields, and for diamagnetic and paramagnetic materials (which includes most metals and dielectrics), is considered to be the same as that of free space and $\mu = \mu_0 = 1$ \cite{ulaby}. 
+where the wave number $k = \omega \sqrt{\mu \epsilon'}$ and $\mu$ is the magnetic permeability of the material. This relates to its susceptibility to magnetic fields, and for diamagnetic and paramagnetic materials (which includes most metals and dielectrics), is considered to be the same as that of free space and $\mu = \mu_0 = 1$ \cite{ulaby}. 
 
 The electric permittivity, however, is very small for most metals as $\epsilon = \epsilon_r \epsilon_0 = 1 \times 8.85\times10^{-12}$. Substituting this into equation \ref{eqn:eta}, maintains a large value for intrinsic impedance $\eta_2$. thus, the majority of the wave is reflected at this angle. This is comparable to a short circuit on a transmission line resulting in a reflection coefficient of -1 indicating a full reflection even though inverted. This shows that the intensity at the specular angle is not diminished very much by the surface of a smooth conducting surface.
 
@@ -2008,7 +2098,7 @@ The main electronic devices can be seen in Figure \ref{fig:system_construct_1} w
 
 
 
-Smaller LED bars ($30W$ opposed to $72W$) were required to be installed in the mid section of each side of the enclosure, given that the main LED's were upward-facing, the illumination diminished significantly from the sides of the conveyor. These four devices were also paired together, taking up two outputs on the distribution device. 
+Smaller LED bars ($30W$ opposed to $72W$) were required to be installed in the mid section of each side of the enclosure (shown in Figure \ref{fig:system_construct_2}) in order to generate more side lighting. Given that the main LED's were upward-facing, the illumination diminished significantly from the sides of the conveyor, which lead to images with shadowy occlusions particularly around the edges of the punnet. These four devices were also paired together, occupying two outputs on the distribution device. 
 
 
 Figure \ref{fig:system_construct_2} shows the main, and auxiliary, LED's installed along with an RGB camera in order to perform some lighting testing. The diffusers and polarising sheets are sandwiched together and form a rectangular tunnel around the acquisition chamber, with the intense lighting outside diffusing and polarizing the light as it passes through. The external cladding (powder-coated steel sheets) covers each end of the lighting enclosure (above and below) and protrudes out from the rollers around the conveyors for safety purposes. 
@@ -2046,7 +2136,7 @@ The final steps for the installation of the lighting systems required wiring and
 \subsubsection{Electronic Control System}
 
 
-The microcontroller must perform physical electronic tasks which are required for the application including pneumatics, lights, and physical buttons. Each item may differ in power requirements, ranging from $3.3V-24V$ in both low and high current capacities. Therefore, a relay bank is used to switch the high-powered circuits such as lighting, whilst the Phidget\texttrademark's outputs are robust and can accomodate medium and low-powered devices. 
+The microcontroller must perform physical electronic tasks which are required for the application including pneumatics, lights, and physical buttons. Each item may differ in power requirements, ranging from $3.3V-24V$ in both low and high current capacities. Therefore, a relay bank is used to switch the high-powered circuits such as lighting, whilst the Phidget\texttrademark's outputs are robust and can accommodate medium and low-powered devices. 
 
 
 A programmatic looping worker thread services each I/O port periodically by performing three tasks; checking errors from microcontroller and other threads, processing interrupts generated by peripheral inputs, and processing output actions when required. The I/O worker thread is spawned from the main program which loops at $200ms$ per iteration. Each cycle, the worker uses the Phidget\texttrademark API call \textit{IsAttached()} method to check if the device is attached to the running application. If it is not, the input interrupt cannot be registered and the actions will not occur, therefore, an error message is displayed and the program must re-start. Although this is not a common failure, it is required in order to prevent I/O communication problems in future given the long hours and constant usage. This worker also monitors the health of the remaining threads which perform acquisition and image processing. 
@@ -2217,7 +2307,7 @@ Analysis of water absorption bands discussed in Chapter \ref{sec:lit} were used 
 		\label{fig:bruise_ir_2}
 	\end{subfigure}%
 	
-	\caption{Bruise detection images illustrating the contrast between (a) un-bruised berries, and (b) freshly-bruised berries.}
+	\caption{Bruise detection images illustrating the contrast between (a) non-bruised berries, and (b) freshly-bruised berries.}
 	\label{}
 \end{figure}
 
@@ -2252,13 +2342,13 @@ Therefore the v-belts and rail spacing required adjustment to the length of the 
 		\label{fig:inside_enclosure_2}
 	\end{subfigure}%
 	
-	\caption{(a) Punnet catcher installed in order to stop falling punnets due to mis-transfer, (b) view in opposite direction of flow showing camera separation, punnet catcher, and v-belts.}
+	\caption{(a) Punnet catcher installed in order to stop falling punnets due to mistransfer, (b) view in opposite direction of flow showing camera separation, punnet catcher, and v-belts.}
 	\label{}
 \end{figure}
 
 A mechanical switch was added to the underside of the catcher so that when a punnet falls, a signal can be sent to the microprocessor, which then stops the production line and applies the buzzer sound to alert an operator. This event is far less likely than the alternative in terms of interrupting the production line, and can be corrected in a much quicker time-frame.
 
-The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure, before feeding directly into the heat-seal machine (Figure \ref{fig:production_final}). The external cladding is modified to allow the punnet's entry and exit points without external illumination noise, or safety hazards, by constructing a protruding tunnel on both sides of the enclosure. A touchscreen was also installed to allow operators and developers easy access to the UI buttons and display. The commercially available Dell\textregistered P2418HT 24-inch capacitive touch screen can help development, as well as production, with the ability to debug whilst on the production line.
+The final production version is an in-line system with a conveyor feeding into and out of the camera enclosure, before feeding directly into the heat-seal machine (Figure \ref{fig:production_final}). The external cladding is modified to allow the punnets entry and exit points without external illumination noise, or safety hazards, by constructing a protruding tunnel on both sides of the enclosure. A touchscreen was also installed to allow operators and developers easy access to the UI buttons and display. The commercially available Dell\textregistered P2418HT 24-inch capacitive touch screen can help development, as well as production, with the ability to debug whilst on the production line.
 
 
 \begin{figure}[ht]
@@ -2268,7 +2358,7 @@ The final production version is an in-line system with a conveyor feeding into a
 	\label{fig:production_final}
 \end{figure}
 
-Conversely, the PC is installed under the out-feed conveyor and connected to the internet via a WiFi so that development can occur with a remote client. This gives developers the flexibility of being able to monitor production, develop the application, or make changes and troubleshoot without production room presence required.
+Conversely, the PC is installed under the out-feed conveyor and connected to the internet via a Wi-Fi so that development can occur with a remote client. This gives developers the flexibility of being able to monitor production, develop the application, or make changes and troubleshoot without production room presence required.
 
 
 
@@ -2366,7 +2456,7 @@ The production line in Queensland (Wamuran) differs from that of South Australia
 
 The main conveyor pictured is designed to keep running as much as possible in order to keep the packers working continuously. As the packers are paid by the number of punnets they pack, conveyor stoppages result in less packing (when their immediate space on the conveyor is full) hence, loss of income for both company and workers. Therefore, the heat-seal and subsequent vision system jogging mechanism cannot be wired directly to the main conveyor, meaning that there will be an accumulation of punnets towards the transition point, should the vision system or heat-seal machine stop. However, the main conveyor runs considerably slower than the in-feed to the vision system, resulting in taking more time to build up, and a good separation of containers as they enter the enclosure.
 
-Two more algorithms were added to the repertoire (over ripe, and too small) with labelling of a test set completed. The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and created a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresdholding and morphology parameters, keeping the overall method unchanged. 
+Two more algorithms were added to the repertoire (over ripe, and too small) with labelling of a test set completed. The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and created a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresholding and morphology parameters, keeping the overall method unchanged. 
 
 
 \begin{figure}[ht]
@@ -2441,7 +2531,7 @@ The total amount of punnets assessed by the system in the first 12 months was 89
 
 \section{Abstract}
 
-\textbf{A novel system has been designed where colour analysis algorithms facilitate grading ripeness of packed strawberries on a fast-paced production line. The Strawberry quality system acquires images at the rate of $2 punnets/s$, and feeds the images to the two algorithms. Using CIELAB and HSV colourspaces, both under and over ripe colour features are analysed  resulting in F1 scores of $94.7\%$ and $90.6\%$ respectively, when measured on multiple defect samples. The single defect class results scored $80.1\%$ and $77.1\%$. The algorithms total time for the current hardware configuration is $121ms$ maximum and $80ms$ average, which is well below the required time window of $500ms$.}
+\textbf{A novel system has been designed where colour analysis algorithms facilitate grading ripeness of packed strawberries on a fast-paced production line. The Strawberry quality system acquires images at the rate of $2 punnets/s$, and feeds the images to the two algorithms. Using CIE-Lab and HSV colourspaces, both under and over ripe colour features are analysed  resulting in F1 scores of $94.7\%$ and $90.6\%$ respectively, when measured on multiple defect samples. The single defect class results scored $80.1\%$ and $77.1\%$. The algorithms total time for the current hardware configuration is $121ms$ maximum and $80ms$ average, which is well below the required time window of $500ms$.}
 	
 \textbf{$105,542$ punnets have been assessed by the algorithm and has rejected $4,952$ in total ($4.9\%$),  helping to ensure the quality of the product being shipped to customers and avoiding costly returns.}
 
@@ -2454,7 +2544,7 @@ Colour analysis is commonly used as an indication of the quality of fruits and v
 
 Other methods for fruit and vegetable quality analysis have been adopted such as infra-red image analysis or spectroscopy \cite{guthrie, bureau, yande}, and hyperspectral imaging \cite{renfu} \cite{jianwei, mendoza, rajkumar}. These acquisition systems can be used to detect defects such as internal structure estimation, soluble solids content, under-skin defects and pests, and maturity. Utilizing different wavelengths, it is a common approach to find a suitable spectral position to observe the best contrast for defects, making these features easier to extract\cite{ariana, piotr}. The system under development is intended to use a combination of colour (RGB) and infra-red (IR) bands in the future, to assess specific types of reject class such as bruising and potentially pest infestation. 
 
-Using a conveyor system, L. Xu et al \cite{xu} achieved very good results in classifying shape, ripeness, and size of strawberries. The measurements are attained by using a K-means clustering method to find seven vertical and seven horizontal axis lines. Size feature was calculated by performing experiments to find the ratio of pixels/mm and simply dividing the pixel measurements of the berry by this ratio. Using the CIELAB colour space, a dominant colour was found in the berry by means of a histogram windowing method. Liming et al \cite{liming} used a similar approach to grade single strawberries on a conveyor in real-time. They extracted shape features by using normalised line segments on the contour with a K-means clustering method to evaluate the shape, size features by experimentally attaining the camera-object distances in terms of mm/pixel, and colour features using a CIELAB a-channel histogram windowing method to find the dominant red colour. The CIELAB colour space was also used by Lin et al \cite{lin} when they developed a strawberry calyx removal system. The single strawberries entered the vision enclosure on roller rods, before being analysed using image processing to find orientation, and finally a high pressure water jet was used to cut the green parts of the strawberry off and discarding.
+Using a conveyor system, L. Xu et al \cite{xu} achieved very good results in classifying shape, ripeness, and size of strawberries. The measurements are attained by using a K-means clustering method to find seven vertical and seven horizontal axis lines. Size feature was calculated by performing experiments to find the ratio of pixels/mm and simply dividing the pixel measurements of the berry by this ratio. Using the CIE-Lab colour space, a dominant colour was found in the berry by means of a histogram windowing method. Liming et al \cite{liming} used a similar approach to grade single strawberries on a conveyor in real-time. They extracted shape features by using normalised line segments on the contour with a K-means clustering method to evaluate the shape, size features by experimentally attaining the camera-object distances in terms of mm/pixel, and colour features using a CIE-Lab a-channel histogram windowing method to find the dominant red colour. The CIE-Lab colour space was also used by Lin et al \cite{lin} when they developed a strawberry calyx removal system. The single strawberries entered the vision enclosure on roller rods, before being analysed using image processing to find orientation, and finally a high pressure water jet was used to cut the green parts of the strawberry off and discarding.
 
 
 The strawberry field-harvesting robot commissioned by Hayashi et al \cite{hayashi} within a greenhouse, used a method of calculating the 'Maturity Level' by analysing specific bands of the HSI colour space which represented ripe and under ripe colours and intensities. As it was determined that the strawberries would be either under ripe or ripe, with the event of over-ripeness ignored due to the constant operation of the harvester. They chose values of H,S, and I that equated to the colours red for ripe, whilst green, light pink, and dark pink were used for under ripe in order to evaluate the ripeness before the robot picked the berries. Satoshi et al \cite{yamamoto2} also developed a robot harvester which used a red LED, green LED, and white LED to illuminate the scene in different colours before acquiring images with the same camera in order to best extract the subtle differences in shades of red and pink on the berries. 
@@ -2619,7 +2709,7 @@ Shadowy areas of the punnet can be falsely classified as over ripe berry, as the
 
 Using a known vector range in the $HSV$ colourspace $\{H_0, S_0, V_0\}, \{H_1, S_1, V_1\},....,\{H_n, S_n, V_n\}$, the good quality berry colour is  extracted and compared to the entire berry region as shown in Figure \ref{fig:over_berries}, \ref{fig:over_hue} and \ref{fig:over_diff}. Note that if there is sufficient under ripe regions the algorithm will end before this point. Therefore, the vector range is inclusive of under ripe colours ensuring only darker pixels are extracted in the difference of the two regions.
 
-In order solve the problem of berry edges, an intensity threshold is applied which ignores the darker areas of the punnet including voids, berries too dark to grade, and edges where shadows occur (Fig. \ref{fig:over_light}). Performing an intersection of these regions with the dark pixels found ensures that any over ripe candidate must lie on the un-occluded surfaces of berries in order to be classified properly. 
+In order solve the problem of berry edges, an intensity threshold is applied which ignores the darker areas of the punnet including voids, berries too dark to grade, and edges where shadows occur (Fig. \ref{fig:over_light}). Performing an intersection of these regions with the dark pixels found ensures that any over ripe candidate must lie on the non-occluded surfaces of berries in order to be classified properly. 
 \begin{equation}
 R_{cand} = R_{berry} - R_{good}
 \label{diff_berry_hue}
@@ -2967,7 +3057,7 @@ Each cluster is made up of either four visible LED's, or two IR, triggered by a 
 
 Previously, the photo-electric sensor triggered the camera directly, however, the LED's pulse must be synchronised with the camera shutter in order to capture the objects with good illumination. Therefore, the Arduino\texttrademark is added to receive the sensor signal, before performing the acquisition sequence. Table \ref{tab:mosfets} displays the LED clusters grouped into eight distinct MOSFET lines with either $200W$ or $400W$ of power drawn out of a maximum of $1200$. 
 
-In order for the two sets of left and right pairs to illuminate simultaneously, the gates of both MOSFETs are connected to the same output pin on the controller. This pin must be held activated whilst the respective camera is triggered, to ensure that the full illumination of the lighting has occured before the shutter opens, deactivating when the shutter closes. The image in Figure \ref{fig:mosfet_arduino} was taken after all connections from the controller to the MOSFETs was completed and the heavy-gauge wiring attached, ready for installation. 
+In order for the two sets of left and right pairs to illuminate simultaneously, the gates of both MOSFETs are connected to the same output pin on the controller. This pin must be held activated whilst the respective camera is triggered, to ensure that the full illumination of the lighting has occurred before the shutter opens, deactivating when the shutter closes. The image in Figure \ref{fig:mosfet_arduino} was taken after all connections from the controller to the MOSFETs was completed and the heavy-gauge wiring attached, ready for installation. 
 
 
 Although all eight MOSFETs can be used in parallel, the operating characteristics of the strobing can allow placement of cameras at any position along the conveyor, given that the respective LEDs illuminate at the correct time for acquisition. Taking this into account, placement of LEDs and cameras can be strategically designed so that the opposing lighting is never activated creating background noise.  
@@ -3014,7 +3104,7 @@ Although all eight MOSFETs can be used in parallel, the operating characteristic
 		\caption{}
 		\label{fig:LED_door_2}
 	\end{subfigure}%
-	\caption{(a) The eight MOSFETS wired to the Arduino\texttrademark output pins, and heavy-guage wire connecting the power cables to the drain and source terminals, (b) right and (c) left panel doors with LEDs installed in offset pattern.}
+	\caption{(a) The eight MOSFETs wired to the Arduino\texttrademark output pins, and heavy-guage wire connecting the power cables to the drain and source terminals, (b) right and (c) left panel doors with LEDs installed in offset pattern.}
 	\label{}
 \end{figure}
 
@@ -3084,7 +3174,7 @@ With the southern season concluded, and in a small window before full production
 		\caption{}
 		\label{fig:user_panel}
 	\end{subfigure}%
-	\caption{(a) Inner conveyor motor and v-belts installed on the new frame, (b) operator panel incorperating physical start/stop buttons, pneumatic gauge, and indicators as well as touchscreen interactions.}
+	\caption{(a) Inner conveyor motor and v-belts installed on the new frame, (b) operator panel incorporating physical start/stop buttons, pneumatic gauge, and indicators as well as touchscreen interactions.}
 	\label{}
 \end{figure}
 
@@ -3129,7 +3219,7 @@ Figure \ref{fig:pneumatics_conveyor} shows the internal components with the red 
 	\begin{center}
 		\includegraphics[height=0.4\textwidth,angle=270]{pneumatics_conveyor.jpg}
 	\end{center}
-	\caption{Image taken after the installation of the red belt conveyor, ejector, punnet sensor, and pneumatic system. The $240V$ electrical sockets for mains-powered devices can aslo be seen.}
+	\caption{Image taken after the installation of the red belt conveyor, ejector, punnet sensor, and pneumatic system. The $240V$ electrical sockets for mains-powered devices can also be seen.}
 	\label{fig:pneumatics_conveyor}
 \end{wrapfigure} 
 
