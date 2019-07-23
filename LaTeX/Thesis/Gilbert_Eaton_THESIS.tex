@@ -203,17 +203,6 @@
 \pagenumbering{roman}
 
 
-%----------------------------------------------------------------------------------------
-%	Confidential SECTION
-%----------------------------------------------------------------------------------------
-
-\chapter*{Confidentiality}
-
-\textbf{This thesis contains intellectual property assigned to Griffith University and Magnificent Pty. Ltd. (ARC Linkage partner). Viewing and replication of this document requires signing a formal Non-disclosure Agreement (NDA) with the university.} \\[0.5cm] % 
-
-
-\vfill
-
 
 
 
@@ -294,7 +283,7 @@ Due to the unique requirements of the candidature in conjunction with an industr
 
 I would like to acknowledge and thank the Project Manager Rudi Bartels for his guidance whilst allowing me to work independently and flexibly in order to succeed, and to Ray Daniels and Magnificent for the opportunity to be part of an interesting and challenging project. The knowledge and experience gained through this will be invaluable in my future.
 
-Thanks also go to Griffith University's Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise, as well as the faith they put in me during my PhD. Dr. William Wang and Mr. Lee Hamilton have also worked periodically on the project and provided invaluable knowledge and experiences.
+Thanks to Griffith University's Dr. Andrew Busch and Prof. Yongsheng Gao for their guidance and knowledgeable advise, as well as the faith they put in me during my PhD. Dr. William Wang and Mr. Lee Hamilton have also worked periodically on the project and provided invaluable knowledge and experiences.
 
 Lastly, I would like to thank my family, especially my wife Kate, for her support and unwavering belief in me, as well as my mother Margaret and mother-in-law Ann, without whom none of this would be possible. My children Kyle, Tazmyn, and Davina have been a substantial part of my motivation and inspiration toward these achievements.
 
@@ -1007,22 +996,27 @@ Machine learning and Deep learning play a vital role in produce grading, along w
 \chapter{Prototype and Design}
 \label{sec:I}
 
-The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements}. Added to this are some underlying assumptions and design requests from Magnificent, given their previous project experience which has provided the company with knowledge and tools to assist the development of the new system. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and synchronisation. 
+The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements} such as footprint, safety, power and compressed air usage, and continuity. Added to this are some underlying assumptions and design requests from Magnificent, given their previous project experience which has provided the company with knowledge and tools to assist the development of the new system. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and synchronisation. Some aspects from these projects can be applied to the system being developed including polarisation techniques, camera characterisation, power systems, and software packages. 
 
 
-\section{Software Framework}
 
-Both of these projects made use of software frameworks such as Microsoft's Visual Studio\textregistered for application design, GUI, debugging, and deployment. A licence for MVTec Software GmbH's HALCON\texttrademark had previously been purchased for the aforementioned projects. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
+
+\section{Design Considerations and Constraint Analysis}
+\label{sec:challenges}
+
+\subsection{Software Framework}
+
+Both of the above mentioned projects made use of software frameworks such as Microsoft's Visual Studio\textregistered for application design, GUI, debugging, and deployment. A licence for MVTec Software GmbH's HALCON\texttrademark had previously been purchased, and a knowledge base established. Therefore, the use of these frameworks was requested by Magnificent due to the successful implementation in past projects, availability, and ease of use.
 
 Visual Studio\textregistered is an Integrated Development Environment (IDE) designed for applications based in $C\#$ or $C++$ programming languages predominantly. It provides project configuration tools, automatic library attachment, a GUI designer and linker tool which can increase the speed of development and facilitate changes and updates in an agile manner. Although it is free to use for development under the Community edition, commercial distribution would be subject to enterprise licence. 
 
-HALCON\texttrademark uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast library of common image processing functions. The IDE contains several visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as well as a list of control variables (integers, arrays, floats, etc.) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters of functions and see the results by simply re-running that line of code, with the resulting changes visualised instantly. The HALCON\texttrademark application code can be converted directly to $C\#$ or $C++$ code in order for integration into commercial applications such as Visual Studio\textregistered. As Magnificent had a pre-existing licence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework portfolio.
+HALCON\texttrademark uses it's own programming language and IDE to create applications, and has the power to speed up development by implementing a vast library of common image processing functions. The IDE contains several visualisation windows such as code editor, current image (overlayed with current operational markers), and a window displaying all the objects created in the program including regions, images, colour channel operation steps, and contours as well as a list of control variables (integers, arrays, floats, etc.) and their values if set. As the variables are cached in a database during development, the user can interactively adjust parameters or functions and see the results by simply re-running the relevant lines of code, with the resulting changes visualised instantly. The HALCON\texttrademark application code can be converted directly to $C\#$ or $C++$ code in order for integration into commercial applications such as Visual Studio\textregistered. As Magnificent had a pre-existing licence for this software, the efficiency increases, and compatibility of both software packages, any future development was to undertaken utilising the existing framework portfolio.
 
 
-\section{Polarisation}
+\subsection{Polarisation}
 
 
-Polariser material had been advantageous in previous projects given the various lighting conditions, both outdoors and within a greenhouse by way of reducing glare. However, specular reflections are an inherent property of strawberries due to their pitted exterior, effectively making small crater-shaped edges that can cause specularities from any angle. Figure \ref{fig:strawberry_glare} shows a number of white areas around the seeds caused by direct reflection of the light source \cite{gurney}. As the craters are round, and the berry's surface is curved in 2D, the specular reflections are unavoidable.
+Polariser material had been advantageous in previous projects given the various lighting conditions, both outdoors and within a greenhouse by way of reducing glare. However, specular reflections are an inherent property of strawberries due to their pitted exterior, effectively making small crater-shaped edges that can cause specularities from any angle. Figure \ref{fig:strawberry_glare} shows a number of white areas around the seeds caused by direct reflection of the light source \cite{gurney}. As the craters are round, and the berry's surface is curved in three dimensions, the specular reflections are unavoidable.
 
 
 \begin{figure}[h]
@@ -1042,7 +1036,7 @@ Polarization is the process of converting electromagnetic waves of varying polar
 	\label{fig:polarization}
 \end{figure}%
 
-As this project would take advantage of the NIR spectrum with the intention of capturing bruising or other invisible defects, the light sources must be capable of generating the required illumination. Previous projects used LED sources as they are more efficient and can be operated using $12V$ power, but are generally limited to small bands of radiation. Some LED manufacturers claim to generate a high Colour Rendering Index (CRI), which is a measure of the comparison to natural light. However these LED's generally do not output wavelengths greater than $750nm$ as there is no need in most cases, which is much of the reason they are more efficient in terms of power. Figure \ref{fig:LED_response} plots the power distribution of the Cree\textregistered CXB3590 LED's spectrum over four different colour temperatures confirming the absence of NIR wavelengths. This means that LED's may not be useful and a more appropriate light source such as halogen or tungsten must be used.
+As this project would take advantage of the NIR spectrum with the intention of capturing bruising or other invisible defects, the light sources must be capable of generating the required illumination. Previous projects used LED sources as they are more efficient and can be operated using $12V$ power, but are generally limited to small bands of radiation. Some LED manufacturers claim to generate a high Colour Rendering Index (CRI), which is a measure of the comparison to natural light. However these LED's generally do not output wavelengths greater than $750nm$ as there is no need in most cases, which is much of the reason they are more efficient in terms of power. Figure \ref{fig:LED_response} plots the power distribution of the Cree\textregistered CXB3590 LED's spectrum over four different colour temperatures confirming the absence of NIR wavelengths \cite{led_power}. This means that LED's may not be useful and a more appropriate light source such as halogen or tungsten must be used.
 
 
 \begin{figure}[h]
@@ -1053,18 +1047,14 @@ As this project would take advantage of the NIR spectrum with the intention of c
 \end{figure}%
 
 
-Due to processing restrictions, it is a requirement that the punnets be imaged from top and bottom, therefore requiring an obstruction-free conveyor system to transport punnets through the acquisition section. This can accomplished by using the lip of the punnet (around the top of the container) as a handle point where thin v-belts can suspend the punnets giving little visible impact to the scene and allowing full view of both the top and bottom, simultaneously.
-
-A pneumatic ejection system will remove the defective containers from the production line. Research in Chapter \ref{sec:control_sys} indicates this is a common practice in agricultural vision systems and is facilitated by the air system provided in the requirements list. As the strawberries are already packaged when entering the vision system, the entire punnet will be ejected, so that it may be repacked and re-analysed by the system.
 
 
-
-\section{Design Considerations and Constraint Analysis}
-\label{sec:challenges}
 
 \subsection{Punnet Imaging}
 
-Shiv Ram Dubey and Anand Singh Jalal \cite{shiv} investigated fruits and vegetables as well as some fruit diseases using a multi-class SVM classifiers as a solution. Qiang LÜ and Mingjie TANG \cite{lu} devised a method for identifying Kiwi fruit, which had hidden bruises under the skin, by using hyper-spectral imaging and a parallelepiped classification approach. These experiments, as well as other work \cite{elmasry2,chiu}, have used a static imaging system. That is, the subject was stationary and usually had a clean, flat, un-obscured background that makes the process of segmentation quite trivial. ElMasry et al \cite{elmasry2} acquired images of single strawberries on a plain white background in order to perform their testing and experiments using multi-spectral cameras to detect quality attributes. 
+Due to processing restrictions, it is a requirement that the punnets be imaged from top and bottom simultaneously, therefore requiring an obstruction-free conveyor system to transport punnets through the acquisition section. This can accomplished by using the lip of the punnet (around the top of the container) as a handle point where thin v-belts can suspend the punnets giving little visible impact to the scene and allowing full view of both the top and bottom, simultaneously.
+
+Shiv Ram Dubey and Anand Singh Jalal \cite{shiv} investigated fruits and vegetables as well as some fruit diseases using a multi-class SVM classifier as a solution. Qiang LÜ and Mingjie TANG \cite{lu} devised a method for identifying Kiwi fruit, which had hidden bruises under the skin, by using hyper-spectral imaging and a parallelepiped classification approach. These experiments, as well as other work \cite{elmasry2,chiu}, have used a static imaging system. That is, the subject was stationary and usually had a clean, flat, un-obscured background that makes the process of segmentation quite trivial. ElMasry et al \cite{elmasry2} acquired images of single strawberries on a plain white background in order to perform their testing and experiments using multi-spectral cameras to detect quality attributes. 
 
 However, the system described in this report requires images to be taken of full punnets as they move down the production line. The line speed of production equates to two punnets per second and leaves little room for camera setting adjustments such as shutter speed and gain. Additionally, the strawberries will be located inside a plastic punnet and may result in poor images due to the following:  
 
@@ -1085,20 +1075,20 @@ Lighting for the cameras must have enough power to illuminate the subjects with 
 
 \subsection{Asynchronous Acquisition of Images}
 
-As mentioned earlier, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times. The application will then save all the images acquired in a defined storage device in order to preserve production quality traceability.   
+As mentioned in Chapter \ref{sec:requirements}, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times. The application will then save all the images acquired in a defined storage device in order to preserve production quality traceability.   
 
 \subsection{Processing Time}
 
-Since the introduction of the heat-seal machine, the production line has been sped up to almost the maximum capable ($120$ punnets per minute), in order to increase throughput. This equates to two punnets per second or $500ms$ per punnet which must allow detection, capture, processing, and decision making. Therefore, the processing time may be as little as $300-400ms$, which limits the ability to solve complex or inefficient algorithms. State-of-the-art classifiers can take more time to perform evaluations with simple classifiers taking a few seconds in some examples. This will require careful consideration if each punnet is to be assessed, and these methods will be addressed in later chapters.
+Since the introduction of the heat-seal machine, the production line has been sped up to almost the maximum capable ($120$ punnets per minute), in order to increase throughput. This equates to two punnets per second or $500ms$ per punnet which must allow detection, capture, processing, and decision making. Therefore, the processing time may be as little as $300-400ms$, which limits the ability to solve complex or inefficient algorithms. State-of-the-art classifiers can take more time to perform evaluations with simple classifiers taking a few seconds in some examples. This will require careful consideration if each punnet is to be assessed, and will be addressed in later chapters.
 
 
 \subsection{Motion Blur}
 
-The conveyor line speed of $16.8m/min$, or $28cm/sec$ allows for two punnets per second to pass the cameras. If the camera's shutter is left open too long, the moving object will become blurred due to the spacial changes that occur whilst capturing the image. This leads to smoothed edges, a blurred overall appearance, reduced precision, and potential false artefacts which could influence the performance of the algorithms.
+The conveyor line speed of $16.8m/min$, or $28cm/sec$ allows for two punnets per second to transit the enclosure. If the camera's shutter is left open too long, the moving object will become blurred due to the spacial displacement which occurs during capture of the image. This leads to smoothed edges, a blurred overall appearance, reduced precision, and potential false artefacts which could influence the performance of the algorithms.
 
-The strawberry punnets used are $12cmx13.5cm$ which correlates to a pixel resolution of $1000x1200$ within the fixed field of view of the cameras. In order to calculate the motion of an object in an image, we take the product of the velocity and shutter speed:
+The strawberry punnets used are $12cm\times 13.5cm$ which correlates to a pixel resolution of $1000x1200$ within the fixed field of view of the cameras. In order to calculate the motion of an object in an image, we take the product of the velocity and shutter speed:
 \begin{equation}
-M = V_p\times t_s
+M = V_p\cdot t_s
 \label{eq:motion}
 \end{equation}  
 
@@ -1109,9 +1099,9 @@ For the punnet length in centimetres $P_{cm}$, and the punnet length in pixels $
 P = \frac{P_p}{P_{cm}} = \frac{1000}{12} = 83.33 pixels/cm
 \end{equation}
 
-The pixel velocity per second in relation to line speed:
+Calculating the pixel velocity per second in relation to line speed, the product of pixels per centimetre and line speed is:
 \begin{equation}
-V_p = L \times P = 28 \times 83.33 = 2333.33 pixels/sec
+V_p = L \cdot P = 28 \cdot 83.33 = 2333.33 pixels/sec
 \end{equation} 
 
 where $L$ is the production line speed of $28cm/sec$.
@@ -1122,7 +1112,7 @@ t_s = \frac{M}{V_p} = \frac{1}{2333.33} = 0.000428572 \approx 0.5ms
 \label{eq:shutter}
 \end{equation}
 
-where one pixel of movement over the length of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$.
+where one pixel of movement over the distance of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$. Whilst in order to generate zero motion blur, a shutter speed of $<428\mu s$ is required.
 
 
 
@@ -1138,7 +1128,9 @@ As the vision system feeds in-line into the heat-sealer, the vision system must 
 
 \subsection{Ejector Synchronization}
 
-The pneumatic ejector system is attached to the production line outside the enclosure, and therefore requires it's own punnet sensor in order to eject a punnet as it moves past the pneumatic manifold (blower head). Added to this, the punnet sensor inside the enclosure must be perfectly synchronised to the punnet sensor at the ejector so the correctly identified reject punnet is ejected and not an adjacent punnet. The ejector accuracy is proof in the system for operators and must be able to correctly eject the failed punnets for inspection, otherwise confidence in the system will reduce.
+A pneumatic ejection system will remove the defective containers from the production line. Research in Chapter \ref{sec:control_sys} indicates this is a common practice in agricultural vision systems and is facilitated by the air system provided in the requirements list. As the strawberries are already packaged when entering the vision system, the entire punnet will be ejected, so that it may be repacked and re-analysed by the system.
+
+The system is attached to the production line outside the enclosure, and therefore requires it's own punnet sensor in order to eject a punnet as it moves past the pneumatic manifold (blower head). Added to this, the punnet sensor inside the enclosure must be perfectly synchronised to the punnet sensor at the ejector so the correctly identified reject punnet is ejected and not an adjacent punnet. The ejector accuracy is proof in the system for operators and must be able to correctly eject the failed punnets for inspection, otherwise confidence in the system will reduce.
 
 
 \subsection{Conveyor Motion}
@@ -1191,11 +1183,32 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 
 
 
+\section{Strawberry Quality Assurance (SQA) System Design}
 
 
-\section{Prototype Construction}
+The Computer Aided Design (CAD) generated cross-section of the proposed SQA system in Figure \ref{fig:cross_sec} illustrates the concept of the conveyors (in-feed, out-feed, and v-belt), placement of cameras and PC, as well as the polariser sheet. This illustration integrates the already existing frame constructed for the prototype, therefore the prototype could be retrofitted to include in-feed and out-feed conveyors, and the v-belt system.  
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\linewidth]{QAS_cross_sec.jpg}
+	\caption{Cross-section of the SQA system illustrating the polarizing filter (blue sheet), the v-belts, and four cameras in position above and below.}
+	\label{fig:cross_sec}
+\end{figure}%
+
+
+
+The PC is placed under the out-feed conveyor (as there is less probability of impact hazard), and runs the master program which controls every peripheral including cameras, peltier devices and fans, pneumatics, operator controls, image processing, and GUI. The microprocessor is a stand-alone industrial board (Phidget\texttrademark) and controls the I/O as described in Section \ref{sec:phidget}.
+
+As indicated in the requirements (Section \ref{sec:requirements}), the farm packing facility will provide power of either $240VAC$ - single phase, or $400VAC$ - three phase as well as a single compressed air line. However, the system is designed to use only $240VAC$ as higher power is not required by any function, including conveyor motion.
+
+
+\subsection{Prototype Construction}
 \label{sec:prototype_contruct}
 
+
+The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarisers, and cameras. This prototype was then used as the framework when moved from bench to production. The frame is constructed from aluminium modular T-slot ($20mmx20mm$) components, supports stainless steel sheets that are moulded to be curved on top and bottom in order to diffuse and direct light and reduce flat surface reflections whilst creating a more evenly distributed background and intensity. Front and back panel doors allow access for staging and adjustments but block the outside light interference.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
@@ -1205,16 +1218,34 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 	\label{fig:bench_construct}
 \end{wrapfigure} 
 
-
-
-The enclosure was firstly constructed offline as a bench prototype (Fig. \ref{fig:bench_construct}), in order to test lighting arrangements, polarisers, and cameras. This prototype was then used as the framework when moved from bench to production. The frame is constructed from aluminium modular T-slot ($20mmx20mm$) components, supports stainless steel sheets that are moulded to be curved on top and bottom in order to diffuse and direct light and reduce flat surface reflections whilst creating a more evenly distributed background and intensity. Front and back panel doors allow access for staging and adjustments but block the outside light interference. 
+ 
 
 The design of the frame and doors included the ability to manoeuvre lighting mounts, cameras, diffusers, and image targets easily by opening each side of the enclosure to position the relevant components. T-slots along the length of the framework uprights and cross supports allowed cameras and lighting to have two degrees of movement (in the horizontal plane) for positioning.  
 
 
 
+\subsubsection{Illumination Intensity}
 
-\subsection{Lighting}
+Minimum Illumination is a term (typically used for CCTV cameras) that is not clearly defined \cite{min_illumination}, but is used to describe the minimum amount of light required in order to distinguish the objects in the image. This is difficult to compare for a few reasons, namely, differences in reflectivity of the objects, the display screen, where the light reading is taken from, and how it is measured, as well as the fact that human eyes are unique, therefore subjective in terms of distinguishing features. 
+
+Luminous intensity ($I$) describes a light source's omnidirectional energy, measured in units of candela ($cd$), where $1cd$ was originally defined as the amount of light produced from one candle, but has been more precisely defined since 1948\cite{light_units}. Dividing the total luminous intensity by $4\pi$ (as there are $4\pi$ steradians to a sphere) is a measurement luminous flux ($F$) measured in lumen ($lm$). One lumen is produced by a luminous intensity of $1cd$ over one steradian, and is typically used by light manufacturers to describe the amount of directional illumination emitted by their devices.
+
+Therefore, the definition of luminous flux is:
+\begin{equation}
+	F = I\cdot\omega
+\end{equation}
+
+where the angle ($\omega$) can be expressed as a function of area $A$ and distance $d$ from the source, given a constant source of light:
+\begin{equation}
+	\omega = \frac{A}{d^2}
+\end{equation}
+
+This shows the intensity is inversely proportional to the square of the distance. However the distances inside the enclosure are not consistent given the reflectance from the curved inner walls. Calculus problems of this type can offer solutions, however given the complexity of the inner structure of the system (including cross-polarisation), the intensity requirements will be established with less effort through experimentation. 
+
+
+
+
+\subsubsection{Lighting}
 
 Halogen work lamps supplied lighting as they were capable of emitting the full spectrum required for both the RGB and IR imaging systems. They are readily available, with power up to $500W$ per lamp and a footprint small enough to fit eight inside the enclosure. Several lighting and polarizing configurations were tested (using a thin film type polaroid) for optimization (Figures \ref{fig:bench_hal_film} and \ref{fig:bench_hal_film2}), before the AC flickering problem was realised. This test was successful in proving that the polariser reduced specularities, and that powerful lighting was required, however, it highlighted the inherent problem with AC lighting and fast shutter speeds. It was also noted during these preliminary tests that the polariser film would be less effective when bent or warped. 
 
@@ -1238,12 +1269,12 @@ Halogen work lamps supplied lighting as they were capable of emitting the full s
 \end{figure}
 
 
-Converting the lighting to $12V$ power was required in order to provide a more constant current and, therefore, lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical fluorescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they are more efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Automotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum. 
+Converting the lighting to $12V$ power was required in order to provide a more constant current, therefore lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical fluorescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they are more efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Automotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum. 
 
-Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) using four $150W/240VAC$ halogen lamps with camera shutter speeds of $1\mu s$, $1ms$, and $2ms$, show that the lighting intensity is sufficient for high speed applications.
+Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) using four $150W/240VAC$ halogen lamps with camera shutter speeds of $500\mu s$, $1ms$, and $2ms$, show that the lighting intensity is sufficient for high speed applications.
 	
 
-\begin{figure}[t]
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}{0.32\textwidth}
 		\centering
@@ -1267,20 +1298,18 @@ Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) usin
 	\label{}
 \end{figure} 
 
-The combined total illumination power consumption (for the top view) is $4\times 150W = 600W$. However, it is well established that halogen lamps are inefficient in regards to lumens per watt ($lm/W$) given they emit much more of the electromagnetic spectrum. White LEDs are manufactured to have much higher efficiency, generating only visible wavelengths. 
+The combined total illumination power consumption (for the top view) is $4\cdot 150W = 600W$. However, it is well established that halogen lamps are inefficient in regards to lumens per watt ($lm/W$) given they emit much more of the electromagnetic spectrum. White LEDs are manufactured to have much higher efficiency, generating only visible wavelengths. 
 
-Cheng and Cheng \cite{cheng} found LEDs to be up to $75\%$ more efficient where as Alonzo et al \cite{alonzo} found a $60\%$ reduction .Therefore, it is estimated that the LED power consumption for the same lumen should be approximately on third that of halogen. As the number of LEDs can be increased, this is not seen as a limitation of the system, however keeping power, heating, and brightness to a minimum will reduce risk of failure or injury. 
-
-The $72W$ Cree\textregistered LED Light Bars are flood type (an example of the LED bar is shown in Figure \ref{fig:LED_bar}) in order to diffuse, rather than focus the light, to avoid specular reflections. They have a built-in heat-sink as well as high Ingress Protection (IP) rating as they are designed to be fitted externally on off-road vehicles. This gives confidence of consistency and durability in the volatile production environment. Figure \ref{fig:LED_30w} displays the system's midsection LED type which are Cree\textregistered $30W$ LED Light Bar.
+Cheng and Cheng \cite{cheng} found LEDs to be up to $75\%$ more efficient where as Alonzo et al \cite{alonzo} found a $60\%$ reduction .Therefore, it is estimated that the LED power consumption for the same lumen should be approximately one third that of halogen. As the number of LEDs can be increased, this is not seen as a limitation of the system, however keeping power, heating, and brightness to a minimum will reduce risk of failure or injury. 
 
 
-\begin{figure}[t]
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{LED_bar.png}
 		\caption{}
-		\label{fig:LED_bar.png}
+		\label{fig:LED_bar}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -1292,24 +1321,21 @@ The $72W$ Cree\textregistered LED Light Bars are flood type (an example of the L
 	\label{}
 \end{figure} 
 
+The $72W$ Cree\textregistered LED Light Bars are flood type (an example of the LED bar is shown in Figure \ref{fig:LED_bar}) in order to diffuse, rather than focus the light, to avoid specular reflections. They have a built-in heat-sink as well as high Ingress Protection (IP) rating as they are designed to be fitted externally to off-road vehicles. This gives confidence of consistency and durability in the volatile production environment. Figure \ref{fig:LED_30w} displays the system's midsection LED type which are Cree\textregistered $30W$ LED Light Bar. Using two $72W$ and two $30W$ devices, the total power for each view is $204W$ which is $34\%$ of the halogen lamp power.
 
-Figure \ref{fig:bench_led_rigid} depicts the final configuration of the top half of the system's LEDs and rigid polariser.
+Rigid polaroid sheets eliminate the possibility of light leaking into the acquisition tunnel due there firm shape and size. Thinner polaroids have inconsistent polarisation when warped or bent and can expand with heat over time. Figure \ref{fig:bench_led_rigid} depicts the final configuration of the top half of the system's LEDs and rigid polariser.
 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth,angle=270,origin=c]{bench_led_rigid.jpg}
+	\includegraphics[width=0.7\linewidth]{bench_led_rigid_2.jpg}
 	\caption{installation of LED light bars and rigid polarizing material.}
 	\label{fig:bench_led_rigid}
 \end{figure}%
 
-\subsubsection{Minimum Illumination}
-
-Minimum Illumination ...
 
 
-
-\subsection{Cameras}
+\subsubsection{Cameras}
 
 Flir\textregistered is a leading industrial, machine vision, surveillance, defence, and thermal camera company with a broad range of cameras to choose from depending on application. The Flir\textregistered cameras used for the SQA inspection are Blackfly\textregistered USB3 $2.3 MP$, 1920 x 1200, $41FPS$, with a Sony\textregistered IMX249 sensor capable of shutter speeds in the range $19\mu s-3.9s$ making it suitable for fast-paced applications. Quantum Efficiency (QE) of the monochrome model is approximately $10\%$ at $1000nm$ which is not ideal, but offers more spectral range and less noise at NIR wavelengths than other sensors. The cameras are powered via USB, which helps to reduce complexity, and include opto-isolated I/O for triggering. The comprehensive list of adjustable parameters make these cameras highly controllable or highly automatic, depending on user requirements, and can be programmed to function via software using the API packages. 
 
@@ -1317,33 +1343,10 @@ As the cameras have specific operating temperatures in the range ($0^{\circ}C-45
 
 
 
-\subsection{Power Supply}
+\subsubsection{Power Supply}
 
 An independent power supply was needed to power the prototype, which at this stage, only included the top illumination cluster. The $12V/5A$ power supply was only able to power either the LEDs or halogens for testing purposes, and not both at once due to the current limitation, indicating that a more powerful source was required. As the enclosure will ultimately be positioned on the production floor, the electronics must accompany the vision system, and provide a substantial amount of DC power. Therefore, a $12V$ power supply is required for the lighting and peripheral devices which can satisfy the total power requirements.
 
-
-
-
-
-\section{Strawberry Quality Assurance (SQA) System Design}
-
-
-The Computer Aided Design (CAD) generated cross-section of the proposed SQA system in Figure \ref{fig:cross_sec} illustrates the concept of the conveyors (in-feed, out-feed, and v-belt), placement of cameras and PC, as well as the polariser sheet. This illustration integrates the already existing frame constructed for the prototype, therefore the prototype could be retrofitted to include in-feed and out-feed conveyors, and the v-belt system.  
-
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=.8\linewidth]{QAS_cross_sec.jpg}
-	\caption{Cross-section of the SQA system illustrating the polarizing filter (blue sheet), the v-belts, and four cameras in position above and below.}
-	\label{fig:cross_sec}
-\end{figure}%
-
-
-
-The PC is placed under the out-feed conveyor (as there is less probability of impact hazard), and runs the master program which controls every peripheral including cameras, peltier devices and fans, pneumatics, operator controls, image processing, and GUI. The microprocessor is a stand-alone industrial board (Phidget\texttrademark) and controls the I/O as described in Section \ref{sec:phidget}.
-
-As indicated in the requirements (Section \ref{sec:requirements}), the farm pack shed will provide power of either $240VAC$ - single phase, or $400VAC$ - three phase as well as a single compressed air line. However, the system is designed to use only $240VAC$ as higher power is not required in order to perform all the necessary functions including conveyor motion.
 
 
 
@@ -1359,7 +1362,19 @@ The pneumatic system is driven by a main air compressor that supplies the strawb
 
 Various hardware devices will need to be controllable via the main application, to enable efficient main lighting, signal lighting, peltier, pneumatics, and conveyor control, as well as inputs from some peripheral devices and sensors.
 
+
 The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
+
+
+Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
+
+The ejector is a controllable pneumatic system which can release a burst of air on command for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
+
+
+Figure \ref{fig:phidget} shows the screw-clamp I/O connectors on the top and bottom of the image, and the USB connection point for the PC. The Phidget has a $24MHz$ processor, 256 bytes of RAM, and up to $8kB$ of flash storage which makes the device a good option for input/output processes.
+
+
+
 
 \begin{wrapfigure}{r}{0.6\textwidth}
 	\begin{center}
@@ -1368,16 +1383,6 @@ The Phidget\texttrademark is an industrial-style microcontroller with integrated
 	\caption{Image of the Phidget\texttrademark I/O board and the interface connectors on the top and bottom.}
 	\label{fig:phidget}
 \end{wrapfigure} 
-
-
-Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
-
-
-The ejector is a controllable pneumatic system which can release a burst of air on command for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
-
-
-Figure \ref{fig:phidget} shows the screw-clamp I/O connectors on the top and bottom of the image, and the USB connection point for the PC. The Phidget has a $24MHz$ processor, 256 bytes of RAM, and up to $8kB$ of flash storage which makes the device a good option for input/output processes.
- 
 
 
 The system topology in Figure \ref{fig:overview} describes the control relationship of the PC, microcontroller, relays, PSU and peripheral devices. The PC and PSU are supplied with $240VAC$ power and the PC provides power for the cameras. All other devices (excluding conveyors) are powered by the PSU including the microcontroller, which signals the relay bank to switch the high powered circuits such as LED's, halogen lamps, and pneumatics. 
@@ -1393,7 +1398,7 @@ The system topology in Figure \ref{fig:overview} describes the control relations
 The relays are wired in a normally open configuration so that the relay must be activated (closed) in order to turn on the high powered devices such as lighting. Therefore, malfunctions causing any of the components to fail will result in the system's critical devices to be powered off to prevent the likelihood of damage and waste of power.
 
 
-\subsection{Electronic Signals, Interfaces and Power}
+\subsubsection{Peripheral Devices and Power Systems}
 \label{sec:electronic_power}
 
 The electronics and power supply will accompany the enclosure to the production floor given that DC power is required to avoid flickering. Furthermore, the control system microprocessor, fuses, wires and relays need to be installed in order to operate the various controls. As the vision enclosure does not allow for power supply storage or peripherals inside, an electronic component box is used to contain the above-mentioned items. 
@@ -1424,13 +1429,6 @@ The first three items require AC mains power ($240V$) and can therefore be addre
 Industrial power supplies can be expensive, have long lead-times (for initial construction and replacements), and may not have internal protections (such as short-circuit, over-current, thermal) and multiple outputs. However, a high-end gaming PSU can provide these features including automatic fault detection and shut-off, multiple outputs (can be configured due to the wiring loom containing several high current wires), and greatly beneficial $5V$ and $3.3V$ outputs of lower current, which can be used to power logic circuits. 
 
 
-A Cougar\texttrademark $1200W$ gaming PSU is used for the DC power requirements with 2 x $12V$ high power rails at $100A$ maximum current in total. It also supplies 4 x $5V$ and 2x $3.3V$ lines, and a low power $-12V$ line giving the advantage of supplying up to $24V$ with low current. All of these outputs can also be fused using automotive in-line fuses, protecting each DC circuit. 
-
-
-The PSU is designed specifically to connect to a PC motherboard and its peripherals such as hard drives, fans, and graphics / PCI expansion cards using unique connectors which only allow certain devices to plug into each. As the vision system does not require these connectors, the power distribution is concentrated into its two $12V$ rails, rather than the default - multiple, low power lines distributed to many devices. A damage prevention safety measure employed by many PSU manufacturers requires units to have a load attached in order to prevent accidental powering whilst partially or not connected. This is addressed by adding a high power, small resistor ($1W/10\Omega$) across the load detector circuit.  
-
-
-Each $12V$ power line is merged into one of two fused distribution boards with respective ground lines connected to one of the two brass grounding bar. Both the distribution box and ground bar are rated for $100A$, with current being drawn as required up to the fused limit for each circuit. That is, any of the outputs can be used for high or low powered devices as long as the appropriate fuse is used, and the total current requirement for all devices does not exceed $100A$. 
 
 
 \subsection{Software}
@@ -1556,9 +1554,9 @@ To calculate HSV colour space given three channels R, G, B and $Min = min(R, G, 
 \begin{equation}
 H = 
 \begin{cases} 
-rad(60) \times ((G-B)/(Max-Min)), & R=Max \\
-rad(60) \times (2 + (B-R)/(Max-Min)), & G=Max \\
-rad(60) \times (4 + (R-G)/(Max-Min)), & B=Max \\   
+rad(60) \cdot ((G-B)/(Max-Min)), & R=Max \\
+rad(60) \cdot (2 + (B-R)/(Max-Min)), & G=Max \\
+rad(60) \cdot (4 + (R-G)/(Max-Min)), & B=Max \\   
 \end{cases}
 \end{equation}
 
@@ -1607,7 +1605,7 @@ where $P$ denotes the total number of pixels.
 
 This is then followed by colour analysis of the hue channel in order to quantify the amount of pixels which lie outside the range $10<H<48$ where H is the hue circle from $0^{\circ}-360^{\circ}$. If we take $D$ as degrees of the hue circle, then the equation for $\alpha$, the corresponding grey-value is calculated as:
 \begin{equation}
-\alpha = round\Big\{255\times \frac{D}{360}\Big\}
+\alpha = round\Big\{255\cdot \frac{D}{360}\Big\}
 \end{equation}
 
 
@@ -1625,7 +1623,7 @@ Pre-processing consists of reducing the image to a Region Of Interest (ROI) in t
 \section{Experimental Results}
 
 
-\subsection{Frame and enclosure}
+\subsection{Enclosure Construction}
 
 The prototype frame is built from robust aluminium material commonly applied to structural elements for many applications. The frame has T-slot groves along the length of each side of each bar, and can be cut and fit together to form almost any shape required. These highly configurable components are utilised in order to experiment and optimise the various positional variations of several items such as lighting, cameras, conveyors, punnet orientation, polariser angle, and placement of motors. 
 
@@ -1635,7 +1633,7 @@ Using stainless steel sheets as cladding in order to enclose the internal compon
 
 \subsection{Power Systems}
 
-Experiments concluded that the Lighting must be powered by DC in order to prevent capturing the changing intensity of tan alternating current AC. In order to provide enough power to the system a 1200W PSU was retrofitted to handle the relevant lighting, controls, sensors, and microcontroller power. Various safety systems built into the gaming power supply provide protection against over current, over voltage, overheating, and short circuit.
+Experiments concluded that the Lighting must be powered by DC in order to prevent capturing the changing intensity of an alternating current AC. In order to provide enough power to the system a 1200W PSU was retrofitted to handle the relevant lighting, controls, sensors, and microcontroller power. Various safety systems built into the gaming power supply provide protection against over current, over voltage, overheating, and short circuit.
 
 The breakdown in Table \ref{tab:DC_power_table} accounts for $~750W$ of device power consumption leaving $450W$ headroom for safe operation and allowing additional devices if required at a later stage.
 
@@ -1677,6 +1675,16 @@ The breakdown in Table \ref{tab:DC_power_table} accounts for $~750W$ of device p
 		
 	\end{tabular}
 \end{table}
+
+
+
+A Cougar\texttrademark $1200W$ gaming PSU is used for the DC power requirements with 2 x $12V$ high power rails at $100A$ maximum current in total. It also supplies 4 x $5V$ and 2x $3.3V$ lines, and a low power $-12V$ line giving the advantage of supplying up to $24V$ with low current. All of these outputs can also be fused using automotive in-line fuses, protecting each DC circuit. 
+
+
+The PSU is designed specifically to connect to a PC motherboard and its peripherals such as hard drives, fans, and graphics / PCI expansion cards using unique connectors which only allow certain devices to plug into each. As the vision system does not require these connectors, the power distribution is concentrated into its two $12V$ rails, rather than the default - multiple, low power lines distributed to many devices. A damage prevention safety measure employed by many PSU manufacturers requires units to have a load attached in order to prevent accidental powering whilst partially or not connected. This is addressed by adding a high power, small resistor ($1W/10\Omega$) across the load detector circuit.  
+
+
+Each $12V$ power line is merged into one of two fused distribution boards with respective ground lines connected to one of the two brass grounding bar. Both the distribution box and ground bar are rated for $100A$, with current being drawn as required up to the fused limit for each circuit. That is, any of the outputs can be used for high or low powered devices as long as the appropriate fuse is used, and the total current requirement for all devices does not exceed $100A$. 
 
 
 
@@ -1726,33 +1734,9 @@ The experiments also confirmed that the polaroid sheets are more consistent when
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{final_image.jpg}
-	\caption{Final image quality using $135^{\circ}$ lighting and cross-polarisation. The camera's shutter speed is $3ms$ in order to avoid motion blur in the production version.}
+	\caption{Final image quality using $135^{\circ}$ lighting and cross-polarisation.}
 	\label{fig:final_image}
 \end{figure} 
-
-
-
-\subsection{Motion Blur} 
-
-Using Equation \ref{eq:shutter}, the motion blur of one pixel is $~0.5ms$ which accounts for a $0.1\%$ difference. The image displayed in Figure \ref{fig:blur_1} has minor blurring resulting from a $5ms$ shutter speed, and is calculated to have $11.6$ pixels of movement or $1.16\%$ blur. 
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\textwidth]{blur_1.jpg}
-	\caption{Example of image captured with the shutter speed at $5ms$. This results in slightly blurred edges including seeds, berry lines and calyx, and reduces image quality.}
-	\label{fig:blur_1}
-\end{figure}
-
-This motion blur is in contrast to the image in Figure \ref{fig:sharp_1} where the shutter speed is reduced to $2ms$ and shows the seeds and edges clearly, albeit still blurred according to the calculation. Therefore any shutter speed less than $2ms$ will be sufficient to perform the analysis given that that means the motion blur is $4.66$ pixels which calculates to $\frac{4.66}{1000} = 0.00466 = 0.4\%$.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\textwidth]{sharp_1.jpg}
-	\caption{Example of image captured with the shutter speed at $2ms$. This reduces blur and the details are seen clearly.}
-	\label{fig:sharp_1}
-\end{figure}
-
 
 
 
@@ -1769,7 +1753,7 @@ The results indicate that the accuracy for under ripe algorithm will score $>80\
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{seg_4.png}
+	\includegraphics[width=0.9\textwidth]{seg_4.png}
 	\caption{The image processing algorithm including experimental calibration of size measurements.}
 	\label{fig:seg_4}
 \end{figure}  
@@ -1836,7 +1820,7 @@ This shows that the intensity of the reflection is determined by the intensity o
 
 where the wave number $k = \omega \sqrt{\mu \epsilon'}$ and $\mu$ is the magnetic permeability of the material. This relates to its susceptibility to magnetic fields, and for diamagnetic and paramagnetic materials (which includes most metals and dielectrics), is considered to be the same as that of free space and $\mu = \mu_0 = 1$ \cite{ulaby}. 
 
-The electric permittivity, however, is very small for most metals as $\epsilon = \epsilon_r \epsilon_0 = 1 \times 8.85\times10^{-12}$. Substituting this into equation \ref{eqn:eta}, maintains a large value for intrinsic impedance $\eta_2$. thus, the majority of the wave is reflected at this angle. This is comparable to a short circuit on a transmission line resulting in a reflection coefficient of -1 indicating a full reflection even though inverted. This shows that the intensity at the specular angle is not diminished very much by the surface of a smooth conducting surface.
+The electric permittivity, however, is very small for most metals as $\epsilon = \epsilon_r \epsilon_0 = 1 \cdot 8.85\cdot10^{-12}$. Substituting this into equation \ref{eqn:eta}, maintains a large value for intrinsic impedance $\eta_2$. thus, the majority of the wave is reflected at this angle. This is comparable to a short circuit on a transmission line resulting in a reflection coefficient of -1 indicating a full reflection even though inverted. This shows that the intensity at the specular angle is not diminished very much by the surface of a smooth conducting surface.
 
 However, one change that can occurs at the interface, is the polarization of the wave. All light sources are randomly generated in all orientations, and can therefore be said to be multi-linear, circularly, or elliptically polarised (commonly named un-polarised or non-polarised) waveform \cite{artusi,nelson}.
 
@@ -2019,7 +2003,7 @@ The strawberry packing facility consists of two large chillers, four packing ben
 \end{figure}%
 
 
-The SQA vision system and heat-seal machine are required to process the punnets after packing has occurred and before palletisation, indicating their placement on the production floor is crucial. An alternative to this process includes off-site processing of both quality vision system assessment and sealing of containers, but would require extra transportation and potential for contamination or wasted packaging. Fortunately, rearrangement of the wrapping area is possible due to the large space usually reserved for staging of empty boxes and wrapping and labelling pallets of finished product. Figure \ref{fig:pack_layout_2} shows the floor plan with the addition
+The SQA vision system and heat-seal machine are required to process the punnets after packing has occurred and before palletisation, indicating their placement on the production floor is essential. An alternative to this process includes off-site processing of both quality vision system assessment and sealing of containers, but would require extra transportation and potential for contamination or wasted packaging. Fortunately, rearrangement of the wrapping area is possible due to the large space usually reserved for staging of empty boxes and wrapping and labelling pallets of finished product. Figure \ref{fig:pack_layout_2} shows the floor plan with the addition
 of the SQA system and Heat-seal machine, reducing the available storage and wrapping space, whilst maintaining production requirements.
 
 
@@ -2055,7 +2039,7 @@ Initially, the conveyors were added to the frame in order to create the path of 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.6\linewidth,angle=270]{system_construct_3.JPG}
+	\includegraphics[width=.6\linewidth]{system_construct_2_2.jpg}
 	\caption{The frame of the enclosure shortly after the conveyors had been attached. The v-belts have also been installed and are visible, mounted higher than the conveyor belt in order to suspend punnets by their lips.}
 	\label{fig:system_construct_3}
 \end{figure}%
@@ -2206,18 +2190,17 @@ The high-powered devices are controlled by the Phidget\texttrademark in conjunct
 
 The relays and microcontroller can be seen in Figure \ref{fig:PSU_5} protected and fixed inside a plastic electronics case in order to simplify the wiring as well as keeping the relay board in close vicinity to the microcontroller pins which activate them. As the pneumatics are powered by $12V$ and the peltier $5V$, a connection from the second distribution device, as well as the $5V$ terminal, to the normally-open terminals of the relays are made, before running together out of the box, to their respective components. The relays have three input pins ($5V$, $GND$, and Signal), and three output terminals (Normally Open (NO), Common (C), and Normally Closed (NC)) with a small LED to indicate activation. 
 
-The $5V$ and $3.3V$ fuses and terminals are seen in Figure \ref{fig:PSU_5} (top left, black electrical box), and power the relays, however the signal is generated by the microcontroller. Eight $5V$ power lines from the PSU were bundled into two connections (as this is a more common voltage), and eight $3.3V$ bundled into one connection. 
+The $5V$ and $12V$ fuse boxes and connections are seen in Figure \ref{fig:PSU_5}, and power the relays, with the signal is generated by the Phidget\texttrademark microcontroller. Eight $5V$ power lines from the PSU were bundled into two connections (as this is a more common voltage), and eight $3.3V$ bundled into one connection. 
 
 
-\begin{wrapfigure}{r}{0.7\textwidth}
-	\begin{center}
-		\includegraphics[width=.8\linewidth, angle=180]{PSU_5.jpg}
-	\end{center}
-	\caption{Power Supply Unit with all wiring, fuses, distribution devices, $5V$ and $3.3V$ terminals as well as the microcontroller and relay box.}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.9\linewidth]{PSU_schem.png}
+	\caption{Schematic diagram of Power Supply Unit illustrating connections, fuses, distribution devices, $5V$ and $3.3V$ terminals as well as the microcontroller and relay box.}
 	\label{fig:PSU_5}
-\end{wrapfigure}
+\end{figure}
 
-The PSU specifications table states that the maximum current for either channel is $25A$ and they must share $160W$ load. Similarly, either of the $12V$ rails can supply up to $60A$ each but must share a total load of $1176W$, giving the power system the ability to dynamically distribute power as required, as well as the ability to reconfigure or add devices easily.
+The PSU specifications table states that the maximum current for either $5V$ or $3.3V$ channel is $25A$ and they must share $160W$ load. Similarly, either of the $12V$ rails can supply up to $60A$ each but must share a total load of $1176W$, giving the power system the ability to dynamically distribute power as required, as well as the ability to reconfigure or add devices easily.
 
 
 Wiring diagrams provided in Appendix \ref{app:wiring} detailing the complete wiring configurations across their different versions.
@@ -2227,19 +2210,45 @@ Wiring diagrams provided in Appendix \ref{app:wiring} detailing the complete wir
 \subsection{Cross-polarization of RGB Cameras}
 
 
-The polaroid sheets have a direction of polarisation, which usually runs parallel to one of the edges of the sheet, that is, either horizontally or vertically polarised. The polarity must be continuous on all sides, above and below the acquisition chamber in order to be effective when the cross-polariser is applied. The cross-polarising element used is a camera lens filter polariser which can be rotated $360^{\circ}$. This means that the cameras can be mounted in any orientation, and still achieve the desired result by adjusting the filter (Figure \ref{fig:nd_filters}).
+The polaroid sheets have a direction of polarisation, which usually runs parallel to one of the edges of the sheet, that is, either horizontally or vertically polarised. The polarity must be continuous on all sides, above and below the acquisition chamber in order to be effective when the cross-polariser is applied. The cross-polarising element used is a camera lens filter polariser which can be rotated $360^{\circ}$. This means that the cameras can be mounted in any orientation, and still achieve the desired result by rotating the filter (Figure \ref{fig:nd_filters}).
 
-
-As described in Chapter \ref{sec:I}, the polarising material transforms the incoming light from multi-polar to single polar form, which reduces the amount of specular reflections on any object thereafter. However, after applying another polariser orthogonal to the first, no specularities remain visible regardless of the multiple curvatures in the surface of the strawberries, as illustrated in Figure \ref{fig:berries_no_spec}. 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{cross-polariser.png}
+	\includegraphics[width=0.7\textwidth]{cross-polariser.png}
 	\caption{Example of the polarising filter used on the camera lens which can be rotated to achieve cross-polarisation regardless of camera orientation.}
 	\label{fig:nd_filters}
 \end{figure}
 
+As described in Chapter \ref{sec:I}, the polarising material transforms the incoming light from multi-polar to single polar form, which reduces the amount of specular reflections on any object thereafter. However, after applying another polariser orthogonal to the first, no specularities remain visible regardless of the multiple curvatures in the surface of the strawberries as seen in Figure \ref{fig:berries_no_spec}. 
+
+
 The cameras are positioned in the centre of the respective lighting clusters in terms of spectral range in order to provide the best lighting response for each image. Therefore the RGB and IR are separated by a distance approximately $400mm$, complicating the asynchronous acquisition process.
+
+
+
+\subsection{Motion Blur} 
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{blur_1.jpg}
+	\caption{Example of image captured with the shutter speed at $5ms$. This results in slightly blurred edges including seeds, berry lines and calyx, and reduces image quality.}
+	\label{fig:blur_1}
+\end{figure}
+
+Using Equation \ref{eq:shutter}, the motion blur of one pixel is $~0.5ms$ which accounts for a $0.1\%$ difference. The image displayed in Figure \ref{fig:blur_1} has minor blurring resulting from a $5ms$ shutter speed, and is calculated to have $11.6$ pixels of movement or $1.16\%$ blur. 
+
+
+This motion blur is in contrast to the image in Figure \ref{fig:sharp_1} where the shutter speed is reduced to $2ms$ and shows the seeds and edges clearly, albeit still blurred according to the calculation. Therefore any shutter speed less than $2ms$ will be sufficient to perform the analysis given that that means the motion blur is $4.66$ pixels which calculates to $\frac{4.66}{1000} = 0.00466 = 0.4\%$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{sharp_1.jpg}
+	\caption{Example of image captured with the shutter speed at $2ms$. This reduces blur and the details are seen clearly.}
+	\label{fig:sharp_1}
+\end{figure}
+
 
 
 
@@ -2247,6 +2256,7 @@ The cameras are positioned in the centre of the respective lighting clusters in 
 \section{Hyperspectral Bruise Analysis}
 
 
+Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a Brimrose\textregistered VA200 Visible Near-Infrared, and a Brimrose\textregistered VA200 Short-wave Infrared Hyperspectral Camera with appropriate lenses and software to acquire the images in order to quantify the best spectral region to identify and detect fresh bruising (wet bruising). The experimental configuration is shown in Figure \ref{fig:HSI} with the arrangement of halogen lighting, and both visible/NIR, and SWIR cameras set up on the mounts.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
@@ -2256,7 +2266,8 @@ The cameras are positioned in the centre of the respective lighting clusters in 
 	\label{fig:HSI}
 \end{wrapfigure} 
 
-Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a Brimrose\textregistered VA200 Visible Near-Infrared, and a Brimrose\textregistered VA200 Short-wave Infrared Hyperspectral Camera with appropriate lenses and software to acquire the images in order to quantify the best spectral region to identify and detect fresh bruising (wet bruising). The experimental setup is shown in Figure \ref{fig:HSI}.
+Analysis of water absorption bands discussed in Chapter \ref{sec:lit} were used as an indication of the wavelengths which might be suitable, however, an in-depth experiment measured the bruising of strawberries incremented across a wide range of wavelengths. As expected, the visible spectrum showed no significant contrast, given that the bruises are invisible to human eyes, and the water absorption band distribution.
+
 
 
 
@@ -2287,12 +2298,10 @@ Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a B
 	\end{tabular}
 \end{table} 
 
-Analysis of water absorption bands discussed in Chapter \ref{sec:lit} were used as an indication of the wavelengths which might be suitable, however, an in-depth experiment measured the bruising of strawberries incremented across a wide range of wavelengths. A sample of the SWIR images are shown in Table \ref{tab:examples} where the spectrum ranged from $850nm$ through to $1800nm$ in increments of $10nm$. Images were acquired of no bruise, as well as 5, 10, and 15 minutes after bruising indicating several potential bands where the contrast was high. Most notably, the bands in the region $<1000nm$ given that these wavelengths can be imaged using CMOS sensors which are inexpensive compared to that of a SWIR sensor. The image in Figure shows the arrangement of halogen lighting, and both visible/NIR, and SWIR cameras set up on the mounts. As expected, the visible spectrum showed no significant contrast, given that the bruises are invisible to human eyes, and the water absorption band distribution.
+A sample of the SWIR images are shown in Table \ref{tab:examples} where the spectrum ranged from $850nm$ through to $1800nm$ in increments of $10nm$. Images were acquired of no bruise, as well as 5, 10, and 15 minutes after bruising indicating several potential bands where the contrast was high. Most notably, the bands in the region $<1000nm$ given that these wavelengths can be imaged using CMOS sensors which are inexpensive compared to that of a SWIR sensor.
 
 
-
-
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -2373,14 +2382,14 @@ Due to the size and shape of the heat-seal machine and the packing bench layout,
 
 Each punnet consists of four image files (one for each camera), and must be compiled and saved together for quality traceability requirements (Chapter \ref{sec:requirements}). Therefore, each image is saved into a folder accompanied by a text file detailing metadata regarding statistics of the punnet such as date/time of images and classification information. The application saves the images and text file after population occurs via the two asynchronous threads generating RGB and IR images separately. 
 
-However, some of the punnet's images failed to match, resulting in IR images which were not related to the RGB. When debugging the problem in the IDE it was found that if one set of images is received from the cameras and the others are not, the process would force the application to wait until the next punnet to populate the previous information. This is due to the triggered camera method, which waits for the image buffer indefinitely before proceeding, then returning to wait again some short time later. If the trigger does not occur, the thread waits until it does, before submitting images to the punnet object, leading to the conclusion that one of the punnet sensors was faulty or incorrectly calibrated. This was tested by monitoring the sensor's output via a wired connection from the sensor to the microcontroller. 
+However, some of the punnet's images failed to match initially, resulting in IR images which were not related to the RGB. When debugging the problem in the IDE it was found that if one set of images is received from the cameras and the others are not, the process would force the application to wait until the next punnet to populate the previous information. This is due to the triggered camera method, which waits for the image buffer indefinitely before proceeding, then returning to wait again some short time later. If the trigger does not occur, the thread waits until it does, before submitting images to the punnet object, leading to the conclusion that one of the punnet sensors was faulty or incorrectly calibrated. This was tested by monitoring the sensor's output via a wired connection from the sensor to the microcontroller. 
 
-Experiments revealed that the both sensors had intermittent detection problems where they would not respond well in full-speed conditions. Trouble shooting performed included reflectance confirmation, calibration, independent power supply, and replacing sensor units, without success. As it was concluded that it was the environment creating errors (due to the metal surroundings and close proximity to objects) a redesign would be required to be refit inside the enclosure. However, a machine vision solution exists to solve this problem, given that the punnets flow in the same direction seen by a fixed camera. Optical flow is a method of image subtraction in the time domain, that is:
+Experiments revealed that the both sensors had intermittent detection problems where they would not respond well in full-speed conditions. Trouble shooting performed included reflectance confirmation, calibration, independent power supply, and replacing sensor units, without success. As it was concluded that it was the environment creating errors (due to the metal surroundings and close proximity to objects) a redesign would be required to be refit inside the enclosure. However, a machine vision solution exists to solve this problem, given that the punnets flow in the same direction seen by a fixed camera. Optical flow is a method of tracking moving objects by analysing the image differences. That is:
 \begin{equation}
-	I_{n+1} - I_n
+	D_{image} = I_{n+1} - I_n
 \end{equation}
 
-where $I_n$ is the image number in the stream, resulting in difference pixels (the moving objects) in an otherwise stationary scene. By analysing the difference regions, the punnet could be centred and acquired accurately, even though an extra time resource was taken up by the additional algorithm. This extra process added to the RGB thread does not impeded the image processing algorithm which is the most time consuming element of the application.
+where the difference image ($D_{image}$) is the result, and $I_n$ the image number in the stream, showing pixels with spacial variance (the moving objects) in an otherwise stationary scene. By analysing the difference regions, the punnet could be centred and acquired accurately, even though an extra time resource was taken up by the additional algorithm. This extra process added to the RGB thread does not impede the image processing algorithm which is the most time consuming element of the application. This is due to the threaded assignment of tasks such that the RGB acquisition thread can wait for a new punnet to be in position (optical flow processing), then capture the images required, whilst the image processing thread is assessing the previous punnet. The only constraint is that the image processing is complete before the punnet reaches the eject sensor.
 
 \subsection{Ejector Mechanism}
 
@@ -2394,7 +2403,7 @@ With the vision system operational, the ejector and pneumatics were designed and
 	\label{fig:ejector}
 \end{figure}
 
-The punnet sensor and reflector are attached as close as possible to the ejector nozzle and provides a trigger for activation of the pneumatic system, which is fired for a pre-determined period, in order to direct the punnet onto the exit ramp as smoothly as possible. Figure \ref{fig:ejector} depicts all the components of the system shortly after testing was completed. The activation of the ejector also depends on the result of the processing of each punnet, ejecting only when defects are found. Therefore the microprocessor must know the status of each punnet so that only the identified affected punnets are ejected, whilst allowing others to pass. The microcontroller class must therefore query the results for each punnet in the array (kept as global variables in the application) when passing the ejector, in order to determine which punnets to eject and which are to remain on the production line. The microcontroller must also determine the timing of the pneumatic burst including delay between sensing and activation and the duration the solenoid is opened. 
+The punnet sensor and reflector are attached as close as possible to the ejector nozzle and provides a trigger for activation of the pneumatic system, which is fired for a pre-determined period, in order to direct the punnet onto the exit ramp as smoothly as possible. Figure \ref{fig:ejector} depicts all the components of the system shortly after testing was completed.  
 
 Initial testing concluded that in order to provide enough force to push the $250g-300g$ punnet and successfully transfer it from the production conveyor (running at approximately $27cm/s$) to the exit ramp, required the following:
 \begin{itemize}
@@ -2403,7 +2412,20 @@ Initial testing concluded that in order to provide enough force to push the $250
 	\item $200ms$ pneumatic duration
 \end{itemize}
 
-The image in Figure \ref{fig:ejector} shows the pneumatic nozzle offset to the exit conveyor due to the transition time of the punnet and the speed of the conveyor. This allowed for the smoothest transfer of the punnets, avoiding collision with walls or rails in order to prevent damage to sound berries.
+The image shows the pneumatic nozzle offset to the exit conveyor due to the transition time of the punnet and the speed of the conveyor. This allowed for the smoothest transfer of the punnets, avoiding collision with walls or rails in order to prevent damage to sound berries.
+
+The activation of the ejector also depends on the result of the processing of each punnet, ejecting only when defects are found. Therefore the microprocessor must know the status of each punnet so that only the identified affected punnets are ejected, whilst allowing others to pass. The microcontroller class must therefore query the results for each punnet in the array (kept as global variables in the application) when passing the ejector, in order to determine which punnets to eject and which are to remain on the production line. 
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.75\textwidth]{micro_logic.png}
+	\caption{Flowchart diagram of ejection logic between main thread, image processing, and microcontroller.}
+	\label{fig:ejector_logic}
+\end{figure}
+
+
+
+The design flowchart in Figure \ref{fig:ejector_logic} shows the interaction between the main thread, image processing thread (where the decision is made), and the microcontroller. The controller must also activate for the pre-determined timing calculated for the pneumatic burst, including delay between sensing and activation and the duration the solenoid is opened.
 
 
 \subsection{Data Collection}
@@ -2458,6 +2480,8 @@ The main conveyor pictured is designed to keep running as much as possible in or
 
 Two more algorithms were added to the repertoire (over ripe, and too small) with labelling of a test set completed. The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and created a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresholding and morphology parameters, keeping the overall method unchanged. 
 
+\subsection{Maintenance Limitations}
+
 
 \begin{figure}[ht]
 	\centering
@@ -2494,22 +2518,38 @@ Two more algorithms were added to the repertoire (over ripe, and too small) with
 Several design flaws were noticed after nearly two seasons of packing room production, such as a large build up of dirt, dust, insects, and strawberry material in the bottom of the enclosure arch, added to the dust build up on cameras, polarisers, lighting and lenses, as well as overwhelming the filters on the computer, PSU, and enclosure itself. The images shown in Figure \ref{fig:dirty_enclosure} illustrate the problems.
 
 
-In order to clean the enclosure properly, the bottom lighting clusters and cameras were removed to allow access to the underside of the chamber. This situation is not ideal (especially if performed each season), and along with difficulty of access to components inside the enclosure, and changed lighting arrangement, prompted a redesign of the entire system. 
+In order to clean the enclosure properly, the bottom lighting clusters and cameras were removed to allow access to the underside of the chamber. This situation is not ideal (especially if performed each season), and along with difficulty of access to components inside the enclosure, and changed lighting arrangement, prompted a redesign of the entire system hardware. 
 
-\section{Milestone: First Year of Production}
+\section{Data Accumulation and Analysis: July 2016 - June 2017 }
 
 
-The first 12 months of production - consisting of one northern season (May-October), and one southern season (November-April) - concluded that the objective analysis of fast moving punnets of strawberries was feasible both from engineering and customer perspectives. 
-
-The total amount of punnets assessed by the system in the first 12 months was 89,530 with 62,080 passed and 27,450 failed items. The failure rate of $44\%$ is not indicative of real production as it contains the results of algorithmic testing and live testing where production is used to test the algorithm's accuracy over large volumes of highly varied strawberries. The graph in Figure \ref{fig:first_year} is a visual representation of these numbers.  
+The first 12 months of production - consisting of one northern season (May-October), and one southern season (November-April) - concluded that the objective analysis of fast moving punnets of strawberries was feasible both from engineering and customer perspectives.   
 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{first_year.jpg}
-	\caption{Pass (62,080)and Fail (27450) totals for first year of production .}
+	\includegraphics[width=0.7\textwidth]{first_year.jpg}
+	\caption{Pass (62,080)and Fail (27450) totals for first year of production (July 2016 - June 2017).}
 	\label{fig:first_year}
 \end{figure}
+
+The total amount of punnets assessed by the system in the first 12 months was 89,530 with 62,080 passed and 27,450 failed items. The failure rate of $44\%$ is not indicative of real production as it contains the results of algorithmic testing and live testing where production is used to test the algorithm's accuracy over large volumes of highly varied strawberries. The graph in Figure \ref{fig:first_year} is a visual representation of these numbers.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{first_year_cat.png}
+	\caption{Under ripe (12,589), over ripe (13,768), and small (1,093) reject class failures for first year of production.}
+	\label{fig:first_year_breakdown}
+\end{figure}
+
+The breakdown of categorical defects are seen in Figure \ref{fig:first_year_breakdown} with 12,589 under ripe, 13,768 over ripe, and 1,093 small rejects. These results are not indicative of actual production, as described above, due to the large amount of test data included. The 'Small' category was not added until 10 months into this 12 month period, therefore appearing low compared to under and over ripe. 
+
+Production deployment is challenging in terms of algorithm confidence, given the huge variability of berry types, seasonality, and random packing process. A new method is typically developed and tested on up to 100 images which could consist of either the most recent acquisitions (seasonality matching), or a mixture of production days (generalised). In either case, the false positive rate was found to be too high, initially, leading to the decision to disable the ejector mechanism on deployment of new algorithms until the false positive detections were reduced to $<5\%$, even if this meant that the false negatives were higher. The reasoning behind this is drawn from farming experience which indicates adoption new processes for operators is much higher if the change is seen to be unobtrusive and accurate. If too many false negatives are ejected, the operators may loose confidence and prefer not to activate the system for production if it is contributing to needless rework.
+
+The actual false positive rate cannot be truly measured until the it has been used in production. Even using a larger amount of testing images, the false positive rate was seen to be higher once in production, due to the unpredictable nature of each punnet. For example, large gaps in between berries can create voids which allow light interference (causing reflections, shadows, or contrast changes depending on position and amount), berries from different cultivars can be identical or contrasting (especially under ripe and size differences), and wet berries (raining whilst picking) vs dry.
+
+
 
 
 
@@ -2580,9 +2620,9 @@ To extract HSV colourspace given three channels R, G, B and $Min = min(R, G, B)$
 \begin{equation}
 H = 
 \begin{cases} 
-rad(60) \times \frac{(G-B)}{Max-Min}, & R=Max \\
-rad(60) \times \frac{(B-R)}{Max-Min} + 2, & G=Max \\
-rad(60) \times \frac{(R-G)}{Max-Min} + 4, & B=Max \\   
+rad(60) \cdot \frac{(G-B)}{Max-Min}, & R=Max \\
+rad(60) \cdot \frac{(B-R)}{Max-Min} + 2, & G=Max \\
+rad(60) \cdot \frac{(R-G)}{Max-Min} + 4, & B=Max \\   
 \end{cases}
 \end{equation}
 \begin{equation}
@@ -3180,7 +3220,7 @@ With the southern season concluded, and in a small window before full production
 
 The image in Figure \ref{fig:motor} was taken after the original v-belt and internal motor system were installed on the new frame, eliminating the need for re-fabrication. Similarly, the polarising sheets, camera mounts, sensor mounts, some electronics, wiring (connectors and lengths), and brackets could be re-used in order to help efficient development.
 
-A user control panel (Figure \ref{fig:user_panel}) was designed to accommodate the GUI screen as well as physical start/stop buttons, e-stop, and indicators for operator convenience and usability. The buttons and indicators are $12V$ operated with the green and red start/stop buttons having both inputs (light action), and outputs (press) which required to be wired to the microcontroller, and integrated into the application in order to perform the functions. A $1024\times600$, $10.1inch$ Capacitive Touch Screen LCD installed assists the operator to select options and review information as opposed to using a mouse or keyboard. The touchscreen is also powered by $12VDC$ power which can be sourced from the original power supply.
+A user control panel (Figure \ref{fig:user_panel}) was designed to accommodate the GUI screen as well as physical start/stop buttons, e-stop, and indicators for operator convenience and usability. The buttons and indicators are $12V$ operated with the green and red start/stop buttons having both inputs (light action), and outputs (press) which required to be wired to the microcontroller, and integrated into the application in order to perform the functions. A $1024\cdot600$, $10.1inch$ Capacitive Touch Screen LCD installed assists the operator to select options and review information as opposed to using a mouse or keyboard. The touchscreen is also powered by $12VDC$ power which can be sourced from the original power supply.
 
 Reed switches added to the opening panels provide feedback to the system, generating an emergency-stop action in order to prevent safety hazards. The switches are wired into the microcontroller separately so that an error message can also be displayed on the GUI.
 
@@ -3247,10 +3287,10 @@ As the packing facility's air line pressure is higher than required at approxima
 
 Once the system had been transported to the packing room, production scale testing performed showed that all systems were functioning as expected after some initial calibration and adjustments. 
 
-During the remaining season, $>50,000$ punnets were imaged and recorded with ejection interrupted periodically by testing algorithms on live data (during implementation or improvements). Research into machine learning algorithms began as the database of images had increased substantially. This included work on clustering pixels and segmentation, SVM and MLP classification, regression, and some neural network investigation. The classification accuracy improved for the under ripe algorithm ($94.7\%$), with additional algorithms, over ripe, size and foreign object scoring well or developing with $90.6\%$, $82.8\%$ and $78.9\%$, respectively.
+During the remaining season, $>70,000$ punnets were imaged and recorded with ejection interrupted periodically by testing algorithms on live data (during implementation or improvements). Research into machine learning algorithms began as the database of images had increased substantially. This included work on clustering pixels and segmentation, SVM and MLP classification, regression, and some neural network investigation. The classification accuracy improved for the under ripe algorithm ($94.7\%$), with additional algorithms, over ripe, size and foreign object scoring well or developing with $90.6\%$, $82.8\%$ and $78.9\%$, respectively.
 
 
-\section{Microcontroller Upgrade}
+\subsection{Microcontroller Upgrade}
 
 
 Towards the end of the second Queensland season, an upgrade of the microcontrollers was undertaken for three reasons:
@@ -3288,7 +3328,7 @@ The Controllino\texttrademark MAXI is pictured in Figure \ref{fig:controllino_1}
 \begin{itemize}
 	\item Inputs - $12V$ or $24V$ logic level with ESD protection (pin $A0$ through to $IN2$ towards the bottom of the figure). 
 	\item Outputs - $12V$ or $24V$ logic levels providing up to $2A$ (pin $D0$ through to $D11$ towards the top).
-	\item $5V$ logic support - Header pins (2$\times$black 26-pin connectors). 
+	\item $5V$ logic support - Header pins (2$\cdot$black 26-pin connectors). 
 	\item Screw terminals - Heavy-gauge $12V/24V$ power terminals (top right) and $5V$ (bottom right), as well as screw terminal $12V/24V$ I/O. 
 	\item Built-in relays - Ten relays which can support up to $230VAC/6A$.
 	\item Built-in Ethernet - Networking socket standard.
@@ -3414,6 +3454,83 @@ Programming the controllers is similar to the Arduino\texttrademark, in that the
 The re-wiring and of devices was replicated from the previous connections and diagrams, one at a time, so as to test the components functionality before moving to the next item. The Phidget\texttrademark uses low-side switching by grounding each electrical component in order to complete the circuit, which is contrary to the Controllino\texttrademark's high-side switching outputs. 
 
 Relevant wiring diagrams can be found in Version 3 in Appendix \ref{app:wiring}.
+
+
+
+\section{South Australia Production - Season 4}
+
+
+During the fourth season, favourable crops and weather conditions allowed a steady flow of berries throughout the seven-month season. More than 150,000 punnets were captured and assessed with operators running the application and configuring settings. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.9\linewidth]{myponga.jpg}
+	\caption{Myponga packing room during season 4. The Heat-seal machine in the foreground, followed by the SQA vision system and eject ramp, and green trays on the packing line.}
+	\label{fig:myponga}
+\end{figure}%
+
+
+
+\subsection{Maintenance Limitations}
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{clean_1.jpg}
+		\caption{}
+		\label{fig:clean_1}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{clean_2.jpg}
+		\caption{}
+		\label{fig:clean_2}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{clean_3.jpg}
+		\caption{}
+		\label{fig:clean_3}
+	\end{subfigure}%
+	\begin{subfigure}{.25\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{clean_4.jpg}
+		\caption{}
+		\label{fig:clean_4}
+	\end{subfigure}%
+	
+	\caption{Enclosure  showing (a) , (b) , (c) , and (d) .}
+	\label{fig:clean_enclosure}
+\end{figure}
+
+
+\section{Data Accumulation and Analysis: July 2017 - June 2018}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{second_year.png}
+	\caption{Pass (228,808) and Fail (22,820) totals for first year of production (July 2017 - June 2018).}
+	\label{fig:second_year}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{second_year_cat.png}
+	\caption{Under ripe (8,136), over ripe (9,395), small (3,245), foreign (1,258), and bruise (777) reject class failures for first year of production.}
+	\label{fig:second_year_breakdown}
+\end{figure}
+
 
 
 
@@ -3706,7 +3823,7 @@ Whereas, the convolution layer in a ConvNet only sums over the size of the featu
 \begin{equation}
 z = b + \sum_{i=n}^{4} \sum_{m=0}^{4} w_{n,m}  x_{j+n,k+m}
 \end{equation}
-This is advantageous when dealing with input such as high-resolution images. An ANN with an input image of resolution 128 and three RGB channels will have 128 x 128 x 3 = 49152 input neurons, leading to the same number of weights (since each neuron is fully connected) plus a bias for each hidden neuron. If the image is much larger, it can be seen that the number of variables (weights/biases) grows rapidly. However, in the ConvNet, there are only ever no more than the window size $n \times m$ (5 x 5 = 25 weights and one bias in the above case), for each feature mask, no matter the size of the input data.
+This is advantageous when dealing with input such as high-resolution images. An ANN with an input image of resolution 128 and three RGB channels will have 128 x 128 x 3 = 49152 input neurons, leading to the same number of weights (since each neuron is fully connected) plus a bias for each hidden neuron. If the image is much larger, it can be seen that the number of variables (weights/biases) grows rapidly. However, in the ConvNet, there are only ever no more than the window size $n \cdot m$ (5 x 5 = 25 weights and one bias in the above case), for each feature mask, no matter the size of the input data.
 
 
 \subsubsection{Methods}
@@ -3825,7 +3942,7 @@ y = \mathcal{F}(x.\{W_i\}) + W_s x
 
 It can be seen from these equations that there is no difference between a residual network and a plain network in terms of depth, width, and number of parameters, and only a negligible difference in computation due to the element-wise addition.
 
-The authors of this paper \cite{he} compared the residual networks (of differing depths up to 1000 layers) with 'plain' networks, VGG-$16$, GoogLeNet, PReLU-net, and BN-inception and found that ResNet's ability performed at up to $8\times$ deeper than VGG-$16$, but with less complexity. The results outperformed other networks when classifying ImageNet and CIFAR-$10$, as well as a $28\%$ improvement on COCO object detection. An ensemble of ResNets achieved $3.37\%$ error rate winning first prize in the ILSVRC 2015 classification task.
+The authors of this paper \cite{he} compared the residual networks (of differing depths up to 1000 layers) with 'plain' networks, VGG-$16$, GoogLeNet, PReLU-net, and BN-inception and found that ResNet's ability performed at up to $8\cdot$ deeper than VGG-$16$, but with less complexity. The results outperformed other networks when classifying ImageNet and CIFAR-$10$, as well as a $28\%$ improvement on COCO object detection. An ensemble of ResNets achieved $3.37\%$ error rate winning first prize in the ILSVRC 2015 classification task.
 
 
 \subsection{Logistic Regression Classifier}
@@ -3883,7 +4000,7 @@ The method ultimately used in the SQA vision system is based on feature vector c
 
 
 
-The originally acquired images include a background of conveyor belts and other mechanical parts of the system, they also include top-bottom view of the sensor, its reflector and the entire punnet borders (in the top view) and the bottom of the punnet (in the bottom view). Since the location of the punnet in the camera field of view is fixed at each moment of capture and all punnets are of exactly the same size, the valid punnet region is cropped from the original acquired image with a fixed size of $500 \times 600$. 
+The originally acquired images include a background of conveyor belts and other mechanical parts of the system, they also include top-bottom view of the sensor, its reflector and the entire punnet borders (in the top view) and the bottom of the punnet (in the bottom view). Since the location of the punnet in the camera field of view is fixed at each moment of capture and all punnets are of exactly the same size, the valid punnet region is cropped from the original acquired image with a fixed size of $500 \cdot 600$. 
 
 Using a combination of horizontal and vertical flipping, images were compiled for training and listed in Table \ref{tab:data}.
 
@@ -4037,10 +4154,12 @@ The work in this thesis has been instrumental in the development of the Griffith
 \chapter{SQA Specification}
 \label{app:sqa_specs}
 
+\newpage
+
 
 %first page
 \begin{minipage}[b]{0.9\linewidth}
-	\includepdf[pages=1,scale=0.8,linktodoc=true]{appendix/QC_Spec.pdf}
+	\includepdf[pages=1,scale=0.9,linktodoc=true]{appendix/QC_Spec.pdf}
 \end{minipage}
 
 %rest of pages
@@ -4052,10 +4171,12 @@ The work in this thesis has been instrumental in the development of the Griffith
 \chapter{Wiring Diagrams}
 \label{app:wiring}
 
+\newpage
+
 Version 1
 %first page
 \begin{minipage}[b]{0.9\linewidth}
-	\includepdf[pages=1,scale=1,linktodoc=true]{appendix/wiring_1.pdf}
+	\includepdf[pages=1,scale=0.9,linktodoc=true]{appendix/wiring_1.pdf}
 \end{minipage}
 
 

@@ -78,41 +78,47 @@ Warning--entry type for "wiki_linux" isn't style-file defined
 --line 3293 of file Master.bib
 Warning--entry type for "50hz" isn't style-file defined
 --line 3379 of file Master.bib
+Warning--entry type for "min_illumination" isn't style-file defined
+--line 3435 of file Master.bib
+Warning--entry type for "light_units" isn't style-file defined
+--line 3451 of file Master.bib
+Warning--entry type for "led_power" isn't style-file defined
+--line 3467 of file Master.bib
 Warning--empty journal in heleno
 Warning--empty year in heleno
 Warning--empty year in artusi
 Warning--empty year in anderson
 Warning--empty year in kuranov
-You've used 185 entries,
+You've used 188 entries,
             1876 wiz_defined-function locations,
-            1430 strings with 37444 characters,
-and the built_in function-call counts, 57733 in all, are:
-= -- 5635
-> -- 2498
+            1438 strings with 37625 characters,
+and the built_in function-call counts, 58129 in all, are:
+= -- 5674
+> -- 2510
 < -- 0
-+ -- 902
-- -- 717
-* -- 4025
-:= -- 7989
-add.period$ -- 197
-call.type$ -- 185
-change.case$ -- 181
++ -- 908
+- -- 720
+* -- 4037
+:= -- 8046
+add.period$ -- 203
+call.type$ -- 188
+change.case$ -- 184
 chr.to.int$ -- 0
-cite$ -- 190
-duplicate$ -- 2915
-empty$ -- 5098
-format.name$ -- 717
-if$ -- 14404
+cite$ -- 193
+duplicate$ -- 2927
+empty$ -- 5152
+format.name$ -- 720
+if$ -- 14506
 int.to.chr$ -- 0
-int.to.str$ -- 185
+int.to.str$ -- 188
 missing$ -- 175
-newline$ -- 576
-num.names$ -- 185
-pop$ -- 506
+newline$ -- 588
+num.names$ -- 188
+pop$ -- 527
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2372
+skip$ -- 2381
 stack$ -- 0
 substring$ -- 4141
 swap$ -- 1490
@@ -121,7 +127,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 465
-width$ -- 188
-write$ -- 1791
+while$ -- 468
+width$ -- 191
+write$ -- 1818
 (There were 11 error messages)
