@@ -254,17 +254,6 @@ Gilbert Eaton
 
 
 
-%----------------------------------------------------------------------------------------
-%	Scope
-%----------------------------------------------------------------------------------------
-\chapter*{Thesis Scope}
-\addcontentsline{toc}{section}{Thesis Scope}
-
-Due to the unique requirements of the candidature in conjunction with an industry partner under the Australian Research Council (ARC) Linkage program, the fulfilment of this thesis is largely based on the successful application of novel systems. In contrast to theses which are based on generalised approaches to common problems, this work is bound to a specific set of requirements and continuous real-world implementation of the research and development performed. The project detailed in the following chapters has been the sole focus for the entire candidature period, building a platform for the university to foster growth, relationships, and reputation within the agricultural industry and community.
-
-
-
-
 \vspace*{\fill}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -625,23 +614,23 @@ The vision system general requirements are listed in Table \ref{tab:requirements
 \end{longtable}
 
 
-\newpage
 
+\section{Thesis Scope}
+
+Due to the unique requirements of the candidature in conjunction with an industry partner under the Australian Research Council (ARC) Linkage program, the fulfilment of this thesis is largely based on the successful application of novel systems. In contrast to theses which are based on generalised approaches to common problems, this work is bound to a specific set of requirements and continuous real-world implementation of the research and development performed. The project detailed in the following chapters has been the sole focus for the entire candidature period, building a platform for the university to foster growth, relationships, and reputation within the agricultural industry and community.
 
 The body of this thesis is set out with the following chapters: 
 
 
 \begin{itemize}
 	\item Chapter \ref{sec:lit} - Current Industry Methods and Review of Literature
-	\item Chapter \ref{sec:I} - Prototype and Design
+	\item Chapter \ref{sec:I} - Strawberry Inspection System Design
 	\item Chapter \ref{sec:paper_1} - A Method to Create Stable Lighting and Remove Specular Reflections for Vision Systems
 	\item Chapter \ref{sec:II} - Production Integration 
 	\item Chapter \ref{sec:paper_2} - Colour Analysis of Strawberries on a Real-time Production Line
 	\item Chapter \ref{sec:III} - Implementation of Improvements and System Reconfiguration
 	\item Chapter \ref{sec:IV} - Machine Learning Approach to Grading Strawberries
 \end{itemize}
-
-
 
 
 
@@ -724,7 +713,7 @@ Depending on the architecture used to classify the features, variance may be hig
 Hardware and physical properties may be exploited in some applications in order to avoid complex processing or improve results. Multiple cameras, multiple spectra and 3D imagery are examples of hardware employed in order to allow vision systems to capture details of the subject which may go unseen with conventional systems. 
 
 
-Chui et al \cite{chiu} used a process of acquiring fluorescence images - exciting the internal structure of the object in one wavelength, to emit light at a different wavelength - in order to detect mechanically-induced bruises on apples. They found that this method highlighted the bruised flesh, and segmented them by performing an image difference with a local adaptive binarisation method. 
+Chui et al \cite{chiu} used a process of acquiring fluorescence images - exciting the internal structure of the object in one wavelength, to emit light at a different wavelength - in order to detect mechanically-induced bruises on apples. They found that this method highlighted the bruised flesh, and segmented them by performing an image difference with a local adaptive binarisation method. The mean recognition rate was as high as $86.7\%$ for apples 0.5 hours after bruising, and up to $100\%$ after 1 hour.
 
 
 Spectroscopy is a method of measuring the transmitted spectral signature of objects. By placing the light source on the opposite side, and not in direct view of the sensor, the transmittance can be measured to show unique properties regarding the internal structure of the subject. Figure \ref{fig:spectroscope} illustrates the fruit spectroscopy system from \cite{choi}. 
@@ -737,7 +726,7 @@ Spectroscopy is a method of measuring the transmitted spectral signature of obje
 \end{figure}%
 
 
-Matteoli et al \cite{matteoli} used a fibre-optic spectrometer to take measurements of peach fruits whilst performing destructive density testing in order to make predictions on new fruit non-destructively. They compared the output of a crisp versus fuzzy logic approach and found overall average accuracies of $60\%$ and $~80\%$, respectively, making the fuzzy system appropriate for the task. Choi et al \cite{choi} also used an NIR spectrometer to assess the internal qualities of pear fruit as well as CCD cameras to inspect the visible characteristics such as skin blemishes and colour. The spectroscope analysed the fruit for sweetness, acidity, hardness, and moisture before combining the two (visible and internal) features as classification variables for an ANN. 
+Matteoli et al \cite{matteoli} used a fibre-optic spectrometer to take measurements of peach fruits whilst performing destructive density testing in order to make predictions on new fruit non-destructively. They compared the output of a crisp versus fuzzy logic approach and found overall average accuracies of $60\%$ and $~80\%$, respectively, making the fuzzy system appropriate for the task. Choi et al \cite{choi} also used an NIR spectrometer to assess the internal qualities of pear fruit as well as CCD cameras to inspect the visible characteristics such as skin blemishes and colour. The spectroscope analysed the fruit for sweetness, acidity, hardness, and moisture before combining the two (visible and internal) features as variables for an ANN, achieving a classification accuracy $97.4\%$.
 
 A hyperspectral range of $400nm-1000nm$ was used by ElMasry et al \cite{elmasry2} to inspect various fruit by it's moisture content (MC), soluble solids (TSS), and acidity(pH). The resulting correlation coefficients of both the Partial Least Squares ($0.90, 0.80, 0.87$, respectively) and Multiple Linear Regression ($0.87, 0.80, 0.92$, respectively) proved the feasibility of predicting these physical characteristics. They also measured three ripeness classes based on grey-level co-occurrence matrix (GLCM) analysis achieving $89.61\%$ classification accuracy.
 
@@ -993,16 +982,26 @@ Machine learning and Deep learning play a vital role in produce grading, along w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\chapter{Prototype and Design}
+\chapter{Strawberry Inspection System Design}
 \label{sec:I}
 
-The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements} such as footprint, safety, power and compressed air usage, and continuity. Added to this are some underlying assumptions and design requests from Magnificent, given their previous project experience which has provided the company with knowledge and tools to assist the development of the new system. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and synchronisation. Some aspects from these projects can be applied to the system being developed including polarisation techniques, camera characterisation, power systems, and software packages. 
 
+In order to develop a successful strawberry inspection system, the techniques used to illuminate, acquire, and process images is of significant importance as they will determine the quality of imaging, therefore accuracy of assessment. The following section examines the limitations and constraints of processing in production including throughput, lighting, reflections, and imaging, indicating the critical system requirements for operational success.
+
+Robust solutions supporting the requirements must be sought in order to develop a production-ready system that can deliver the necessary outcomes in a demonstrably consistent and accurate manner, according to the expectations of Magnificent Pty. Ltd. Systems failing to add value to a production line are usually adopted for a short time if any at all due to problems such as low throughput \cite{brosnan, liming}, unacceptable error rates \cite{matteoli, elmasry2}, and complex acquisition \cite{liu2, chiu}. 
+
+Slowing down or stopping the production line financially impacts both the producer and the workers in terms of wasted time. The producer's costs reduce ($\$/kg$) and the worker's pay reduces ($\$/hr$), if the throughput reduces, therefore the optimal solution involves the most rapid process to perform the packing, and any time hindrance would be seen as an inefficiency. 
+
+Errors can be either false positives (FP) meaning a sound item rejected, or false negatives (FN) meaning defect item passed. If there are too many FN occurrences, the consumer will see no change in the quality of produce, however if there are too many FP occurrences, the operators will have to perform double handling duties in an already fast-paced and high-pressure environment. Therefore, the approach used to ensure adoption into production will be to reduce FP instances as much as possible, even if this means a lower overall accuracy.  
 
 
 
 \section{Design Considerations and Constraint Analysis}
 \label{sec:challenges}
+
+
+The general design of the system is based on the requirements detailed in Chapter \ref{sec:requirements} such as footprint, safety, power and compressed air usage, and continuity. Added to this are some underlying assumptions and design requests from Magnificent, given their previous project experience which has provided the company with knowledge and tools to assist the development of the new system. Past projects include a field robot designed to traverse the rows of strawberries planted and pick ripened fruit. This project provided experience in $12V-24V$ circuits and power design, high power LED illumination and camera positioning and registration. A second project operated a picking robot in a vertical greenhouse, where the robot was fixed to single dimension movement on rails, with the strawberry troughs rotated to bring the fruit to a picking range. This project dealt with more accurate grading, polarization of the LED light, and camera registration and synchronisation. Some aspects from these projects can be applied to the system being developed including polarisation techniques, camera characterisation, power systems, and software packages. 
+
 
 \subsection{Software Framework}
 
@@ -1075,7 +1074,9 @@ Lighting for the cameras must have enough power to illuminate the subjects with 
 
 \subsection{Asynchronous Acquisition of Images}
 
-As mentioned in Chapter \ref{sec:requirements}, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times. The application will then save all the images acquired in a defined storage device in order to preserve production quality traceability.   
+As mentioned in Chapter \ref{sec:requirements}, there will be four images acquired for each punnet that passes through the enclosure, meaning that the application in control of the cameras must be able to collate four images, taken at different times.
+
+Due to the large number of punnets flowing through production, the likelihood of a constant stream of punnets is high (i.e. little or no space between them). This means that the cameras must be able to operate individually in order to prevent the sequential scenario where an image is missed or delayed due to the previous. The application will then need to collate these images in order to save them in a defined storage device, preserving production quality traceability.    
 
 \subsection{Processing Time}
 
@@ -1084,7 +1085,7 @@ Since the introduction of the heat-seal machine, the production line has been sp
 
 \subsection{Motion Blur}
 
-The conveyor line speed of $16.8m/min$, or $28cm/sec$ allows for two punnets per second to transit the enclosure. If the camera's shutter is left open too long, the moving object will become blurred due to the spacial displacement which occurs during capture of the image. This leads to smoothed edges, a blurred overall appearance, reduced precision, and potential false artefacts which could influence the performance of the algorithms.
+The conveyor line speed of 16.8 meters per minute, or 28 centimetres per second, allows for up to two punnets per second to transit the enclosure. If the camera's shutter is left open too long, the moving object will become blurred due to the spacial displacement which occurs during capture of the image. This leads to smoothed edges, a blurred overall appearance, reduced precision, and potential false artefacts which could influence the performance of the algorithms.
 
 The strawberry punnets used are $12cm\times 13.5cm$ which correlates to a pixel resolution of $1000x1200$ within the fixed field of view of the cameras. In order to calculate the motion of an object in an image, we take the product of the velocity and shutter speed:
 \begin{equation}
@@ -1106,19 +1107,19 @@ V_p = L \cdot P = 28 \cdot 83.33 = 2333.33 pixels/sec
 
 where $L$ is the production line speed of $28cm/sec$.
 
-To find the shutter speed for one pixel of movement :
+Therefore, in order to find the shutter speed for one pixel of movement we rearrange \ref{eq:motion}:
 \begin{equation}
 t_s = \frac{M}{V_p} = \frac{1}{2333.33} = 0.000428572 \approx 0.5ms
 \label{eq:shutter}
 \end{equation}
 
-where one pixel of movement over the distance of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$. Whilst in order to generate zero motion blur, a shutter speed of $<428\mu s$ is required.
+where one pixel of movement over the distance of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$. This shows that in order to generate zero motion blur, a shutter speed of $<428\mu s$ is required.
 
 
 
 \subsection{Orientation of Punnets}
 
-The strawberry punnet heat-seal machine has been designed to be as efficient as possible, which means that for maximum efficiency, more punnets should be sealed at the same time. As the strawberry punnets are rectangular, this means that they must be long edge leading into the sealer in order to be able to seal five punnets at a time rather than four. This increases the rate of the punnet sealing from $100/min$ to $120/min$, giving accelerated throughput gains, but raises problems elsewhere in the production line. 
+The strawberry punnet heat-seal machine has been designed to be as efficient as possible, which means that for maximum efficiency, more punnets should be sealed at the same time. As the strawberry punnets are rectangular, this means that they must be long edge leading into the sealer in order to be able to seal five punnets at a time rather than four. This increases the rate of the punnet sealing from 100 to 120 per minute, giving accelerated throughput gains, but raises problems elsewhere in the production line. 
 
 As the vision system feeds in-line into the heat-sealer, the vision system must also process the punnets with long edge leading. Since the punnets are transported through the enclosure by suspension on thin v-belts using only the lip of the plastic punnet, it will simply fall into the bottom of the enclosure if the punnet was wrongly oriented. The packing staff also need to correctly orient the punnets on the packing line so that they enter the vision enclosure correctly. However, this may be difficult to keep consistent as the staff turnover is quite high, and each packer will pack as fast as possible due to the fact that they are remunerated relative to the amount of punnets packed. Therefore a fail-safe system must be devised in order to either ensure that the punnets are correctly oriented before they reach the enclosure, or there is a sensor/detection unit which will alert operators if the situation arises.
 
@@ -1135,7 +1136,7 @@ The system is attached to the production line outside the enclosure, and therefo
 
 \subsection{Conveyor Motion}
 
-The punnet heat-seal machine is designed to seal five punnets at a time and is therefore not in constant motion. It has a sensor at the infeed to the sealer which tells the machine when the required amount of punnets have passed into the sealing apparatus. This sensor may also stop the infeed line (approximately $1s-2s$), to prevent more punnets entering. The conveyors into and out of the enclosure are controlled by this mechanism as well. This is to ensure that if there is a problem in the heat-seal machine, and operators use the e-stop or safety switches monitoring the access doors to stop the production line, the enclosure conveyors stop as well.
+The punnet heat-seal machine is designed to seal five punnets at a time and is therefore not in constant motion. It has a sensor at the infeed to the sealer which tells the machine when the required amount of punnets have passed into the sealing apparatus. This sensor may also stop the infeed line (approximately 1-2 seconds), to prevent more punnets entering. The conveyors into and out of the enclosure are controlled by this mechanism as well. This is to ensure that if there is a problem in the heat-seal machine, and operators use the e-stop or safety switches monitoring the access doors to stop the production line, the enclosure conveyors stop as well.
 
 However, this means that the conveyors could stop at any time during the sensing, acquisition, and ejection phases of the vision system. Therefore, time-determinant processes (such as using a finite time delay between camera sensors, or camera and ejector sensors) will not be sufficient. 
 
@@ -1149,7 +1150,7 @@ High-powered lighting is generally in the form of 110V/220V AC powered lamps whi
 T_{ac} = \frac{1}{f} = \frac{1}{50} = 0.02 = 20ms
 \end{equation}
 
-Taking half of this period, the minimum shutter speed time is $10ms$. Any shutter speed greater than this ($1/100$) will display signs of flickering due to the inconsistent amount of photons gathered each cycle. Strategies such as shutter synchronisation (with AC signal in an attempt to open the shutter, relative to it) can be employed, however the mains power frequency can decrease and increase by small amounts due to supply/demand fluctuations. The graph in Figure \ref{fig:50hz} reinforces the fact that inconsistencies are ongoing due to the constant change in demographic power requirements \cite{50hz}.
+Taking half of this period, the minimum shutter speed time is 10 milliseconds. Any shutter speed greater than this ($1/100$) will display signs of flickering due to the inconsistent amount of photons gathered each cycle. Strategies such as shutter synchronisation (with the AC signal, in an attempt to open the shutter at a relative rate) can be employed, however the mains power frequency can decrease and increase by small amounts due to supply/demand fluctuations. The graph in Figure \ref{fig:50hz} reinforces the fact that inconsistencies are ongoing due to the constant change in demographic power requirements \cite{50hz}.
 
 
 \begin{figure}[h]
@@ -1226,6 +1227,8 @@ The design of the frame and doors included the ability to manoeuvre lighting mou
 
 \subsubsection{Illumination Intensity}
 
+Illumination intensity, lighting type, and configuration are of high importance when acquiring images, and can mean the difference between poor and excellent algorithm results \cite{lorente,kondo,liu2}. This is due to various effects such as diminished intensity, reflections and hotspots, shadows and voids, inconsistency, spectral range, and directionality. Given the production application of the system, lighting attributes are of greater importance given the duration of production can be more than 12 hours, line speeds are continuous and fast-paced, and multiple berries will be assessed with each image.
+
 Minimum Illumination is a term (typically used for CCTV cameras) that is not clearly defined \cite{min_illumination}, but is used to describe the minimum amount of light required in order to distinguish the objects in the image. This is difficult to compare for a few reasons, namely, differences in reflectivity of the objects, the display screen, where the light reading is taken from, and how it is measured, as well as the fact that human eyes are unique, therefore subjective in terms of distinguishing features. 
 
 Luminous intensity ($I$) describes a light source's omnidirectional energy, measured in units of candela ($cd$), where $1cd$ was originally defined as the amount of light produced from one candle, but has been more precisely defined since 1948\cite{light_units}. Dividing the total luminous intensity by $4\pi$ (as there are $4\pi$ steradians to a sphere) is a measurement luminous flux ($F$) measured in lumen ($lm$). One lumen is produced by a luminous intensity of $1cd$ over one steradian, and is typically used by light manufacturers to describe the amount of directional illumination emitted by their devices.
@@ -1240,7 +1243,7 @@ where the angle ($\omega$) can be expressed as a function of area $A$ and distan
 	\omega = \frac{A}{d^2}
 \end{equation}
 
-This shows the intensity is inversely proportional to the square of the distance. However the distances inside the enclosure are not consistent given the reflectance from the curved inner walls. Calculus problems of this type can offer solutions, however given the complexity of the inner structure of the system (including cross-polarisation), the intensity requirements will be established with less effort through experimentation. 
+This shows the intensity is inversely proportional to the square of the distance, but distances inside the enclosure are not consistent given the reflectance from the curved inner walls. Calculus problems of this type can offer solutions, however given the complexity of the inner structure of the system (including cross-polarisation), the intensity requirements will be established with less effort through experimentation. 
 
 
 
@@ -1270,8 +1273,6 @@ Halogen work lamps supplied lighting as they were capable of emitting the full s
 
 
 Converting the lighting to $12V$ power was required in order to provide a more constant current, therefore lighting intensity. An LED's spectral response depends on manufacturer and can range from very poor CRI with 3 distinct bands of R, G, and B (similar to a typical fluorescent lamp), up to $95\%$ CRI that not only emit some IR light, but also render blue colours better than halogen \cite{lumicrest}. However, the IR radiation will cut off around $780nm$ (enough to cover the visible spectrum completely) and therefore will not be suitable for the IR imaging system. $12V$ halogen lamps are commonly used as downlights in residential and industrial applications as they are more efficient, reliable, and the beam is more directional compared to their $240V$ counterpart. Therefore, Automotive LED light bars replaced the halogen work lamps for the visible spectrum, whilst $12V/35W$ halogen down lights provide the IR spectrum. 
-
-Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) using four $150W/240VAC$ halogen lamps with camera shutter speeds of $500\mu s$, $1ms$, and $2ms$, show that the lighting intensity is sufficient for high speed applications.
 	
 
 \begin{figure}[h]
@@ -1294,13 +1295,13 @@ Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) usin
 		\caption{}
 		\label{fig:2ms}
 	\end{subfigure}%
-	\caption{Images taken using shutter speeds: (a) $500\mu s$, (b) $1ms$, and (c) $2ms$.}
+	\caption{Images taken using $600W$ of halogen and shutter speeds: (a) $500\mu s$, (b) $1ms$, and (c) $2ms$.}
 	\label{}
 \end{figure} 
 
-The combined total illumination power consumption (for the top view) is $4\cdot 150W = 600W$. However, it is well established that halogen lamps are inefficient in regards to lumens per watt ($lm/W$) given they emit much more of the electromagnetic spectrum. White LEDs are manufactured to have much higher efficiency, generating only visible wavelengths. 
+Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) using four $150W/240VAC$ halogen lamps with camera shutter speeds of $500\mu s$, $1ms$, and $2ms$, show that the lighting intensity is sufficient for high speed applications. The combined total illumination power consumption (for the top view) is $4\times 150W = 600W$. However, it is well established that halogen lamps are inefficient in regards to lumens per watt ($lm/W$) given they emit much more of the electromagnetic spectrum. White LEDs are manufactured to have much higher efficiency, generating only visible wavelengths. 
 
-Cheng and Cheng \cite{cheng} found LEDs to be up to $75\%$ more efficient where as Alonzo et al \cite{alonzo} found a $60\%$ reduction .Therefore, it is estimated that the LED power consumption for the same lumen should be approximately one third that of halogen. As the number of LEDs can be increased, this is not seen as a limitation of the system, however keeping power, heating, and brightness to a minimum will reduce risk of failure or injury. 
+Cheng and Cheng \cite{cheng} found LEDs to be up to $75\%$ more efficient where as Alonzo et al \cite{alonzo} found a $60\%$ improvement .Therefore, it is estimated that the LED power consumption for the same lumen should be approximately one third that of halogen. As the number of LEDs can be increased, this is not seen as a limitation of the system, however keeping power, heating, and brightness to a minimum will reduce risk of failure or injury. 
 
 
 \begin{figure}[h]
@@ -1363,7 +1364,7 @@ The pneumatic system is driven by a main air compressor that supplies the strawb
 Various hardware devices will need to be controllable via the main application, to enable efficient main lighting, signal lighting, peltier, pneumatics, and conveyor control, as well as inputs from some peripheral devices and sensors.
 
 
-The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and has industrial screw-clamp electrical connectors. An advantage of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
+The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and uses screw-clamp electrical connectors. The main advantages of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified, and high power circuit switching when compared to other microcontrollers. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
 
 
 Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
@@ -1421,7 +1422,6 @@ All electronic requirements are as follows:
 	\item Microcontroller for hardware operation
 	\item Relay bank to switch high-power sources
 	\item Intake/exhaust/cooling fans
-	\item Various circuits/wiring/connectors/fuses
 \end{itemize} 
 
 The first three items require AC mains power ($240V$) and can therefore be addressed by using readily available extension leads and a power board. The remaining items use DC power and need to be quantified in order to design the power supply system.
@@ -1453,10 +1453,10 @@ count_and_find_largest_regions(count, ret_image, num, img)
 From which point after 'ret\_image' and 'count' will take the values assigned within the function. Each function takes the form:
 
 \begin{lstlisting}
-function([, out_control : [, out_iconic : [, in_control : [, in_iconic]]]])
+function([, out_c : [, out_i : [, in_c : [, in_i]]]])
 \end{lstlisting} 
 
-where lists of  \textit{iconic} and  \textit{control variables}, can exist or not, for both input and output to the function.
+where lists of  \textit{iconic (i)} and  \textit{control (c)}, can exist or not, for both input and output to the function.
 
 
 Lastly, HALCON\texttrademark is an interpreted language with the unique property that stores all variables in a database cache as the program runs (in development, using IDE). This means that as each variable is assigned, it is shown in either the \textit{iconic variable} window, or the \textit{control variable} window, giving the user immediate response to code changes and visualisation of the results. This allows for increased efficiency in development of image processing techniques. The screenshot in Figure \ref{fig:halcon_ide} has the IDE split into four windows, displaying the relevant information for agile development.  
@@ -1472,7 +1472,7 @@ Lastly, HALCON\texttrademark is an interpreted language with the unique property
 
 There are two methods of integrating HALCON\texttrademark with other applications, given that HDevelop\texttrademark is not compatible with other programming languages. An entire script may be inserted in the filesystem, such that it may be called from the main application, after importing the appropriate libraries. This method uses a wrapper function from $C\#$ or $C++$ to call a native HDevelop\texttrademark script as an \textit{External Function Call}. The other method uses the same library to program HDevelop\texttrademark objects in $C\#$ or $C++$ native language. In other words, the operations performed are written locally and natively, using external libraries of objects and operations. HALCON\texttrademark can also convert and export code directly into $C\#$ or $C++$ in order to be used as a dynamic class which would require regular updating, changes or improvements.
 
-Visual Studio\textregistered is a well know development platform whose native programming language is $C\#$, embedded in a rich, professional IDE where creating state-of-the-art apps is common, given the UI development tools (for GUI apps), library linking, debugging tools, git, and deployment features. However, the most important parts of the SQA application, namely the GUI and image processing are supported thus making both of these application suitable for the project.
+Visual Studio\textregistered is a well know development platform whose native programming language is $C\#$, embedded in a rich, professional IDE where creating state-of-the-art apps is common, given the UI development tools (for GUI apps), library linking, debugging tools, git, and deployment features. However, the most important parts of the SQA application, namely the GUI and image processing are supported thus confirming both of these applications suitable for the project.
 
 
 \subsubsection{User Interface}
@@ -1490,7 +1490,7 @@ The GUI must be simple to use but capable of displaying all the relevant informa
   
 HALCON\texttrademark's integration capabilities allow the GUI to display a HWindow\texttrademark directly, giving the application the ability to show regions, lines, contours, images, or text generated by the image processing algorithms. 
 
-As HALCON\texttrademark is designed to process images and video streams, it has been developed to include a many camera protocols such as 1394IIDC (FireWire\texttrademark), GigEVision\textregistered, USB3Vision\textregistered, $\mu$eye\texttrademark, including Microsoft\textregistered's DirectShow\textregistered for generic cameras, and support to grab images from file. For each of the protocols, multiple camera manufacturers (even some camera models) are specifically implemented within the IDE along with a camera connection wizard and code exporter. The wizard allows experimentation with the various controls in GUI style, before exporting the required code to repeat the actions in a new script. 
+As HALCON\texttrademark is designed to process images and video streams, it has been developed to include a many camera protocols such as 1394IIDC (FireWire\texttrademark), GigEVision\textregistered, USB3Vision\textregistered, $\mu$eye\texttrademark, including Microsoft\textregistered's DirectShow\textregistered for generic cameras, and support grabbing images from file. For each of the protocols, multiple camera manufacturers (even some camera models) are specifically implemented within the IDE along with a camera connection wizard and code exporter. The wizard allows experimentation with the various controls in GUI style, before exporting the required code to repeat the actions in a new script. 
 
 The application waits until the acquisition sequence is complete before processing and displaying the punnet, therefore updating the GUI at rates up to $2fps$, and might occur whilst images are being captured. This problem is solved with asynchronous threads that can perform acquisition, image processing, I/O, and display separately yet simultaneously.
 
@@ -1620,7 +1620,7 @@ where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to thr
 Pre-processing consists of reducing the image to a Region Of Interest (ROI) in the spacial location where the punnet is consistently captured. The post-processing methods use morphology, removal of regions less than certain limits (noise reduction), and area calculations to return the affected areas as indicated by the ellipses in Figure \ref{fig:hue_processed}.
 
 
-\section{Experimental Results}
+\section{Summary}
 
 
 \subsection{Enclosure Construction}
@@ -1992,13 +1992,13 @@ The system developed is extremely successful in achieving the desired consistent
 \chapter{Production Integration}
 \label{sec:II}
 
-The strawberry packing facility consists of two large chillers, four packing benches and a large area for wrapping and labelling pallets. As the berries are picked in the field, they are placed in large trays of approximately $5kg$. The trays are loaded onto racks to be transported to the packing room chiller and eventually packed into smaller containers. The packing room floor plan is shown in Figure \ref{fig:pack_layout_1} with the flow of berries indicated by arrows from chiller to packing benches, followed by the wrapping station, and finally the storage chiller. The trays are delivered to the four packing benches and are accumulated in the centre of the eight packing stations on each bench. The QA personnel positioned at the end of each bench will load the produce onto pallets, and signal operators to collect them when full. The pallets are then recorded, wrapped and labelled in a large designated space before being loaded into the finished product chiller, ready for transportation.
+The strawberry packing facility consists of two large chillers, four packing benches and a large area for wrapping and labelling pallets. As the berries are picked in the field, they are placed in large trays of approximately $5kg$. The trays are loaded onto racks to be transported to the packing room chiller and eventually packed into smaller containers. The packing room floor plan is shown in Figure \ref{fig:pack_layout_1}, with the flow of berries indicated by arrows from chiller to packing benches, followed by the wrapping station, and finally the storage chiller. The trays are delivered to the four packing benches and are accumulated in the centre of the eight packing stations on each bench. The QA personnel positioned at the end of each bench will load the produce onto pallets, and signal operators to collect them when full. The pallets are then recorded, wrapped and labelled in a large designated space before being loaded into the finished product chiller, ready for transportation.
 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.95\linewidth]{Pack_layout_1.png}
-	\caption{.}
+	\caption{Packing room configuration before Heat-seal and SQA system.}
 	\label{fig:pack_layout_1}
 \end{figure}%
 
@@ -2010,7 +2010,7 @@ of the SQA system and Heat-seal machine, reducing the available storage and wrap
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.95\linewidth]{Pack_layout_2.png}
-	\caption{.}
+	\caption{Packing room configuration after Heat-seal and SQA system have been added.}
 	\label{fig:pack_layout_2}
 \end{figure}%
 
@@ -2021,7 +2021,7 @@ This arrangement does not impact the production speed (as per system requirement
 	\item SQA vision system removes defected punnets for repacking as a final quality assurance step, reducing customer complaints, stock returns, and brand diminishment. 
 	\item Heat-seal machine seals plastic film onto the punnet in order to eliminate tampering.
 	\item Metal detector placed after Heat-seal removes punnets in the event of contamination by either plant.
-	\item Final weight checking removes punnets if the scale determines final weight is incorrect.
+	\item Final weight checking removes punnets if the scale detects out-of-specification items.
 \end{itemize}  
 
 
@@ -2085,7 +2085,7 @@ The main electronic devices can be seen in Figure \ref{fig:system_construct_1} w
 Smaller LED bars ($30W$ opposed to $72W$) were required to be installed in the mid section of each side of the enclosure (shown in Figure \ref{fig:system_construct_2}) in order to generate more side lighting. Given that the main LED's were upward-facing, the illumination diminished significantly from the sides of the conveyor, which lead to images with shadowy occlusions particularly around the edges of the punnet. These four devices were also paired together, occupying two outputs on the distribution device. 
 
 
-Figure \ref{fig:system_construct_2} shows the main, and auxiliary, LED's installed along with an RGB camera in order to perform some lighting testing. The diffusers and polarising sheets are sandwiched together and form a rectangular tunnel around the acquisition chamber, with the intense lighting outside diffusing and polarizing the light as it passes through. The external cladding (powder-coated steel sheets) covers each end of the lighting enclosure (above and below) and protrudes out from the rollers around the conveyors for safety purposes. 
+Figure \ref{fig:system_construct_2} shows the main, and auxiliary, LED's installed along with an RGB camera in order to perform lighting tests. The diffusers and polarising sheets are sandwiched together and form a rectangular tunnel around the acquisition chamber, with the intense lighting outside diffusing and polarizing the light as it passes through. The external cladding (powder-coated steel sheets) covers each end of the lighting enclosure (above and below) and protrudes out from the rollers around the conveyors for safety purposes. 
 
 
 \subsubsection{Lighting Finalisation}
@@ -2167,7 +2167,7 @@ The high-powered devices are controlled by the Phidget\texttrademark in conjunct
 	\label{tab:micro_pinout_out}
 	\begin{tabular}{lccccc}
 		\toprule
-		\textbf{Element}  & \textbf{Port No.}  & \textbf{Relay Trigger} & \textbf{Voltage ($V$)} & \textbf{Current ($A$)} & \textbf{Power ($W$)}\\[8pt]
+		\textbf{Element}  & \textbf{Port No.}  & \textbf{Relay} & \textbf{Voltage ($V$)} & \textbf{Current ($A$)} & \textbf{Power ($W$)}\\[8pt]
 		\midrule
 		Conveyor Power Switch 	& 0 & No & 5 & 0.001 & 0.005 \\[4pt]
 		\midrule
@@ -2428,30 +2428,9 @@ The activation of the ejector also depends on the result of the processing of ea
 The design flowchart in Figure \ref{fig:ejector_logic} shows the interaction between the main thread, image processing thread (where the decision is made), and the microcontroller. The controller must also activate for the pre-determined timing calculated for the pneumatic burst, including delay between sensing and activation and the duration the solenoid is opened.
 
 
-\subsection{Data Collection}
-
-A normal operating day duration consists of $10h-16h$ of constant packing with two to three meal breaks, allowing for up to $20,000$ punnets to be packed per day. However, due to fruit variability, bad weather, market conditions, and logistical reasons, the amount packed varied from $500$ to $14,000$ punnets per day over the duration of each season. Variability at the beginning and end of season as well as moving operations interstate (in order to meet ideal growing conditions) means that less fruit is packed on average as the season is beginning and concluding. The quality of the fruit also varies at these times with under ripe and immature fruit seen at the beginning of each season, and over ripe, mouldy, or deteriorated berries towards the end.
-
-
-During the first season on the production line, a dataset of $>30,000$ punnets was acquired, with 2-4 images per punnet from each orientation and wavelength. The system ejected 67 punnets even though the only algorithm implemented at this time was the under ripe detection. The ejector was turned on towards the end of the season, which meant that the fruit had had many months to ripen resulting a reduction in under ripe instances.  
-
-A dataset of 500+ images, ground-truthed by operators was used to assess the algorithms implemented. The current under ripe algorithm had very good results at $89.11\%$ accuracy. Examples of some typical under ripe rejections is shown in Figure \ref{fig:UR_berries}.
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\textwidth]{UR_berries.png}
-	\caption{Examples of under ripe berry detection in full punnets.}
-	\label{fig:UR_berries}
-\end{figure}
-
-
-The Queensland season begins to harvest fruit in May/June through to October/November, with the southern farms harvesting in the opposing seasons. Therefore, in order to utilise the system constantly, it must be transported between farms (interstate) depending on the fruit volume and time of year. The system is packed and transported along with other machinery used in both farms such as the heat-seal machine, scales and metal detector. 
-
-
-
 \section{South Australia Production - Season 2}
 
+The Queensland season begins to harvest fruit in May/June through to October/November, with the southern farms harvesting in the opposing seasons. Therefore, in order to utilise the system constantly, it must be transported between farms (interstate) depending on the fruit volume and time of year. The system is packed and transported along with other machinery used in both farms such as the heat-seal machine, scales and metal detector. 
 
 The production line in Queensland (Wamuran) differs from that of South Australia (Myponga), given the former has a manually-fed production line and the latter is automatically-fed via converging conveyor belts seen in Figure \ref{fig:myponga_line}. The packers stand either side of the large blue belt, and pack accordingly into either heat-seal punnets or non-standard stock such as second grade (fruit markets), jumbo packs ($500g$), and speciality items (A-grade, boutique, hand selected). The heat-seal punnets placed on the conveyor in line with the red in-feed conveyor of the vision system, whilst the rest are placed opposite and diverted onto a packing table. 
 
@@ -2520,7 +2499,28 @@ Several design flaws were noticed after nearly two seasons of packing room produ
 
 In order to clean the enclosure properly, the bottom lighting clusters and cameras were removed to allow access to the underside of the chamber. This situation is not ideal (especially if performed each season), and along with difficulty of access to components inside the enclosure, and changed lighting arrangement, prompted a redesign of the entire system hardware. 
 
-\section{Data Accumulation and Analysis: July 2016 - June 2017 }
+
+\section{Summary}
+
+
+\subsection{Data Accumulation and Analysis: July 2016 - June 2017 }
+
+
+A normal operating day duration consists of $10h-16h$ of constant packing with two to three meal breaks, allowing for up to $20,000$ punnets to be packed per day. However, due to fruit variability, bad weather, market conditions, and logistical reasons, the amount packed varied from $500$ to $14,000$ punnets per day over the duration of each season. Variability at the beginning and end of season as well as moving operations interstate (in order to meet ideal growing conditions) means that less fruit is packed on average as the season is beginning and concluding. The quality of the fruit also varies at these times with under ripe and immature fruit seen at the beginning of each season, and over ripe, mouldy, or deteriorated berries towards the end.
+
+
+During the first season on the production line, a dataset of $>30,000$ punnets was acquired, with 2-4 images per punnet from each orientation and wavelength. The system ejected 67 punnets even though the only algorithm implemented at this time was the under ripe detection. The ejector was turned on towards the end of the season, which meant that the fruit had had many months to ripen resulting a reduction in under ripe instances.  
+
+A dataset of 500+ images, ground-truthed by operators was used to assess the algorithms implemented. The current under ripe algorithm had very good results at $89.11\%$ accuracy. Examples of some typical under ripe rejections is shown in Figure \ref{fig:UR_berries}.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{UR_berries.png}
+	\caption{Examples of under ripe berry detection in full punnets.}
+	\label{fig:UR_berries}
+\end{figure}
+
 
 
 The first 12 months of production - consisting of one northern season (May-October), and one southern season (November-April) - concluded that the objective analysis of fast moving punnets of strawberries was feasible both from engineering and customer perspectives.   
@@ -3506,7 +3506,9 @@ During the fourth season, favourable crops and weather conditions allowed a stea
 \end{figure}
 
 
-\section{Data Accumulation and Analysis: July 2017 - June 2018}
+\section{Summary}
+
+\subsection{Data Accumulation and Analysis: July 2017 - June 2018}
 
 
 \begin{figure}[h]
@@ -4055,37 +4057,10 @@ During the research and training phase, $12$ different classifiers were assessed
 
 Interestingly, the SVM with RBF kernel algorithm scored a very low $51.5\%$ while the NuSVM algorithm scored much higher at $93.4\%$ when comparing on the under ripe category. The difference between the these two methods are the $C$ and $Nu$ regularization parameters which apply penalties in the case of mis-classifications. The $C$ parameter used in SVC ranges $\{\exists C\in\mathbb{Q^+}\}$ where $\mathbb{Q^+}$ is the set of positive rational numbers, meaning it can take any real value from zero to infinity. The $Nu$ parameter is limited to a range from zero to one only $\{\exists C\in\mathbb{Q} \mid 0 <\mathbb{Q} < 1\}$ and therefore, is bounded to search within a defined smaller range. The difference in these two scores indicates for this problem, the classifier will under-fit using high-level parameters that can escalate infinitely. Therefore the Logistic Regression algorithm is used to classify the extracted strawberry features. 
 
+\section{Summary}
 
 
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-
-\chapter{Conclusion and Outcomes}
-
-
-In this thesis, a Strawberry Quality Assurance (SQA) vision system has been developed in which packaged strawberries can be effectively and accurately quality graded on a fast-paced, real-time production line. The system has entered it's fifth season as production-ready and uses machine learning to perform the grading of punnets at a rate of $2/s$. The enclosure can be placed in-line and configured to fit a production facility where strawberries are packaged into containers before being placed on a conveyor. Defect punnets are ejected from the line via a pneumatic air blast synchronised with the inference computer before proceeding to the automatic heat-seal machine.
-
-The research performed during the project is integral to the successful implementation and professional operation of the system with investigations into lighting, polarisation, spectral reflections and diffuse light, power systems, cameras, electronic components, controllers, and triggering systems, as well as strawberry feature representation, colour analysis and deep learning. Described in Chapter \ref{sec:I}, construction of the first prototype concluded that the inherent AC flickering was not suitable due to the fast shutter speeds of the cameras when acquiring moving objects, as well as polaroid imperfections (i.e. bending, curving, or damaged) negate cross-polarisation effects and reduce the ability to suppress specular reflections. The decision to move to DC as a result provided image stability improvements even though this meant time would need to be taken for an appropriate power supply to be designed and built. Preparations for production were made whilst simultaneously becoming familiar with software (HALCON\texttrademark), interfaces, camera characterisation, parameters and operation. Chapter \ref{sec:paper_1} discusses the problems of flickering and specular reflections and the solutions in order to design a vision system with the best possible image quality. The results indicated that using a good quality DC power supply (with enclosed surroundings) can reduce reflectance fluctuations to negligible levels, and the cross-polarisation process allows all specular reflections to be removed. 
-
-Integrating the system into the production line required pre-planning and testing prior to work commencing in order to make the process as efficient as possible. Chapter \ref{sec:II} describes the implementation to production including the enclosure positioning, power systems and lighting installation, control systems, and camera setup, as well as hyperspectral/IR imaging and related bruising. The ejector was installed and activated shortly after the first Queensland production season began, removing punnets which were defected for repacking. The entire system was relocated to South Australia for the second season, with the production line automatically fed using conveyors opposed to being manually placed on the in-feed conveyor. Colour analysis methods detailed in Chapter \ref{sec:paper_2} explain the algorithms used to create the first two quantified methods of defect detection. The under ripe and over ripe strawberry features were extracted and analysed in order to grade them in a binary manner (2 classifiers) with resulting performance of $94.7\%$ and $90.6\%$ for the multiple detection category, respectively.
-
-After two production seasons, the dirt, dust, and debris build up inside the enclosure as well as lighting, access, and robustness concerns prompted a redesign in between seasons. Described in chapter \ref{sec:III}, the enclosure is stripped of it's main components such as power supply, cameras, polarisers, sensors, punnet conveyors (including v-belts) and PC, before being transferred to the newly designed and constructed frame. Electronics and camera accessibility was increased by adding doors and panels, and mounting the electronic components, microcontroller, relays and fuses. Small, powerful LEDs replaced the bulky visible and energy wasting halogen lighting with a triggering system synchronised to the cameras, developed in order to pulse the lighting rather than continuous illumination. An upgrade performed on the microcontroller freed the application of some of it's critical memory requirements, as well as providing standardisation and industrialisation. An operator panel installed with start/stop buttons and a touchscreen in order to give the system aesthetic appeal. 
-
-Finally, Chapter \ref{sec:IV} outlined the dramatic change of system completely in an effort to perform more accurately using state-of-the-art techniques. Linux\textregistered OS enabled open-source image manipulation and processing, model creation and saving and machine learning including deep learning. Both SVM and neural networks were used to train classifiers with some success, however, the final classifier uses a combination of a pre-trained Resnet-50 feature extraction and logistic regression to create 3 separate binary models which performed much more accurately during training.
-
-
-
-
-\section{System Performance}
-
-
+Transitioning to an open-source operating system and development suite has given the system an increase in versatility and controllability as well as reducing reliance on subscriptions and software library inadequacies. Allowing experimental and production algorithms which make use of machine learning techniques gives the new environment a distinct advantage over the previous software framework.
 
 Given the independent classifier models and outcomes, the operator can increase the sensitivity of one of the defect classes while leaving the others unchanged, therefore allowing for the ability to adapt to changing weather and market conditions. For each image, Resnet needs only to produce a single feature vector that can then be predicted by each binary classifier to give a probability score. Although the structure of classifiers could be simplified by training one multi-class classifier, the independent fine-tuning during production would be lost (as well as being theoretically less accurate). The operator is, therefore, able to make sensitivity adjustments in real-time by simply using a slider on the GUI. For example, the operator might adjust the confidence levels to $60\%, 90\%$, and $75\%$ for the foreign object, over ripe, and under ripe classes, respectively.  
 
@@ -4120,7 +4095,28 @@ Given the independent classifier models and outcomes, the operator can increase 
 
 This creates a subjective success measure, and due to this parameters variability, a Receiver Operating Characteristic (ROC) analysis  is performed with the results shown in Figure \ref{fig:ROCs}. The test images were acquired in real-time and then labelled retrospectively in order to obtain quantitative results.
 
-Both the Under Ripe and Foreign Object classifiers have performed well with the  Area Under ROC (AUROC) greater than $80\%$. However the Over Ripe classifier did not perform so well with an AUROC of $58\%$. This is most likely due to over-fitting based on shadowed berries at the bottom of the punnet and could be overcome by pre-processing the data to contain only the top layer of fruit. This means that only fruit that is under full illumination will be classified as over ripe. A critical success factor was execution time, given that the production line requires two punnets per second to be acquired and assessed. Resnet has the ability to use its identity functions (discussed in Section \ref{sec:resnet}) which speeds up the propagation time of the network, and thus the inference is very fast. Without the use of a GPU, the entire process including the time taken for three classifiers averages $<300ms$, which is well within the given $500ms$ window.  
+Both the Under Ripe and Foreign Object classifiers have performed well with the  Area Under ROC (AUROC) greater than $80\%$. However the Over Ripe classifier did not perform so well with an AUROC of $58\%$. This is most likely due to over-fitting based on shadowed berries at the bottom of the punnet and could be overcome by pre-processing the data to contain only the top layer of fruit. This means that only fruit that is under full illumination will be classified as over ripe. A critical success factor was execution time, given that the production line requires two punnets per second to be acquired and assessed. Resnet has the ability to use its identity functions (discussed in Section \ref{sec:resnet}) which speeds up the propagation time of the network, and thus the inference is very fast. Without the use of a GPU, the entire process including the time taken for three classifiers averages $<300ms$, which is well within the given $500ms$ window.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\chapter{Conclusion and Outcomes}
+
+
+In this thesis, a Strawberry Quality Assurance (SQA) vision system has been researched developed in which packaged strawberries can be effectively and accurately quality graded on a fast-paced, real-time production line. The system has entered it's fifth season as production-ready and uses machine learning to perform the grading of punnets at a rate of two punnets per second. The enclosure can be placed in-line and configured to fit a production facility where strawberries are packaged into containers before being placed on a conveyor. Defect punnets are ejected from the line via a pneumatic air blast synchronised with the inference computer before proceeding to the automatic heat-seal machine.
+
+The research performed during the project is integral to the successful implementation and professional operation of the system with investigations into lighting, polarisation, spectral reflections and diffuse light, power systems, cameras, electronic components, controllers, and triggering systems, as well as strawberry feature representation, colour analysis and deep learning. Described in Chapter \ref{sec:I}, construction of the first prototype concluded that the inherent AC flickering was not suitable due to the fast shutter speeds of the cameras when acquiring moving objects, as well as polaroid imperfections (i.e. bending, curving, or damaged) negate cross-polarisation effects and reduce the ability to suppress specular reflections. The decision to move to DC as a result provided image stability improvements even though this meant time would need to be taken for an appropriate power supply to be designed and built. Preparations for production were made whilst simultaneously becoming familiar with software (HALCON\texttrademark), interfaces, camera characterisation, parameters and operation. Chapter \ref{sec:paper_1} discusses the problems of flickering and specular reflections and the solutions in order to design a vision system with the best possible image quality. The results indicated that using a good quality DC power supply (with enclosed surroundings) can reduce reflectance fluctuations to negligible levels, and the cross-polarisation process allows all specular reflections to be removed. 
+
+Integrating the system into the production line required pre-planning and testing prior to work commencing in order to make the process as efficient as possible. Chapter \ref{sec:II} describes the implementation to production including the enclosure positioning, power systems and lighting installation, control systems, and camera setup, as well as hyperspectral/IR imaging and related bruising. The ejector was installed and activated shortly after the first Queensland production season began, removing punnets which were defected for repacking. The entire system was relocated to South Australia for the second season, with the production line automatically fed using conveyors opposed to being manually placed on the in-feed conveyor. Colour analysis methods detailed in Chapter \ref{sec:paper_2} explain the algorithms used to create the first two quantified methods of defect detection. The under ripe and over ripe strawberry features were extracted and analysed in order to grade them in a binary manner (2 classifiers) with resulting performance of $94.7\%$ and $90.6\%$ for the multiple detection category, respectively.
+
+After two production seasons, the dirt, dust, and debris build up inside the enclosure as well as lighting, access, and robustness concerns prompted a redesign in between seasons. Described in chapter \ref{sec:III}, the enclosure is stripped of it's main components such as power supply, cameras, polarisers, sensors, punnet conveyors (including v-belts) and PC, before being transferred to the newly designed and constructed frame. Electronics and camera accessibility was increased by adding doors and panels, and mounting the electronic components, microcontroller, relays and fuses. Small, powerful LEDs replaced the bulky visible and energy wasting halogen lighting with a triggering system synchronised to the cameras, developed in order to pulse the lighting rather than continuous illumination. An upgrade performed on the microcontroller freed the application of some of it's critical memory requirements, as well as providing standardisation and industrialisation. An operator panel installed with start/stop buttons and a touchscreen in order to give the system aesthetic appeal. 
+
+Finally, Chapter \ref{sec:IV} outlined the dramatic change of system completely in an effort to perform more accurately using state-of-the-art techniques. Linux\textregistered OS enabled open-source image manipulation and processing, model creation and saving and machine learning including deep learning. Both SVM and neural networks were used to train classifiers with some success, however, the final classifier uses a combination of a pre-trained Resnet-50 feature extraction and logistic regression to create 3 separate binary models which performed much more accurately during training.
 
 All of the requirements from Chapter \ref{sec:requirements} have been met including traceability and documentation with all images and their metadata saved to a database, and an automatic documentation generator which can can re-generate all documents relating to the software using specific commenting styles within the source code.
 
