@@ -66,6 +66,39 @@ R.~M. Research, ``Supermarkets dominate fruit and vegetable trade—even for
   fresh market shoppers,'' 2015.
 \newblock Accessed Feb 2017.
 
+\bibitem{brosnan}
+T.~Brosnan and D.-W. Sun, ``Inspection and grading of agricultural and food
+  products by computer vision systems - a review,'' {\em Computers and
+  Electronics in Agriculture}, vol.~36, pp.~193--213, 2002.
+
+\bibitem{liming}
+X.~Liming and Z.~Yanchao, ``Automated strawberry grading system based on image
+  processing,'' {\em Computers and Electronics in Agriculture}, vol.~71S,
+  pp.~S32--S39, 2010.
+
+\bibitem{matteoli}
+S.~Matteoli, M.~Diani, R.~Massai, G.~Corsini, and D.~Remorini, ``A
+  spectroscopy-based approach for automated nondestructive maturity grading of
+  peach fruits,'' {\em IEEE SENSORS JOURNAL}, vol.~15 No. 10, pp.~5455--5464,
+  2015.
+
+\bibitem{elmasry2}
+G.~ElMasry, N.~Wang, A.~ElSayed, and M.~Ngadi, ``Hyperspectral imaging for
+  nondestructive determination of some quality attributes for strawberry,''
+  {\em Journal of Food Engineering}, vol.~81, pp.~98--107, 2007.
+
+\bibitem{liu2}
+Q.~Liu, K.~Wei, H.~Xiao, S.~Tu, K.~Sun, Y.~Sun, L.~Pan, and K.~Tu,
+  ``Near-infrared hyperspectral imaging rapidly detects the decay of
+  postharvest strawberry based on water-soluble sugar analysis,'' {\em Food
+  Analytical Methods}, vol.~12, pp.~936--946, 2019.
+
+\bibitem{chiu}
+Y.~C. Chiu, X.~L. Chou, T.~E. Grift, and M.~T. Chen, ``Automated detection of
+  maechanically induced bruise areas in golden delicious apples using
+  flourescence imagery,'' {\em American Society of Agricultural and Biological
+  Engineers}, vol.~58(2), pp.~215--225, 2015.
+
 \bibitem{heleno}
 P.~Heleno, R.~Davies, B.~A. Correia, and J.~Dinis, ``A machine vision quality
   control system for industrial acrylic fibre production, journal =,''
@@ -196,28 +229,11 @@ J.~Gill, A.~Girdhar, and T.~Singh, ``A hybrid intelligent system for fruit
   grading and sorting,'' {\em International Journal on Computer Science and
   Engineering (IJCSE)}, vol.~9 No.5, pp.~257--265, 2017.
 
-\bibitem{chiu}
-Y.~C. Chiu, X.~L. Chou, T.~E. Grift, and M.~T. Chen, ``Automated detection of
-  maechanically induced bruise areas in golden delicious apples using
-  flourescence imagery,'' {\em American Society of Agricultural and Biological
-  Engineers}, vol.~58(2), pp.~215--225, 2015.
-
 \bibitem{choi}
 H.~S. Choi, J.~B. Cho, S.~G. Kim, and H.~S. Choi, ``A real-time smart fruit
   quality grading system classifying by external appearance and internal flavor
   factors,'' {\em International Conference on Industrial Technology},
   pp.~2081--2086, 2018.
-
-\bibitem{matteoli}
-S.~Matteoli, M.~Diani, R.~Massai, G.~Corsini, and D.~Remorini, ``A
-  spectroscopy-based approach for automated nondestructive maturity grading of
-  peach fruits,'' {\em IEEE SENSORS JOURNAL}, vol.~15 No. 10, pp.~5455--5464,
-  2015.
-
-\bibitem{elmasry2}
-G.~ElMasry, N.~Wang, A.~ElSayed, and M.~Ngadi, ``Hyperspectral imaging for
-  nondestructive determination of some quality attributes for strawberry,''
-  {\em Journal of Food Engineering}, vol.~81, pp.~98--107, 2007.
 
 \bibitem{baranowski}
 P.~Baranowski, ``Detection of early apple bruises using pulsed-phase
@@ -291,12 +307,6 @@ A.~Lopez-Maestresalas, J.~C. Keresztes, M.~Goodarzi, S.~Arazuri, C.~Jaren, and
   swir hyperspectral imaging,'' {\em Food Control}, vol.~70, pp.~229--241,
   2016.
 
-\bibitem{liu2}
-Q.~Liu, K.~Wei, H.~Xiao, S.~Tu, K.~Sun, Y.~Sun, L.~Pan, and K.~Tu,
-  ``Near-infrared hyperspectral imaging rapidly detects the decay of
-  postharvest strawberry based on water-soluble sugar analysis,'' {\em Food
-  Analytical Methods}, vol.~12, pp.~936--946, 2019.
-
 \bibitem{li2}
 J.~Li, L.~Chen, W.~Huang, Q.~Wang, B.~Zhang, X.~Tian, S.~Fan, and B.~Li,
   ``Multispectral detection of skin defects of bi-colored peaches based on
@@ -309,19 +319,9 @@ A.~Siedliska, P.~Baranowski, M.~Zubik, W.~Mazurek, and B.~Sosnowska,
   hyperspectral imaging,'' {\em Postharvest Biology and Technology}, vol.~139,
   pp.~115--126, 2018.
 
-\bibitem{brosnan}
-T.~Brosnan and D.-W. Sun, ``Inspection and grading of agricultural and food
-  products by computer vision systems - a review,'' {\em Computers and
-  Electronics in Agriculture}, vol.~36, pp.~193--213, 2002.
-
 \bibitem{xu}
 S.~Xu and J.~Wang, ``Dynamic extreme learning machine for data stream
   classification,'' {\em Neurocomputing}, vol.~Vol: 238, pp.~pp 443--449, 2017.
-
-\bibitem{liming}
-X.~Liming and Z.~Yanchao, ``Automated strawberry grading system based on image
-  processing,'' {\em Computers and Electronics in Agriculture}, vol.~71S,
-  pp.~S32--S39, 2010.
 
 \bibitem{yamamoto2}
 S.~YAMAMOTO, S.~HAYASHI, H.~YOSHIDA, and K.~KOBAYASHI, ``Development of a
@@ -499,6 +499,21 @@ L.~Bottou, C.~Cortes, J.~Denker, H.~Drucker, I.~Guyon, L.~Jackel, Y.~LeCun,
   Laboratories and Holmdel and NJ 07733 and Electronics Laboratory and Swiss
   Federal Institute of Technology}, pp.~pp 77--82, 1994.
 
+\bibitem{krizhevsky}
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
+  deep convolutional neural networks,'' {\em Neural Information Processing
+  Systems}, vol.~Vol: 25, pp.~pp 1--9, 2012.
+
+\bibitem{ciresan}
+D.~Ciresan, U.~Meier, and J.~Schmidhuber, ``Multi-column deep neural networks
+  for image classification,'' {\em Computer Vision and Pattern Recognition},
+  vol.~DOI: 978-1-4673-1228-8/12, pp.~pp 3642--3649, 2012.
+
+\bibitem{andrej}
+J.~Johnson and A.~Karpathy, ``Cs231n convolutional neural networks for visual
+  recognition.''
+\newblock Accessed June 2017.
+
 \bibitem{smith}
 P.~D. Smith, ``Artificial neural networks and deep learning - the true key to
   artificial intelligence,'' 2016.
@@ -561,16 +576,6 @@ S.~S. Rautaray and A.~Agrawal, ``Vision based hand gesture recognition for
 O.~Chapelle, P.~Haffner, and V.~Vapnik, ``Support vector machines for
   histogram-based image classification,'' {\em IEEE TRANSACTIONS ON NEURAL
   NETWORKS}, vol.~Vol: 10(5), pp.~pp 1055--1064, 1999.
-
-\bibitem{ciresan}
-D.~Ciresan, U.~Meier, and J.~Schmidhuber, ``Multi-column deep neural networks
-  for image classification,'' {\em Computer Vision and Pattern Recognition},
-  vol.~DOI: 978-1-4673-1228-8/12, pp.~pp 3642--3649, 2012.
-
-\bibitem{krizhevsky}
-A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
-  deep convolutional neural networks,'' {\em Neural Information Processing
-  Systems}, vol.~Vol: 25, pp.~pp 1--9, 2012.
 
 \bibitem{boyan}
 J.~Boyan, D.~Freitag, and T.~Joachims, ``A machine learning architecture for
@@ -675,6 +680,15 @@ M.~Makky and P.~Soni, ``Development of an automatic grading machine for oil
 G.~Seed and N.~Co., ``Ozark beauty strawberry.''
 \newblock Accessed Apr 2019.
 
+\bibitem{rox}
+R.~R. Anderson, ``Polarized light examination and photography of the skin,''
+  {\em Arch Dermatol}, vol.~Vol: 127, pp.~pp 1000--1005, 1991.
+
+\bibitem{sommer}
+A.~Sommer, H.~A. Kues, S.~A. D'Anna, S.~Arkell, A.~Robin, and H.~A. Quigley,
+  ``Cross polarization photography of the nerve fiber layer,'' {\em Arch
+  Opthalmol}, vol.~Vol: 102, pp.~pp 864--869, 1984.
+
 \bibitem{physicsopenlab}
 PhysicsOpenLab, ``Ozark beauty strawberry,'' 2016.
 \newblock Accessed Apr 2019.
@@ -698,15 +712,6 @@ F.~Juelich, ``Diverse causes behind frequency fluctuations in power grids,''
   2018.
 \newblock Accessed July 2019.
 
-\bibitem{rox}
-R.~R. Anderson, ``Polarized light examination and photography of the skin,''
-  {\em Arch Dermatol}, vol.~Vol: 127, pp.~pp 1000--1005, 1991.
-
-\bibitem{sommer}
-A.~Sommer, H.~A. Kues, S.~A. D'Anna, S.~Arkell, A.~Robin, and H.~A. Quigley,
-  ``Cross polarization photography of the nerve fiber layer,'' {\em Arch
-  Opthalmol}, vol.~Vol: 102, pp.~pp 864--869, 1984.
-
 \bibitem{min_illumination}
 V.~Damjanovski, ``Minimum illumination (cctv - third edition),'' 2014.
 \newblock Accessed July 2019.
@@ -728,6 +733,10 @@ Y.~Cheng and K.W.E.Cheng, ``General study for using led to replace traditional
 J.~M. Alonso, D.~Gacio, A.~J. Calleja, J.~Ribas, and E.~L. Corominas, ``A study
   on led retrofit solutions for low-voltage halogen cycle lamps,'' {\em IEEE
   TRANSACTIONS ON INDUSTRY APPLICATIONS}, vol.~48 No.5, pp.~1673--1682, 2012.
+
+\bibitem{camera_bus}
+N.~Instruments, ``Choosing the right camera bus,'' 2019.
+\newblock Accessed July 2019.
 
 \bibitem{atkinson}
 G.~A. Atkinson and E.~R. Hancock, ``Recovery of surface orientation from
@@ -955,11 +964,6 @@ L.~Diosan, M.~Oltean, A.~Rogozan, and J.-P. Pecuchet, ``Improving svm
   performance using a linear combination of kernels,'' {\em International
   Conference on Adaptive and Natural Computing Algorithms}, vol.~DOI:
   10.1007.978.3.540.71629.7.25, p.~pp 218–227, 2007.
-
-\bibitem{andrej}
-J.~Johnson and A.~Karpathy, ``Cs231n convolutional neural networks for visual
-  recognition.''
-\newblock Accessed June 2017.
 
 \bibitem{shin}
 H.-C. Shin, H.~R. Roth, M.~Gao, L.~Lu, Z.~Xu, I.~Nogues, J.~Yao, D.~Mollura, ,
