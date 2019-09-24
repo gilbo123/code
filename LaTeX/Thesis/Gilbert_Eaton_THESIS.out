@@ -47,7 +47,7 @@
 \BOOKMARK [3][-]{subsubsection.3.3.7.1}{User Interface}{subsection.3.3.7}% 47
 \BOOKMARK [3][-]{subsubsection.3.3.7.2}{Asynchronous Threading}{subsection.3.3.7}% 48
 \BOOKMARK [3][-]{subsubsection.3.3.7.3}{Image Processing}{subsection.3.3.7}% 49
-\BOOKMARK [1][-]{section.3.4}{Results}{chapter.3}% 50
+\BOOKMARK [1][-]{section.3.4}{Project Contributions}{chapter.3}% 50
 \BOOKMARK [2][-]{subsection.3.4.1}{Enclosure Construction}{section.3.4}% 51
 \BOOKMARK [2][-]{subsection.3.4.2}{Power Systems}{section.3.4}% 52
 \BOOKMARK [2][-]{subsection.3.4.3}{Lighting and Polarisation}{section.3.4}% 53
@@ -77,14 +77,14 @@
 \BOOKMARK [1][-]{section.5.4}{Final Configuration}{chapter.5}% 77
 \BOOKMARK [1][-]{section.5.5}{Ejector Mechanism}{chapter.5}% 78
 \BOOKMARK [1][-]{section.5.6}{Hyperspectral Bruise Analysis}{chapter.5}% 79
-\BOOKMARK [1][-]{section.5.7}{Results}{chapter.5}% 80
-\BOOKMARK [2][-]{subsection.5.7.1}{Transition to Production}{section.5.7}% 81
-\BOOKMARK [2][-]{subsection.5.7.2}{Queensland Production - Season 1}{section.5.7}% 82
-\BOOKMARK [2][-]{subsection.5.7.3}{South Australia Production - Season 2}{section.5.7}% 83
-\BOOKMARK [2][-]{subsection.5.7.4}{Maintenance Limitations}{section.5.7}% 84
-\BOOKMARK [2][-]{subsection.5.7.5}{Data Accumulation and Analysis: July 2016 - June 2017 }{section.5.7}% 85
-\BOOKMARK [2][-]{subsection.5.7.6}{Image Processing}{section.5.7}% 86
-\BOOKMARK [1][-]{section.5.8}{Conclusion}{chapter.5}% 87
+\BOOKMARK [1][-]{section.5.7}{Queensland Production - Season 1}{chapter.5}% 80
+\BOOKMARK [1][-]{section.5.8}{South Australia Production - Season 2}{chapter.5}% 81
+\BOOKMARK [1][-]{section.5.9}{Maintenance Limitations}{chapter.5}% 82
+\BOOKMARK [1][-]{section.5.10}{Project Contributions}{chapter.5}% 83
+\BOOKMARK [2][-]{subsection.5.10.1}{Transition to Production}{section.5.10}% 84
+\BOOKMARK [2][-]{subsection.5.10.2}{Data Accumulation and Analysis: July 2016 - June 2017 }{section.5.10}% 85
+\BOOKMARK [2][-]{subsection.5.10.3}{Image Processing}{section.5.10}% 86
+\BOOKMARK [1][-]{section.5.11}{Conclusion}{chapter.5}% 87
 \BOOKMARK [0][-]{chapter.6}{Colour Analysis of Strawberries on a Real-time Production Line}{}% 88
 \BOOKMARK [1][-]{section.6.1}{Abstract}{chapter.6}% 89
 \BOOKMARK [1][-]{section.6.2}{Background}{chapter.6}% 90
@@ -95,7 +95,7 @@
 \BOOKMARK [1][-]{section.6.5}{Results}{chapter.6}% 95
 \BOOKMARK [1][-]{section.6.6}{Conclusion}{chapter.6}% 96
 \BOOKMARK [1][-]{section.6.7}{Paper Recognition}{chapter.6}% 97
-\BOOKMARK [0][-]{chapter.7}{Systematic Reconfiguration Toward a Robust Production Environment Design}{}% 98
+\BOOKMARK [0][-]{chapter.7}{A Robust Production Environment Design}{}% 98
 \BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 99
 \BOOKMARK [1][-]{section.7.2}{Enclosure Design}{chapter.7}% 100
 \BOOKMARK [1][-]{section.7.3}{Lighting}{chapter.7}% 101
@@ -105,30 +105,33 @@
 \BOOKMARK [1][-]{section.7.4}{Strawberry Quality Assurance \(SQA\) Version 2}{chapter.7}% 105
 \BOOKMARK [2][-]{subsection.7.4.1}{Peripheral Power Supply and IO}{section.7.4}% 106
 \BOOKMARK [2][-]{subsection.7.4.2}{Microcontroller Upgrade}{section.7.4}% 107
-\BOOKMARK [1][-]{section.7.5}{Summary}{chapter.7}% 108
-\BOOKMARK [2][-]{subsection.7.5.1}{Enhanced Maintenance Accessibility}{section.7.5}% 109
-\BOOKMARK [2][-]{subsection.7.5.2}{Queensland Production - Season 3}{section.7.5}% 110
-\BOOKMARK [2][-]{subsection.7.5.3}{South Australia Production - Season 4}{section.7.5}% 111
-\BOOKMARK [2][-]{subsection.7.5.4}{Data Accumulation and Analysis: July 2017 - June 2018}{section.7.5}% 112
-\BOOKMARK [2][-]{subsection.7.5.5}{Image Processing}{section.7.5}% 113
-\BOOKMARK [1][-]{section.7.6}{Conclusion}{chapter.7}% 114
-\BOOKMARK [0][-]{chapter.8}{Machine Learning Approach to Grading Strawberries}{}% 115
-\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 116
-\BOOKMARK [1][-]{section.8.2}{Master Operating System}{chapter.8}% 117
-\BOOKMARK [1][-]{section.8.3}{Machine Learning Software}{chapter.8}% 118
-\BOOKMARK [2][-]{subsection.8.3.1}{Tensor Computation}{section.8.3}% 119
-\BOOKMARK [2][-]{subsection.8.3.2}{Machine Learning Environments}{section.8.3}% 120
-\BOOKMARK [1][-]{section.8.4}{User Interface}{chapter.8}% 121
-\BOOKMARK [1][-]{section.8.5}{Machine Learning Techniques}{chapter.8}% 122
-\BOOKMARK [2][-]{subsection.8.5.1}{Methods Using Support Vector Machine \(SVM\)}{section.8.5}% 123
-\BOOKMARK [2][-]{subsection.8.5.2}{Methods Using Neural Networks}{section.8.5}% 124
-\BOOKMARK [1][-]{section.8.6}{Transfer Learning with Resnet}{chapter.8}% 125
-\BOOKMARK [2][-]{subsection.8.6.1}{Transfer Learning}{section.8.6}% 126
-\BOOKMARK [2][-]{subsection.8.6.2}{ResNet}{section.8.6}% 127
-\BOOKMARK [2][-]{subsection.8.6.3}{Logistic Regression Classifier}{section.8.6}% 128
-\BOOKMARK [2][-]{subsection.8.6.4}{Strawberry Classification}{section.8.6}% 129
-\BOOKMARK [1][-]{section.8.7}{Summary}{chapter.8}% 130
-\BOOKMARK [0][-]{chapter.9}{Conclusion and Outcomes}{}% 131
-\BOOKMARK [1][-]{section.9.1}{Future Work}{chapter.9}% 132
-\BOOKMARK [0][-]{appendix.A}{SQA Specification}{}% 133
-\BOOKMARK [0][-]{appendix.B}{Wiring Diagrams}{}% 134
+\BOOKMARK [1][-]{section.7.5}{Queensland Production - Season 3}{chapter.7}% 108
+\BOOKMARK [1][-]{section.7.6}{South Australia Production - Season 4}{chapter.7}% 109
+\BOOKMARK [1][-]{section.7.7}{Project Contributions}{chapter.7}% 110
+\BOOKMARK [2][-]{subsection.7.7.1}{Enhanced Maintenance Accessibility}{section.7.7}% 111
+\BOOKMARK [2][-]{subsection.7.7.2}{Strobed Lighting Configuration}{section.7.7}% 112
+\BOOKMARK [2][-]{subsection.7.7.3}{Data Accumulation and Analysis: July 2017 - June 2018}{section.7.7}% 113
+\BOOKMARK [2][-]{subsection.7.7.4}{Image Processing}{section.7.7}% 114
+\BOOKMARK [3][-]{subsubsection.7.7.4.1}{Small Fruit Detection}{subsection.7.7.4}% 115
+\BOOKMARK [3][-]{subsubsection.7.7.4.2}{Foreign Object Detection}{subsection.7.7.4}% 116
+\BOOKMARK [1][-]{section.7.8}{Conclusion}{chapter.7}% 117
+\BOOKMARK [0][-]{chapter.8}{Machine Learning Approach to Grading Strawberries}{}% 118
+\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 119
+\BOOKMARK [1][-]{section.8.2}{Master Operating System}{chapter.8}% 120
+\BOOKMARK [1][-]{section.8.3}{Machine Learning Software}{chapter.8}% 121
+\BOOKMARK [2][-]{subsection.8.3.1}{Tensor Computation}{section.8.3}% 122
+\BOOKMARK [2][-]{subsection.8.3.2}{Machine Learning Environments}{section.8.3}% 123
+\BOOKMARK [1][-]{section.8.4}{User Interface}{chapter.8}% 124
+\BOOKMARK [1][-]{section.8.5}{Machine Learning Techniques}{chapter.8}% 125
+\BOOKMARK [2][-]{subsection.8.5.1}{Methods Using Support Vector Machine \(SVM\)}{section.8.5}% 126
+\BOOKMARK [2][-]{subsection.8.5.2}{Methods Using Neural Networks}{section.8.5}% 127
+\BOOKMARK [1][-]{section.8.6}{Transfer Learning with Resnet}{chapter.8}% 128
+\BOOKMARK [2][-]{subsection.8.6.1}{Transfer Learning}{section.8.6}% 129
+\BOOKMARK [2][-]{subsection.8.6.2}{ResNet}{section.8.6}% 130
+\BOOKMARK [2][-]{subsection.8.6.3}{Logistic Regression Classifier}{section.8.6}% 131
+\BOOKMARK [1][-]{section.8.7}{Strawberry Classification}{chapter.8}% 132
+\BOOKMARK [1][-]{section.8.8}{Project Contributions}{chapter.8}% 133
+\BOOKMARK [0][-]{chapter.9}{Conclusion and Outcomes}{}% 134
+\BOOKMARK [1][-]{section.9.1}{Future Work}{chapter.9}% 135
+\BOOKMARK [0][-]{appendix.A}{SQA Specification}{}% 136
+\BOOKMARK [0][-]{appendix.B}{Wiring Diagrams}{}% 137
