@@ -47,7 +47,7 @@
 \contentsline {subsubsection}{\numberline {3.3.7.1}User Interface}{95}{subsubsection.3.3.7.1}
 \contentsline {subsubsection}{\numberline {3.3.7.2}Asynchronous Threading}{96}{subsubsection.3.3.7.2}
 \contentsline {subsubsection}{\numberline {3.3.7.3}Image Processing}{100}{subsubsection.3.3.7.3}
-\contentsline {section}{\numberline {3.4}Project Contributions}{103}{section.3.4}
+\contentsline {section}{\numberline {3.4}Research Outcomes and Contributions}{103}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Enclosure Construction}{103}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Power Systems}{103}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Lighting and Polarisation}{107}{subsection.3.4.3}
@@ -80,7 +80,7 @@
 \contentsline {section}{\numberline {5.7}Queensland Production - Season 1}{157}{section.5.7}
 \contentsline {section}{\numberline {5.8}South Australia Production - Season 2}{159}{section.5.8}
 \contentsline {section}{\numberline {5.9}Maintenance Limitations}{161}{section.5.9}
-\contentsline {section}{\numberline {5.10}Project Contributions}{162}{section.5.10}
+\contentsline {section}{\numberline {5.10}Research Outcomes and Contributions}{162}{section.5.10}
 \contentsline {subsection}{\numberline {5.10.1}Transition to Production}{162}{subsection.5.10.1}
 \contentsline {subsection}{\numberline {5.10.2}Data Accumulation and Analysis: July 2016 - June 2017 }{163}{subsection.5.10.2}
 \contentsline {subsection}{\numberline {5.10.3}Image Processing}{165}{subsection.5.10.3}
@@ -107,7 +107,7 @@
 \contentsline {subsection}{\numberline {7.4.2}Microcontroller Upgrade}{206}{subsection.7.4.2}
 \contentsline {section}{\numberline {7.5}Queensland Production - Season 3}{212}{section.7.5}
 \contentsline {section}{\numberline {7.6}South Australia Production - Season 4}{215}{section.7.6}
-\contentsline {section}{\numberline {7.7}Project Contributions}{216}{section.7.7}
+\contentsline {section}{\numberline {7.7}Research Outcomes and Contributions}{216}{section.7.7}
 \contentsline {subsection}{\numberline {7.7.1}Enhanced Maintenance Accessibility}{216}{subsection.7.7.1}
 \contentsline {subsection}{\numberline {7.7.2}Strobed Lighting Configuration}{217}{subsection.7.7.2}
 \contentsline {subsection}{\numberline {7.7.3}Data Accumulation and Analysis: July 2017 - June 2018}{219}{subsection.7.7.3}
@@ -130,7 +130,7 @@
 \contentsline {subsection}{\numberline {8.6.2}ResNet}{248}{subsection.8.6.2}
 \contentsline {subsection}{\numberline {8.6.3}Logistic Regression Classifier}{251}{subsection.8.6.3}
 \contentsline {section}{\numberline {8.7}Strawberry Classification}{252}{section.8.7}
-\contentsline {section}{\numberline {8.8}Project Contributions}{255}{section.8.8}
+\contentsline {section}{\numberline {8.8}Research Outcomes and Contributions}{255}{section.8.8}
 \contentsline {chapter}{\numberline {9}Conclusion and Outcomes}{258}{chapter.9}
 \contentsline {section}{\numberline {9.1}Future Work}{261}{section.9.1}
 \contentsline {chapter}{\numberline {A}SQA Specification}{291}{appendix.A}

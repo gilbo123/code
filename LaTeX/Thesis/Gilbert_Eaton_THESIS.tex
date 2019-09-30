@@ -430,7 +430,7 @@ The paper \textit{Colour Analysis of Strawberries on a Real Time Production Line
 \nomenclature{$MOSFET$}{Metal-oxide-semiconductor Field-effect Transistor}
 \nomenclature{$Op-amp$}{Operational Amplifier}
 \nomenclature{$TTL$}{Transistor-transistor Logic}
-\nomenclature{$TTL$}{Programmable Logic Controller}
+\nomenclature{$PLC$}{Programmable Logic Controller}
 
 
 %Sequence to make nomenclature refresh is:
@@ -642,7 +642,7 @@ Research and development performed during the undertaking of this project has co
 	\item Driving innovation and adoption of state-of-the-art techniques within industry, and partnerships with university research teams:
 	\begin{itemize}
 		\item Project success used as evidence in approval of state-of-the-art agriculture and aquaculture research hub within the university. - TODO - add details??
-		\item Herald Sun article and promotional material produced by the university provide publicity and awareness for institutions and industry. - TODO - more articles??
+		\item Newspaper article and promotional material produced by the university provide publicity and awareness for institutions and industry. 
 	\end{itemize}
 	\item Integration and deployment of novel, scalable, real-world machine vision systems in an industrial setting, in order to drive productivity and reduce overall costs to producers.
 	\begin{itemize}
@@ -668,9 +668,6 @@ Research and development performed during the undertaking of this project has co
 		\item Single binary models for each class allow adjustable sensitivities catering for changing seasonality and conditions.
 	\end{itemize} 
 \end{itemize}
-
-
-
 
 
 
@@ -1742,7 +1739,7 @@ Pre-processing consists of reducing the image to a Region Of Interest (ROI) in t
 As the saturation channel extracts all of the berry flesh whose colour is saturated, only the darkest parts of the berry flesh will be excluded. However, when extracting colour ranges using the hue channel, darker regions can be falsely classified. Shadowed areas and berry occlusions generate high false positives in the case of over ripe analysis due to the crossover between over ripe flesh and occluded sound material. This problem will need to be addressed in order to provide accurate grading of over ripe berries. 
 
 
-\section{Project Contributions}
+\section{Research Outcomes and Contributions}
 
 
 \subsection{Enclosure Construction}
@@ -2759,7 +2756,7 @@ In order to clean the enclosure properly, the bottom lighting clusters and camer
 
 
 
-\section{Project Contributions}
+\section{Research Outcomes and Contributions}
 
 \subsection{Transition to Production}
 
@@ -3339,6 +3336,8 @@ Colour Rendering Index (CRI) is a measure of how much a light source's spectral 
 
 
 \subsection{High-power Triggering}
+
+TODO -- diagram of lighting offset
  
 
 In order to have precise control over the LED's, a triggering system is required to be designed which can both switch and supply $3A$ of current to each device, given that typical microcontrollers cannot operate at high currents. Relays are a mechanical device making the switching slow, and prone to noise in the physical contacts, with solid state relays (SSR) being more expensive and relatively slow switching, meaning that MOSFET's would be required given the semiconductor speeds and high current capability. Figure \ref{fig:pulse_circuit} illustrates the MOSFET circuit using capacitors for storage, and an op-amp to trigger the circuit. A $2.2mF$ capacitor is used as a 'current reservoir' storing power between pulses and delivering when activated. The TTL-driven op-amp stabilises the triggering (eliminates mis-triggering and circuit-bounce) to the MOSFET gate allowing a larger current to flow from drain to source through the LED. This design was intended to switch at nanosecond ($ns$) rates in order to perform flow velocimetry imaging \cite{willert}. 
@@ -3765,7 +3764,7 @@ Switching briefly from the stable master application to the test version takes l
 
 
 
-\section{Project Contributions}
+\section{Research Outcomes and Contributions}
 
 \subsection{Enhanced Maintenance Accessibility}
 
@@ -4585,7 +4584,7 @@ During the research and training phase, $12$ different classifiers were compared
 
 Interestingly, the SVM with RBF kernel algorithm scored a very low $51.5\%$ while the NuSVM algorithm scored much higher at $93.4\%$ when comparing on the under ripe category. The difference between the these two methods are the $C$ and $Nu$ regularization parameters which apply penalties in the case of mis-classifications. The $C$ parameter used in SVC ranges $\{\exists C\in\mathbb{Q^+}\}$ where $\mathbb{Q^+}$ is the set of positive rational numbers, meaning it can take any real value from zero to infinity. The $Nu$ parameter is limited to a range from zero to one only $\{\exists C\in\mathbb{Q} \mid 0 <\mathbb{Q} < 1\}$ and therefore, is bounded to search within a defined smaller range. The difference in these two scores indicates for this problem, the classifier will under-fit using high-level parameters that can escalate infinitely. Therefore the Logistic Regression algorithm is used to classify the extracted strawberry features. 
 
-\section{Project Contributions}
+\section{Research Outcomes and Contributions}
 
 
 Transitioning to an open-source operating system and development suite has given the system an increase in versatility and controllability as well as reducing reliance on subscriptions and software library inadequacies. Allowing experimental and production algorithms which make use of machine learning techniques gives the new environment a distinct advantage over the previous software framework.
@@ -4636,19 +4635,19 @@ Both the Under Ripe and Foreign Object classifiers have performed well with the 
 \chapter{Conclusion and Outcomes}
 
 
-In this thesis, a Strawberry Quality Assurance (SQA) vision system has been researched developed in which packaged strawberries can be effectively and accurately quality graded on a fast-paced, real-time production line. The system has entered it's fifth season as production-ready and uses machine learning to perform the grading of punnets at a rate of two punnets per second. The enclosure can be placed in-line and configured to fit a production facility where strawberries are packaged into containers before being placed on a conveyor. Defect punnets are ejected from the line via a pneumatic air blast synchronised with the inference computer before proceeding to the automatic heat-seal machine.
+In this thesis, a Strawberry Quality Assurance (SQA) vision system has been researched developed in which packaged strawberries can be effectively and accurately quality graded on a fast-paced, real-time production line. The system has entered it's fifth season as production-ready and uses machine learning to perform the grading of punnets at a rate of two punnets per second. The enclosure can be placed in-line and configured to fit a production facility where strawberries are packaged into containers before being placed on a conveyor. Defect punnets are ejected from the line via a pneumatic air blast synchronised with the inference computer before proceeding to the automatic heat-seal machine. The research performed during the project is integral to the successful implementation and professional operation of the system with investigations into lighting, polarisation, spectral reflections and diffuse light, power systems, cameras, electronic components, controllers, and triggering systems, as well as strawberry feature representation, colour analysis and deep learning. 
 
-The research performed during the project is integral to the successful implementation and professional operation of the system with investigations into lighting, polarisation, spectral reflections and diffuse light, power systems, cameras, electronic components, controllers, and triggering systems, as well as strawberry feature representation, colour analysis and deep learning. Described in Chapter \ref{sec:I}, construction of the first prototype concluded that the inherent AC flickering was not suitable due to the fast shutter speeds of the cameras when acquiring moving objects, as well as polaroid imperfections (i.e. bending, curving, or damaged) negate cross-polarisation effects and reduce the ability to suppress specular reflections. The decision to move to DC as a result provided image stability improvements even though this meant time would need to be taken for an appropriate power supply to be designed and built. Preparations for production were made whilst simultaneously becoming familiar with software (HALCON\texttrademark), interfaces, camera characterisation, parameters and operation. Chapter \ref{sec:paper_1} discusses the problems of flickering and specular reflections and the solutions in order to design a vision system with the best possible image quality. The results indicated that using a good quality DC power supply (with enclosed surroundings) can reduce reflectance fluctuations to negligible levels, and the cross-polarisation process allows all specular reflections to be removed. 
+Described in Chapter \ref{sec:I}, is the design, research, testing, and construction of the first prototype which concluded the inherent AC flickering was not suitable due to the fast shutter speeds of the cameras, as well as polaroid imperfections (i.e. bending, curving, or damaged) negate cross-polarisation effects and reduce the ability to suppress specular reflections. The decision to move to DC as a result provided image stability improvements even though this meant time would need to be taken for an appropriate power supply to be designed and built. Preparations for production were made whilst simultaneously becoming familiar with software (HALCON\texttrademark), interfaces, camera characterisation, parameters and operation. Chapter \ref{sec:paper_1} discusses the problems of flickering and specular reflections and the solutions in order to design a vision system with the best possible image quality. The results indicated that using a good quality DC power supply (with enclosed surroundings) can reduce reflectance fluctuations to negligible levels, and the cross-polarisation process allows all specular reflections to be removed. 
 
-Integrating the system into the production line required pre-planning and testing prior to work commencing in order to make the process as efficient as possible. Chapter \ref{sec:II} describes the implementation to production including the enclosure positioning, power systems and lighting installation, control systems, and camera setup, as well as hyperspectral/IR imaging and related bruising. The ejector was installed and activated shortly after the first Queensland production season began, removing punnets which were defected for repacking. The entire system was relocated to South Australia for the second season, with the production line automatically fed using conveyors opposed to being manually placed on the in-feed conveyor. Colour analysis methods detailed in Chapter \ref{sec:paper_2} explain the algorithms used to create the first two quantified methods of defect detection. The under ripe and over ripe strawberry features were extracted and analysed in order to grade them in a binary manner (2 classifiers) with resulting performance of $94.7\%$ and $90.6\%$ for the multiple detection category, respectively.
+Integrating the system into the production line required pre-planning and testing prior to work commencing in order to make the process as efficient as possible. Chapter \ref{sec:II} describes the integration of the system onto the production line including the enclosure positioning, power systems and lighting installation, control systems, and camera setup, as well as hyperspectral/IR imaging and related bruising. The ejector was installed and activated shortly after the first Queensland production season began, removing punnets which were defected for repacking. The entire system was relocated to South Australia for the second season, with the production line automatically fed using conveyors opposed to being manually placed on the in-feed conveyor. Colour analysis methods detailed in Chapter \ref{sec:paper_2} explain the algorithms used to create the first two quantified methods of defect detection. The under ripe and over ripe strawberry features were extracted and analysed in order to grade them in a binary manner (2 classifiers) with resulting performance of $94.7\%$ and $90.6\%$ for the multiple detection category, respectively.
 
-After two production seasons, the dirt, dust, and debris build up inside the enclosure as well as lighting, access, and robustness concerns prompted a redesign in between seasons. Described in chapter \ref{sec:III}, the enclosure is stripped of it's main components such as power supply, cameras, polarisers, sensors, punnet conveyors (including v-belts) and PC, before being transferred to the newly designed and constructed frame. Electronics and camera accessibility was increased by adding doors and panels, and mounting the electronic components, microcontroller, relays and fuses. Small, powerful LEDs replaced the bulky visible and energy wasting halogen lighting with a triggering system synchronised to the cameras, developed in order to pulse the lighting rather than continuous illumination. An upgrade performed on the microcontroller freed the application of some of it's critical memory requirements, as well as providing standardisation and industrialisation. An operator panel installed with start/stop buttons and a touchscreen in order to give the system aesthetic appeal. 
+After two production seasons, the dirt, dust, and debris build up inside the enclosure as well as lighting, access, and robustness concerns prompted a redesign between seasons. Described in chapter \ref{sec:III}, the enclosure is stripped of it's main components such as power supply, cameras, polarisers, sensors, punnet conveyors (including v-belts) and PC, before being transferred to the newly designed and constructed frame. Electronics and camera accessibility was increased by adding doors and panels, and mounting the electronic components, microcontroller, relays and fuses. Small, powerful LEDs replaced the bulky visible and energy wasting halogen lighting with a triggering system synchronised to the cameras, developed in order to pulse the lighting rather than using a continuous illumination arrangement. An upgrade performed on the microcontroller freed the application of some of it's critical memory requirements, as well as providing standardisation and industrialisation. An operator panel installed with start/stop buttons and a touchscreen in order to give the system aesthetic appeal. 
 
-Finally, Chapter \ref{sec:IV} outlined the dramatic change of system completely in an effort to perform more accurately using state-of-the-art techniques. Linux\textregistered OS enabled open-source image manipulation and processing, model creation and saving and machine learning including deep learning. Both SVM and neural networks were used to train classifiers with some success, however, the final classifier uses a combination of a pre-trained Resnet-50 feature extraction and logistic regression to create 3 separate binary models which performed much more accurately during training.
+Finally, Chapter \ref{sec:IV} outlined the dramatic change of system in an effort to perform more accurately using state-of-the-art techniques. Linux\textregistered OS enabled open-source image manipulation and processing, model creation and saving and machine learning including deep learning. Both SVM and neural networks were used to train classifiers with some success, however, the final classifier uses a combination of a pre-trained Resnet-50 feature extraction and logistic regression to create 3 separate binary models which performed much more accurately during training. The AUROC metric results were $87\%$, $80\%$, and $58\%$ for the foreign object, under ripe, and over ripe classes, respectively. 
 
 All of the requirements from Chapter \ref{sec:requirements} have been met including traceability and documentation with all images and their metadata saved to a database, and an automatic documentation generator which can can re-generate all documents relating to the software using specific commenting styles within the source code.
 
-A total of 281,778 punnets have been acquired by the vision system in overall with 20,303 rejected equating to $7.76\%$. However, not all of these reject decisions will have related to ejections due to the on-line production testing of algorithms where the ejector was disabled temporarily. The farm operators have been able to adjust the levels and start/stop the machine as part of their everyday checklist or work routine, and a process has been implemented to allow the regular collection of rejected punnets for repacking by quality staff.
+A total of 290,888 punnets have been acquired by the vision system in overall with 50,270 rejected equating to $17.28\%$. However, not all of these reject decisions will have related to ejections due to the on-line production testing of algorithms where the ejector was disabled temporarily. The farm operators have been able to adjust the levels and start/stop the machine as part of their everyday checklist or work routine, and a process has been implemented to allow the regular collection of rejected punnets for repacking by quality staff.
 
 
 
