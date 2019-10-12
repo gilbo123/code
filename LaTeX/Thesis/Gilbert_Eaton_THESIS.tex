@@ -188,7 +188,7 @@
 %	Disclaimer SECTION
 %----------------------------------------------------------------------------------------
 
-\emph{A report submitted in partial fulfilment of the degree of Doctor of Philosiphy, and in confidence due to the agreement with ARC Linkage partners.}\\[1.5cm]
+\emph{A report submitted in partial fulfilment of the degree of Doctor of Philosophy, and in confidence due to the agreement with ARC Linkage partners.}\\[1.5cm]
 
 
 %----------------------------------------------------------------------------------------
@@ -196,16 +196,16 @@
 
 \end{flushleft}
 
-\vfill % Fill the rest of the page with whitespace
+\vfill % Fill the rest of the page with white space
 
 \end{titlepage}
 
 
-% Ends the declared geometry for the titlepage
+% Ends the declared geometry for the title-page
 \restoregeometry
 %--------------------------
 
-%adds roman numerals to the TOC
+%adds Roman numerals to the TOC
 \pagenumbering{roman}
 
 
@@ -231,7 +231,7 @@ This thesis outlines the research, design, experimentation, and development of a
 
 The initial version of the system used algorithms involving image processing and colour analysis in order to perform under and over ripe detection with good results of $94.7\%$ and $90.6\%$, respectively, for the multiple instance category. After redesign and upgrade to strobing LEDs and open-source software, machine learning experiments showed that the SVM and unique neural networks underperformed with the best training accuracy results of $84.11\%$ and $76.30\%$, respectively. Improved performance was found using Resnet-50 pre-trained network in order to extract a feature vector for each image, which is then evaluated by each of the binary classification models. Area Under ROC (AUROC) curves are greater than $80\%$ for both under ripe and foreign object models, whilst the over ripe class score is lower at $58\%$. 
 
-The system has entered it's fifth season as production-ready having already imaged and assessed 281,778 punnets of which 20,303 were rejected, resulting in $7.76\%$ failure rate in total, helping to ensure the consistent quality assurance of production. The successful implementation of the SQA project provides a platform for continuing work including improving performance of the current classifiers, and investigating the potential of improved region-based bounding box method in order to improve visibility for both operator and developer. Data collection and labelling/annotation are performed regularly in order to re-train networks generating improved results, and to reduce inter-seasonal or inter-cultivar concept shift in the models. 
+The system has entered it's fifth season as production-ready having already imaged and assessed 290,888 punnets of which 50,270 were rejected, resulting in $17.28\%$ failure rate in total, helping to ensure the consistent quality assurance of production. The successful implementation of the SQA project provides a platform for continuing work including improving performance of the current classifiers, and investigating the potential of improved region-based bounding box method in order to improve visibility for both operator and developer. Data collection and labelling/annotation are performed regularly in order to re-train networks generating improved results, and to reduce inter-seasonal or inter-cultivar concept shift in the models. 
 
 
 
@@ -641,7 +641,7 @@ Research and development performed during the undertaking of this project has co
 	\end{itemize}
 	\item Driving innovation and adoption of state-of-the-art techniques within industry, and partnerships with university research teams:
 	\begin{itemize}
-		\item Project success used as evidence in approval of state-of-the-art agriculture and aquaculture research hub within the university. - TODO - add details??
+		\item Project success used as evidence in approval of state-of-the-art agriculture and aquaculture research hub within the university. 
 		\item Newspaper article and promotional material produced by the university provide publicity and awareness for institutions and industry. 
 	\end{itemize}
 	\item Integration and deployment of novel, scalable, real-world machine vision systems in an industrial setting, in order to drive productivity and reduce overall costs to producers.
@@ -750,18 +750,18 @@ For many leafy vegetables green is the predominant colour, therefore, extraction
 
 RGB or a combination of RGB with other colour spaces also give significant results for certain applications. In order to grade palm oil fruit, May and Amaran \cite{may} simply analysed the RGB range of under ripe, ripe and over ripe fruit colour and determined associated values correlating to the ripeness. Their fuzzy logic system achieved an overall accuracy of $86.67\%$ showing that this method is plausible for fruit ripeness determined by colour. A method to grade four different varieties of mango into four ripeness grades was implemented by Nandi, Tudu, and Koley \cite{nandi} by extracting colour features, and deriving other colour features at key points across length of the fruit. The features were then used with a simple Gaussian Mixture Model (GMM) to achieve accuracies that rivalled expert humans. Blasco, Aleixos, and Molto \cite{blasco2} developed an algorithm that can detect 12 different types of common disease in citrus fruits. The method reduces the image to 32 colours before performing a region-growing method and could assess fruit from different batches, and even species, of citrus without adjustments. This was based on the assumption that unaffected fruit peel is relatively consistent, smooth, and blemish-free. An overall accuracy of $94\%$ was attained with some of the most devastating diseases scoring $100\%$ detection. 
 
-Geometric calculations are a common approach to assessing shape, size, or volume as the scale and intestine are invariant which facilitates the background removal process, leaving a precise outline. This outline can then be accurately measured due to the fixed position of a calibrated camera. Properties such as minor and major axis can be used to calculate area (size) and lenth-to-width (elongation) of objects. Contour curvature, shape matrices, moments, and shape transforms such as Fourier and Wavelets can also be calculated from a well segmented image. 
+Geometric calculations are a common approach to assessing shape, size, or volume as the scale and intestine are invariant which facilitates the background removal process, leaving a precise outline. This outline can then be accurately measured due to the fixed position of a calibrated camera. Properties such as minor and major axis can be used to calculate area (size) and length-to-width (elongation) of objects. Contour curvature, shape matrices, moments, and shape transforms such as Fourier and Wavelets can also be calculated from a well segmented image. 
 
 Sandrina et al \cite{sandrina} implemented a method using geometric calculations to determine weight and shape of watermelons. Using logistic regression analysis they determined that good specimen shape could be well-described by an ellipsoid model with an $R^2$ of $0.97$. The weight of the watermelons was estimated by image analysis with an error of $2.42\%$. A review of assessment techniques for legume quality was conducted by Mahajan, Das, and Sardana \cite{mahajan} that found several species including lentils, soybeans, peas, chickpeas, beans, and honeylocust were assessed for their geometrical properties such as size and shape. Using a flatbed scanner for each of these projects, the methods consisted of simple thresholding and morphology to find the binary image before measuring. 
 
 
-Fuzzy systems can offer generalisation and adaptability properties for grading based on feature simplification. A Fuzzy Inference System (FIS) takes raw data (crisp), transforms it into a simplified version (Fuzzification), and makes a prediction based on some knowledge, before transforming again (De-Fuzzification) back into a crisp value. Fuzzification methods may include bucketing, averaging, PCA, or windowing in order to reduce the dimensionality of data, usually giving the ability to assign simple rules to perform the classification or detection.
+Fuzzy systems can offer generalisation and adaptability properties for grading based on feature simplification. A Fuzzy Inference System (FIS) takes raw data (crisp), transforms it into a simplified version (Fuzzification), and makes a prediction based on some knowledge, before transforming again (De-fuzzification) back into a crisp value. Fuzzification methods may include bucketing, averaging, PCA, or windowing in order to reduce the dimensionality of data, usually giving the ability to assign simple rules to perform the classification or detection.
 
 Hasan and Monir \cite{hasan} developed a system to evaluate guava by use of a FIS. The fuzzy rules were based on functions of hue, saturation, and intensity of the images acquired of the fruit. Their method achieved an accuracy of $93.4\%$ which is an improvement over other classifiers such as naive Bayes and multi-SVM. A method that used volumetric estimation in order to perform quality grading in fruit (apples, mango, orange, pomegranate, and strawberry) was designed by Jadhav, Singh, and Abhyankar \cite{jadhav}. Four cameras positioned at various angles and elevations were used to acquire the calibrated images of fruits before the volumetric calculations were performed. This information is coupled with the colour values from the hue channel of HSV colour space to obtain a classification grade which is then passed to an FIS for final distribution into five grades from very poor to very good. All grades and all fruits achieved accuracies of $>98\%$. 
 
-An adaptive neural-fuzzy inference system (ANFIS) has been developed by Zheng, Jiang, and Lu \cite{zheng} in order to detect bruising in Chinese bayberries as a function of Fractal Dimension (FD) and RGB values. The multiple input, single output Takagi–Sugeno fuzzy network consists of an input layer, fuzzification layer, rule layer, defuzzification layer, and output layer. The trained network could discriminate between bruised and unbruised bayberries with an overall $90\%$ accuracy. Similarly, Jiang et al \cite{jiang} used an ANFIS to predict ascorbic acid retention in fresh-cut pineapples They used inputs of surface area, storage temperature, and storage time in order to train the predictor with a RMSE of $7.88\%$ and and $R^2$ correlation coefficient of $0.95$.
+An adaptive neural-fuzzy inference system (ANFIS) has been developed by Zheng, Jiang, and Lu \cite{zheng} in order to detect bruising in Chinese bayberries as a function of Fractal Dimension (FD) and RGB values. The multiple input, single output Takagi–Sugeno fuzzy network consists of an input layer, fuzzification layer, rule layer, de-fuzzification layer, and output layer. The trained network could discriminate between bruised and unbruised bayberries with an overall $90\%$ accuracy. Similarly, Jiang et al \cite{jiang} used an ANFIS to predict ascorbic acid retention in fresh-cut pineapples They used inputs of surface area, storage temperature, and storage time in order to train the predictor with a RMSE of $7.88\%$ and and $R^2$ correlation coefficient of $0.95$.
 
-Goel and Sehgar \cite{goel} developed a Fuzzy Rule Based Classification System (FRBCS) in order to grade tomatos into six ripeness stages. Images acquired from the open farm environment were preprocessed by taking averages of R, G and B, R-G and R/G before training and testing, with comparisons against Naive Bayes, SVM, MLP, and Random Tree classifiers. Their method of FRBCS achieved an accuracy of $94.29\%$ which outperformed the others ($88.89\%$, $87.42\%$, $84.97\%$, and $84.05\%$, respectively).  
+Goel and Sehgar \cite{goel} developed a Fuzzy Rule Based Classification System (FRBCS) in order to grade tomato into six ripeness stages. Images acquired from the open farm environment were preprocessed by taking averages of R, G and B, R-G and R/G before training and testing, with comparisons against Naive Bayes, SVM, MLP, and Random Tree classifiers. Their method of FRBCS achieved an accuracy of $94.29\%$ which outperformed the others ($88.89\%$, $87.42\%$, $84.97\%$, and $84.05\%$, respectively).  
 
 
 
@@ -1191,7 +1191,7 @@ Polarization of a light source (using a polaroid sheet) will reduce the overall 
 I = I_{0} cos^{2}\theta_{i}
 \end{equation}
 
-with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the polariser axis from the angle of initial polarization. If a light source is unpolarized, it is assumed to have a combination of all polarization directions and so $cos^{2}\theta$ is averaged to $\frac{1}{2}$. Although, in practice, this figure is less due to imperfections in polarizing material, more light will be required in order to achieve the same luminosity on the subject \cite{rox, sommer} whilst reducing/removing the intense reflections. Specularities appear the same colour as the light source, which in most cases is white, effectively 'blinding' the cameras from true information behind the glare.  
+with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the polariser axis from the angle of initial polarization. If a light source is un-polarized, it is assumed to have a combination of all polarization directions and so $cos^{2}\theta$ is averaged to $\frac{1}{2}$. Although, in practice, this figure is less due to imperfections in polarizing material, more light will be required in order to achieve the same luminosity on the subject \cite{rox, sommer} whilst reducing/removing the intense reflections. Specularities appear the same colour as the light source, which in most cases is white, effectively 'blinding' the cameras from true information behind the glare.  
 
 
 Polarization is the process of converting electromagnetic waves of varying polarity into a uniformly polarized field. Usually used for visible light or lasers, polarisers can reduce glare (for example, polarized sunglasses) or help in the amplification and directionality of lasers. Figure \ref{fig:polarization} illustrates the polarization of an EM wave, indicating that no matter the intensity of any direction, only a single polarity emerges  \cite{physicsopenlab}. Using a polariser is an effective technique to reduce glare from a flat surface (polarized sunglasses are assumed to be worn horizontally, using vertical polarization in the lenses in order to block glare from horizontal surfaces such as water and concrete), but will be mostly ineffective for the curved surface of the strawberries. However, using cross-polarization (two polarisers orthogonal in direction) in order to reduce these reflections is considered, even though this will limit the amount of illumination reaching the subject significantly.
@@ -1224,7 +1224,7 @@ As this project would take advantage of the NIR spectrum with the intention of c
 
 Due to processing restrictions, it is a requirement that the punnets be imaged from top and bottom simultaneously, therefore requiring an obstruction-free conveyor system to transport punnets through the acquisition section. This can accomplished by using the lip of the punnet (around the top of the container) as a handle point where thin v-belts can suspend the punnets giving little visible impact to the scene and allowing full view of both the top and bottom, simultaneously.
 
-Shiv Ram Dubey and Anand Singh Jalal \cite{shiv} investigated fruits and vegetables as well as some fruit diseases using a multi-class SVM classifier as a solution. Qiang LÜ and Mingjie TANG \cite{lu} devised a method for identifying Kiwi fruit, which had hidden bruises under the skin, by using hyper-spectral imaging and a parallelepiped classification approach. These experiments, as well as other work \cite{elmasry2,chiu}, have used a static imaging system. That is, the subject was stationary and usually had a clean, flat, un-obscured background that makes the process of segmentation quite trivial. 
+Shiv Ram Dubey and Anand Singh Jalal \cite{shiv} investigated fruits and vegetables as well as some fruit diseases using a multi-class SVM classifier as a solution. Qiang LÜ and Mingjie TANG \cite{lu} devised a method for identifying Kiwi fruit, which had hidden bruises under the skin, by using hyper-spectral imaging and a parallelepiped classification approach. These experiments, as well as other work \cite{elmasry2,chiu}, have used a static imaging system. That is, the subject was stationary and usually had a clean, flat, unobscured background that makes the process of segmentation quite trivial. 
 
 However, the system described in this report requires images to be taken of full punnets as they move down the production line. The line speed of production equates to two punnets per second and leaves little room for camera setting adjustments such as shutter speed and gain. Additionally, the strawberries will be located inside a plastic punnet and may result in poor images due to the following:  
 
@@ -2528,7 +2528,7 @@ Therefore the v-belts and rail spacing required adjustment to the length of the 
 		\label{fig:inside_enclosure_2}
 	\end{subfigure}%
 	
-	\caption{(a) Punnet catcher installed in order to stop falling punnets due to mistransfer, (b) view in opposite direction of flow showing camera separation, punnet catcher, and v-belts.}
+	\caption{(a) Punnet catcher installed in order to stop falling punnets due to mis-transfer, (b) view in opposite direction of flow showing camera separation, punnet catcher, and v-belts.}
 	\label{}
 \end{figure}
 
@@ -3336,8 +3336,6 @@ Colour Rendering Index (CRI) is a measure of how much a light source's spectral 
 
 
 \subsection{High-power Triggering}
-
-TODO -- diagram of lighting offset
  
 
 In order to have precise control over the LED's, a triggering system is required to be designed which can both switch and supply $3A$ of current to each device, given that typical microcontrollers cannot operate at high currents. Relays are a mechanical device making the switching slow, and prone to noise in the physical contacts, with solid state relays (SSR) being more expensive and relatively slow switching, meaning that MOSFET's would be required given the semiconductor speeds and high current capability. Figure \ref{fig:pulse_circuit} illustrates the MOSFET circuit using capacitors for storage, and an op-amp to trigger the circuit. A $2.2mF$ capacitor is used as a 'current reservoir' storing power between pulses and delivering when activated. The TTL-driven op-amp stabilises the triggering (eliminates mis-triggering and circuit-bounce) to the MOSFET gate allowing a larger current to flow from drain to source through the LED. This design was intended to switch at nanosecond ($ns$) rates in order to perform flow velocimetry imaging \cite{willert}. 
@@ -4254,7 +4252,7 @@ Machine learning is a branch of Artificial Intelligence which deals with program
 
 \begin{enumerate}
 	\item Unsupervised - No labelled data is used to train based on clustering, anomaly detection, or association analysis.
-	\item Semi-supervised - Some labelled data exists, with inferences made from this small sample to a larger training set. A mixture of un-supervised and supervised learning.
+	\item Semi-supervised - Some labelled data exists, with inferences made from this small sample to a larger training set. A mixture of unsupervised and supervised learning.
 	\item Supervised - All data is labelled in order to explicitly classify training samples.
 \end{enumerate} 
 
