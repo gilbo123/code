@@ -55,12 +55,12 @@ def plot_training(history):
     plt.show()
 
 def count_images(path):
-	count = 0
-	folders = os.listdir(path)
-	for f in folders:
-		files = os.listdir(os.path.join(path,f))
-		count+=len(files)
-	return count
+    count = 0
+    folders = os.listdir(path)
+    for f in folders:
+	files = os.listdir(os.path.join(path,f))
+	    count+=len(files)
+    return count
 
 #Variables
 TRAIN_DIR = '/home/gilbert/Downloads/img'
@@ -75,12 +75,12 @@ class_names = os.listdir(TRAIN_DIR)
 class_num = len(class_names)
 
 train_datagen =  ImageDataGenerator(
-      preprocessing_function=preprocess_input,
-      #rotation_range=180,
-      horizontal_flip=True,
-      vertical_flip=True,
-      validation_split=0.25
-    )
+    preprocessing_function=preprocess_input,
+    #rotation_range=180,
+    horizontal_flip=True,
+    vertical_flip=True,
+    validation_split=0.25
+)
 
 train_generator = train_datagen.flow_from_directory(TRAIN_DIR, 
                                                     target_size=(HEIGHT, WIDTH), 
