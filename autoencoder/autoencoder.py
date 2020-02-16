@@ -29,39 +29,39 @@ def autoencoder(input_img):
     return decoded
 
 def get_data(source_path, test_percent):
-	#return arrays
-	train_img_arr = []
-	train_lbl_arr = []
-	test_img_arr = []
-	test_lbl_arr = []
-	#get class folders
-	class_folders = os.listdir(source_path)
-	for c in class_folders:
-		#join paths
-		c_path = os.path.join(source_path, c)
-		#get files
-		files = os.listdir(c_path)
-		#shuffle files
-		random.shuffle(files)
-		i = 0
-		count = len(files)
-		for f in files:
-			i+=1
-			#read data
-			img = cv2.imread(os.path.join(c_path, f))
-			img = cv2.resize(img, (WIDTH, HEIGHT))	
-			#add to array
-			if (i/count) < test_percent:
-				train_img_arr.append(img)
-				#add label
-				train_lbl_arr.append(c)
-			else:
-				test_img_arr.append(img)
-				#add label
-				test_lbl_arr.append(c)
+    #return arrays
+    train_img_arr = []
+    train_lbl_arr = []
+    test_img_arr = []
+    test_lbl_arr = []
+    #get class folders
+    class_folders = os.listdir(source_path)
+    for c in class_folders:
+        #join paths
+        c_path = os.path.join(source_path, c)
+        #get files
+        files = os.listdir(c_path)
+        #shuffle files
+        random.shuffle(files)
+        i = 0
+        count = len(files)
+        for f in files:
+            i+=1
+            #read data
+            img = cv2.imread(os.path.join(c_path, f))
+            img = cv2.resize(img, (WIDTH, HEIGHT))	
+            #add to array
+            if (i/count) < test_percent:
+                train_img_arr.append(img)
+                #add label
+                train_lbl_arr.append(c)
+            else:
+                test_img_arr.append(img)
+                #add label
+                test_lbl_arr.append(c)
 
-	
-	return np.array(train_img_arr), np.array(train_lbl_arr), np.array(test_img_arr), np.array(test_lbl_arr)
+    
+    return np.array(train_img_arr), np.array(train_lbl_arr), np.array(test_img_arr), np.array(test_lbl_arr)
 
 
 WIDTH = 60
@@ -69,7 +69,7 @@ HEIGHT = 60
 
 
 #data path
-path = '/home/gilbert/Downloads/img'
+path = '/home/gil/Downloads/drive-download-20200203T080121Z-001/'
 #get data and labels for both train and test
 test_percent = 0.85
 train_data, train_labels, test_data, test_labels = get_data(path, test_percent)
@@ -100,10 +100,10 @@ print(np.max(test_data))
 
 #split data
 from sklearn.model_selection import train_test_split
-train_X,valid_X,train_ground,valid_ground = train_test_split(train_data,
+train_X, valid_X, train_ground, valid_ground = train_test_split(train_data,
                                                              train_data, 
                                                              test_size=0.2, 
-                                                             random_state=13)
+                                                             random_state=42)
 
 #autoencoder
 batch_size = 8
@@ -138,10 +138,10 @@ plt.show()
 pred = autoencoder.predict(test_data)
 
 for i in range(len(test_data)):
-	print('Label: {}'.format(test_labels[i]))
-	cv2.imshow('Raw', test_data[i])
-	cv2.imshow('Reconstruct', pred[i])
-	cv2.waitKey()
-	cv2.destroyAllWindows()
+    print('Label: {}'.format(test_labels[i]))
+    cv2.imshow('Raw', test_data[i])
+    cv2.imshow('Reconstruct', pred[i])
+    cv2.waitKey()
+    cv2.destroyAllWindows()
 	
 
