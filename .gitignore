@@ -58,3 +58,6 @@ Thumbs.db
 # THESIS only
 ####################
 !LaTeX/Thesis/images/*
+!LaTeX/Thesis/appendix/*
+!LaTeX/Thesis/ref_papers/*
+!LaTeX/Thesis/csv/*
