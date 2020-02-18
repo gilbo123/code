@@ -57,6 +57,7 @@ Thumbs.db
 
 # THESIS only
 ####################
+*Gilbert_Eaton_THESIS.pdf
 !LaTeX/Thesis/images/*
 !LaTeX/Thesis/appendix/*
 !LaTeX/Thesis/ref_papers/*
