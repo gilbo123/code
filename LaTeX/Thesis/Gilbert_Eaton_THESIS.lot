@@ -18,19 +18,19 @@
 \contentsline {table}{\numberline {6.4}{\ignorespaces Confusion matrix for single defect over ripe tests.\relax }}{179}{table.caption.81}% 
 \contentsline {table}{\numberline {6.5}{\ignorespaces Confusion matrix for multiple defect over ripe tests.\relax }}{179}{table.caption.82}% 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces MOSFET allocation per LED cluster.\relax }}{195}{table.caption.90}% 
-\contentsline {table}{\numberline {7.2}{\ignorespaces Specifications of $420W/36VDC$ power supply.\relax }}{197}{table.caption.92}% 
-\contentsline {table}{\numberline {7.3}{\ignorespaces LED Controller connections and pin assignments.\relax }}{204}{table.caption.97}% 
-\contentsline {table}{\numberline {7.4}{\ignorespaces I/O Controller connections and pin assignments.\relax }}{205}{table.caption.98}% 
-\contentsline {table}{\numberline {7.5}{\ignorespaces Watchdog Controller connections and pin assignments.\relax }}{206}{table.caption.99}% 
-\contentsline {table}{\numberline {7.6}{\ignorespaces Operating modes for each controller.\relax }}{206}{table.caption.100}% 
-\contentsline {table}{\numberline {7.7}{\ignorespaces Comparison of improved power characteristics after lighting configuration change.\relax }}{211}{table.caption.105}% 
+\contentsline {table}{\numberline {7.1}{\ignorespaces MOSFET allocation per LED cluster.\relax }}{196}{table.caption.90}% 
+\contentsline {table}{\numberline {7.2}{\ignorespaces Specifications of $420W/36VDC$ power supply.\relax }}{199}{table.caption.92}% 
+\contentsline {table}{\numberline {7.3}{\ignorespaces LED Controller connections and pin assignments.\relax }}{207}{table.caption.97}% 
+\contentsline {table}{\numberline {7.4}{\ignorespaces I/O Controller connections and pin assignments.\relax }}{208}{table.caption.98}% 
+\contentsline {table}{\numberline {7.5}{\ignorespaces Watchdog Controller connections and pin assignments.\relax }}{209}{table.caption.99}% 
+\contentsline {table}{\numberline {7.6}{\ignorespaces Operating modes for each controller.\relax }}{209}{table.caption.100}% 
+\contentsline {table}{\numberline {7.7}{\ignorespaces Comparison of improved power characteristics after lighting configuration change.\relax }}{215}{table.caption.105}% 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Initial SVM testing using various classes and features. The results were attained using 27 training images and 579 testing images for all cases.\relax }}{241}{table.caption.112}% 
-\contentsline {table}{\numberline {8.2}{\ignorespaces Images collected and labelled for each class for testing and training.\relax }}{245}{table.caption.116}% 
-\contentsline {table}{\numberline {8.3}{\ignorespaces Best results for varying configurations of convolutional neural networks when trained from scratch.\relax }}{246}{table.caption.117}% 
-\contentsline {table}{\numberline {8.4}{\ignorespaces Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4), and Under size (5)\relax }}{251}{table.caption.120}% 
-\contentsline {table}{\numberline {8.5}{\ignorespaces Comparison of training accuracy results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.\relax }}{253}{table.caption.121}% 
+\contentsline {table}{\numberline {8.1}{\ignorespaces Initial SVM testing using various classes and features. The results were attained using 27 training images and 579 testing images for all cases.\relax }}{238}{table.caption.112}% 
+\contentsline {table}{\numberline {8.2}{\ignorespaces Images collected and labelled for each class for testing and training.\relax }}{242}{table.caption.116}% 
+\contentsline {table}{\numberline {8.3}{\ignorespaces Best results for varying configurations of convolutional neural networks when trained from scratch.\relax }}{243}{table.caption.117}% 
+\contentsline {table}{\numberline {8.4}{\ignorespaces Example strawberry training images - Pass fruit (1), Under ripe fruit (2), Over ripe fruit (3), Foreign objects (4), and Under size (5)\relax }}{248}{table.caption.120}% 
+\contentsline {table}{\numberline {8.5}{\ignorespaces Comparison of training accuracy results for commonly used classifiers against all three classes using identical feature vectors extracted from ResNet.\relax }}{250}{table.caption.121}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
