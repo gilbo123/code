@@ -31,7 +31,7 @@
 %\usepackage{ltablex}
 \usepackage{booktabs}
 \usepackage{rotating}
-%\usepackage{array}
+\usepackage{array}
 \usepackage{ltablex}
 
 
@@ -69,9 +69,9 @@
 \titlespacing*{\chapter}    %main heading
 {0pt}{5.5ex plus 1ex minus .2ex}{0ex plus .2ex}
 \titlespacing*{\section}    %subheading
-{0pt}{5.5ex plus 1ex minus .2ex}{0ex plus .2ex}
+{0pt}{8.2ex plus 1ex minus .2ex}{2.6ex plus .2ex}
 \titlespacing*{\subsection}    %subsubheading
-{0pt}{5.5ex plus 1ex minus .2ex}{0ex plus .2ex}
+{0pt}{8.2ex plus 1ex minus .2ex}{2.6ex plus .2ex}
 
 %subsubsubsection 
 \setcounter{tocdepth}{4}
@@ -1454,13 +1454,13 @@ Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) usin
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}{0.5\textwidth}
+	\begin{subfigure}{0.42\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{LED_bar.png}
 		\caption{}
 		\label{fig:LED_bar}
 	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.42\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{LED_30w.png}
 		\caption{}
@@ -1476,7 +1476,7 @@ The $72W$ Cree\textregistered LED Light Bars are flood type (an example of the L
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{bench_led_rigid_2.png}
+	\includegraphics[width=0.75\linewidth]{bench_led_rigid_2.png}
 	\caption{Installation of LED light bars and rigid polarizing material for the top half of the illumination system.}
 	\label{fig:bench_led_rigid}
 \end{figure}%
@@ -1550,15 +1550,15 @@ The relays are wired in a normally open configuration so that the relay must be 
 
 Research and experimentation into lighting, polarization, and mechanical construction, was performed in parallel with familiarization and experiments using the software packages provided. HALCON\texttrademark has developed their own language (HDevelop\texttrademark) which has three main points of difference with other languages. Firstly, each variable is categorised as either a \textit{Control Variable} (int, float, tuple, array, etc), or an \textit{Iconic Variable} (image, region, contour, mask, etc) which can be inspected at any point in running, debugging or stepping through a script. Secondly, only discrete operations between control variables can perform the '$:=$' assignment operator due to the design, in which all function arguments contain both input and output (return) variables. For example a function to count regions in an image and paint the number requested, might take the form:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 num = 3
 img = cv2.imread('image.png')
 ret_image, count = count_and_find_largest_regions(img, num)
-\end{lstlisting} 
+\end{lstlisting}
 
 would be written in HDevelop\texttrademark as:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 num := 3
 read_image(img, 'image.png')
 count_and_find_largest_regions(count, ret_image, num, img)
@@ -1566,7 +1566,7 @@ count_and_find_largest_regions(count, ret_image, num, img)
 
 From which point after 'ret\_image' and 'count' will take the values assigned within the function. Each function takes the form:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 function([, out_c : [, out_i : [, in_c : [, in_i]]]])
 \end{lstlisting} 
 
@@ -1626,7 +1626,7 @@ Each of these functions are dependant of each other, but must occur asynchronous
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.95\textwidth]{software_flow_1.png}
+	\includegraphics[width=\textwidth]{software_flow_1.png}
 	\caption{Flow chart of the main application with each of the five threads (including main).}
 	\label{fig:software_flow_1}
 \end{figure} 
@@ -2242,16 +2242,15 @@ Mean Time Between Failure (MTBF) is a term used by maintenance professionals def
 This metric is evidence of the emphasis companies put on production flow and continuity. If systems under-perform they are at risk of being replaced or eliminated in order to allow production to produce at optimal rates. Given these risks to the system adoption, the process of transition must be performed in an efficient manner, whilst creating a non-restricting addition to production that can perform accurately. Implementation of the production-ready enclosure required the prototype to be fit with conveyors, lighting, power systems, diffusers and polarisers, as well as the computer systems, sensors and cameras. Once the designs were complete, bench testing of the equipment such as camera image transmission to the running application, microcontroller functions including camera triggering and lighting switching, power system and peripherals was performed, reducing delays when installation occurs on the busy production line.
 
 
-Initially, the conveyors were added to the frame in order to create the path of flow for the punnets, as shown in Figure \ref{fig:system_construct_3}. The frame of the prototype was adjusted slightly in order to equal the height of the conveyor where it meets the v-belts, as well as centred on the conveyor relative to the enclosure. All heights are consistent with other machinery and conveyors in the packing shed to allow many possible configurations in the process flow. 
-
-
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.5\linewidth]{system_construct_2_2.jpg}
+	\includegraphics[width=.65\linewidth, angle=270]{system_construct_2_2.jpg}
 	\caption{The frame of the enclosure shortly after the conveyors had been attached. The v-belts have also been installed and are visible, mounted higher than the conveyor belt in order to suspend punnets by their lips.}
 	\label{fig:system_construct_3}
 \end{figure}%
+
+Initially, the conveyors were added to the frame in order to create the path of flow for the punnets, as shown in Figure \ref{fig:system_construct_3}. The frame of the prototype was adjusted slightly in order to equal the height of the conveyor where it meets the v-belts, as well as centred on the conveyor relative to the enclosure. All heights are consistent with other machinery and conveyors in the packing shed to allow many possible configurations in the process flow. 
 
 
 A wide range of conveyors, motors, guide rails, and parts were made available (due to the farm equipment spare parts), and assisted the construction of the punnet conveyors, and their attachment to the frame of the enclosure. However, the v-belts are a customised feature using brackets to support adjustable grooved rollers designed for the shape of the belt, and a guide rail on each side to avoid sagging due to punnet weight. The point of transfer, where the v-belts meet the punnet conveyors, must be considered in order to implement a smooth transition at both the entry and exit of the enclosure. The requirement is for the punnet to enter the heat-seal machine long-edge leading (due to cost-saving design), but this is problematic for the v-belts in the case where a  punnet enters incorrectly oriented, and too narrow to be transferred onto the v-belts. Therefore, the design was to employ a $90^{\circ}$ transfer belt between the vision system and heat-seal machine, allowing the punnets to be short-edge leading as they enter the enclosure, eliminating the risk of containers falling between the v-belts (seen in Figure \ref{fig:pack_layout_2}). 
@@ -2273,15 +2272,15 @@ The main electronic devices can be seen in Figure \ref{fig:system_construct_1} w
 
 \begin{figure}[h!]
 	\centering
-	\begin{subfigure}{.59\textwidth}
+	\begin{subfigure}{.6\textwidth}
 		\centering
-		\includegraphics[width=.9\linewidth]{system_construct_1.jpg}
+		\includegraphics[width=0.9\linewidth]{system_construct_1.jpg}
 		\caption{}
 		\label{fig:system_construct_1}
 	\end{subfigure}%
-	\begin{subfigure}{.39\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{enclosure_3.jpg}
+		\includegraphics[width=0.9\linewidth, angle=270]{enclosure_3.jpg}
 		\caption{}
 		\label{fig:system_construct_2}
 	\end{subfigure}%
@@ -2424,7 +2423,7 @@ The polaroid sheets have a direction of polarisation, which usually runs paralle
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{cross-polariser.png}
+	\includegraphics[width=0.8\textwidth]{cross-polariser.png}
 	\caption{Example of the polarising filter used on the camera lens which can be rotated to achieve cross-polarisation regardless of camera orientation.}
 	\label{fig:nd_filters}
 \end{figure}
@@ -2684,15 +2683,15 @@ The production line in Queensland (Wamuran) differs from that of South Australia
 
 \begin{figure}[ht]
 	\centering
-	\begin{subfigure}{.45\textwidth}
+	\begin{subfigure}{.47\textwidth}
 		\centering
-		\includegraphics[width=\linewidth, angle=90]{myponga_line.jpg}
+		\includegraphics[width=0.9\linewidth]{myponga_line.jpg}
 		\caption{}
 		\label{fig:myponga_line}
 	\end{subfigure}%
-	\begin{subfigure}{.35\textwidth}
+	\begin{subfigure}{.43\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{myponga_system_line.jpg}
+		\includegraphics[width=0.9\linewidth]{myponga_system_line.jpg}
 		\caption{}
 		\label{fig:myponga_system_line}
 	\end{subfigure}%
@@ -2939,7 +2938,7 @@ Strawberries are member of the non-climacteric class of fruit, meaning that ripe
 
 The ripening process, in terms of colour, for most fruit will start green and slowly transition through phases of yellow/orange, then pink before bright red and finally dark red. Figure \ref{fig:yellow_white} shows an image containing under ripe berries, the yellow and white regions clearly seen.
 
-Once the berry contour has been found and the image domain reduced to that region, under ripe pixels are extracted by simply taking the difference of the $a^*$ channel and the $b^*$ channel. After contrast enhancement, areas with no red pixels are highlighted. The process is visualised in Figure \ref{fig:under ripe_process}. Performing this analysis on the entire image results in many false positives, but this method has been found to be very effective when applied to the known berry region.   
+
 
 \begin{figure}[ht]
 	\centering
@@ -2971,6 +2970,8 @@ Once the berry contour has been found and the image domain reduced to that regio
 	\caption{Left to right: (a) Original image with visible white and yellow regions, (b) HSV saturation channel and berry contours after addition of white berry regions, (c) Diff(a*, b*) result highlighting absence of red colour, and (d) result of post-processing indicating under ripe areas.}
 	\label{fig:under ripe_process}
 \end{figure}
+
+Once the berry contour has been found and the image domain reduced to that region, under ripe pixels are extracted by simply taking the difference of the $a^*$ channel and the $b^*$ channel. After contrast enhancement, areas with no red pixels are highlighted. The process is visualised in Figure \ref{fig:under ripe_process}. Performing this analysis on the entire image results in many false positives, but this method has been found to be very effective when applied to the known berry region.   
 
 
 \subsection{Overripe Features}

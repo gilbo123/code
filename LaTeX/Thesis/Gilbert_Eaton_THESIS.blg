@@ -1,135 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Gilbert_Eaton_THESIS.aux
 The style file: ieeetr.bst
 Database file #1: Master.bib
-I was expecting a `,' or a `}'---line 63 of file Master.bib
- :  journal       = "
- :                   Journal on Applied Signal Processing",
-I'm skipping whatever remains of this entry
-Repeated entry---line 1097 of file Master.bib
- : @article{zhang
- :               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1151 of file Master.bib
- : @article{lee
- :             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1293 of file Master.bib
- : @article{chen
- :              ,
-I'm skipping whatever remains of this entry
-Warning--entry type for "roymorgan" isn't style-file defined
---line 1489 of file Master.bib
-Repeated entry---line 1525 of file Master.bib
- : @article{chiu
- :              ,
-I'm skipping whatever remains of this entry
-Warning--entry type for "smith" isn't style-file defined
---line 1645 of file Master.bib
-Warning--entry type for "tensorflow" isn't style-file defined
---line 1993 of file Master.bib
-Warning--entry type for "udacity" isn't style-file defined
---line 2009 of file Master.bib
-Warning--entry type for "xprize" isn't style-file defined
---line 2025 of file Master.bib
-Warning--entry type for "cortana" isn't style-file defined
---line 2041 of file Master.bib
-Repeated entry---line 2057 of file Master.bib
- : @article{mohammed
- :                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2093 of file Master.bib
- : @article{Lee
- :             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2147 of file Master.bib
- : @article{zheng
- :               ,
-I'm skipping whatever remains of this entry
-Warning--entry type for "baranowski" isn't style-file defined
---line 2327 of file Master.bib
-Warning--entry type for "gurney" isn't style-file defined
---line 2397 of file Master.bib
-Warning--entry type for "physicsopenlab" isn't style-file defined
---line 2411 of file Master.bib
-Warning--entry type for "lumicrest" isn't style-file defined
---line 2465 of file Master.bib
-I was expecting a `,' or a `}'---line 2523 of file Master.bib
- :  
- :  year          = "2011",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--entry type for "nelson" isn't style-file defined
---line 2529 of file Master.bib
-I was expecting a `,' or a `}'---line 2571 of file Master.bib
- :  
- :  year          = "1991",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2589 of file Master.bib
- :  
- :  year          = "2002",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--entry type for "andrej" isn't style-file defined
---line 3145 of file Master.bib
-Warning--entry type for "wiki_linux" isn't style-file defined
---line 3293 of file Master.bib
-Warning--entry type for "50hz" isn't style-file defined
---line 3379 of file Master.bib
-Warning--entry type for "min_illumination" isn't style-file defined
---line 3435 of file Master.bib
-Warning--entry type for "light_units" isn't style-file defined
---line 3451 of file Master.bib
-Warning--entry type for "led_power" isn't style-file defined
---line 3467 of file Master.bib
-Warning--entry type for "camera_bus" isn't style-file defined
---line 3483 of file Master.bib
-Warning--empty journal in heleno
-Warning--empty year in heleno
-Warning--empty year in artusi
-Warning--empty year in anderson
-Warning--empty year in kuranov
 You've used 189 entries,
             1876 wiz_defined-function locations,
-            1441 strings with 37684 characters,
-and the built_in function-call counts, 58261 in all, are:
-= -- 5687
+            1446 strings with 37742 characters,
+and the built_in function-call counts, 59188 in all, are:
+= -- 5817
 > -- 2514
 < -- 0
 + -- 910
 - -- 721
-* -- 4041
-:= -- 8065
-add.period$ -- 205
+* -- 4073
+:= -- 8145
+add.period$ -- 206
 call.type$ -- 189
 change.case$ -- 185
 chr.to.int$ -- 0
-cite$ -- 194
-duplicate$ -- 2931
-empty$ -- 5170
+cite$ -- 189
+duplicate$ -- 2989
+empty$ -- 5237
 format.name$ -- 721
-if$ -- 14540
+if$ -- 14805
 int.to.chr$ -- 0
 int.to.str$ -- 189
 missing$ -- 175
 newline$ -- 592
 num.names$ -- 189
-pop$ -- 534
+pop$ -- 526
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2384
+skip$ -- 2471
 stack$ -- 0
-substring$ -- 4141
-swap$ -- 1490
+substring$ -- 4292
+swap$ -- 1549
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 5
-while$ -- 469
+warning$ -- 0
+while$ -- 475
 width$ -- 192
-write$ -- 1827
-(There were 11 error messages)
+write$ -- 1836

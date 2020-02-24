@@ -1,0 +1,993 @@
+\begin{thebibliography}{100}
+
+\bibitem{menze}
+M.~Menze and A.~Geiger, ``Object scene flow for autonomous vehicles,'' {\em The
+  IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pp.~3061--3070, 2015.
+
+\bibitem{urmson}
+C.~Urmson, J.~Anhalt, C.~B. Drew~Bagnell, M.~N.~C. Robert~Bittner, J.~Dolan,
+  T.~G. Dave~Duggins, M.~G. Chris~Geyer, M.~H. Sam~Harbaugh, S.~K. Thomas
+  M.~Howard, M.~L. Alonzo~Kelly, N.~M. Matt~McNaughton, K.~Peterson, R.~R.
+  Brian~Pilnick, P.~Rybski, Y.-W.~S. Bryan~Salesky, S.~Singh, A.~S.
+  Jarrod~Snider, Z.~W. William “Red”~Whittaker, and J.~Ziglar, ``Autonomous
+  driving in urban environments: Boss and the urban challenge,'' {\em Journal
+  of Field Robotics}, vol.~25(8), pp.~425--466, 2008.
+
+\bibitem{greene}
+D.~Greene, ``Drone vision,'' {\em Surveillance and Society}, vol.~13(2),
+  pp.~233--249, 2015.
+
+\bibitem{boucher}
+P.~Boucher, ``Domesticating the drone: The demilitarisation of unmanned
+  aircraft for civil markets,'' {\em Sci Eng Ethics}, vol.~21, pp.~1393--1412,
+  2015.
+
+\bibitem{cheung}
+S.~Cheung and C.~Kamath, ``Robust techniques for background subtraction in
+  urban traffic video,'' {\em Proc. SPIE 5308 and Visual Communications and
+  Image Processing 2004}, 2004.
+
+\bibitem{kamijo}
+S.~Kamijo, Y.~Matsushita, K.~Ikeuchi, and M.~Sakauchi, ``Traffic monitoring and
+  accident detection at intersections,'' {\em IEEE TRANSACTIONS ON INTELLIGENT
+  TRANSPORTATION SYSTEMS,}, vol.~1(2), 2000.
+
+\bibitem{watanabe}
+Y.~WATANABE, T.~KOMURO, and M.~ISHIKAWA, ``955-fps real-time shape measurement
+  of a moving/deforming objectusing high-speed vision for numerous-point
+  analysis,'' {\em IEEE International Conference on Robotics and Automation},
+  2007.
+
+\bibitem{nakabo}
+Y.~Nakabo, M.~Ishikawa, H.~Toyoda, and S.~Mizuno, ``1ms column parallel vision
+  system and it's application high speed target tracking,'' {\em IEEE
+  International Conference on Robotics and Automation}, vol.~1, pp.~650--655,
+  2000.
+
+\bibitem{cubero}
+S.~Cubero, N.~Aleixos, E.~Moltó, J.~Gómez-Sanchis, and J.~Blasco, ``Advances
+  in machine vision applications for automatic inspection and quality
+  evaluation of fruits and vegetables,'' {\em Food Bioprocess Technol}, vol.~4,
+  pp.~487--504, 2011.
+
+\bibitem{du}
+C.-J. Du and D.-W. Sun, ``Recent developments in the applications of image
+  processing techniques for food quality evaluation,'' {\em Trends in Food
+  Science and Technology}, vol.~15, pp.~230--249, 2004.
+
+\bibitem{busch}
+A.~Busch and P.~Palk, ``An image processing approach to distance estimation for
+  automated strawberry harvesting,'' {\em International Conference on Image
+  Analysis and Recognition (ICIAR)}, pp.~389--396, 2011.
+
+\bibitem{roymorgan}
+R.~M. Research, ``Supermarkets dominate fruit and vegetable trade—even for
+  fresh market shoppers,'' 2015.
+\newblock Accessed Feb 2017.
+
+\bibitem{brosnan}
+T.~Brosnan and D.-W. Sun, ``Inspection and grading of agricultural and food
+  products by computer vision systems - a review,'' {\em Computers and
+  Electronics in Agriculture}, vol.~36, pp.~193--213, 2002.
+
+\bibitem{liming}
+X.~Liming and Z.~Yanchao, ``Automated strawberry grading system based on image
+  processing,'' {\em Computers and Electronics in Agriculture}, vol.~71S,
+  pp.~S32--S39, 2010.
+
+\bibitem{matteoli}
+S.~Matteoli, M.~Diani, R.~Massai, G.~Corsini, and D.~Remorini, ``A
+  spectroscopy-based approach for automated nondestructive maturity grading of
+  peach fruits,'' {\em IEEE SENSORS JOURNAL}, vol.~15 No. 10, pp.~5455--5464,
+  2015.
+
+\bibitem{elmasry2}
+G.~ElMasry, N.~Wang, A.~ElSayed, and M.~Ngadi, ``Hyperspectral imaging for
+  nondestructive determination of some quality attributes for strawberry,''
+  {\em Journal of Food Engineering}, vol.~81, pp.~98--107, 2007.
+
+\bibitem{liu2}
+Q.~Liu, K.~Wei, H.~Xiao, S.~Tu, K.~Sun, Y.~Sun, L.~Pan, and K.~Tu,
+  ``Near-infrared hyperspectral imaging rapidly detects the decay of
+  postharvest strawberry based on water-soluble sugar analysis,'' {\em Food
+  Analytical Methods}, vol.~12, pp.~936--946, 2019.
+
+\bibitem{chiu}
+Y.~C. Chiu, X.~L. Chou, T.~E. Grift, and M.~T. Chen, ``Automated detection of
+  mechanically induced bruise areas in golden delicious apples using
+  flourescence imagery,'' {\em American Society of Agricultural and Biological
+  Engineers}, vol.~58(2), pp.~215--225, 2015.
+
+\bibitem{heleno}
+P.~Heleno, R.~Davies, B.~A. Correia, and J.~Dinis, ``A machine vision quality
+  control system for industrial acrylic fibre production,'' {\em Journal on
+  Applied Signal Processing}, vol.~7, pp.~728--735, 2002.
+
+\bibitem{chen}
+Y.-R. Chen, K.~Chao, and M.~S. Kim, ``Machine vision technology for
+  agricultural applications,'' {\em Computers and Electronics in Agriculture},
+  vol.~36, pp.~173--191, 2002.
+
+\bibitem{dubey}
+S.~R. Dubey and A.~S. Jalal, ``Application of image processing in fruit and
+  vegetable analysis: A review,'' {\em Journal of Intelligent Systems},
+  vol.~24(4), pp.~405--424, 2015.
+
+\bibitem{pathare}
+P.~B. Pathare, U.~L. Opara, and F.~A.-J. Al-Said, ``Colour measurement and
+  analysis in fresh and processed foods: A review,'' {\em Food Bioprocess
+  Technol}, vol.~6, pp.~36--60, 2013.
+
+\bibitem{cavallo}
+D.~P. Cavallo, M.~Cefola, G.~Attolico, B.~Pace, and A.~F. Logrieco,
+  ``Non-destructive and contactless quality evaluation of table grapes by a
+  computer vision system,'' {\em Computers and Electronics in Agriculture},
+  vol.~156, pp.~558--564, 2019.
+
+\bibitem{khojastehnazhand}
+M.~Khojastehnazhand, M.~Omid, and A.~Tabatabaeefar, ``Development of a lemon
+  sorting system based on color and size,'' {\em African Journal of Plant
+  Science}, vol.~4 (4), pp.~122--127, 2010.
+
+\bibitem{danti}
+A.~Danti, M.~Madgi, and B.~S. Anami, ``Mean and range color features based
+  identification of common indian leafy vegetables,'' {\em International
+  Journal of Signal Processing and Image Processing and Pattern Recognition},
+  vol.~5 and No.3, pp.~151--160, 2012.
+
+\bibitem{may}
+Z.~May and M.~H. Amaran, ``Automated oil palm fruit grading system using
+  artificial intelligence,'' {\em International Journal of Video \& Image
+  Processing and Network Security}, vol.~11 No.3, pp.~30--35, 2011.
+
+\bibitem{nandi}
+C.~S. Nandi, B.~Tudu, and C.~Koley, ``An automated machine vision based system
+  for fruit sorting and grading,'' {\em International Conference on Sensing
+  Technology}, vol.~6, pp.~195--200, 2012.
+
+\bibitem{blasco2}
+J.~Blasco, N.~Aleixos, and E.~Moltó, ``Computer vision detection of peel
+  defects in citrus by means of a region oriented segmentation algorithm,''
+  {\em Journal of Food Engineering}, vol.~81, pp.~535--543, 2007.
+
+\bibitem{sandrina}
+H.~Sandrina, A.~Rajabipour, A.~Jafary, A.~Javadi, and Y.~Mostofi,
+  ``Classification and analysis of fruit shapes in long type watermelon using
+  image processing,'' {\em International Journal of Agriculture an Biology},
+  vol.~09-1, p.~68–70, 2007.
+
+\bibitem{mahajan}
+S.~Mahajan, A.~Das, and H.~K. Sardana, ``Image acquisition techniques for
+  assessment of legume quality,'' {\em Trends in Food Science \& Technology},
+  vol.~42, pp.~116--133, 2015.
+
+\bibitem{hasan}
+R.~Hasan and S.~M.~G. Monir, ``Fruit maturity estimation based on fuzzy
+  classification,'' {\em International Conference on Signal and Image
+  Processing Applications}, pp.~27--32, 2017.
+
+\bibitem{jadhav}
+T.~Jadhav, K.~Singh, and A.~Abhyankar, ``Volumetric estimation using 3d
+  reconstruction method for grading of fruits,'' {\em Multimed Tools Appl},
+  vol.~78, pp.~1613--1634, 2019.
+
+\bibitem{zheng}
+W.~Zheng, X.~Fu, and Y.~Ying, ``Spectroscopy-based food classification with
+  extreme learning machine,'' {\em Chemometrics and Intelligent Laboratory
+  Systems}, vol.~139, pp.~42--47, 2014.
+
+\bibitem{jiang}
+Z.~Jiang, H.~Zheng, N.~Mantri, Z.~Qi, X.~Zhang, Z.~Hou, J.~Chang, H.~Lu, and
+  Z.~Liang, ``Prediction of relationship between surface area and temperature
+  and storage time and ascorbic acid retention of fresh-cut pineapple using
+  adaptive neuro-fuzzy inference system (anfis),'' {\em Postharvest Biology and
+  Technology}, vol.~113, pp.~1--7, 2016.
+
+\bibitem{goel}
+N.~Goel and P.~Sehgal, ``Fuzzy classification of pre-harvest tomatoes for
+  ripeness estimation - an approach based on automatic rule learning using
+  decision tree,'' {\em Applied Soft Computing}, vol.~36, pp.~45--56, 2015.
+
+\bibitem{wan}
+P.~Wan, A.~Toudeshki, H.~Tan, and R.~Ehsani, ``A methodology for fresh tomato
+  maturity detection using computer vision,'' {\em Computers and Electronics in
+  Agriculture}, vol.~146, pp.~43--50, 2018.
+
+\bibitem{mebatsion}
+H.~Mebatsion, J.~Paliwal, and D.~Jayas, ``Automatic classification of
+  non-touching cereal grains in digital images using limited morphological and
+  color features,'' {\em Computers and Electronics in Agriculture}, vol.~90,
+  pp.~99--105, 2013.
+
+\bibitem{muhammad}
+G.~Muhammad, ``Date fruits classification using texture descriptors and
+  shape-size features,'' {\em Engineering Applications of Artificial
+  Intelligence}, vol.~37, pp.~361--367, 2015.
+
+\bibitem{pereira}
+L.~F.~S. Pereira, S.~B. Jr., N.~A. Valous, and D.~F. Barbin, ``Predicting the
+  ripening of papaya fruit with digital imaging and random forests,'' {\em
+  Computers and Electronics in Agriculture}, vol.~145, pp.~76--82, 2018.
+
+\bibitem{szczypinski}
+P.~M. Szczypiński, A.~Klepaczko, and P.~Zapotoczny, ``Identifying barley
+  varieties by computer vision,'' {\em Computers and Electronics in
+  Agriculture}, vol.~110, pp.~1--8, 2015.
+
+\bibitem{mohammadi}
+V.~Mohammadi, K.~Kheiralipour, and M.~Ghasemi-Varnamkhasti, ``Detecting
+  maturity of persimmon fruit based on image processing technique,'' {\em
+  Scientia Horticulturae}, vol.~184, pp.~123--128, 2015.
+
+\bibitem{thendral}
+R.~Thendral and A.~Suhasini, ``Automated skin defect identification system for
+  orange fruit grading based on genetic algorithm,'' {\em CURRENT SCIENCE},
+  vol.~112 No.8, pp.~1704--1711, 2017.
+
+\bibitem{gill}
+J.~Gill, A.~Girdhar, and T.~Singh, ``A hybrid intelligent system for fruit
+  grading and sorting,'' {\em International Journal on Computer Science and
+  Engineering (IJCSE)}, vol.~9 No.5, pp.~257--265, 2017.
+
+\bibitem{choi}
+H.~S. Choi, J.~B. Cho, S.~G. Kim, and H.~S. Choi, ``A real-time smart fruit
+  quality grading system classifying by external appearance and internal flavor
+  factors,'' {\em International Conference on Industrial Technology},
+  pp.~2081--2086, 2018.
+
+\bibitem{baranowski}
+P.~Baranowski, ``Detection of early apple bruises using pulsed-phase
+  thermography article,'' 2009.
+\newblock Accessed Apr 2019.
+
+\bibitem{ginesu}
+G.~Ginesu, D.~D. Giusto, V.~Märgner, and P.~Meinlschmidt, ``Detection of
+  foreign bodies in food by thermal image processing,'' {\em IEEE TRANSACTIONS
+  ON INDUSTRIAL ELECTRONICS}, vol.~51 No.2, pp.~480--490, 2004.
+
+\bibitem{mathanker}
+S.~Mathanker, P.~Weckler, T.~Bowser, N.~Wang, and N.~Maness, ``Adaboost
+  classifiers for pecan defect classification,'' {\em Computers and Electronics
+  in Agriculture}, vol.~77, pp.~60--68, 2011.
+
+\bibitem{haff}
+R.~P. Haff and N.~Toyofuku, ``X-ray detection of defects and contaminants in
+  the food industry,'' {\em Sensors \& Instrumentation Food Quality.}, vol.~2,
+  pp.~262--273, 2008.
+
+\bibitem{lorente}
+D.~Lorente, M.~Zude, C.~Regen, L.~Palou, J.~Gómez-Sanchis, and J.~Blasco,
+  ``Early decay detection in citrus fruit using laser-light backscattering
+  imaging,'' {\em Postharvest Biology and Technology}, vol.~86, pp.~424--430,
+  2013.
+
+\bibitem{munera}
+S.~Munera, C.~Besada, N.~Aleixos, P.~Talens, A.~Salvador, Blasco, D.-W. Sun,
+  S.~Cubero, and J.~Blasco, ``Non-destructive assessment of the internal
+  quality of intact persimmon using colour and vis/nir hyperspectral imaging,''
+  {\em LWT - Food Science and Technology}, vol.~77, pp.~241--248, 2017.
+
+\bibitem{munera2}
+S.~Munera, J.~M. Amigo, N.~Aleixos, P.~Talens, S.~Cubero, and J.~Blasco,
+  ``Potential of vis-nir hyperspectral imaging and chemometric methods to
+  identify similar cultivars of nectarine,'' {\em Food Control}, vol.~86,
+  pp.~1--10, 2018.
+
+\bibitem{li}
+X.~Li, Y.~Wei, J.~Xu, X.~Feng, F.~Wu, R.~Zhou, J.~Jin, K.~Xu, X.~Yu, and Y.~He,
+  ``Ssc and ph for sweet assessment and maturity classification of harvested
+  cherry fruit based on nir hyperspectral imaging technology,'' {\em
+  Postharvest Biology and Technology}, vol.~143, pp.~112--118, 2018.
+
+\bibitem{lee}
+D.-J. Lee, R.~Schoenberger, J.~Archibald, and S.~McCollum, ``Development of a
+  machine vision system for automatic date grading using digital reflective
+  near-infrared imaging,'' {\em Journal of Food Engineering}, vol.~86,
+  pp.~388--398, 2008.
+
+\bibitem{che}
+W.~Che, L.~Sun, Q.~Zhang, W.~Tan, D.~Ye, D.~Zhang, and Y.~Liu, ``Pixel based
+  bruise region extraction of apple using vis-nir hyperspectral imaging,'' {\em
+  Computers and Electronics in Agriculture}, vol.~146, pp.~12--21, 2018.
+
+\bibitem{qiang}
+L.~Qiang and T.~Mingjie, ``Detection of hidden bruise on kiwi fruit using
+  hyperspectral imaging and parallelepiped classification,'' {\em Procedia
+  Environmental Sciences}, vol.~12, pp.~1172--1179, 2012.
+
+\bibitem{li3}
+J.~Li, L.~Chen, and W.~Huang, ``Detection of early bruises on peaches
+  (amygdalus persica l.) using hyperspectral imaging coupled with improved
+  watershed segmentation algorithm,'' {\em Postharvest Biology and Technology},
+  vol.~135, pp.~104--113, 2018.
+
+\bibitem{ainara}
+A.~Lopez-Maestresalas, J.~C. Keresztes, M.~Goodarzi, S.~Arazuri, C.~Jaren, and
+  W.~Saeys, ``Non-destructive detection of blackspot in potatoes by vis-nir and
+  swir hyperspectral imaging,'' {\em Food Control}, vol.~70, pp.~229--241,
+  2016.
+
+\bibitem{li2}
+J.~Li, L.~Chen, W.~Huang, Q.~Wang, B.~Zhang, X.~Tian, S.~Fan, and B.~Li,
+  ``Multispectral detection of skin defects of bi-colored peaches based on
+  vis–nir hyperspectral imaging,'' {\em Postharvest Biology and Technology},
+  vol.~112, pp.~121--133, 2016.
+
+\bibitem{siedliska}
+A.~Siedliska, P.~Baranowski, M.~Zubik, W.~Mazurek, and B.~Sosnowska,
+  ``Detection of fungal infections in strawberry fruit by vnir/swir
+  hyperspectral imaging,'' {\em Postharvest Biology and Technology}, vol.~139,
+  pp.~115--126, 2018.
+
+\bibitem{xu}
+S.~Xu and J.~Wang, ``Dynamic extreme learning machine for data stream
+  classification,'' {\em Neurocomputing}, vol.~Vol: 238, pp.~pp 443--449, 2017.
+
+\bibitem{yamamoto2}
+S.~YAMAMOTO, S.~HAYASHI, H.~YOSHIDA, and K.~KOBAYASHI, ``Development of a
+  stationary robotic strawberry harvester with a picking mechanism that
+  approaches the target fruit from below,'' {\em Japan Agricultural Research
+  Quarterly (JARQ)}, vol.~48 (3), pp.~261--269, 2014.
+
+\bibitem{hayashi}
+S.~Hayashi, K.~Shigematsu, S.~Yamamoto, K.~Kobayashi, Y.~Kohno, J.~Kamata, and
+  M.~Kurita, ``Evaluation of a strawberry-harvesting robot in a field test,''
+  {\em Biosystems Engineering}, vol.~105, pp.~160--171, 2010.
+
+\bibitem{yamamoto}
+K.~Yamamoto, S.~Ninomiya, Y.~Kimura, A.~Hashimoto, Y.~Yoshioka, and T.~Kameoka,
+  ``Strawberry cultivar identification and quality evaluation on the basis of
+  multiple fruit appearance features,'' {\em Computers and Electronics in
+  Agriculture}, vol.~110, pp.~233--240, 2015.
+
+\bibitem{tallada}
+J.~G. TALLADA, M.~NAGATA, and T.~KOBAYASHI, ``Non-destructive estimation of
+  firmness of strawberries (fagaria x ananassa duch.) using nir hyperspectral
+  imaging,'' {\em Environ. Control Biol}, vol.~44 (4), pp.~245--255, 2006.
+
+\bibitem{zhang}
+Y.~Zhang, S.~Wang, G.~Ji, and P.~Phillips, ``Fruit classification using
+  computer vision and feedforward neural network,'' {\em Journal of Food
+  Engineering}, vol.~143, pp.~167--177, 2014.
+
+\bibitem{liu}
+C.~Liu, W.~Liu, X.~Lu, F.~Ma, W.~Chen, J.~Yang, and L.~Zheng, ``Application of
+  multispectral imaging to determine quality attributes and ripeness stage in
+  strawberry fruit,'' {\em PLoS ONE}, vol.~10.1371/journal.pone.0087818,
+  pp.~1--8, 2014.
+
+\bibitem{sofu}
+M.~Sofu, O.~Er, M.~Kayacan, and B.~Cetisli, ``Design of an automatic apple
+  sorting system using machine vision,'' {\em Computers and Electronics in
+  Agriculture}, vol.~127, pp.~395--405, 2016.
+
+\bibitem{baigvand}
+M.~Baigvand, A.~Banakar, S.~Minaei, J.~Khodaei, and N.~Behroozi-Khazaei,
+  ``Machine vision system for grading of dried figs,'' {\em Computers and
+  Electronics in Agriculture}, vol.~119, pp.~158--165, 2015.
+
+\bibitem{duan}
+F.~Duan, Y.-N. Wang, H.-J. Liu, and Y.-G. Li, ``A machine vision inspector for
+  beer bottle,'' {\em Engineering Applications of Artificial Intelligence},
+  vol.~20, pp.~1013--1021, 2007.
+
+\bibitem{elmasry1}
+G.~ElMasry, S.~Cubero, E.~Moltó, and J.~Blasco, ``In-line sorting of irregular
+  potatoes by using automated computer-based machine vision system,'' {\em
+  Journal of Food Engineering}, vol.~112, pp.~60--68, 2012.
+
+\bibitem{kondo}
+N.~Kondo, ``Automation on fruit and vegetable grading system and food
+  traceability,'' {\em Trends in Food Science and Technology}, vol.~21,
+  pp.~145--152, 2010.
+
+\bibitem{lin}
+J.~Lin, M.~Holmes, R.~Vison, C.~Ge, F.~C. Pogoda, L.~Mahon, R.~Gentry,
+  G.~Seibel, X.~Chen, and Y.~Tao, ``Design and testing of an automated
+  high-throughput computer vision guided waterjet knife strawberry calyx
+  removal machine,'' {\em Journal of Food Engineering},
+  vol.~10.1016/j.jfoodeng.2017.05.002, 2017.
+
+\bibitem{aleixos}
+N.~Aleixos, J.~Blasco, F.~Navarrón, and E.~Moltó, ``Multispectral inspection
+  of citrus in real-time using machine vision and digital signal processors,''
+  {\em Computers and Electronics in Agriculture}, vol.~33, pp.~121--137, 2002.
+
+\bibitem{barbon}
+A.~P.~A. da~Costa~Barbon, S.~B. Jr., G.~F.~C. Campos, J.~L.~S. Jr., L.~M.
+  Peres, S.~M. Mastelini, N.~Andreo, A.~Ulrici, and A.~M. Bridi, ``Development
+  of a flexible computer vision system for marbling classification,'' {\em
+  Computers and Electronics in Agriculture}, vol.~142, pp.~536--544, 2017.
+
+\bibitem{abdullah}
+M.~Abdullah, J.~Mohamad-Saleh, A.~Fathinul-Syahir, and B.~Mohd-Azemi,
+  ``Discrimination and classification of fresh-cut starfruits (averrhoa
+  carambola l.) using automated machine vision system,'' {\em Journal of Food
+  Engineering}, vol.~76, pp.~506--523, 2006.
+
+\bibitem{zuniga}
+A.~Zuñiga, M.~Mora, M.~Oyarce, and C.~Fredes, ``Grape maturity estimation
+  based on seed images and neural networks,'' {\em Engineering Applications of
+  Artificial Intelligence}, vol.~35, pp.~95--104, 2014.
+
+\bibitem{vakilian}
+K.~A. Vakilian and J.~Massah, ``An apple grading system according to european
+  fruit quality standards using gabor filter and artificial neural networks,''
+  {\em St. Cerc. St. CICBIA}, vol.~17 (1), pp.~075--085, 2016.
+
+\bibitem{wang}
+C.~Wang, X.~Li, W.~Wang, Y.~Feng, Z.~Zhou, and H.~Zhan, ``Recognition of
+  worm-eaten chestnuts based on machine vision,'' {\em Mathematical and
+  Computer Modelling}, vol.~54, pp.~888--894, 2011.
+
+\bibitem{sugiyama}
+T.~Sugiyama, J.~Sugiyama, M.~Tsuta, K.~Fujita, M.~Shibata, M.~Kokawa,
+  T.~Arakia, H.~Nabetani, and Y.~Sagarac, ``Nir spectral imaging with
+  discriminant analysis for detecting foreign materials among blueberries,''
+  {\em Journal of Food Engineering}, vol.~Vol: 101(3), pp.~pp 224--252, 2010.
+
+\bibitem{peng}
+Y.~Peng and B.-L. Lu, ``Discriminative extreme learning machine with supervised
+  sparsity preserving for image classification,'' {\em Neurocomputing},
+  vol.~Vol: 000, pp.~pp 1--11, 2017.
+
+\bibitem{luo}
+F.~Luo, W.~Guo, Y.~Yu, and G.~Chen, ``A multi-label classification algorithm
+  based on kernel extreme learning machine,'' {\em Neurocomputing}, vol.~DOI:
+  S0925-2312(17)30806-8, pp.~pp 1--18, 2017.
+
+\bibitem{yavs}
+E.~Yavs and A.~Uçar, ``Gesture imitation and recognition using kinect sensor
+  and extreme learning machines,'' {\em Measurement}, vol.~Vol: 94, pp.~pp
+  852--861, 2016.
+
+\bibitem{mohammed}
+A.~Mohammed, R.Minhas, Q.~Wu, and M.A.Sid-Ahmed, ``Human face recognition based
+  on multidimensional pca and extreme learning machine,'' {\em Pattern
+  Recognition}, vol.~Vol: 44, pp.~pp 2588--2597, 2011.
+
+\bibitem{osuna}
+E.~Osuna, R.~Freund, and F.~Girosi, ``Training support vector machines: an
+  application to face detection,'' {\em Computer Vision and Pattern
+  Recognition}, vol.~DOI: 10.1109/CVPR.1997.609310, pp.~pp 130--136, 1997.
+
+\bibitem{tsang}
+I.~W. Tsang, J.~T. Kwok, and P.-M. Cheung, ``Core vector machines: Fast svm
+  training on very large data sets,'' {\em Journal of Machine Learning
+  Research}, vol.~6, p.~363–392, 2005.
+
+\bibitem{sabri}
+N.~Sabri, Z.~Ibrahim, S.~Syahlan, N.~Jamil, and N.~N.~A. Mangshor, ``Palm oil
+  fresh fruit bunch ripeness grading identification using color features,''
+  {\em Journal of Fundamental and Applied Sciences}, vol.~9(4S), pp.~563--579,
+  2017.
+
+\bibitem{mizushima}
+A.~Mizushima and R.~Lu, ``An image segmentation method for applesorting and
+  grading using support vector machine and otsu’s method,'' {\em Computers
+  and Electronics in Agriculture}, vol.~94, pp.~29--37, 2013.
+
+\bibitem{alfatni}
+M.~S.~M. Alfatni, A.~R.~M. Shariff, S.~K. Bejo, O.~M.~B. Saaed, and
+  A.~Mustapha, ``Real-time oil palm ffb ripeness grading system based on ann
+  and knn and svm classifiers,'' {\em IOP Conference Series: Earth and
+  Environmental Science}, vol.~169, pp.~1--5, 2018.
+
+\bibitem{bhatt}
+A.~K. Bhatt and D.~Pant, ``Automatic apple grading model development based on
+  back propagation neural network and machine vision and and its performance
+  evaluation,'' {\em AI \& Soc}, vol.~30, pp.~45--56, 2015.
+
+\bibitem{langley}
+P.~Langley, {\em Elements of Extreme Learning}.
+\newblock San Francisco and California: Morgan Kaufmann Publishers Inc. and
+  Stanford Universiy, 1998.
+
+\bibitem{shavlik}
+J.~W. Shavlik and T.~G. Dietterich, {\em Readings in Machine Learning}.
+\newblock San Francisco and California: Morgan Kaufmann Publishers Inc., 1990.
+
+\bibitem{mohri}
+M.~Mohri, A.~Rostamizadeh, and A.~Talwalkar, {\em Foundations of Machine
+  Learning}.
+\newblock Cambridge and Massachusetts and London England: The MIT Press, 2012.
+
+\bibitem{bottou}
+L.~Bottou, C.~Cortes, J.~Denker, H.~Drucker, I.~Guyon, L.~Jackel, Y.~LeCun,
+  U.~Muller, E.~Sackinger, P.~Simard, and V.~Vapnik, ``Comparison of classifier
+  methods: A case study in handwritten digit recognition,'' {\em AT\&T Bell
+  Laboratories and Holmdel and NJ 07733 and Electronics Laboratory and Swiss
+  Federal Institute of Technology}, pp.~pp 77--82, 1994.
+
+\bibitem{krizhevsky}
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
+  deep convolutional neural networks,'' {\em Neural Information Processing
+  Systems}, vol.~Vol: 25, pp.~pp 1--9, 2012.
+
+\bibitem{ciresan}
+D.~Ciresan, U.~Meier, and J.~Schmidhuber, ``Multi-column deep neural networks
+  for image classification,'' {\em Computer Vision and Pattern Recognition},
+  vol.~DOI: 978-1-4673-1228-8/12, pp.~pp 3642--3649, 2012.
+
+\bibitem{andrej}
+J.~Johnson and A.~Karpathy, ``Cs231n convolutional neural networks for visual
+  recognition.''
+\newblock Accessed June 2017.
+
+\bibitem{smith}
+P.~D. Smith, ``Artificial neural networks and deep learning - the true key to
+  artificial intelligence,'' 2016.
+\newblock Accessed May 2017.
+
+\bibitem{sebastiani}
+F.~SEBASTIANI, ``Machine learning in automated text categorization,'' {\em ACM
+  Computing Surveys}, vol.~Vol: 34(1), pp.~pp 1--47, 2002.
+
+\bibitem{bahlmann}
+C.~Bahlmann, B.~Haasdonk, and H.~Burkhardt, ``On-line handwriting recognition
+  with support vector machines— a kernel approach,'' {\em Proceedings of the
+  Eighth International Workshop on Frontiers in Handwriting Recognition},
+  vol.~Vol: 0-7695-1692-0/02, 2002.
+
+\bibitem{bartlett}
+M.~S. Bartlett, G.~Littlewort, M.~Frank, C.~Lainscsek, I.~Fasel, and
+  J.~Movellan, ``Recognizing facial expression: Machine learning and
+  application to spontaneous behavior,'' {\em Computer Vision and Pattern
+  Recognition}, vol.~Vol: 10.1109/CVPR.2005.297, 2005.
+
+\bibitem{bartlett2}
+M.~S. Bartlett, G.~Littlewort, , C.~Lainscsek, I.~Fasel, and J.~Movellan,
+  ``Machine learning methods for fully automatic recognition of facial
+  expressions and facial actions,'' {\em IEEE International Conference on
+  Systems}, vol.~Vol: n-78n3-8~66-7104, pp.~pp 592--597, 2004.
+
+\bibitem{shipp}
+M.~A. Shipp, K.~N. Ross, P.~Tamayo, A.~P. Weng, J.~L. Kutok, R.~C. Aguiar,
+  M.~Gaasenbeek, M.~Angelo, M.~Reich, G.~S. Pinkus, T.~S. Ray, M.~A. Koval,
+  K.~W. Last, A.~Norton, T.~A. Lister, J.~Mesirov, D.~S. Neuberg, E.~S. Lander,
+  J.~C. Aster, and T.~R. Golub, ``Diffuse large b-cell lymphoma outcome
+  prediction by gene- expression profiling and supervised machine learning,''
+  {\em NATURE MEDICINE}, vol.~Vol: 8(1), pp.~pp 68--74, 2002.
+
+\bibitem{ye}
+Q.-H. Ye, L.-X. Qin, M.~Forgues, P.~He, J.~W. Kim, A.~C. Peng, R.~Simon, Y.~Li,
+  A.~I. Robles, Y.~Chen, Z.-C. Ma, Z.-Q. Wu, S.-L. Ye, Y.-K. Liu, Z.-Y. Tang,
+  and X.~W. Wang, ``Predicting hepatitis b virus–positive metastatic
+  hepatocellular carcinomas using gene expression profiling and supervised
+  machine learning,'' {\em NATURE MEDICINE}, vol.~Vol: 9(4), pp.~pp 416--423,
+  2003.
+
+\bibitem{dreiseitl}
+S.~Dreiseitl, L.~Ohno-Machado, H.~Kittler, S.~Vinterbo, H.~Billhardt, and
+  M.~Binderac, ``A comparison of machine learning methods for the diagnosis of
+  pigmented skin lesions,'' {\em Journal of Biomedical Informatics}, vol.~Vol:
+  34, pp.~pp 28--36, 2001.
+
+\bibitem{lustrek}
+M.~Lustrek and B.~Kaluza, ``Fall detection and activity recognition with
+  machine learning,'' {\em Informatica}, vol.~Vol: 33, pp.~pp 205--212, 2009.
+
+\bibitem{rautaray}
+S.~S. Rautaray and A.~Agrawal, ``Vision based hand gesture recognition for
+  human computer interaction: a survey,'' {\em Artif Intell Rev}, vol.~Vol: 43,
+  pp.~pp 1--54, 2015.
+
+\bibitem{chapelle}
+O.~Chapelle, P.~Haffner, and V.~Vapnik, ``Support vector machines for
+  histogram-based image classification,'' {\em IEEE TRANSACTIONS ON NEURAL
+  NETWORKS}, vol.~Vol: 10(5), pp.~pp 1055--1064, 1999.
+
+\bibitem{boyan}
+J.~Boyan, D.~Freitag, and T.~Joachims, ``A machine learning architecture for
+  optimizing web search engines,'' {\em AAAI Technical Report WS-96-06}, 1996.
+
+\bibitem{graepel}
+T.~Graepel, J.~Q. Candela, T.~Borchert, and R.~Herbrich, ``Web-scale baysian
+  click-through rate prediction for sponsored search advertising in microsoft's
+  bing search engine,'' {\em Proceeding of the 27th International Conferance on
+  Machine Learning}, vol.~Vol: 27, 2010.
+
+\bibitem{jia}
+J.~Jia, ``Csiec: A computer assisted english learning chatbot based on textual
+  knowledge and reasoning,'' {\em Knowledge-Based Systems}, vol.~Vol: 22,
+  pp.~pp 249--255, 2009.
+
+\bibitem{cui}
+G.~Cui, M.~L. Wong, and H.-K. Lui, ``Machine learning for direct marketing
+  response models: Bayesian networks with evolutionary programming,'' {\em
+  MANAGEMENT SCIENCE}, vol.~Vol: 52(4), pp.~pp 597--612, 2006.
+
+\bibitem{bose}
+I.~Bose and R.~K.Mahapatrab, ``Business data mining - a machine learning
+  perspective,'' {\em Information \& Management}, vol.~Vol: 39, pp.~pp
+  211--225, 2001.
+
+\bibitem{lecun}
+Y.~LeCun, Y.~Bengio, and G.~Hinton, ``Deep learning,'' {\em Nature}, vol.~Vol:
+  521, pp.~pp 436--444, 2015.
+
+\bibitem{tensorflow}
+TensorFlow, ``An open-source software library for machine intelligence,'' 2017.
+\newblock Accessed May 2017.
+
+\bibitem{cortana}
+Microsoft, ``Cortana intelligence competitions,'' 2017.
+\newblock Accessed May 2017.
+
+\bibitem{udacity}
+Udacity, ``Artificial intelligence engineer - nanodegree program,'' 2017.
+\newblock Accessed May 2017.
+
+\bibitem{xprize}
+IBM, ``Ibm watson ai xprize,'' 2017.
+\newblock Accessed May 2017.
+
+\bibitem{koirala}
+A.~Koirala, K.~B. Walsh, Z.~Wang, and C.~McCarthy, ``Deep learning for
+  real‐time fruit detection and orchard fruit load estimation: benchmarking
+  of ‘mangoyolo’,'' {\em Precision Agriculture},
+  vol.~10.1007/s11119-019-09642-0, 2019.
+
+\bibitem{ma}
+J.~Ma, K.~Du, F.~Zheng, L.~Zhang, Z.~Gong, and Z.~Sun, ``A recognition method
+  for cucumber diseases using leaf symptom images based on deep convolutional
+  neural network,'' {\em Computers and Electronics in Agriculture}, vol.~154,
+  pp.~18--24, 2018.
+
+\bibitem{sa}
+I.~Sa, Z.~Ge, F.~Dayoub, B.~Upcroft, T.~Perez, and C.~McCool, ``Deepfruits: A
+  fruit detection system using deep neural networks,'' {\em Sensors}, vol.~16
+  and 1222; doi:10.3390/s16081222, pp.~1--23, 2016.
+
+\bibitem{kruger}
+R.~P. Kruger and W.~B. Thompson, ``A technical and economic assessment of
+  computer vision for industial inspection and robotic assembly,'' {\em
+  Proceedings of the IEEE}, vol.~69(12), pp.~1524--1538, 1981.
+
+\bibitem{michalosa}
+G.~Michalosa, N.~Kousia, S.~Makrisa, and G.~Chryssolouris, ``Performance
+  assessment of production systems with mobile robots,'' {\em CIRP Conference
+  on MANUFACTURING SYSTEMS}, vol.~41, pp.~195--200, 2016.
+
+\bibitem{blasco}
+J.~Blasco, S.~Cubero, J.~Gómez-Sanchís, P.~Mira, and E.~Moltó, ``Development
+  of a machine for the automatic sorting of pomegranate(punica granatum) arils
+  based on computer vision,'' {\em Journal of Food Engineering}, vol.~90,
+  pp.~27--34, 2009.
+
+\bibitem{nouri-ahmadabadi}
+H.~Nouri-Ahmadabadi, M.~Omid, S.~S. Mohtasebi, and M.~S. Firouz, ``Design and
+  development and evaluation of an online grading system for peeled pistachios
+  equipped with machine vision technology and support vector machine,'' {\em
+  INFORMATION PROCESSING IN AGRICULTURE}, vol.~4, pp.~333--341, 2017.
+
+\bibitem{ohali}
+Y.~A. Ohali, ``Computer vision based date fruit grading system: Design and
+  implementation,'' {\em Journal of King Saud University – Computer and
+  Information Sciences}, vol.~23, pp.~29--36, 2011.
+
+\bibitem{saad}
+F.~Sa’ad, M.~Ibrahim, A.~Shakaff, A.~Zakaria, and M.~Abdullah, ``Shape and
+  weight grading of mangoes using visible imaging,'' {\em Computers and
+  Electronics in Agriculture}, vol.~115, pp.~51--56, 2015.
+
+\bibitem{makky}
+M.~Makky and P.~Soni, ``Development of an automatic grading machine for oil
+  palm fresh fruits bunches (ffbs) based on machine vision,'' {\em Computers
+  and Electronics in Agriculture}, vol.~93, pp.~129--139, 2013.
+
+\bibitem{gurney}
+G.~Seed and N.~Co., ``Ozark beauty strawberry.''
+\newblock Accessed Apr 2019.
+
+\bibitem{rox}
+R.~R. Anderson, ``Polarized light examination and photography of the skin,''
+  {\em Arch Dermatol}, vol.~Vol: 127, pp.~pp 1000--1005, 1991.
+
+\bibitem{sommer}
+A.~Sommer, H.~A. Kues, S.~A. D'Anna, S.~Arkell, A.~Robin, and H.~A. Quigley,
+  ``Cross polarization photography of the nerve fiber layer,'' {\em Arch
+  Opthalmol}, vol.~Vol: 102, pp.~pp 864--869, 1984.
+
+\bibitem{physicsopenlab}
+PhysicsOpenLab, ``Ozark beauty strawberry,'' 2016.
+\newblock Accessed Apr 2019.
+
+\bibitem{led_power}
+led gardener, ``Selecting led cobs and matching drivers,'' 2016.
+\newblock Accessed July 2019.
+
+\bibitem{shiv}
+S.~R. Dubey and A.~S. Jalal, ``Application of image processing in fruit and
+  vegetable analysis: A review,'' {\em Journal of Intelligent Systems},
+  vol.~Vol: 79, pp.~pp 10--15, 2014.
+
+\bibitem{lu}
+L.~Qiang and T.~Mingjie, ``Detection of hidden bruise on kiwi fruit using
+  hyperspectral imaging and parallelepiped classification,'' {\em Procedia
+  Environmental Sciences}, vol.~Vol: 12, pp.~pp 1172--1179, 2012.
+
+\bibitem{50hz}
+F.~Juelich, ``Diverse causes behind frequency fluctuations in power grids,''
+  2018.
+\newblock Accessed July 2019.
+
+\bibitem{min_illumination}
+V.~Damjanovski, ``Minimum illumination (cctv - third edition),'' 2014.
+\newblock Accessed July 2019.
+
+\bibitem{light_units}
+V.~Damjanovski, ``Light units (cctv - third edition),'' 2014.
+\newblock Accessed July 2019.
+
+\bibitem{lumicrest}
+L.~L. Solutions, ``What do we mean by colour rendering?.''
+\newblock Accessed Apr 2019.
+
+\bibitem{cheng}
+Y.~Cheng and K.W.E.Cheng, ``General study for using led to replace traditional
+  lighting devices,'' {\em International Conference on Power Electronics
+  Systems and Applications}, vol.~2, pp.~173--177, 2006.
+
+\bibitem{alonzo}
+J.~M. Alonso, D.~Gacio, A.~J. Calleja, J.~Ribas, and E.~L. Corominas, ``A study
+  on led retrofit solutions for low-voltage halogen cycle lamps,'' {\em IEEE
+  TRANSACTIONS ON INDUSTRY APPLICATIONS}, vol.~48 No.5, pp.~1673--1682, 2012.
+
+\bibitem{camera_bus}
+N.~Instruments, ``Choosing the right camera bus,'' 2019.
+\newblock Accessed July 2019.
+
+\bibitem{atkinson}
+G.~A. Atkinson and E.~R. Hancock, ``Recovery of surface orientation from
+  diffuse polarization,'' {\em IEEE TRANSACTIONS ON IMAGE PROCESSING}, vol.~15
+  No.6, pp.~1653--1664, 2006.
+
+\bibitem{ulaby}
+F.~T. Ulaby and U.~Ravaioli, {\em Fundamentals of Applied Electromagnetics}.
+\newblock Global: Pearson, 2015.
+
+\bibitem{artusi}
+A.~Artusi, F.~Banterle, and D.~Chetverikov, ``A survey of specularity removal
+  methods,'' {\em COMPUTER GRAPHICS forum}, vol.~30 No.8, 2011.
+
+\bibitem{nelson}
+P.~S.~A. Nelson, ``Properties of light and examination of isotropic
+  substances.''
+\newblock Accessed 1 May 2019.
+
+\bibitem{wolff}
+L.~B.Wolff and T.~E. Boult, ``Constraining object features using a polarization
+  reflectance model,'' {\em IEEE Trans. Pattern Anal. Mach. Intell}, vol.~13
+  and no.7, p.~635–657, 1991.
+
+\bibitem{anderson}
+R.~Anderson, ``Polarized light examination and photography of the skin,,'' {\em
+  Arch Dermatol}, vol.~127, pp.~1000–1004,, 1991.
+
+\bibitem{kuranov}
+R.~Kuranov, V.~Sapozhnikova, I.~Turchin, E.~Zagainova, V.~Gelikonov,
+  V.~Kamensky, L.~Snopova, and N.~Prodanetz, ``Complementary use of
+  cross-polarization and standard oct for differential diagnosis of
+  pathological tissues,'' {\em OPTICS EXPRESS}, vol.~Vol: 10 and no.15, pp.~pp
+  707–713,, 2002.
+
+\bibitem{blasco3}
+J.~Blasco, N.Aleixos, and E.Moltó, ``Machine vision system for automatic
+  quality grading of fruit,'' {\em Biosystems Engineering}, vol.~85(4),
+  pp.~415--423, 2003.
+
+\bibitem{londhe}
+D.~H. Londhe, S.~M. Nalawade, G.~S. Pawar, V.~T. Atkari, and S.~V. Wandkar,
+  ``Grader: A review of different methods of grading for fruits and
+  vegetables,'' {\em Agric Eng Int: CIGR Journal}, vol.~15 No.3, pp.~217--230,
+  2013.
+
+\bibitem{jun}
+J.~Zhao, J.~Tow, and J.~Katupitiya, ``On-tree fruit recognition using texture
+  properties and color data,'' {\em Intelligent Robots and Systems},
+  vol.~10.1109/IROS.2005.1545592, 2005.
+
+\bibitem{elmasry3}
+G.~E. Masry, S.~Cubero, E.~Moltó, and J.~Blasco, ``In-line sorting of
+  irregular potatoes by using automated computer-based machine vision system,''
+  {\em Journal of Food Engineering}, vol.~112, pp.~60--68, 2012.
+
+\bibitem{leemans}
+V.~Leemans, H.~Magein, and M.~F. Destain, ``On-line fruit grading according to
+  their external quality using machine vision,'' {\em Biosystems Engineering},
+  vol.~83(4), pp.~397--404, 2002.
+
+\bibitem{bundit}
+B.~Jarimopas and N.~Jaisin, ``An experimental machine vision system for sorting
+  sweet tamarind,'' {\em Journal of Food Engineering}, vol.~89, pp.~291--297,
+  2008.
+
+\bibitem{rakun}
+J.Rakun, D.Stajnko, and D.Zazulab, ``Detecting fruits in natural scenes by
+  using spatial-frequency based texture analysis and multiview geometry,'' {\em
+  Computers and Electronics in Agriculture}, vol.~76, pp.~80--88, 2011.
+
+\bibitem{zouxiao}
+Z.~Xiao-bo, Z.~Jie-wen, L.~Yanxiao, and M.~Holmes, ``In-line detection of apple
+  defects using three color cameras system,'' {\em Computers and Electronics in
+  Agriculture}, vol.~70, pp.~129--134, 2010.
+
+\bibitem{qingzhong}
+Q.~Li, M.~Wang, and W.~Gua, ``Computer vision based system for apple surface
+  defect detection,'' {\em Computers and Electronics in Agriculture}, vol.~36,
+  pp.~215--223, 2002.
+
+\bibitem{blasco4}
+J.Blasco, N.Aleixos, J.Gómez-Sanchís, and E.Moltóa, ``Recognition and
+  classification of external skin damage in citrus fruits using multispectral
+  data and morphological features,'' {\em Biosystems Engineering}, vol.~103,
+  pp.~137--145, 2009.
+
+\bibitem{song}
+Y.Song, C.A.Glasbey, G.W.Horgan, G.Polder, J.A.Dieleman, and G.~van~der
+  Heijdenc, ``Automatic fruit recognition and counting from multiple images,''
+  {\em Biosystems Engineering}, vol.~118, pp.~203--215, 2014.
+
+\bibitem{panitnat}
+P.~Yimyam and A.~F. Clark, ``3d reconstruction and feature extraction for
+  agricultural produce grading,'' {\em Knowledge and Smart Technology},
+  vol.~10.1109/KST.2016.7440482, 2016.
+
+\bibitem{reece}
+M.~Recce, A.~Plebe, G.~Tropiano, and J.~Taylor, ``Video grading of oranges in
+  real-time,'' {\em Artificial Intelligence Review}, vol.~12, pp.~117--136,
+  1998.
+
+\bibitem{guthrie}
+J.~Guthrie and K.~Walsh, ``Non-invasive assessment of pineapple and mango fruit
+  quality using near infra-red spectroscopy,'' {\em Australian Journal of
+  Experimental Agriculture}, vol.~37(2), pp.~253--263, 1997.
+
+\bibitem{bureau}
+S.~Bureau, D.~Ruiz, M.~Reich, B.~Gouble, D.~Bertrand, J.-M. Audergon, and
+  C.~M.G.C.Renarda, ``Rapid and non-destructive analysis of apricot fruit
+  quality using ft-near-infrared spectroscopy,'' {\em Food Chemistry},
+  vol.~113, pp.~1323--1328, 2009.
+
+\bibitem{yande}
+Y.~Liu, X.~Sun, H.~Zhang, and O.~Aiguo, ``Nondestructive measurement of
+  internal quality of nanfeng mandarin fruit by charge coupled device near
+  infrared spectroscopy,'' {\em Computers and Electronics in Agriculture},
+  vol.~71S, pp.~S10--S14, 2010.
+
+\bibitem{renfu}
+R.~Lu and Y.~Peng, ``Hyperspectral scattering for assessing peach fruit
+  firmness,'' {\em Biosystems Engineering}, vol.~93(2), pp.~191--171, 2006.
+
+\bibitem{jianwei}
+J.~Qin and R.~Lu, ``Measurement of the optical properties of fruits and
+  vegetables using spatially resolved hyperspectral diffuse reflectance imaging
+  technique,'' {\em Postharvest Biology and Technology}, vol.~49, pp.~355--365,
+  2008.
+
+\bibitem{mendoza}
+F.~Mendoza, R.~Lu, D.~Ariana, H.~Cen, and B.~Bailey, ``Integrated spectral and
+  image analysis of hyperspectral scattering data for prediction of apple fruit
+  firmness and soluble solids content,'' {\em Postharvest Biology and
+  Technology}, vol.~62(2), pp.~149--160, 2011.
+
+\bibitem{rajkumar}
+P.Rajkumar, N.Wang, G.EImasry, G.S.V.Raghavan, and Y.Gariepy, ``Studies on
+  banana fruit quality and maturity stages using hyperspectral imaging,'' {\em
+  Journal of Food Engineering}, vol.~108, pp.~194--200, 2012.
+
+\bibitem{ariana}
+D.~P.Ariana, R.~Lu, and D.~E.Guyer, ``Near-infrared hyperspectral reflectance
+  imaging for detection of bruises on pickling cucumbers,'' {\em Computers and
+  Electronics in Agriculture}, vol.~53, pp.~60--70, 2006.
+
+\bibitem{piotr}
+P.~Baranowski, W.~Mazurek, and J.~Pastuszka-Woźniak, ``Supervised
+  classification of bruised apples with respect to the time after bruising on
+  the basis of hyperspectral imaging data,'' {\em Postharvest Biology and
+  Technology}, vol.~53, pp.~249--258, 2006.
+
+\bibitem{eaton}
+G.~Eaton, A.~Busch, R.~Bartels, and Y.~Gao, ``A method to create stable
+  lighting and remove specular reflections for vision systems,'' {\em Digital
+  Image Computing: Techniques and Applications (DICTA)},
+  vol.~10.1109/DICTA.2017.8227392, 2017.
+
+\bibitem{he}
+K.~He and J.~Sun, ``Convolutional neural networks at constrained time cost,''
+  {\em IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  vol.~arXiv:1412.1710, pp.~5353--5360, 2014.
+
+\bibitem{angiulli}
+F.~Angiulli, ``Fast condensed nearest neighbor rule,'' {\em ICML (international
+  conference on Machine learning)}, vol.~22, pp.~25--32, 2005.
+
+\bibitem{artur}
+A.~Miszczak, C.~F. Forney, and R.~K. Prange, ``Development of aroma volatiles
+  and color during postharvest ripening of ‘kent’ strawberries,'' {\em
+  Journal of the American Society of Horticultural Sciences}, vol.~120 No.4,
+  pp.~650--655, 1994.
+
+\bibitem{willert}
+C.~Willert, B.~Stasicki, J.~Klinner, and S.~Moessner, ``Pulsed operation of
+  high-power light emitting diodes for imaging flow velocimetry,'' {\em
+  Measurement Science and Technology}, vol.~Vol: 21, pp.~pp 1--11, 2010.
+
+\bibitem{dodge}
+S.~Dodge and L.~Karam, ``A study and comparison of human and deeplearning
+  recognition performanceunder visual distortions,'' {\em Computer Vision and
+  Pattern Recognition}, vol.~arXiv:1705.02498v1, 2017.
+
+\bibitem{he2}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Delving deep into rectifiers:surpassing
+  human-level performance on imagenet classification,'' {\em Computer Vision
+  and Pattern Recognition}, vol.~arXiv:1502.01852, 2015.
+
+\bibitem{geirhos}
+R.~Geirhos, D.~H.~J. Janssen, H.~H. Schutt, J.~Rauber, M.~Bethge, and F.~A.
+  Wichmann, ``Comparing deep neural networks against humans:object recognition
+  when the signal gets weaker,'' {\em Computer Vision and Pattern Recognition},
+  vol.~arXiv:1706.06969v2, 2018.
+
+\bibitem{saon}
+G.~Saon, G.~Kurata, T.~Sercu, K.~Audhkhasi, S.~Thomas, D.~Dimitriadis, X.~Cui,
+  B.~Ramabhadran, M.~Picheny, L.-L. Lim, B.~Roomi, and P.~Hall, ``English
+  conversational telephone speech recognition by humans and machines,'' {\em
+  Computation and Language}, vol.~arXiv:1703.02136, 2017.
+
+\bibitem{xiong}
+W.~Xiong, J.~Droppo, X.~Huang, F.~Seide, M.~Seltzer, A.~Stolcke, D.~Yu, and
+  G.~Zweig, ``Achieving human parity in conversational speech recognition,''
+  {\em Computation and Language}, vol.~arXiv:1610.05256, 2017.
+
+\bibitem{han}
+H.~Han, C.~Otto, X.~Liu, and A.~K. Jain, ``Demographic estimation from face
+  images: Human vs. machine performance,'' {\em IEEE Transactions on Pattern
+  Analysis and Machine Intelligence}, vol.~37(6), pp.~1148--1161, 2015.
+
+\bibitem{wiki_linux}
+W.~the~free encyclopedia, ``Linux.''
+\newblock Accessed May 2019.
+
+\bibitem{amari}
+S.~Amari and S.~Wu, ``Improving support vector machine classifiers by modifying
+  kernel functions,'' {\em Neural Networks}, vol.~Vol: 12, p.~pp 783–789,
+  1999.
+
+\bibitem{suln}
+L.~Suln and Y.~Song, ``Research on classifying performance of svm with modified
+  kernel function in hccr,'' {\em Neural Networks and Brain}, vol.~DOI:
+  10.1109/ICNNB.2005.1614960, p.~pp 1720–1723, 2005.
+
+\bibitem{diosan}
+L.~Diosan, M.~Oltean, A.~Rogozan, and J.-P. Pecuchet, ``Improving svm
+  performance using a linear combination of kernels,'' {\em International
+  Conference on Adaptive and Natural Computing Algorithms}, vol.~DOI:
+  10.1007.978.3.540.71629.7.25, p.~pp 218–227, 2007.
+
+\bibitem{shin}
+H.-C. Shin, H.~R. Roth, M.~Gao, L.~Lu, Z.~Xu, I.~Nogues, J.~Yao, D.~Mollura, ,
+  and R.~M. Summers, ``Deep convolutional neural networks for computer-aided
+  detection: Cnn architectures and dataset characteristics and transfer
+  learning,'' {\em IEEE TRANSACTIONS ON MEDICAL IMAGING}, vol.~35 No.5, 2016.
+
+\bibitem{girshick}
+R.~Girshick, J.~Donahue, T.~Darrell, , and J.~Malik, ``Region-based
+  convolutional networks for accurate object detection and segmentation,'' {\em
+  IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE}, vol.~38 and
+  No.1, 2016.
+
+\bibitem{pan}
+J.~Pan, E.~Sayrol, X.~G. i~Nieto, K.~McGuinness, and N.~E. O'Connor, ``Shallow
+  and deep convolutional networks for saliency prediction,'' {\em Computer
+  Vision and Pattern Recognition (CVPR)}, vol.~arXiv:1603.00845, pp.~598--606,
+  2016.
+
+\bibitem{bianchini}
+M.~Bianchini and F.~Scarselli, ``On the complexity of neural network
+  classifiers: A comparison between shallow and deep architectures,'' {\em IEEE
+  TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS}, vol.~25 No.8, 2014.
+
+\end{thebibliography}
