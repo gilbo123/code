@@ -9,6 +9,10 @@ import gzip
 from keras.layers import Input,Conv2D,MaxPooling2D,UpSampling2D
 from keras.models import Model
 from keras.optimizers import RMSprop
+from keras.preprocessing.image import ImageDataGenerator
+from keras.utils import np_utils
+from keras.callbacks import ReduceLROnPlateau, CSVLogger, EarlyStopping
+from skimage.measure import compare_ssim
 
 
 def autoencoder(input_img):
@@ -28,104 +32,85 @@ def autoencoder(input_img):
     decoded = Conv2D(3, (3, 3), activation='sigmoid', padding='same')(up2) # 28 x 28 x 1
     return decoded
 
-def get_data(source_path, test_percent):
-    #return arrays
-    train_img_arr = []
-    train_lbl_arr = []
-    test_img_arr = []
-    test_lbl_arr = []
-    #get class folders
-    class_folders = os.listdir(source_path)
-    for c in class_folders:
-        #join paths
-        c_path = os.path.join(source_path, c)
-        #get files
-        files = os.listdir(c_path)
-        #shuffle files
-        random.shuffle(files)
-        i = 0
-        count = len(files)
-        for f in files:
-            i+=1
-            #read data
-            img = cv2.imread(os.path.join(c_path, f))
-            img = cv2.resize(img, (WIDTH, HEIGHT))	
-            #add to array
-            if (i/count) < test_percent:
-                train_img_arr.append(img)
-                #add label
-                train_lbl_arr.append(c)
-            else:
-                test_img_arr.append(img)
-                #add label
-                test_lbl_arr.append(c)
 
-    
-    return np.array(train_img_arr), np.array(train_lbl_arr), np.array(test_img_arr), np.array(test_lbl_arr)
+#autoencoder params
+BATCH_SIZE = 32
+EPOCHS = 1
+CHANNELS = 3
+X, Y = 100, 100
+input_img = Input(shape = (X, Y, CHANNELS))
+
+#create generators
+train_datagen = ImageDataGenerator(
+        rescale=1./255,
+        shear_range=0,
+        zoom_range=0,
+        horizontal_flip=True,
+        width_shift_range=0.1,  # randomly shift images horizontally (fraction of total width)
+        height_shift_range=0.1)  # randomly shift images vertically (fraction of total height))
+
+valid_datagen = ImageDataGenerator(rescale=1./255)  
 
 
-WIDTH = 60
-HEIGHT = 60
+#TRAIN gen
+train_generator = train_datagen.flow_from_directory(
+        '/home/gil/git/code/autoencoder/patches/train/',
+        target_size=(X, Y),
+        class_mode="input",
+        batch_size=BATCH_SIZE,
+        shuffle=True,
+        seed=42
+        )
 
+#VALID gen
+validation_generator = valid_datagen.flow_from_directory(
+        '/home/gil/git/code/autoencoder/patches/validation/',
+        target_size=(X, Y),
+        class_mode="input",
+        batch_size=BATCH_SIZE,
+        shuffle=True,
+        seed=42
+        )
 
-#data path
-path = '/home/gil/Downloads/drive-download-20200203T080121Z-001/'
-#get data and labels for both train and test
-test_percent = 0.85
-train_data, train_labels, test_data, test_labels = get_data(path, test_percent)
+#TEST gen
+test_generator = valid_datagen.flow_from_directory(
+        '/home/gil/git/code/autoencoder/patches/test/',
+        target_size=(X, Y),
+        class_mode="input",
+        batch_size=BATCH_SIZE,
+        shuffle=False,
+        seed=42
+        )
 
-# Shapes of training set
-print("Training set (images) shape: {shape}".format(shape=train_data.shape))
-print("Test set (images) shape: {shape}".format(shape=test_data.shape))
-
-# Shapes of test set
-print("Train set (labels) shape: {shape}".format(shape=train_labels.shape))
-print("Test set (labels) shape: {shape}".format(shape=test_labels.shape))
-
-
-
-#reshape for network
-train_data = train_data.reshape(-1, WIDTH, HEIGHT, 3)
-test_data = test_data.reshape(-1, WIDTH, HEIGHT, 3)
-print(train_data.shape, test_data.shape)
-
-#normalise
-train_data = train_data / np.max(train_data)
-test_data = test_data / np.max(test_data)
-
-#verify
-print(np.max(train_data))
-print(np.max(test_data))
-
-
-#split data
-from sklearn.model_selection import train_test_split
-train_X, valid_X, train_ground, valid_ground = train_test_split(train_data,
-                                                             train_data, 
-                                                             test_size=0.2, 
-                                                             random_state=42)
-
-#autoencoder
-batch_size = 8
-epochs = 1
-inChannel = 3
-x, y = WIDTH, HEIGHT
-input_img = Input(shape = (x, y, inChannel))
 
 #create model
 autoencoder = Model(input_img, autoencoder(input_img))
 autoencoder.compile(loss='mean_squared_error', optimizer = RMSprop())
 
-#autoencoder.summary()
+autoencoder.summary()
 
-autoencoder_train = autoencoder.fit(train_X, train_ground, batch_size=batch_size,epochs=epochs,verbose=1,validation_data=(valid_X, valid_ground))
+#step size
+STEP_SIZE_TRAIN=train_generator.n//train_generator.batch_size
+STEP_SIZE_VALID=validation_generator.n//validation_generator.batch_size
+#Train model
+autoencoder_train = autoencoder.fit_generator(
+        train_generator,
+        steps_per_epoch=STEP_SIZE_TRAIN,
+        epochs=EPOCHS,
+        validation_data=validation_generator,
+        validation_steps=STEP_SIZE_VALID
+        )
 
+#evaluate
+autoencoder.evaluate_generator(generator=validation_generator, 
+        steps=STEP_SIZE_VALID
+        )
 
 
 #plot results
 loss = autoencoder_train.history['loss']
 val_loss = autoencoder_train.history['val_loss']
-epochs = range(epochs)
+epochs = range(EPOCHS)
 plt.figure()
 plt.plot(epochs, loss, 'bo', label='Training loss')
 plt.plot(epochs, val_loss, 'b', label='Validation loss')
@@ -135,13 +120,57 @@ plt.show()
 
 
 #make predictions
-pred = autoencoder.predict(test_data)
+STEP_SIZE_TEST=test_generator.n//test_generator.batch_size
+#test_generator.reset()
+pred=autoencoder.predict_generator(test_generator,
+        steps=STEP_SIZE_TEST,
+        verbose=1
+        )
 
-for i in range(len(test_data)):
-    print('Label: {}'.format(test_labels[i]))
-    cv2.imshow('Raw', test_data[i])
-    cv2.imshow('Reconstruct', pred[i])
+print(test_generator.n)
+#print(dir(test_generator))
+
+raw_images = []
+for fp in test_generator.filepaths:
+    raw_images.append(cv2.imread(fp))
+    
+
+def diff_image(im1, im2, mode='rgb'):
+    #convert to hsv, if required
+    if 'hsv' in mode:
+        im1 = cv2.cvtColor(im1, cv2.COLOR_BGR2HSV)
+        h, s1,v = cv2.split(im1)
+        im1 = cv2.merge((s1, s1, s1))
+        im2 = cv2.cvtColor(im2, cv2.COLOR_BGR2HSV)
+        h, s2,v = cv2.split(im2)
+        im2 = cv2.merge((s2, s2, s2))
+
+    # convert the images to grayscale
+    grayA = cv2.cvtColor(im1, cv2.COLOR_BGR2GRAY)
+    grayB = cv2.cvtColor(im2, cv2.COLOR_BGR2GRAY)
+    print(grayA.dtype, grayB.dtype)
+    return np.subtract(grayA.astype('uint8'), grayB.astype('uint8'))
+    #(score, diff) = compare_ssim(im1, im2, full=True, multichannel=True)
+    #print("SSIM: {}".format(score))
+    #return (diff * 255).astype("uint8")
+
+
+for i in range(len(pred)):
+    img = cv2.cvtColor(pred[i], cv2.COLOR_BGR2RGB) 
+    img = cv2.resize(img, dsize=(100, 100))
+    print(img.shape, raw_images[i].shape)
+    diff = diff_image(img, raw_images[i])
+    hsv_diff = diff_image(img, raw_images[i], 'hsv')
+     
+    cv2.namedWindow('Raw', cv2.WINDOW_AUTOSIZE)
+    cv2.moveWindow('Raw', 20, 20)
+    cv2.namedWindow('RGB diff', cv2.WINDOW_AUTOSIZE)
+    cv2.moveWindow('RGB diff', 520, 20)
+    cv2.namedWindow('HSV diff', cv2.WINDOW_AUTOSIZE)
+    cv2.moveWindow('HSV diff', 1040, 20)
+    
+    cv2.imshow('Raw', raw_images[i])
+    cv2.imshow('RGB diff', diff)
+    cv2.imshow('HSV diff', hsv_diff)
     cv2.waitKey()
     cv2.destroyAllWindows()
-	
-

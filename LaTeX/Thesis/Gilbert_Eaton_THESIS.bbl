@@ -6,13 +6,13 @@ M.~Menze and A.~Geiger, ``Object scene flow for autonomous vehicles,'' {\em The
   pp.~3061--3070, 2015.
 
 \bibitem{urmson}
-C.~Urmson, J.~Anhalt, C.~B. Drew~Bagnell, M.~N.~C. Robert~Bittner, J.~Dolan,
-  T.~G. Dave~Duggins, M.~G. Chris~Geyer, M.~H. Sam~Harbaugh, S.~K. Thomas
-  M.~Howard, M.~L. Alonzo~Kelly, N.~M. Matt~McNaughton, K.~Peterson, R.~R.
-  Brian~Pilnick, P.~Rybski, Y.-W.~S. Bryan~Salesky, S.~Singh, A.~S.
-  Jarrod~Snider, Z.~W. William “Red”~Whittaker, and J.~Ziglar, ``Autonomous
-  driving in urban environments: Boss and the urban challenge,'' {\em Journal
-  of Field Robotics}, vol.~25(8), pp.~425--466, 2008.
+C.~Urmson, J.~Anhalt, D.~Bagnell, C.~Baker, R.~Bittner, M.~N. Clark, J.~Dolan,
+  D.~Duggins, T.~Galatali, C.~Geyer, M.~Gittleman, S.~Harbaugh, M.~Hebert,
+  T.~M. Howard, S.~Kolski, A.~Kelly, M.~Likhachev, M.~McNaughton, N.~Miller,
+  K.~Peterson, B.~Pilnick, R.~Rajkumar, P.~Rybski, B.~Salesky, Y.-W. Seo,
+  S.~Singh, J.~Snider, A.~Stentz, W.~Whittaker, Z.~Wolkowicki, and J.~Ziglar,
+  ``Autonomous driving in urban environments: Boss and the urban challenge,''
+  {\em Journal of Field Robotics}, vol.~25(8), pp.~425--466, 2008.
 
 \bibitem{greene}
 D.~Greene, ``Drone vision,'' {\em Surveillance and Society}, vol.~13(2),
@@ -230,6 +230,69 @@ J.~Gill, A.~Girdhar, and T.~Singh, ``A hybrid intelligent system for fruit
   grading and sorting,'' {\em International Journal on Computer Science and
   Engineering (IJCSE)}, vol.~9 No.5, pp.~257--265, 2017.
 
+\bibitem{munera}
+S.~Munera, C.~Besada, N.~Aleixos, P.~Talens, A.~Salvador, Blasco, D.-W. Sun,
+  S.~Cubero, and J.~Blasco, ``Non-destructive assessment of the internal
+  quality of intact persimmon using colour and vis/nir hyperspectral imaging,''
+  {\em LWT - Food Science and Technology}, vol.~77, pp.~241--248, 2017.
+
+\bibitem{munera2}
+S.~Munera, J.~M. Amigo, N.~Aleixos, P.~Talens, S.~Cubero, and J.~Blasco,
+  ``Potential of vis-nir hyperspectral imaging and chemometric methods to
+  identify similar cultivars of nectarine,'' {\em Food Control}, vol.~86,
+  pp.~1--10, 2018.
+
+\bibitem{li}
+X.~Li, Y.~Wei, J.~Xu, X.~Feng, F.~Wu, R.~Zhou, J.~Jin, K.~Xu, X.~Yu, and Y.~He,
+  ``Ssc and ph for sweet assessment and maturity classification of harvested
+  cherry fruit based on nir hyperspectral imaging technology,'' {\em
+  Postharvest Biology and Technology}, vol.~143, pp.~112--118, 2018.
+
+\bibitem{Lee2}
+W.-H. Lee, M.~S. Kim, H.~Lee, S.~R. Delwiche, H.~Bae, D.-Y. Kim, and B.-K. Cho,
+  ``Hyperspectral near-infrared imaging for the detection of physical damages
+  of pear,'' {\em Journal of Food Engineering}, vol.~130, pp.~1--7, 2014.
+
+\bibitem{che}
+W.~Che, L.~Sun, Q.~Zhang, W.~Tan, D.~Ye, D.~Zhang, and Y.~Liu, ``Pixel based
+  bruise region extraction of apple using vis-nir hyperspectral imaging,'' {\em
+  Computers and Electronics in Agriculture}, vol.~146, pp.~12--21, 2018.
+
+\bibitem{qiang}
+L.~Qiang and T.~Mingjie, ``Detection of hidden bruise on kiwi fruit using
+  hyperspectral imaging and parallelepiped classification,'' {\em Procedia
+  Environmental Sciences}, vol.~12, pp.~1172--1179, 2012.
+
+\bibitem{li3}
+J.~Li, L.~Chen, and W.~Huang, ``Detection of early bruises on peaches
+  (amygdalus persica l.) using hyperspectral imaging coupled with improved
+  watershed segmentation algorithm,'' {\em Postharvest Biology and Technology},
+  vol.~135, pp.~104--113, 2018.
+
+\bibitem{lee}
+D.-J. Lee, R.~Schoenberger, J.~Archibald, and S.~McCollum, ``Development of a
+  machine vision system for automatic date grading using digital reflective
+  near-infrared imaging,'' {\em Journal of Food Engineering}, vol.~86,
+  pp.~388--398, 2008.
+
+\bibitem{ainara}
+A.~Lopez-Maestresalas, J.~C. Keresztes, M.~Goodarzi, S.~Arazuri, C.~Jaren, and
+  W.~Saeys, ``Non-destructive detection of blackspot in potatoes by vis-nir and
+  swir hyperspectral imaging,'' {\em Food Control}, vol.~70, pp.~229--241,
+  2016.
+
+\bibitem{li2}
+J.~Li, L.~Chen, W.~Huang, Q.~Wang, B.~Zhang, X.~Tian, S.~Fan, and B.~Li,
+  ``Multispectral detection of skin defects of bi-colored peaches based on
+  vis–nir hyperspectral imaging,'' {\em Postharvest Biology and Technology},
+  vol.~112, pp.~121--133, 2016.
+
+\bibitem{siedliska}
+A.~Siedliska, P.~Baranowski, M.~Zubik, W.~Mazurek, and B.~Sosnowska,
+  ``Detection of fungal infections in strawberry fruit by vnir/swir
+  hyperspectral imaging,'' {\em Postharvest Biology and Technology}, vol.~139,
+  pp.~115--126, 2018.
+
 \bibitem{choi}
 H.~S. Choi, J.~B. Cho, S.~G. Kim, and H.~S. Choi, ``A real-time smart fruit
   quality grading system classifying by external appearance and internal flavor
@@ -261,64 +324,6 @@ D.~Lorente, M.~Zude, C.~Regen, L.~Palou, J.~Gómez-Sanchis, and J.~Blasco,
   ``Early decay detection in citrus fruit using laser-light backscattering
   imaging,'' {\em Postharvest Biology and Technology}, vol.~86, pp.~424--430,
   2013.
-
-\bibitem{munera}
-S.~Munera, C.~Besada, N.~Aleixos, P.~Talens, A.~Salvador, Blasco, D.-W. Sun,
-  S.~Cubero, and J.~Blasco, ``Non-destructive assessment of the internal
-  quality of intact persimmon using colour and vis/nir hyperspectral imaging,''
-  {\em LWT - Food Science and Technology}, vol.~77, pp.~241--248, 2017.
-
-\bibitem{munera2}
-S.~Munera, J.~M. Amigo, N.~Aleixos, P.~Talens, S.~Cubero, and J.~Blasco,
-  ``Potential of vis-nir hyperspectral imaging and chemometric methods to
-  identify similar cultivars of nectarine,'' {\em Food Control}, vol.~86,
-  pp.~1--10, 2018.
-
-\bibitem{li}
-X.~Li, Y.~Wei, J.~Xu, X.~Feng, F.~Wu, R.~Zhou, J.~Jin, K.~Xu, X.~Yu, and Y.~He,
-  ``Ssc and ph for sweet assessment and maturity classification of harvested
-  cherry fruit based on nir hyperspectral imaging technology,'' {\em
-  Postharvest Biology and Technology}, vol.~143, pp.~112--118, 2018.
-
-\bibitem{lee}
-D.-J. Lee, R.~Schoenberger, J.~Archibald, and S.~McCollum, ``Development of a
-  machine vision system for automatic date grading using digital reflective
-  near-infrared imaging,'' {\em Journal of Food Engineering}, vol.~86,
-  pp.~388--398, 2008.
-
-\bibitem{che}
-W.~Che, L.~Sun, Q.~Zhang, W.~Tan, D.~Ye, D.~Zhang, and Y.~Liu, ``Pixel based
-  bruise region extraction of apple using vis-nir hyperspectral imaging,'' {\em
-  Computers and Electronics in Agriculture}, vol.~146, pp.~12--21, 2018.
-
-\bibitem{qiang}
-L.~Qiang and T.~Mingjie, ``Detection of hidden bruise on kiwi fruit using
-  hyperspectral imaging and parallelepiped classification,'' {\em Procedia
-  Environmental Sciences}, vol.~12, pp.~1172--1179, 2012.
-
-\bibitem{li3}
-J.~Li, L.~Chen, and W.~Huang, ``Detection of early bruises on peaches
-  (amygdalus persica l.) using hyperspectral imaging coupled with improved
-  watershed segmentation algorithm,'' {\em Postharvest Biology and Technology},
-  vol.~135, pp.~104--113, 2018.
-
-\bibitem{ainara}
-A.~Lopez-Maestresalas, J.~C. Keresztes, M.~Goodarzi, S.~Arazuri, C.~Jaren, and
-  W.~Saeys, ``Non-destructive detection of blackspot in potatoes by vis-nir and
-  swir hyperspectral imaging,'' {\em Food Control}, vol.~70, pp.~229--241,
-  2016.
-
-\bibitem{li2}
-J.~Li, L.~Chen, W.~Huang, Q.~Wang, B.~Zhang, X.~Tian, S.~Fan, and B.~Li,
-  ``Multispectral detection of skin defects of bi-colored peaches based on
-  vis–nir hyperspectral imaging,'' {\em Postharvest Biology and Technology},
-  vol.~112, pp.~121--133, 2016.
-
-\bibitem{siedliska}
-A.~Siedliska, P.~Baranowski, M.~Zubik, W.~Mazurek, and B.~Sosnowska,
-  ``Detection of fungal infections in strawberry fruit by vnir/swir
-  hyperspectral imaging,'' {\em Postharvest Biology and Technology}, vol.~139,
-  pp.~115--126, 2018.
 
 \bibitem{xu}
 S.~Xu and J.~Wang, ``Dynamic extreme learning machine for data stream

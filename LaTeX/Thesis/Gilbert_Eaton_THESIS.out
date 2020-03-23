@@ -11,8 +11,8 @@
 \BOOKMARK [0][-]{chapter.2}{Current Industry Methods and Review of Literature}{}% 11
 \BOOKMARK [1][-]{section.2.1}{Image Processing in Produce Grading}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.2}{Hand-selected Features}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.3}{Physical Property Analysis}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.4}{Hyperspectral/Multispectral Imaging}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.3}{Hyperspectral/Multispectral Imaging}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.4}{Physical Property Analysis}{chapter.2}% 15
 \BOOKMARK [1][-]{section.2.5}{Strawberry Vision Systems}{chapter.2}% 16
 \BOOKMARK [1][-]{section.2.6}{Real-time Systems}{chapter.2}% 17
 \BOOKMARK [1][-]{section.2.7}{Machine Learning / Deep Learning Methods}{chapter.2}% 18
@@ -135,3 +135,4 @@
 \BOOKMARK [1][-]{section.9.1}{Future Work}{chapter.9}% 135
 \BOOKMARK [0][-]{appendix.A}{SQA Specification}{}% 136
 \BOOKMARK [0][-]{appendix.B}{Wiring Diagrams}{}% 137
+\BOOKMARK [0][-]{appendix.C}{GUI Development Iterations}{}% 138
