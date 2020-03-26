@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Gilbert_Eaton_THESIS.aux
 The style file: ieeetr.bst
 Database file #1: Master.bib
-You've used 190 entries,
+You've used 195 entries,
             1876 wiz_defined-function locations,
-            1451 strings with 37993 characters,
-and the built_in function-call counts, 59650 in all, are:
-= -- 5841
-> -- 2573
+            1473 strings with 38697 characters,
+and the built_in function-call counts, 60459 in all, are:
+= -- 5905
+> -- 2626
 < -- 0
-+ -- 930
-- -- 740
-* -- 4124
-:= -- 8231
-add.period$ -- 207
-call.type$ -- 190
-change.case$ -- 186
++ -- 950
+- -- 755
+* -- 4180
+:= -- 8367
+add.period$ -- 214
+call.type$ -- 195
+change.case$ -- 191
 chr.to.int$ -- 0
-cite$ -- 190
-duplicate$ -- 3002
-empty$ -- 5261
-format.name$ -- 740
-if$ -- 14901
+cite$ -- 195
+duplicate$ -- 3036
+empty$ -- 5346
+format.name$ -- 755
+if$ -- 15088
 int.to.chr$ -- 0
-int.to.str$ -- 190
-missing$ -- 176
-newline$ -- 595
-num.names$ -- 190
-pop$ -- 528
+int.to.str$ -- 195
+missing$ -- 179
+newline$ -- 612
+num.names$ -- 195
+pop$ -- 551
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2479
+skip$ -- 2491
 stack$ -- 0
 substring$ -- 4304
-swap$ -- 1554
+swap$ -- 1557
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 478
-width$ -- 193
-write$ -- 1846
+while$ -- 483
+width$ -- 198
+write$ -- 1890

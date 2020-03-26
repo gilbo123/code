@@ -38,10 +38,12 @@
 \newcolumntype{C}{>{\arraybackslash}X} % centered version of "X" type
 \newcolumntype{N}{>{\arraybackslash}m{1.3cm}}
 
-\newcolumntype{I}{>{\centering\arraybackslash}m{4.4cm}}
 \newcolumntype{E}{>{\centering\arraybackslash}m{5.5cm}}
 \newcolumntype{F}{>{\centering\arraybackslash}m{3.5cm}}
-\newcolumntype{G}{>{\centering\arraybackslash}m{1.5cm}}
+\newcolumntype{G}{>{\centering\arraybackslash}m{2.8cm}}
+\newcolumntype{H}{>{\centering\arraybackslash}m{2.2cm}}
+\newcolumntype{I}{>{\centering\arraybackslash}m{4.4cm}}
+\newcolumntype{J}{>{\centering\arraybackslash}m{2.5cm}}
 
 
 %roman numerals
@@ -477,7 +479,7 @@ Vision systems can be used for high-speed moving objects in order to perform the
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=300pt]{images/machine_vision.png}
-	\caption{Example of production line using multi-spectral acquisition system with a robotic arm sorting the objects.}
+	\caption[Example of production line using multi-spectral acquisition system with a robotic arm sorting the objects.]{Example of production line using multi-spectral acquisition system with a robotic arm sorting the objects. \textit{Source: https://www.bkinstruments.co.kr/sub22/menu9\_8\_5.php}}
 	\label{fig:machine_vision}
 \end{figure}
 
@@ -505,7 +507,7 @@ The strawberries are picked and packed by hand using labour intensive methods in
 		\caption{}
 		\label{fig:whatwedo}
 	\end{subfigure}%
-	\caption{(a) Magnificent logo, (b) Workers and fields at Magnificent}
+	\caption{(a) Magnificent logo, (b) Workers and fields at Magnificent.}
 	\label{fig:test}
 \end{figure}
 
@@ -738,7 +740,7 @@ Common colourspace transformations for colour grading and defect detection inclu
 		\caption{}
 		\label{fig:Lab}
 	\end{subfigure}%
-	\caption{Colour spaces (a) HSV and (b) CIE-Lab.}
+	\caption[Colour spaces (a) HSV and (b) CIE-Lab.]{Colour spaces (a) HSV \textit{Source: https://doc.qt.io/archives/qq/qq26-adaptivecoloring.html} and (b) CIE-Lab \textit{Source: https://www.sciencedirect.com/science-/article/abs/pii/S0044848604004867}.}
 	\label{fig:colour-space}
 \end{figure}
 
@@ -795,7 +797,7 @@ As the spectral range of the eye is limited, camera sensors can be employed whic
 		\caption{}
 		\label{fig:ifra-red}
 	\end{subfigure}%
-	\caption{(a) Spectral response of human eye (left) and CCD and CMOS sensors (right). (b) Infrared spectrum breakdown relative to visible.}
+	\caption[(a) Spectral response of human eye (left) and CCD and CMOS sensors (right) and (b) Infrared spectrum breakdown relative to visible.]{(a) Spectral response of human eye (left) and CCD and CMOS sensors (right) \textit{Source: http://www.icpdas.com/products/Vision/mavis/vision\_glossary\_n~z.htm} (b) Infrared spectrum breakdown relative to visible. \textit{Source: https://www.infratec.eu/sensor-division/service-support/glossary/infrared-radiation/}}
 	\label{fig:spectrum}
 \end{figure}%
 
@@ -836,7 +838,7 @@ Spectroscopy is a method of measuring the transmitted spectral signature of obje
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{spectroscope.png}
-	\caption{Example of a spectroscope taking measurements from a fruit sample.}
+	\caption[Example of a spectroscope taking measurements from a fruit sample.]{Example of a spectroscope taking measurements from a fruit sample \cite{choi}.}
 	\label{fig:spectroscope}
 \end{figure}%
 
@@ -851,7 +853,7 @@ Beyond the Near (NIR), Short (SWIR), lies the Mid (MWIR) Wavelength Infrared, an
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{thermal.png}
-	\caption{A thermal image apple with bruises showing the Long Wavelength Infrared (LWIR) part of the electromagnetic spectrum. In this range, sensors can detect thermal properties at room temperature}
+	\caption[A thermal image apple with bruises showing the Long Wavelength Infrared (LWIR) part of the electromagnetic spectrum. In this range, sensors can detect thermal properties at room temperature.]{A thermal image apple with bruises showing the Long Wavelength Infrared (LWIR) part of the electromagnetic spectrum. In this range, sensors can detect thermal properties at room temperature \cite{baranowski}.}
 	\label{fig:thermal}
 \end{figure}%
 
@@ -880,7 +882,7 @@ Using a conveyor system, L. Xu et al.\cite{xu} achieved very good results in cla
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{strawberry_picker.png}
-	\caption{Strawberry picking machine (a) demonstrating end-effector mechanism (b) placing strawberry into the foam tray.}
+	\caption[Strawberry picking machine (a) demonstrating end-effector mechanism (b) placing strawberry into the foam tray]{Strawberry picking machine (a) demonstrating end-effector mechanism (b) placing strawberry into the foam tray \cite{hayashi}.}
 	\label{fig:strawberry_picker}
 \end{figure}%
 
@@ -894,7 +896,7 @@ Strawberries are farmed with a range of different cultivar and seasonal characte
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{multispec_strawberry.png}
-	\caption{Pseudo-coloured strawberry heat-map showing the white area of the berry being firmest and the red area softest\cite{elmasry2}.}
+	\caption[Pseudo-coloured strawberry heat-map showing the white area of the berry being firmest and the red area softest.]{Pseudo-coloured strawberry heat-map showing the white area of the berry being firmest and the red area softest\cite{elmasry2}.}
 	\label{fig:multispec_strawberry}
 \end{figure}%
 
@@ -916,7 +918,7 @@ Fruit and vegetables are generally graded by the ripeness or readiness to eat, b
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{apple_system.png}
-	\caption{Apple sorting system showing the lighting box with cameras in the background with opening bowls in the foreground.}
+	\caption[Apple sorting system showing the lighting box with cameras in the background with opening bowls in the foreground.]{Apple sorting system showing the lighting box with cameras in the background with opening bowls in the foreground \cite{sofu}.}
 	\label{fig:apple_system}
 \end{figure}%
 
@@ -936,7 +938,11 @@ Machine vision can outperform humans depending on the task involved. Particularl
 \section{Machine Learning / Deep Learning Methods}
 
 
-Machine learning is a branch of computer science and AI that uses an iterative 'learning' approach to building a classifier model. The model's weights are updated by an algorithm that, given any training set ($x_1, y_1$), ($x_2, y_2$), ... , ($x_n, y_n$), can learn a function $y = f(x)$ to make prediction of an unseen $x_{test}$ variable. Deep learning refers to the depth of the network or number of layers the model has. Using a deeper network allows for multiple convolutions in a CNN and therefore better abstraction, albeit more computationally expensive. A range of methods have been investigated from very basic MLP networks, SVM, and ANN to more complex architectures such as CNNs.
+Machine learning is a branch of computer science and AI that uses an iterative 'learning' approach to building a classifier model. The model's weights are updated by an algorithm that, given any training set ($x_1, y_1$), ($x_2, y_2$), ... , ($x_n, y_n$), can learn a function $y = f(x)$ to make prediction of an unseen $x_{test}$ variable. 
+
+Neural networks (NN) take a different form to traditional machine learning (such as statistical regression and classification models), where information is represented in a graph where the nodes are designed to mimic naturally occurring neurons of the human brain. They are connected with axons (edges), and fire (activate) when the neuron's function threshold is met. A simple NN consists of an input layer constructed from a set of neurons whose input values are based on features derived by humans, one hidden layer that is not interacted with by humans (black box), and an output layer that resolves the final decision based on the former layer's activations. 
+
+Deep learning refers to the depth of the network or number of layers the model has. Using a deeper network allows for multiple convolutions in a CNN and therefore better abstraction, albeit more computationally expensive. A range of methods have been investigated from very basic MLP networks, SVM, and ANN to more complex architectures such as CNNs.
 
 
 Comparison of MLP neural network and Discriminant Analysis (DA) performed when grading golden delicious star fruit by Abdullah et al.\cite{abdullah} found that the colour attributes were more accurately classified by DA, with resulting $95.3\%$ and $90.5\%$ for DA and MLP, respectively. The method used to extract colour features based on hue values $10-74$ were improved with the DA classifier using Wilks-lambda reduction, however the MLP result was unchanged. In order to classify shape characteristics, Fourier descriptors were used generating a $100\%$ accuracy.
@@ -966,7 +972,7 @@ SVM can be considered a type of neural network that has only one hidden layer of
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{SVM.png}
-	\caption{A 2D example of SVM hyperplane separating two classes. The examples on the boundary are considered the support vectors.}
+	\caption[A 2D example of SVM hyperplane separating two classes. The examples on the boundary are considered the support vectors.]{A 2D example of SVM hyperplane separating two classes. The examples on the boundary are considered the support vectors. \textit{Source: https://en.wikipedia.org/wiki/Support-vector\_machine}}
 	\label{fig:SVM}
 \end{figure}%
 
@@ -1023,7 +1029,7 @@ Convolution is the process of 'windowing' a set of feature masks over an image (
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{conv3.png}
-	\caption{An example of a ConvNet pass showing convolutional layers, subsampling (pooling), and finally, fully connected layers in the classification section.}
+	\caption[An example of a ConvNet pass showing convolutional layers, subsampling (pooling), and finally, fully connected layers in the classification section.]{An example of a ConvNet pass showing convolutional layers, subsampling (pooling), and finally, fully connected layers in the classification section. \textit{Source: https://www.pyimagesearch.com/2014/06/09/get-deep-learning-bandwagon-get-perspective/}}
 	\label{fig:conv3}
 \end{figure}
 
@@ -1044,15 +1050,15 @@ The layer architecture of the ConvNet consists of at least one convolution layer
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{maxpool.png}
-	\caption{MaxPool operation. Left: The input volume, in this example, of (224x224x64) is sliced in depth and pooled individually using \textit{filter size} and \textit{stride} set at two, resulting in a (112x112x64) volume output, keeping in mind the depth does not change. Right: With a \textit{stride} of two, the max is taken from each (2x2) matrix.}
+	\caption[MaxPool operation. Left: The input volume, in this example, of (224x224x64) is sliced in depth and pooled individually using \textit{filter size} and \textit{stride} set at two, resulting in a (112x112x64) volume output, keeping in mind the depth does not change. Right: With a \textit{stride} of two, the max is taken from each (2x2) matrix.]{MaxPool operation. Left: The input volume, in this example, of (224x224x64) is sliced in depth and pooled individually using \textit{filter size} and \textit{stride} set at two, resulting in a (112x112x64) volume output, keeping in mind the depth does not change. Right: With a \textit{stride} of two, the max is taken from each (2x2) matrix. \textit{Source: https://github.com/mratsim/Arraymancer/issues/174}}
 	\label{fig:maxpool}
 \end{figure}
 
-\textit{Rectified Linear Units (ReLU)} - The activation function is responsible for the threshold levels in each neuron for positive or negative 'activation'. In the case of ReLU, $f(x) = max(0, x)$ where x is the input to the neuron. This is a step function or \textit{rectified} function, where negative values are negated, however positive values can be large, increasing the non-linear decision function and overall network robustness. Other functions can be used, which smooth the step function, such as hyperbolic tangent $f(x) = tanh(x)$ or sigmoid $f(x) = (1+e^{-x})^{-1}$.
+\textit{Rectified Linear Units (ReLU)} - The activation function is responsible for the threshold level at which each neuron 'fires' for positive or negative activations. In the case of ReLU, $f(x) = max(0, x)$ where x is the input to the neuron. This is a step function or \textit{rectified} function, where negative values are set to zero, however positive values can be large, increasing the non-linear decision function and overall network robustness. Other functions can be used, which smooth the step function, such as hyperbolic tangent $f(x) = tanh(x)$ or sigmoid $f(x) = (1+e^{-x})^{-1}$.
 
 \textit{Fully Connected (FC)} - Fully connected layers means all neurons are connected to each other as in an ANN architecture. After completing the  convolution/pooling iterations a number of times, each small section of the volume is not related to the neighbouring sections, making this type of network spatially invariant. Therefore, the network must be fully connected after this process to allow a judgement based on all the information.
 
-The above-mentioned layers can be manipulated, or stacked, in many different ways. Consider the operation of Convolution, ReLU activation, MaxPool, Fully connected to be be abbreviated as CONV, ReLU, POOL, and FC respectively, then the following are examples of the architectures that may be used to create the network structure:
+The above-mentioned layers can be manipulated, or stacked, in many different ways. Consider the operation of Convolution, ReLU activation, MaxPool, Fully connected to be be abbreviated as CONV, ReLU, POOL, and FC respectively, then the following are examples of the architectures that may potentially be used to create the network structure:
 
 
 INPUT $\Rightarrow$ CONV $\Rightarrow$ FC $\Rightarrow$ OUTPUT (Implements a linear classifier)
@@ -1065,7 +1071,7 @@ INPUT $\Rightarrow$ [CONV $\Rightarrow$ ReLU $\Rightarrow$ POOL]*3  $\Rightarrow
 
 INPUT $\Rightarrow$ [CONV $\Rightarrow$ ReLU $\Rightarrow$ CONV $\Rightarrow$ ReLU $\Rightarrow$ POOL]*3  $\Rightarrow$ [FC $\Rightarrow$ ReLU]*2 $\Rightarrow$ OUTPUT
 
-It can be seen that the structure could be adapted in other ways also, but it is hard to know what the best approach may be. With added layers comes added complexity and time, however the best balance of accuracy and complexity must be found.
+It can be seen that the structure could be adapted in other ways also, but it is hard to know what the best approach may be without performing testing and analysis, therefore these examples only illustrate possible suggestions. With added layers comes added complexity and time, however the best balance of accuracy and complexity must be found.
 
 
 Contrary to ANN architectures, the convolutional network is not fully connected between layers until the later stages of the process. In the ANN each neuron in each layer is connected to each neuron in the proceeding layer with associated weights and a bias value, so that the equation for each neuron is:
@@ -1083,7 +1089,7 @@ This is advantageous when dealing with input such as high-resolution images. An 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{neural_net.jpeg}
-	\caption{Neural network topology with 2 hidden layers.}
+	\caption[Neural network topology with 2 hidden layers.]{Neural network topology with 2 hidden layers. \textit{Source: https://www.gabormelli.com/RKB/Neural\_Network\_Hidden\_Layer}}
 	\label{fig:neural_net}
 \end{figure}
 
@@ -1174,7 +1180,7 @@ Specular reflections occur when the viewer is in the path of directly reflected 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.6\linewidth]{strawberry_glare.jpg}
-	\caption{Strawberries with dominant specular reflections reducing the ability to analyse pixels}
+	\caption[Strawberries with dominant specular reflections reducing the ability to analyse pixels.]{Strawberries with dominant specular reflections reducing the ability to analyse pixels. \textit{Source: https://wa-health.kaiserpermanente.org/summer-strawberry-salad/}}
 	\label{fig:strawberry_glare}
 \end{figure}%
 
@@ -1196,10 +1202,12 @@ with $I_{0}$ being the initial intensity and $\theta_{i}$ is the angle of the po
 
 Polarization is the process of converting electromagnetic waves of varying polarity into a uniformly polarized field. Usually used for visible light or lasers, polarisers can reduce glare (for example, polarized sunglasses) or help in the amplification and directionality of lasers. Figure \ref{fig:polarization} illustrates the polarization of an EM wave, indicating that no matter the intensity of any direction, only a single polarity emerges  \cite{physicsopenlab}. Using a polariser is an effective technique to reduce glare from a flat surface (polarized sunglasses are assumed to be worn horizontally, using vertical polarization in the lenses in order to block glare from horizontal surfaces such as water and concrete), but will be mostly ineffective for the curved surface of the strawberries. However, using cross-polarization (two polarisers orthogonal in direction) in order to reduce these reflections is considered, even though this will limit the amount of illumination reaching the subject significantly.
 
+The polariser investigation and application is described further in Chapter \ref{sec:paper_1}. 
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\linewidth]{polarization.png}
-	\caption{Electromagnetic polarization. A circular or randomly polarized source becomes a single polarity after passing through the material.}
+	\caption[Electromagnetic polarization. A circular or randomly polarized source becomes a single polarity after passing through the material.]{Electromagnetic polarization. A circular or randomly polarized source becomes a single polarity after passing through the material. \textit{Source: http://physicsopenlab.org/2016/03/13/electromagnetic-waves-polarization/}}
 	\label{fig:polarization}
 \end{figure}%
 
@@ -1212,7 +1220,7 @@ As this project would take advantage of the NIR spectrum with the intention of c
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{LED_response.png}
-	\caption{Cree CXB3590 power distribution curves for a range of colour temperatures at $T=85^{\circ}C$.}
+	\caption[Cree CXB3590 power distribution curves for a range of colour temperatures at $T=85^{\circ}C$.]{Cree CXB3590 power distribution curves for a range of colour temperatures at $T=85^{\circ}C$. \textit{Source: https://www.cree.com/led-components/media/documents/ds-CXA2540.pdf}}
 	\label{fig:LED_response}
 \end{figure}%
 
@@ -1248,17 +1256,14 @@ T_{AC} = \frac{1}{f} = \frac{1}{50} = 0.02 = 20ms
 \end{equation}
 
 
-Taking half of this period, the minimum shutter speed time is 10 milliseconds. Any shutter speed greater than this ($1/100$) will display signs of flickering due to the inconsistent amount of photons gathered each cycle. 
-
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{50hz.jpg}
-	\caption{Fluctuations recorded for 50Hz nominal AC power signal - European grid (2015) samples of (a) 24 hour period, and (b) 15 minute intervals.}
+	\caption[Fluctuations recorded for 50Hz nominal AC power signal - European grid (2015) samples of (a) 24 hour period, and (b) 15 minute intervals.]{Fluctuations recorded for 50Hz nominal AC power signal - European grid (2015) samples of (a) 24 hour period, and (b) 15 minute intervals. \textit{Source: https://phys.org/news/2018-01-diverse-frequency-fluctuations-power-grids.html}}
 	\label{fig:50hz}
 \end{figure}
 
-Strategies such as shutter synchronisation (with the AC signal, in an attempt to open the shutter at a relative rate) can be employed, however the mains power frequency can decrease and increase by small amounts due to supply/demand fluctuations. The graph in Figure \ref{fig:50hz} reinforces the fact that inconsistencies are ongoing due to the constant change in demographic power requirements \cite{50hz}.
+Taking half of this period, the minimum shutter speed time is 10 milliseconds. Any shutter speed greater than this ($1/100$) will display signs of flickering due to the inconsistent amount of photons gathered each cycle. 
 
 \begin{figure}[h]
 	\centering
@@ -1268,6 +1273,7 @@ Strategies such as shutter synchronisation (with the AC signal, in an attempt to
 \end{figure}
 
 
+Strategies such as shutter synchronisation (with the AC signal, in an attempt to open the shutter at a relative rate) can be employed, however the mains power frequency can decrease and increase by small amounts due to supply/demand fluctuations. The graph in Figure \ref{fig:50hz} reinforces the fact that inconsistencies are ongoing due to the constant change in demographic power requirements \cite{50hz}.
 
 
 
@@ -1466,7 +1472,7 @@ Images captured (Figures \ref{fig:500us}, \ref{fig:1ms}, and \ref{fig:2ms}) usin
 		\caption{}
 		\label{fig:LED_30w}
 	\end{subfigure}%
-	\caption{(a) Cree\textregistered 72W LED Light Bar, and (b) Cree\textregistered 30W LED Light Bar.}
+	\caption[(a) Cree\textregistered 72W LED Light Bar, and (b) Cree\textregistered 30W LED Light Bar.]{(a) Cree\textregistered 72W LED Light Bar \textit{Source: http://www.myautolighting.com/index.php?route=product/product\&product\_id=197}, and (b) Cree\textregistered 30W LED Light Bar. \textit{Source: https://www.mydeal.com.au/pair-6inch-30w-led-work-light-bar-flood-reverse-fog-lights-4wd-642788}}
 	\label{}
 \end{figure} 
 
@@ -1515,9 +1521,6 @@ Various hardware devices will need to be controllable via the main application, 
 The Phidget\texttrademark is an industrial-style microcontroller with integrated I/O that can be interfaced with a PC and uses screw-clamp electrical connectors. The main advantages of this microcontroller is that it can be programmed in $C\#$ programming language, therefore interfacing with the main application will be simplified, and high power circuit switching when compared to other microcontrollers. The interface board has 16 inputs with $10k\Omega$ input impedance and logic levels either $0V-5V$ or $0V-12V$, as well as 16 relay outputs which can support up to $30VDC$ at $2A$ per channel. 
 
 
-Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
-
-
 \begin{wrapfigure}{r}{0.6\textwidth}
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{phidget.jpg}
@@ -1525,6 +1528,8 @@ Given the Lighting must be only turned on when in operational mode, and draws $>
 	\caption{Image of the Phidget\texttrademark I/O board and the interface connectors on the top and bottom.}
 	\label{fig:phidget}
 \end{wrapfigure} 
+
+Given the Lighting must be only turned on when in operational mode, and draws $>2A$ current, the power is switched through a relay bank with the Phidget operating as the controller. This saves energy and lengthens the lifetime of the lighting devices, as well as limiting heat generation.
 
 
 The ejector is a controllable pneumatic system which can release a burst of air on command for a given length of time. The airflow is mechanically adjusted to begin with, then a logic-level $12V$ is applied to engage and disengage the pneumatic actuator. In this way the Phidget can send a signal at the appropriate time, to eject a punnet.
@@ -1683,7 +1688,7 @@ The image processing component is performed in  HALCON\texttrademark V-11.0 whic
 		\label{fig:hue_processed}
 	\end{subfigure}%
 	
-	\caption{Left to right: (a) HSV colour space showing hue circle and saturation vector, (b) raw RGB image with some background lighting noise, (c) saturation channel with berries segmented after pre-processing, (d) image reduced to berry region showing four small under ripe areas detected by the algorithm.}
+	\caption[Left to right: (a) HSV colour space showing hue circle and saturation vector, (b) raw RGB image with some background lighting noise, (c) saturation channel with berries segmented after pre-processing, (d) image reduced to berry region showing four small under ripe areas detected by the algorithm.]{Left to right: (a) HSV colour space showing hue circle and saturation vector \textit{Source: https://doc.qt.io/archives/qq/qq26-adaptivecoloring.html}, (b) raw RGB image with some background lighting noise, (c) saturation channel with berries segmented after pre-processing, (d) image reduced to berry region showing four small under ripe areas detected by the algorithm.}
 	\label{}
 \end{figure}
 
@@ -1733,7 +1738,100 @@ R_{colour} = \bigg\{\sum_{n=1}^{P} \alpha_1 \leq H[x,y]_n \leq \alpha_2\bigg\} \
 
 where $\alpha_1$ and $\alpha_2$ are the grey level upper and lower limits to threshold. For red strawberries the initial values are set to $-5^{\circ}$ ($355^{\circ}$) and $20^{\circ}$ which equates to two ranges of 251-255 and 0-14 for $\alpha_1$ and $\alpha_2$ respectively. 
 
-Pre-processing consists of reducing the image to a Region Of Interest (ROI) in the spacial location where the punnet is consistently captured. The post-processing methods use morphology, removal of small regions (noise reduction), and area calculations to return the affected areas as indicated by the ellipses in Figure \ref{fig:hue_processed}.
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_0_160.jpg}
+		\caption{}
+		\label{fig:thresh0_160}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_1_160.jpg}
+		\caption{}
+		\label{fig:thresh1_160}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_2_160.jpg}
+		\caption{}
+		\label{fig:thresh2_160}
+	\end{subfigure}%
+
+	\caption{Images (a) (b), and (c) showing berry reflections on the internal wall of the punnets, and green calyx regions leftover from under-thresholding.}
+	\label{}
+\end{figure}
+
+	
+	
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_0_180.jpg}
+		\caption{}
+		\label{fig:thresh0_180}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_1_180.jpg}
+		\caption{}
+		\label{fig:thresh1_180}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_2_180.jpg}
+		\caption{}
+		\label{fig:thresh2_180}
+	\end{subfigure}%
+
+	\caption{Images (a) (b), and (c) showing the optimal threshold level of 180. The small berry reflections remaining can be removed easily using morphology.}
+	\label{}
+\end{figure}
+
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_0_200.jpg}
+		\caption{}
+		\label{fig:thresh0_200}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_1_200.jpg}
+		\caption{}
+		\label{fig:thresh1_200}
+	\end{subfigure}%
+	\begin{subfigure}{.32\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth,scale=0.5]{thresh/image_2_200.jpg}
+		\caption{}
+		\label{fig:thresh2_200}
+	\end{subfigure}%
+	
+	\caption{Images (a) (b), and (c) showing the removal of berry flesh pixels after over-thresholding with a value of 200.}
+	\label{}
+\end{figure}
+
+
+Pre-processing consists of reducing the image to a Region Of Interest (ROI) in the spacial location where the punnet is consistently captured. 
+
+
+
+Under thresholding was found to make the morphology difficult to separate both the green calyx from the red berry flesh as well as the smaller, noisy blobs and berry reflections from actual berries. Figures \ref{fig:thresh0_160}, \ref{fig:thresh1_160}, and \ref{fig:thresh2_160} illustrate a threshold of 160 on the saturation channel showing this problem.
+
+
+Over thresholding also produced undesired effects having removed some of the berry flesh pixels, as shown in Figures \ref{fig:thresh0_200}, \ref{fig:thresh1_200}, and \ref{fig:thresh2_200} at a level of 200, whilst Figures \ref{fig:thresh0_180}, \ref{fig:thresh1_180}, and \ref{fig:thresh2_180} are at the optimal range of 180. 
+
+
+
+The post-processing methods use morphology, removal of small regions (noise reduction), and area calculations to return the affected areas as indicated by the ellipses in Figure \ref{fig:hue_processed}.
 
 
 As the saturation channel extracts all of the berry flesh whose colour is saturated, only the darkest parts of the berry flesh will be excluded. However, when extracting colour ranges using the hue channel, darker regions can be falsely classified. Shadowed areas and berry occlusions generate high false positives in the case of over ripe analysis due to the crossover between over ripe flesh and occluded sound material. This problem will be addressed later in Chapter \ref{sec:paper_2} in order to provide more accurate grading of over ripe berries. 
@@ -1920,38 +2018,38 @@ As the cameras have specific operating temperatures in the range ($0^{\circ}C-45
 
 The colour algorithm implemented uses the above visible image to determine ripeness based on colour features extracted via manual methods such as thresholding, segmentation, and morphology. This approach relies upon lighting intensity, and requires fine-tuning in the event of illumination changes. 
 
-Using the HALCON\texttrademark IDE, the algorithms can be visualised before deploying them into production by utilising the debugging environment. When the method is finalised, it is converted to $C\#$ and inserted into the application as an \textit{external procedure}. Using the HSV colour space, the analyses determine the amount of good and bad pixels with the help of pre-processing and post-processing techniques. The detection of defect region is largely based on the area of connected adjacent pixels which are found to be outside the acceptable bands of each optimal colour channel. 
-
-The pseudo-code in Algorithm \ref{alg:basic} describes the initial process used to determine both under ripe and over ripe fruit by providing the image (cropped to the punnet region), min and max hue value, and max defect area to allow, as $I_{crop}$, $H_{min}$, $H_{max}$, and $A_{max}$ respectively:
-
-
 \begin{algorithm}
 	\caption{HSV Under Ripe/Over Ripe Method}
 	\label{alg:basic}
 	\begin{algorithmic}[1]
 		\Procedure{AnalyseHSV}{$I_{crop}$, $H_{min}$, $H_{max}$, $A_{max}$}       
-			\State $Z \gets \emptyset$
-			\Comment{initialise empty return set}
-			\State $B_{sat} \gets \emptyset$
-			\Comment{initialise empty analysis region}
-			\State $(H,S,V) \gets RGBtoHSV(I_{crop})$
-			\Comment{predefined colourspace transformation}
-			\State $B_{sat} \gets S_{(x, y)}[(x, y) > 128]$
-			\For{each $b \in B_{sat}$}
-				\If{$b > H_{min}$ and $b < H_{max} $}
-					\State $Z \gets Z + b$
-					\Comment{accumulate all pixels in range}
-					\If{$Z > A_{max}$}
-						\State \Return Z
-						\Comment{return area if greater than max}
-					\EndIf
-				\EndIf
-			\EndFor
-			\State \Return 0
-			\Comment{return zero, otherwise}
+		\State $Z \gets \emptyset$
+		\Comment{initialise empty return set}
+		\State $B_{sat} \gets \emptyset$
+		\Comment{initialise empty analysis region}
+		\State $(H,S,V) \gets RGBtoHSV(I_{crop})$
+		\Comment{predefined colourspace transformation}
+		\State $B_{sat} \gets S_{(x, y)}[(x, y) > 128]$
+		\For{each $b \in B_{sat}$}
+		\If{$b > H_{min}$ and $b < H_{max} $}
+		\State $Z \gets Z + b$
+		\Comment{accumulate all pixels in range}
+		\If{$Z > A_{max}$}
+		\State \Return Z
+		\Comment{return area if greater than max}
+		\EndIf
+		\EndIf
+		\EndFor
+		\State \Return 0
+		\Comment{return zero, otherwise}
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
+
+
+Using the HALCON\texttrademark IDE, the algorithms can be visualised before deploying them into production by utilising the debugging environment. When the method is finalised, it is converted to $C\#$ and inserted into the application as an \textit{external procedure}. Using the HSV colour space, the analyses determine the amount of good and bad pixels with the help of pre-processing and post-processing techniques. The detection of defect region is largely based on the area of connected adjacent pixels which are found to be outside the acceptable bands of each optimal colour channel. 
+
+
 
 
 \begin{figure}[ht]
@@ -2020,6 +2118,8 @@ The pseudo-code in Algorithm \ref{alg:basic} describes the initial process used 
 	\label{}
 \end{figure}
 
+The pseudo-code in Algorithm \ref{alg:basic} describes the initial process used to determine both under ripe and over ripe fruit by providing the image (cropped to the punnet region), min and max hue value, and max defect area to allow, as $I_{crop}$, $H_{min}$, $H_{max}$, and $A_{max}$ respectively.
+
 
 The results indicate that the accuracy for under ripe algorithm will score $>80\%$, and over ripe at $>70\%$. As a quantitative test set of images has not yet been developed, the accuracy is based on a sample size of around 25-30 images per class. Future work is determined to be required in order to increase the formal test set to approximately 500.   
 
@@ -2072,7 +2172,7 @@ The proposed system ensures that when objects imaged for computer vision applica
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.9]{specular_art.jpg}
-	\caption{Example of Specular Reflection on an art display. Note the specular reflection interference with the image causing the loss of information and colour.}
+	\caption[Example of Specular Reflection on an art display. Note the specular reflection interference with the image causing the loss of information and colour.]{Example of Specular Reflection on an art display. Note the specular reflection interference with the image causing the loss of information and colour. \textit{Source: http://vcg.isti.cnr.it/Publications/2011/ABC11/j.1467-8659.2011.01971.x.pdf}}
 	\label{fig:specular_art}
 \end{figure}
 
@@ -2111,7 +2211,7 @@ However, one change that can occurs at the interface, is the polarization of the
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.9]{unpolar_polar.png}
-	\caption{The interface showing specular reflection of an electromagnetic wave in either the TE or TM orientation.}
+	\caption[The interface showing specular reflection of an electromagnetic wave in either the TE or TM orientation.]{The interface showing specular reflection of an electromagnetic wave in either the TE or TM orientation. \textit{Source: https://www.tulane.edu/~sanelson/eens211/proplight.htm}}
 	\label{fig:unpolar_polar}
 \end{figure}
 
@@ -2185,12 +2285,14 @@ The PSU also has the following protections as part of the manufacturing specific
 
 The $1200W$ DC power supply is designed and constructed so that the full power of the $12V$ rails are supplied by distributing each of the two channels between the top and bottom lighting circuits. The power supply also supplies power to peripheral devices such as pneumatics, LED indicators, warning lights, logic control board, sensors, peltier, and fans.
 
-The resulting images taken using the designed enclosure have dramatically improved the image stabilisation when compared to the AC lighting system. The DC-powered lighting system resulted in very small intensity fluctuations, and was measured to be $<0.1\%$ as seen in Figure \ref{fig:image_diff_dc} and \ref{fig:image_diff_dc_2}. The average pixel area for each image was obtained by first taking a threshold of subjects in the each of the frames:
+In order to quantify the results in terms of image processing, an experiment was established in which 50 images were acquired before applying a constant threshold level to each. This was followed by taking an area calculation of each image's threshold region and finally, the average pixel area calculated across all images. Each image could then be graphed in relation to the overall average pixel area to show the differences between images over time. 
+
+The average pixel area was obtained by first taking a threshold of subjects in the each of the frames:
 \begin{equation}
 R = \sum_{i=1}^{P}t_1 \leq x \leq t_2
 \end{equation}
 
-with $P$ denoting the number of pixels in each image and $t_1$, $t_2$ the threshold limits. The average region area ($Area_{avg}$) was calculated and is given by the mean definition:
+with $P$ denoting the number of pixels in each image and $t_1$, $t_2$ the threshold limits. The average area ($Area_{avg}$) was calculated and is given by the mean definition:
 \begin{equation}
 Area_{avg} = \bar{R} = \frac{1}{N}\sum_{i=1}^{N}R_i
 \end{equation}
@@ -2244,6 +2346,31 @@ Data was gathered twice, once for a period of two seconds with a fast frame rate
 	\label{}
 \end{figure}
 
+
+
+\begin{table}[h]
+	\centering
+	\caption{Example images acquired after application of cross-polariser showing removal of specular reflections.}
+	\label{tab:specular_examples}
+	\begin{tabular}{*6{H}}
+		
+		\includegraphics[width=\linewidth]{spec/spec_1.jpg} & \includegraphics[width=\linewidth]{spec/spec_2.jpg} & \includegraphics[width=\linewidth]{spec/spec_3.jpg} &         \includegraphics[width=\linewidth]{spec/spec_4.jpg} & \includegraphics[width=\linewidth]{spec/spec_5.jpg} &         \includegraphics[width=\linewidth]{spec/spec_6.jpg} \\
+		
+		
+		\includegraphics[width=\linewidth]{spec/spec_7.jpg} & \includegraphics[width=\linewidth]{spec/spec_8.jpg} & \includegraphics[width=\linewidth]{spec/spec_9.jpg} &         \includegraphics[width=\linewidth]{spec/spec_10.jpg} & \includegraphics[width=\linewidth]{spec/spec_11.jpg} &         \includegraphics[width=\linewidth]{spec/spec_12.jpg} \\
+		
+		
+		\includegraphics[width=\linewidth]{spec/spec_13.jpg} & \includegraphics[width=\linewidth]{spec/spec_14.jpg} & \includegraphics[width=\linewidth]{spec/spec_15.jpg} &         \includegraphics[width=\linewidth]{spec/spec_16.jpg} & \includegraphics[width=\linewidth]{spec/spec_17.jpg} &         \includegraphics[width=\linewidth]{spec/spec_18.jpg} \\
+		
+		
+		\includegraphics[width=\linewidth]{spec/spec_19.jpg} & \includegraphics[width=\linewidth]{spec/spec_20.jpg} & \includegraphics[width=\linewidth]{spec/spec_21.jpg} &         \includegraphics[width=\linewidth]{spec/spec_22.jpg} & \includegraphics[width=\linewidth]{spec/spec_23.jpg} &         \includegraphics[width=\linewidth]{spec/spec_24.jpg} \\
+		
+	\end{tabular}
+\end{table} 
+
+The resulting images taken using the designed enclosure have dramatically improved the image stabilisation when compared to the AC lighting system. The DC-powered lighting system resulted in very small intensity fluctuations, and was measured to be $<0.1\%$ as seen in Figure \ref{fig:image_diff_dc} and \ref{fig:image_diff_dc_2}. 
+
+
 In order to solve the specular reflection problem, the use of a cross-polarization lighting design was implemented. As discussed in Section \ref{sec:I}, polarizing material is installed vertically (polarization direction can be either orientation, although further testing may indicate a preference) to form a tunnel through the enclosure. The second polariser is an adjustable filter fitted to the lens of the visible camera. The graph shown in Figure \ref{fig:graph_polar} shows that when the specular pixels are removed, the region pixels are increased giving a better assessment of the area of interest.
 
 
@@ -2251,7 +2378,7 @@ In order to solve the specular reflection problem, the use of a cross-polarizati
 Figure \ref{fig:berries_spec} shows an image with only one polariser in place allowing some specular reflections to be seen (the amount of specularities would be even greater if the acquisition had no polarizing elements), then by rotating the camera lens polariser, images were taken at 16 positions from $0^{\circ}$ to $180^{\circ}$.  
 
 
-When the polarisers are orthogonal ($90^{\circ}$), the result is a more flattened image that removes the specular reflections almost entirely.  Figure \ref{fig:berries_no_spec} depicts this change and it can be seen that the surface of the strawberries are much clearer and will allow better image processing due to the increase of pixels which can be analysed, and a decrease in noise. 
+When the polarisers are orthogonal ($90^{\circ}$), the result is a more flattened image that removes the specular reflections almost entirely.  Figure \ref{fig:berries_no_spec} depicts this change and it can be seen that the surface of the strawberries are much clearer and will allow better image processing due to the increase of pixels which can be analysed, and a decrease in noise. Further examples of punnet images with specular reflection removal are displayed in Table \ref{tab:specular_examples}. 
 
 
 
@@ -2342,7 +2469,7 @@ This metric is evidence of the emphasis companies put on production flow and con
 Initially, the conveyors were added to the frame in order to create the path of flow for the punnets, as shown in Figure \ref{fig:system_construct_3}. The frame of the prototype was adjusted slightly in order to equal the height of the conveyor where it meets the v-belts, as well as centred on the conveyor relative to the enclosure. All heights are consistent with other machinery and conveyors in the packing shed to allow many possible configurations in the process flow. 
 
 
-A wide range of conveyors, motors, guide rails, and parts were made available (due to the farm equipment spare parts), and assisted the construction of the punnet conveyors, and their attachment to the frame of the enclosure. However, the v-belts are a customised feature using brackets to support adjustable grooved rollers designed for the shape of the belt, and a guide rail on each side to avoid sagging due to punnet weight. The point of transfer, where the v-belts meet the punnet conveyors, must be considered in order to implement a smooth transition at both the entry and exit of the enclosure. The requirement is for the punnet to enter the heat-seal machine long-edge leading (due to cost-saving design), but this is problematic for the v-belts in the case where a  punnet enters incorrectly oriented, and too narrow to be transferred onto the v-belts. Therefore, the design was to employ a $90^{\circ}$ transfer belt between the vision system and heat-seal machine, allowing the punnets to be short-edge leading as they enter the enclosure, eliminating the risk of containers falling between the v-belts (seen in Figure \ref{fig:pack_layout_2}). 
+A wide range of conveyors, motors, guide rails, and parts were made available (due to the farm equipment spare parts), and assisted the construction of the punnet conveyors, and their attachment to the frame of the enclosure. However, the v-belts are a customised feature using brackets to support adjustable grooved rollers designed for the shape of the belt, and a guide rail on each side to avoid sagging due to punnet weight. The point of transfer, where the v-belts meet the punnet conveyors, must be considered in order to implement a smooth transition at both the entry and exit of the enclosure. The requirement is for the punnet to enter the heat-seal machine long-edge leading (due to cost-saving design), but this is problematic for the v-belts in the case where a  punnet enters incorrectly oriented, and too narrow to be transferred onto the v-belts. Therefore, the design was to employ a $90^{\circ}$ transfer belt between the vision system and heat-seal machine, allowing the punnets to be short-edge leading as they enter the enclosure, eliminating the risk of containers falling between the v-belts. 
 
 
 Two $100W/240VAC$ conveyor motors are used with slightly different gear ratios. The in-feed conveyor and v-belts are driven by the same motor, whilst the out-feed conveyor is driven slightly faster (using a smaller sprockets) in order to separate the punnets in case of ejection.
@@ -2550,7 +2677,7 @@ t_s = \frac{M}{V_p} = \frac{1}{2333.33} = 0.000428572 \approx 0.5ms
 \label{eq:shutter}
 \end{equation}
 
-where one pixel of movement over the distance of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$. This shows that in order to generate zero motion blur, a shutter speed of $<428\mu s$ is required.
+where one pixel of movement over the distance of the punnet is equivalent to $\frac{1}{1000} = 0.001 = 0.1\%$. This shows that in order to generate sub-pixel motion blur, a shutter speed of $<428\mu s$ is required.
 
 
 
@@ -2561,7 +2688,7 @@ where one pixel of movement over the distance of the punnet is equivalent to $\f
 	\label{fig:blur_1}
 \end{figure}
 
-Using Equation \ref{eq:shutter}, the motion blur of one pixel is $~0.5ms$ which accounts for a $0.1\%$ difference. The image displayed in Figure \ref{fig:blur_1} has minor blurring resulting from a $5ms$ shutter speed, and is calculated to have $11.6$ pixels of movement or $1.16\%$ blur. 
+Using Equation \ref{eq:shutter}, the motion blur of one pixel is $~0.5ms$ which accounts for a $0.1\%$ difference in relation to the number of pixels, relative to punnet motion in the images. The image displayed in Figure \ref{fig:blur_1} has minor blurring resulting from a $5ms$ shutter speed, and is calculated to have $11.6$ pixels of movement or $1.16\%$ blur. 
 
 
 This motion blur is in contrast to the image in Figure \ref{fig:sharp_1} where the shutter speed is reduced to $2ms$ and shows the seeds and edges clearly, albeit still blurred according to the calculation. Therefore any shutter speed less than $2ms$ will be sufficient to perform the analysis given that that means the motion blur is $4.66$ pixels which calculates to $\frac{4.66}{1000} = 0.00466 \approx 0.5\%$.
@@ -2581,12 +2708,12 @@ Each punnet consists of four image files (one for each camera), and must be comp
 
 However, some of the punnet's images failed to match initially, resulting in IR images which were not related to the RGB. When debugging the problem in the IDE it was found that if one set of images is received from the cameras and the others are not, the process would force the application to wait until the next punnet to populate the previous information. This is due to the triggered camera method, which waits for the image buffer indefinitely before proceeding, then returning to wait again some short time later. If the trigger does not occur, the thread logic continues to wait for the next trigger, leading to the conclusion that one of the punnet sensors was faulty or incorrectly calibrated. This was tested by monitoring the sensor's output via a wired connection from the sensor to the microcontroller. 
 
-Experiments revealed that the both sensors had intermittent detection problems where they would not respond well in full-speed conditions. Trouble shooting performed included reflectance confirmation, calibration, independent power supply, and replacing sensor units, without success. As it was concluded that it was the environment creating errors (due to the metal surroundings and close proximity to objects) a redesign would be required to be refit them inside the enclosure. However, a machine vision solution exists to solve this problem, given that the punnets flow in the same direction seen by a fixed camera. Optical flow is a method of tracking moving objects by analysing the image differences in a stream. That is:
+Experiments revealed that the both sensors had intermittent detection problems where they would not respond well in full-speed conditions. Experiments performed included reflectance confirmation, calibration, independent power supply, and replacing sensor units, without success. As it was concluded that it was the environment creating errors (due to the metal surroundings and close proximity to objects) a redesign would be required to be refit them inside the enclosure. However, a machine vision solution exists to solve this problem, given that the punnets flow in the same direction seen by a fixed camera. A common method of tracking moving objects is to analyse the image differences in a stream. That is:
 \begin{equation}
 D_{image} = I_{n+1} - I_n
 \end{equation}
 
-where the difference image ($D_{image}$) is the result, and $I_n$ the image number in the stream, showing pixels with spacial variance (the moving objects) in an otherwise stationary scene. By analysing the difference regions, the punnet could be centred and acquired accurately, even though an extra time resource was taken up by the additional algorithm. This extra process added to the RGB thread does not impede the image processing algorithm which is the most time consuming element of the application. This is due to the threaded assignment of tasks such that the RGB acquisition thread can wait for a new punnet to be in position (optical flow processing), then capture the images required, whilst the image processing thread is assessing the previous punnet. The only constraint is that the image processing is complete before the punnet reaches the eject sensor.
+where the difference image ($D_{image}$) is the result, and $I_n$ the image number in the stream, showing pixels with spatial variance (the moving objects) in an otherwise stationary scene. By analysing the difference regions, the punnet could be centred and acquired accurately, even though an extra time resource was taken up by the additional algorithm. This extra process added to the RGB thread does not impede the image processing algorithm which is the most time consuming element of the application. This is due to the threaded assignment of tasks such that the RGB acquisition thread can wait for a new punnet to be in position (image difference processing), then capture the images required, whilst the image processing thread is assessing the previous punnet. The only constraint is that the image processing is complete before the punnet reaches the eject sensor.
 
 
 
@@ -2642,6 +2769,10 @@ The pneumatic system is driven by a main air compressor that supplies the strawb
 
 With the vision system operational, the ejector and pneumatics were designed and added to the out-feed conveyor, as well as the attachment of the exit ramp. The ejector nozzle is positioned in the optimum location and can be moved to either side, ejecting to the left or right, providing layout flexibility. The air is supplied by the packing facility via a single $10mm$ airline which is connected to a regulator attached under the conveyor. The output of the regulator is a reduced pressure using a $6mm$ airline, given that the force of the air burst required to push the punnet would not be significant, and easier to fine tune.
 
+The punnet sensor and reflector are attached as close as possible to the ejector nozzle and provides a trigger for activation of the pneumatic system, which is fired for a pre-determined period, in order to direct the punnet onto the exit ramp as smoothly as possible. Figure \ref{fig:ejector} depicts all the components of the system shortly after testing was completed.  
+
+The image shows the pneumatic nozzle offset to the exit conveyor due to the transition time of the punnet and the speed of the conveyor. This allowed for the smoothest transfer of the punnets, avoiding collision with walls or rails in order to prevent damage to sound berries.
+
 
 \begin{figure}[h]
 	\centering
@@ -2650,16 +2781,18 @@ With the vision system operational, the ejector and pneumatics were designed and
 	\label{fig:ejector}
 \end{figure}
 
-The punnet sensor and reflector are attached as close as possible to the ejector nozzle and provides a trigger for activation of the pneumatic system, which is fired for a pre-determined period, in order to direct the punnet onto the exit ramp as smoothly as possible. Figure \ref{fig:ejector} depicts all the components of the system shortly after testing was completed.  
 
-Initial testing concluded that in order to provide enough force to push the $250g-300g$ punnet and successfully transfer it from the production conveyor (running at approximately $27cm/s$) to the exit ramp, required the following:
+
+Initial testing consisted of experiments to confirm that punnets packed withing a reasonable tolerance of the ideal weight could be pushed from the line, but not agitated so much as to damage the fruit or tip over the punnet as it traversed from the main conveyor down the ejection ramp. Approximately 20 punnets were used to programatically fine-tune the pneumatic burst timing and duration according to when the punnet passed the eject sensor. 
+
+This test concluded that in order to provide enough force to push the $250g-300g$ punnet and successfully transfer it from the production conveyor (running at approximately $27cm/s$) to the exit ramp, required the following:
 \begin{itemize}
 	\item $620kPa$ ($90psi$) of pressure
 	\item $20ms$ delay time
 	\item $200ms$ pneumatic duration
 \end{itemize}
 
-The image shows the pneumatic nozzle offset to the exit conveyor due to the transition time of the punnet and the speed of the conveyor. This allowed for the smoothest transfer of the punnets, avoiding collision with walls or rails in order to prevent damage to sound berries.
+The duration of the burst was found to be the main contributing factor where a burst of $100ms$ would not be enough to change the direction of the punnet adequately, whereas $300ms$ would tip the punnet over and spill the contents, both of which is unacceptable. A range of punnet weights were tested to ensure that over and under weight instances were successfully removed without damage. 
 
 
 \begin{figure}[t]
@@ -2674,7 +2807,7 @@ The image shows the pneumatic nozzle offset to the exit conveyor due to the tran
 The activation of the ejector also depends on the result of the processing of each punnet, ejecting only when defects are found. Therefore the microprocessor must know the status of each punnet so that only the identified affected punnets are ejected, whilst allowing others to pass. The microcontroller class must therefore query the results for each punnet in the array (kept as global variables in the application) when passing the ejector, in order to determine which punnets to eject and which are to remain on the production line. 
 
 
-The design flowchart in Figure \ref{fig:ejector_logic} shows the interaction between the main thread, image processing thread (where the decision is made), and the microcontroller. The controller must also activate for the pre-determined timing calculated for the pneumatic burst, including delay between sensing and activation and the duration the solenoid is opened.
+The design flowchart in Figure \ref{fig:ejector_logic} shows the interaction between the main thread, image processing thread (where the decision is made), and the microcontroller. The controller must also activate for the pre-determined timing calculated for the pneumatic burst, including delay between sensing and activation and the duration the solenoid is opened. Additionally, a conveyor activation feedback signal was connected to the micro-controller to ensure that any production line stop could be accounted for and added to the ejection timing, giving the system continuity under any circumstance. 
 
 
 \section{Hyperspectral Bruise Analysis}
@@ -2693,34 +2826,69 @@ Hyperspectral imaging experiments undertaken consisted of 2 cameras, namely, a B
 Analysis of water absorption bands discussed in Chapter \ref{sec:lit} were used as an indication of the wavelengths which might be suitable, however, an in-depth experiment measured the bruising of strawberries incremented across a wide range of wavelengths. As expected, the visible spectrum showed no significant contrast, given that the bruises are invisible to human eyes, and the water absorption band distribution.
 
 
-
-
-
-\begin{table}[h]
-	\centering
-	\caption{Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.}
-	\label{tab:examples}
-	\begin{tabular}{l*8{N}}
+%\begin{table}[h]
+	%\centering
+	
+	\begin{longtable}{*5{G}}
 		\toprule
+		 & Before & 0 min & 5 min & 10 min \\
+	
+		$950nm$ &
+		\includegraphics[width=\linewidth]{bruise/nobruise_950.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise_950.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise5m_950.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise10m_950.jpg}\\
 		
-		Time & $950nm$ & $1050nm$ & $1150nm$ & $1250nm$ & $1350nm$ & $1450nm$ & $1550nm$ & $1650nm$ \\
+		$1050nm$  &
+		\includegraphics[width=\linewidth]{bruise/nobruise_1050.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise_1050.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise5m_1050.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise10m_1050.jpg} \\	 
 		
-		Before &
-		\includegraphics[width=\linewidth]{bruise/nobruise_950.jpg} & \includegraphics[width=\linewidth]{bruise/nobruise_1050.jpg} & \includegraphics[width=\linewidth,angle=90,scale=0.80]{bruise/nobruise_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/nobruise_1250.jpg} & \includegraphics[width=\linewidth]{bruise/nobruise_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/nobruise_1450.jpg} & \includegraphics[width=\linewidth]{bruise/nobruise_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/nobruise_1650.jpg} \\
+		$1150nm$ &
+		\includegraphics[width=\linewidth,angle=90,scale=0.80]{bruise/nobruise_1150.jpg} &  
+		\includegraphics[width=\linewidth]{bruise/bruise_1150.jpg} & 
+		\includegraphics[width=\linewidth]{bruise/bruise5m_1150.jpg} & 
+		\includegraphics[width=\linewidth]{bruise/bruise10m_1150.jpg}\\     
 		
-		0 min &
-		\includegraphics[width=\linewidth]{bruise/bruise_950.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1050.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise_1250.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise_1450.jpg} & \includegraphics[width=\linewidth]{bruise/bruise_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise_1650.jpg} \\
+		$1250nm$ & 
+		\includegraphics[width=\linewidth]{bruise/nobruise_1250.jpg} & 
+		\includegraphics[width=\linewidth]{bruise/bruise_1250.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise5m_1250.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise10m_1250.jpg} \\
 		
-		5 min &
-		\includegraphics[width=\linewidth]{bruise/bruise5m_950.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1050.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise5m_1250.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise5m_1450.jpg} & \includegraphics[width=\linewidth]{bruise/bruise5m_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise5m_1650.jpg} \\
+		$1350nm$ &
+		\includegraphics[width=\linewidth]{bruise/nobruise_1350.jpg} & 
+		\includegraphics[width=\linewidth]{bruise/bruise_1350.jpg} &  
+		\includegraphics[width=\linewidth]{bruise/bruise5m_1350.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise10m_1350.jpg} \\
 		
-		10 min &
-		\includegraphics[width=\linewidth]{bruise/bruise10m_950.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1050.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1150.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise10m_1250.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1350.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise10m_1450.jpg} & \includegraphics[width=\linewidth]{bruise/bruise10m_1550.jpg} &         \includegraphics[width=\linewidth]{bruise/bruise10m_1650.jpg} \\
+		$1450nm$ & 
+		\includegraphics[width=\linewidth]{bruise/nobruise_1450.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise_1450.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise5m_1450.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise10m_1450.jpg} \\
 		
+		$1550nm$ &
+		\includegraphics[width=\linewidth]{bruise/nobruise_1550.jpg} &  
+		\includegraphics[width=\linewidth]{bruise/bruise_1550.jpg} & 
+		\includegraphics[width=\linewidth]{bruise/bruise5m_1550.jpg} & 
+		\includegraphics[width=\linewidth]{bruise/bruise10m_1550.jpg} \\
+		       
+		$1650nm$ &
+		\includegraphics[width=\linewidth]{bruise/nobruise_1650.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise_1650.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise5m_1650.jpg} &
+		\includegraphics[width=\linewidth]{bruise/bruise10m_1650.jpg} \\
 		
 		\bottomrule
-	\end{tabular}
-\end{table} 
+		
+		\caption{Hyperspectral images taken by the SWIR camera at intervals before and after bruising in order to determine best wavelength for bruise contrast.}
+		\label{tab:examples}
+	\end{longtable}
+%\end{table} 
+
+
 
 A sample of the SWIR images are shown in Table \ref{tab:examples} where the spectrum ranged from $850nm$ through to $1800nm$ in increments of $10nm$. Images were acquired of no bruise, as well as 5, 10, and 15 minutes after bruising indicating several potential bands where the contrast was high. Most notably, the bands in the region $<1000nm$ given that these wavelengths can be imaged using CMOS sensors which are inexpensive compared to that of a SWIR sensor.
 
@@ -2735,7 +2903,7 @@ A sample of the SWIR images are shown in Table \ref{tab:examples} where the spec
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{bruise_ir_2.jpg}
+		\includegraphics[width=.8\linewidth]{bruise_ir_2.png}
 		\caption{}
 		\label{fig:bruise_ir_2}
 	\end{subfigure}%
@@ -2791,7 +2959,7 @@ The production line in Queensland (Wamuran) differs from that of South Australia
 
 The main conveyor pictured is designed to keep running as much as possible in order to keep the packers working continuously. As the packers are paid by the number of punnets they pack, conveyor stoppages result in less packing (when their immediate space on the conveyor is full) hence, loss of income for both company and workers. Therefore, the heat-seal and subsequent vision system jogging mechanism cannot be wired directly to the main conveyor, meaning that there will be an accumulation of punnets towards the transition point, should the vision system or heat-seal machine stop. However, the main conveyor runs considerably slower than the in-feed to the vision system, resulting in taking more time to build up, and a good separation of containers as they enter the enclosure.
 
-Two more algorithms were added to the repertoire (over ripe, and too small) with labelling of a test set completed. The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and created a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresholding and morphology parameters, keeping the overall method unchanged. 
+The data collection accumulated a further $70,000$ (approximately) punnets, with some lighting changes taking place during the season, such as redirecting halogen lamps upwards and blocking the top and bottom panel of the polarising tunnel. The noisy background was found to interfere with image processing, particularly when a void occurs from the top to the bottom of the punnet, creating an intense illumination from the background, within the region of interest. By blocking the top and bottom panel, this problem was solved but affected the illumination reaching the berries, and created a more dark-field lighting arrangement. Several modifications of the image processing algorithm were required, mostly in thresholding and morphology parameters, keeping the overall method unchanged. 
 
 
 
@@ -2893,7 +3061,57 @@ Production deployment is challenging in terms of algorithm confidence, given the
 The actual false positive rate cannot be truly measured until the algorithm has been used in production. Even using a larger amount of testing images, the false positive rate was seen to be higher once in production, due to the unpredictable nature of each punnet. For example, large gaps in between berries can create voids which allow light interference (causing reflections, shadows, or contrast changes depending on position and amount), berries from different cultivars can be identical or contrasting (especially under ripe and size differences), and wet berries (raining whilst picking) vs dry.
 
 
-A dataset of 500+ images, ground-truthed by operators was used to assess the algorithms implemented. The current under ripe  and over ripe algorithms had very good F1 results of $94.7\%$ and $90.6\%$ respectively, when measured against multiple defect instances whilst the single defect instances achieved $80.1\%$ and $77.1\%$, respectively. Examples of some typical under ripe rejections is shown in Figure \ref{fig:UR_berries}. Development has also included an algorithm for small size fruit defects (berry dimensions are too small), using blob detection and morphological methods generating an accuracy of $>70\%$ when tested using this dataset.
+A dataset of 500+ images, ground-truthed by operators was used to assess the algorithms implemented. Images were graded under the list of following defects which allowed to gain quantitative results for both current and future methods:
+
+\begin{itemize}
+	\item Over Ripe - Single instance
+	\item Under Ripe - Single instance
+	\item Over Ripe - Multiple instance
+	\item Under Ripe - Multiple instance
+	\item Dry Bruise
+	\item Wet Bruise
+	\item Soil / Sand
+	\item Size Difference
+	\item Too Small
+	\item Foreign Object
+	\item Insect / Pest
+	\item Unsure
+\end{itemize}
+
+
+The underripe and overripe defects were broken into single and multiple defect instances in order to develop algorithms in an attempt to  discriminate between punnets with a single defect (which could potentially be passed depending on seasonality), and instances with multiple defected berries. The labels generated are in the form of a text file associated with each image, which may indicate one or many defects for the same punnet. A sample of labelled test images are shown in Table \ref{tab:test_examples} including single and multiple instance underripe and overripe, size difference and small, and pass. 
+
+	
+\begin{longtable}{l*3{I}}
+		
+		A & 
+		\includegraphics[width=\linewidth]{tests/under_s_1.jpg} & \includegraphics[width=\linewidth]{tests/under_s_2.jpg} &         \includegraphics[width=\linewidth]{tests/under_s_3.jpg}\\
+		
+		B & 
+		\includegraphics[width=\linewidth]{tests/under_m_1.jpg} & \includegraphics[width=\linewidth]{tests/under_m_2.jpg} &         \includegraphics[width=\linewidth]{tests/under_m_3.jpg} \\
+		
+		C & 
+		\includegraphics[width=\linewidth]{tests/over_s_1.jpg} & \includegraphics[width=\linewidth]{tests/over_s_2.jpg} &         \includegraphics[width=\linewidth]{tests/over_s_3.jpg} \\
+		
+		D & 
+		\includegraphics[width=\linewidth]{tests/over_m_1.jpg} & \includegraphics[width=\linewidth]{tests/over_m_2.jpg} &         \includegraphics[width=\linewidth]{tests/over_m_3.jpg} \\
+		
+		E & 
+		\includegraphics[width=\linewidth]{tests/size_1.jpg} & \includegraphics[width=\linewidth]{tests/size_2.jpg} &         \includegraphics[width=\linewidth]{tests/size_3.jpg} \\
+		
+		F & 
+		\includegraphics[width=\linewidth]{tests/pass_1.jpg} & \includegraphics[width=\linewidth]{tests/pass_2.jpg} &         \includegraphics[width=\linewidth]{tests/pass_3.jpg} \\
+	
+	
+	\caption{Example test images which have been labelled (A) single underripe, (B) multiple underripe, (C) single overripe, (D) multiple overripe, (E) size difference and small, and (F) pass.}
+	\label{tab:test_examples}	
+\end{longtable}
+
+
+
+ 
+
+The current under ripe  and over ripe algorithms had very good F1 results of $94.7\%$ and $90.6\%$ respectively, when measured against multiple defect instances whilst the single defect instances achieved $80.1\%$ and $77.1\%$, respectively. Examples of some typical under ripe rejections is shown in Figure \ref{fig:UR_berries}. Development has also included an algorithm for small size fruit defects (berry dimensions are too small), using blob detection and morphological methods generating an accuracy of $>70\%$ when tested using this dataset.
 
 
 \begin{figure}[h]
@@ -2912,12 +3130,13 @@ A dataset of 500+ images, ground-truthed by operators was used to assess the alg
 
 \section{Conclusion}
 
-Concise planning was required in order to make a successful and seamless transition to the production line. Preparation and pre-work dramatically reduced the time it would have otherwise taken to develop the systems on-line, allowing production to continue without impacting on efficiencies.
+Concise planning was required in order to make a successful and seamless transition to the production line. Preparation and pre-work dramatically reduced the time it would have otherwise taken to develop the systems on-line, allowing production to continue without impacting on efficiencies. 
 
 Although some components required testing and configuration after installation (such as cross-polarising and wiring), the majority of the systems development had occurred prior to installation, making the process as efficient as possible. The pre-design and development of the enclosure and frame, electronic power systems, microcontroller functions, lighting arrangement, software application, and peripheral testing, enabled the important aim of minimal impact on production.
 
 Evaluating the operation of the SQA vision system has shown that the goal of analysing packaged strawberries on a real-time production line has been achieved. The system can perform well in the fast-paced environment of the packing room floor, with training and documentation provided in order to be operated by the company's QA staff and managers. The first 12 months of production - consisting of one northern season (May-October), and one southern season (November-April) - concluded that the objective analysis of fast moving punnets of strawberries was feasible both from engineering and customer perspectives.  
 
+Production line speed increase has been considered and would require substantial upgrades to lighting (for example, in the event of doubling the line speed) in order to reduce shutter speeds to appropriate levels and avoid motion blur. Computational capacity would require upgrading with at least the addition of high-performance hardware components such as GPU's in order to perform functions including image threading and processing. Ejector control has the ability to accurately eject at higher rates, given that the punnets could be safely conveyed off the main production line. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2935,7 +3154,7 @@ Evaluating the operation of the SQA vision system has shown that the goal of ana
 
 \section{Abstract}
 
-\textbf{A novel system has been designed where colour analysis algorithms facilitate grading ripeness of packed strawberries on a fast-paced production line. The Strawberry quality system acquires images at the rate of $2 punnets/s$, and feeds the images to the two algorithms. Using CIE-Lab and HSV colourspaces, both under and over ripe colour features are analysed  resulting in F1 scores of $94.7\%$ and $90.6\%$ respectively, when measured on multiple defect samples. The single defect class results scored $80.1\%$ and $77.1\%$. The algorithms total time for the current hardware configuration is $121ms$ maximum and $80ms$ average, which is well below the required time window of $500ms$.}
+\textbf{A novel system has been designed where colour analysis algorithms facilitate grading ripeness of packed strawberries on a fast-paced production line. The Strawberry quality system acquires images at the rate of two punnets per second, and feeds the images to the two algorithms. Using CIE-Lab and HSV colourspaces, both under and over ripe colour features are analysed  resulting in F1 scores of $94.7\%$ and $90.6\%$ respectively, when measured on multiple defect samples. The single defect class results scored $80.1\%$ and $77.1\%$. The algorithms total time for the current hardware configuration is $121ms$ maximum and $80ms$ average, which is well below the required time window of $500ms$.}
 	
 \textbf{$105,542$ punnets have been assessed by the algorithm and has rejected $4,952$ in total ($4.9\%$),  helping to ensure the quality of the product being shipped to customers and avoiding costly returns.}
 
@@ -2976,7 +3195,7 @@ The colour analysis described in this paper is used to distinguish under ripe an
 
 Market conditions, weather, supply chain, and seasonality can greatly affect the quality of crops in general, but particularly for strawberries as they are not considered a hardy fruit unlike apples and oranges. As these adversarial factors occur, the impact seen on the strawberry market can change dramatically from pricing and quality to short supply. The packing operators must be able to account for these dynamic conditions by increasing and decreasing the acceptable standard. This means that under certain circumstances, under ripe, over ripe, misshapen or even fruit usually considered to be too small will be packed and shipped due to market availability. Given this variation of requirements by the operators, the system must have the ability to adjust the thresholds of each quality characteristic, and therefore only reject punnets based on current market conditions or recent weather. 
 
-In order to overcome speed concerns, and to reduce overall processing time, the colour algorithm is designed to scale each image down from a high resolution to a fraction of the original, and assess regions comprised of less pixels. This direction is, again aligned with the customer expectations due the inerrant fact that very small regions ($<3mm$) will be largely ignored by visual inspections. It is only the larger, connected regions which determine overall ripeness.
+In order to overcome speed concerns, and to reduce overall processing time, the colour algorithm is designed to scale each image down from a high resolution to a fraction of the original, and assess regions comprised of less pixels. This direction is, again aligned with the customer expectations due the inherent fact that very small regions ($<3mm$) will be largely ignored by visual inspections. It is only the larger, connected regions which determine overall ripeness.
 
 The saturation channel of the $HSV$ colourspace is used initially in order to find the berries in each frame, due to the more colourful berries and punnet when compared to the dark background. 
 
@@ -3001,18 +3220,20 @@ V = Max
 \end{equation}
 
 
-However, as the colour white has low saturation and can appear on under ripe berries, this must be identified, extracted and concatenated to the region in order to properly calculate the under ripe region areas. The red berry and white berry usually converge gradually so that the regions overlap when extracted. This means that simply taking the intersection of all white regions with known red berry regions will yield only those which are overlapping red berry as described in equations \ref{red_berry_thresh}, \ref{white_berry_thresh}, and \ref{intersect_white_berry}.
+
+\subsection{Under ripe Features}
+
+
+As the colour white has low saturation and can appear on under ripe berries, this must be identified, extracted and concatenated to the region in order to properly calculate the under ripe region areas. The red berry and white berry usually converge gradually so that the regions overlap when extracted. This means that simply taking the intersection of all white regions with known red berry regions will yield only those which are overlapping red berry as described in equations \ref{red_berry_thresh}, \ref{white_berry_thresh}, and \ref{intersect_white_berry}.
 
 \begin{equation}
 R_{red} = \sum_{i=0}^{P}t1<S_i<max(S)
 \label{red_berry_thresh}
 \end{equation}
-
 \begin{equation}
 R_{white} = \sum_{i=0}^{P}t2<V_i<max(V)
 \label{white_berry_thresh}
 \end{equation}
-
 \begin{equation}
 R_{overlap} = R_{white} \cap R_{red}
 \label{intersect_white_berry}
@@ -3020,16 +3241,9 @@ R_{overlap} = R_{white} \cap R_{red}
 
 where the red and white regions ($R$) are found by using threshold values $t1$ and $t2$ over the number of pixels $P$, on the saturation ($S$) and value ($V$) channels of the transformed image, respectively. If $R_{overlap}$ is greater than zero, then $R_{white}$ is concatenated with the known red regions. 
 
-Strawberries are member of the non-climacteric class of fruit, meaning that ripening halts once harvested. Strawberries are more firm and will transport better when harvested just before full ripeness, although are not as full in flavour as entirely ripened fruit\cite{artur}, therefore it is acceptable for customers and realistic for pickers to expect some amount of under-ripeness as well as over-ripeness. 
 
 
-\subsection{Under ripe Features}
-
-The ripening process, in terms of colour, for most fruit will start green and slowly transition through phases of yellow/orange, then pink before bright red and finally dark red. Figure \ref{fig:yellow_white} shows an image containing under ripe berries, the yellow and white regions clearly seen.
-
-
-
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}{.25\textwidth}
 		\centering
@@ -3060,7 +3274,56 @@ The ripening process, in terms of colour, for most fruit will start green and sl
 	\label{fig:under ripe_process}
 \end{figure}
 
-Once the berry contour has been found and the image domain reduced to that region, under ripe pixels are extracted by simply taking the difference of the $a^*$ channel and the $b^*$ channel. After contrast enhancement, areas with no red pixels are highlighted. The process is visualised in Figure \ref{fig:under ripe_process}. Performing this analysis on the entire image results in many false positives, but this method has been found to be very effective when applied to the known berry region.   
+Strawberries are member of the non-climacteric class of fruit, meaning that ripening halts once harvested. Strawberries are more firm and will transport better when harvested just before full ripeness, although are not as full in flavour as entirely ripened fruit\cite{artur}, therefore it is acceptable for customers and realistic for pickers to expect some amount of under-ripeness as well as over-ripeness. 
+
+
+\begin{algorithm}
+	\caption{Under Ripe Method II}
+	\label{alg:underripe}
+	\begin{algorithmic}[1]
+		\Procedure{AnalyseUnderripe}{$I_{crop}$, $H_{min}$, $H_{max}$, $S_{min}$, $V_{min}$, $U_{max}$, $A_{max}$}       
+		\State $Z \gets \emptyset$
+		\Comment{initialise empty return set}
+		\State $B_{sat} \gets \emptyset$
+		\Comment{initialise empty analysis regions}
+		\State $B_{val} \gets \emptyset$
+		\State $R_{comb} \gets \emptyset$
+		\State $(H,S,V) \gets RGBtoHSV(I_{crop})$
+		\State $B_{sat} \gets S_{(x, y)}[(x, y) > S_{min}]$
+		\Comment{saturation channel region}
+		\State $B_{val} \gets V_{(x, y)}[(x, y) > V_{min}]$
+		\Comment{value channel region}
+		\State $U_{r} \gets B_{sat} \cup B_{val}$
+		\Comment{union operation}
+		\If{$U_{r} > U_{max}$}
+		\State $R_{comb} \gets U_{r}$
+		\EndIf
+		\For{each $r \in R_{comb}$}
+		\If{$r > H_{min}$ and $b < H_{max} $}
+		\State $Z \gets Z + r$
+		\Comment{accumulate all pixels in range}
+		\If{$Z > A_{max}$}
+		\State \Return Z
+		\Comment{return area if greater than max}
+		\EndIf
+		\EndIf
+		\EndFor
+		\State \Return 0
+		\Comment{return zero, otherwise}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+
+The ripening process, in terms of colour, for most fruit will start green and slowly transition through phases of yellow/orange, then pink before bright red and finally dark red. Figure \ref{fig:yellow_white} shows an image containing under ripe berries, the yellow and white regions clearly seen.
+
+
+Once the berry contour has been found and the image domain reduced to that region, under ripe pixels are extracted by simply taking the difference of the $a^*$ channel and the $b^*$ channel. After contrast enhancement, areas with no red pixels are highlighted. The process is visualised in Figure \ref{fig:under ripe_process}. Performing this analysis on the entire image results in many false positives, but this method has been found to be very effective when applied to the known berry region. The process for the described underripe method is shown in Algorithm \ref{alg:underripe}. 
+
+
+
 
 
 \subsection{Overripe Features}
@@ -3105,13 +3368,52 @@ Once the berry contour has been found and the image domain reduced to that regio
 		\label{fig:over_result}
 	\end{subfigure}%
 	
-	\caption{Left to right: (a)Berry region extracted using method from under ripe algorithm, (b) result of thresholding expanded HSV hue channel to find light colour berries, (c) difference region of $a$ and $b$, (d) V-channel used to eliminate edges,  (e) intersection result of $c$ and $d$, and (f) over ripe berries extracted.}
+	\caption{Left to right: (a) berry region extracted using method from under ripe algorithm, (b) result of thresholding expanded HSV hue channel to find light colour berries, (c) difference region of $a$ and $b$, (d) V-channel used to eliminate edges,  (e) intersection result of $c$ and $d$, and (f) over ripe berries extracted.}
 	\label{fig:over ripe_process}
 \end{figure} 
 
 The colour difference between ripe and over ripe berry is much narrower than the comparison with under ripe. Under ripe colours may be white, green, yellow, or pink whereas over ripe colour is a slightly darker red than perfectly ripened berries appear. This small variation combined with the many occlusions make the over ripe features difficult to extract.
 
 Shadowy areas of the punnet can be falsely classified as over ripe berry, as the colour profiles are very similar. Therefore, the algorithm must exclude the edges of the berries in order to improve the accuracy of identifying over ripe features. 
+
+
+
+
+\begin{algorithm}
+	\caption{Over Ripe Method II}
+	\label{alg:overripe}
+	\begin{algorithmic}[1]
+		\Procedure{AnalyseOverripe}{$R_{berry}$, $V_{low}$, $V_{high}$, $R_{max}$, $A_{max}$}       
+		\State $Z \gets \emptyset$
+		\Comment{initialise empty return set}
+		\State $R_{good} \gets \emptyset$
+		\Comment{initialise empty analysis regions}
+		\State $R_{cand} \gets \emptyset$
+		\State $R_{norm} \gets \emptyset$
+		\State $R_{overripe} \gets \emptyset$
+		\State $R_{good} \gets V_{(x, y)}[V_{high} > (x, y) > 255]$
+		\Comment{light red regions}
+		\State $R_{cand} \gets R_{berry} - R_{good}$
+		\Comment{potential overripe regions}
+		\State $R_{norm} \gets V_{(x, y)}[V_{min} > (x, y) > 255]$
+		\Comment{surface normal}
+		\State $R_{overripe} \gets R_{cand} \cap R_{norm}$
+		\Comment{intersection operation}
+		\For{each $r \in R_{overripe}$}
+		\If{$r > R_{max}$}
+		\State $Z \gets Z + r$
+		\Comment{accumulate all pixels in range}
+		\If{$Z > A_{max}$}
+		\State \Return Z
+		\Comment{return area if greater than zero}
+		\EndIf
+		\EndIf
+		\EndFor
+		\State \Return 0
+		\Comment{return zero, otherwise}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
 
 Using a known vector range in the $HSV$ colourspace $\{H_0, S_0, V_0\}, \{H_1, S_1, V_1\},....,\{H_n, S_n, V_n\}$, the good quality berry colour is  extracted and compared to the entire berry region as shown in Figure \ref{fig:over_berries}, \ref{fig:over_hue} and \ref{fig:over_diff}. Note that if there is sufficient under ripe regions the algorithm will end before this point. Therefore, the vector range is inclusive of under ripe colours ensuring only darker pixels are extracted in the difference of the two regions.
 
@@ -3120,18 +3422,16 @@ In order solve the problem of berry edges, an intensity threshold is applied whi
 R_{cand} = R_{berry} - R_{good}
 \label{diff_berry_hue}
 \end{equation}
-
 \begin{equation}
 R_{norm} = \sum_{i=0}^{P}t3<V_i<max(V)
 \label{berry_tops}
 \end{equation}
-
 \begin{equation}
 R_{over ripe} = R_{cand} \cap R_{norm}
 \label{intersect_dark_berry}
 \end{equation}
 
-$R_{cand}$ is the candidate over ripe region which may still contain false-positive pixels. The threshold to find the surface normal ($R_{norm}$) of the berries is then intersected with the candidates to highlight only confident matches as shown in Figures \ref{fig:over_light_diff} and \ref{fig:over_result}.
+$R_{cand}$ is the candidate over ripe region which may still contain false-positive pixels. The threshold to find the surface normal ($R_{norm}$) of the berries is then intersected with the candidates to highlight only confident matches as shown in Figures \ref{fig:over_light_diff} and \ref{fig:over_result}. Algorithm \ref{alg:overripe} describes the process of this method.
 
 
 \section{Results}
@@ -3350,32 +3650,32 @@ The current LED and halogen illumination clusters are both cumbersome (visible) 
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=.7\linewidth]{strip_LED.jpg}
+		\includegraphics[width=.6\linewidth]{strip_LED.jpg}
 		\caption{}
 		\label{fig:strip_LED}
 	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=0.7\linewidth]{panel_LED.jpg}
+		\includegraphics[width=0.6\linewidth]{panel_LED.jpg}
 		\caption{}
 		\label{fig:panel_LED}
 	\end{subfigure}%
 
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=.7\linewidth]{ac_LED.jpg}
+		\includegraphics[width=.6\linewidth]{ac_LED.jpg}
 		\caption{}
 		\label{fig:ac_LED}
 	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}{.45\textwidth}
 		\centering
-		\includegraphics[width=0.6\linewidth]{LED_vis.png}
+		\includegraphics[width=0.5\linewidth]{LED_vis.png}
 		\caption{}
 		\label{fig:LED_vis}
 	\end{subfigure}%
-	\caption{LED Lighting sources purchased and tested (a) low-power strip LED's (many rows), (b) LED panel, (c) LED's with onboard AC/DC conversion, and (d) high-power COB.}
+	\caption[LED Lighting sources purchased and tested (a) low-power strip LED's (many rows), (b) LED panel, (c) LED's with onboard AC/DC conversion, and (d) high-power COB.]{LED Lighting sources purchased and tested (a) low-power strip LED's (many rows) \textit{Source: https://www.aliexpress.com/item/32955763018.html}, (b) LED panel \textit{Source: https://www.ecolightled.com.au/collections/led-flat-panel}, (c) LED's with onboard AC/DC conversion \textit{Source: https://www.ebay.com.au/itm/100W-Smart-IC-Driver-COB-Lamp-Chip-LED-AC-220-240V-Input-Integrated-for-DIY-/233203041932}, and (d) high-power COB \textit{Source: https://www.vozopca.com/index.php/10w-20w-30w-50w-80w-100w-smd-led-chip-for-high-power-flood-light.html}.}
 	\label{}
 \end{figure}
 
@@ -3415,7 +3715,7 @@ Due to the high power of $100W$ LED devices, cooling systems are used in order t
 		\caption{}
 		\label{fig:temp_response}
 	\end{subfigure}%
-	\caption{(a) The effect of poor CRI on colour images making them appear diluted and less vibrant, and (b) Spectral response of different colour temperatures from $2721K$ (warm) through to $6478K$ (cool), with the ideal (daylight/100 CRI) value approximately in the centre of the range.}
+	\caption[(a) The effect of poor CRI on colour images making them appear diluted and less vibrant, and (b) Spectral response of different colour temperatures from $2721K$ (warm) through to $6478K$ (cool), with the ideal (daylight/100 CRI) value approximately in the centre of the range.]{(a) The effect of poor CRI on colour images making them appear diluted and less vibrant \textit{Source: https://prolux.cl/que-es-el-color-rendering-index-cri/}, and (b) Spectral response of different colour temperatures from $2721K$ (warm) through to $6478K$ (cool), with the ideal (daylight/100 CRI) value approximately in the centre of the range. \textit{Source: https://indiecinemaacademy.com/complexities-of-bicolor-led-lights-an-extensive-color-analysis/}}
 	\label{}
 \end{figure}
 
@@ -3444,7 +3744,7 @@ In order to have precise control over the LED's, a triggering system is required
 		\caption{}
 		\label{fig:breadboard}
 	\end{subfigure}%
-	\caption{(a) Circuit using reservoir capacitors in order to supply the current required to overload the relatively small LED, and (b) the prototype circuit inside the enclosure whilst triggering LEDs (left and right of image) for testing purposes.}
+	\caption[(a) Circuit using reservoir capacitors in order to supply the current required to overload the relatively small LED, and (b) the prototype circuit inside the enclosure whilst triggering LEDs (left and right of image) for testing purposes.]{(a) Circuit using reservoir capacitors in order to supply the current required to overload the relatively small LED \cite{willert}, and (b) the prototype circuit inside the enclosure whilst triggering LEDs (left and right of image) for testing purposes.}
 	\label{}
 \end{figure}
 
@@ -3629,7 +3929,7 @@ Towards the end of the second Queensland season, an upgrade of the microcontroll
 
 \begin{enumerate}
 	\item Standardise control units - two different types of microcontrollers were being used which made communication between them complicated, as well as creating inconsistencies and requirement for multiple spare parts.
-	\item Continuity - the Phidget\texttrademark is connected to the running application via an erroneous micro USB cable which can become loose over time due to vibration and thermal changes. This is unacceptable as it could cause malfunction of safety systems or prevent them from activating entirely. 
+	\item Continuity - the Phidget\texttrademark is connected to the running application via an temperamental micro USB cable which can become loose over time due to vibration and thermal changes. This is unacceptable as it could cause malfunction of safety systems or prevent them from activating entirely. 
 	\item Free application from I/O tasks - move all I/O functions away from image processing application in order to free critical resources. Microcontrollers typically have built in flash memory for program/script storage and can operate independently.
 \end{enumerate}
 
@@ -3649,7 +3949,7 @@ The Controllino\texttrademark is an open-source PLC with many benefits for indus
 		\caption{}
 		\label{fig:controllino_2}
 	\end{subfigure}%
-	\caption{Controllino\texttrademark device showing (a) schematic pinout, indicators, and communication ports, and (b) all three controllers mounted on DIN rail during installation.}
+	\caption[Controllino\texttrademark device showing (a) schematic pinout, indicators, and communication ports, and (b) all three controllers mounted on DIN rail during installation.]{Controllino\texttrademark device showing (a) schematic pinout, indicators, and communication ports \textit{Source: https://www.controllino.biz/wp-content/uploads/2019/02/CONTROLLINO-Instruction-Manual-V1.5-2018-12-14.pdf}, and (b) all three controllers mounted on DIN rail during installation.}
 	\label{}
 \end{figure}
 
@@ -4113,7 +4413,7 @@ The foreign object algorithm firstly uses the known berry area (found by the col
 \end{algorithm}
 
 
-In comparison to the recursive iterations seen in the under size detection method, the foreign object detector, described in Algorithm \ref{alg:foreign} uses three separate iterations of the known berry area. Typically, a strawberry will vary in both hue and saturation across the curved surfaces, concluding that any area of consistent gradient greater than approximately 5000 pixels indicates the presence of a foreign object, particularly if the acceptable colour ranges for both berry and calyx are removed from the assessable range. This process is performed in the function $ColourFeatures()$ where the HSV image is input and filtered regions of reject colours are returned. $TextureFeatures()$ method returns the large regions of non-textured (smooth) objects by applying Laws texture filters. As the berry region has been previously extracted, any object within this area should have high frequency of texture artefacts (seeds), implying any large, smooth object is not a berry. Lastly, $CannyEdges()$ utilises the Canny edge detector for finding colour edges due to it's low error rate and low noise. Morphology operations and size filtering is applied before returning large straight edges. 
+In comparison to the recursive iterations seen in the under size detection method, the foreign object detector, described in Algorithm \ref{alg:foreign} uses three separate iterations of the known berry area. Typically, a strawberry will vary in both hue and saturation across the curved surfaces, concluding that any area of consistent gradient greater than approximately 5000 pixels indicates the presence of a foreign object, particularly if the acceptable colour ranges for both berry and calyx are removed from the assessable range. This process is performed in the function $ColourFeatures()$ where the HSV image is input and filtered regions of reject colours are returned. $TextureFeatures()$ method returns the large regions of non-textured (smooth) objects by applying Laws texture filters - a method using texture filters before applying feature combination in order to achieve rotational invariance. As the berry region has been previously extracted, any object within this area should have high frequency of texture artefacts (seeds), implying any large, smooth object is not a berry. Lastly, $CannyEdges()$ utilises the Canny edge detector for finding colour edges due to it's low error rate and low noise. Morphology operations and size filtering is applied before returning large straight edges. 
 
 
 
@@ -4228,7 +4528,12 @@ The entire bruise detection algorithm was developed independently by another con
 \section{Introduction}
 
 
-Whilst hand-selected features can provide accurate results (as detailed in Chapter \ref{sec:lit}), human object classification accuracy can be surpassed by machine learning and Artificial Neural Networks, with some exceptions including noisy images \cite{dodge}. Where there is a sufficient training data, a machine learning algorithm can potentially find a higher level of abstraction than humans, given the highly-dimensional degree of computation achievable. Kaiming He et al.\cite{he2} achieved the first algorithm to surpass human-level performance of $5.1\%$ error rate with a result of $4.94\%$ when benchmarked against the popular Imagenet dataset in 2015. Since then, many researchers working on a range of applications have reported this milestone \cite{geirhos, saon, xiong, han} indicating that using these practices (supported by appropriate training data) can be higher-performing than any human designed method. 
+Whilst hand-selected features can provide accurate results (as detailed in Chapter \ref{sec:lit}), human object classification accuracy can be surpassed by machine learning and Artificial Neural Networks, with some exceptions including noisy images \cite{dodge}. Where there is a sufficient training data, a machine learning algorithm can potentially find a higher level of abstraction than humans, given the higher dimension of computation achievable. The problem of naive methods involving thresholds are highly dependant on illumination levels, cultivar types, and seasonality in order to achieve the most accurate results. However machine learning has the potential to overcome these unavoidable changes, provided a sufficient sample training examples.
+
+
+Kaiming He et al.\cite{he2} achieved the first algorithm to surpass human-level performance of $5.1\%$ error rate with a result of $4.94\%$ when benchmarked against the popular Imagenet dataset in 2015. Since then, many researchers working on a range of applications have reported this milestone \cite{geirhos, saon, xiong, han} indicating that using these practices (supported by appropriate training data) can be higher-performing than any human designed method. 
+
+
 
 HALCON\texttrademark V11.0 is designed to make image processing efficient in development in order to deploy to market as quickly as possible. Therefore, the focus for developers was to improve and automate common operators such as morphology, channel operations and colourspace conversions, detailed camera connections and parameter adjustments, thresholding and segmentation, automatic OCR, shape-based detection and basic classification algorithms. Classifiers contained in HALCON\texttrademark include GMM, kNN, Hyperboxes, SVM, and MLP as trainable models, with support to save, load, and adjust parameters of each classification model. However, due to the commercialised, unique, development environment, any algorithms used must be part of the explicit repertoire of methods implemented by developers, which means that if there exists no specific algorithm built in to the version of Halcon\texttrademark purchased, then it cannot be acquired. Simple methods and functions can be created from basic building blocks, however there is no scope to efficiently create models for algorithms such as Random Forrest, Discriminant Analysis, Decision Tree, or Adaboost. 
 
@@ -4274,7 +4579,7 @@ Many combinations of open-source machine learning frameworks exist providing a r
 
 \subsection{Tensor Computation}
 
-The two most widely used versions of computation engine are Tensorflow\textregistered, and Theano\textregistered, both having their own API of methods and network construction operators. Theano\textregistered uses native $Python$ in conjunction with the $Numpy$ mathematical library in order to create tensors (generalised objects to include multi-dimensional matrices as well as vectors and scalars), and operate on them with processes including convolutions, and pooling.  
+The two most widely used versions of computation engine are Theano\textregistered \cite{theano}, and the more recent  Tensorflow\textregistered \cite{tensorflow}, both having their own API of methods and network construction operators. Theano\textregistered uses native $Python$ in conjunction with the $Numpy$ mathematical library in order to create tensors (generalised objects to include multi-dimensional matrices as well as vectors and scalars), and operate on them with processes including convolutions, and pooling.  
 
 Tensorflow\textregistered is created, released and maintained by Google\textregistered, uses a graph-based approach to neural network operations. It provides the network constructors and ability to process matrices as well as it's own version of tensors, variables, constants, and methods. The objective of this is to create a framework designed to flow better through the layers once loaded to the graph, providing a more efficient system. 
 
@@ -4284,13 +4589,11 @@ Whilst both of these packages provide tools, methods, and frameworks for develop
 
 
 
-
-
 \subsection{Machine Learning Environments}
 
 
 
-OpenCV (Open source computer vision) is a library of image functions including reading and writing, converting colourspaces, image processing, and some machine learning algorithms. It is designed to work in unison with deep learning frameworks such as the above mentioned, in terms of compatibility and tensor representation. Images are treated as matrices in order to facilitate integration with back-end programs, as well as reducing complexity of image manipulation, due to the ability to index, slice and reshape the matrices. The library does not rely on computational engine in order to perform it's operations, and can be integrated into other frameworks easily.
+OpenCV (Open source computer vision \cite{opencv}) is a library of image functions including reading and writing, converting colourspaces, image processing, and some machine learning algorithms. It is designed to work in unison with the above-mentioned deep learning frameworks, in terms of compatibility and tensor representation. Images are treated as matrices in order to facilitate integration with back-end programs, as well as reducing complexity of image manipulation, due to the ability to index, slice and reshape the matrices. The library does not rely on computational engine in order to perform it's operations, and can be integrated into other frameworks easily.
 
 Other libraries such as Python Image Library (PIL), Scikit-image, and SimpleCV offer similar functions and methods, however, OpenCV community support and range of functions makes it more suitable for the SQA vision system.
 
@@ -4352,7 +4655,9 @@ Where naive methods regularly have the advantage of efficiency, machine learning
 
 \subsection{Methods Using Support Vector Machine (SVM)}
 
-A preliminary investigation into SVM classifier accuracy has been performed with the results showing in Table \ref{tab:svm_results}. The training used 27 images that were not included in the testing set of 579 images, and showed a variety of results when the class region was altered. For example, the first four tests in the table have similar accuracy results, however, the distribution of $true +$ and $false -/+$ for test four is very different to the previous three. This shows that the training data inputs must be optimised by selecting an appropriate range of pixels correlating to the class required. Therefore, the first step toward improving these results must be to ascertain the best areas of the berry to train the classifier for each class. 
+A preliminary investigation into SVM classifier accuracy has been performed with the results showing in Table \ref{tab:svm_results}. The training used only 27 images given the number of input features (pixels) used per image would create exponentially longer training times. For example 27 pre-processed images had a training duration of approximately 50 minutes, while 100 training images increased the training time to more than 5 hours. This exponential difference is due to the SVM process which must load all data into memory before calculating a high dimensional hyperplane. As this was a preliminary test, the increase in experimental efficiency was evaluated to be more beneficial than accurate results using more training data.  
+
+The training images were not included in the testing set of 579 images (test image inference duration is much lower than training), and showed a variety of results when the class region was altered by means of pre-processing, colourspace transformation, and threshold values. For example, the first four tests in the table have similar accuracy results, however, the distribution of $true +$ and $false -/+$ for test four is very different to the previous three. This shows that the training data inputs must be optimised by selecting an appropriate range of pixels correlating to the class required. Therefore, the first step toward improving these results must be to ascertain the best areas of the berry to train the classifier for each class. 
 
 
 \begin{sidewaystable} 
@@ -4442,15 +4747,15 @@ Neural networks require more training data than many other machine learning para
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.9\linewidth]{convnet1.png}
-	\caption{A ConvNet using 2 GPUs with individual processes assigned to each processor}
+	\caption[A ConvNet using 2 GPUs with individual processes assigned to each processor.]{A ConvNet using 2 GPUs with individual processes assigned to each processor. \textit{Source: https://d2l.ai/chapter\_computational-performance/multiple-gpus.html}}
 	\label{fig:convnet1}
 \end{figure}%
 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{convnet2.png}
-	\caption{ ConvNet implementation used for learning the MNIST handwritten digit dataset}
+	\includegraphics[width=0.7\linewidth]{covnet2.jpg}
+	\caption[ConvNet implementation used for learning the MNIST handwritten digit dataset.]{ConvNet implementation used for learning the MNIST handwritten digit dataset. \textit{Source: https://www.researchgate.net/figure/The-arquitecture-of-one-column-of-the-convolutional-neural-network-that-achieved-the-best\_fig4\_283831532}}
 	\label{fig:convnet2}
 \end{figure}%
 
@@ -4461,7 +4766,7 @@ There are many different ways to arrange the layers of a ConvNet. Figure \ref{fi
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{conv_filters.png}
 	\end{center}
-	\caption{Examples of first layer convolutional filters taken from Stanford's CS231N course.}
+	\caption[Examples of first layer convolutional filters taken from Stanford's CS231N course.]{Examples of first layer convolutional filters taken from Stanford's CS231N course \cite{andrej}.}
 	\label{fig:conv_filters}
 \end{wrapfigure} 
 
@@ -4469,7 +4774,7 @@ There are many different ways to arrange the layers of a ConvNet. Figure \ref{fi
 
 
 
-The feature masks that are used in the convolution process are chosen depending on software library, however for each application the lower level masks are intended to extract low-level features such as edges and colours, while the later stage masks combine to extract the high-level features such as faces, cars, animals, etc. An example of first layer filters are shown in Figure \ref{fig:conv_filters} - taken from Stanford's CS231N course taught by Andrej Karpathy and Justin Johnson \cite{andrej} - shows the 48 edge detecting filters (top) and 48 colour detecting filters (bottom). Of course these filters are simply matrices with certain values at each pixel, which may also be manipulated to better represent the objects required to be identified. For example, instead of vertical, horizontal and diagonal straight lines, one might want to use curved lines to detect objects that are round.
+The feature masks that are used in the convolution process are dependant on the specific problem domain, however for each application the lower level masks are intended to extract low-level features such as edges and colours, while the later stage masks combine to extract the high-level features such as faces, cars, animals, etc. An example of first layer filters are shown in Figure \ref{fig:conv_filters} - taken from Stanford's CS231N course taught by Andrej Karpathy and Justin Johnson \cite{andrej} - shows the 48 edge detecting filters (top) and 48 colour detecting filters (bottom). Of course these filters are simply matrices with certain values at each pixel, which may also be manipulated to better represent the objects required to be identified. For example, instead of vertical, horizontal and diagonal straight lines, one might want to use curved lines to detect objects that are round.
 
 
 
@@ -4494,7 +4799,7 @@ The raw, full frame images  of strawberry punnets include the background of conv
 
 
 
-Using a combination of horizontal and vertical flipping, images were compiled for training and listed in Table \ref{tab:data}. The number of training images for each network was constant as only the under ripe class was tested and a good comparison would be impossible with differing training data. Therefore, 886 under ripe training images were used to train the networks with exactly the same parameters and attributes (cropping, preprocessing), although the image order was randomly generated. Due to the absence of data, three augmentations were performed, namely, horizontal, vertical, and diagonal flipping in order to increase the number of samples to 3544. 
+Using a combination of horizontal and vertical flipping, images were compiled for training and listed in Table \ref{tab:data}. The number of testing images for each network was constant at 500, however, due to the absence of training data, three augmentations were performed, namely, horizontal, vertical, and diagonal flipping in order to increase the number of samples. 
 
 Six different networks were created (as described earlier in this chapter) for experimentation purposes in order to build layers in a range of different architectures. Simple networks with one convolution step, one pool and one fully-connected layer, as well as more complicated structures with many iterations of these blocks were evaluated. Using \texttt{RMSProp} and \texttt{Adam} optimisation algorithms, the networks were trained using varying parameters with the best training results for each architecture shown in Table \ref{tab:networks}. The number of convolutions, max. pooling, and fully-connected layers are indicated as well as the range of epochs.
 
@@ -4521,7 +4826,7 @@ Six different networks were created (as described earlier in this chapter) for e
 
 
 
-Accuracy for all networks began to plateau after the maximum listed epoch for each architecture, likely due to the small amount of data which also contributed to the average results. 
+Accuracy for all networks began to plateau after the maximum listed epoch for each architecture, likely due to the small amount of data. 
 
 
 \section{Transfer Learning with Resnet}
@@ -4529,7 +4834,7 @@ Accuracy for all networks began to plateau after the maximum listed epoch for ea
 
 \subsection{Transfer Learning}
 
-Transfer learning is a notable method for classifying images based on exploiting pre-trained networks which are generally trained with hundreds of thousands and even up to millions of images, for example, ImageNet includes 1.2 million images with more than 1000 classes in it's database \cite{shin}. If no domain-specific data (or very limited data) is available, a pre-trained networks can be of benefit by generalising feature sets that the model has already learned from other objects. For instance the first layers of a pre-trained network will detect basic features such as shapes, colours, and textures common in almost every object or image that would require classification. 
+Transfer learning is a notable method for classifying images based on exploiting pre-trained networks which are generally trained with hundreds of thousands and even up to millions of images, for example, ImageNet includes 1.2 million images with more than 1000 classes in it's database \cite{shin}. If no domain-specific data (or very limited data) is available, a pre-trained network can be of benefit by generalising feature sets that the model has already learned from other objects. For instance the first layers of a pre-trained network will detect basic features such as shapes, colours, and textures common in almost every object or image that would require classification. 
 
 An common method used is 'fine tuning' a pre-trained network by freezing the weights of all network layers except the final, fully-connected layer(s), and training newly acquired images in the inference stages of the network \cite{girshick}. This technique retains the useful feature detection layers whilst training the final layers of the network to label these features to match domain-specific classes of images. However, this process requires many (although only a fraction of the data required to train from scratch) labelled training images in order to update the final dense layer weights. 
 
@@ -4544,40 +4849,38 @@ In this work, the latter approach is adopted, by removing the last layer of a pr
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{residual_neuron.png}
-	\caption{A residual neuron used in ResNet architecture showing the identity function skipping a connection.}
+	\caption[A residual neuron used in ResNet architecture showing the identity function skipping a connection.]{A residual neuron used in ResNet architecture showing the identity function skipping a connection. \textit{Source: https://mc.ai/resnet-architecture-explained/}}
 	\label{fig:residual}
 \end{figure}
 
-The ResNet (Residual Network) architecture, first presented by He et al.\cite{he}, is capable of very deep ($1000+$ layers) learning without the added complexity of training convergence problems that other networks suffer from. It uses a short-cut mechanism where each connection in the network can be bypassed if no new information is being learned. Therefore, if these residual connections are used, a convolutional layer will become the identity function by default and a network with many layers should have a comparable training error with its shallower counter-part. Figure \ref{fig:residual} shows a graphical representation of a connection in a Residual Network architecture whilst Figure \ref{fig:resnet_full} shows the full architecture of a $36$-layer ResNet.
-
-
-To explain this residual step formally, He et al.\cite{he} use the following equations to describe the residual block over a few stacked layers:
-\begin{equation}
-y = \mathcal{F}(x.\{W_i\}) + x
-\end{equation}
-where $x$ and $y$ are the input and outputs and the function $\mathcal{F}(x.\{W_i\})$ is the learned mapping. 
-
-This equation holds for all layers where the dimensions of $x$ and $\mathcal{F}$ are the same. If they are different, for instance when reducing channels, the function is modified slightly to add a linearly projected matching parameter $W_s$:
-\begin{equation}
-y = \mathcal{F}(x.\{W_i\}) + W_s x
-\end{equation}
-
+The ResNet (Residual Network) architecture, first presented by He et al.\cite{he}, is capable of very deep ($1000+$ layers) learning without the added complexity of training convergence problems that other networks suffer from. It uses a short-cut mechanism where each connection in the network can be bypassed if no new information is being learned. Therefore, if these residual connections are used, a convolutional layer will become the identity function by default and a network with many layers should have a comparable training error with its shallower counter-part.
 
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
 		\includegraphics[width=0.35\textwidth]{resnet_full.png}
 	\end{center}
-	\caption{A residual network in comparison to VGG-$19$ network and a $34$-layer non-residual network.}
+	\caption[A residual network in comparison to VGG-$19$ network and a $34$-layer non-residual network.]{A residual network in comparison to VGG-$19$ network and a $34$-layer non-residual network. \textit{Source: https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035}}
 	\label{fig:resnet_full}
 \end{wrapfigure} 
 
 
+Figure \ref{fig:residual} shows a graphical representation of a connection in a Residual Network architecture whilst Figure \ref{fig:resnet_full} shows the full architecture of a $36$-layer ResNet in comparison to a 'plain' 36-layer network and VGG-19. 
+
+To explain this residual step formally, He et al.\cite{he} use the following equations to describe the residual block over a few stacked layers:
+\begin{equation}
+y = \mathcal{F}(x.\{W_i\}) + x
+\end{equation}
+
+where $x$ and $y$ are the input and outputs and the function $\mathcal{F}(x.\{W_i\})$ is the learned mapping. This equation holds for all layers where the dimensions of $x$ and $\mathcal{F}$ are the same. If they are different, for instance when reducing channels, the function is modified slightly to add a linearly projected matching parameter $W_s$:
+\begin{equation}
+y = \mathcal{F}(x.\{W_i\}) + W_s x
+\end{equation}
 
 
 It can be seen from these equations that there is no difference between a residual network and a plain network in terms of depth, width, and number of parameters, and only a negligible difference in computation due to the element-wise addition.
 
-The authors of this paper compared the residual networks (of differing depths up to 1000 layers) with 'plain' networks, VGG-16, GoogLeNet, PReLU-net, and BN-inception and found that ResNet's ability performed at up to eight times deeper than VGG-16, but with less complexity. The results outperformed other networks when classifying ImageNet and CIFAR-10, as well as a $28\%$ improvement on COCO object detection. An ensemble of ResNets achieved $3.37\%$ error rate winning first prize in the ILSVRC 2015 classification task.
+The authors of this paper compared the residual networks (of differing depths up to 1000 layers) with 'plain' networks, VGG-16 \cite{simonyan}, GoogLeNet \cite{szegedy}, PReLU-net \cite{he2}, and BN-inception \cite{ioffe} finding that ResNet's ability performed at up to eight times deeper than VGG-16, but with less complexity. The results outperformed other networks when classifying ImageNet and CIFAR-10, as well as a $28\%$ improvement on COCO object detection. An ensemble of ResNets achieved $3.37\%$ error rate winning first prize in the ILSVRC 2015 classification task.
 
 
 \subsection{Logistic Regression Classifier}
@@ -4605,7 +4908,7 @@ such that learned regression coefficients $\hat{\beta}=[\beta_0, \beta_1, \beta_
 \section{Strawberry Classification}
 \label{sec:strawberry_classification}
 
-Captured punnet images in Table \ref{tab:examples} shows the intensity, background and scale attributes are constant for each frame, while the colour, edges and geometric attributes are variable yet finite (confined within the punnet), therefore the problem is a fine-grained classification task. However, the similarities between each strawberry image are much higher than that of other more general datasets (for example Oxford Flowers or Stanford Dogs where each image does not have a static background, scale or illumination). Therefore, such high level of similarity makes the classification task more challenging, calling for more robust feature descriptors that able to capture the distinctiveness between punnet categories such as pass, over ripe, under ripe, and foreign object.
+Captured punnet images in Table \ref{tab:training_samples} shows the intensity, background and scale attributes are constant for each frame, while the colour, edges and geometric attributes are variable yet finite (confined within the punnet), therefore the problem is a fine-grained classification task. However, the similarities between each strawberry image are much higher than that of other more general datasets (for example Oxford Flowers or Stanford Dogs where each image does not have a static background, scale or illumination). Therefore, such high level of similarity makes the classification task more challenging, calling for more robust feature descriptors that able to capture the distinctiveness between punnet categories such as pass, over ripe, under ripe, and foreign object.
 
 
 \begin{table}[h]
@@ -4729,6 +5032,7 @@ Described in Chapter \ref{sec:I}, is the design, research, testing, and construc
 Integrating the system into the production line required pre-planning and testing prior to work commencing in order to make the process as efficient as possible. Chapter \ref{sec:II} describes the integration of the system onto the production line including the enclosure positioning, power systems and lighting installation, control systems, and camera setup, as well as hyperspectral/IR imaging and related bruising. The ejector was installed and activated shortly after the first Queensland production season began, removing punnets which were defected for repacking. The entire system was relocated to South Australia for the second season, with the production line automatically fed using conveyors opposed to being manually placed on the in-feed conveyor. Colour analysis methods detailed in Chapter \ref{sec:paper_2} explain the algorithms used to create the first two quantified methods of defect detection. The under ripe and over ripe strawberry features were extracted and analysed in order to grade them in a binary manner (2 classifiers) with resulting performance of $94.7\%$ and $90.6\%$ for the multiple detection category, respectively.
 
 After two production seasons, the dirt, dust, and debris build up inside the enclosure as well as lighting, access, and robustness concerns prompted a redesign between seasons. Described in chapter \ref{sec:III}, the enclosure is stripped of it's main components such as power supply, cameras, polarisers, sensors, punnet conveyors (including v-belts) and PC, before being transferred to the newly designed and constructed frame. Electronics and camera accessibility was increased by adding doors and panels, and mounting the electronic components, microcontroller, relays and fuses. Small, powerful LEDs replaced the bulky visible and energy wasting halogen lighting with a triggering system synchronised to the cameras, developed in order to pulse the lighting rather than using a continuous illumination arrangement. An upgrade performed on the microcontroller freed the application of some of it's critical memory requirements, as well as providing standardisation and industrialisation. An operator panel installed with start/stop buttons and a touchscreen in order to give the system aesthetic appeal. 
+
 
 Finally, Chapter \ref{sec:IV} outlined the dramatic change of system in an effort to perform more accurately using state-of-the-art techniques. Linux\textregistered OS enabled open-source image manipulation and processing, model creation and saving and machine learning including deep learning. Both SVM and neural networks were used to train classifiers with some success, however, the final classifier uses a combination of a pre-trained Resnet-50 feature extraction and logistic regression to create 3 separate binary models which performed much more accurately during training. The AUROC metric results were $87\%$, $80\%$, and $58\%$ for the foreign object, under ripe, and over ripe classes, respectively. 
 
