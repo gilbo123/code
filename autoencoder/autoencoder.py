@@ -33,28 +33,33 @@ def autoencoder(input_img):
     return decoded
 
 
+#preprocessing function
+def blur_img(img):
+    return cv2.medianBlur(img.astype('uint8'), 11).astype('float32')
+
+
 #autoencoder params
 BATCH_SIZE = 32
 EPOCHS = 1
 CHANNELS = 3
-X, Y = 100, 100
+X, Y = 600, 500
 input_img = Input(shape = (X, Y, CHANNELS))
 
 #create generators
 train_datagen = ImageDataGenerator(
         rescale=1./255,
-        shear_range=0,
-        zoom_range=0,
         horizontal_flip=True,
-        width_shift_range=0.1,  # randomly shift images horizontally (fraction of total width)
-        height_shift_range=0.1)  # randomly shift images vertically (fraction of total height))
+        preprocessing_function=blur_img
+        )
 
-valid_datagen = ImageDataGenerator(rescale=1./255)  
+valid_datagen = ImageDataGenerator(rescale=1./255,
+        preprocessing_function=blur_img
+        )  
 
 
 #TRAIN gen
 train_generator = train_datagen.flow_from_directory(
-        '/home/gil/git/code/autoencoder/patches/train/',
+        '/home/gil/Documents/IMAGES/AE/test_batch/train/',
         target_size=(X, Y),
         class_mode="input",
         batch_size=BATCH_SIZE,
@@ -64,7 +69,7 @@ train_generator = train_datagen.flow_from_directory(
 
 #VALID gen
 validation_generator = valid_datagen.flow_from_directory(
-        '/home/gil/git/code/autoencoder/patches/validation/',
+        '/home/gil/Documents/IMAGES/AE/test_batch/valid/',
         target_size=(X, Y),
         class_mode="input",
         batch_size=BATCH_SIZE,
@@ -74,7 +79,7 @@ validation_generator = valid_datagen.flow_from_directory(
 
 #TEST gen
 test_generator = valid_datagen.flow_from_directory(
-        '/home/gil/git/code/autoencoder/patches/test/',
+        '/home/gil/Documents/IMAGES/AE/test_batch/test/',
         target_size=(X, Y),
         class_mode="input",
         batch_size=BATCH_SIZE,
@@ -93,13 +98,15 @@ autoencoder.summary()
 STEP_SIZE_TRAIN=train_generator.n//train_generator.batch_size
 STEP_SIZE_VALID=validation_generator.n//validation_generator.batch_size
 #Train model
-autoencoder_train = autoencoder.fit_generator(
+H = autoencoder.fit_generator(
         train_generator,
         steps_per_epoch=STEP_SIZE_TRAIN,
         epochs=EPOCHS,
         validation_data=validation_generator,
         validation_steps=STEP_SIZE_VALID
         )
+
+autoencoder.save_weights("model.h5")
 
 #evaluate
 autoencoder.evaluate_generator(generator=validation_generator, 
@@ -108,6 +115,7 @@ autoencoder.evaluate_generator(generator=validation_generator,
 
 
 #plot results
+'''
 loss = autoencoder_train.history['loss']
 val_loss = autoencoder_train.history['val_loss']
 epochs = range(EPOCHS)
@@ -117,7 +125,19 @@ plt.plot(epochs, val_loss, 'b', label='Validation loss')
 plt.title('Training and validation loss')
 plt.legend()
 plt.show()
+'''
 
+N = np.arange(0, EPOCHS)
+plt.style.use("ggplot")
+plt.figure()
+plt.plot(N, H.history["loss"], label="train_loss")
+plt.plot(N, H.history["val_loss"], label="val_loss")
+plt.title("Training Loss and Accuracy")
+plt.xlabel("Epoch #")
+plt.ylabel("Loss/Accuracy")
+plt.legend(loc="lower left")
+plt.savefig('loss_plot.png')
+    
 
 #make predictions
 STEP_SIZE_TEST=test_generator.n//test_generator.batch_size
@@ -130,9 +150,13 @@ pred=autoencoder.predict_generator(test_generator,
 print(test_generator.n)
 #print(dir(test_generator))
 
+#de-normalise
+pred = pred * 255
+
 raw_images = []
 for fp in test_generator.filepaths:
-    raw_images.append(cv2.imread(fp))
+    im = cv2.imread(fp)
+    raw_images.append(blur_img(im))
     
 
 def diff_image(im1, im2, mode='rgb'):
@@ -146,31 +170,42 @@ def diff_image(im1, im2, mode='rgb'):
         im2 = cv2.merge((s2, s2, s2))
 
     # convert the images to grayscale
-    grayA = cv2.cvtColor(im1, cv2.COLOR_BGR2GRAY)
-    grayB = cv2.cvtColor(im2, cv2.COLOR_BGR2GRAY)
-    print(grayA.dtype, grayB.dtype)
-    return np.subtract(grayA.astype('uint8'), grayB.astype('uint8'))
+    #grayA = cv2.cvtColor(im1, cv2.COLOR_BGR2GRAY)
+    #grayB = cv2.cvtColor(im2, cv2.COLOR_BGR2GRAY)
+    #print(grayA.dtype, grayB.dtype)
+    #return np.subtract(grayA.astype('uint8'), grayB.astype('uint8'))
+    return np.subtract(im2.astype('uint8'), im1.astype('uint8'))
     #(score, diff) = compare_ssim(im1, im2, full=True, multichannel=True)
     #print("SSIM: {}".format(score))
     #return (diff * 255).astype("uint8")
 
-
 for i in range(len(pred)):
-    img = cv2.cvtColor(pred[i], cv2.COLOR_BGR2RGB) 
-    img = cv2.resize(img, dsize=(100, 100))
-    print(img.shape, raw_images[i].shape)
-    diff = diff_image(img, raw_images[i])
-    hsv_diff = diff_image(img, raw_images[i], 'hsv')
+    p = cv2.cvtColor(pred[i], cv2.COLOR_BGR2RGB).astype('uint8') 
+    #p = pred[i].astype('uint8') 
+    #img = cv2.resize(img, dsize=(500, 600))
+    orig = raw_images[i].astype('uint8')
+    print(p.shape, orig.shape)
+    print(p.dtype, orig.dtype)
+    diff = diff_image(p, orig)
+    orig_diff = diff_image(diff, orig)
+    p_diff = diff_image(diff, p)
+    #hsv_diff = diff_image(p, orig, 'hsv')
      
-    cv2.namedWindow('Raw', cv2.WINDOW_AUTOSIZE)
-    cv2.moveWindow('Raw', 20, 20)
+    cv2.namedWindow('Original', cv2.WINDOW_AUTOSIZE)
+    cv2.moveWindow('Original', 20, 20)
+    cv2.namedWindow('Prediction', cv2.WINDOW_AUTOSIZE)
+    cv2.moveWindow('Prediction', 320, 20)
     cv2.namedWindow('RGB diff', cv2.WINDOW_AUTOSIZE)
     cv2.moveWindow('RGB diff', 520, 20)
-    cv2.namedWindow('HSV diff', cv2.WINDOW_AUTOSIZE)
-    cv2.moveWindow('HSV diff', 1040, 20)
+    #cv2.namedWindow('orig diff', cv2.WINDOW_AUTOSIZE)
+    #cv2.moveWindow('orig diff', 720, 20)
+    cv2.namedWindow('p diff', cv2.WINDOW_AUTOSIZE)
+    cv2.moveWindow('p diff', 920, 20)
     
-    cv2.imshow('Raw', raw_images[i])
+    cv2.imshow('Original', orig)
+    cv2.imshow('Prediction', p)
     cv2.imshow('RGB diff', diff)
-    cv2.imshow('HSV diff', hsv_diff)
+    #cv2.imshow('orig diff', orig_diff)
+    cv2.imshow('p diff', p_diff)
     cv2.waitKey()
     cv2.destroyAllWindows()

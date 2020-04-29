@@ -7,9 +7,11 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-in_path = 'data/'
-train_path = 'patches/train/class_1/'
-valid_path = 'patches/validation/class_1/'
+#in_path = '/home/gil/Documents/IMAGES/foreign_tests/'
+in_path = '/home/gil/Documents/IMAGES/berry_classes/small/'
+train_path = '/home/gil/Documents/IMAGES/AE/patches/train/'
+valid_path = '/home/gil/Documents/IMAGES/AE/patches/valid/'
+
 
 #data split
 train_percent = 0.8
@@ -17,7 +19,7 @@ train_percent = 0.8
 #variables
 i = 0
 X, Y = 500, 600
-x_stride, y_stride = 100, 100
+x_stride, y_stride = 200, 200
 #patch_size = 50
 
 #list files
@@ -29,22 +31,35 @@ print('Files found: {}'.format(count))
 
 for f in files:
     i+=1
-    if i > 10:
+    if i > 100:
         break
     #read data
     img = cv2.imread(os.path.join(in_path, f))
     #img = cv2.resize(img, (X, Y))
     #img.shape == (Y, X, Z)
-    if img.shape != (600, 500, 3):
-        continue
+    #print(img.shape)
+
+    size = max(X, Y)
+    #must be rgb image only
+    if img.shape != (Y, X, 3):
+        #could have ir image (X*2)
+        if img.shape == (Y, X*2, 3):
+            #if it is then split
+            img = img[:,:X]
+            img = cv2.resize(img, dsize=(size, size))
+        else:
+            continue
+    else:
+        img = cv2.resize(img, dsize=(size, size))
+
     
     print('Image {} shape: {}'.format(i, img.shape))
 
     '''
     Extract patches
     '''
-    x_cal = int(X/x_stride) #10
-    y_cal = int(Y/y_stride) #12
+    x_cal = int(size/x_stride) #10
+    y_cal = int(size/y_stride) #12
     for y in range(y_cal):
         #get the new y values
         y1 = y * y_stride  
@@ -62,7 +77,7 @@ for f in files:
             #save the patch
             name = f.split('.jpg')[0] + '_patch_' + str(y) + '-' + str(x) + '.jpg'
             print(name)
-            print('J, count = {}, {}'.format(j, count))
+            print(i)
             print(count*train_percent)
             if i < (count*train_percent):
                 cv2.imwrite(os.path.join(train_path, name), patch)

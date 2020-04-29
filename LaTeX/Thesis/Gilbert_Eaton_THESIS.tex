@@ -1220,7 +1220,7 @@ As this project would take advantage of the NIR spectrum with the intention of c
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\linewidth]{LED_response.png}
-	\caption[Cree CXB3590 power distribution curves for a range of colour temperatures at $T=85^{\circ}C$.]{Cree CXB3590 power distribution curves for a range of colour temperatures at $T=85^{\circ}C$. \textit{Source: https://www.cree.com/led-components/media/documents/ds-CXA2540.pdf}}
+	\caption[Cree CXB3590 power distribution curves for a range of colour temperatures at $T=85^{\circ}C$.]{Cree CXB3590 power distribution curves for a range of colour temperatures at $T=85^{\circ}C$. \textit{Source: https://www.cree.com/led-components/media/documents/ds-CXB3590.pdf}}
 	\label{fig:LED_response}
 \end{figure}%
 
@@ -3751,9 +3751,6 @@ In order to have precise control over the LED's, a triggering system is required
 
 This circuit was constructed placed on a proto-board to perform initial testing and confirm suitability, before being fabricated into multiple circuit boards servicing 2-4 LED's each. The image in Figure \ref{fig:breadboard} demonstrates the arrangement when testing the triggering, and acquisition using the high-power LEDs. Experiments confirmed the suitability of this circuit for the purpose of supplying the appropriate power in very short bursts. 
 
-However, further experimentation revealed the large capacitors were not required to allow the full illumination of images (negligible pixel difference between images compared with and without). As this circuit was originally designed for nanosecond response, the capacitors may have assisted the current flow, opposed to relying on the power supply to instantaneously supply current. Therefore, the circuit complexity could be reduced to a more simple device involving the MOSFET. A COB solution designed for this purpose can source and sink up to $20A$ at $60V$ is pictured in Figure \ref{fig:mosfet}. It features large and small wiring holes (for either high-current or low-current applications), and built-in pull-down resistors which allow error-free trigger signals via microcontroller. The figure also shows a failed MOSFET which was overloaded during testing, as a programming error lead to the LED remaining lit for approximately $10s$. This prompted the restriction of MOSFET current to be $<75\%$ of it rated current, even though the pulse time is very short, in order to allow longevity and robustness of the system.
-
-
 \begin{wrapfigure}{r}{0.6\textwidth}
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{mosfet.png}
@@ -3761,6 +3758,9 @@ However, further experimentation revealed the large capacitors were not required
 	\caption{The $20A$ MOSFET, and a chip failure after current overload whilst experimenting with high-power supply and LED's.}
 	\label{fig:mosfet}
 \end{wrapfigure} 
+
+However, further experimentation revealed the large capacitors were not required to allow the full illumination of images (negligible pixel difference between images compared with and without). As this circuit was originally designed for nanosecond response, the capacitors may have assisted the current flow, opposed to relying on the power supply to instantaneously supply current. Therefore, the circuit complexity could be reduced to a more simple device involving the MOSFET. A COB solution designed for this purpose can source and sink up to $20A$ at $60V$ is pictured in Figure \ref{fig:mosfet}. It features large and small wiring holes (for either high-current or low-current applications), and built-in pull-down resistors which allow error-free trigger signals via microcontroller. The figure also shows a failed MOSFET which was overloaded during testing, as a programming error lead to the LED remaining lit for approximately $10s$. This prompted the restriction of MOSFET current to be $<75\%$ of it rated current, even though the pulse time is very short, in order to allow longevity and robustness of the system.
+
 
 
 The chips have been designed with convenient mounting holes and compact form, allowing wiring with heavy gauge connections in close vicinity to the load, suiting the requirements of the vision system. Due to the current restrictions, and to simplify design, construction, and troubleshooting, one MOSFET is used for each new LED cluster. 
