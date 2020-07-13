@@ -58,20 +58,28 @@ def count_images(path):
     count = 0
     folders = os.listdir(path)
     for f in folders:
-	files = os.listdir(os.path.join(path,f))
-	    count+=len(files)
+        files = os.listdir(os.path.join(path,f))
+        count+=len(files)
     return count
 
+'''
+def preprocess_input(img):
+    print(img.shape)
+'''
+
 #Variables
-TRAIN_DIR = '/home/gilbert/Downloads/img'
+TRAIN_DIR = '/home/gil/Documents/IMAGES/resnet/train/'
+VAL_DIR = '/home/gil/Documents/IMAGES/resnet/valid/'
 HEIGHT = 450
 WIDTH = 375
 BATCH_SIZE = 16 
 NUM_EPOCHS = 10
 num_train_images = count_images(TRAIN_DIR)
+print('Num images: {}'.format(num_train_images))
 
 #classes
 class_names = os.listdir(TRAIN_DIR)
+print(class_names)
 class_num = len(class_names)
 
 train_datagen =  ImageDataGenerator(
@@ -82,16 +90,16 @@ train_datagen =  ImageDataGenerator(
     validation_split=0.25
 )
 
-train_generator = train_datagen.flow_from_directory(TRAIN_DIR, 
+train_generator = train_datagen.flow_from_directory(directory=TRAIN_DIR, 
                                                     target_size=(HEIGHT, WIDTH), 
                                                     batch_size=BATCH_SIZE,
-                                                    subset='training') # set as training data
+                                                    class_mode="categorical") # set as training data
 
 
-validation_generator = train_datagen.flow_from_directory(TRAIN_DIR, # same directory as training data
+validation_generator = train_datagen.flow_from_directory(directory=VAL_DIR, # same directory as training data
                                                     target_size=(HEIGHT, WIDTH),
                                                     batch_size=BATCH_SIZE,
-                                                    subset='validation') # set as validation data
+                                                    class_mode="categorical") # set as validation data
 
 
 
