@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "frappe-charts": "^1.5.2",
     "vue": "^2.6.11",
+    "vue-router": "^3.3.4",
     "vue2-frappe": "^1.0.29"
   },
   "devDependencies": {
