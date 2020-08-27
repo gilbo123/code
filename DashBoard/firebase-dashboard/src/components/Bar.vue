@@ -1,8 +1,5 @@
 <template>
   <div class="Bar">
-    <!-- <img alt="pano" src="./assets/pano_small.jpg"/> -->
-    <!-- <First title="Strawberry Dashboard"/> -->
-    <!-- <First msg="First Component"/> -->
     <h1>Strawberry Dashboard</h1>
     <h2>Strawberry Defects by Month</h2>
     <vue-frappe

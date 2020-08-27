@@ -5,12 +5,16 @@
     <nav>
         <router-link to="/"> Home </router-link>
         <router-link to="/bar"> | Bar Chart </router-link>
+        <router-link to="/weights">  | Weight Chart </router-link>
         <router-link to="/pie">  | Pie Chart </router-link>
     </nav>
     <!-- route outlet -->
     <!-- component matched by the route will render here -->
     <router-view></router-view>
+
   </div>
+ 
+    
 </template>
 
 <script>
