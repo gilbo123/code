@@ -1,14 +1,12 @@
 <template>
   <div class="Home">
     <img alt="pano" src="../assets/pano_small.jpg"/>
-    <h2>Welcome!</h2>
-
+    <h1>Welcome!</h1>
   </div>
 </template>
 
 <script>
 export default {
-
 }
 </script>
 
