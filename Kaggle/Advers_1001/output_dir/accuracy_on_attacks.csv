@@ -1,4 +1,0 @@
-,ens_adv_inception_resnet_v2,base_inception_model,adv_inception_v3
-random_noise,943,902,709
-noop,972,960,947
-fgsm,933,259,718
