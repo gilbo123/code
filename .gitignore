@@ -11,6 +11,11 @@
 *.eps
 *.svg
 
+#model weights
+*.weights
+*.h5
+*.pkl
+
 #Generated punnet text files
 */RGB/*.txt
 */IR/*.txt
