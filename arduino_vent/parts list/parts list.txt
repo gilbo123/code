@@ -1,0 +1,77 @@
+https://www.cnc3d.com.au/
+Nema23 Stepper Motor - 2.45N.m   
+$53.60
+
+Specification 	Value
+Step angle 	1.8° ±5%
+Number of Phases 	2
+Insulation resistance 	100MΩ min (500V DC)
+Insulation class 	Class B
+Rotor Inertia 	600g.cm²
+Mass 	1.2kg
+Rated voltage 	3.6V
+Rated current 	3A
+Resistance per phase 	1.2Ω ±10%
+Inductance per phase 	4mH ±20%
+Holding torque 	2.45Nm
+Detent torque 	90mN/m
+
+https://www.cnc3d.com.au/product-page/tb6600-stepper-motor-driver
+TB6600 Stepper motor driver
+$24.99
+
+Perfect for driving high powered Nema23 stepper motors for CNC control and various other applications. Packed with loads of safety features, this drive is an upgraded version of the original TB6600, supporting up to 32 microstep segmentation resolution for high resolution results. Applicable stepper motor: Nema23 all sizes in 2-phase & 4-phase configuration.
+Features:
+     9V-40V DC power input;
+     H-bridge bipolar constant-phase flow-driven
+     Maximum output current of 4.0 Amps
+     Up to 1/32 microstepping options for excellent resolution
+     All inputs have high-speed optical isolation
+     Standard common anode single pulse interface
+     Automatic hold function;
+     Semi-enclosed chassis with large heatsink for work in demanding environments for long work periods.
+     Semi-automatic current lock function
+     Built-in thermal protection and overcurrent protection.
+
+
+Acrylic
+500x800mm 6mm
+160x350mm 3mm
+
+Electronics
+1 x Arduino Nano	https://www.jaycar.com.au/duinotech-nano-board-arduino-compatible/p/XC4414
+1 x 20x4 LCD 		https://www.jaycar.com.au/dot-matrix-white-on-blue-lcd-20x4-character/p/QP5522
+2 x Bezel LEDs		https://www.jaycar.com.au/chrome-bezel-with-3mm-red-led/p/SL2615
+2 x 220Ohm Resistors	https://www.jaycar.com.au/220-ohm-0-5-watt-metal-film-resistors-pack-of-8/p/RR0556
+3 x 10kOhm Pots		https://www.jaycar.com.au/10k-ohm-logarithmic-a-single-gang-9mm-potentiometer/p/RP8610
+3 x Buttons		https://www.jaycar.com.au/pushbutton-push-on-momentary-spst-red-actuator/p/SP0716
+1 x Switch		https://www.jaycar.com.au/spdt-miniature-toggle-switch-solder-tag/p/ST0335
+1 x Micro Lever Switch	https://www.jaycar.com.au/spdt-125v-3a-sub-miniature-micro-switch-with-lever/p/SM1036
+1 x Voltage Regulator	https://www.jaycar.com.au/arduino-compatible-dc-voltage-regulator/p/XC4514
+
+Hardware
+1 x M5 x 75mm Bolt/Nut	*Attaches Arm to Base
+4 x M3 x 10mm Bolt/Nut	*Attaches LCD
+2 x M1.5x15mm Bolt/Nut	*Attaches Limit switch
+1 x M3 x 25mm Bolt	*Used as Limit adjustment
+
+
+I have enough for 1
+3 x 500x600mm 6mm Any
+2 x 600x400mm 6mm White 
+2 x 400x350mm 3mm White
+
+Required Acrylic for each file
+482x230mm - 6mmAny-BackBase.dxf *Base and back plates
+422x277mm - 6mmClear-Arm.dxf *Arm pieces
+
+253x350mm - 6mmWhite-Sides.dxf *Sides of machine(Not Clear)
+
+140x110mm - 3mmAny-bagPlates.dxf
+218x148mm - 3mmWhite-FaceplateLabelled.svg
+
+
+
+Note: The Red text should be engraved, black is cuts!
+     
+ 
