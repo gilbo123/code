@@ -1,8 +1,8 @@
 import cv2
 import os
 
-path = './IMAGES/foreign/'
-out = './utils/output/'
+path = '/home/gil/Documents/IMAGES/GAN/over/'
+out = '/home/gil/Documents/IMAGES/GAN/TRAIN/'
 
 files = os.listdir(path)
 
@@ -11,11 +11,11 @@ for f in files:
     img = cv2.imread(fn)
     print(img.shape)
 
-    img = cv2.resize(img, (50, 50))
-    img = cv2.medianBlur(img, 7)
+    img = cv2.resize(img, (48, 48))
+    img = cv2.medianBlur(img, 9)
     print(img.shape)
     cv2.imshow('image', img)
-    k = cv2.waitKey(100)
+    k = cv2.waitKey(33)
     if k == ord('q'):
         cv2.destroyAllWindows()
         break

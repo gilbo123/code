@@ -16,7 +16,7 @@ from keras.callbacks import ReduceLROnPlateau, CSVLogger, EarlyStopping
 from skimage.measure import compare_ssim
 from sklearn.model_selection import train_test_split
 
-class autoencoder():
+class interpolator():
 
     def __init__(self, X, Y):
         #sizes
@@ -42,24 +42,25 @@ class autoencoder():
         conv5 = Conv2D(64, (3, 3), activation='relu', padding='same')(up1) # 24 x 24 x 64
         up2 = UpSampling2D(size=(2,2))(conv5) # 48 x 48 x 64
         conv6 = Conv2D(32, (3, 3), activation='relu', padding='same')(up2) # 48 x 48 x 32
+        '''
         up3 = UpSampling2D((2,2))(conv6) # 96 x 96 x 32
         conv7 = Conv2D(16, (3, 3), activation='relu', padding='same')(up3) # 96 x 96 x 16
         up4 = UpSampling2D((2,2))(conv7) # 192 x 192 x 16
         conv8 = Conv2D(8, (3, 3), activation='relu', padding='same')(up4) # 192 x 192 x 8
         up5 = UpSampling2D((2,2))(conv8) # 384 x 384 x 8
-        
+        '''
         #model
-        self.decoded = Conv2D(3, (3, 3), activation='sigmoid', padding='same')(up5) # 384 x 384 x 3
-        
+        self.decoded = Conv2D(3, (3, 3), activation='sigmoid', padding='same')(up2) # 384 x 384 x 3
+
         #create ae reference 
-        
+
         self.model = Model(input_img, self.decoded)
-        self.model.compile(loss='mean_squared_error', optimizer = RMSprop())
+        self.model.compile(optimizer='adam', loss='binary_crossentropy')#loss='mean_squared_error', optimizer = RMSprop())
         self.model.summary()
-        
 
 
-    def get_data(self, source_path, resize=False):
+
+    def get_data(self, source_path, resize=False, blur=False):
         #get files
         files = os.listdir(source_path)
         #shuffle files
@@ -71,7 +72,10 @@ class autoencoder():
             img = cv2.imread(os.path.join(source_path, f))
         
             if resize:
-                img = cv2.resize(img, (384, 384))
+                img = cv2.resize(img, (48, 48))
+            if blur:
+                img = cv2.medianBlur(img, 35)
+
             ''' 
             cv2.imshow('orig img', img)
             cv2.imshow('cropped img', c_img)
@@ -96,11 +100,11 @@ class autoencoder():
             im2 = cv2.merge((s2, s2, s2))
 
         # convert the images to grayscale
-        #grayA = cv2.cvtColor(im1, cv2.COLOR_BGR2GRAY)
-        #grayB = cv2.cvtColor(im2, cv2.COLOR_BGR2GRAY)
+        grayA = cv2.cvtColor(im1, cv2.COLOR_BGR2GRAY)
+        grayB = cv2.cvtColor(im2, cv2.COLOR_BGR2GRAY)
         #print(grayA.dtype, grayB.dtype)
-        #return np.subtract(grayA.astype('uint8'), grayB.astype('uint8'))
-        return np.subtract(im2.astype('uint8'), im1.astype('uint8'))
+        return np.subtract(grayA.astype('uint8'), grayB.astype('uint8'))
+        #return np.subtract(im2.astype('uint8'), im1.astype('uint8'))
         #(score, diff) = compare_ssim(im1, im2, full=True, multichannel=True)
         #print("SSIM: {}".format(score))
         #return (diff * 255).astype("uint8")
@@ -112,66 +116,69 @@ class autoencoder():
 if __name__ == '__main__':
 
     #data path
-    train_compressed_path = '/home/gil/Downloads/GAN/IMAGES/train/'
-    train_full_path = '/home/gil/Downloads/GAN/IMAGES/over/'
+    train_compressed_path = '/home/gil/Documents/IMAGES/GAN/sm_train/'#sm_train/
+    #train_full_path = '/home/gil/Documents/IMAGES/GAN/over/'
     #valid_compressed_path = '/home/gil/Downloads/GAN/IMAGES/valid/'
     #valid_orig_path = '/home/gil/Downloads/GAN/IMAGES/small/'
-    #test_path = '/home/gil/Dowloads/GAN/IMAGES/test/'
-    out = 'processed/'
+    test_compressed_path = '/home/gil/Documents/IMAGES/GAN/TEST/patches/'#reduced/
+    #test_full_path = '/home/gil/Documents/IMAGES/GAN/TEST/truth/'
+    #out = '/home/gil/Documents/IMAGES/GAN/OUT/'
 
     #autoencoder class
-    X, Y = 50, 50
-    ae = autoencoder(X, Y)
+    X, Y = 48, 48
+    int_model = interpolator(X, Y)
+    model = int_model.model
    
     #get data and labels for both train and test
-    orig_train = ae.get_data(train_compressed_path, resize=True) 
-    target_train = ae.get_data(train_full_path) 
+    orig_train = int_model.get_data(train_compressed_path) 
+    #target_train = ae.get_data(train_full_path, resize=True) 
+    blur_train = int_model.get_data(train_compressed_path, blur=True) 
 
     # Shapes of training set
     print("\nOriginal training set (images) shape: {}".format(orig_train.shape))
-    print("Training set (images) shape: {}".format(target_train.shape))
+    print("Training set (images) shape: {}".format(blur_train.shape))
 
 
     #normalise
     orig_train = orig_train / np.max(orig_train)
-    target_train = target_train / np.max(target_train)
-    print(orig_train.dtype, target_train.dtype)
+    blur_train = blur_train / np.max(blur_train)
+    print(orig_train.dtype, blur_train.dtype)
 
     #verify
     print(np.max(orig_train))
-    print(np.max(target_train))
+    print(np.max(blur_train))
 
     #split data
     # X = cropped, y = original
-    train_X, valid_X, train_ground, valid_ground = train_test_split(target_train,
+    train_X, valid_X, train_ground, valid_ground = train_test_split(blur_train,
                                                                  orig_train, 
                                                                  test_size=0.2, 
                                                                  random_state=42)
-    
-     
-    cv2.imshow('cropped img', train_X[0])
-    cv2.imshow('orig img', train_ground[0])
+
+    cv2.imshow('blurred imgT', train_X[0])
+    cv2.imshow('blurred imgV', valid_X[0])
+    cv2.imshow('orig imgT', train_ground[0])
+    cv2.imshow('orig imgV', valid_ground[0])
     cv2.waitKey()
     cv2.destroyAllWindows()
-    
-    
-    
+
     #autoencoder params
     BS = 32
     EPOCHS = 1
-    CHANNELS = 3
-    input_img = Input(shape = (X, Y, CHANNELS))
+    #CHANNELS = 3
+    #input_img = Input(shape = (X, Y, CHANNELS))
 
-    autoencoder = ae.model
 
     # train the convolutional autoencoder
-    H = autoencoder.fit(
+    H = model.fit(
 	train_X, train_ground,
 	validation_data=(valid_X, valid_ground),
 	epochs=EPOCHS,
 	batch_size=BS)
 
 
+    print(H.history.keys())
+    model.save(str(train_compressed_path.split('GAN')[0]) + '/GAN/blur_reconstruct')
 
     #plot results
     '''
@@ -188,9 +195,9 @@ if __name__ == '__main__':
     N = np.arange(0, EPOCHS)
     plt.style.use("ggplot")
     plt.figure()
-    plt.plot(N, H.history["loss"], label="train_loss")
-    plt.plot(N, H.history["val_loss"], label="val_loss")
-    plt.title("Training Loss and Accuracy")
+    plt.plot(N, H.history["loss"], label="training loss")
+    plt.plot(N, H.history["val_loss"], label="validation loss")
+    plt.title("Loss and Accuracy")
     plt.xlabel("Epoch #")
     plt.ylabel("Loss/Accuracy")
     plt.legend(loc="lower left")
@@ -198,11 +205,13 @@ if __name__ == '__main__':
     
 
     #remove old data from memory
-    del orig_train, target_train
+    del orig_train, blur_train
 
     #get test data
-    orig_test = ae.get_data(test_path, False)
-    cropped_test = ae.get_data(test_path, False)
+    #orig_test = ae.get_data(test_compressed_path, resize=True)
+    orig_test = int_model.get_data(test_compressed_path)
+    #cropped_test = ae.get_data(test_full_path, resize=True)
+    cropped_test = int_model.get_data(test_compressed_path, blur=True)
     
     #normalise cropped data for predictions
     cropped_test = cropped_test / np.max(cropped_test)
@@ -214,11 +223,11 @@ if __name__ == '__main__':
     print(np.max(cropped_test))
 
     ##make predictions
-    pred = autoencoder.predict(cropped_test) 
+    pred = model.predict(cropped_test) 
     
     #de-normalise
-    cropped_test = cropped_test * 255
-    pred = pred * 255
+    #cropped_test = cropped_test * 255
+    #pred = pred * 255
 
 
 
@@ -229,27 +238,30 @@ if __name__ == '__main__':
         orig = orig_test[i].astype('uint8')
         print(p.shape, orig.shape)
         print(p.dtype, orig.dtype)
-        diff = ae.diff_image(p, orig)
-        orig_diff = ae.diff_image(diff, orig)
-        p_diff = ae.diff_image(diff, p)
-        #hsv_diff = ae.diff_image(p, orig, 'hsv')
+        diff = int_model.diff_image(p, cropped_test[i].astype('uint8'))
+        #orig_diff = int_model.diff_image(diff, orig)
+        #p_diff = int_model.diff_image(diff, p)
+        #hsv_diff = int_model.diff_image(p, orig, 'hsv')
          
         cv2.namedWindow('Original', cv2.WINDOW_AUTOSIZE)
         cv2.moveWindow('Original', 20, 20)
+        cv2.namedWindow('Input', cv2.WINDOW_AUTOSIZE)
+        cv2.moveWindow('Input', 220, 20)
         cv2.namedWindow('Prediction', cv2.WINDOW_AUTOSIZE)
-        cv2.moveWindow('Prediction', 320, 20)
-        cv2.namedWindow('RGB diff', cv2.WINDOW_AUTOSIZE)
-        cv2.moveWindow('RGB diff', 520, 20)
-        #cv2.namedWindow('orig diff', cv2.WINDOW_AUTOSIZE)
-        #cv2.moveWindow('orig diff', 720, 20)
-        cv2.namedWindow('p diff', cv2.WINDOW_AUTOSIZE)
-        cv2.moveWindow('p diff', 920, 20)
+        cv2.moveWindow('Prediction', 420, 20)
+        cv2.namedWindow('orig diff', cv2.WINDOW_AUTOSIZE)
+        cv2.moveWindow('orig diff', 620, 20)
+        #cv2.namedWindow('p diff', cv2.WINDOW_AUTOSIZE)
+        #cv2.moveWindow('p diff', 820, 20)
         
         cv2.imshow('Original', orig)
-        cv2.imshow('Prediction', p)
-        cv2.imshow('RGB diff', diff)
-        #cv2.imshow('orig diff', orig_diff)
-        cv2.imshow('p diff', p_diff)
-        cv2.waitKey()
-        cv2.destroyAllWindows()
+        cv2.imshow('Prediction', pred[i])
+        cv2.imshow('Input', cropped_test[i])
+        #cv2.imshow('Target', cv2.resize(cropped_test[i], (500,600)))
+        cv2.imshow('orig diff', diff)
+        #cv2.imshow('p diff', p_diff)
+        k = cv2.waitKey()
+        if k == ord('q'):
+            cv2.destroyAllWindows()
+            sys.exit()
 
