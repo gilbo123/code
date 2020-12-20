@@ -1,52 +1,33 @@
 import glob
-import random
-import os
-import numpy as np
-
 import torch
+import numpy as np
 from torch.utils.data import Dataset
-from PIL import Image
 import torchvision.transforms as transforms
+from PIL import Image
+
 
 # Normalization parameters for pre-trained PyTorch models
 mean = np.array([0.485, 0.456, 0.406])
 std = np.array([0.229, 0.224, 0.225])
 
-
-def denormalize(tensors):
-    """ Denormalizes image tensors using mean and std """
-    for c in range(3):
-        tensors[:, c].mul_(std[c]).add_(mean[c])
-    return torch.clamp(tensors, 0, 255)
-
-
 class ImageDataset(Dataset):
-    def __init__(self, root, hr_shape):
-        hr_height, hr_width = hr_shape
-        # Transforms for low resolution images and high resolution images
-        self.lr_transform = transforms.Compose(
+    def __init__(self, orig, proc, shape):
+        self.orig_files = sorted(glob.glob(orig + "*.*"))
+        self.proc_files = sorted(glob.glob(proc + "*.*"))
+        self.transform = transforms.Compose(
             [
-                transforms.Resize((hr_height // 4, hr_height // 4), Image.BICUBIC),
+                #transforms.Resize(shape, Image.BICUBIC),
                 transforms.ToTensor(),
                 transforms.Normalize(mean, std),
             ]
         )
-        self.hr_transform = transforms.Compose(
-            [
-                transforms.Resize((hr_height, hr_height), Image.BICUBIC),
-                transforms.ToTensor(),
-                transforms.Normalize(mean, std),
-            ]
-        )
-
-        self.files = sorted(glob.glob(root + "/*.*"))
+        assert len(self.orig_files) == len(self.proc_files), "Unequal number of files!"
 
     def __getitem__(self, index):
-        img = Image.open(self.files[index % len(self.files)])
-        img_lr = self.lr_transform(img)
-        img_hr = self.hr_transform(img)
+        orig_img = Image.open(self.orig_files[index % len(self.orig_files)])
+        proc_img = Image.open(self.proc_files[index % len(self.proc_files)])
 
-        return {"lr": img_lr, "hr": img_hr}
+        return {"orig": self.transform(orig_img), "proc": self.transform(proc_img)}
 
     def __len__(self):
-        return len(self.files)
+        return len(self.orig_files)# + len(self.proc_files)

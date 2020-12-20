@@ -16,6 +16,8 @@ from keras.callbacks import ReduceLROnPlateau, CSVLogger, EarlyStopping
 from skimage.measure import compare_ssim
 from sklearn.model_selection import train_test_split
 
+from utils.datasets import *
+
 class interpolator():
 
     def __init__(self, X, Y):
@@ -59,8 +61,8 @@ class interpolator():
         self.model.summary()
 
 
-
-    def get_data(self, source_path, resize=False, blur=False):
+    '''
+    def ge5t_data(self, source_path, resize=False, blur=False):
         #get files
         files = os.listdir(source_path)
         #shuffle files
@@ -76,19 +78,15 @@ class interpolator():
             if blur:
                 img = cv2.medianBlur(img, 35)
 
-            ''' 
             cv2.imshow('orig img', img)
             cv2.imshow('cropped img', c_img)
             cv2.waitKey()
             cv2.destroyAllWindows()
-            '''
             #add to array
             arr.append(img)
 
         return np.array(arr)
-
-
-
+    
     def diff_image(self, im1, im2, mode='rgb'):
         #convert to hsv, if required
         if 'hsv' in mode:
@@ -108,7 +106,7 @@ class interpolator():
         #(score, diff) = compare_ssim(im1, im2, full=True, multichannel=True)
         #print("SSIM: {}".format(score))
         #return (diff * 255).astype("uint8")
-
+    '''
 
 
 
@@ -116,28 +114,24 @@ class interpolator():
 if __name__ == '__main__':
 
     #data path
-    train_compressed_path = '/home/gil/Documents/IMAGES/GAN/sm_train/'#sm_train/
-    #train_full_path = '/home/gil/Documents/IMAGES/GAN/over/'
-    #valid_compressed_path = '/home/gil/Downloads/GAN/IMAGES/valid/'
-    #valid_orig_path = '/home/gil/Downloads/GAN/IMAGES/small/'
-    test_compressed_path = '/home/gil/Documents/IMAGES/GAN/TEST/patches/'#reduced/
-    #test_full_path = '/home/gil/Documents/IMAGES/GAN/TEST/truth/'
-    #out = '/home/gil/Documents/IMAGES/GAN/OUT/'
+    train_orig_path = '/home/gil/Documents/IMAGES/ANOMALY/sm_input/'#sm_train/
+    train_proc_path = '/home/gil/Downloads/IMAGES/ANOMALY/sm_proc/'
+    test_compressed_path = '/home/gil/Documents/IMAGES/ANOMALY/test/'#reduced/
+    out = '/home/gil/Documents/IMAGES/ANOMALY/out/'
 
     #autoencoder class
-    X, Y = 48, 48
+    X, Y = 480, 480
+    IMG_SHAPE = (X, Y, 3)
     int_model = interpolator(X, Y)
     model = int_model.model
-   
-    #get data and labels for both train and test
+  
+    '''
+    #gedt data and labels for both train and test
     orig_train = int_model.get_data(train_compressed_path) 
     #target_train = ae.get_data(train_full_path, resize=True) 
     blur_train = int_model.get_data(train_compressed_path, blur=True) 
-
-    # Shapes of training set
-    print("\nOriginal training set (images) shape: {}".format(orig_train.shape))
-    print("Training set (images) shape: {}".format(blur_train.shape))
-
+    '''
+    orig_data = ImageDataset(train_orig_path, train_proc_path)
 
     #normalise
     orig_train = orig_train / np.max(orig_train)

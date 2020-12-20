@@ -16,6 +16,10 @@ from tensorflow.keras.callbacks import ReduceLROnPlateau, CSVLogger, EarlyStoppi
 from skimage.measure import compare_ssim
 from sklearn.model_selection import train_test_split
 
+from torch.utils.data import DataLoader
+
+from utils.datasets import *
+
 class autoencoder():
 
     def __init__(self, X, Y):
@@ -148,6 +152,13 @@ if __name__ == '__main__':
     X, Y = 500, 600
     ae = autoencoder(X, Y)
    
+    dataloader = DataLoader(
+        ImageDataset(orig_path, proc_path, (X,Y)),
+        batch_size=opt.batch_size,
+        shuffle=False,
+        num_workers=opt.n_cpu,
+    )
+    '''
     #get data and labels for both train and test
     orig_train = ae.get_data(orig_path, False) 
     cropped_train = ae.get_data(proc_path, False) 
@@ -165,17 +176,17 @@ if __name__ == '__main__':
     #verify
     print(np.max(orig_train))
     print(np.max(cropped_train))
-
     #split data
     # X = cropped, y = original
     train_X, valid_X, train_ground, valid_ground = train_test_split(cropped_train,
                                                                  orig_train, 
                                                                  test_size=0.2, 
                                                                  random_state=42)
+    '''
     
      
-    cv2.imshow('cropped img', train_X[0])
-    cv2.imshow('orig img', train_ground[0])
+    cv2.imshow('orig img', dataloader.__getitem__(0)['orig'])
+    cv2.imshow('segmented img', dataloader.__getitem__(0)['proc'])
     cv2.waitKey()
     cv2.destroyAllWindows()
     
